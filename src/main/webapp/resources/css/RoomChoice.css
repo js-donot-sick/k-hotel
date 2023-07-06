@@ -338,6 +338,12 @@ input[name="C-children"]{ /* 어린이 */
     border-radius: 20px;
 }
 
+.test{
+    width: 1200px; 
+    margin: auto; 
+    height: 600px;
+}
+
 
 /*----------------------------------예약 부분 끝---------------------------------*/
 

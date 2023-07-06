@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+
+form > div {
+    border: 1px solid black;
+
+}
+.C-body div{
+    border: 1px solid black;
+}
+
+/*-------------------------------------------------------------------------------*/
+.C-body{ /* 바디 전체를 감싸는 div */
+    width: 100%;
+    height: auto;
+}
+
+.C-Final-rsv{ /* 예약하기를 감싸는 div */
+    width: 1200px;
+    height: 700px;
+    margin: auto;
+    padding: 30px;
+}
+
+.C-body-first-div{ /* 예약하기 글씨 부분 */
+    width: 100%;
+    height: 80px;
+    font-size: 30px;
+    font-weight: bold;
+    color:rgba(131, 105, 75, 0.72);
+    text-align: center;
+    padding-top: 15px;
+}
+
+.C-body-second-div{/* 정보입력 */
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+
+
