@@ -1,0 +1,339 @@
+*{box-sizing: border-box;}
+
+/* div{border: 1px solid black;} */
+
+header{border: 1px solid black;}
+
+header{
+    height: 120px;
+    width: 100%;
+    background-color: aqua;
+}
+
+input{
+    border-radius: 5px;
+    border: 0;
+}
+
+input:focus{
+    outline: 0;
+}
+
+button{
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover{
+    font-weight: bold;
+}
+
+.k-content{
+    width: 100%;
+    position: relative;
+}
+
+.k-content>div:nth-child(1){ /* 첫 번째 빈칸 */
+    height: 140px;
+}
+
+.k-content>div:nth-child(4){ /* 두 번째 빈칸 */
+    height: 180px;
+}
+
+#k-login{
+    width: 100%;
+}
+
+#k-login-letter{ /* 로그인 영역 글씨부분 */
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid gray;
+}
+
+#k-login>div{ /* 로그인 입력창 */
+    height: 350px;
+    width: 800px;
+    margin: auto;
+    background-color: rgba(178, 158, 135, 0.9);
+    border-radius: 10px;
+}
+
+#k-login-input{
+    margin-top: 30px;
+}
+
+#k-login-input>table{ /* 아이디, 비밀번호 입력창, 로그인 버튼 */
+    margin: auto;
+}
+
+#k-login-input tr:nth-child(1){ /* 아이디 행 */
+    height: 40px;
+}
+#k-login-input tr:nth-child(2){ /* 비번 행 */
+    height: 40px;
+}
+#k-login-input tr:nth-child(1)>td:nth-child(1){ 
+    width: 100px;
+}
+#k-login-input tr:nth-child(2)>td:nth-child(2){ 
+    width: 350px;
+}
+
+input[name="inputId"]{ /* 아이디 입력창 */
+    width: 340px;
+    height: 25px;
+}
+input[name="inputPw"]{ /* 비밀번호 입력창 */
+    width: 340px;
+    height: 25px;
+}
+
+#k-login-btn{ /* 로그인 버튼 */
+    width: 80px;
+    height: 50px;
+    margin-left: 20px;
+}
+
+#k-login-bottom{ /* 아이디찾기비번찾기회원가입 */
+    margin: auto;
+    margin-top: 5px;
+    width: 270px;
+    font-size: small;
+}
+
+#k-login-bottom>a{
+    color: black;
+    text-decoration: none;
+    padding-left: 10px;
+}
+#k-login-bottom>a:hover{
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* 팝업창(찾기) */
+#k-popup{
+    height: 250px;
+    width: 100%;
+    position: absolute;
+    top: 400px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#k-popup-id{
+    display: none;
+}
+#k-popup-pw{
+    display: none;
+}
+
+.k-popup-out{ /* X버튼 */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.k-search-letter{ /* 아이디찾기 글씨 */
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.k-x-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.k-x-btn:hover{
+    background-color: gray;
+    border-radius: 0;
+}
+
+#k-popup table{ /* 입력창들 */
+    margin: auto;
+}
+
+#k-popup table input{
+    width: 200px;
+}
+
+.k-inputName{
+    width: 130px;
+}
+
+#k-popup>div:nth-child(1){ /* 아이디찾기 창 */
+    width: 500px;
+    background-color: #ebe7e3;
+}
+
+#k-popup>div:nth-child(1)>div:nth-child(3){ /* 입력창들 div */
+    margin-top: 20px;
+}
+
+input[name="k-inputNm-id"]{
+    height: 20px;
+}
+input[name="k-inputPno-id"]{
+    height: 20px;
+}
+input[name="k-inputId-id"]{
+    height: 20px;
+}
+
+#k-id-search-btn{
+    width: 100px;
+    height: 40px;
+    margin-left: 20px;
+    background-color: rgba(178, 158, 135, 0.9);
+}
+
+#k-id-result{
+    background-color: gray;
+    width: 480px;
+    height: 90px;
+    margin: auto;
+    margin-top: 9px;
+}
+
+#k-popup>div:nth-child(2){
+    width: 500px;
+    background-color: #ebe7e3;
+}
+
+#k-pw-search-btn{
+    margin-left: 20px;
+    width: 110px;
+    height: 50px;
+    background-color: rgba(178, 158, 135, 0.9);
+}
+
+#k-pw-result{
+    background-color: gray;
+    width: 480px;
+    height: 90px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+
+
+
+/* footer css */
+footer{
+    /* border: 1px solid black; */
+    width: 100%;
+}
+
+.k-first-div{
+    background-color: rgba(178, 158, 135, 0.9);
+}
+
+.k-first-div>div{
+    width: 1200px;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    color: white;
+}
+.k-second-div{
+    background-color: #ebe7e3;
+}
+.k-second-div>div{
+    width: 1200px;
+    margin: auto;
+    height: 60px;
+    display: flex;
+}
+.k-third-div{
+    width: 1200px;
+    margin: auto;
+    height: 90px;
+    display: flex;
+}
+
+.k-f-container>div:nth-child(1)>img{
+    margin-top: 8px;
+}
+.k-f-container>div:nth-child(3){
+    margin-top: 40px;
+}
+.k-f-container>div:nth-child(2){
+    width: 100px;
+}
+
+.k-f-container>div:nth-child(4){
+    width: 520px;
+}
+
+.k-f-container span:nth-child(2n-1):hover{
+    cursor: pointer;
+    font-weight: bold;
+    color: #ebe7e3;
+}
+
+#k-sns{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+#k-sns img{
+    width: 40px;
+}
+#k-sns img:hover{
+    transform: scale(1.2);
+    transition-duration: 0.2s;
+}
+
+#k-sns>div:nth-child(2){
+    margin-left: 15px;
+}
+
+.k-second-div span{
+    font-size: small;
+}
+
+.k-second-div span:nth-child(2n-1):hover{
+    color: rgba(90, 74, 56, 0.9);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+.k-second-div span{
+    padding-left: 5px;
+}
+
+.k-second-div>div{
+    line-height: 5px;
+    line-height: 55px;
+}
+
+.k-third-div{
+    padding-top: 14px;
+}
+
+.k-third-div>div{
+    font-size: small;    
+}
+
+.k-third-div img{
+    width: 200px;
+}
+.k-third-div>:nth-child(2){
+    width: 680px;
+}
+.k-third-div>:nth-child(3){
+    margin-top: 10px;
+}

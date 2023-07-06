@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+
+    <link rel="stylesheet" href="../CSS/login.css">
+
+    
+</head>
+<body>
+
+    <header>
+        header
+    </header>
+    
+    <div class="k-content">
+
+        <div></div>
+        <div id="k-login">
+            <div>
+                <form action="#">
+                    <div id="k-login-letter">로그인</div>
+                    <div id="k-login-input">
+                        <table>
+                            <tr>
+                                <td>아이디</td>
+                                <td><input type="text" name="inputId" placeholder="아이디를 입력해주세요"></td>
+                                <td rowspan="2"><button id="k-login-btn">로그인</button></td>
+                            </tr>
+                            <tr>
+                                <td>비밀번호</td>
+                                <td><input type="text" name="inputPw" placeholder="비밀번호를 입력해주세요"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </form>
+                <div id="k-login-bottom">
+                    <a href="#">아이디 찾기</a>
+                    <span> | </span>
+                    <a href="#">비밀번호 찾기</a>
+                    <span> | </span>
+                    <a href="#">회원가입</a>
+                </div>
+            </div>
+        </div>
+        <div id="k-popup">
+            <div id="k-popup-id"> <!-- 아이디찾기 창 -->
+                <div class="k-popup-out">
+                    <button class="k-x-btn">X</button>
+                </div>
+                <div class="k-search-letter">아이디 찾기</div>
+                <div>
+                    <form action="#">
+                        <table>
+                            <tr>
+                                <td class="k-inputName">이름</td>
+                                <td>
+                                    <input type="text" name="k-inputNm-id" placeholder="이름을 입력하세요">
+                                </td>
+                                <td rowspan="2">
+                                    <button id="k-id-search-btn">아이디찾기</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>주민등록번호</td>
+                                <td><input type="password" name="k-inputPno-id" placeholder="주민번호를 입력하세요"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div>
+                    <div id="k-id-result"></div>
+                </div>
+            </div>
+
+            <div id="k-popup-pw"> <!-- 비번 찾기 창 -->
+                <div class="k-popup-out">
+                    <button class="k-x-btn">X</button>
+                </div>
+                <div class="k-search-letter">비밀번호 찾기</div>
+                <div>
+                    <form action="#">
+                        <table>
+                            <tr>
+                                <td class="k-inputName">이름</td>
+                                <td>
+                                    <input type="text" name="k-inputNm-id" placeholder="이름을 입력하세요">
+                                </td>
+                                <td rowspan="3">
+                                    <button id="k-pw-search-btn">비밀번호 찾기</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>주민등록번호</td>
+                                <td><input type="password" name="k-inputPno-id" placeholder="주민번호를 입력하세요"></td>
+                            </tr>
+                            <tr>
+                                <td>아이디</td>
+                                <td><input type="text" name="k-inputId-id" placeholder="아이디를 입력하세요"></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div>
+                    <div id="k-pw-result"></div>
+                </div>
+            </div>
+        </div>
+        <div></div>
+
+
+    </div>
+
+
+    <footer>
+
+        <div class="k-first-div">
+            <div class="k-f-container">
+                <div>
+                    <img src="../images/logo_2.png" style="width: 180px;">
+                </div>
+                <div></div>
+                <div>
+                    <span>호텔소식</span>
+                    <span> | </span>
+                    <span>갤러리</span>
+                    <span> | </span>
+                    <span>고객문의</span>
+                </div>
+                <div></div>
+                <div id="k-sns">
+                    <div>
+                        <a href="#">
+                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-blog.png">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-instagram.png">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-youtube.png">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-facebook.png">
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="k-second-div">
+            <div>
+                <span>케이호텔 소개</span>
+                <span> | </span>
+                <span>사이트맵</span>
+                <span> | </span>
+                <span>개인정보처리방침</span>
+                <span> | </span>
+                <span>이메일무단수집금지</span>
+                <span> | </span>
+                <span>윤리경영(부정제보)</span>
+            </div>
+        </div>
+
+        <div class="k-third-div">
+            <div>
+                <div>케이호텔(주) 서울특별시 강남구 테헤란로 14길 6</div>
+                <div>TEL 1544-9970</div>
+                <div>Copyright © 2023 khotel.co.,Ltd. All rights reserved.</div>
+            </div>
+            <div></div>
+            <div>
+                <img src="../images/copyright.png">
+            </div>
+        </div>
+
+
+    </footer>
+    
+    <script src="../Javascript/login.js"></script>
+</body>
+</html>
