@@ -338,7 +338,7 @@ input[name="C-children"]{ /* 어린이 */
     border-radius: 20px;
 }
 
-.test{
+.test{ /* 객실 선택 부분 */
     width: 1200px; 
     margin: auto; 
     height: 600px;
