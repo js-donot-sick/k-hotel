@@ -41,7 +41,7 @@
 
 
 
-/* 메인화면 */
+/* 호텔소개 */
 .L-main{
     white-space: nowrap;
     width: 950px;
@@ -53,18 +53,112 @@
 }
 
 
+/* 지점 소개 */
+.L-hotelpoint > pre{
+    text-align: center;
+}
 
+.L-hotelpoint > div:nth-of-type(1){
+    font-size: 24px;
+    font-weight: bold;
+    background-color: antiquewhite;
+}
 
-.L-main p{
+.L-hotelpoint > div:nth-of-type(2){
+    height: auto;
+}
+
+/* 지점 소개 사진 */
+#L-hotel1{
     width: 800px;
     white-space: normal;
-    margin: 100px 0px;
+    margin: 40px 0px;
 }
 
 
+/* 객실 소개 */
+.L-roompoint-main{
+    width: 800px;
+}
 
+.L-roompoint{
+    font-size: 24px;
+    font-weight: bold;
+    background-color: antiquewhite;
+    margin-bottom: 30px;
+}
 
+.L-roompoint-1{
+    display: flex;
+    justify-content: space-between;
+}
 
+.L-roompoint-1 span{
+    color: #aaa;
+}
+
+.L-roomimg{
+    width: 250px;
+}
+
+.L-roomA{
+    text-decoration: none;
+    color: black;
+    
+}
+
+.L-roomA1{
+    text-decoration: none;
+    color: black;
+    width: 100px;
+}
+
+.L-roomimg1{
+    width: 210px;
+}
+
+.L-roomA > pre{
+    font-size: 12px;
+    text-align: left;
+    line-height: 24px;
+}
+
+.L-roomA1 > pre{
+    font-size: 12px;
+    text-align: left;
+    line-height: 24px;
+}
+
+.L-roomA p{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.L-roomA1 p{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.L-roompoint-border{
+    border: 1px solid #eee;
+    width: 250px;
+}
+
+/* 오시는 길 */
+.L-roadmain{
+    width: 800px;
+    display: block;
+    justify-content: space-between;
+}
+
+.L-road{
+    font-size: 24px;
+    font-weight: bold;
+    background-color: antiquewhite;
+    margin-bottom: 30px;
+}
 
 
 
