@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="semi.css">
+  <script defer src="semi.js"></script>
+
+  <style type="text/css"></style>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+  <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <style type="text/css"></style>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<!--aos-->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!--navi-->
+<script src="Semi.js"></script>
+</head>
+<body>
+  
+
+    
+  <article class="kbrands">
+    <h1>K HOTELS </h1>
+    <div
+      style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+      class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" id="slide1">
+          <h4>서울 K HOTEL</h4>
+        <p>Have a good time</p>
+        </div>
+        <div class="swiper-slide" id="slide2">
+          <span>
+          <h4>K STAY SUITE</h4>
+      <p>K 호텔은 여러분에게 편안한 휴식을 선사합니다.</p>
+    </span>
+        </div>
+        <div class="swiper-slide" id="slide3">
+    <h4>BED & BREAKFAST PACKAGE</h4>
+    <p>고객님의 여유로운 호텔스테이를 위해 조식포함 상품을 준비하였습니다.</p>
+        </div>
+        <div class="swiper-slide" id="slide4">
+         <h4>SUMMER HOLIDAY</h4>
+    <p>K 호텔에서 제공하는 다양한 혜택을 확인해보세요</p>
+        </div>
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <div thumbsSlider="" class="swiper mySwiper1">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://seoul.intercontinental.com/hub/kor/assets/img/intro_img.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://www.associa.com/kor/syh/images/stay/design_02.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="http://cfile230.uf.daum.net/image/0274A84B50C9C740184689" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://image.dnews.co.kr/photo/photo/2023/05/18/202305180828394040264-2-377773.jpg" />
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  <script>
+ var swiper = new Swiper(".mySwiper1", {
+   loop: true,
+   spaceBetween: 10,
+   slidesPerView: 4,
+   freeMode: true,
+   watchSlidesProgress: true,
+ }
+);
+
+ var swiper2 = new Swiper(".mySwiper2", {
+   loop: true,
+   spaceBetween: 10,
+   navigation: {
+     nextEl: ".swiper-button-next",
+     prevEl: ".swiper-button-prev",
+   },
+   thumbs: {
+     swiper: swiper,
+   },
+ });
+</script>
+
+  <article class="exploring">
+    <h1>Exploring Destinations</h1>
+    <p></p>
+
+    <div>
+    <div>
+      <div>
+      <h3>NEW YORK</h3>
+      <p>힘스터들의 새로운 멜팅폿, 브루클린 부시윅</p>
+    </div>
+    </div>
+
+    <div>
+      <div>
+      <h3>BUSAN</h3>
+      <p>자연을 품은 칵테일 잔</p>
+    </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <div>
+      <h3>SEOUL</h3>
+      <p>은밀하게 힙하게, 을지로 투어</p>
+    </div>
+    </div>
+
+    <div>
+      <div>
+      <h3>SEATTLE</h3>
+      <p>시애들 미식 경험,농장에서 식탁까지</p>
+    </div>
+    </div>
+
+    <div>
+      <div>
+      <h3>JEJU</h3>
+      <p>하늘과 바다가 사랑한 섬 제주도</p>
+    </div>
+    </div>
+  </div>
+
+  </article>
+
+
+
+
+</body>
+</html>

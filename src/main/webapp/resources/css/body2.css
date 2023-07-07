@@ -1,0 +1,341 @@
+/* div{ border: 1px solid black} */
+
+
+
+
+* {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin: auto;
+}
+
+
+.kbrands{
+  width: 1200px;
+    margin: 0 auto;
+  margin-top: 300px;
+
+}
+
+.kbrands h1{
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #998465;
+}
+
+#slide1{
+  width: 100%;
+  height: 600px;
+  margin-top: 50px;
+  background: url('https://seoul.intercontinental.com/hub/kor/assets/img/intro_img.jpg')no-repeat;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#slide1:hover{
+  opacity: 70%;
+}
+
+#slide1 h4{
+  color: white;
+  font-size: 2rem;
+  margin-top: 300px;
+  margin-left: 50px;
+}
+
+#slide1 p{
+  color: white;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+#slide2{
+  width: 100%;
+  height: 600px;
+  margin-top: 50px;
+  background: url('https://www.associa.com/kor/syh/images/stay/design_02.jpg')no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#slide2:hover{
+  opacity: 70%;
+}
+
+#slide2 h4{
+  color: white;
+  font-size: 2rem;
+  margin-top: 300px;
+  margin-left: 50px;
+}
+
+#slide2 p{
+  color: white;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+#slide3{
+  width: 100%;
+  height: 600px;
+  margin-top: 50px;
+  background: url('http://cfile230.uf.daum.net/image/0274A84B50C9C740184689')no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#slide3:hover{
+  opacity: 70%;
+}
+
+#slide3 h4{
+  color: white;
+  font-size: 2rem;
+  margin-top: 300px;
+  margin-left: 50px;
+}
+
+#slide3 p{
+  color: white;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+#slide4{
+  width: 100%;
+  height: 600px;
+  margin-top: 50px;
+  background: url('https://image.dnews.co.kr/photo/photo/2023/05/18/202305180828394040264-2-377773.jpg');
+  background-position: center center;
+  background-size: cover;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+#slide4:hover{
+  opacity: 70%;
+}
+
+#slide4 h4{
+  color: white;
+  font-size: 2rem;
+  margin-top: 300px;
+  margin-left: 50px;
+}
+
+#slide4 p{
+  color: white;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+.mySwiper1 {
+        height: 180px;
+        box-sizing: border-box;
+        padding: 10px 0;
+        margin-top: 10px;
+      }
+
+.mySwiper1 img{
+  height: 180px;
+  width: 100%;
+  transition:0.3s;
+}
+
+.mySwiper1 img:hover{
+  opacity:70%;
+}
+
+.exploring{
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 250px;
+}
+
+.exploring h1{
+  font-size: 2.4rem;
+  font-weight: 500;
+  color: #998465;
+}
+
+.exploring> :nth-child(2){
+  margin-top: 10px;
+  color:  #555;
+}
+
+.exploring> :nth-child(3){
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.exploring> :nth-child(3)> :first-child{
+  background: url("http://image.koreatimes.com/article/2016/06/17/20160617125634571.jpg")no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  margin-right: 20px;
+  height: 415px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.exploring> :nth-child(3)> :first-child:hover{
+  opacity: 80%;
+}
+
+
+.exploring> :nth-child(3)> :first-child h3{
+  margin-top: 300px;
+  margin-left: 30px;
+  padding-top: 20px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.exploring> :nth-child(3)> :first-child p{
+  margin-top: 20px;
+  margin-left: 30px;
+  color: white;
+}
+
+.exploring> :nth-child(3)> :last-child{
+  background: url("https://www.lottehotelmagazine.com/resources/717d93f3-4edb-49d7-82eb-bcf27716821e_img_food_chaoran_detail01.jpg")no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 320px;
+  margin-top: 0px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.exploring> :nth-child(3)> :last-child:hover{
+  opacity: 80%;
+}
+
+
+.exploring> :nth-child(3)> :last-child h3{
+  margin-top: 200px;
+  margin-left: 30px;
+  padding-top: 20px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.exploring> :nth-child(3)> :last-child p{
+  margin-top: 20px;
+  margin-left: 30px;
+  color: white;
+}
+
+.exploring> :nth-child(4){
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.exploring> :nth-child(4)> :nth-child(1){
+  background: url("https://www.lottehotelmagazine.com/resources/fd70496e-99c4-44fc-8eb1-72716408c309_img_food_Euljiro_detail01.jpg")no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 48%;
+  height: 300px;
+  margin-right: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.exploring> :nth-child(4)> :nth-child(1):hover{
+  opacity: 80%;
+}
+
+.exploring> :nth-child(4)> :nth-child(1) h3{
+  margin-top: 210px;
+  margin-left: 30px;
+  padding-top: 20px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.exploring> :nth-child(4)> :nth-child(1) p{
+  margin-top: 10px;
+  margin-left: 30px;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.exploring> :nth-child(4)> :nth-child(2){
+  background: url("https://www.lottehotelmagazine.com/resources/5774cd7e-f389-4791-95cd-5a125b3f0829_img_food_seattle_detail01.jpg")no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 48%;
+  height: 300px;
+  margin-right: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.exploring> :nth-child(4)> :nth-child(2):hover{
+  opacity: 80%;
+}
+
+.exploring> :nth-child(4)> :nth-child(2) h3{
+  margin-top: 210px;
+  margin-left: 30px;
+  padding-top: 20px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.exploring> :nth-child(4)> :nth-child(2) p{
+  margin-top: 10px;
+  margin-left: 30px;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.exploring> :nth-child(4)> :nth-child(3){
+  background: url("https://ak-d.tripcdn.com/images/0101y120008uqbbnz9B1F_C_800_600_R5.png_.webp?proc=autoorient")no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 390px;
+  margin-top: -60px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.exploring> :nth-child(4)> :nth-child(3):hover{
+  opacity: 80%;
+}
+
+
+.exploring> :nth-child(4)> :nth-child(3) h3{
+  margin-top: 270px;
+  margin-left: 30px;
+  padding-top: 30px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.exploring> :nth-child(4)> :nth-child(3) p{
+  margin-top: 20px;
+  margin-left: 30px;
+  color: white;
+}
