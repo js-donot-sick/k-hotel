@@ -194,7 +194,8 @@ body::-webkit-scrollbar {
     background-color: transparent;
 }
 
-/* 하단 검색 부분 */
+/* 하단 검색 */
+
 .k-search-div{ /* 전체 */
     display: flex;
     justify-content: center;
@@ -239,4 +240,22 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 8%;
     left: 45.5%;
+}
+
+
+/* 관리자 추가 */
+.k-btns{
+    margin-top: 10px;
+    margin-bottom: 50px;
+    text-align: right;
+}
+
+.k-btns>button{ /* 버튼들 */
+    margin-right: 10px;
+    background-color: rgba(88, 69, 46, 0.9);
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    width: 60px;
+    height: 30px;
 }
