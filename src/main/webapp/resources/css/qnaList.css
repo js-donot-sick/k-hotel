@@ -185,14 +185,6 @@ body::-webkit-scrollbar {
     padding-top: 30px;
 }
 
-.page-link{
-    color: black;
-}
-
-.page-link:hover{
-    color: black;
-    background-color: transparent;
-}
 
 /* 하단 검색 부분 */
 .k-search-div{ /* 전체 */
