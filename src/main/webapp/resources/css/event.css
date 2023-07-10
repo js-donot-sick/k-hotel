@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 
@@ -48,7 +48,7 @@
     border: 1px solid #eee;
 }
 
-.P-blank{
+.P-blank1{
     width: 100%;
     text-align: left;
     font-size: 24px;
@@ -60,11 +60,21 @@
     color: white;
 }
 
-.P-card{
-    display: flex;
+.P-blank2{
+    width: 100%;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.P-event_list{
+    width: 50%;
+    float:left
 }
 
 
+li{
+    list-style:none;
+}
 
 
 
