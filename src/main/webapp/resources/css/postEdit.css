@@ -49,7 +49,7 @@
     padding: 25px;
 }
 #C-postWrite-Writer{ /* 작성자 input태그 */
-    width: 215px;
+    width: 170px;
 }
 
 .C-postWritedate-title{ /* 작성일 글씨 */
@@ -59,7 +59,6 @@
 #C-postWrite-date{ /* 작성일 input태그  */
     width: 210px;
 }
-
 .C-input-table{ /* 게시글 작성 table */
     margin: auto;
 }
