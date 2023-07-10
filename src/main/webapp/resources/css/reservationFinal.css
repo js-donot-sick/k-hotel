@@ -1,14 +1,7 @@
 *{
     box-sizing: border-box;
-    font-family: 'Pretendard-Regular';
 }
 
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-} 
 
 /*-------------------------------------------------------------------------------*/
 .C-body{ /* 바디 전체를 감싸는 div */
@@ -34,6 +27,7 @@
     color:black;
     text-align: center;
     padding-top: 15px;
+    background-color: #7795b2;
 }
 
 .C-body-rsvInfo{ /* 예약자 정보 , 결제 정보 큰 틀*/
@@ -70,23 +64,6 @@ tr > td:nth-child(2){
     padding: 9px;
 }
 
-#C-payplan { /* 결제수단 option 태그 */
-    width: 180px;
-}
-
-#C-account { /* 입금계좌 option 태그 */
-    width: 180px;
-}
-
-
-.C-moneyInfo-table input{ /* 결제정보 테이블에 모든 input태그 사이즈 */
-    width: 180px;
-}
-
-.C-payInfo-table input{ /* 요금안내 테이블에 모든 input태그 사이즈  */
-    width: 180px;
-}
-
 .C-moneyInfo-table{ /* 예약자 정보부분 테이블 */
     margin-left: 30px;
 }
@@ -98,15 +75,6 @@ tr > td:nth-child(2){
     margin-left: 50px;
     height: 200px;
     padding-top: 40px;
-}
-
-#C-rsvAgree-text{ /* 이용약관동의 textarea */
-    width: 800px;
-    resize: none;
-}
-
-#C-rsvOrder{ /* 요청사항 textarea */
-    resize: none;
 }
 
 .C-rsv-bottom-btn{ /* 이전으로 + 예약완료 버튼 큰 틀 */

@@ -19,7 +19,59 @@
 
 <body>
     <!----------------------------------------헤더 --------------------------------------------->
-    <div>헤더</div>
+    <div class="P-container" style="position: relative;">
+        <div class="P-header">
+            <div class="P-header_left">
+                <div class="P-blank">
+                </div>
+                <div class="P-btn1">
+                    <a href="#">호텔찾기 <i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#">예약 <i class="fa-solid fa-calendar-days"></i></a>
+                </div>
+            </div>
+            <!-- 로고 클릭 시 메인페이지로 이동 -->
+            <div>
+                <a href="#" class="P-header_middle">
+                    <img src="/src/main/webapp/resources/images/logo_b_2.png" alt="">
+                </a>
+            </div>
+            <div class="modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Modal body text goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="P-header_rigtht">
+                <!-- 로그인 -->
+                <div class="P-btn2">
+                    <ul>
+                        <a href="#">로그인</a>
+                        <span> | </span>
+                        <a href="#">로그아웃</a>
+                        <span> | </span>
+                        <a href="#">마이페이지</a>
+                        <span> | </span>
+                        <a href="#">회원가입</a>
+                    </ul>
+                </div>
+                <div class="P-btn3">
+                    <a href="#">커뮤니티</a>
+                    <a href="#">이벤트</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <!----------------------------------------헤더 --------------------------------------------->
 
     <!----------------------------------------바디 --------------------------------------------->
@@ -37,22 +89,22 @@
                             <tr>
                                 <td></td>
                                 <td>이름</td>
-                                <td><input type="text" id="C-rsvName" name="C-rsvName" value="${}"></td>
+                                <td><input type="text" id="C-rsvName" name="C-rsvName" value="${}" disabled></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>이메일</td>
-                                <td><input type="text" id="C-rsvEmail" name="C-revEmail" value="${}"></td>
+                                <td><input type="text" id="C-rsvEmail" name="C-revEmail" value="${}" disabled></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>전화번호</td>
-                                <td><input type="text" if="C-rsvTel" name="C-rsvTel" value="${}"></td>
+                                <td><input type="text" if="C-rsvTel" name="C-rsvTel" value="${}" disabled></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>주소</td>
-                                <td><input type="text" if="C-rsvAddress" name="C-rsvAddress" value="${}"></td>
+                                <td><input type="text" if="C-rsvAddress" name="C-rsvAddress" value="${}" disabled></td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -78,7 +130,7 @@
                                     <td>
                                         <select name="C-payplan" id="C-payplan">
                                             <option value="none" selected>결제수단선택</option>
-                                            <option id="C-bank" value="C-bank">무통장입금</option>
+                                            <option id="C=bank" value="C-bank">무통장입금</option>
                                             <option value="none">선불/체크카드</option>
                                             <option value="none">신용카드</option>
                                         </select>
@@ -108,7 +160,7 @@
                                 </tr>
                                 <tr>
                                     <td>객실요금</td>
-                                    <td><input type="text" id="C-hotelPay" name="C-hotelPay" value="${}"></td>
+                                    <td><input type="text" id="C-hotelPay" name="C-hotelPay" value="${}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>쿠폰선택</td>
@@ -121,7 +173,7 @@
                                 </tr>
                                 <tr>
                                     <td>할인요금</td>
-                                    <td><input type="text" name="C-couponPay" id="C-couponPay" value="${}">
+                                    <td><input type="text" name="C-couponPay" id="C-couponPay" value="${}" disabled>
                                     </td>
                                 </tr>
                                 <tr>
@@ -129,7 +181,7 @@
                                     <td></td>
                                     <td></td>
                                     <td class="Iwantgohome">결제금액</td>
-                                    <td><input type="text" name="C-finalpay" id="C-finalpay" value="${}"></td>
+                                    <td><input type="text" name="C-finalpay" id="C-finalpay" value="${}" disabled></td>
                                 </tr>
                             </table>
                         </div>
@@ -140,7 +192,7 @@
                         <strong>이용약관 동의</strong>
                     </div>
                     <div>
-                        <textarea name="C-rsvAgree-text" id="C-rsvAgree-text" cols="90" rows="3">
+                        <textarea name="C-rsvOrder" id="C-rsvOrder" name="C-rsvOrder" cols="90" rows="3" disabled>
 K-호텔 객실예약과 관련하여 귀사가 아래와 같이 본인의 개인정보를 수집 및 이용하는데 동의합니다.
 
 <개인정보의 수집 · 이용에 관한 사항>
@@ -152,12 +204,12 @@ K-호텔 객실예약과 관련하여 귀사가 아래와 같이 본인의 개�
 ※ 위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가 없을 경우 다음 호텔 객실 및 서비스 결제 시, 다시 해당 결제 정보를 입력해야 함을 알려드립니다.</textarea>
                     </div>
                     <div>
-                        <label for="C-rsvAgreeYes">동의함</label>&nbsp;&nbsp;<input type="radio" name="C-rsvAgree" value="C-rsv-agree-yes" id="C-rsvAgreeYes"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label for="C-rsvAgreeNo">동의하지 않음</label>&nbsp;&nbsp;<input type="radio" name="C-rsvAgree" value="C-rsv-agree-yes" id="C-rsvAgreeNo" >
+                        <label for="C-revAgreeYes">동의함</label>&nbsp;&nbsp;<input type="radio" name="C-revAgree" value="C-rsv-agree-yes" id="C-revAgreeYes"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label for="C-revAgreeNo">동의하지 않음</label>&nbsp;&nbsp;<input type="radio" name="C-revAgree" value="C-rsv-agree-yes" id="C-revAgreeNo" >
                     </div>
                 </div>
                 <span class="C-rsv-bottom-btn">
-                    <a href=""><button type="button" id="C-rsvBeforeBtn">이전으로</button>
+                    <button type="button" id="C-rsvBeforeBtn">이전으로</button>
                     <button type="submit" id="C-rsvClearBtn">예약 완료</button>
                 </span>
             </div>
@@ -167,7 +219,74 @@ K-호텔 객실예약과 관련하여 귀사가 아래와 같이 본인의 개�
     <!----------------------------------------바디 --------------------------------------------->
 
     <!----------------------------------------풋터 --------------------------------------------->
-    <div>풋터</div>
+    <footer>
+        <div class="k-first-div">
+            <div class="k-f-container">
+                <div>
+                    <img src="../webapp/resources/images/logo_w_2.png" style="width: 180px;">
+                </div>
+                <div></div>
+                <div>
+                    <span>호텔소식</span>
+                    <span> | </span>
+                    <span>갤러리</span>
+                    <span> | </span>
+                    <span>고객문의</span>
+                </div>
+                <div></div>
+                <div id="k-sns">
+                    <div>
+                        <a href="#">
+                            <img
+                                src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-blog.png">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img
+                                src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-instagram.png">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img
+                                src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-youtube.png">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="#">
+                            <img
+                                src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-facebook.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="k-second-div">
+            <div>
+                <span>케이호텔 소개</span>
+                <span> | </span>
+                <span>사이트맵</span>
+                <span> | </span>
+                <span>개인정보처리방침</span>
+                <span> | </span>
+                <span>이메일무단수집금지</span>
+                <span> | </span>
+                <span>윤리경영(부정제보)</span>
+            </div>
+        </div>
+        <div class="k-third-div">
+            <div>
+                <div>케이호텔(주) 서울특별시 강남구 테헤란로 14길 6</div>
+                <div>TEL 1544-9970</div>
+                <div>Copyright © 2023 khotel.co.,Ltd. All rights reserved.</div>
+            </div>
+            <div></div>
+            <div>
+                <img src="resources/images/copyright.png">
+            </div>
+        </div>
+    </footer>
     <!----------------------------------------풋터 --------------------------------------------->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
