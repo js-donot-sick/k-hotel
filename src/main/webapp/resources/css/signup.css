@@ -1,7 +1,7 @@
 *{box-sizing: border-box;
 
-   /*  border: 1px solid black;
- */
+     border: 1px solid black;
+ 
 }
 
 
@@ -176,4 +176,37 @@
     display: flex;
     align-items: center;
 }
+
+#J-text1{
+
+    height: 40%;
+}
+
+#J-text2{
+    height: 30%;
+}
+
+.J2-5 > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#J-check1{ overflow: auto;}
+#J-check2{}
+#J-check3{}
+#J-check4{}
+
+.J2-5-1{ height: 5%;}
+
+.J2-5-2{ height: 40%;}
+
+.J2-5-3{ height: 10%;}
+
+.J2-5-4{ height: 5%;}
+
+.J2-5-5{  height: 30%;}
+
+.J2-5-6{ height: 10%;}
+
 
