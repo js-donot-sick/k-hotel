@@ -1,8 +1,9 @@
 const hotel_choice = document.getElementById("C-hotel-choice");
 const room_choice = document.getElementById("C-room-choice");
-
-
-
+const adult = document.getElementById("C-adult");
+const child = document.getElementById("C-children");
+const checkIn = document.getElementById("C-start");
+const checkOut = document.getElementById("C-end");
 
 
 /* 오늘 날짜로 기본 값 세팅  */
@@ -34,7 +35,7 @@ var j = 0; /* 어린이 버튼 카운트 변수 */
 
 /* 성인 +버튼 이벤트 발생 시 인원수 출력 */
 document.getElementById("C-Aplusbutton").addEventListener("click",function(){
-   const adult = document.getElementById("C-adult");
+   
    if( i < 6){
        i++
    }
@@ -43,7 +44,7 @@ document.getElementById("C-Aplusbutton").addEventListener("click",function(){
 
 /* 성인 -버튼 이벤트 발생 시 인원수 출력 */
 document.getElementById("C-Aminusbutton").addEventListener("click",function(){
-   const adult = document.getElementById("C-adult");
+
    if( i < 7 && i > 0){
        i--
    }
@@ -52,7 +53,7 @@ document.getElementById("C-Aminusbutton").addEventListener("click",function(){
 
 /* 어린이 +버튼 이벤트 발생 시 인원수 출력 */
 document.getElementById("C-Cplusbutton").addEventListener("click",function(){
-   const child = document.getElementById("C-children");
+   
    if( j < 6){
        j++
    }
@@ -61,11 +62,34 @@ document.getElementById("C-Cplusbutton").addEventListener("click",function(){
 
 /* 어린이 -버튼 이벤트 발생 시 인원수 출력 */
 document.getElementById("C-Cminusbutton").addEventListener("click",function(){
-   const child = document.getElementById("C-children");
    if( j < 7 && j > 0){
        j--
    }
    child.value = j;
+})
+
+document.getElementById("C-reservationBtn").addEventListener("click" ,function(){
+   
+
+   if(hotel_choice.value == "none"){
+      alert("호텔을 선택해주세요.");
+   }
+   
+   if(room_choice.value == "none"){
+      alert("객실을 선택해주세요.");
+   }
+   
+   if(checkIn.value == today){
+      alert("체크인 날짜를 선택해주세요.");
+   }
+   
+   if(checkOut.value == today){
+      alert("체크아웃 날짜를 선택해주세요.");
+   }
+   if(adult.value == 0 && child.value == 0){
+      alert("인원을 선택해주세요.");
+   }
+   
 })
 
 /*------------------------------------객실 선택 시작----------------------------------------- */ 

@@ -1,14 +1,15 @@
 *{
     box-sizing: border-box;
 }
-div{
-    border: 1px solid black;
-}
 
 .C-postWrite-container{ /* 제일 큰 div */
 
     width: 100%;
     height: auto;
+}
+
+.P-container{
+    position: relative;
 }
 /*--------------------------------헤더-----------------------------------*/
 .C-header{
@@ -30,6 +31,7 @@ div{
     margin: auto;
     display: flex;
     flex-direction: column;
+    border: 1px solid #ddd;
 }
 .C-postWrite-title{ /* 게시글 작성 글씨 */
     font-size: 30px;
@@ -44,24 +46,26 @@ div{
 .C-postWritedate-title{ /* 작성일 글씨 */
     padding-left: 35px;
 }
-#C-postWrite-date{
-    width: 120px;
+
+#C-postWrite-date{ /* 작성일 input태그  */
+    width: 210px;
 }
 .C-input-table{ /* 게시글 작성 table */
     margin: auto;
 }
 
-#container {
-    margin-top: 20px;
-}
-
-.image-container { /* 추가된 사진 부분 */
+.image-container { /* 추가된 사진 컨테이너 */
     display: flex;
     margin-right: 10px;
 }
 
-tr > td{ 
+.C-postWrite-img{ /* 추가 사진 크기 */
+    width: 50%;
+}
+
+.C-input-table td{ /* 테이블 안의 요소들 */
     padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
 #C-postWritearea{ /* 게시글 내용 부분 */
@@ -108,6 +112,7 @@ tr > td{
     color: white;
     text-decoration: none;
 }
+
 
 /*--------------------------------바디-----------------------------------*/
 
