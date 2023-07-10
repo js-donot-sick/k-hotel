@@ -51,6 +51,11 @@ div{border: 1px solid black;}
     line-height: 200%;
 }
 
+.k-faq-slide:hover{ 
+    cursor: pointer;
+}
+
+
 .k-faq-slide>span{ /* 제목 글씨 부분 */
     margin-left: 10px;
 }
@@ -74,4 +79,79 @@ div{border: 1px solid black;}
     height: 200px;
     background-color: aquamarine; 
     
+}
+
+.k-qna>div:nth-child(3){ /* 질문게시판 글씨 */
+    margin-top: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.k-qna>div:nth-child(4){
+    background-color: aquamarine;
+    margin-bottom: 20px;
+}
+
+#q-btn{ /* 게시글 작성 버튼 */
+    display: block;
+    margin-left: auto;
+    width: 120px;
+    height: 40px;
+    border: 0;
+    background-color: rgba(88, 69, 46, 0.9);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.k-q-list{ /* 목록 하나 하나  */
+    display: flex;
+    height: 50px;
+}
+
+.k-q-list>div{ /* 목록 글씨 색깔 */
+    color: black;
+}
+
+.k-qna>div:nth-child(5)>a{ /* 목록 a태그 밑줄 */
+    text-decoration: none;
+}
+
+.k-q-list>div:nth-child(1){ /* 목록 번호 */
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.k-q-list>div:nth-child(2){ /* 게시글 제목 */
+    width: 400px;
+    display: flex;
+    /* padding-left: 20px; */ /* 패딩 줄까말까 */
+    align-items: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.k-q-list>div:nth-child(3){ /* 빈칸 */
+    width: 50px;
+}
+
+.k-q-list>div:nth-child(4){ /* 게시글 작성자 */
+    width: 100px;
+    display: flex;
+    align-items: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.k-q-list>div:nth-child(5){
+    display: flex;
+    padding-left: 20px;
+    justify-content: center;
+    align-items: center;
 }
