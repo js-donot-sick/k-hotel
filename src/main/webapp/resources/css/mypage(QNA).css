@@ -1,12 +1,8 @@
-* {
-    box-sizing: border-box;
-    border: 1px solid black;
-}
+* { box-sizing: border-box;}
 
 
 .P-maindisplay {
     display: flex;
-    justify-content: space-around;
     width: 1200px;
     margin: auto;
 }
@@ -17,7 +13,7 @@
     padding: 0px 10px 10px 10px;
     margin: 0px 10px 10px 10px;
     white-space: nowrap;
-    width: 250px;
+    width: 150px;
     height: 280px;
     display: flex;
     flex-direction: column;
@@ -29,23 +25,24 @@
 .P-sidelist>li:nth-of-type(1) {
     font-size: 24px;
     padding-bottom: 10px;
+    border-top: 1px solid gray;
 
 }
 
 .P-sidelist a {
     text-decoration: none;
-    color: white;
+    color:white;
 }
 
 /* 메인화면 */
 .P-main {
     white-space: nowrap;
-    width: 950px;
+    width: 800px;
+    margin-left: 80px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    border: 1px solid #eee;
+    border:1px solid #eee;
 }
 
 .P-blank1 {
@@ -55,7 +52,7 @@
     font-weight: bold;
     text-align: center;
     padding: 50px;
-    margin-bottom: 40px;
+
     background-color: rgba(178, 158, 135, 0.9);
     color: white;
 }
@@ -63,4 +60,74 @@
 .dropdown{
     display: flex;
     justify-content: right;
+    padding: 30px;
+}
+.P-qna-1{
+    width: 100%;
+    padding: 15px;
+    justify-content: center;
+}
+
+.P-qna{
+    display: flex;
+    height: 50px;
+    border-bottom: 1px solid gray;
+   
+}
+.P-qna>div:nth-child(1){
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.P-qna>div:nth-child(2){
+    width: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 빈칸 */
+.P-qna>div:nth-child(3){
+    width: 50px;
+}
+
+/* 시간 */
+.P-qna>div:nth-child(4){
+    width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.P-qna-btn {
+    height: 70%;
+    margin: 10px 0;
+    border: 0;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+
+
+.k-pg{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.page-link{
+    color: black;
+}
+
+.page-link:hover{
+    color: black;
+    background-color: transparent;
 }
