@@ -80,7 +80,7 @@ document.getElementById("C-reservationBtn").addEventListener("click" ,function()
    }
    
    if(checkIn.value == today){
-      alert("체크인 날짜를 선택해주세요.");
+      alert("당일 예약은 전화 문의로만 가능합니다.");
    }
    
    if(checkOut.value == today){
