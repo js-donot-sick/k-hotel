@@ -34,7 +34,7 @@
 }
 
 .L-detail > div:nth-of-type(1){
-    width: 150px;
+    width: 100px;
     font-weight: bold;
     text-align: center;
 }
@@ -103,4 +103,100 @@ textarea[name="L-textarea-text"]{
 .L-btn> div> button{
     width: 100px;
     height: 30px;
+    border-radius: 5px;
+    background-color: rgb(173,158,135);
+    color: white;
+    border: 0;
 }
+
+.L-btn> div> button:hover{
+    background-color: #4F3A28;
+}
+
+.L-btn > div:last-child{
+    margin-right: 100px;
+}
+
+
+/****** 댓글 ********/
+
+/* 댓글 제목 */
+.L-reply-title{
+    font-size: 20px;
+    font-weight: bold;
+    border-top: 2px solid #ddd;
+    padding-top: 25px;
+    margin-top: 30px;
+}
+
+/* 댓글 */
+.L-reply{
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px 0;
+    justify-content: center;
+}
+
+.L-reply > *{
+    border: 1px solid black;
+}
+
+/* 댓글 내용 */
+.L-main-reply{
+    width: 800px;
+}
+
+
+
+.L-person-reply{
+    width: 100px;
+}
+
+.L-time-reply{
+    width: 100px;
+}
+
+.L-reply > a{
+    width: 50px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+
+/* 댓글 입력 */
+
+.L-inputReply{
+    text-align: center;
+}
+
+.L-in-reply{
+    width: 100px;
+}
+
+.L-input-reply{
+    width: 600px;
+}
+
+#L-reply-btn{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(173,158,135);
+    color: white;
+    border: 0;
+}
+
+#L-reply-btn:hover{
+    background-color: #4F3A28;
+}
+
+
+
+
+
+
+
+
+
