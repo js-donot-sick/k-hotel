@@ -1,0 +1,166 @@
+*{
+    box-sizing: border-box;
+
+    border: 1px solid black;
+
+}
+
+.accordion-header > button{
+
+    background-color:rgba(131, 105, 75, 0.72);
+    color:white;
+
+}
+
+.J-header{
+    height: 120px;
+}
+
+.J-BODY{
+
+    margin: auto;
+    width: 1200px;
+    height: 1000px;
+    display: flex;
+}
+
+.J-BODY2{
+    width: 25%;
+}
+
+.J-BODY3{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.J-J{
+
+    width: 85%;
+    height: 90%;
+}
+
+
+.J-J1{
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.J-J2{
+    height: 80%;
+}
+
+.J-J3{
+    height: 10%;
+}
+
+footer{
+    /* border: 1px solid black; */
+    width: 100%;
+}
+
+.k-first-div{
+    background-color: rgba(178, 158, 135, 0.9);
+}
+
+.k-first-div>div{
+    width: 1200px;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    color: white;
+}
+.k-second-div{
+    background-color: #ebe7e3;
+}
+.k-second-div>div{
+    width: 1200px;
+    margin: auto;
+    height: 60px;
+    display: flex;
+}
+.k-third-div{
+    width: 1200px;
+    margin: auto;
+    height: 90px;
+    display: flex;
+}
+
+.k-f-container>div:nth-child(1)>img{
+    margin-top: 8px;
+}
+
+.k-f-container>div:nth-child(2){
+    width: 220px;
+    margin-top: 40px;
+    margin-left: 50px;
+}
+
+.k-f-container>div:nth-child(3){
+    width: 520px;
+}
+
+
+.k-f-container span:nth-child(2n-1):hover{
+    cursor: pointer;
+    font-weight: bold;
+    color: #ebe7e3;
+}
+
+#k-sns{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+    width: 200px;
+    margin-left: auto;
+}
+
+#k-sns img{
+    width: 40px;
+}
+#k-sns img:hover{
+    transform: scale(1.2);
+    transition-duration: 0.2s;
+}
+
+#k-sns>div:nth-child(2){
+    margin-left: 15px;
+}
+
+.k-second-div span{
+    font-size: small;
+}
+
+.k-second-div span:nth-child(2n-1):hover{
+    color: rgba(90, 74, 56, 0.9);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+.k-second-div span{
+    padding-left: 5px;
+}
+
+.k-second-div>div{
+    line-height: 5px;
+    line-height: 55px;
+}
+
+.k-third-div{
+    padding-top: 14px;
+}
+
+.k-third-div>div{
+    font-size: small;    
+}
+
+.k-third-div img{
+    width: 200px;
+}
+.k-third-div>:nth-child(2){ /* 빈칸인데 우선 삭제했으.. */
+    width: 205px;
+    margin-top: 10px;
+    margin-left: auto;
+}

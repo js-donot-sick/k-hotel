@@ -1,11 +1,11 @@
 *{box-sizing: border-box;
 
-     /* border: 1px solid black; */  
+      /* border: 1px solid black;  */
  
 }
 
 input{
-    /* border: none; */
+     border: 0.5px solid grey;
      outline: none; 
 }
 
@@ -26,7 +26,12 @@ input{
 }
 
 button{
-    border: 0.5px solid black;
+    border: none;
+}
+
+button:hover{
+    border: none;
+    border: 1px solid black;
 }
 
 .J2-1{
@@ -59,7 +64,7 @@ button{
     border-radius: 5px;
     width: 361px;
     height: 67%;
-    margin-left: 174px;
+    margin-left: 172px;
 }
 
 .J2-4{ 
@@ -98,20 +103,54 @@ button{
     
 }
 
-#J2-4-2 > input:nth-child(1){
+#J2-4-3 {
+    height: 50%;
+    display: flex;
+
+    align-items: center;
+}
+
+
+#J2-4-4 {
+    height: 50%;
+    display: flex;
+
+    align-items: center;
+}
+
+
+#J2-4-3 > button{
+
+    margin-left: 5px;
+    width: 45px;
+    height: 32px;
+    border-radius: 5px;
+    background-color:rgb(173,158,135);
+    border: none;
+}
+
+#J2-4-3 > button:hover{
+    background-color:#4F3A28;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+
+
+#J2-4-3 > input:nth-child(1){
     
     margin-left: 26px;
     border-radius: 5px;
-    width: 38%;
-    height: 35%;
+    width: 43%;
+    height: 75%;
 }
 
-#J2-4-2 > input:nth-child(2){
+#J2-4-4 > input:nth-child(1){
     
     margin-left: 26px;
     border-radius: 5px;
     width: 50%;
-    height: 35%;
+    height: 75%;
 }
 
 #J2-4-1 > div:nth-child(1){width: 45%; }
@@ -235,7 +274,16 @@ button{
     margin: 20px;
 }
 
+.J2-5-1 > pre{ 
+    margin-top: 70px;
+}
+
+.J2-5-4 > pre{ 
+    margin-top: 42px;
+}
+
 .J2-5-0{ height: 5%;}
+
 .J2-5-1{ height: 5%;}
 
 .J2-5-2{ height: 40%;}
@@ -292,8 +340,12 @@ textarea{ color: gray;}
 
 .J2-6 > button:hover{
     background-color:#4F3A28;
+    cursor: pointer;
 }
 
+.J-H7-1 > option:nth-child(1){
+    color: gray;
+}
 
 
 
