@@ -23,6 +23,10 @@ body::-webkit-scrollbar {
     display: flex;
 }
 
+.k-slide{
+    width: 25%;
+}
+
 .k-sidebar { /* 사이드바 */
     list-style-type: none;
     margin: 0;
@@ -50,8 +54,8 @@ body::-webkit-scrollbar {
 }
 
 .k-qna{ /* faq+질문게시판 전체 div */
-    margin-left: 80px;
-    width: 800px;
+    margin: auto;
+    width: 75%;
 }
 
 .k-qna>div:nth-of-type(1){  /* faq 글씨 */
@@ -94,9 +98,8 @@ body::-webkit-scrollbar {
 
 .k-faq-content{ /* faq 내용 */
     display: none;
-    width: 800px;
+    width: 890px;
     height: 160px;
-    
 }
 
 .k-faq-content>div{
@@ -229,7 +232,7 @@ body::-webkit-scrollbar {
     position: relative;
 }
 .k-search-div>div:nth-child(3)>input{
-    padding-left: 40px;
+    padding-left: 30px;
 }
 
 .k-search-div>div:nth-child(4)>img{
@@ -239,7 +242,7 @@ body::-webkit-scrollbar {
 .k-search-div>div:nth-child(4){
     position: absolute;
     top: 8%;
-    left: 45.5%;
+    left: 46.5%;
 }
 
 
