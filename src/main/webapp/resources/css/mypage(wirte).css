@@ -1,34 +1,6 @@
 * { box-sizing: border-box; border: 1px solid black;}
 
 
-
-/* 사이드바 */
-.P-sidelist {
-    list-style-type: none;
-    padding: 0px 10px 10px 10px;
-    margin: 0px 10px 10px 10px;
-    white-space: nowrap;
-    width: 150px;
-
-    height: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: rgba(178, 158, 135, 0.9);
-    color: white;
-}
-
-.P-sidelist>li:nth-of-type(1) {
-    font-size: 24px;
-    padding-bottom: 10px;
-    border-top: 1px solid gray;
-
-}
-
-.P-sidelist a {
-    text-decoration: none;
-    color:white;
-}
 .P-top{
     display: flex;
     margin: auto;
@@ -41,7 +13,7 @@
     white-space: nowrap;
     text-align: center;
     border:1px solid #eee;
-    
+    width: 75%;
 }
 
 /* 메인화면 */
@@ -52,6 +24,7 @@
     font-size: 24px;
     font-weight: bold;
     text-align: center;
+    padding: 50px;
 
     background-color: rgba(178, 158, 135, 0.9);
     color: white;

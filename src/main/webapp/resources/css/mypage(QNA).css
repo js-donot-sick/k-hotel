@@ -1,43 +1,22 @@
-* { box-sizing: border-box; border: 1px solid black;}
+* { box-sizing: border-box; }
 
 
-/* 사이드바 */
-.P-sidelist {
-    list-style-type: none;
-    padding: 0px 10px 10px 10px;
-    margin: 0px 10px 10px 10px;
-    white-space: nowrap;
-    width: 150px;
-    height: 280px;
+.P-top{
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: rgba(178, 158, 135, 0.9);
-    color: white;
+    margin: auto;
+    width: 1200px;
 }
-
-.P-sidelist>li:nth-of-type(1) {
-    font-size: 24px;
-    padding-bottom: 10px;
-    border-top: 1px solid gray;
-
-}
-
-.P-sidelist a {
-    text-decoration: none;
-    color:white;
+.P-maindisplay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-align: center;
+    border:1px solid #eee;
+    
 }
 
 /* 메인화면 */
-.P-main {
-    white-space: nowrap;
-    width: 800px;
-    margin-left: 150px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    border:1px solid #eee;
-}
 
 .P-blank1 {
     width: 100%;
