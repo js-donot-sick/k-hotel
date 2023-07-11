@@ -1,6 +1,7 @@
 * { box-sizing: border-box; border: 1px solid black;}
 
 
+
 /* 사이드바 */
 .P-sidelist {
     list-style-type: none;
@@ -8,6 +9,7 @@
     margin: 0px 10px 10px 10px;
     white-space: nowrap;
     width: 150px;
+
     height: 280px;
     display: flex;
     flex-direction: column;
@@ -27,17 +29,22 @@
     text-decoration: none;
     color:white;
 }
+.P-top{
+    display: flex;
+    margin: auto;
+    width: 1200px;
+}
+.P-maindisplay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-align: center;
+    border:1px solid #eee;
+    
+}
 
 /* 메인화면 */
-.P-main {
-    white-space: nowrap;
-    width: 800px;
-    margin-left: 150px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    border:1px solid #eee;
-}
 
 .P-blank1 {
     width: 100%;
@@ -45,7 +52,6 @@
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    padding: 50px;
 
     background-color: rgba(178, 158, 135, 0.9);
     color: white;
