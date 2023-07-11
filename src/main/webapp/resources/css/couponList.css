@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+}
+
+.C-body-container{ /* 바디 전체를 감싸는 div */
+    width: 100%;
+    height: 800px;
+}
+
+.C-body-coupon{ /* 사이드바 + 쿠폰함을 감싸는 div */
+    width: 1200px;
+    display: flex;
+    height: 800px;
+    margin: auto;
+    border: 5px solid rgba(178, 158, 135, 0.9);
+}
+
+.C-body-sidebar{ /* 사이드바 */
+    width: 25%;
+    height: 100%;
+    border-right: 5px solid #ddd;
+}
+.C-body-couponlist{ /* 쿠폰 리스트 */
+    width: 75%;
+    height: 100%;
+}
+.C-couponlist-title{ /* 쿠폰함 title */
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    height: 100px;
+    padding-top: 25px;
+    border-bottom: 5px solid #ddd;
+}
+
+.C-couponlist-inner{ /* 이미지 + 텍스트 큰 틀 */
+    width: 100%;
+    display: flex;
+    height: 200px;
+    border: 1px solid #ddd;
+}
+
+.C-inner-img{ /* 이미지 틀 */
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.C-inner-text{ /* 텍스트 틀 */
+    width: 60%;
+   
+}
+
+.C-inner-text li{ /* 쿠폰 설명 text */
+    font-size: 16px;
+    padding: 10px;
+}
+
+.C-coupon-img{ /* 이미지 크기 */
+    width: 60%;
+}
+
+.k-pg{ /* 페이지네이션 */
+    margin: auto;
+}
+
+.C-pagenation{ /* 페이지네이션 전체 div */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+

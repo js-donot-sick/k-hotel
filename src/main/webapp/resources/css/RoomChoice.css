@@ -344,6 +344,11 @@ input[name="C-children"]{ /* 어린이 */
     height: 600px;
 }
 
+.accordion-item button{
+    background-color:rgba(131, 105, 75, 0.72); 
+    color:white;
+}
+
 
 /*----------------------------------예약 부분 끝---------------------------------*/
 

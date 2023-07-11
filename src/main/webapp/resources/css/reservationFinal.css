@@ -24,10 +24,10 @@
     height: 80px;
     font-size: 30px;
     font-weight: bold;
-    color:black;
+    color: white;
     text-align: center;
     padding-top: 15px;
-    background-color: #7795b2;
+    background-color: rgba(178, 158, 135, 0.9);
 }
 
 .C-body-rsvInfo{ /* 예약자 정보 , 결제 정보 큰 틀*/

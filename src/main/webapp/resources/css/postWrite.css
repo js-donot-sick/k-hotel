@@ -31,7 +31,7 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    border: 1px solid #ddd;
+    border: 5px solid #ddd;
 }
 .C-postWrite-title{ /* 게시글 작성 글씨 */
     font-size: 30px;
@@ -65,7 +65,6 @@
 
 .C-input-table td{ /* 테이블 안의 요소들 */
     padding: 10px;
-    border-bottom: 1px solid #ddd;
 }
 
 #C-postWritearea{ /* 게시글 내용 부분 */
@@ -90,16 +89,16 @@
     padding: 20px;
 }
 #C-postWritebtn-cancel{ /* 작성 취소 버튼 */
-    background-color: brown;
+    background-color: rgb(173,158,135);
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     height: 30px;
 }
 
 #C-postWritebtn-clear{ /* 작성 버튼 */
-    background-color: brown;
+    background-color: rgb(173,158,135);
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     height: 30px;
 }
 
@@ -108,12 +107,18 @@
     text-decoration: none;
 }
 
-#C-post-clear{ /* 게시글 작성 a 태그 */
+#C-postWritebtn-clear{ /* 게시글 작성 버튼 */
     color: white;
     text-decoration: none;
 }
 
+#C-postWritebtn-cancel:hover{
+    background-color: #4F3A28;
+}
 
+#C-postWritebtn-clear:hover{
+    background-color: #4F3A28;
+}
 /*--------------------------------바디-----------------------------------*/
 
 /*--------------------------------풋터-----------------------------------*/
