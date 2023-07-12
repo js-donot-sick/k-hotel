@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 예약 관리</title>
+    <link rel="stylesheet" href="resources/css/AdminHeader.css"><!-- 관리자 헤더 -->
+    <link rel="stylesheet" href="resources/css/AdminReservation.css">
+</head>
+<body>
+    <header>
+        <div class="K-header">
+            <div>관리자 페이지 / ${}</div>
+            <div>
+                <a href="#">로그아웃</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="C-adminrsv-container">
+        <div class="C-adminrsv-body">
+            <div class="C-adminrsv-sidebar">사이드바</div>
+            <div class="C-adminrsv-main">
+                <form action="">
+                    <div class="C-adminreservation">
+                        <div class="C-adminreservation-title1">예약관리</div>
+                        <div>
+                            <div class="C-adminreservation-title2">
+                                <input type="text" class="C-adminreservation-search" placeholder="예약객실확인">
+                                <button type="button" class="C-adminreservation-btn">검색</button>
+                            </div>
+                            <div>
+                                <select name="C-adminreservation-menu" id="C-adminreservation-menu" onchange="location.href=this.value">
+                                    <option value="AdminReservation.html">현재예약내역</option>
+                                    <option value="AdminReservationbefore.html" selected>이전예약내역</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="C-adminrsvlist">
+                            <table>
+                                <tr>
+                                    <td>예약번호</td>
+                                    <td>호텔지점</td>
+                                    <td>방이름</td>
+                                    <td>예약자</td>
+                                    <td>예약날짜</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>K-호텔 강남</td>
+                                    <td>스위트룸</td>
+                                    <td>이유성</td>
+                                    <td>2023-06-09</td>
+                                    <td>
+                                        <button>예약취소</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>K-호텔 역삼</td>
+                                    <td>스위트룸</td>
+                                    <td>박진아</td>
+                                    <td>2023-05-14</td>
+                                    <td>
+                                        <button>예약취소</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>K-호텔 압구정</td>
+                                    <td>스위트룸</td>
+                                    <td>한준수</td>
+                                    <td>2022-06-29</td>
+                                    <td>
+                                        <button>예약취소</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>K-호텔 압구정</td>
+                                    <td>디럭스룸</td>
+                                    <td>최용혁</td>
+                                    <td>2022-01-23</td>
+                                    <td>
+                                        <button>예약취소</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>K-호텔 강남</td>
+                                    <td>스위트룸</td>
+                                    <td>권호진</td>
+                                    <td>2021-03-09</td>
+                                    <td>
+                                        <button>예약취소</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>K-호텔 강남</td>
+                                    <td>디럭스룸</td>
+                                    <td>정호진</td>
+                                    <td>2020-12-24</td>
+                                    <td>
+                                        <button>예약취소</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <button>예약취소</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <button>예약취소</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <button>예약취소</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <button>예약취소</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <button>예약취소</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <div class="C-pagenation">
+                                <nav aria-label="Page navigation example" class="k-pg">
+                                    <ul class="pagination">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</body>
+</html>

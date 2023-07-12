@@ -1,7 +1,14 @@
 *{
     box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
 }
 
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
 .C-body-container{ /* 바디 전체를 감싸는 div */
     width: 100%;
     height: 800px;
@@ -18,7 +25,12 @@
 .C-body-sidebar{ /* 사이드바 */
     width: 25%;
     height: 100%;
-    border-right: 5px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.C-couponlist-div{
+    width: 820px;
+    margin: auto;
 }
 .C-body-couponlist{ /* 쿠폰 리스트 */
     width: 75%;
@@ -30,14 +42,14 @@
     text-align: center;
     height: 100px;
     padding-top: 25px;
-    border-bottom: 5px solid #ddd;
+    background-color: rgba(178, 158, 135, 0.9);
 }
 
 .C-couponlist-inner{ /* 이미지 + 텍스트 큰 틀 */
-    width: 100%;
+    width: 820px;
     display: flex;
     height: 200px;
-    border: 1px solid #ddd;
+    border: 1px solid  rgba(178, 158, 135, 0.9);
 }
 
 .C-inner-img{ /* 이미지 틀 */
@@ -49,7 +61,6 @@
 
 .C-inner-text{ /* 텍스트 틀 */
     width: 60%;
-   
 }
 
 .C-inner-text li{ /* 쿠폰 설명 text */

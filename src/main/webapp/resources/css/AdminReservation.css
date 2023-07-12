@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Pretendard-Regular';
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
+
+.C-adminrsv-container{ /* 바디 큰 틀 */
+    width: 100%;
+    height: auto;
+}
+
+.C-adminrsv-body{ /* 사이드바 + 메인 */
+    width: 1200px;
+    height: 820px;
+    margin: auto;
+    display: flex;
+    padding-top: 50px;
+}
+
+.C-adminrsv-sidebar{ /* 사이드바 큰 틀 */
+    width: 25%;
+}
+
+.C-adminrsv-main{ /* 메인 큰틀 */
+    width: 75%;
+}
+
+.C-adminreservation{ /* 예약확인 화면 */
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(178, 158, 135, 0.9);;
+}
+
+
+.C-adminreservation-title1{ /* 예약관리 글씨 부분 */
+    width: 820px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    
+    background-color: rgba(178, 158, 135, 0.9);
+    color: white;
+    padding: 50px;
+}
+
+.C-adminreservation-title2{/* 검색 */
+    width: 100%;
+}
+
+.C-adminreservation > div:nth-child(2){ /* 타이틀2 부분 */
+    width: 820px;
+    margin: auto;
+    display: flex;
+}
+
+.C-adminreservation-search{ /* 예약객실확인 input */
+    height: 30px;
+}
+
+.C-adminreservation-btn{ /* 예약객실확인 버튼 */
+    width: 50px;
+    height: 30px;
+}
+
+#C-adminreservation-menu{ /*select */
+    height: 30px;
+}
+
+.C-adminrsvlist{/* 예약내역 list */
+    display: flex;
+    width: 820px;
+    margin: auto;
+}
+
+.C-adminrsvlist td{/* 예약 내역이 나오는 부분 */
+   border: 1px solid rgba(178, 158, 135, 0.9);
+   width: 150px;
+   text-align: center;
+}   
+
+td > button{ /* 리스트 안에 있는 예약취소 버튼 */
+    background-color: rgb(173,158,135);
+    border: none;
+    color:white;
+    height: 30px;
+}
+
+td > button:hover{/* 리스트 안에 있는 예약취소 버튼 */
+    background-color: #4F3A28;
+}
+
+.C-pagenation{ /* 페이지네이션 전체 div */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
