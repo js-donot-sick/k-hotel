@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 
         $(".C-cancelbtn").click(function () {
-            $(".C-cancelbtn").parent().parent().hide();
+            $(".C-cancelbtn").parent().siblings("li").hide();
         });
     
 });

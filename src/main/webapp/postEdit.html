@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게시글 수정</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootsdivap@5.2.3/dist/css/bootsdivap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/7bc7245179.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../webapp/resources/css/header.css"> 
     <link rel="stylesheet" href="../webapp/resources/css/postWrite.css">
@@ -18,49 +18,38 @@
    <div>헤더</div>
 
         <div class="C-body">
-            <form action="#" method="get" name="C-postWrite-main">
+            <form action="#" method="get" name="C-postWrite-main" onsubmit="return inputcheck()">
                 <div class="C-postWrite-body">
                     <div class="C-postWrite-title">게시글 수정</div>
-                    <fieldset>
-                        <table class="C-input-table">
-                            <tr>
-                                <td>작성자</td>
-                                <td>
-                                    <input type="text" name="C-postWrite-Writer" id="C-postWrite-Writer"
-                                        placeholder="작성자:디폴트값">
-                                </td>
-                                <td class="C-postWritedate-title">작성일</td>
-                                <td>
-                                    <input type="text" name="C-postWrite-date" id="C-postWrite-date"
-                                        placeholder="작성일:오늘날짜로 디폴트">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>제목</td>
-                                <td colspan="3"><input type="text" name="C-postWrite-title" id="C-postWrite-title"></td>
-                            </tr>
-                            <tr>
-                                <td>사진</td>
-                                <td>
-                                    <button type="button" id="C-addPicture">사진추가</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td class="C-newPicture">
-                                    <span id="C-picture"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>내용</td>
-                                <td colspan="3">
-                                    <textarea name="C-postWritearea" id="C-postWritearea" cols="60" rows="10"
-                                        placeholder="내용을 입력해주세요"></textarea>
-                                </td>
-                            </tr>
+                
+                        <div class="C-input-table">
+                            <div class="L-title L-detail">
+                                <div>제목</div>
+                                <div><input type="text" name="L-input-title" id="C-postWrite-title" value="" placeholder="제목"></div>
+                            </div>
+                
+                            <div class="L-person L-detail">
+                                <div>작성자</div>
+                                <div><input type="text" name="L-input-person" value="" placeholder="작성자"></div>
+                                <div></div>
+                                <div>작성일</div>
+                                <div><input type="text" name="L-date" value="" placeholder="작성일"></div>
+                            </div>
+                
+                            <div class="L-picture L-detail">
+                                <div>사진
+                                    <div><button type="button" id="C-plus-picture">사진추가</button></div>
+                                </div>
+                                <div id="C-picture"></div>
+                            </div>
+                
+                            <div class="L-text L-detail">
+                                <div>내용</div>
+                                <div><textarea name="L-textarea-text" id="C-postWritearea"></textarea></div>
+                            </div>
 
-                        </table>
-                    </fieldset>
+                        </div>
+                  
                     <div class="C-btn-container">
                         <div class="C-btn-cancel">
                             <button type="button" id="C-postWritebtn-cancel">
@@ -80,7 +69,7 @@
     <div>풋터</div>
 
     <script src="../webapp/resources/js/postWrite.js"></script> <!-- 바디js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootsdivap@5.2.3/dist/js/bootsdivap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="../webapp/resources/js/header.js"></script> <!-- 헤더 js -->
 </body>
 

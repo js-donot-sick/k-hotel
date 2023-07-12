@@ -1,5 +1,7 @@
-
-var addPicture = document.getElementById("C-addPicture");
+const postbtn = document.getElementById("C-postWritebtn-clear");
+const posttext = document.getElementById("C-postWritearea");
+const posttitle = document.getElementById("C-postWrite-title");
+var addPicture = document.getElementById("C-plus-picture");
 var picture = document.getElementById("C-picture");
 var imageCount = 1;
 
@@ -12,12 +14,9 @@ addPicture.addEventListener("click", function() {
     fileInput.addEventListener("change", function(e) {
         var selectedFile = e.target.files[0];
         if (selectedFile) {
-            var newImageContainer = document.createElement("span");
-            newImageContainer.className = "image-container";
-            newImageContainer.style.display = "flex";
-
-
-
+            var newImageContainer = document.createElement("div");
+            newImageContainer.className = "C-plus-img";
+            newImageContainer.style.margin = "10px";
             var newImage = document.createElement("img");
             newImage.className = "C-postWrite-img";
             newImage.src = URL.createObjectURL(selectedFile);
@@ -33,3 +32,20 @@ addPicture.addEventListener("click", function() {
 
     fileInput.click();
 });
+
+function inputcheck() {
+
+
+    if (posttitle.value.trim().length == 0) {
+        alert("제목을 입력해주세요");
+        return false;
+    }
+
+    if (posttext.value.trim().length == 0) {
+        alert("내용을 입력해주세요");
+        return false;
+    }
+
+
+    return true;
+}
