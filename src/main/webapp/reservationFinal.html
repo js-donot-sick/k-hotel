@@ -37,22 +37,22 @@
                             <tr>
                                 <td></td>
                                 <td>이름</td>
-                                <td><input type="text" id="C-rsvName" name="C-rsvName" value="" ></td>
+                                <td><input type="text" id="C-rsvName" name="C-rsvName" autocomplete="off"></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>이메일</td>
-                                <td><input type="text" id="C-rsvEmail" name="C-revEmail" value="" ></td>
+                                <td><input type="text" id="C-rsvEmail" name="C-revEmail" autocomplete="off"></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>전화번호</td>
-                                <td><input type="text" if="C-rsvTel" name="C-rsvTel" value="" ></td>
+                                <td><input type="text" id="C-rsvTel" name="C-rsvTel" autocomplete="off"></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>주소</td>
-                                <td><input type="text" if="C-rsvAddress" name="C-rsvAddress" value="" ></td>
+                                <td><input type="text" id="C-rsvAddress" name="C-rsvAddress" autocomplete="off"></td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -62,7 +62,7 @@
                                 <td></td>
                                 <td colspan="2">
                                     <textarea name="C-rsvOrder" id="C-rsvOrder" name="C-rsvOrder" cols="45" rows="3"
-                                        placeholder="요청 사항을 입력해주세요."></textarea>
+                                        placeholder="요청 사항을 입력해주세요." autocomplete="off"></textarea>
                                 </td>
                             </tr>
                         </table>
@@ -84,7 +84,7 @@
                                         </select>
                                     </td>
                                 </tr>
-                                <tr>
+                                <tr id="C-display-change">
                                     <td>입금계좌</td>
                                     <td>
                                         <select name="C-account" id="C-account">
@@ -96,8 +96,9 @@
                                 </tr>
                                 <tr>
                                     <td>입금자명</td>
-                                    <td><input type="text" id="C-accountName" name="C-accountName" value="K-호텔"
-                                            ></td>
+                                    <td>
+                                        <input type="text" id="C-accountName" name="C-accountName" value="K-호텔" autocomplete="off" disabled>
+                                    </td>
                                 </tr>
                             </table>
                         </div>
@@ -108,20 +109,20 @@
                                 </tr>
                                 <tr>
                                     <td>객실요금</td>
-                                    <td><input type="text" id="C-hotelPay" name="C-hotelPay" value="" ></td>
+                                    <td><input type="text" id="C-hotelPay" name="C-hotelPay" autocomplete="off"></td>
                                 </tr>
                                 <tr>
                                     <td>쿠폰선택</td>
                                     <td>
                                         <select name="C-rsv-coupon" id="C-rsv-coupon">
-                                            <option value="" selected>쿠폰선택</option>
-                                            <option name="" value=""></option>
+                                            <option value="none" selected>쿠폰선택</option>
+                                            <option name="discountCoupon" value="discountcoupon">3만원 할인 쿠폰</option>
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>할인요금</td>
-                                    <td><input type="text" name="C-couponPay" id="C-couponPay" value="" >
+                                    <td><input type="text" name="C-couponPay" id="C-couponPay" autocomplete="off" disabled>
                                     </td>
                                 </tr>
                                 <tr>
@@ -129,7 +130,7 @@
                                     <td></td>
                                     <td></td>
                                     <td class="Iwantgohome">결제금액</td>
-                                    <td><input type="text" name="C-finalpay" id="C-finalpay" value="" ></td>
+                                    <td><input type="text" name="C-finalpay" id="C-finalpay" autocomplete="off"></td>
                                 </tr>
                             </table>
                         </div>
@@ -140,7 +141,7 @@
                         <strong>이용약관 동의</strong>
                     </div>
                     <div>
-                        <textarea name="C-rsvOrder" id="C-rsvOrder" name="C-rsvOrder" cols="90" rows="3" >
+                        <textarea name="C-rsvOrder" id="C-rsvagree" cols="90" rows="3" disabled>
 K-호텔 객실예약과 관련하여 귀사가 아래와 같이 본인의 개인정보를 수집 및 이용하는데 동의합니다.
 
 <개인정보의 수집 · 이용에 관한 사항>

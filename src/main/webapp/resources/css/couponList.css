@@ -82,3 +82,7 @@
    align-items: center;
 }
 
+.C-pagenation{ /* 페이지네이션 */
+    margin-top: 30px;
+}
+
