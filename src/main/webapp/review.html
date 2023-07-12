@@ -33,7 +33,7 @@
                             </td>
 
                             <td>
-                                <input type="text" placeholder="작성자명">
+                                <input type="text" placeholder="작성자명" id="J-text">
                             </td>
 
                             <td>
@@ -41,7 +41,7 @@
                             </td>
 
                             <td>
-                                <input type="text" placeholder="작성일">
+                                <input type="text" placeholder="작성일" id="J-text">
                             </td>
                         </tr>
 
@@ -50,7 +50,7 @@
                                 객실명
                             </td>
 
-                            <td colspan="3">
+                            <td >
                                 <select >
                                     <option>-----------</option>
                                     <option>객실명1</option>
@@ -58,17 +58,16 @@
                                     <option>객실명3</option>
                                 </select>
                             </td>
-                        </tr>
 
-                        <tr>
                             <td>
                                 사진
                             </td>
 
-                            <td colspan="3">
-                                <button>사진추가</button>
+                            <td id="J-PIC">
+                                <button>사진추가</button><div></div>
                             </td>
                         </tr>
+
 
                         <tr>
                             <td></td>
@@ -92,20 +91,29 @@
                         </tr>
 
                         <tr>
-                            <td>
-                                태그
+
+                            <td >
+                                <input type="checkbox" placeholder="zz">
+                                <input type="checkbox">
+                                <input type="checkbox">
                             </td>
 
-                            <td colspan="2">
-                                <input type="checkbox">
-                                <input type="checkbox">
-                                <input type="checkbox">
+                            <td>
+                                <pre>깨끗해요</pre>
+                                <pre>아이와 가기 좋아요</pre>
+                                <pre>조용해서 쉬기 좋아요</pre>
                             </td>
 
                             <td>
                                 <input type="checkbox">
                                 <input type="checkbox">
                                 <input type="checkbox"> 
+                            </td>
+
+                            <td>
+                                <pre>침구가 고급스러워요</pre>
+                                <pre>애인과 가기 좋아요</pre>
+                                <pre>파티하기 좋아요</pre>
                             </td>
                         </tr>
 
@@ -115,7 +123,7 @@
                             </td>
 
                             <td colspan="3">
-                                <div>ss</div>
+                                <textarea id="J-text" placeholder="내용을 입력해주세요"></textarea>
                             </td>
                         </tr>
                     </table>
