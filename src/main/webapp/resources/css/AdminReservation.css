@@ -29,6 +29,41 @@
 
 .C-adminrsv-main{ /* 메인 큰틀 */
     width: 75%;
+    margin: auto;
+}
+
+.C-rsvlist-container{ /* 리스트 내역 전체 틀 */
+    display: flex;
+    height: 50px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(178, 158, 135, 0.9);
+}
+
+.C-rsvlist-container > div:nth-child(1){ /* 예약 번호 */
+    width: 15%;
+    text-align: center;
+}
+
+.C-rsvlist-container > div:nth-child(2){ /* 호텔지점 */
+    width: 20%;
+    text-align: center;
+}
+.C-rsvlist-container > div:nth-child(3){ /* 방이름 */
+    width: 15%;
+    text-align: center;
+}
+
+.C-rsvlist-container > div:nth-child(4){ /* 예약자 */
+    width: 15%;
+    text-align: center;
+}
+.C-rsvlist-container > div:nth-child(5){ /* 예약 날짜 */
+    width: 20%;
+    text-align: center;
+}
+.C-rsvlist-container > div:nth-child(6){ /* 예약 취소 버튼  */
+    width: 15%;
+    text-align: center;
 }
 
 .C-adminreservation{ /* 예약확인 화면 */
@@ -77,27 +112,16 @@
     display: flex;
     width: 820px;
     margin: auto;
+    border: 1px sold rgba(178, 158, 135, 0.9);
 }
 
-.C-adminrsvlist td{/* 예약 내역이 나오는 부분 */
-   border: 1px solid rgba(178, 158, 135, 0.9);
-   width: 150px;
-   text-align: center;
-}   
 
-td > button{ /* 리스트 안에 있는 예약취소 버튼 */
-    background-color: rgb(173,158,135);
-    border: none;
-    color:white;
-    height: 30px;
-}
-
-td > button:hover{/* 리스트 안에 있는 예약취소 버튼 */
-    background-color: #4F3A28;
-}
 
 .C-pagenation{ /* 페이지네이션 전체 div */
     display: flex;
     justify-content: center;
     align-items: center;
+ }
+ .pagination{
+    display: flex;
  }
