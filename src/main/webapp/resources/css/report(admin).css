@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+/* 메인 all */
+.L-all{
+    display: flex;
+    width: 1200px;
+    margin: auto;
+}
+
+/* 사이드바 */
+.L-sidebar{
+    width: 25%;
+}
+
+/* 메인 */
+.L-main{
+    width: 820px;
+    margin: auto;
+}
+
+/* 게시글 신고 목록 */
+.L-main > div:nth-of-type(1){
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 메인의 내용 */
+.L-main-menu{
+    display: flex;
+    position: relative;
+}
+
+.L-main-menu > a{
+    z-index: 99;
+    cursor: pointer;
+    width: 820px;
+    display: flex;
+    position: absolute;
+}
