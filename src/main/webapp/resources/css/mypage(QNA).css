@@ -1,20 +1,34 @@
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box
+}
 
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
-.P-top{
+* {
+    font-family: 'Pretendard-Regular';
+}
+
+.P-top {
     display: flex;
     margin: auto;
     width: 1200px;
 }
-.P-maindisplay{
+
+.P-maindisplay {
     display: flex;
-    align-items: center;
     justify-content: center;
     white-space: nowrap;
     text-align: center;
-    border:1px solid #eee;
-    
+    border: 1px solid #eee;
+    width: 75%;
 }
+
+
 
 /* 메인화면 */
 
@@ -30,31 +44,33 @@
     color: white;
 }
 
-.dropdown{
+.P-dropdown {
     display: flex;
     justify-content: right;
     padding: 30px;
 }
-.P-qna-1{
+
+.P-qna-1 {
     width: 100%;
     padding: 15px;
     justify-content: center;
 }
 
-.P-qna{
+.P-qna {
     display: flex;
     height: 50px;
     border-bottom: 1px solid gray;
-   
+
 }
-.P-qna>div:nth-child(1){
+
+.P-qna>div:nth-child(1) {
     width: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.P-qna>div:nth-child(2){
+.P-qna>div:nth-child(2) {
     width: 450px;
     display: flex;
     justify-content: center;
@@ -65,12 +81,12 @@
 }
 
 /* 빈칸 */
-.P-qna>div:nth-child(3){
+.P-qna>div:nth-child(3) {
     width: 50px;
 }
 
 /* 시간 */
-.P-qna>div:nth-child(4){
+.P-qna>div:nth-child(4) {
     width: 170px;
     display: flex;
     align-items: center;
@@ -90,17 +106,17 @@
 
 
 
-.k-pg{
+.P-pg {
     display: flex;
     justify-content: center;
     padding-top: 30px;
 }
 
-.page-link{
+.page-link {
     color: black;
 }
 
-.page-link:hover{
+.page-link:hover {
     color: black;
     background-color: transparent;
 }

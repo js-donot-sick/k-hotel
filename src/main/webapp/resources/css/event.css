@@ -3,6 +3,16 @@
     border: 1px solid black;
 }
 
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Pretendard-Regular';
+}
 
 .P-top {
     display: flex;
@@ -10,24 +20,18 @@
     width: 1200px;
 }
 
-.P-maindisplay{
+.P-maindisplay {
     display: flex;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
     text-align: center;
-    border:1px solid #eee;
+    border: 1px solid #eee;
     width: 75%;
 }
 
 .P-main {
-    white-space: nowrap;
-    width: 950px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #eee;
+    width: 820px;
 }
 
 .P-blank1 {
@@ -53,12 +57,12 @@
     width: 100%;
     display: flex;
     padding: 15px;
-    
+
 
 }
 
 
-.P-event-list>a div{
+.P-event-list>a div {
     color: black;
 }
 
@@ -68,12 +72,12 @@
     color: black;
     margin: 10px;
     width: 50%;
-    text-decoration:none;
+    text-decoration: none;
     margin: 20px;
     position: relative;
 }
 
-.P-end{
+.P-end {
     position: absolute;
     right: 50px;
     left: 50px;
@@ -86,7 +90,7 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     width: 100%;
-    height : 250px;
+    height: 250px;
 }
 
 
@@ -101,7 +105,7 @@
     width: 100%;
     margin-bottom: 4px;
     text-align: left;
-    margin-left:10px;
+    margin-left: 10px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -114,3 +118,8 @@
     font-size: 13px;
 }
 
+.P-pg{
+    display: flex;
+    justify-content: center;
+    padding-top: 14px;
+}
