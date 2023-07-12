@@ -6,6 +6,8 @@
     <title>관리자 이벤트 작성</title>
     
     <link rel="stylesheet" href="resources/css/AdminEventWrite.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -24,7 +26,10 @@
                         <div>
                             <span>내용입력</span>
                             <div>
-                                <input type="file" name="K-photo">
+                                <input type="file" name="K-photo" id="K-photo" multiple/>
+                                <div id="K-image-select">
+                                    <!-- <img src="resources/images/copyright.png" alt=""> -->
+                                </div>
                             </div>
                         </div>
                         <div>
@@ -42,5 +47,14 @@
         </div>
     </div>
     
+
+    <div style="display: flex;">
+        <img src="resources/images/arrow_down.png" style="width: 80px; height: auto;" alt="">
+        <img src="resources/images/copyright.png" style="width: 80px;" alt="">
+        <img src="resources/images/Deluxe-Room_1.jpg" style="width: 80px;" alt="">
+
+    </div>
+
+    <script src="resources/js/AdminEventWrite.js"></script>
 </body>
 </html>
