@@ -47,6 +47,14 @@
 tr > td:nth-child(2){
     padding: 8px;
 }
+
+tr > td{ /* input태그 줄 맞추기 */
+    text-align: left;
+}
+td > input{ /* input태그의 value들 글씨 붙이기 */
+    letter-spacing: -1px;
+}
+
 .C-moneyAll{ /* 결제정보 + 요금안내 큰 틀 */
     width: 50%;
     height: 100%;
@@ -54,6 +62,10 @@ tr > td:nth-child(2){
 .C-moneyInfo{ /* 결제정보 틀*/
     height: 50%;
     padding-top: 15px;
+}
+
+#C-display-change{ /* 입금계좌 display */
+    display: none;
 }
 .C-payInfo{ /* 요금안내 틀*/
     height: 50%;
@@ -71,10 +83,15 @@ tr > td:nth-child(2){
 .C-payInfo-table{ /* 요금 안내 부분 테이블 */
     margin-left: 30px;
 }
+
 .C-rsv-agree{ /* 이용약관 동의 큰 틀 */
     margin-left: 50px;
     height: 200px;
     padding-top: 40px;
+}
+
+#C-rsvAddress{ /* 주소 input창 */
+    width: 400px;
 }
 
 .C-rsv-bottom-btn{ /* 이전으로 + 예약완료 버튼 큰 틀 */
