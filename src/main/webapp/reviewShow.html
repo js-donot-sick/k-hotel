@@ -81,13 +81,31 @@
                 <div class="P-reviewBox">
                     <div class="P-profile_area">
                         <div class="P-id">작성자 : </div>
-                        <div class="P-"> 객실명 : </div>
-                        <div >작성날짜 : </div>
+                        <div>
+                            <div class="P-room"> 객실명 : 안녕 </div>
+                            <div class="P-room">작성날짜 : 2023-07-12 </div>
+                        </div>
                     </div>
-                    <div>이미지</div>
+                    <div class="P-img"><a href=""><img src ="">이미지</a></div>
                     <div>
-                        <div>별점</div>
-                        <div>태그</div>
+                        <div class="P-star">
+                            <form name="P-myform" id="P-myform" method="post" action="./save">
+                                <fieldset>
+                                    <label for="rate1">⭐</label><input type="radio" name="rating" value="5" id="rate1">
+                                    <label for="rate2">⭐</label><input type="radio" name="rating" value="4" id="rate2">
+                                    <label for="rate3">⭐</label><input type="radio" name="rating" value="3" id="rate3">
+                                    <label for="rate4">⭐</label><input type="radio" name="rating" value="2" id="rate4">
+                                    <label for="rate5">⭐</label><input type="radio" name="rating" value="1" id="rate5">
+                                </fieldset>
+                            </form>
+                           
+                            <span class="P-tag-top">
+                                <img src="https://em-content.zobj.net/thumbs/120/apple/354/red-heart_2764-fe0f.png"  alt=""> 커플이랑 가기 좋아요
+                            </span>
+                            <!-- +클릭 시 span 표출 -->
+                            <a href="#" target="_self" role="button" class="P-tag-con">+</a>
+                        
+                        </div>
                         <button>수정</button>
                         <button>삭제</button>
                     </div>

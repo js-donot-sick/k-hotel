@@ -1,13 +1,14 @@
+* {
+    box-sizing: border-box; border: 1px solid gainsboro;
+}
 
-*{ box-sizing: border-box; border: 1px solid black;}
-
-.P-top{
+.P-top {
     display: flex;
     margin: auto;
     width: 1200px;
 }
 
-.P-maindisplay{
+.P-maindisplay {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,11 +17,11 @@
     width: 75%;
 }
 
-.P-main{
+.P-main {
     width: 820px;
 }
 
-.P-reviewTitle{
+.P-reviewTitle {
     width: 100%;
     text-align: left;
     font-size: 24px;
@@ -32,21 +33,136 @@
     color: white;
 }
 
-.P-dropdown{
+/* 드롭박스 */
+.P-dropdown {
     display: flex;
     justify-content: right;
     padding: 30px;
 }
 
-.P-dropdown > select:nth-child(1){
+.P-dropdown>select:nth-child(1) {
     margin: 0 30px;
     width: 120px;
 }
 
-.P-dropdown > select:nth-child(2){
+.P-dropdown>select:nth-child(2) {
     width: 120px;
 }
 
-.P-rs-in{
+/* 리뷰/별점 크기 */
+.P-reviewBox {
+    width: 98%;
+    margin: auto;
+    border: 1px solid #eee;
+    padding: 15px;
+
+}
+
+
+.P-profile_area>div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+}
+
+.P-img {
+    width: 750px;
+    height: 350px;
+    margin: auto;
+}
+
+.starpoint_wrap {
+    display: inline-block;
+}
+
+.starpoint_box {
+    position: relative;
+    background: url(https://ido-archive.github.io/svc/etc/element/img/sp_star.png) 0 0 no-repeat;
+    font-size: 0;
+}
+
+.starpoint_box .starpoint_bg {
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    background: url(https://ido-archive.github.io/svc/etc/element/img/sp_star.png) 0 -20px no-repeat;
+    pointer-events: none;
+}
+
+.starpoint_box .label_star {
+    display: inline-block;
+    width: 10px;
+    height: 18px;
+    box-sizing: border-box;
+}
+
+/* 별점 */
+
+.P-star{
+    display: flex;
+}
+
+#P-myform fieldset {
+    display: inline-block;
+    /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+    direction: rtl;
+    /* 이모지 순서 반전 */
+    border: 0;
+    /* 필드셋 테두리 제거 */
+}
+
+#P-myform fieldset legend {
+    text-align: left;
+}
+
+#P-myform input[type=radio] {
+    display: none;
+    /* 라디오박스 감춤 */
+}
+
+#P-myform label {
+    font-size: 2em;
+    /* 이모지 크기 */
+    color: transparent;
+    /* 기존 이모지 컬러 제거 */
+    text-shadow: 0 0 0 #f0f0f0;
+    /* 새 이모지 색상 부여 */
+}
+
+#P-myform label:hover {
+    text-shadow: 0 0 0 #FAE04C;
+    /* 마우스 호버 */
+}
+
+#P-myform label:hover~label {
+    text-shadow: 0 0 0 #FAE04C;
+    /* 마우스 호버 뒤에오는 이모지들 */
+}
+
+#P-myform input[type=radio]:checked~label {
+    text-shadow: 0 0 0 #FAE04C;
+    /* 마우스 클릭 체크 */
+}
+
+.P-tag-top{
+    margin: 10px;
+    padding: 0 5px;
+    border-radius: 4px;
+    display:inline-block;
+    background-color: #eee;
+    margin-right: 2px;
+}
+
+.P-tag-top>img {
+    width: 18px;
+    height: 18px;
+}
+
+.P-tag-con{
+    margin: 10px;
+    padding: 0 3px;
+    border-radius: 4px;
+    background-color: #eee;
+    text-decoration: none;
 }
