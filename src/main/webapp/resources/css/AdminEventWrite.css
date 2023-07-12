@@ -1,0 +1,36 @@
+*{box-sizing: border-box;}
+
+div{border: 1px solid black;}
+
+.K-first{width: 100%;}
+.K-first>div{
+    width: 1200px;
+    margin: auto;
+    display: flex;
+}
+
+/* 사이드바 */
+.K-side{
+    width: 25%;
+    height: 200px;
+}
+
+/* 찐 내용 */
+.K-all{width: 75%;}
+
+.K-all>div{ /* 내용 넓이 지정 */
+    width: 850px;
+    margin: auto;
+}
+
+.K-all>div>div:nth-of-type(1){
+    background-color: aqua;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#K-form{
+
+}
