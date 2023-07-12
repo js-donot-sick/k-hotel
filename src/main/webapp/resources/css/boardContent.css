@@ -136,6 +136,7 @@ textarea[name="L-textarea-text"]{
     line-height: 30px;
     margin: 5px 0;
     justify-content: center;
+    
 }
 
 .L-reply > *{
@@ -177,6 +178,8 @@ textarea[name="L-textarea-text"]{
 
 .L-input-reply{
     width: 600px;
+    border-radius: 5px;
+    margin: 0 10px;
 }
 
 #L-reply-btn{
