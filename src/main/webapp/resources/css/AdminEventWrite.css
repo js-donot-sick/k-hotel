@@ -1,5 +1,16 @@
 *{box-sizing: border-box;}
 
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
+
+*{
+    font-family: 'Pretendard-Regular';
+}
+
 div{border: 1px solid black;}
 
 .K-first{width: 100%;}
@@ -23,8 +34,7 @@ div{border: 1px solid black;}
     margin: auto;
 }
 
-.K-all>div>div:nth-of-type(1){
-    background-color: aqua;
+.K-all>div>div:nth-of-type(1){ /* 이벤트 작성 글씨 */
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -32,5 +42,49 @@ div{border: 1px solid black;}
 }
 
 #K-form{
+    margin-top: 20px;
+}
 
+#K-form>div:nth-child(1){ /* 제목입력 글씨 */
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+input[name="K-title"]{ /* 제목 input태그 */
+    width: 840px;
+    height: 35px;
+    background-color: white;
+    font-size: 15px;
+}
+
+#K-form>div:nth-child(3){ /* 내용입력 + 파일 추가 버튼 div */
+    display: flex;
+}
+
+#K-form>div:nth-child(3)>span{ /* 내용입력 글씨 */
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#K-form>div:nth-child(3)>div{
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* input[name="K-photo"]{
+    
+} */
+
+#K-image-select{
+    display: flex;
+}
+
+.K-photo-img{
+    width: 80px;
 }
