@@ -1,5 +1,16 @@
 * {
-    box-sizing: border-box; border: 1px solid gainsboro;
+    box-sizing: border-box;;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Pretendard-Regular';
 }
 
 .P-top {
@@ -58,44 +69,27 @@
 
 }
 
+.P-profile_area>div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
 
 .P-profile_area>div:nth-child(2) {
     display: flex;
     justify-content: space-between;
+    padding: 0 10px;
 }
 
+/* 이미지 */
 .P-img {
     width: 750px;
-    height: 350px;
+    height: 150px;
     margin: auto;
+    border: 1px solid gainsboro;
+    margin: 10px;
 }
 
-.starpoint_wrap {
-    display: inline-block;
-}
-
-.starpoint_box {
-    position: relative;
-    background: url(https://ido-archive.github.io/svc/etc/element/img/sp_star.png) 0 0 no-repeat;
-    font-size: 0;
-}
-
-.starpoint_box .starpoint_bg {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 18px;
-    background: url(https://ido-archive.github.io/svc/etc/element/img/sp_star.png) 0 -20px no-repeat;
-    pointer-events: none;
-}
-
-.starpoint_box .label_star {
-    display: inline-block;
-    width: 10px;
-    height: 18px;
-    box-sizing: border-box;
-}
 
 /* 별점 */
 
@@ -146,7 +140,7 @@
 }
 
 .P-tag-top{
-    margin: 10px;
+    margin: 15px 10px 10px 10px; 
     padding: 0 5px;
     border-radius: 4px;
     display:inline-block;
@@ -160,9 +154,60 @@
 }
 
 .P-tag-con{
-    margin: 10px;
+    margin: 15px 10px 10px 10px; 
     padding: 0 3px;
     border-radius: 4px;
     background-color: #eee;
     text-decoration: none;
+}
+
+.P-rs-btn{
+    display: flex;
+    justify-content: right;
+    margin-left: 75px;
+}
+
+#P-rs-update-btn{
+    margin: 5px 15px;
+    cursor: pointer;
+    background-color: rgb(173,158,135);
+    color: white;
+    width: 80px;
+    border:0
+}
+
+#P-rs-update-btn:hover{
+    background-color: #4F3A28;
+    color: white;
+}
+
+#P-rs-delete-btn{
+    margin: 5px 15px;
+    cursor: pointer;
+    background-color: rgb(173,158,135);
+    color: white;
+    width: 80px;
+    border:0
+}
+
+#P-rs-delete-btn:hover{
+    background-color: #4F3A28;
+}
+
+#P-rs-content{
+    width: 750px;
+    height: 150px;
+    margin: auto;
+    border: 1px solid gainsboro;
+    margin: 10px;
+}
+
+.P-blank{
+    padding: 20px;
+}
+
+.P-pg{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px; 
 }
