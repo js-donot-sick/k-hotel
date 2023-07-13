@@ -1,6 +1,17 @@
 *{box-sizing: border-box;}
 body{margin: 0; padding: 0;}
 
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
+
+*{
+    font-family: 'Pretendard-Regular';
+}
+
 div a{
     text-decoration: none;
 }
@@ -139,7 +150,6 @@ header{border: 1px solid black;}
 header{
     height: 120px;
     width: 100%;
-    background-color: aqua;
 }
 
 input{
@@ -184,16 +194,17 @@ button:hover{
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    color: white;
+    color: black;
     font-weight: bold;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid lightgray;
 }
 
 #k-login>div{ /* 로그인 입력창 */
     height: 350px;
     width: 800px;
     margin: auto;
-    background-color: rgba(178, 158, 135, 0.9);
+    /* background-color: rgba(178, 158, 135, 0.9); */
+    border: 5px solid rgba(178, 158, 135, 0.5);
     border-radius: 10px;
 }
 
@@ -203,13 +214,27 @@ button:hover{
 
 #k-login-input>table{ /* 아이디, 비밀번호 입력창, 로그인 버튼 */
     margin: auto;
+    margin-top: 60px;
 }
 
 #k-login-input tr:nth-child(1){ /* 아이디 행 */
     height: 40px;
+    font-weight: bold;
 }
+
+#k-login-input tr>td:nth-child(2){
+    border-bottom: 1px solid lightgray;
+    transition-duration: 0.1s;
+
+}
+
+#k-login-input tr>td:nth-child(2):hover{ /* 입력창 hover 효과 */
+    border-bottom: 3px solid rgba(178, 158, 135, 0.9);
+}
+
 #k-login-input tr:nth-child(2){ /* 비번 행 */
     height: 40px;
+    font-weight: bold;
 }
 #k-login-input tr:nth-child(1)>td:nth-child(1){ 
     width: 100px;
@@ -231,13 +256,22 @@ input[name="inputPw"]{ /* 비밀번호 입력창 */
     width: 80px;
     height: 50px;
     margin-left: 20px;
+    background-color: rgb(173,158,135);
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 5px;
+}
+
+#k-login-btn:hover{
+    background-color: #4F3A28;
+    color: white;
 }
 
 #k-login-bottom{ /* 아이디찾기비번찾기회원가입 */
     margin: auto;
     margin-top: 15px;
-    width: 270px;
-    font-size: small;
+    width: 273px;
+    font-size: 16px;
 }
 
 #k-login-bottom>a{
@@ -259,7 +293,7 @@ input[name="inputPw"]{ /* 비밀번호 입력창 */
     height: 250px;
     width: 100%;
     position: absolute;
-    top: 330px;
+    top: 360px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -317,11 +351,14 @@ input[name="inputPw"]{ /* 비밀번호 입력창 */
 
 input[name="k-inputNm-id"]{
     height: 20px;
+    font-size: 13px;
 }
 input[name="k-inputPno-id"]{
+    font-size: 13px;
     height: 20px;
 }
 input[name="k-inputId-id"]{
+    font-size: 13px;
     height: 20px;
 }
 
@@ -329,7 +366,14 @@ input[name="k-inputId-id"]{
     width: 100px;
     height: 40px;
     margin-left: 20px;
-    background-color: rgba(178, 158, 135, 0.9);
+    background-color: rgb(173,158,135);
+    letter-spacing: 2px;
+    border-radius: 5px;
+}
+
+#k-id-search-btn:hover{
+    background-color: #4F3A28;
+    color: white;
 }
 
 #k-id-result{
@@ -349,7 +393,14 @@ input[name="k-inputId-id"]{
     margin-left: 20px;
     width: 110px;
     height: 50px;
-    background-color: rgba(178, 158, 135, 0.9);
+    background-color: rgb(173,158,135);
+    letter-spacing: 2px;
+    border-radius: 5px;
+}
+
+#k-pw-search-btn:hover{
+    background-color: #4F3A28;
+    color: white;
 }
 
 #k-pw-result{
