@@ -1,7 +1,15 @@
 *{
     box-sizing: border-box;
-    border: 1px solid black;
+    font-family: 'Pretendard-Regular';
+    /* border: 1px solid black; */
 }
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
 
 /* 메인 all */
 .L-all{
@@ -18,6 +26,7 @@
 /* 메인 */
 .L-main{
     width: 820px;
+    height: 700px;
     margin: auto;
 }
 
@@ -27,16 +36,37 @@
     font-weight: bold;
 }
 
-/* 메인의 내용 */
-.L-main-menu{
-    display: flex;
-    position: relative;
+/* 메인(테이블) 내용 */
+table{
+    border: 1px solid gray;
 }
 
-.L-main-menu > a{
-    z-index: 99;
-    cursor: pointer;
-    width: 820px;
-    display: flex;
-    position: absolute;
+td{
+    border: 1px solid gray;
+    height: 30px;
+}
+
+/* 게시글 번호 */
+.L-main-menu td:nth-of-type(1){
+    width: 80px;
+}
+
+/* 제목 */
+.L-main-menu td:nth-of-type(2){
+    width: 470px;
+}
+
+/* 작성자 */
+.L-main-menu td:nth-of-type(3){
+    width: 75px;
+}
+
+/* 작성날짜 */
+.L-main-menu td:nth-of-type(4){
+    width: 120px;
+}
+
+/* 신고자 */
+.L-main-menu td:nth-of-type(5){
+    width: 75px;
 }

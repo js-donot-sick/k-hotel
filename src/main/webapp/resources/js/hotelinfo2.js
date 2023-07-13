@@ -24,10 +24,10 @@ $("#L-star-1-1").on("mouseleave",function(){
 $("#L-star-1").on("change", function(){
     
     if(this.checked){
-        $("#L-star-1-1").css("color", "yellow").css("opacity", "0.9");
+        $("#L-star-1-1").css("color", "yellow").css("opacity", "1");
 
     }else{
-        $("#L-star-1-1").css("color", "gray").css("opacity", "0.3");
+        $("#L-star-1-1").css("color", "gray").css("opacity", "0.4");
     }
 })
 
