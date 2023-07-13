@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+}
+
+.J-1{
+    height: 950px;
+    width: 100%;
+}
+
+.J-1 > img{
+    width: 100%;
+    height: 100%;
+}
