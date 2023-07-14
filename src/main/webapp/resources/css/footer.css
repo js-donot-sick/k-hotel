@@ -11,12 +11,22 @@ footer{
     background-color: rgba(178, 158, 135, 0.9);
 }
 
+.k-f-container{
+    position: relative;
+}
+
 .k-first-div>div{
     width: 1200px;
     margin: auto;
     height: 100px;
     display: flex;
     color: white;
+}
+
+.k-logo{
+    width: 180px;
+    position: absolute;
+    left: 0px;
 }
 .k-second-div{
     background-color: #ebe7e3;
@@ -32,6 +42,7 @@ footer{
     margin: auto;
     height: 90px;
     display: flex;
+    position: relative;
 }
 
 .k-f-container>div:nth-child(1)>img{
@@ -42,6 +53,8 @@ footer{
     width: 220px;
     margin-top: 40px;
     margin-left: 50px;
+    position: absolute;
+    left: 200px;
 }
 
 .k-f-container>div:nth-child(3){
@@ -61,6 +74,8 @@ footer{
     justify-content: space-around;
     width: 200px;
     margin-left: auto;
+    position: absolute;
+    right: 0px;
 }
 
 #k-sns img{
@@ -104,8 +119,9 @@ footer{
 .k-third-div img{
     width: 200px;
 }
-.k-third-div>:nth-child(2){ /* 빈칸인데 우선 삭제했으.. */
+.k-third-div>:nth-child(2){ 
     width: 205px;
     margin-top: 10px;
-    margin-left: auto;
+    position: absolute;
+    right: 0px;
 }
