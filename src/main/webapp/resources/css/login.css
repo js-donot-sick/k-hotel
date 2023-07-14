@@ -267,9 +267,20 @@ input[name="inputPw"]{ /* 비밀번호 입력창 */
     color: white;
 }
 
+#K-saveId{
+    margin: auto;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+#K-checkbox{
+    margin-left: 43%;
+    margin-top: 5px;
+}
+
 #k-login-bottom{ /* 아이디찾기비번찾기회원가입 */
     margin: auto;
-    margin-top: 15px;
+    margin-top: 5px;
     width: 273px;
     font-size: 16px;
 }
@@ -293,7 +304,7 @@ input[name="inputPw"]{ /* 비밀번호 입력창 */
     height: 250px;
     width: 100%;
     position: absolute;
-    top: 360px;
+    top: 380px;
     display: flex;
     justify-content: space-evenly;
 }
