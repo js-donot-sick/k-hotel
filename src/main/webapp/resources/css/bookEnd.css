@@ -13,11 +13,6 @@
     font-family: 'Pretendard-Regular';
 }
 
-header{
-    height: 120px;
-    width: 100%;
-    background-color: aqua;
-}
 
 #k-content{ /* 전체 내용 div */
     width: 1200px;
@@ -50,9 +45,13 @@ header{
     width: 200px; /* 1160/7하기 귀찮아서 대충.. */
     height: 40px;
     background-color: rgb(202, 193, 193);
+    padding-left: 10px;
+    border: 1px solid gray;
 }
 #k-book-inform td{
+    padding-left: 10px;
     height: 40px;
+    border: 1px solid gray;
 }
 
 #k-content>div:nth-child(3){ /* 예약자정보 + 테이블 div */
@@ -69,10 +68,14 @@ header{
     width: 300px;
     height: 40px;
     background-color: rgb(202, 193, 193);
+    padding-left: 10px;
+    border: 1px solid gray;
 }
 #k-booker-inform td{
+    padding-left: 10px;
     width: 860px;
     height: 40px;
+    border: 1px solid gray;
 }
 
 #k-content>div:nth-child(4){ /* 버튼 div */
@@ -90,16 +93,16 @@ header{
     background-color: rgb(173,158,135);
     cursor: pointer;
     border: 0;
+    margin-bottom: 20px;
 }
 
 #k-book-to-main:hover{
     background-color: #4F3A28;
-    color: white;
 }
 
-#k-content table{
+/* #k-content table{
     border-collapse: collapse;
-}
+} */
 
 #k-book-to-main>a{
     text-decoration: none;
@@ -108,7 +111,7 @@ header{
     height: 40px;
     display: block;
     padding-right: 12px;
-    padding-top: 7px;
+    padding-top: 5px;
 }
 
 #k-book-to-main>a:hover{
