@@ -40,7 +40,7 @@
               <img src="../webapp/resources/images/logo_b_2.png">
             </a>
         </div>
-        <div class="modal" tabindex="-1">
+        <div class="modal" tabindex="-1">`
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -86,7 +86,7 @@
 </div>
 
 <!-- 예약부분 바디 -->
-    <form action="#" method="get">
+    <form action="#" method="get" onsubmit="return reservationValidate()">
         <div class="C-reservation">
             <div class="C-rsv-main">
                 <div class="C-rsv-main-text">지점 / 객실 / 날짜 / 인원 선택</div>
@@ -156,7 +156,7 @@
                     </div>
                 </div>
                 <div class="C-rsv-button">
-                    <button type="button" id="C-reservationBtn">예약</button>
+                    <button type="submit" id="C-reservationBtn">예약</button>
                 </div>
             </div>
     </form>

@@ -68,29 +68,37 @@ document.getElementById("C-Cminusbutton").addEventListener("click",function(){
    child.value = j;
 })
 
-document.getElementById("C-reservationBtn").addEventListener("click" ,function(){
-   
+function reservationValidate() {
 
-   if(hotel_choice.value == "none"){
-      alert("호텔을 선택해주세요.");
+   if (hotel_choice.value == "none") {
+      alert("호텔을 선택해 주시길 바랍니다.");
+      return false;
    }
-   
-   if(room_choice.value == "none"){
-      alert("객실을 선택해주세요.");
+
+   else if (room_choice.value == "none") {
+      alert("객실을 선택해 주시길 바랍니다.");
+      return false;
    }
-   
-   if(checkIn.value == today){
-      alert("당일 예약은 전화 문의로만 가능합니다.");
+
+   else if (checkIn.value == today) {
+      alert("당일 예약은 전화 문의로만 가능합니다. 다른 날짜를 선택해 주시길 바랍니다.");
+      return false;
    }
-   
-   if(checkOut.value == today){
-      alert("체크아웃 날짜를 선택해주세요.");
+
+   else if (checkOut.value == today) {
+      alert("체크아웃 날짜를 선택해 주시길 바랍니다.");
+      return false;
    }
-   if(adult.value == 0 && child.value == 0){
-      alert("인원을 선택해주세요.");
+   else if (adult.value == 0 && child.value == 0) {
+      alert("인원을 선택해 주시길 바랍니다.");
+      return false;
    }
-   
-})
+   else {
+      confirm("예약을 진행하시겠습니까?")
+   }
+
+
+}
 
 /*------------------------------------객실 선택 시작----------------------------------------- */ 
 

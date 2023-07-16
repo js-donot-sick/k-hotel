@@ -19,6 +19,7 @@ addPicture.addEventListener("click", function() {
             newImageContainer.style.margin = "10px";
             var newImage = document.createElement("img");
             newImage.className = "C-postWrite-img";
+            newImage.setAttribute("value","img");
             newImage.src = URL.createObjectURL(selectedFile);
             newImage.style.display="flex";
             newImage.alt = "사진 " + imageCount;
