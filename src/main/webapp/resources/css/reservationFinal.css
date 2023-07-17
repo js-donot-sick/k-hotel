@@ -1,16 +1,129 @@
 *{
     box-sizing: border-box;
+    font-family: 'NanumSquareNeo-Variable';
 }
+
+@font-face { /* 폰트 */
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*-------------------------------------------------------------------------------*/
+.P-container{
+    background-color: #F1E3C4;
+    width: 100%; 
+    position: relative;
+}
+.P-header_middle > img{
+    width: 200px;
+    margin-top: 10px;
+}
+/* 가운데header */
+.P-header{
+    display: flex;
+    height: 120px;
+    width: 1200px;
+    margin: auto;
+    justify-content: space-between;
+    background-color: #F1E3C4;
+    
+
+}
+/* 왼쪽 상단 빈칸 */
+.P-blank{
+    padding: 5px 150px;
+    height: 50%;
+    width: 30%;
+
+}
+/* 호텔찾기/예약 */
+.P-btn1{
+    height: 50%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    justify-content: space-around;
+    font-size: 15px;
+    font-weight: bold;
+   
+
+}
+.P-btn1>a:nth-child(1):after{
+    display:block;
+    content: '';
+    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+.P-btn1>a:nth-child(1):hover:after{ transform: scaleX(1); }
+.P-btn1>a:nth-child(1):hover{color: black;}   
+.P-btn1>a:nth-child(2):after{
+    display:block;
+    content: '';
+    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+.P-btn1>a:nth-child(2):hover:after{ transform: scaleX(1); }
+.P-btn1>a:nth-child(2):hover  {color: black;}
+.P-btn1>a{color: black;}
+/* 로그인 nav */
+.P-btn2{
+    font-size: 13px;
+    padding: 25px;
+    height: 50%;
+    display: block;
+    justify-content: right;
+    padding-left: 0;
+
+}
+.P-btn2>ul a{color: black;} 
+/* 커뮤니티 / 이벤트 */
+.P-btn3{
+    height: 50%;
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    justify-content: space-around;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform:uppercase;
+    
+}
+.P-btn3>a{color: black;}
+.P-btn3>a:nth-child(1):after {
+    display:block;
+    content: '';
+    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+.P-btn3>a:nth-child(1):hover:after{ transform: scaleX(1); }
+.P-btn3>a:nth-child(1):hover {color: black;}
+.P-btn3>a:nth-child(2):after{
+    display:block;
+    content: '';
+    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+.P-btn3>a:nth-child(2):hover:after{ transform: scaleX(1); }
+.P-btn3>a:nth-child(2):hover{color: black;}
+/*-------------------------------------------------------------------------------*/
+
 
 
 /*-------------------------------------------------------------------------------*/
 .C-body{ /* 바디 전체를 감싸는 div */
     width: 100%;
     height: auto;
+    margin: auto;
 }
 
 .C-Final-rsv{ /* 예약하기를 감싸는 div */
-    width: 1200px;
+    width: 1150px;
     height: 800px;
     margin: auto;
     padding: 30px;
@@ -59,12 +172,28 @@ td > input{ /* input태그의 value들 글씨 붙이기 */
     width: 50%;
     height: 100%;
 }
+#C-accountName{ /* 입금자명 input */
+    width: 180px;
+}
+
+#C-hotelPay{ /* 객실요금 input */
+    width: 180px;
+}
+
+#C-couponPay{/* 할인요금 input */
+    width: 180px;
+}
+
 .C-moneyInfo{ /* 결제정보 틀*/
     height: 50%;
     padding-top: 15px;
 }
 
 #C-display-change{ /* 입금계좌 display */
+    display: none;
+}
+
+#C-display-change2{ /* 입금자명 display */
     display: none;
 }
 .C-payInfo{ /* 요금안내 틀*/
@@ -74,6 +203,10 @@ td > input{ /* input태그의 value들 글씨 붙이기 */
 
 .Iwantgohome{/* 결제 금액 글씨 부분 */
     padding: 9px;
+}
+
+#C-finalpay{/* 결제금액 input창 */
+    width: 170px;
 }
 
 .C-moneyInfo-table{ /* 예약자 정보부분 테이블 */
@@ -89,16 +222,27 @@ td > input{ /* input태그의 value들 글씨 붙이기 */
     height: 200px;
     padding-top: 40px;
 }
+#C-rsvagree{/* 이용안내 동의 틀 */
+    resize: none;
+    width: 750px;
+}
+
+#C-rsvOrder{/* 이용안내 틀 */
+    resize: none;
+    height: 100px;
+    width: 480px;
+}
 
 #C-rsvAddress{ /* 주소 input창 */
-    width: 400px;
+    width: 380px;
+    letter-spacing: -1px;
 }
 
 .C-rsv-bottom-btn{ /* 이전으로 + 예약완료 버튼 큰 틀 */
     text-align: center;
 }
 
-#C-rsvBeforeBtn{
+#C-rsvBeforeBtn{ /* 이전으로 버튼 */
     margin-right: 30px;
     height: 40px;
     border: none;
@@ -106,8 +250,11 @@ td > input{ /* input태그의 value들 글씨 붙이기 */
     color: white;    
     border-radius: 10px;
 }
+#C-rsvBeforeBtn > a{ /* 이전으로 */
+    color:white;
+}
 
-#C-rsvClearBtn{
+#C-rsvClearBtn{ /* 예약완료 버튼 */
     margin-left: 30px;
     height: 40px;
     border: none;
@@ -125,3 +272,102 @@ td > input{ /* input태그의 value들 글씨 붙이기 */
     background-color: #4F3A28;
     transition-duration: 0.3s;
 }
+
+/*-------------------------------------------------------------------*/
+
+
+/*-------------------------------------------------------------------*/
+footer{
+    /* border: 1px solid black; */
+    width: 100%;
+}
+.k-first-div{
+    background-color: rgba(178, 158, 135, 0.9);
+}
+.k-first-div>div{
+    width: 1200px;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    color: white;
+}
+.k-second-div{
+    background-color: #ebe7e3;
+}
+.k-second-div>div{
+    width: 1200px;
+    margin: auto;
+    height: 60px;
+    display: flex;
+}
+.k-third-div{
+    width: 1200px;
+    margin: auto;
+    height: 90px;
+    display: flex;
+}
+.k-f-container>div:nth-child(1)>img{
+    margin-top: 8px;
+}
+.k-f-container>div:nth-child(3){
+    margin-top: 40px;
+}
+.k-f-container>div:nth-child(2){
+    width: 100px;
+}
+.k-f-container>div:nth-child(4){
+    width: 520px;
+}
+.k-f-container span:nth-child(2n-1):hover{
+    cursor: pointer;
+    font-weight: bold;
+    color: #ebe7e3;
+}
+#k-sns{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+#k-sns img{
+    width: 40px;
+}
+#k-sns img:hover{
+    transform: scale(1.2);
+    transition-duration: 0.2s;
+}
+#k-sns>div:nth-child(2){
+    margin-left: 15px;
+}
+.k-second-div span{
+    font-size: small;
+}
+.k-second-div span:nth-child(2n-1):hover{
+    color: rgba(90, 74, 56, 0.9);
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+.k-second-div span{
+    padding-left: 5px;
+}
+.k-second-div>div{
+    line-height: 5px;
+    line-height: 55px;
+}
+.k-third-div{
+    padding-top: 14px;
+}
+
+.k-third-div>div{
+    font-size: small;    
+}
+
+.k-third-div img{
+    width: 200px;
+}
+.k-third-div>:nth-child(2){
+    width: 680px;
+}
+.k-third-div>:nth-child(3){
+    margin-top: 10px;
+}
+/*-------------------------------------------------------------------*/
