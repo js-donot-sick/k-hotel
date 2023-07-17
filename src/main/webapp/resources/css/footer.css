@@ -1,42 +1,50 @@
 *{box-sizing: border-box;}
 
-/* div{border: 1px solid black;}
- */
-footer{
-    /* border: 1px solid black; */
-    width: 100%;
-}
+/* div{border: 1px solid black;} */
 
 .k-first-div{
+    width: 100%;
     background-color: rgba(178, 158, 135, 0.9);
 }
 
 .k-f-container{
     position: relative;
-}
-
-.k-first-div>div{
     width: 1200px;
     margin: auto;
     height: 100px;
     display: flex;
-    color: white;
+    
 }
+
+.k-f-container1{
+    width: 0px;
+}
+
 
 .k-logo{
     width: 180px;
     position: absolute;
-    left: 0px;
+    left: 10px;
+    margin-top: 7px;
 }
+
 .k-second-div{
+    width: 100%;
     background-color: #ebe7e3;
 }
-.k-second-div>div{
-    width: 1200px;
+.k-second-div1{
     margin: auto;
+    width: 1200px;
     height: 60px;
-    display: flex;
 }
+
+.k-second-div11{
+    width: 600px;
+    line-height: 55px;
+    display: flex;
+    justify-content: space-around;
+}
+
 .k-third-div{
     width: 1200px;
     margin: auto;
@@ -45,48 +53,41 @@ footer{
     position: relative;
 }
 
-.k-f-container>div:nth-child(1)>img{
-    margin-top: 8px;
-}
-
-.k-f-container>div:nth-child(2){
+.k-f-container2{
     width: 220px;
-    margin-top: 40px;
-    margin-left: 50px;
+    top: 40px;
     position: absolute;
-    left: 200px;
-}
-
-.k-f-container>div:nth-child(3){
-    width: 520px;
+    left: 300px;
+    color: white;
 }
 
 
-.k-f-container span:nth-child(2n-1):hover{
+.k-f-container2-1:hover{
     cursor: pointer;
     font-weight: bold;
     color: #ebe7e3;
 }
 
 #k-sns{
+    width: 520px;
     display: flex;
     margin-top: 30px;
     justify-content: space-around;
     width: 200px;
-    margin-left: auto;
     position: absolute;
-    right: 0px;
+    right: 5px;
 }
 
-#k-sns img{
+.k-sns-img{
     width: 40px;
 }
-#k-sns img:hover{
+
+.k-sns-img:hover{
     transform: scale(1.2);
     transition-duration: 0.2s;
 }
 
-#k-sns>div:nth-child(2){
+#k-sns1{
     margin-left: 15px;
 }
 
@@ -94,7 +95,7 @@ footer{
     font-size: small;
 }
 
-.k-second-div span:nth-child(2n-1):hover{
+.k-second-div1-1:hover{
     color: rgba(90, 74, 56, 0.9);
     cursor: pointer;
     transition-duration: 0.2s;
@@ -103,25 +104,26 @@ footer{
     padding-left: 5px;
 }
 
-.k-second-div>div{
-    line-height: 5px;
-    line-height: 55px;
-}
-
 .k-third-div{
-    padding-top: 14px;
+    margin: auto;
+    width: 1200px;
+    position: relative;
 }
 
-.k-third-div>div{
-    font-size: small;    
+.k-third-div1{
+    width: 340px;
+    font-size: small; 
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
-.k-third-div img{
+.k-third-div2-1{
     width: 200px;
 }
-.k-third-div>:nth-child(2){ 
+.k-third-div2{ 
     width: 205px;
-    margin-top: 10px;
+    top: 20px;
     position: absolute;
-    right: 0px;
+    right: 5px;
 }
