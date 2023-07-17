@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Pretendard-Regular';
+
+}
+
+.P-top {
+    display: flex;
+    margin: auto;
+    width: 1200px;
+}
+
+.P-udg-body{ /* 큰 틀 */
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #ddd;
+}
+
+.P-udg-title{ /* 업다운게임 글씨 */
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.P-udg-message{
+    font-size: 14px;
+    letter-spacing: -1px; /* 자간 */
+}
+
+
+
+/* input을 감싸고 있는 div */
+.p-input-area{
+    width: 30%;
+    height: 50px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    
+}
+
+.p-input-area:focus-within{
+     border-bottom: 2px solid rgb(173,158,135);;
+}
+
+/* input 태그 */
+
+#p-udg-input2{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 150px;
+    text-align: center;
+    width: 70%;
+    height: 100%;
+    padding: 15px 10px 5px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    border: 0;
+    outline: 0; 
+}
+
+
+#p-udg-btn{
+    text-align: center;
+    background-color: rgb(173,158,135);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    margin-left:40px ; 
+    margin-right: 8px;
+    
+    width: 20%;
+}
+
+#p-udg-btn:hover{
+    background-color: #4F3A28;
+}
+
+
+.p-udg-message{
+    font-size: 15px;
+    letter-spacing: -1px; /* 자간 */
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 150px;
+}
+
+.confirm{color: green;}
+.error{color: red;}
+
+/* 숫자입력 */
+.P-udg{
+    padding: 150px;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+}

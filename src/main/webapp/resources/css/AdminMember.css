@@ -1,0 +1,98 @@
+*{box-sizing: border-box;}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+} 
+
+*{
+    font-family: 'Pretendard-Regular';
+}
+/* 제일 큰 div */
+.P-All{
+    display: flex;
+    width: 1200px;
+    margin: auto;
+}
+
+/* 사이드바 */
+.P-sidebar{
+    width: 25%;
+}
+
+/* 메인 */
+.P-main{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #eee;
+    padding-top: 50px;
+}
+
+
+/* 정보조회 */
+.P-title1{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding-bottom: 30px;
+}
+
+.P-adm-search{
+    margin-right: 10px;
+}
+
+.P-adm-btn{
+    margin-right: 10px;
+    background-color: rgb(173,158,135);
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    width: 50px;
+    
+}
+
+.P-adm-btn:hover{
+    background-color: #4F3A28;
+}
+
+/* 탈퇴버튼 */
+#P-adm-btn{
+    margin-right: 10px;
+    background-color: rgb(173,158,135);
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    width: 50px;
+    margin: auto;
+}
+
+#P-adm-btn:hover{
+    background-color: #4F3A28;
+}
+
+.P-main-menu{
+    border: 1px solid #eee;
+    text-align: center;
+
+}
+
+#P-memberList1>tr th{
+    width:70px;
+    padding:0 5px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    border: 1px solid #eee;
+    
+}
+
+#P-memberList2>tr td{
+    padding:0 5px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    border: 1px solid #eee;
+    
+}

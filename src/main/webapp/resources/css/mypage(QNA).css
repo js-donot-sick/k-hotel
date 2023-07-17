@@ -102,8 +102,13 @@
     border: 0;
     border-radius: 8px;
     font-size: 15px;
+    background-color: rgb(173,158,135);
+    color: white;
 }
 
+.P-qna-btn:hover{
+    background-color: #4F3A28;
+}
 
 
 .P-pg {
