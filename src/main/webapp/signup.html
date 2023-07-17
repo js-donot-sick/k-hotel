@@ -12,8 +12,7 @@
     <script src="jquery-3.7.0.min.js"></script>
 
    
-
-   
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> 
 </head>
 <body>
 
@@ -133,12 +132,12 @@
                         
                         <div id="J2-4-2">
                             <div id="J2-4-3">
-                                <input type="text" placeholder="우편번호 입력"> <button>검색</button>
+                                <input type="text" id="sample3_postcode" placeholder="우편번호"><input type="button" onclick="sample3_execDaumPostcode()" value="우편번호 찾기">
                             </div>
 
                             <div id="J2-4-4">
 
-                                <input type="text" placeholder="주소 입력">
+                                <input type="text" id="sample3_address" placeholder="주소">
                             </div>
                         </div>
                         
@@ -148,8 +147,12 @@
                 </div>
                 
                 <div class="J2-3">
-                    <input placeholder="상세 주소 입력">
+                    <input type="text" id="sample3_detailAddress" placeholder="상세주소">
                 </div>
+
+                <div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
+                    <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
+                    </div>
                 
                 <div class="J2-5">
                     <div class="J2-5-1">
@@ -326,6 +329,7 @@
     
     
       <script src="resources/js/signup.js"></script>
+     
     </main>
 
 
