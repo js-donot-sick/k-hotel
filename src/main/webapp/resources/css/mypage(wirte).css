@@ -11,6 +11,7 @@
 
 * {
     font-family: 'Pretendard-Regular';
+
 }
 
 .P-top {
@@ -19,7 +20,7 @@
     width: 1200px;
 }
 
-.P-maindisplay {
+.P-maindisplay{
     display: flex;
     justify-content: center;
     white-space: nowrap;
@@ -73,7 +74,7 @@
 }
 
 .P-wirte>div:nth-child(2) {
-    width: 450px;
+    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,7 +85,7 @@
 
 /* 빈칸 */
 .P-wirte>div:nth-child(3) {
-    width: 50px;
+    width: 30px;
 }
 
 /* 시간 */
@@ -99,11 +100,18 @@
 }
 
 .P-wirte-btn {
+    width: 70px;
     height: 70%;
     margin: 10px 0;
     border: 0;
     border-radius: 8px;
     font-size: 15px;
+    background-color: rgb(173,158,135);
+    color: white;
+}
+
+.P-wirte-btn:hover {
+    background-color: #4F3A28;
 }
 
 
