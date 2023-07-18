@@ -16,7 +16,7 @@ input{
 
 .J-2{
 
-    height: auto;
+    height: 1600px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,20 +119,21 @@ button:hover{
 }
 
 
-#J2-4-3 > button{
+#J2-4-3 > input:nth-child(2){
 
     margin-left: 5px;
-    width: 45px;
+    width: 90px;
     height: 32px;
     border-radius: 5px;
     background-color:rgb(173,158,135);
-    border: none;
+    border: 0.5px solid gray;
 }
 
-#J2-4-3 > button:hover{
+#J2-4-3 > input:nth-child(2):hover{
     background-color:#4F3A28;
     cursor: pointer;
     border: 1px solid black;
+    color: white;
 }
 
 
@@ -141,7 +142,7 @@ button:hover{
     
     margin-left: 26px;
     border-radius: 5px;
-    width: 43%;
+    width: 25%;
     height: 75%;
 }
 
