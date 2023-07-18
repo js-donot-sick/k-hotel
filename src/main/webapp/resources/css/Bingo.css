@@ -15,8 +15,8 @@
 
 .J-game{
     position: absolute;
-    top:43%;
-    left: 34%;
+    top:30%;
+    left: 37.5%;
     font-weight: bold;
 }
 
@@ -88,8 +88,8 @@ cursor: pointer;
 
 #J-bingo{
   position: absolute;
-    top:22%;
-    left: 32%;
+    top:18%;
+    left: 35.7%;
     border: 1px solid black;
     width: 550px;
     height: 500px;
@@ -108,8 +108,8 @@ td{
 
 #J-bingo2{
   position: absolute;
-  top: 95%;
-  left: 43%;
+  top: 75%;
+  left: 44%;
   visibility: hidden;
 
   border-radius: 5px;
@@ -120,7 +120,7 @@ td{
 
 #J-main{
   position: absolute;
-  top: 95%;
+  top: 75%;
   left: 53%;
   visibility: hidden;
   width: 80px;
