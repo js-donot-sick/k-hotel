@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
 
-    <link rel="stylesheet" href="resources/CSS/login.css">
+    <link rel="stylesheet" href="../resources/css/login.css">
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
@@ -104,19 +104,28 @@
                         <table>
                             <tr>
                                 <td>아이디</td>
-                                <td><input type="text" name="inputId" placeholder="아이디를 입력해주세요"></td>
+                                <td><input type="text" name="inputId" placeholder="아이디를 입력해주세요" autocomplete="off"></td>
                                 <td rowspan="2"><button id="k-login-btn">로그인</button></td>
                             </tr>
                             <tr>
                                 <td>비밀번호</td>
-                                <td><input type="text" name="inputPw" placeholder="비밀번호를 입력해주세요"></td>
+                                <td><input type="text" name="inputPw" placeholder="비밀번호를 입력해주세요" autocomplete="off"></td>
                             </tr>
                         </table>
                     </div>
                 </form>
-                <label id="K-checkbox"> 
-                    <input type="checkbox" name="K-saveId" id="K-saveId">아이디 저장
-                </label>
+                <div class="K-cookie">
+                    <div>
+                        <label class="K-checkbox"> 
+                            <input type="checkbox" name="K-saveId" id="K-saveId">아이디 저장
+                        </label>
+                    </div>
+                    <div>
+                        <label class="K-checkbox"> 
+                            <input type="checkbox" name="K-auto-login" id="K-auto-login">자동 로그인
+                        </label>
+                    </div>
+                </div>
                 <div id="k-login-bottom">
                     <a href="#">아이디 찾기</a>
                     <span> | </span>

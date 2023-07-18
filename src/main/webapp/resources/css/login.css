@@ -273,13 +273,15 @@ input[name="inputPw"]{ /* 비밀번호 입력창 */
     margin-right: 5px;
 }
 
-#K-checkbox{
-    margin-left: 43%;
+#K-auto-login{
+    margin: auto;
     margin-top: 5px;
+    margin-right: 5px;
 }
 
+
 #k-login-bottom{ /* 아이디찾기비번찾기회원가입 */
-    margin: auto;
+    margin-left: 32%;
     margin-top: 5px;
     width: 273px;
     font-size: 16px;
@@ -294,10 +296,23 @@ input[name="inputPw"]{ /* 비밀번호 입력창 */
     font-weight: bold;
 }
 
+/* 아이디저장 자동로그인 */
+.K-cookie{
+    display: flex;
+}
 
+.K-cookie>div{
+    width: 100px;
+    margin: auto;
+}
 
+.K-cookie>div:nth-child(1){
+    margin-left: 35%;
+}
 
-
+.K-cookie>div:nth-child(2){
+    margin-right: 35%;
+}
 
 /* 팝업창(찾기) */
 #k-popup{

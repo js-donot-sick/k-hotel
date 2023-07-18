@@ -121,14 +121,19 @@ body::-webkit-scrollbar {
 #q-btn{ /* 게시글 작성 버튼 */
     display: block;
     margin-left: auto;
-    width: 120px;
+    width: 100px;
     height: 40px;
     border: 0;
-    background-color: rgba(88, 69, 46, 0.9);
-    color: white;
+    background-color: rgb(173,158,135);
+    color: black;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#q-btn:hover{
+    background-color: #4F3A28;
+    color: white;
 }
 
 .k-q-list{ /* 목록 하나 하나  */
@@ -228,21 +233,21 @@ body::-webkit-scrollbar {
     height: 30px;
 }
 
-.k-search-div>div:nth-child(3){
+.k-search-div>div:nth-child(2){
     position: relative;
 }
-.k-search-div>div:nth-child(3)>input{
+.k-search-div>div:nth-child(2)>input{
     padding-left: 30px;
 }
 
-.k-search-div>div:nth-child(4)>img{
+.k-search-div>div:nth-child(3)>img{
     width: 18px;
 }
 
-.k-search-div>div:nth-child(4){
+.k-search-div>div:nth-child(3){
     position: absolute;
-    top: 8%;
-    left: 46.5%;
+    top: 15%;
+    left: 39%;
 }
 
 

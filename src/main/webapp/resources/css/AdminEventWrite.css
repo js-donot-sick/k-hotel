@@ -116,9 +116,11 @@ textarea[name="K-content"]{
     border-radius: 5px;
     border: 0;
     cursor: pointer;
+    background-color: rgb(173,158,135);
 }
 
 #K-write{
+    background-color: rgb(173,158,135);
     cursor: pointer;
     border: 0;
     border-radius: 5px;

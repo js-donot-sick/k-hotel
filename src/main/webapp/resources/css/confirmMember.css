@@ -60,11 +60,16 @@
     margin-left: 30px;
 }
 
+.K-content td.K-td-none{
+    border: none;
+}
 .K-content td{ /* 각 행 */
     font-size: 20px;
     padding-top: 10px;
     border-bottom: 1px solid lightgray;
+    width: 300px;
 }
+
 
 .K-content tr>td:nth-child(1){ /* 첫 번째 열에만 width 지정(간격 조정 위해) */
     width: 150px;
