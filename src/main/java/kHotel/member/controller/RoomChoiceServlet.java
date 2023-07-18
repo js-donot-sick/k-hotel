@@ -20,4 +20,5 @@ public class RoomChoiceServlet extends HttpServlet{
 		
 		dispatcher.forward(req, resp);
 	}
+	
 }
