@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>CBook-sql.xml</comment>
+	
+	<entry key="reservationFinal">
+	INSERT INTO RESERVATION 
+	VALUES(SEQ_BOOK_NO.NEXTVAL,?,?,?,?,?,?,DEFAULT,1)
+	</entry>
+</properties>

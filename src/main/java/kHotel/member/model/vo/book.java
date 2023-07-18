@@ -14,14 +14,17 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class book {
+public class Book {
 
-	private int bookNo;
-	private String bookRoom;
-	private Date checkInTime;
-	private Date checkOutTime;
-	private int adult;
-	private int child;
-	private String checkFl;
+		private int bookNo;
+		private String bookHotel;
+		private String bookRoom;
+		private String checkInTime;
+		private String checkOutTime;
+		private int adult;
+		private int child;
+		private String checkFl;
+		
 	
+
 }
