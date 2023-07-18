@@ -44,7 +44,7 @@
 
 <body>
     
-    <div class="H-div">
+    
         
         
     <div class="H-snb">
@@ -67,28 +67,21 @@
             </li>
             <li>
                 <a href="#" class="H-side-item">쿠폰</a>
-                <dl class="H-none">
-                    <dd class=""><a href="#">- 쿠폰함</a></dd>
-                </dl>
+            
             </li>
             <li>
                 <a href="#" class="H-side-item">내가 쓴 글</a>
-                <dl class="H-none">
-                    <dd class=""><a href="#">- 내가 쓴 글</a></dd>
-                </dl>
+             
             </li>
             <li>
                 <a href="#" class="H-side-item">찜</a>
-                <dl class="H-none">
-                    <dd class=""><a href="#">- 찜 목록</a></dd>
-                </dl>
+              
             </li>
         </ul>
         
     </div>
 
     
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
    
 
 

@@ -16,7 +16,10 @@
 .P-top {
     display: flex;
     margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
     width: 1200px;
+    
 }
 
 .P-maindisplay {
