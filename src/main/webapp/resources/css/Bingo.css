@@ -10,4 +10,120 @@
 .J-1 > img{
     width: 100%;
     height: 100%;
+    position: relative;
+}
+
+.J-game{
+    position: absolute;
+    top:43%;
+    left: 34%;
+    font-weight: bold;
+}
+
+
+.J-game {
+cursor: pointer;
+    font-size: 90px;
+  line-height: calc(20px + 20vh);
+/*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+  color: #fccaff; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+
+
+
+@-webkit-keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+/*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
+}
+
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+/*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
+}
+
+#J-bingo{
+  position: absolute;
+    top:22%;
+    left: 32%;
+    border: 1px solid black;
+    width: 550px;
+    height: 500px;
+    visibility: hidden;
+
+
+}
+
+
+td{
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+  
+}
+
+#J-bingo2{
+  position: absolute;
+  top: 95%;
+  left: 43%;
+  visibility: hidden;
+
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+
+}
+
+#J-main{
+  position: absolute;
+  top: 95%;
+  left: 53%;
+  visibility: hidden;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
 }
