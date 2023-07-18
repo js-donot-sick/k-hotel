@@ -25,7 +25,7 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
 <!-- 예약부분 바디 -->
-    <form action="book/roomChoice" method="get" onsubmit="return reservationValidate()">
+    <form action="book/reservationFinal" method="get" onsubmit="return reservationValidate()">
         <div class="C-reservation">
             <div class="C-rsv-main">
                 <div class="C-rsv-main-text">지점 / 객실 / 날짜 / 인원 선택</div>
@@ -37,10 +37,10 @@
                     </div>
                     <div>
                         <select name="C-hotel-choice" id="C-hotel-choice">
-                            <option name="location" value="none" selected>호텔을 선택해주세요</option>
-                            <option name="location" id="Gangnam" value="Gangnam">K-호텔 강남점</option>
-                            <option name="location" id="jongno" value="jongno">K-호텔 종로점</option>
-                            <option name="location" id="dangsan" value="dangsan">K-호텔 당산점</option>
+                            <option name="Hotel" value="none" selected>호텔을 선택해주세요</option>
+                            <option name="Hotel" id="Gangnam" value="Gangnam">K-호텔 강남점</option>
+                            <option name="Hotel" id="jongno" value="jongno">K-호텔 종로점</option>
+                            <option name="Hotel" id="dangsan" value="dangsan">K-호텔 당산점</option>
                         </select>
                     </div>
                 </div>
