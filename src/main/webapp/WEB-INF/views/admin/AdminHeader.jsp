@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdminHeader</title>
+    <link rel="stylesheet" href="resources/css/AdminHeader.css">
+</head>
+<body>
+
+    <header>
+        <div class="K-header">
+            <div>관리자 페이지 / ${}</div>
+            <div>
+                <a href="#">로그아웃</a>
+            </div>
+        </div>
+    </header>
+    
+    
+</body>
+</html>
