@@ -6,7 +6,18 @@ body > .H-div{
     margin: auto;
     display: flex;
 }
-.H-snb { width: 25%; background:rgb(207, 191, 167); height:100%; box-sizing:border-box; color:#fff; box-shadow:1px 0px 20px rgba(0,0,0,0.2);}
+.H-snb { width: 25%; }
+
+.H-side-bar{ 
+    
+    width: 70%;
+    background:rgb(207, 191, 167);
+    height:auto; 
+    box-sizing:border-box;
+    color:#fff; 
+    box-shadow:1px 0px 20px rgba(0,0,0,0.2);
+    margin:auto
+}
 
 .H-side-bar li {border-bottom:1px solid rgba(255,255,255,0.2);}
 .H-side-bar li.active, .side-bar li:hover {background:rgba(0,0,0,0.4);}
