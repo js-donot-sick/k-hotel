@@ -10,10 +10,10 @@
 
 .H-royal {
   padding: 2rem 10%;
-  margin: 0;
   padding: 0;
   box-sizing: border-box;
   border: 0px solid silver;
+  margin-bottom: 50px;
 }
 
 .H-royal h2 {
