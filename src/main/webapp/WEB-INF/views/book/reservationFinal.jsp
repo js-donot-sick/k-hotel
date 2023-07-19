@@ -8,9 +8,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>예약 확인창</title>
-    <link rel="stylesheet" href="resources/css/header.css"> <!-- 헤더 스타일 -->
-    <link rel="stylesheet" href="resources/css/reservationFinal.css"> <!-- 예약확인창 스타일 -->
-    <link rel="stylesheet" href="resources/css/footer.css"><!-- 풋터 스타일 -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/header.css"> <!-- 헤더 스타일 -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/reservationFinal.css"> <!-- 예약확인창 스타일 -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css"><!-- 풋터 스타일 -->
     <!-- j쿼리 url -->
     <script src="resources/js/jquery-3.7.0.min.js"></script>
     <!-- 폰트 url -->
@@ -26,7 +26,7 @@
     <!----------------------------------------헤더 --------------------------------------------->
 
     <!----------------------------------------바디 --------------------------------------------->
-    <form action="" method="get">
+    <form action="book/bookEnd" method="get">
         <div class="C-body">
             <div class="C-Final-rsv">
                 <div class="C-body-first-div">예약하기</div>
@@ -40,7 +40,7 @@
                             <tr>
                                 <td></td>
                                 <td>이름</td>
-                                <td><input type="text" id="C-rsvName" name="C-rsvName" autocomplete="off"></td>
+                                <td><input type="text" id="C-rsvName" name="C-rsvName" autocomplete="off">${loginMember.memberName}</td>
                             </tr>
                             <tr>
                                 <td></td>
