@@ -24,7 +24,7 @@ public class CBookDAO {
 			try {
 				prop = new Properties();
 				
-				String filePath =  MemberDAO.class.getResource("/KHotel/sql/CBook-sql.xml").getPath(); 
+				String filePath =  CBookDAO.class.getResource("/kHotel/sql/CBook-sql.xml").getPath(); 
 				
 				prop.loadFromXML(new FileInputStream(filePath));
 				

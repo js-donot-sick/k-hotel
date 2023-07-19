@@ -25,7 +25,7 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
 <!-- 예약부분 바디 -->
-    <form action="book/reservationFinal" method="get" onsubmit="return reservationValidate()">
+    <form action="${contextPath}/book/reservationFinal" method="get" onsubmit="return reservationValidate()">
         <div class="C-reservation">
             <div class="C-rsv-main">
                 <div class="C-rsv-main-text">지점 / 객실 / 날짜 / 인원 선택</div>
