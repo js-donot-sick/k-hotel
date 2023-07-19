@@ -30,22 +30,22 @@
                 </div>
                 <div id="k-sns">
                     <div>
-                        <a href="#">
+                        <a href="https://blog.naver.com/lotte_hotels/">
                             <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-blog.png" class="k-sns-img">
                         </a>
                     </div>
                     <div id="k-sns1">
-                        <a href="#">
+                        <a href="https://www.instagram.com/shillastay_official/">
                             <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-instagram.png" class="k-sns-img">
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a href="https://www.youtube.com/user/LotteHotels">
                             <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-youtube.png" class="k-sns-img">
                         </a>
                     </div>
                     <div>
-                        <a href="#">
+                        <a href="https://www.facebook.com/shillastay">
                             <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-facebook.png" class="k-sns-img">
                         </a>
                     </div>
@@ -83,6 +83,22 @@
 
 
     </footer>
+
+    <%-- session에 message 속성이 존재하는 경우 alert 창으로 해당 내용을 출력 --%>
+
+    <c:if test="${ !empty sessionScope.message }">
+        <script>
+            alert("${message}");
+
+            // EL 작성 시 scope 지정하지 않으면
+            // page -> request -> session -> application 순서로 검색하여
+            // 일치하는 속성이 있으면 출력한다.
+        </script>
+
+        <%-- message 1회 출력 후 session에서 제거 --%>
+        <c:remove var="message" scope="session" />
+
+    </c:if>
     
 </body>
 </html>
