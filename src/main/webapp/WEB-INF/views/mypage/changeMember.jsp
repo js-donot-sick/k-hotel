@@ -26,8 +26,8 @@
 
         <jsp:include page="/WEB-INF/views/common/sidebar.jsp"/> <!-- 사이드바 -->
 
-        <div>
-                <form action="#" class="L-form">
+        <div class="L-main">
+            <form action="#" class="L-form">
                 <div class="K-content"> <!-- 찐 내용 -->
                     <div>회원 정보 수정</div>
                     <div>회원님의 정보를 쉽게 확인하실 수 있습니다.</div>

@@ -19,13 +19,16 @@
     margin: auto;
     display: flex;
     
-    position: relative;
+}
+
+.L-main{
+    width: 75%;
 }
 
 .K-content{ /* 찐 내용 */
     background-color: #ebe7e3 ;
     margin: auto;
-    width: 75%;
+    width: 100%;
     border: 1px solid rgba(178, 158, 135, 0.9);
 }
 
