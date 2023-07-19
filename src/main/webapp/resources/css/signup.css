@@ -1,6 +1,6 @@
 *{box-sizing: border-box;
-
-      /* border: 1px solid black;  */
+ 
+       /*  border: 1px solid black;   */ 
  
 }
 
@@ -16,7 +16,7 @@ input{
 
 .J-2{
 
-    height: 1600px;
+    height: 2200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,8 +63,8 @@ button:hover{
 
     border-radius: 5px;
     width: 361px;
-    height: 67%;
-    margin-left: 172px;
+    height: 62%;
+    margin-left: 174px;
 }
 
 .J2-4{ 
@@ -122,8 +122,8 @@ button:hover{
 #J2-4-3 > input:nth-child(2){
 
     margin-left: 5px;
-    width: 90px;
-    height: 32px;
+    width: 99px;
+    height: 37px;
     border-radius: 5px;
     background-color:rgb(173,158,135);
     border: 0.5px solid gray;
@@ -143,7 +143,7 @@ button:hover{
     margin-left: 26px;
     border-radius: 5px;
     width: 25%;
-    height: 75%;
+    height: 67%;
 }
 
 #J2-4-4 > input:nth-child(1){
@@ -151,19 +151,41 @@ button:hover{
     margin-left: 26px;
     border-radius: 5px;
     width: 50%;
-    height: 75%;
+    height: 67%;
 }
 
 #J2-4-1 > div:nth-child(1){width: 45%; }
 #J2-4-1 > div:nth-child(2){ width: 55%;}
 
+.J-J1 > div{
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    
+}
 
+.J-J2 > div{
+    width: 240px;
+    height: 25px;
+    text-align: center;
+    
+}
+
+.J-J1 > input{
+    margin-top: 20px;
+}
+
+.J-J2 > input{
+    margin-top: 20px;
+}
 
 .J-J1 {
     height: 14.2%;
+    flex-direction: column;
 }
 .J-J2 {
     height: 14.2%;
+    flex-direction: column;
 }
 .J-J3 {
     height: 14.2%;
@@ -190,6 +212,7 @@ button:hover{
 
 .J-H button:hover { 
     cursor: pointer;
+    color: white;
 }
 
 .J-H1 {    
@@ -227,14 +250,14 @@ button:hover{
 
 #J-B{
     width: 85%;
-    height: 40%;
+    height: 35%;
     border-radius: 5px;
     
 }
 
 #J-C{
     width: 41%;
-    height: 35%;
+    height: 30%;
     border-radius: 5px;
 
 }
@@ -271,16 +294,15 @@ button:hover{
 }
 
 .J-check2{
-
     margin: 20px;
 }
 
 .J2-5-1 > pre{ 
-    margin-top: 70px;
+
+    margin-top: 30px;
 }
 
 .J2-5-4 > pre{ 
-    margin-top: 42px;
 }
 
 .J2-5-0{ height: 5%;}
@@ -317,6 +339,7 @@ textarea{ color: gray;}
 
 .J-H1-1:hover{
     background-color:#4F3A28;
+    color: white;
 }
 
 .J-H7-1{
@@ -342,6 +365,7 @@ textarea{ color: gray;}
 .J2-6 > button:hover{
     background-color:#4F3A28;
     cursor: pointer;
+    color: white;
 }
 
 .J-H7-1 > option:nth-child(1){
@@ -351,241 +375,3 @@ textarea{ color: gray;}
 
 
 
-
-footer{
-    /* border: 1px solid black; */
-    width: 100%;
-}
-
-.k-first-div{
-    background-color: rgba(178, 158, 135, 0.9);
-}
-
-.k-first-div>div{
-    width: 1200px;
-    margin: auto;
-    height: 100px;
-    display: flex;
-    color: white;
-}
-.k-second-div{
-    background-color: #ebe7e3;
-}
-.k-second-div>div{
-    width: 1200px;
-    margin: auto;
-    height: 60px;
-    display: flex;
-}
-.k-third-div{
-    width: 1200px;
-    margin: auto;
-    height: 90px;
-    display: flex;
-}
-
-.k-f-container>div:nth-child(1)>img{
-    margin-top: 8px;
-}
-
-.k-f-container>div:nth-child(2){
-    width: 220px;
-    margin-top: 40px;
-    margin-left: 50px;
-}
-
-.k-f-container>div:nth-child(3){
-    width: 520px;
-}
-
-
-.k-f-container span:nth-child(2n-1):hover{
-    cursor: pointer;
-    font-weight: bold;
-    color: #ebe7e3;
-}
-
-#k-sns{
-    display: flex;
-    margin-top: 30px;
-    justify-content: space-around;
-    width: 200px;
-    margin-left: auto;
-}
-
-#k-sns img{
-    width: 40px;
-}
-#k-sns img:hover{
-    transform: scale(1.2);
-    transition-duration: 0.2s;
-}
-
-#k-sns>div:nth-child(2){
-    margin-left: 15px;
-}
-
-.k-second-div span{
-    font-size: small;
-}
-
-.k-second-div span:nth-child(2n-1):hover{
-    color: rgba(90, 74, 56, 0.9);
-    cursor: pointer;
-    transition-duration: 0.2s;
-}
-.k-second-div span{
-    padding-left: 5px;
-}
-
-.k-second-div>div{
-    line-height: 5px;
-    line-height: 55px;
-}
-
-.k-third-div{
-    padding-top: 14px;
-}
-
-.k-third-div>div{
-    font-size: small;    
-}
-
-.k-third-div img{
-    width: 200px;
-}
-.k-third-div>:nth-child(2){ /* 빈칸인데 우선 삭제했으.. */
-    width: 205px;
-    margin-top: 10px;
-    margin-left: auto;
-}
-
-
-
-
-body{margin: 0; padding: 0;}
-
-div a{
-    text-decoration: none;
-}
-
-/* 전체 */
-.P-container{
-    background-color: #AFBDCA;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    opacity: 0.7;
-    backdrop-filter: blur(30px);
-  
-    
-}
-
-.P-header_middle > img{
-    width: 200px;
-    margin-top: 10px;
-}
-
-
-
-/* 가운데header */
-.P-header{
-    display: flex;
-    height: 120px;
-    width: 1200px;
-    margin: auto;
-    justify-content: space-between;
-    background-color: #F1E3C4;
-    
-
-}
-
-/* 왼쪽 상단 빈칸 */
-.P-blank{
-    padding: 5px 150px;
-    height: 50%;
-    width: 30%;
-
-}
-
-/* 호텔찾기/예약 */
-.P-btn1{
-    height: 50%;
-    display : flex;
-    justify-content : center;
-    align-items : center;
-    justify-content: space-around;
-    font-size: 15px;
-    font-weight: bold;
-   
-
-}
-.P-btn1>a:nth-child(1):after{
-    display:block;
-    content: '';
-    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-}
-
-.P-btn1>a:nth-child(1):hover:after{ transform: scaleX(1); }
-.P-btn1>a:nth-child(1):hover{color: black;}   
-.P-btn1>a:nth-child(2):after{
-    display:block;
-    content: '';
-    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-}
-
-.P-btn1>a:nth-child(2):hover:after{ transform: scaleX(1); }
-.P-btn1>a:nth-child(2):hover  {color: black;}
-.P-btn1>a{color: black;}
-
-/* 로그인 nav */
-.P-btn2{
-    font-size: 13px;
-    padding: 25px;
-    height: 50%;
-    display: block;
-    justify-content: right;
-    padding-left: 0;
-
-}
-
-.P-btn2>ul a{color: black;} 
-
-/* 커뮤니티 / 이벤트 */
-.P-btn3{
-    height: 50%;
-    display : flex;
-    justify-content : center;
-    align-items : center;
-    justify-content: space-around;
-    font-size: 15px;
-    font-weight: bold;
-    text-transform:uppercase;
-    
-}
-
-.P-btn3>a{color: black;}
-
-.P-btn3>a:nth-child(1):after {
-    display:block;
-    content: '';
-    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-}
-.P-btn3>a:nth-child(1):hover:after{ transform: scaleX(1); }
-.P-btn3>a:nth-child(1):hover {color: black;}
-.P-btn3>a:nth-child(2):after{
-    display:block;
-    content: '';
-    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-}
-.P-btn3>a:nth-child(2):hover:after{ transform: scaleX(1); }
-.P-btn3>a:nth-child(2):hover{color: black;}

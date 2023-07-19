@@ -34,7 +34,7 @@ document.getElementsByClassName("J-J1-1")[0].addEventListener("keydown", functio
 })
 
 
-document.getElementsByClassName("J-J1-2")[0].addEventListener("keydown", function(){
+document.getElementsByClassName("J-J1-2")[0].addEventListener("input", function(){
 
     const regExp = /^([A-Z]|[a-z]|[~\!\@\$]){7,14}$/;
 
@@ -63,7 +63,7 @@ document.getElementById("J-H3-1").addEventListener("click", function(){
     const pw2 = document.getElementsByClassName("J-J1-3")[0];
 
     if(pw1.value == "" | pw2.value == ""){
-        alert("비밀번호를 입력해주세요.");
+        alert("비밀번호 혹은 비밀번호 확인을 입력해주세요.");
     } else if(pw1.value == pw2.value){
         alert("비밀번호가 일치합니다.");
     } else{
@@ -72,7 +72,7 @@ document.getElementById("J-H3-1").addEventListener("click", function(){
     
 })
 
-document.getElementsByClassName("J-J1-3")[0].addEventListener("keyup", function(){
+document.getElementsByClassName("J-J1-3")[0].addEventListener("input", function(){
   
     const pw1 = document.getElementsByClassName("J-J1-2")[0];
 
@@ -80,12 +80,12 @@ document.getElementsByClassName("J-J1-3")[0].addEventListener("keyup", function(
         this.style.color = "green";
         pw1.style.color = "green";
     } else{
-        this.style.color = "black";
-        pw1.style.color = "black";
+        this.style.color = "red";
+        pw1.style.color = "red";
     }
 })
 
-document.getElementsByClassName("J-J1-2")[0].addEventListener("keyup", function(){
+document.getElementsByClassName("J-J1-2")[0].addEventListener("input", function(){
   
     const pw2 = document.getElementsByClassName("J-J1-3")[0];
 
@@ -93,8 +93,8 @@ document.getElementsByClassName("J-J1-2")[0].addEventListener("keyup", function(
         this.style.color = "green";
         pw2.style.color = "green";
     } else{
-        this.style.color = "black";
-        pw2.style.color = "black";
+        this.style.color = "red";
+        pw2.style.color = "red";
     }
 })
 
