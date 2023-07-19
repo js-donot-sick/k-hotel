@@ -19,14 +19,18 @@
     <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <div class="L-maindisplay">
-        <div class="L-side">
+        <!-- <div class="L-side">
             <ul class="L-sidelist">
                 <li>K-호텔 소개</li>
                 <a href="#"><li>강남점</li></a>
                 <a href="#"><li>종로점</li></a>
                 <a href="#"><li>당산점</li></a>
             </ul>
-        </div>
+        </div> -->
+        
+        <jsp:include page="/WEB-INF/views/common/hotelSidebar.jsp"/>
+        
+
         <div class="L-main">
             <div>소개</div>
             <img src="resources/images/hotelInfo1.jpg" alt="">
