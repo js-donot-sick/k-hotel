@@ -1,9 +1,27 @@
 package kHotel.member.controller;
 
-public final class LoginServlet {
+import java.io.IOException;
 
-	public LoginServlet() {
-		// TODO Auto-generated constructor stub
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/member/login")
+public final class LoginServlet extends HttpServlet {
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		String path = "/WEB-INF/views/member/login.jsp";
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+		
+		dispatcher.forward(req, resp);
+		
+		
 	}
 
 }
