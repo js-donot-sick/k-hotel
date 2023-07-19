@@ -27,8 +27,55 @@
 <body>
     <div>
         <!-- 헤더 -->
+        <div class="P-container">
+            <div class="P-header">
+    
+                <div class="P-header_left">
+                    <div class="P-blank">
+                        
+                    </div>
+    
+                    <div class="P-btn1">
+                            <a href="${contextPath}/mypage/mypage(QNA)" >호텔찾기 <i class="fa-solid fa-magnifying-glass"></i></a>
+               
+                            <a href="${contextPath}/book/roomChoice">예약 <i class="fa-solid fa-calendar-days"></i></a>
+                    </div>
+                </div>
+     
+                <!-- 로고 클릭 시 메인페이지로 이동 -->
+                <div>
+                    <a href="${contextPath}" class="P-header_middle">
+                        <img src="resources/images/logo_b_2.png" alt="">
+                    </a>
+                </div>
+                
+                <div class="P-header_right">
+                    <!-- 로그인 -->
+              
+                        <div class="P-btn2">
+                            <ul>
+                                <a href="${contextPath}/member/login">로그인</a>
+                                <span> | </span>
+                                <a href="${contextPath}/member/logout">로그아웃</a>
+                                <span> | </span>
+                                <a href="${contextPath}/member/mypage">마이페이지</a>
+                                <span> | </span>
+                                <a href="${contextPath}/member/signUp">회원가입</a>
+                            </ul>
+                        </div>
         
-        <jsp:include page ="/WEB-INF/views/common/header.jsp"/>
+              
+                        <div class="P-btn3">
+                                <a href="${contextPath}/board">커뮤니티</a>
+                               <a href="${contextPath}/event" >이벤트</a>
+                            
+                        </div>
+         
+    
+                </div>
+                
+            </div>
+        </div>
 
         <!-- 배너 사진 -->
         <div>
