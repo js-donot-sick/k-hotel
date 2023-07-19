@@ -15,8 +15,8 @@ import kHotel.member.model.service.CBookService;
 import kHotel.member.model.vo.Book;
 
 
-@WebServlet("/reservationFinal")
-public class ReservationFinal extends HttpServlet{
+@WebServlet("/book/reservationFinal")
+public class ReservationFinalServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,8 +25,19 @@ public class ReservationFinal extends HttpServlet{
 		String bookRoom = req.getParameter("C-room-choice");
 		String checkinTime = req.getParameter("C-checkInTime");
 		String checkOutTime = req.getParameter("C-checkOutTime");
-		int adult = Integer.parseInt(req.getParameter("C-adult"));
-		int child = Integer.parseInt(req.getParameter("C-children"));
+		
+		int adult = 0;
+		
+		if(adult > 0) {
+			adult = Integer.parseInt(req.getParameter("C-adult"));
+		}
+		
+		int child = 0;
+		
+		if(child > 0) {
+			child = Integer.parseInt(req.getParameter("C-children"));
+			
+		}
 		
 		Book book = new Book();
 		
@@ -41,12 +52,11 @@ public class ReservationFinal extends HttpServlet{
 			
 			CBookService service = new CBookService();
 			
-			int result = service.reservationFinal(book);;
-			
-			HttpSession session = req.getSession();
-			
+			int result = service.reservationFinal(book);
+					
 			if(result > 0) { // 성공
-				String path = "${contextPath}/WEB-INF/views/book/reservationFinal.jsp";
+				
+				String path = "/WEB-INF/views/book/reservationFinal.jsp";
 				
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 				
@@ -54,7 +64,7 @@ public class ReservationFinal extends HttpServlet{
 				
 				dispatcher.forward(req, resp);
 				
-			}else { // 
+			}else { // 실패
 				
 			}
 		} catch (Exception e) {
