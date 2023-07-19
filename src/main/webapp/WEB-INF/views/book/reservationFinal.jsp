@@ -40,22 +40,22 @@
                             <tr>
                                 <td></td>
                                 <td>이름</td>
-                                <td><input type="text" id="C-rsvName" name="C-rsvName" autocomplete="off">${loginMember.memberName}</td>
+                                <td><input type="text" id="C-rsvName" name="C-rsvName" autocomplete="off" readonly></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>이메일</td>
-                                <td><input type="text" id="C-rsvEmail" name="C-revEmail" autocomplete="off"></td>
+                                <td><input type="text" id="C-rsvEmail" name="C-revEmail" autocomplete="off" readonly></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>전화번호</td>
-                                <td><input type="text" id="C-rsvTel" name="C-rsvTel" autocomplete="off"></td>
+                                <td><input type="text" id="C-rsvTel" name="C-rsvTel" autocomplete="off" readonly></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>주소</td>
-                                <td><input type="text" id="C-rsvAddress" name="C-rsvAddress" autocomplete="off"></td>
+                                <td><input type="text" id="C-rsvAddress" name="C-rsvAddress" autocomplete="off" readonly></td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -120,7 +120,7 @@
                                 <tr id="C-display-change2">
                                     <td>입금자명</td>
                                     <td>
-                                        <input type="text" id="C-accountName" name="C-accountName" value="K-호텔" autocomplete="off" disabled>
+                                        <input type="text" id="C-accountName" name="C-accountName" value="K-호텔" autocomplete="off" readonly>
                                     </td>
                                 </tr>
                             </table>
@@ -132,7 +132,7 @@
                                 </tr>
                                 <tr>
                                     <td>객실요금</td>
-                                    <td><input type="text" id="C-hotelPay" name="C-hotelPay" autocomplete="off"></td>
+                                    <td><input type="text" id="C-hotelPay" name="C-hotelPay" autocomplete="off" readonly></td>
                                 </tr>
                                 <tr>
                                     <td>쿠폰선택</td>
@@ -145,7 +145,7 @@
                                 </tr>
                                 <tr>
                                     <td>할인요금</td>
-                                    <td><input type="text" name="C-couponPay" id="C-couponPay" autocomplete="off" disabled>
+                                    <td><input type="text" name="C-couponPay" id="C-couponPay" autocomplete="off" readonly>
                                     </td>
                                 </tr>
                                 <tr>
@@ -153,7 +153,7 @@
                                     <td></td>
                                     <td></td>
                                     <td class="Iwantgohome">결제금액</td>
-                                    <td><input type="text" name="C-finalpay" id="C-finalpay" autocomplete="off"></td>
+                                    <td><input type="text" name="C-finalpay" id="C-finalpay" autocomplete="off" readonly></td>
                                 </tr>
                             </table>
                         </div>
