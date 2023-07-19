@@ -5,6 +5,6 @@
 	
 	<entry key="reservationFinal">
 	INSERT INTO RESERVATION 
-	VALUES(SEQ_BOOK_NO.NEXTVAL,?,?,?,?,?,?,DEFAULT,1)
+	VALUES(SEQ_BOOK_NO.NEXTVAL,?,?,?,?,?,?,1,1)
 	</entry>
 </properties>

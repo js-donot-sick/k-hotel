@@ -13,7 +13,7 @@
 </head>
 <body>
     
-    <div>헤더</div>
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <div class="C-maindisplay">
         <div class="C-side">
@@ -135,7 +135,7 @@
         </div>
         
         
-        <div>풋터</div>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
         
         <script src="${contextPath}/resources/js/hotelinfo.js"></script>
         </body>
