@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import kHotel.member.model.service.CBookService;
 import kHotel.member.model.vo.Book;
+import kHotel.member.model.vo.HotelRoom;
 
 
 @WebServlet("/book/reservationFinal")
@@ -25,7 +26,7 @@ public class ReservationFinalServlet extends HttpServlet{
 		String bookRoom = req.getParameter("C-room-choice");
 		String checkinTime = req.getParameter("C-checkInTime");
 		String checkOutTime = req.getParameter("C-checkOutTime");
-	
+		
 		int adult = 0;
 		
 		if(adult > 0) {
@@ -40,6 +41,7 @@ public class ReservationFinalServlet extends HttpServlet{
 		}
 		
 		Book book = new Book();
+		HotelRoom hotelRoom = new HotelRoom();
 		
 		book.setBookHotel(bookHotel);
 		book.setBookRoom(bookRoom);
@@ -48,6 +50,8 @@ public class ReservationFinalServlet extends HttpServlet{
 		book.setAdult(adult);
 		book.setChild(child);
 		
+		
+		
 		try {
 			
 			CBookService service = new CBookService();
@@ -55,6 +59,7 @@ public class ReservationFinalServlet extends HttpServlet{
 			int result = service.reservationFinal(book);
 					
 			if(result > 0) { // 성공
+				
 				
 				String path = "/WEB-INF/views/book/reservationFinal.jsp";
 				
@@ -67,6 +72,7 @@ public class ReservationFinalServlet extends HttpServlet{
 			}else { // 실패
 				
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
