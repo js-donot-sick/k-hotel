@@ -1,9 +1,28 @@
 package kHotel.member.model.vo;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
 public class Member {
+	
+	private int memberNo;
+	private int memberId;
+	private int memberPw;
+	private String memberName;
+	private String memberPno;
+	private String memberTel;
+	private String memberEmail;
+	private String memberAddress;
+	private char secessionFlag;
+	private int coupon;
+	private int report;
+	private char memberAdmin;
 
-	public Member() {
-		// TODO Auto-generated constructor stub
-	}
-
+	
 }
