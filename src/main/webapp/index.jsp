@@ -38,7 +38,7 @@
                     <div class="P-btn1">
                             <a href="${contextPath}/mypage/mypage(QNA)" >호텔찾기 <i class="fa-solid fa-magnifying-glass"></i></a>
                
-                            <a href="${contextPath}/book/roomChoice">예약 <i class="fa-solid fa-calendar-days"></i></a>
+                            <a href="book/roomChoice">예약 <i class="fa-solid fa-calendar-days"></i></a>
                     </div>
                 </div>
      

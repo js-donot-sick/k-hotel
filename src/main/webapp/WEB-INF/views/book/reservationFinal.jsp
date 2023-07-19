@@ -120,7 +120,7 @@
                                 <tr id="C-display-change2">
                                     <td>입금자명</td>
                                     <td>
-                                        <input type="text" id="C-accountName" name="C-accountName" value="K-호텔" autocomplete="off" readonly>
+                                        <input type="text" id="C-accountName" name="C-accountName" value="K-호텔" autocomplete="off" disabled>
                                     </td>
                                 </tr>
                             </table>
@@ -197,8 +197,7 @@ K-호텔 객실예약과 관련하여 귀사가 아래와 같이 본인의 개�
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-    <script src="resources/js/header.js"></script>
-    <script src="resources/js/reservationFinal.js"></script>
+    <script src="${contextPath}/resources/js/reservationFinal.js"></script>
 </body>
 
 </html>
