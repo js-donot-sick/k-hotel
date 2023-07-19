@@ -43,7 +43,7 @@
     </div>
 
     
-    <div>풋터</div>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 
 

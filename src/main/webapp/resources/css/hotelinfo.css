@@ -16,24 +16,30 @@
     justify-content: space-around;
     width: 1200px;
     margin: auto;
+    padding: 50px 0;
 }
 
 /* 사이드바 */
 
+.L-side{
+    width: 25%;
+}
 
 .L-sidelist{
     list-style-type: none;
     padding: 0px 10px 10px 10px;
     margin: 0px 10px 10px 10px;
     white-space: nowrap;
-    width: 180px;
+    width: 70%;
     height: 280px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: rgba(178, 158, 135, 0.9);
-    color: white;
+    background-color: rgb(207, 191, 167);
+    color: #fff;
+    box-shadow:1px 0px 20px rgba(0,0,0,0.2);
 }
+
 
 .L-sidelist > li:nth-of-type(1){
     font-size: 24px;
@@ -46,13 +52,19 @@
     color: white;
 }
 
+.L-sidelist a:hover{
+    color:black
+}
+
+
+
 
 
 
 /* 메인화면 */
 .L-main{
     white-space: nowrap;
-    width: 950px;
+    width: 75%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -73,7 +85,7 @@
 }
 
 .L-main img{
-    width: 900px;
+    width: 95%;
 }
 
 .L-main p{
