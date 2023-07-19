@@ -44,7 +44,7 @@
      
                 <!-- 로고 클릭 시 메인페이지로 이동 -->
                 <div>
-                    <a href="#" class="P-header_middle">
+                    <a href="${contextPath}" class="P-header_middle">
                         <img src="resources/images/logo_b_2.png" alt="">
                     </a>
                 </div>
@@ -54,20 +54,20 @@
               
                         <div class="P-btn2">
                             <ul>
-                                <a href="#">로그인</a>
+                                <a href="${contextPath}/member/login">로그인</a>
                                 <span> | </span>
-                                <a href="#">로그아웃</a>
+                                <a href="${contextPath}/member/logout">로그아웃</a>
                                 <span> | </span>
-                                <a href="#">마이페이지</a>
+                                <a href="${contextPath}/member/mypage">마이페이지</a>
                                 <span> | </span>
-                                <a href="#">회원가입</a>
+                                <a href="${contextPath}/member/signUp">회원가입</a>
                             </ul>
                         </div>
         
               
                         <div class="P-btn3">
-                                <a href="#">커뮤니티</a>
-                               <a href="#" >이벤트</a>
+                                <a href="${contextPath}/board">커뮤니티</a>
+                               <a href="${contextPath}/event" >이벤트</a>
                             
                         </div>
          
@@ -94,7 +94,7 @@
         </div>
 
         <!-- 호텔 예약 -->
-        <form action="#" method="get">
+        <form action="${contextPath}/book/reservationFinal" method="get">
             <div class="C-reservation">
                 <div class="C-rsv-main">
                     <div class="C-rsv-main-text">지점 / 객실 / 날짜 / 인원 선택</div>
@@ -169,47 +169,7 @@
                 </div>
         </form>
         
-
-        <!-- body2 -->
-        <article class="H-royal">
-
-            <h2>일상을 더 품격있게</h2>
-         
-            <div class="H-royal_inner">
-         
-              <section>
-                <div>
-                  <img class="H-img" src="https://eshop.lottehotel.com/uploads/banner/6b2686c6b8133b8e2a29844f15c42c23.png" alt="해온 프리미엄 배딩">
-                </div>
-                <div>
-                  <div>
-                    <h3>해온 프리미엄베딩</h3>
-                    <p>국내최고 롯데호텔에서만 느낄 수 있는 고품격<br>
-                      he:on Bedding Package를 집에서 편안하게 느껴보세요.</p>
-                    <button>자세히보기</button>
-                  </div>
-                </div>
-              </section>
-         
-              <section>
-                <div>
-                  <img class="H-img" src="https://eshop.lottehotel.com/uploads/banner/b2bbeedfa09e1040cb5901d0aca57325.jpg" alt="시그니엘 드립백 커피">
-                </div>
-                <div>
-                  <div>
-                    <h3>시그니엘 드립백 커피</h3>
-                    <p>시그니엘의 전문 바리스타가 직접 개발한<br>
-                    프리미엄 원두 세트로 하루를 향기롭게 시작해보세요.</p>
-                  <button>자세히보기</button>
-                  </div>
-                </div>
-              </section>
-         
-            </div>
-         
-          </article>
-
-          <!-- 바디 중간 -->
+        <!-- 바디 중간 -->
         <div class="J-1">
             <!-- J-1 넓이 100% -->
     
@@ -257,86 +217,57 @@
     
                  <div  class="J-4">
     
-                    <div id="J4-1">
-    
-                       이용객분들의 편안한 여행이 되실 수 있도록 늘 K-호텔이 함께하겠습니다.
-                    </div>
+                    
                 </div> 
     
             </div>
     
         </div>
 
-        <!-- footer -->
-        <footer>
 
-            <div class="k-first-div">
-                <div class="k-f-container">
-                    <div class="k-f-container1">
-                        <img src="resources/images/logo_w_2.png" class="k-logo">
-                    </div>
-                    <div class="k-f-container2">
-                        <span class="k-f-container2-1">호텔소식</span>
-                        <span> | </span>
-                        <span class="k-f-container2-1">갤러리</span>
-                        <span> | </span>
-                        <span class="k-f-container2-1">고객문의</span>
-                    </div>
-                    <div id="k-sns">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-blog.png" class="k-sns-img">
-                            </a>
-                        </div>
-                        <div id="k-sns1">
-                            <a href="#">
-                                <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-instagram.png" class="k-sns-img">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-youtube.png" class="k-sns-img">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-facebook.png" class="k-sns-img">
-                            </a>
-                        </div>
-                        
-                    </div>
+        <!-- body2 -->
+        <article class="H-royal">
+
+            <h2>일상을 더 품격있게</h2>
+         
+            <div class="H-royal_inner">
+         
+              <section>
+                <div>
+                  <img class="H-img" src="https://eshop.lottehotel.com/uploads/banner/6b2686c6b8133b8e2a29844f15c42c23.png" alt="해온 프리미엄 배딩">
                 </div>
+                <div>
+                  <div>
+                    <h3>해온 프리미엄베딩</h3>
+                    <p>국내최고 롯데호텔에서만 느낄 수 있는 고품격<br>
+                      he:on Bedding Package를 집에서 편안하게 느껴보세요.</p>
+                    <button>자세히보기</button>
+                  </div>
+                </div>
+              </section>
+         
+              <section>
+                <div>
+                  <img class="H-img" src="https://eshop.lottehotel.com/uploads/banner/b2bbeedfa09e1040cb5901d0aca57325.jpg" alt="시그니엘 드립백 커피">
+                </div>
+                <div>
+                  <div>
+                    <h3>시그니엘 드립백 커피</h3>
+                    <p>시그니엘의 전문 바리스타가 직접 개발한<br>
+                    프리미엄 원두 세트로 하루를 향기롭게 시작해보세요.</p>
+                  <button>자세히보기</button>
+                  </div>
+                </div>
+              </section>
+         
             </div>
-    
-            <div class="k-second-div">
-                <div class="k-second-div1">
-                    <div class="k-second-div11">
-                        <span class="k-second-div1-1">케이호텔 소개</span>
-                        <span> | </span>
-                        <span class="k-second-div1-1">사이트맵</span>
-                        <span> | </span>
-                        <span class="k-second-div1-1">개인정보처리방침</span>
-                        <span> | </span>
-                        <span class="k-second-div1-1">이메일무단수집금지</span>
-                        <span> | </span>
-                        <span class="k-second-div1-1">윤리경영(부정제보)</span>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="k-third-div">
-                <div class="k-third-div1">
-                    <div>케이호텔(주) 서울특별시 강남구 테헤란로 14길 6</div>
-                    <div>TEL 1544-9970</div>
-                    <div>Copyright © 2023 khotel.co.,Ltd. All rights reserved.</div>
-                </div>
-                <div class="k-third-div2">
-                    <img src="resources/images/copyright.png" class="k-third-div2-1">
-                </div>
-            </div>
-    
-    
-        </footer>
+         
+          </article>
+
+          
+
+        <!-- footer -->
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </div>
     
 
