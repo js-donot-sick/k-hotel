@@ -16,14 +16,7 @@
     <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <div class="C-maindisplay">
-        <div class="C-side">
-            <ul class="C-sidelist">
-                <li>K-호텔 소개</li>
-                <a href="#"><li>강남점</li></a>
-                <a href="#"><li>종로점</li></a>
-                <a href="#"><li>당산점</li></a>
-            </ul>
-        </div>
+       <jsp:include page="/WEB-INF/views/common/hotelSidebar.jsp"/>
         <div class="C-main">
             <div>객실 소개 - 강남</div>
             <div class="C-hotelroominfo">
