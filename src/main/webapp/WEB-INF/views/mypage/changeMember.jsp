@@ -9,7 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원 정보 수정</title>
 
-    <link rel="stylesheet" href="resources/css/changeMember.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/changeMember.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/sidebar.css">
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -17,9 +20,13 @@
 
 <body>
 
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+
     <div class="K-all">
-        <div class="K-sidebar"></div> <!-- 사이드바 -->
-        <div class="K-all">
+
+        <jsp:include page="/WEB-INF/views/common/sidebar.jsp"/> <!-- 사이드바 -->
+
+        <div>
                 <form action="#" class="L-form">
                 <div class="K-content"> <!-- 찐 내용 -->
                     <div>회원 정보 수정</div>
@@ -168,7 +175,10 @@
         </form>
     </div>
 
-    <script src="resources/js/confirmMember.js"></script>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="${contextPath}/resources/js/confirmMember.js"></script>
 
 </body>
 

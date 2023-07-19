@@ -8,19 +8,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="resources/CSS/hotelinfo2.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/hotelSidebar.css">
+
+    <link rel="stylesheet" href="${contextPath}/resources/css/hotelinfo2.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <title>회원 정보 확인2</title>
 </head>
 
 <body>
 
-    <div>헤더</div>
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
 
     <div class="L-maindisplay">
         <!-- 사이드바 -->
-        <div class="L-side">
+        <!-- <div class="L-side">
             <ul class="L-sidelist">
                 <li>K-호텔 소개</li>
                 <a href="#">
@@ -33,7 +37,10 @@
                     <li>당산점</li>
                 </a>
             </ul>
-        </div>
+        </div> -->
+
+        <jsp:include page="/WEB-INF/views/common/hotelSidebar.jsp"/>
+
         <!-- 호텔 소개 -->
         <div class="L-main">
 
@@ -41,7 +48,7 @@
             <div class="L-hotelpoint">
                 <div>지점 소개</div>
                 <div>
-                    <img src="resources/images/hotelyeuksam.jpg" alt="" id="L-hotel1">
+                    <img src="${contextPath}/resources/images/hotelyeuksam.jpg" alt="" id="L-hotel1">
                 </div>
                 <div>
                     <pre>
@@ -63,10 +70,10 @@
                     <!-- 객실1 -->
                     <div class="L-roompoint-border">
                         <a href="#" class="L-roomA" >
-                            <img src="resources/images/deluxroompoint1.jpg" class="L-roomimg" id="L-room1">
+                            <img src="${contextPath}/resources/images/deluxroompoint1.jpg" class="L-roomimg" id="L-room1">
                             <input type="checkbox" id="L-star-1">
-                            <label for="L-star-1" id="L-star-1-1"><img src="resources/images/whiteheart.png"></label>
-                            <label for="L-star-1" id="L-star-1-2"><img src="resources/images/redheart.png"></label>
+                            <label for="L-star-1" id="L-star-1-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
+                            <label for="L-star-1" id="L-star-1-2"><img src="${contextPath}/resources/images/redheart.png"></label>
                             <pre>
  <p>디럭스 룸</p> 침대타입 <span>|</span> 더블/트윈/트리플 전망 시티뷰 
  투숙인원 <span>|</span> 2 명 
@@ -76,10 +83,10 @@
                     </div>
                     <div class="L-roompoint-border">
                         <a href="#" class="L-roomA1" >
-                            <img src="resources/images/standard-Room_1.jpg" class="L-roomimg1" id="L-room2">
+                            <img src="${contextPath}/resources/images/standard-Room_1.jpg" class="L-roomimg1" id="L-room2">
                             <input type="checkbox" id="L-star-2">
-                            <label for="L-star-2" id="L-star-2-1"><img src="resources/images/whiteheart.png"></label>
-                            <label for="L-star-2" id="L-star-2-2"><img src="resources/images/redheart.png"></label>
+                            <label for="L-star-2" id="L-star-2-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
+                            <label for="L-star-2" id="L-star-2-2"><img src="${contextPath}/resources/images/redheart.png"></label>
                             <pre>
  <p>스탠다드 룸</p> 침대타입 <span>|</span> 더블/트윈 전망 시티뷰 
  투숙인원 <span>|</span> 2 명 
@@ -89,10 +96,10 @@
                     </div>
                     <div class="L-roompoint-border">
                         <a href="#" class="L-roomA" >
-                            <img src="resources/images/suiteroompoint3.jpg" class="L-roomimg" id="L-room3">
+                            <img src="${contextPath}/resources/images/suiteroompoint3.jpg" class="L-roomimg" id="L-room3">
                             <input type="checkbox" id="L-star-3">
-                            <label for="L-star-3" id="L-star-3-1"><img src="resources/images/whiteheart.png"></label>
-                            <label for="L-star-3" id="L-star-3-2"><img src="resources/images/redheart.png"></label>
+                            <label for="L-star-3" id="L-star-3-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
+                            <label for="L-star-3" id="L-star-3-2"><img src="${contextPath}/resources/images/redheart.png"></label>
                             <pre>
  <p>스위트 룸</p> 침대타입 <span>|</span> 더블 전망 시티뷰 
  투숙인원 <span>|</span> 2명 
@@ -124,14 +131,14 @@
     </div>
 
 
-    <div>풋터</div>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 
 
 
 
 
-    <script src="resources/js/hotelinfo2.js"></script>
+    <script src="${contextPath}/resources/js/hotelinfo2.js"></script>
 </body>
 
 </html>
