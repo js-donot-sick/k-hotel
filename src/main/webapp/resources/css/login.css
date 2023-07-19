@@ -322,6 +322,7 @@ input[name="inputPw"]{ /* 비밀번호 입력창 */
     top: 380px;
     display: flex;
     justify-content: space-evenly;
+    z-index: 1000;
 }
 
 #k-popup-id{
