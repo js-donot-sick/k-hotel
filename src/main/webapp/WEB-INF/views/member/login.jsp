@@ -34,7 +34,7 @@
         <div></div>
         <div id="k-login">
             <div>
-                <form action="#">
+                <form action="login" method="post">
                     <div id="k-login-letter">로그인</div>
                     <div id="k-login-input">
                         <table>
