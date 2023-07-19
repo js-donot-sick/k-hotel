@@ -12,7 +12,7 @@ import lombok.ToString;
 public class Member {
 	
 	private int memberNo;
-	private int memberId;
+	private String memberId;
 	private int memberPw;
 	private String memberName;
 	private String memberPno;
