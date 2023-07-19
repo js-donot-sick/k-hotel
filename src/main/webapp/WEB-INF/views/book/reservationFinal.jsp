@@ -26,7 +26,7 @@
     <!----------------------------------------헤더 --------------------------------------------->
 
     <!----------------------------------------바디 --------------------------------------------->
-    <form action="book/bookEnd" method="get">
+    <form action="book/bookEnd" method="get" onsubmit="return reservationFinalValidate()">
         <div class="C-body">
             <div class="C-Final-rsv">
                 <div class="C-body-first-div">예약하기</div>
@@ -40,22 +40,23 @@
                             <tr>
                                 <td></td>
                                 <td>이름</td>
-                                <td><input type="text" id="C-rsvName" name="C-rsvName" autocomplete="off" readonly></td>
+                                <td><input type="text" id="C-rsvName" name="C-rsvName" autocomplete="off" value="${loginMember.memberName}" disabled></td>
+                          
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>이메일</td>
-                                <td><input type="text" id="C-rsvEmail" name="C-revEmail" autocomplete="off" readonly></td>
+                                <td><input type="text" id="C-rsvEmail" name="C-revEmail" autocomplete="off" value="${loginMember.memberEmail}" disabled></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>전화번호</td>
-                                <td><input type="text" id="C-rsvTel" name="C-rsvTel" autocomplete="off" readonly></td>
+                                <td><input type="text" id="C-rsvTel" name="C-rsvTel" autocomplete="off" value="${loginMember.memberTel}" disabled></td>
                             </tr>
                             <tr>
                                 <td></td>
                                 <td>주소</td>
-                                <td><input type="text" id="C-rsvAddress" name="C-rsvAddress" autocomplete="off" readonly></td>
+                                <td><input type="text" id="C-rsvAddress" name="C-rsvAddress" autocomplete="off" value="${loginMember.memberAddress}" disabled></td>
                             </tr>
                             <tr>
                                 <td></td>

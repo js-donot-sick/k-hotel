@@ -25,9 +25,7 @@ public class ReservationFinalServlet extends HttpServlet{
 		String bookRoom = req.getParameter("C-room-choice");
 		String checkinTime = req.getParameter("C-checkInTime");
 		String checkOutTime = req.getParameter("C-checkOutTime");
-		
-		System.out.println(checkinTime);
-
+	
 		int adult = 0;
 		
 		if(adult > 0) {

@@ -7,17 +7,6 @@ const payplan = document.getElementById("C-payplan");
 const Cbank = document.getElementById("C-bank");
 const account = document.getElementById("C-account");
 
-document.getElementById("C-rsvClearBtn").addEventListener("click", function(){
-
-    if(payplan.value != Cbank){ /* 결제 수단 선택 */
-        alert("결제 수단을 선택해주시길 바랍니다.")
-    }
-
-    if(!agree.checked){ /* 약관동의 확인하기 */
-        alert("약관 동의 후 예약을 진행해주시기 바랍니다.");
-    }
-})
-
 coupon.addEventListener("change", function(){
 
     if(coupon.value == "discountcoupon"){
@@ -38,3 +27,20 @@ account.addEventListener("change", function(){
         displaychanger2.style.display = "revert";
     }
 })
+
+function reservationFinalValidate() {
+
+   if (payplan.value != Cbank.value) {
+      alert("결제 수단을 선택해주시길 바랍니다.")
+      return false;
+   }
+
+   else if (!agree.checked) {
+      alert("약관 동의 후 예약을 진행해주시기 바랍니다.");
+      return false;
+   }
+   
+ 
+
+return confirm("결제를 진행하시겠습니까?");
+}
