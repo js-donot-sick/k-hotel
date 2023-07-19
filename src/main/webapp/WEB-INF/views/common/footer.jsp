@@ -16,37 +16,37 @@
 
     <footer>
 
-        <div class="k-first-div">
-            <div class="k-f-container">
-                <div class="k-f-container1">
-                    <img src="${contextPath}/resources/images/logo_w_2.png" class="k-logo">
+        <div class="F-first-div">
+            <div class="F-f-container">
+                <div class="F-f-container1">
+                    <img src="${contextPath}/resources/images/logo_w_2.png" class="F-logo">
                 </div>
-                <div class="k-f-container2">
-                    <span class="k-f-container2-1">호텔소식</span>
+                <div class="F-f-container2">
+                    <span class="F-f-container2-1">호텔소식</span>
                     <span> | </span>
-                    <span class="k-f-container2-1">갤러리</span>
+                    <span class="F-f-container2-1">갤러리</span>
                     <span> | </span>
-                    <span class="k-f-container2-1">고객문의</span>
+                    <span class="F-f-container2-1">고객문의</span>
                 </div>
-                <div id="k-sns">
+                <div id="F-sns">
                     <div>
                         <a href="https://blog.naver.com/lotte_hotels/">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-blog.png" class="k-sns-img">
+                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-blog.png" class="F-sns-img">
                         </a>
                     </div>
-                    <div id="k-sns1">
+                    <div id="F-sns1">
                         <a href="https://www.instagram.com/shillastay_official/">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-instagram.png" class="k-sns-img">
+                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-instagram.png" class="F-sns-img">
                         </a>
                     </div>
                     <div>
                         <a href="https://www.youtube.com/user/LotteHotels">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-youtube.png" class="k-sns-img">
+                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-youtube.png" class="F-sns-img">
                         </a>
                     </div>
                     <div>
                         <a href="https://www.facebook.com/shillastay">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-facebook.png" class="k-sns-img">
+                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-facebook.png" class="F-sns-img">
                         </a>
                     </div>
                     
@@ -54,30 +54,30 @@
             </div>
         </div>
 
-        <div class="k-second-div">
-            <div class="k-second-div1">
-                <div class="k-second-div11">
-                    <span class="k-second-div1-1">케이호텔 소개</span>
+        <div class="F-second-div">
+            <div class="F-second-div1">
+                <div class="F-second-div11">
+                    <span class="F-second-div1-1">케이호텔 소개</span>
                     <span> | </span>
-                    <span class="k-second-div1-1">사이트맵</span>
+                    <span class="F-second-div1-1">사이트맵</span>
                     <span> | </span>
-                    <span class="k-second-div1-1">개인정보처리방침</span>
+                    <span class="F-second-div1-1">개인정보처리방침</span>
                     <span> | </span>
-                    <span class="k-second-div1-1">이메일무단수집금지</span>
+                    <span class="F-second-div1-1">이메일무단수집금지</span>
                     <span> | </span>
-                    <span class="k-second-div1-1">윤리경영(부정제보)</span>
+                    <span class="F-second-div1-1">윤리경영(부정제보)</span>
                 </div>
             </div>
         </div>
 
-        <div class="k-third-div">
-            <div class="k-third-div1">
+        <div class="F-third-div">
+            <div class="F-third-div1">
                 <div>케이호텔(주) 서울특별시 강남구 테헤란로 14길 6</div>
                 <div>TEL 1544-9970</div>
                 <div>Copyright © 2023 khotel.co.,Ltd. All rights reserved.</div>
             </div>
-            <div class="k-third-div2">
-                <img src="${contextPath}/resources/images/copyright.png" class="k-third-div2-1">
+            <div class="F-third-div2">
+                <img src="${contextPath}/resources/images/copyright.png" class="F-third-div2-1">
             </div>
         </div>
 

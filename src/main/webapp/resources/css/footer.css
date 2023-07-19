@@ -2,12 +2,12 @@
 
 /* div{border: 1px solid black;} */
 
-.k-first-div{
+.F-first-div{
     width: 100%;
     background-color: rgba(178, 158, 135, 0.9);
 }
 
-.k-f-container{
+.F-f-container{
     position: relative;
     width: 1200px;
     margin: auto;
@@ -15,37 +15,37 @@
     display: flex;
 }
 
-.k-f-container1{
+.F-f-container1{
     width: 0px;
 }
 
 
-.k-logo{
+.F-logo{
     width: 180px;
     position: absolute;
     left: 10px;
     margin-top: 7px;
 }
 
-.k-second-div{
+.F-second-div{
     width: 100%;
     background-color: #ebe7e3;
 }
-.k-second-div1{
+.F-second-div1{
     background-color: #ebe7e3;
     margin: auto;
     width: 1200px;
     height: 60px;
 }
 
-.k-second-div11{
+.F-second-div11{
     width: 600px;
     line-height: 55px;
     display: flex;
     justify-content: space-around;
 }
 
-.k-third-div{
+.F-third-div{
     width: 1200px;
     margin: auto;
     height: 90px;
@@ -53,7 +53,7 @@
     position: relative;
 }
 
-.k-f-container2{
+.F-f-container2{
     width: 220px;
     top: 40px;
     position: absolute;
@@ -62,13 +62,13 @@
 }
 
 
-.k-f-container2-1:hover{
+.F-f-container2-1:hover{
     cursor: pointer;
     font-weight: bold;
     color: #ebe7e3;
 }
 
-#k-sns{
+#F-sns{
     width: 520px;
     display: flex;
     margin-top: 30px;
@@ -78,39 +78,39 @@
     right: 5px;
 }
 
-.k-sns-img{
+.F-sns-img{
     width: 40px;
 }
 
-.k-sns-img:hover{
+.F-sns-img:hover{
     transform: scale(1.2);
     transition-duration: 0.2s;
 }
 
-#k-sns1{
+#F-sns1{
     margin-left: 15px;
 }
 
-.k-second-div span{
+.F-second-div span{
     font-size: small;
 }
 
-.k-second-div1-1:hover{
+.F-second-div1-1:hover{
     color: rgba(90, 74, 56, 0.9);
     cursor: pointer;
     transition-duration: 0.2s;
 }
-.k-second-div span{
+.F-second-div span{
     padding-left: 5px;
 }
 
-.k-third-div{
+.F-third-div{
     margin: auto;
     width: 1200px;
     position: relative;
 }
 
-.k-third-div1{
+.F-third-div1{
     width: 340px;
     font-size: small; 
     position: absolute;
@@ -118,10 +118,10 @@
     left: 10px;
 }
 
-.k-third-div2-1{
+.F-third-div2-1{
     width: 200px;
 }
-.k-third-div2{ 
+.F-third-div2{ 
     width: 205px;
     top: 20px;
     position: absolute;

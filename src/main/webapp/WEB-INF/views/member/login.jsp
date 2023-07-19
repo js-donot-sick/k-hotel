@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
 
-    <link rel="stylesheet" href="resources/CSS/login.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/login.css">
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
@@ -20,71 +20,7 @@
 </head>
 <body>
 
-    <div class="P-container">
-        <div class="P-header">
-
-            <div class="P-header_left">
-                <div class="P-blank">
-                    
-                </div>
-
-                <div class="P-btn1">
-                        <a href="#" >호텔찾기 <i class="fa-solid fa-magnifying-glass"></i></a>
-           
-                        <a href="#">예약 <i class="fa-solid fa-calendar-days"></i></a>
-                </div>
-            </div>
- 
-            <!-- 로고 클릭 시 메인페이지로 이동 -->
-            <div>
-                <a href="#" class="P-header_middle">
-                  <img src="../images/logo_2.png" alt="">
-                </a>
-            </div>
-            <div class="modal" tabindex="-1">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Modal title</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Modal body text goes here.</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <div class="P-header_rigtht">
-                <!-- 로그인 -->
-          
-                    <div class="P-btn2">
-                        <ul>
-                            <a href="#">로그인</a>
-                            <span> | </span>
-                            <a href="#">로그아웃</a>
-                            <span> | </span>
-                            <a href="#">마이페이지</a>
-                            <span> | </span>
-                            <a href="#">회원가입</a>
-                        </ul>
-                    </div>
-    
-          
-                    <div class="P-btn3">
-                            <a href="#">커뮤니티</a>
-                           <a href="#" >이벤트</a>
-                        
-                    </div>
-     
-
-            </div>
-            
-        </div>
-    </div>
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     
 
@@ -104,19 +40,28 @@
                         <table>
                             <tr>
                                 <td>아이디</td>
-                                <td><input type="text" name="inputId" placeholder="아이디를 입력해주세요"></td>
+                                <td><input type="text" name="inputId" placeholder="아이디를 입력해주세요" autocomplete="off"></td>
                                 <td rowspan="2"><button id="k-login-btn">로그인</button></td>
                             </tr>
                             <tr>
                                 <td>비밀번호</td>
-                                <td><input type="text" name="inputPw" placeholder="비밀번호를 입력해주세요"></td>
+                                <td><input type="text" name="inputPw" placeholder="비밀번호를 입력해주세요" autocomplete="off"></td>
                             </tr>
                         </table>
                     </div>
                 </form>
-                <label id="K-checkbox"> 
-                    <input type="checkbox" name="K-saveId" id="K-saveId">아이디 저장
-                </label>
+                <div class="K-cookie">
+                    <div>
+                        <label class="K-checkbox"> 
+                            <input type="checkbox" name="K-saveId" id="K-saveId">아이디 저장
+                        </label>
+                    </div>
+                    <div>
+                        <label class="K-checkbox"> 
+                            <input type="checkbox" name="K-auto-login" id="K-auto-login">자동 로그인
+                        </label>
+                    </div>
+                </div>
                 <div id="k-login-bottom">
                     <a href="#">아이디 찾기</a>
                     <span> | </span>
@@ -195,77 +140,8 @@
     </div>
 
 
-    <footer>
-
-        <div class="k-first-div">
-            <div class="k-f-container">
-                <div>
-                    <img src="resources/images/logo_w_2.png" style="width: 180px;">
-                </div>
-                <div></div>
-                <div>
-                    <span>호텔소식</span>
-                    <span> | </span>
-                    <span>갤러리</span>
-                    <span> | </span>
-                    <span>고객문의</span>
-                </div>
-                <div></div>
-                <div id="k-sns">
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-blog.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-instagram.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-youtube.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-facebook.png">
-                        </a>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-
-        <div class="k-second-div">
-            <div>
-                <span>케이호텔 소개</span>
-                <span> | </span>
-                <span>사이트맵</span>
-                <span> | </span>
-                <span>개인정보처리방침</span>
-                <span> | </span>
-                <span>이메일무단수집금지</span>
-                <span> | </span>
-                <span>윤리경영(부정제보)</span>
-            </div>
-        </div>
-
-        <div class="k-third-div">
-            <div>
-                <div>케이호텔(주) 서울특별시 강남구 테헤란로 14길 6</div>
-                <div>TEL 1544-9970</div>
-                <div>Copyright © 2023 khotel.co.,Ltd. All rights reserved.</div>
-            </div>
-            <div></div>
-            <div>
-                <img src="resources/images/copyright.png">
-            </div>
-        </div>
-
-
-    </footer>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
-    <script src="resources/js/login.js"></script>
+    <script src="${contextPath}/resources/js/login.js"></script>
 </body>
 </html>
