@@ -109,7 +109,11 @@
                     </form>
                 </div>
                 <div>
-                    <div id="k-id-result"></div>
+                    <div id="k-id-result">
+                        <div>
+                            <span>아이디 : </span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -142,7 +146,11 @@
                     </form>
                 </div>
                 <div>
-                    <div id="k-pw-result"></div>
+                    <div id="k-pw-result">
+                        <div>
+                            <span>비밀번호 : </span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
