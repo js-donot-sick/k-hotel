@@ -58,6 +58,12 @@
                     <c:if test="${!empty cookie.saveId.value }">
                         <c:set var="chk" value="checked"></c:set>
                     </c:if>
+
+                    <!-- 쿠키에 토큰(자동로그인용) 저장되어 있는 경우 -->
+                    <c:if test="${!empty cookie.autoLogin.value }">
+                        <c:set var="auto" value="checked"></c:set>
+                    </c:if>
+                    <!-- 굳이 변수 안 만들어도 될 것 같기도.. -->
                     
                     <div class="K-cookie">
                         <div>
