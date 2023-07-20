@@ -82,6 +82,44 @@ public class KMemberDAO {
 		
 		return loginMember;
 	}
+
+	/** 아이디 찾기 DAO
+	 * @param conn
+	 * @param idInput
+	 * @param pwInput
+	 * @return result
+	 * @throws Exception
+	 */
+	public String idSearch(Connection conn, String nmInput, String pnoInput) throws Exception {
+		
+		String result = null;
+		
+		try {
+			
+			String sql = prop.getProperty("idSearch");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, nmInput);
+			pstmt.setString(2, pnoInput);
+			
+			rs= pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getString(1);
+			}
+			
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		
+		System.out.println(result);
+		return result;
+	}
 	
 
 }

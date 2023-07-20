@@ -27,4 +27,21 @@ public class KMemberService {
 		return loginMember;
 	}
 
+	/** 아이디 찾기 service
+	 * @param idInput
+	 * @param pwInput
+	 * @return result
+	 * @throws Exception
+	 */
+	public String idSearch(String nmInput, String pnoInput) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		String result = dao.idSearch(conn, nmInput, pnoInput);
+		
+		close(conn);
+		
+		return result;
+	}
+
 }

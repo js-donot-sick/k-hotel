@@ -406,6 +406,13 @@ input[name="k-inputId-id"]{
     height: 90px;
     margin: auto;
     margin-top: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#k-id-result>div{
+    display: none;
 }
 
 #k-popup>div:nth-child(2){
@@ -433,9 +440,14 @@ input[name="k-inputId-id"]{
     height: 90px;
     margin: auto;
     margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
+#k-pw-result>div{
+    display: none;
+}
 
 
 /* footer css */
