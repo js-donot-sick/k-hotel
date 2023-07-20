@@ -45,7 +45,7 @@
         </div>
 
         <!-- 호텔 예약 -->
-        <form action="${contextPath}/book/reservationFinal" method="get">
+        <form action="${contextPath}/book/reservationFinal" method="post">
             <div class="C-reservation">
                 <div class="C-rsv-main">
                     <div class="C-rsv-main-text">지점 / 객실 / 날짜 / 인원 선택</div>
@@ -58,9 +58,9 @@
                         <div>
                             <select name="C-hotel-choice" id="C-hotel-choice">
                                 <option name="location" value="none" selected>호텔을 선택해주세요</option>
-                                <option name="location" id="Gangnam" value="Gangnam">K-호텔 강남점</option>
-                                <option name="location" id="jongno" value="jongno">K-호텔 종로점</option>
-                                <option name="location" id="dangsan" value="dangsan">K-호텔 당산점</option>
+                                <option name="location" id="Gangnam" value="GANGNAM">K-호텔 강남점</option>
+                                <option name="location" id="jongno" value="JONGNO">K-호텔 종로점</option>
+                                <option name="location" id="dangsan" value="DANGSAN">K-호텔 당산점</option>
                             </select>
                         </div>
                     </div>
@@ -69,9 +69,9 @@
                         <div>
                             <select name="C-room-choice" id="C-room-choice">
                                 <option name="Room" value="none" selected>객실을 선택해주세요</option>
-                                <option name="Room" id="Deluxe" value="Deluxe">Deluxe Room</option>
-                                <option name="Room" id="Standard" value="Standard">Standard Room</option>
-                                <option name="Room" id="Suite" value="Suite">suite Room</option>
+                                <option name="Room" id="Deluxe" value="DELUXE">Deluxe Room</option>
+                                <option name="Room" id="Standard" value="STANDRAD">Standard Room</option>
+                                <option name="Room" id="Suite" value="SUITE">suite Room</option>
                             </select>
                         </div>
                     </div>

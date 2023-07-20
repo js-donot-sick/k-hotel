@@ -26,7 +26,7 @@
     <!----------------------------------------헤더 --------------------------------------------->
 
     <!----------------------------------------바디 --------------------------------------------->
-    <form action="book/bookEnd" method="get" onsubmit="return reservationFinalValidate()">
+    <form action="bookEnd" method="get" onsubmit="return reservationFinalValidate()">
         <div class="C-body">
             <div class="C-Final-rsv">
                 <div class="C-body-first-div">예약하기</div>
@@ -154,7 +154,7 @@
                                     <td></td>
                                     <td></td>
                                     <td class="Iwantgohome">결제금액</td>
-                                    <td><input type="text" name="C-finalpay" id="C-finalpay" autocomplete="off" disabled></td>
+                                    <td><input type="text" name="C-finalpay" id="C-finalpay" autocomplete="off" value="${room.roomPrice}" disabled></td>
                                 </tr>
                             </table>
                         </div>

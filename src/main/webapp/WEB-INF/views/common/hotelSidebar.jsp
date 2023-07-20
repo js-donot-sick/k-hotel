@@ -33,13 +33,13 @@
                 <a href="#" class="H-side-item H-side-title">호텔 소개</a>
             </li>
             <li>
-                <a href="#" class="H-side-item">강남점</a>
+                <a href="hotelroominfo" class="H-side-item">강남점</a>
             </li>
             <li>
-                <a href="#" class="H-side-item">종로점</a>
+                <a href="hotelroominfo2" class="H-side-item">종로점</a>
             </li>
             <li>
-                <a href="#" class="H-side-item">당산점</a>
+                <a href="hotelroominfo3" class="H-side-item">당산점</a>
             </li>
         </ul>
         
