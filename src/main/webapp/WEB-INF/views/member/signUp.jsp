@@ -27,7 +27,7 @@
 
             <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-            <form>
+            <form action="#" method="post">
 
                 
                 <div class="J-2">
@@ -82,7 +82,7 @@
                                 </div >
                                 
                                 <div class="J-J5">
-                                    <input type="text"id="J-C">&nbsp;-&nbsp;<input type="text"  id="J-C" name="memberPno"> 
+                                    <input type="text"id="J-C" name="memberPno">&nbsp;-&nbsp;<input type="text"  id="J-C" name="memberPno"> 
                                 </div>
                                 
                                 <div class="J-J6">
@@ -139,13 +139,13 @@
                         
                         <div id="J2-4-2">
                             <div id="J2-4-3">
-                                <input type="text" id="J-sample6_postcode" placeholder="우편번호" name="homeNumber">
+                                <input type="text" id="J-sample6_postcode" placeholder="우편번호" name="memberAddress">
                                 <input type="button" id="J-api" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" >
                             </div>
                             
                             <div id="J2-4-4">
                                 
-                                <input type="text" id="J-sample6_address" placeholder="주소" name="home">
+                                <input type="text" id="J-sample6_address" placeholder="주소" name="memberAddress">
                             </div>
                         </div>
                         
@@ -155,7 +155,7 @@
                 </div>
                 
                 <div class="J2-3">
-                    <input type="text" id="J-sample6_detailAddress" placeholder="상세주소" name="homeDetail">
+                    <input type="text" id="J-sample6_detailAddress" placeholder="상세주소" name="memberAddress">
                 </div>
                 
                 <div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
