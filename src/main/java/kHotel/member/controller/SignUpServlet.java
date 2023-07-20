@@ -13,8 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/member/signUp")
 public class SignUpServlet extends HttpServlet{
 	
+
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		String path = "/WEB-INF/views/member/signUp.jsp";
 		
