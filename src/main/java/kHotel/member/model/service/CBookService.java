@@ -8,6 +8,7 @@ import java.sql.Connection;
 
 import kHotel.member.model.dao.CBookDAO;
 import kHotel.member.model.vo.Book;
+import kHotel.member.model.vo.HotelRoom;
 
 public class CBookService {
 
@@ -33,6 +34,15 @@ public class CBookService {
 		close(conn);
 		
 		return result;
+	}
+
+	public HotelRoom selectRoom(HotelRoom hotelRoom,Book book){
+		
+		Connection conn = getConnection();
+		
+		HotelRoom Room =dao.selectRoom(conn,hotelRoom, book);
+		
+		return Room;
 	}
 
 	

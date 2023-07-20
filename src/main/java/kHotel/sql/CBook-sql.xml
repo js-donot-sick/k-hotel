@@ -7,4 +7,10 @@
 	INSERT INTO RESERVATION 
 	VALUES(SEQ_BOOK_NO.NEXTVAL,?,?,?,?,?,?,1,1,1)
 	</entry>
+	
+	<entry key="selectRoom">
+	SELECT * FROM ROOM
+	WHERE ROOM_HOTEL = ?
+	AND ROOM_NM = ?
+	</entry>
 </properties>
