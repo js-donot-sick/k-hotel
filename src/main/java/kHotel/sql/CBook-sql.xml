@@ -9,7 +9,8 @@
 	</entry>
 	
 	<entry key="selectRoom">
-	SELECT * FROM ROOM
+	SELECT ROOM_NO, ROOM_HOTEL, ROOM_NM, ROOM_INFO, ROOM_PRICE
+	FROM ROOM
 	WHERE ROOM_HOTEL = ?
 	AND ROOM_NM = ?
 	</entry>

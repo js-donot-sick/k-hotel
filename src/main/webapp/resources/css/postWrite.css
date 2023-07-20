@@ -93,9 +93,11 @@
 }
 #C-postWritebtn-cancel{ /* 작성 취소 버튼 */
     background-color: rgb(173,158,135);
+    color: white;
     border: none;
     border-radius: 5px;
     height: 30px;
+    cursor: pointer;
 }
 
 #C-postWritebtn-clear{ /* 작성 버튼 */

@@ -133,7 +133,7 @@
                                 </tr>
                                 <tr>
                                     <td>객실요금</td>
-                                    <td><input type="text" id="C-hotelPay" name="C-hotelPay" autocomplete="off" readonly></td>
+                                    <td><input type="text" id="C-hotelPay" name="C-hotelPay" autocomplete="off" value="${room.roomPrice}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>쿠폰선택</td>
@@ -146,7 +146,7 @@
                                 </tr>
                                 <tr>
                                     <td>할인요금</td>
-                                    <td><input type="text" name="C-couponPay" id="C-couponPay" autocomplete="off" readonly>
+                                    <td><input type="text" name="C-couponPay" id="C-couponPay" autocomplete="off" disabled>
                                     </td>
                                 </tr>
                                 <tr>
@@ -154,7 +154,7 @@
                                     <td></td>
                                     <td></td>
                                     <td class="Iwantgohome">결제금액</td>
-                                    <td><input type="text" name="C-finalpay" id="C-finalpay" autocomplete="off" readonly></td>
+                                    <td><input type="text" name="C-finalpay" id="C-finalpay" autocomplete="off" disabled></td>
                                 </tr>
                             </table>
                         </div>

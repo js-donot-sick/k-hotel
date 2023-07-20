@@ -36,13 +36,16 @@ public class CBookService {
 		return result;
 	}
 
-	public HotelRoom selectRoom(HotelRoom hotelRoom,Book book){
+	public HotelRoom selectRoom(Book book) throws Exception{
+		
 		
 		Connection conn = getConnection();
 		
-		HotelRoom Room =dao.selectRoom(conn,hotelRoom, book);
+		HotelRoom room =dao.selectRoom(conn, book);
 		
-		return Room;
+		close(conn);
+		
+		return room;
 	}
 
 	

@@ -12,9 +12,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 
+
 public class HotelRoom {
 
-	private String roomNo;
+	private int roomNo;
+	private String HotelName;
 	private String roomName;
 	private int roomPrice;
 	private int maxPerson;

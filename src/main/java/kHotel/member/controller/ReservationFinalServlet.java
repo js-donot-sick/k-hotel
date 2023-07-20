@@ -48,16 +48,16 @@ public class ReservationFinalServlet extends HttpServlet{
 		book.setCheckOutTime(checkOutTime);
 		book.setAdult(adult);
 		book.setChild(child);
-		
-		HotelRoom hotelRoom = new HotelRoom();
-		
+			
 		try {
 			
 			CBookService service = new CBookService();
 			
 			int result = service.reservationFinal(book);
 			
-			HotelRoom Room =service.selectRoom(hotelRoom,book);
+			HotelRoom room = service.selectRoom(book);
+			
+			System.out.println(room);
 			
 			if(result > 0) { // 성공
 				
@@ -67,6 +67,7 @@ public class ReservationFinalServlet extends HttpServlet{
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 				
 				req.setAttribute("book", book);
+				req.setAttribute("room", room);
 				
 				dispatcher.forward(req, resp);
 				

@@ -66,7 +66,9 @@ public class CBookDAO {
 			return result;
 		}
 
-		public HotelRoom selectRoom(Connection conn, HotelRoom hotelRoom, Book book) {
+		public HotelRoom selectRoom(Connection conn, Book book) throws Exception {
+			
+			HotelRoom room = new HotelRoom();
 			
 			try {
 				
@@ -77,17 +79,29 @@ public class CBookDAO {
 				pstmt.setString(1, book.getBookHotel());
 				pstmt.setString(2, book.getBookRoom());
 				
-				rs = pstmt.executeQuery();
+				System.out.println(book.getBookHotel());
+				System.out.println(book.getBookRoom());
 				
+				rs = pstmt.executeQuery();
+							
 				if( rs.next() ) {
+						
+					room.setRoomNo(rs.getInt("ROOM_NO"));
+					room.setHotelName(rs.getString("ROOM_HOTEL"));
+					room.setRoomName(rs.getString("ROOM_NM"));
+					room.setRoomInfo(rs.getString("ROOM_INFO"));
+					room.setRoomPrice(rs.getInt("ROOM_PRICE"));
 					
 				}
 				
-			} catch (Exception e) {
-				e.printStackTrace();
+				System.out.println(room);
+				
+			} finally {
+				close(rs);
+				close(pstmt);
 			}
-			
-			return null;
+
+			return room;
 		}
 		
 		
