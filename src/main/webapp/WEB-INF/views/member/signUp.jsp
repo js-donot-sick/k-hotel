@@ -63,34 +63,34 @@
                             <div class="J-J">
                                 
                                 <div class="J-J1">
-                                    <input type="text" class="J-J1-1" id="J-B" placeholder="* 특수문자 제외 6~12글자"> 
+                                    <input type="text" class="J-J1-1" id="J-B" placeholder="* 특수문자 제외 6~12글자" name="memberId"> 
                                     <div class="J-J1-11"></div>
                                 </div>
                                 
                                 <div class="J-J2">
-                                    <input type="text" class="J-J1-2" id="J-B" placeholder="* 대소문자, 특수문자 포함 8~15글자">
+                                    <input type="text" class="J-J1-2" id="J-B" placeholder="* 대소문자, 특수문자 포함 8~15글자" name="memberPw">
                                     <div id="J-H2-1"></div>
                                     
                                 </div >
                                 
                                 <div class="J-J3">
-                                    <input type="text" class="J-J1-3" id="J-B">
+                                    <input type="text" class="J-J1-3" id="J-B" name="memberPw2">
                                 </div >
                                 
                                 <div class="J-J4">
-                                    <input type="text" id="J-B">
+                                    <input type="text" id="J-B" name="memberName">
                                 </div >
                                 
                                 <div class="J-J5">
-                                    <input type="text"id="J-C">&nbsp;-&nbsp;<input type="text"  id="J-C" > 
+                                    <input type="text"id="J-C">&nbsp;-&nbsp;<input type="text"  id="J-C" name="memberPno"> 
                                 </div>
                                 
                                 <div class="J-J6">
-                                    <input type="text" id="J-B"  placeholder=" '-' 제외하고 입력">
+                                    <input type="text" id="J-B"  placeholder=" '-' 제외하고 입력" name="memberPH">
                                 </div>
                                 
                                 <div class="J-J7">
-                                    <input type="text" id="J-B">
+                                    <input type="text" id="J-B" name="memberEmail">
                                 </div>
                                 
                                 
@@ -139,13 +139,13 @@
                         
                         <div id="J2-4-2">
                             <div id="J2-4-3">
-                                <input type="text" id="J-sample6_postcode" placeholder="우편번호">
-                                <input type="button" id="J-api" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+                                <input type="text" id="J-sample6_postcode" placeholder="우편번호" name="homeNumber">
+                                <input type="button" id="J-api" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" >
                             </div>
                             
                             <div id="J2-4-4">
                                 
-                                <input type="text" id="J-sample6_address" placeholder="주소">
+                                <input type="text" id="J-sample6_address" placeholder="주소" name="home">
                             </div>
                         </div>
                         
@@ -155,7 +155,7 @@
                 </div>
                 
                 <div class="J2-3">
-                    <input type="text" id="J-sample6_detailAddress" placeholder="상세주소">
+                    <input type="text" id="J-sample6_detailAddress" placeholder="상세주소" name="homeDetail">
                 </div>
                 
                 <div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
