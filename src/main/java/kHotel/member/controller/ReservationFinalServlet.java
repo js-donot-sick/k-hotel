@@ -41,7 +41,6 @@ public class ReservationFinalServlet extends HttpServlet{
 		}
 		
 		Book book = new Book();
-		HotelRoom hotelRoom = new HotelRoom();
 		
 		book.setBookHotel(bookHotel);
 		book.setBookRoom(bookRoom);
@@ -50,14 +49,16 @@ public class ReservationFinalServlet extends HttpServlet{
 		book.setAdult(adult);
 		book.setChild(child);
 		
-		
+		HotelRoom hotelRoom = new HotelRoom();
 		
 		try {
 			
 			CBookService service = new CBookService();
 			
 			int result = service.reservationFinal(book);
-					
+			
+			HotelRoom Room =service.selectRoom(hotelRoom,book);
+			
 			if(result > 0) { // 성공
 				
 				

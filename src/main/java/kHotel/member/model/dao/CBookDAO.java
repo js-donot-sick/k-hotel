@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.Properties;
 
 import kHotel.member.model.vo.Book;
+import kHotel.member.model.vo.HotelRoom;
 
 import static kHotel.common.JDBCTemplate.*;
 
@@ -63,6 +64,30 @@ public class CBookDAO {
 			}
 			
 			return result;
+		}
+
+		public HotelRoom selectRoom(Connection conn, HotelRoom hotelRoom, Book book) {
+			
+			try {
+				
+				String sql = prop.getProperty("selectRoom");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, book.getBookHotel());
+				pstmt.setString(2, book.getBookRoom());
+				
+				rs = pstmt.executeQuery();
+				
+				if( rs.next() ) {
+					
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			return null;
 		}
 		
 		
