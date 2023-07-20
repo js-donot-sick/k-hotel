@@ -31,6 +31,9 @@
     
     <div class="k-content">
 
+
+        
+
         <div></div>
         <div id="k-login">
             <div>
@@ -40,7 +43,7 @@
                         <table>
                             <tr>
                                 <td>아이디</td>
-                                <td><input type="text" name="inputId" placeholder="아이디를 입력해주세요" autocomplete="off"></td>
+                                <td><input type="text" name="inputId" placeholder="아이디를 입력해주세요" autocomplete="off" value="${cookie.saveId.value}"></td>
                                 <td rowspan="2"><button id="k-login-btn">로그인</button></td>
                             </tr>
                             <tr>
@@ -49,19 +52,26 @@
                             </tr>
                         </table>
                     </div>
+                
+
+                    <!-- 쿠키에 아이디 저장되어 있는 경우 -->
+                    <c:if test="${!empty cookie.saveId.value }">
+                        <c:set var="chk" value="checked"></c:set>
+                    </c:if>
+                    
+                    <div class="K-cookie">
+                        <div>
+                            <label class="K-checkbox"> 
+                                <input type="checkbox" name="K-saveId" ${ chk } id="K-saveId">아이디 저장
+                            </label>
+                        </div>
+                        <div>
+                            <label class="K-checkbox"> 
+                                <input type="checkbox" name="K-auto-login" id="K-auto-login">자동 로그인
+                            </label>
+                        </div>
+                    </div>
                 </form>
-                <div class="K-cookie">
-                    <div>
-                        <label class="K-checkbox"> 
-                            <input type="checkbox" name="K-saveId" id="K-saveId">아이디 저장
-                        </label>
-                    </div>
-                    <div>
-                        <label class="K-checkbox"> 
-                            <input type="checkbox" name="K-auto-login" id="K-auto-login">자동 로그인
-                        </label>
-                    </div>
-                </div>
                 <div id="k-login-bottom">
                     <a href="#">아이디 찾기</a>
                     <span> | </span>

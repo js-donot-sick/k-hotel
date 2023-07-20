@@ -74,7 +74,6 @@ public class KMemberDAO {
 				
 			}
 			
-			System.out.println(loginMember);
 			
 		} finally {
 			close(rs);

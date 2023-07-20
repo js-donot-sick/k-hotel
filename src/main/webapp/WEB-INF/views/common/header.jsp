@@ -45,13 +45,18 @@
               
                         <div class="P-btn2">
                             <ul>
-                                <a href="${contextPath}/member/login">로그인</a>
-                                <span> | </span>
-                                <a href="${contextPath}/member/logout">로그아웃</a>
-                                <span> | </span>
-                                <a href="${contextPath}/member/mypage">마이페이지</a>
-                                <span> | </span>
-                                <a href="${contextPath}/member/signUp">회원가입</a>
+                                <c:if test="${! empty loginMember}">
+                                    <a href="${contextPath}/member/logout">로그아웃</a>
+                                    <span> | </span>
+                                    <a href="${contextPath}/member/mypage">마이페이지</a>
+                                    <span>${loginMember.memberName} 님 환영합니다.</span> <!-- 임시 -->
+                                </c:if>
+
+                                <c:if test="${empty loginMember}">
+                                    <a href="${contextPath}/member/login">로그인</a>
+                                    <span> | </span>
+                                    <a href="${contextPath}/member/signUp">회원가입</a>
+                                </c:if>
                             </ul>
                         </div>
         

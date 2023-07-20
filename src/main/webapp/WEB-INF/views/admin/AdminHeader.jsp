@@ -14,6 +14,7 @@
     <header>
         <div class="K-header">
             <div>관리자 페이지 / </div>
+            <div><a href="${contextPath}"></a><img src="resources/images/logo_b_2"></div>
             <div>
                 <a href="#">로그아웃</a>
             </div>
