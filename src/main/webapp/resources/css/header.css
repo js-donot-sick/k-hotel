@@ -103,6 +103,10 @@ div a{
 
 }
 
+.P-btn2 span{
+    padding: 0 10px;
+}
+
 .P-btn2>ul a{color: black;} 
 
 /* 커뮤니티 / 이벤트 */
@@ -115,6 +119,7 @@ div a{
     font-size: 15px;
     font-weight: bold;
     text-transform:uppercase;
+    width: 300px;
     
 }
 
