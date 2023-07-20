@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;;
+    box-sizing: border-box;
 }
 
 @font-face {
@@ -95,6 +95,11 @@
 
 .P-star{
     display: flex;
+    margin-top: 15px;
+}
+
+#P-myform {
+    margin: auto 10px;
 }
 
 #P-myform fieldset {
@@ -141,21 +146,15 @@
     /* 마우스 클릭 체크 */
 }
 
-.star-rating {
-    display: flex;
-    flex-direction: row-reverse;
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-    justify-content: space-around;
-    padding: 0 0.2em;
-    text-align: center;
-    width: 5em;
-  }
-   
+
   .star-rating input {
     display: none;
   }
    
+  #myform fieldset legend{
+    text-align: right;
+}
+
   .star-rating label {
     -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 2.3px;
@@ -173,12 +172,16 @@
   }
 
 .P-tag-top{
-    margin: 15px 10px 10px 10px; 
-    padding: 0 5px;
     border-radius: 4px;
     display:inline-block;
     background-color: #eee;
-    margin-right: 2px;
+    margin:20px 10px;
+    width: 170px;
+
+}
+
+.P-tag-area>span{
+    text-align: center;
 }
 
 .P-tag-top>img {
@@ -187,26 +190,28 @@
 }
 
 .P-tag-con{
-    margin: 15px 10px 10px 10px; 
+    margin: auto 5px; 
     padding: 0 3px;
     border-radius: 4px;
     background-color: #eee;
     text-decoration: none;
+    border: 0;
 }
 
 .P-rs-btn{
     display: flex;
     justify-content: right;
-    margin-left: 75px;
 }
 
 #P-rs-update-btn{
-    margin: 5px 15px;
+    margin: 5px 5px;
     cursor: pointer;
     background-color: rgb(173,158,135);
     color: white;
-    width: 80px;
-    border:0
+    width: 50px;
+    border-radius: 15px;
+    border:0;
+    height: 40px;
 }
 
 #P-rs-update-btn:hover{
@@ -215,17 +220,35 @@
 }
 
 #P-rs-delete-btn{
-    margin: 5px 15px;
+    margin: 5px 5px;
     cursor: pointer;
     background-color: rgb(173,158,135);
     color: white;
-    width: 80px;
+    width: 50px;
+    border-radius: 15px;
     border:0
 }
 
 #P-rs-delete-btn:hover{
     background-color: #4F3A28;
+    color: white;
 }
+
+#P-rs-Declar-btn{
+    margin: 5px 5px;
+    cursor: pointer;
+    background-color: rgb(173,158,135);
+    color: white;
+    width: 50px;
+    border-radius: 15px;
+    border:0
+}
+
+#P-rs-Declar-btn:hover{
+    background-color: #4F3A28;
+    color: white;
+}
+
 
 #P-rs-content{
     width: 750px;
@@ -243,4 +266,24 @@
     display: flex;
     justify-content: center;
     padding-top: 30px; 
+}
+
+.showstep1{
+    max-height: 300px;
+    overflow: hidden;
+}
+.showstep2{
+    max-height: 600px;
+    overflow: hidden;
+}
+.content{
+    height: 1000px;
+    background-color: #a00;
+}
+.hide{
+    display: none;
+}
+
+#search{
+    display: none;
 }
