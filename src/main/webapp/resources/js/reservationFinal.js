@@ -7,10 +7,16 @@ const payplan = document.getElementById("C-payplan");
 const Cbank = document.getElementById("C-bank");
 const account = document.getElementById("C-account");
 
+
+const hotelpay = document.getElementById("C-hotelPay");
+const finalpay = document.getElementById("C-finalpay");
+
 coupon.addEventListener("change", function(){
 
     if(coupon.value == "discountcoupon"){
         discount.value = "30000";
+
+        finalpay.innerHTML = hotelpay.value - discount.value;
     }
 })
 

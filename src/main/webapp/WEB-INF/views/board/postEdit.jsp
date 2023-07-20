@@ -93,7 +93,7 @@
                 
                             <div class="L-person L-detail">
                                 <div>작성자</div>
-                                <div><input type="text" name="L-input-person" value="" placeholder="작성자"></div>
+                                <div><input type="text" name="L-input-person" value="${loginMember.memberName}" placeholder="작성자"></div>
                                 <div></div>
                                 <div>작성일</div>
                                 <div><input type="text" name="L-date" value="" placeholder="작성일"></div>
