@@ -27,7 +27,7 @@ document.querySelector("#k-login-bottom>a:nth-of-type(2)").addEventListener("cli
 })
 
 document.getElementById("k-id-search-btn").addEventListener("click", function(){
-
+    console.log(1)
     $.ajax({
         url : "idSearch",
         data : {
