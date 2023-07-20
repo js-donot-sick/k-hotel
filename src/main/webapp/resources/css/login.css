@@ -296,7 +296,7 @@ input[name="inputPw"]{ /* 비밀번호 입력창 */
     font-weight: bold;
 }
 
-/* 아이디저장 자동로그인 */
+/* 아이디저장 */
 .K-cookie{
     display: flex;
 }
@@ -307,12 +307,9 @@ input[name="inputPw"]{ /* 비밀번호 입력창 */
 }
 
 .K-cookie>div:nth-child(1){
-    margin-left: 35%;
+    margin-left: 45%;
 }
 
-.K-cookie>div:nth-child(2){
-    margin-right: 35%;
-}
 
 /* 팝업창(찾기) */
 #k-popup{

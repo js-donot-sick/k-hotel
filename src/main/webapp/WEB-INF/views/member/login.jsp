@@ -71,11 +71,7 @@
                                 <input type="checkbox" name="K-saveId" ${ chk } id="K-saveId">아이디 저장
                             </label>
                         </div>
-                        <div>
-                            <label class="K-checkbox"> 
-                                <input type="checkbox" name="K-auto-login" id="K-auto-login">자동 로그인
-                            </label>
-                        </div>
+                        
                     </div>
                 </form>
                 <div id="k-login-bottom">
