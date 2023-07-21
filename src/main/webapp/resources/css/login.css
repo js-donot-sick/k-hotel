@@ -283,7 +283,7 @@ input[name="inputPw"]{ /* 비밀번호 입력창 */
 #k-login-bottom{ /* 아이디찾기비번찾기회원가입 */
     margin-left: 32%;
     margin-top: 5px;
-    width: 273px;
+    width: 330px;
     font-size: 16px;
 }
 
@@ -423,6 +423,7 @@ input[name="k-inputId-id"]{
 #k-popup>div:nth-child(2){
     width: 500px;
     background-color: #ebe7e3;
+    height: 180px;
 }
 
 #k-pw-search-btn{

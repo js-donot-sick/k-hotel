@@ -154,6 +154,42 @@ public class KMemberDAO {
 		return memberNo;
 	}
 
+
+	/** 비밀번호 변경 전 회원정보 확인 DAO
+	 * @param conn
+	 * @param mem
+	 * @return result
+	 * @throws Exception
+	 */
+	public int rePw(Connection conn, Member mem) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("rePw");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, mem.getMemberName());
+			pstmt.setString(2, mem.getMemberPno());
+			pstmt.setString(3, mem.getMemberId());
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
 	
 
 }

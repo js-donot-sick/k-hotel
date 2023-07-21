@@ -59,11 +59,6 @@
                         <c:set var="chk" value="checked"></c:set>
                     </c:if>
 
-                    <!-- 쿠키에 토큰(자동로그인용) 저장되어 있는 경우 -->
-                    <c:if test="${!empty cookie.autoLogin.value }">
-                        <c:set var="auto" value="checked"></c:set>
-                    </c:if>
-                    <!-- 굳이 변수 안 만들어도 될 것 같기도.. -->
                     
                     <div class="K-cookie">
                         <div>
@@ -77,7 +72,7 @@
                 <div id="k-login-bottom">
                     <a href="#">아이디 찾기</a>
                     <span> | </span>
-                    <a href="#">임시 비밀번호 발급</a> <!-- 요청 주소 정해지면 수정 -->
+                    <a href="#">비밀번호 재발급 &nbsp; </a> <!-- 요청 주소 정해지면 수정 -->
                     <span> | </span>
                     <a href="#">회원가입</a>
                 </div>
@@ -121,9 +116,9 @@
                 <div class="k-popup-out">
                     <button class="k-x-btn">X</button>
                 </div>
-                <div class="k-search-letter">임시 비밀번호 발급</div>
+                <div class="k-search-letter">비밀번호 재발급</div>
                 <div>
-                    <form action="#">
+                    <form action="rerepw" method="POST" onsubmit="return pwValidate()">
                         <table>
                             <tr>
                                 <td class="k-inputName">이름</td>
@@ -131,7 +126,7 @@
                                     <input type="text" name="k-inputNm-pw" placeholder="이름을 입력하세요">
                                 </td>
                                 <td rowspan="3">
-                                    <button id="k-pw-search-btn">비밀번호 <br>발급</button>
+                                    <button id="k-pw-search-btn">비밀번호 <br>재발급</button>
                                 </td>
                             </tr>
                             <tr>
@@ -146,11 +141,6 @@
                     </form>
                 </div>
                 <div>
-                    <div id="k-pw-result">
-                        <div id="k-pw">
-                            <span></span>
-                        </div>
-                    </div>
                 </div>
             </div>
             

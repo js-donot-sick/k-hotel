@@ -9,12 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kHotel.member.model.service.KMemberService;
+import kHotel.member.model.vo.Member;
 
-@WebServlet("/tempPw")
-public class tempPwServlet extends HttpServlet {
-	
+@WebServlet("/member/rePw")
+public class RePwServlet extends HttpServlet {
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		System.out.println(111111);
 		
 		String inputName = req.getParameter("pInputNm");
 		String inputPno = req.getParameter("pInputPno");
@@ -24,23 +27,21 @@ public class tempPwServlet extends HttpServlet {
 			
 			KMemberService service = new KMemberService();
 			
-			// 우선 입력 정보가 일치하는지 확인(result에는 일치하는 회원번호 담김)
-			int memberNo = service.rightInfo(inputName, inputPno, inputId);
+			Member mem = new Member();
 			
-			if(memberNo != 0) {
-				// 일치하는 정보가 있는 경우 임시 비밀번호 발급
-				
-				String pw = null;
-						
-				int result = service.tempPw(memberNo, pw);
-			}
+			mem.setMemberName(inputName);
+			mem.setMemberPno(inputPno);
+			mem.setMemberId(inputId);
+			
+			int result = service.rePw(mem);
+			
+			System.out.println(result);
+			
+			resp.getWriter().print(result);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		
-		
 	}
-
 }
