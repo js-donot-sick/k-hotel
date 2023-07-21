@@ -13,6 +13,23 @@ import kHotel.member.model.vo.HotelRoom;
 public class CBookService {
 
 	private CBookDAO dao = new CBookDAO();
+
+	/** 객실 조회 Service
+	 * @param room
+	 * @param hotel
+	 * @return hotelRoom
+	 * @throws Exception
+	 */
+	public HotelRoom searchRoom(String room, String hotel) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		HotelRoom hotelRoom = dao.searchRoom(conn,room,hotel);
+		
+		close(conn);
+		
+		return hotelRoom;
+	}
 	
 
 	

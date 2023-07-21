@@ -68,8 +68,8 @@ document.getElementById("C-Cminusbutton").addEventListener("click",function(){
    child.value = j;
 })
 
-function reservationValidate() {
 
+document.getElementById("C-reservationBtn").addEventListener("click", function(){
    if (hotel_choice.value == "none") {
       alert("호텔을 선택해 주시길 바랍니다.");
       return false;
@@ -94,12 +94,29 @@ function reservationValidate() {
       return false;
    }
    else {
-      confirm("예약을 진행하시겠습니까?")
+      $.ajax({
+         url :"/book/searchRoom",
+         data : {"hotel_choice" : hotel_choice,
+                 "room_choice" : room_choice},
+         type : "GET",
+         success : function(hotelRoom){
+            if(hotelRoom != null){
+               console.log("해치웠나?");
+               return true;
+            }
+         },
+         error : function(){
+            console.log("날벼락이다");
+            return false;
+         }
+      
+      })
+      
    }
 
+})
 
-}
+
 
 /*------------------------------------객실 선택 시작----------------------------------------- */ 
-
 /*------------------------------------객실 선택 끝----------------------------------------- */ 

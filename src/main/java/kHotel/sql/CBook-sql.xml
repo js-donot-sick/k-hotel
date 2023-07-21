@@ -9,9 +9,10 @@
 	</entry>
 	
 	<entry key="selectRoom">
-	SELECT ROOM_NO, ROOM_HOTEL, ROOM_NM, ROOM_PRICE,ROOM_INFO 
+	SELECT ROOM_NO,ROOM_HOTEL,ROOM_NM
 	FROM ROOM
 	WHERE ROOM_HOTEL = ?
 	AND ROOM_NM = ?
+	AND ROOM_ST ='N'
 	</entry>
 </properties>
