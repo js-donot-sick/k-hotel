@@ -44,4 +44,29 @@ public class KMemberService {
 		return result;
 	}
 
+	/** 임시비번 정보 확인 service
+	 * @param inputName
+	 * @param inputPno
+	 * @param inputId
+	 * @return memberNo
+	 * @throws Exception
+	 */
+	public int rightInfo(String inputName, String inputPno, String inputId) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int memberNo = dao.rightInfo(conn, inputName, inputPno, inputId);
+		
+		close(conn);
+		
+		return memberNo;
+	}
+
+	public int tempPw(int memberNo, String pw) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
 }

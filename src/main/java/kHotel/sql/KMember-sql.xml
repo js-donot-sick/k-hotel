@@ -3,6 +3,7 @@
 <properties>
 <comment>KMember-sql.xml</comment>
 
+	<!-- 로그인 -->
 	<entry key="login">
 		SELECT MEMBER_NO, MEMBER_ID, MEMBER_NM, MEMBER_EMAIL, MEMBER_TEL, MEMBER_ADD, 
 			 COUPON, REPORT, MEMBER_ADMIN, MEMBER_PNO
@@ -12,10 +13,19 @@
 		AND SECESSION_FL = 'N'
 	</entry>
 	
+	<!-- 아이디 찾기 -->
 	<entry key="idSearch">
 		SELECT MEMBER_ID FROM MEMBER
 		WHERE MEMBER_NM = ?
 		AND MEMBER_PNO = ?
+	</entry>
+	
+	<!-- 임시비번용 정보 확인 -->
+	<entry key="rightInfo">
+		SELECT MEMBER_NO FROM MEMBER
+		WHERE MEMBER_NM='유저일'
+		AND MEMBER_PNO='981111-1234567'
+		AND MEMBER_ID='user01'
 	</entry>
 
 </properties>
