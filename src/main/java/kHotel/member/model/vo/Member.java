@@ -1,6 +1,5 @@
 package kHotel.member.model.vo;
 
-import java.io.Serializable;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString
 @NoArgsConstructor
-public class Member implements Serializable {
+public class Member  {
 	
 	private int memberNo;
 	private String memberId;

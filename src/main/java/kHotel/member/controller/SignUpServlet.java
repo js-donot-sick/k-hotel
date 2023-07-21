@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import kHotel.member.model.service.JMemberService;
 import kHotel.member.model.vo.Member;
 
 @WebServlet("/member/signUp")
@@ -28,23 +30,60 @@ public class SignUpServlet extends HttpServlet{
 		String memberId = req.getParameter("memberId");
 		String memberPw = req.getParameter("memberPw");
 		String memberName = req.getParameter("memberName");
-		String memberPno = req.getParameter("memberPno");
-		String memberPH = req.getParameter("memberPH");
+		String[] pno = req.getParameterValues("memberPno");
+		String memberTel = req.getParameter("memberTel");
 		String memberEmail = req.getParameter("memberEmail");
 		String[] address = req.getParameterValues("memberAddress");
 		
 		
 		String memberAddress = null;
+		String memberPno = null;
+		
 		if(!address[0].equals("")) {
 			memberAddress = String.join(",,", address);
+		}
+		
+		if(!pno[0].equals("")) {
+			memberPno = String.join("-", address);
 		}
 		
 		Member member = new Member();
 		
 		member.setMemberId(memberId);
 		member.setMemberPw(memberPw);
+		member.setMemberName(memberName);
+		member.setMemberPno(memberPno);
+		member.setMemberTel(memberTel);
+		member.setMemberEmail(memberEmail);
+		member.setMemberAddress(memberAddress);
 		
-		
+		try {
+			
+			JMemberService jservice = new JMemberService();
+			
+			
+			int result = jservice.signUp(member);
+			
+			HttpSession session = req.getSession();
+			
+			
+			
+			if(result > 0) { // 성공
+				session.setAttribute("message", "KHOTEL에 회원이 되신 걸 환영합니다! 특별 혜택으로 쿠폰을 1개 증정하였습니다.");
+				
+			}else {	// 실패
+				session.setAttribute("message", "회원가입을 실패하였습니다. 다시 시도해 주세요.");
+			}
+
+			System.out.println(result);
+			
+			resp.sendRedirect( req.getContextPath() );
+			
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		
 	}
