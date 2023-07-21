@@ -17,14 +17,13 @@ import lombok.ToString;
 public class Book {
 
 		private int bookNo;
-		private String bookHotel;
-		private String bookRoom;
 		private String checkInTime;
 		private String checkOutTime;
-		private int adult;
-		private int child;
+		private int bookPerson;
 		private String checkFl;
-		
+		private int memberNo;
+		private int calculateNo;
+		private int roomNo;
 	
 
 }

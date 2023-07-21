@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/book/roomChoice")
-public class RoomChoiceServlet extends HttpServlet{
-	
+@WebServlet("/board/write")
+public class BoardWriteServlet extends HttpServlet{
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String path = "/WEB-INF/views/book/RoomChoice.jsp";
+		
+		String path = "/WEB-INF/views/board/postWrite.jsp";
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		
 		dispatcher.forward(req, resp);
 	}
-	
 }
