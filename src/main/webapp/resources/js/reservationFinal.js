@@ -11,6 +11,25 @@ const account = document.getElementById("C-account");
 const hotelpay = document.getElementById("C-hotelPay");
 const finalpay = document.getElementById("C-finalpay");
 
+$(function () {
+            $("#C-kakaopay").click(function () {
+                $.ajax({
+                    url: '/cls/jp/kakaopay.cls',
+                    dataType: 'json',
+                    success: function (data) {
+                       var box =data.next_redirect_pc_url;
+                       window.open(box);
+                       
+                        return true;
+                    },
+                    error: function (error) {
+                        alert(error);
+                        return false;
+                    }
+                })
+            })
+        })
+
 coupon.addEventListener("change", function () {
 
     if (coupon.value == "discountcoupon") {
@@ -40,7 +59,7 @@ account.addEventListener("change", function () {
 
 function reservationFinalValidate() {
 
-    if (payplan.value != Cbank.value) {
+    if (payplan.value == "none") {
         alert("결제 수단을 선택해주시길 바랍니다.")
         return false;
     }
@@ -48,21 +67,9 @@ function reservationFinalValidate() {
     else if (!agree.checked) {
         alert("약관 동의 후 예약을 진행해주시기 바랍니다.");
         return false;
+        
     } else if (payplan.value == "카카오페이") {
-        $(function () {
-            $("#C-rsvClearBtn").click(function () {
-                $.ajax({
-                    url: '/cls/jp/kakaopay.cls',
-                    dataType: 'json',
-                    success: function (data) {
-                        alert(data);
-                    },
-                    error: function (error) {
-                        alert(error);
-                    }
-                })
-            })
-        })
+        
     }
 
 

@@ -26,7 +26,7 @@
     <!----------------------------------------헤더 --------------------------------------------->
 
     <!----------------------------------------바디 --------------------------------------------->
-    <form action="bookEnd" method="get" onsubmit="return reservationFinalValidate()">
+    <form action="#" method="post" onsubmit="return reservationFinalValidate()">
         <div class="C-body">
             <div class="C-Final-rsv">
                 <div class="C-body-first-div">예약하기</div>
@@ -103,7 +103,7 @@
                                         <select name="C-payplan" id="C-payplan">
                                             <option value="none" selected>결제수단선택</option>
                                             <option id="C-bank" value="무통장입금">무통장입금</option>
-                                            <option value="none">선불/체크카드</option>
+                                            <option id="C-kakaoPay" value="카카오페이">카카오페이</option>
                                             <option value="none">신용카드</option>
                                         </select>
                                     </td>
