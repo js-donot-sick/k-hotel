@@ -4,13 +4,12 @@ const nmInput = document.getElementsByName("k-inputNm-id")[0];
 const pnoInput = document.getElementsByName("k-inputPno-id")[0]; /* 아이디 찾기 용 변수 */
 
 const id = document.querySelector("#k-id-result span");
-const pw = document.querySelector("#k-pw-result span");
 
 const pInputNm = document.getElementsByName("k-inputNm-pw")[0];
 const pInputPno = document.getElementsByName("k-inputPno-pw")[0];
 const pInputId = document.getElementsByName("k-inputId-pw")[0];
 
-
+/* 팝업창 뜨기 */
 document.getElementsByClassName("k-popup-out")[0].addEventListener("click", function(){
     idPopup.style.display="none";
     id.innerText="";
@@ -36,6 +35,9 @@ document.querySelector("#k-login-bottom>a:nth-of-type(2)").addEventListener("cli
     }
 })
 
+//--------------------------------------------------------------
+
+// 아이디 찾기
 document.getElementById("k-id-search-btn").addEventListener("click", function(){
 
     id.innerText="";
@@ -68,37 +70,45 @@ document.getElementById("k-id-search-btn").addEventListener("click", function(){
         }
     })
 })
+// 비밀번호 변경......
 
+function pwValidate(){
+    console.log(1);
+    please();
 
-document.getElementById("k-pw-search-btn").addEventListener("click", function(){
+}
 
-    id.innerText="";
-
+function please(){
     $.ajax({
-        url : "tempPw",
+        url : "rePw",
         data : {
-                "pInputNm":pInputNm.value,
-                "pInputPno":pInputPno.value,
-                "pInputId":pInputId.value
-            },
+                    "pInputNm" : pInputNm.value,
+                    "pInputPno" : pInputPno.value,
+                    "pInputId" : pInputId.value
+                },
         type : "POST",
-
-        success : function(pw){
-            if(result!=null){
-                id.innerHTML=" 비밀번호 : " + pw;
+    
+        success(result){
+            if(result>0){
+                alert("하.....")
+                return true;
             } else {
-                id.innerText="일치하는 회원이 없습니다.";
+                alert("일치하는 회원이 없습니다.");
+                return false;
             }
+    
         },
+    
         error : function(){
             console.log("오류발생");
-
+    
             console.log("상태코드 : " + request.status); // 404, 500
-
+    
             console.log(request.responseText); // 에러 메세지
-
+    
             console.log(error); // 에러 객체 출력
-
+    
         }
-    })
+
 })
+}
