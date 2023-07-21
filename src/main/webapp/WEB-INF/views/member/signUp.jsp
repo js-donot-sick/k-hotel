@@ -27,7 +27,7 @@
 
             <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-            <form action="#" method="post">
+            <form action="signUp" method="POST">
 
                 
                 <div class="J-2">
@@ -86,7 +86,7 @@
                                 </div>
                                 
                                 <div class="J-J6">
-                                    <input type="text" id="J-B"  placeholder=" '-' 제외하고 입력" name="memberPH">
+                                    <input type="text" id="J-B"  placeholder=" '-' 제외하고 입력" name="memberTel">
                                 </div>
                                 
                                 <div class="J-J7">
@@ -257,7 +257,7 @@
                 </div>
                 
                 <div class="J2-6">
-                    <button>회원가입</button>
+                    <button onsubmit="return signUp()">회원가입</button>
                     <button>취소</button>
                 </div>
                 
