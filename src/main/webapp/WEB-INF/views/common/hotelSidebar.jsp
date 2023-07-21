@@ -26,8 +26,8 @@
 
 <body>
     
-        
-    <div class="H-snb">
+    
+ <div class="H-snb">
         <ul class="H-side-bar">
             <li>
                 <a href="#" class="H-side-item H-side-title">호텔 소개</a>
@@ -44,7 +44,6 @@
         </ul>
         
     </div>
-
     
 
 

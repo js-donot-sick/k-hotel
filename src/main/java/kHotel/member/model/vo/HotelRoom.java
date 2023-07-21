@@ -19,9 +19,8 @@ public class HotelRoom {
 	private String HotelName;
 	private String roomName;
 	private int roomPrice;
-	private int maxPerson;
 	private String roomImage;
 	private String roomInfo;
-	private int bookNo;
+	private String roomStatus;
 	private int memberNo;
 }

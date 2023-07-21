@@ -98,14 +98,6 @@
                                 <div>작성일</div>
                                 <div><input type="text" name="L-date" value="" placeholder="작성일"></div>
                             </div>
-                
-                            <div class="L-picture L-detail">
-                                <div>사진
-                                    <div><button type="button" id="C-plus-picture">사진추가</button></div>
-                                </div>
-                                <div id="C-picture"></div>
-                            </div>
-                
                             <div class="L-text L-detail">
                                 <div>내용</div>
                                 <div><textarea name="L-textarea-text" id="C-postWritearea"></textarea></div>
