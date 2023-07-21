@@ -29,7 +29,7 @@ document.getElementsByClassName("J-J1-1")[0].addEventListener("keydown", functio
     }
 
     if(this.value == ""){
-        green.innerText = "";
+        green.innerHTML = "";
     }
 })
 
@@ -68,35 +68,56 @@ document.getElementById("J-H3-1").addEventListener("click", function(){
         alert("비밀번호가 일치합니다.");
     } else{
         alert("비밀번호가 일치하지 않습니다.");
+        return false;
     }
     
 })
 
-document.getElementsByClassName("J-J1-3")[0].addEventListener("input", function(){
-  
-    const pw1 = document.getElementsByClassName("J-J1-2")[0];
 
-    if(this.value == pw1.value){
-        this.style.color = "green";
-        pw1.style.color = "green";
-    } else{
-        this.style.color = "red";
-        pw1.style.color = "red";
-    }
-})
+    document.getElementsByClassName("J-J1-3")[0].addEventListener("input", function(){
+      
+        const pw1 = document.getElementsByClassName("J-J1-2")[0];
+        const pw2 = document.getElementById("J-J3-1");
+        if(pw1.value.trim().length > 8 | this.value.trim().length > 8 ){
+            pw1.style.color = "black";
+        }
+    
+        if(this.value == pw1.value){
+            pw2.innerHTML = "비밀번호가 일치 합니다.";
+            pw2.style.color = "green";
+        } else{
+            pw2.innerHTML = "비밀번호가 일치하지 않습니다."; 
+            pw2.style.color = "red";
+        }
 
-document.getElementsByClassName("J-J1-2")[0].addEventListener("input", function(){
-  
-    const pw2 = document.getElementsByClassName("J-J1-3")[0];
+        if(this.value == ""){
+            pw2.innerHTML = "";
+        }
+    
+    })
+    
 
-    if(this.value == pw2.value){
-        this.style.color = "green";
-        pw2.style.color = "green";
-    } else{
-        this.style.color = "red";
-        pw2.style.color = "red";
-    }
-})
+    document.getElementsByClassName("J-J1-2")[0].addEventListener("input", function(){
+      
+        const pw2 = document.getElementById("J-J3-1");
+    
+        if(this.value.trim().length >= 8){
+
+            
+            if(this.value == pw2.value){
+                pw2.innerHTML = "비밀번호가 일치 합니다.";
+                pw2.style.color = "green";
+            } else{
+                pw2.innerHTML = "비밀번호가 일치하지 않습니다.";
+                pw2.style.color = "red";
+            }
+        }else{
+            pw2.innerHTML = "";
+        }
+        
+    })
+
+
 
 /* -------------------------------------------------------------------------- */
 function sample6_execDaumPostcode() {
@@ -143,10 +164,33 @@ function sample6_execDaumPostcode() {
         }
     }).open();
 }
+/* --------------------------------------------------------------------------- */
+const memberTel = document.getElementsByName("memberTel")[0];
+
+memberTel.addEventListener("input", function(){
+
+    const regExp= /^0(1[01679]|2|[3-6][1-5]|70)\d{3,4}\d{4}$/;
+
+    if(!regExp.test(this.value)){
+        alert("전화번호 형식이 일치하지 않습니다. 다시 입력해주세요.")
+        this.focus();
+    }
+})
 
 
 function signUp(){
 
-    
+    const input = document.getElementById("J-A");
+
+    for(let item in input){
+        if(item.value.trim().length == 0){
+
+            alert("빈칸이 존재합니다. 다시 입력해주세요.")
+
+            item.focus();
+
+            return false;
+        }
+    }
 
 }

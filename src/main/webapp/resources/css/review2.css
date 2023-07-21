@@ -199,45 +199,52 @@ input{
 
 /* -------------------------------------------------------------------------- */
 
+.J-star{
+    display: flex;
+}
+
+#J-myform fieldset {
+    display: inline-block;
+    /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+    direction: rtl;
+    /* 이모지 순서 반전 */
+    border: 0;
+    /* 필드셋 테두리 제거 */
+}
+
+#J-myform fieldset legend {
+    text-align: left;
+}
+
+#J-myform input[type=radio] {
+    display: none;
+    /* 라디오박스 감춤 */
+}
+
+#J-myform label {
+    font-size: 2em;
+    /* 이모지 크기 */
+    color: transparent;
+    /* 기존 이모지 컬러 제거 */
+    text-shadow: 0 0 0 #f0f0f0;
+    /* 새 이모지 색상 부여 */
+}
+
 #J-myform label:hover {
-    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+    text-shadow: 0 0 0 #FAE04C;
     /* 마우스 호버 */
 }
 
 #J-myform label:hover~label {
-    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+    text-shadow: 0 0 0 #FAE04C;
     /* 마우스 호버 뒤에오는 이모지들 */
 }
 
 #J-myform input[type=radio]:checked~label {
-    text-shadow: 0 0 0 rgba(250, 208, 0, 0.99);
+    text-shadow: 0 0 0 #FAE04C;
     /* 마우스 클릭 체크 */
 }
 
-
-.J-star-rating input {
-    display: none;
-  }
-   
-#J-myform fieldset legend{
-    text-align: right;
-}
-
-.J-star-rating label {
-    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 2.3px;
-    -webkit-text-stroke-color: #2b2a29;
-    cursor: pointer;
-  }
-   
-  .J-star-rating :checked ~ label {
-    -webkit-text-fill-color: gold;
-  }
-   
-  .J-star-rating label:hover,
-  .J-star-rating label:hover ~ label {
-    -webkit-text-fill-color: #fff58c;
-  }
 
 
 
