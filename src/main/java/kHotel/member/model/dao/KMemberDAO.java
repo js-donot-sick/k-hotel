@@ -120,6 +120,40 @@ public class KMemberDAO {
 		System.out.println(result);
 		return result;
 	}
+
+	/** 임시비번 정보 확인 DAO
+	 * @param conn
+	 * @param inputName
+	 * @param inputPno
+	 * @param inputId
+	 * @return memberNo 
+	 * @throws Exception
+	 */
+	public int rightInfo(Connection conn, String inputName, String inputPno, String inputId) throws Exception {
+		
+		int memberNo = 0;
+		
+		try {
+			String sql = prop.getProperty("rightInfo");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, inputName);
+			pstmt.setString(2, inputPno);
+			pstmt.setString(3, inputId);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				memberNo = rs.getInt(1);
+			}
+			
+		} finally {
+			
+		}
+		return memberNo;
+	}
+
 	
 
 }

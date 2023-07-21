@@ -77,7 +77,7 @@
                 <div id="k-login-bottom">
                     <a href="#">아이디 찾기</a>
                     <span> | </span>
-                    <a href="#">비밀번호 찾기</a>
+                    <a href="#">임시 비밀번호 발급</a> <!-- 요청 주소 정해지면 수정 -->
                     <span> | </span>
                     <a href="#">회원가입</a>
                 </div>
@@ -98,7 +98,7 @@
                                     <input type="text" name="k-inputNm-id" placeholder="이름을 입력하세요">
                                 </td>
                                 <td rowspan="2">
-                                    <button id="k-id-search-btn">아이디찾기</button>
+                                    <button type="button" id="k-id-search-btn">아이디찾기</button>
                                 </td>
                             </tr>
                             <tr>
@@ -110,49 +110,50 @@
                 </div>
                 <div>
                     <div id="k-id-result">
-                        <div>
-                            <span>아이디 : </span>
+                        <div id="k-id">
+                            <span></span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div id="k-popup-pw"> <!-- 비번 찾기 창 -->
+            <div id="k-popup-pw"> <!-- 비번 발급받는 창 -->
                 <div class="k-popup-out">
                     <button class="k-x-btn">X</button>
                 </div>
-                <div class="k-search-letter">비밀번호 찾기</div>
+                <div class="k-search-letter">임시 비밀번호 발급</div>
                 <div>
                     <form action="#">
                         <table>
                             <tr>
                                 <td class="k-inputName">이름</td>
                                 <td>
-                                    <input type="text" name="k-inputNm-id" placeholder="이름을 입력하세요">
+                                    <input type="text" name="k-inputNm-pw" placeholder="이름을 입력하세요">
                                 </td>
                                 <td rowspan="3">
-                                    <button id="k-pw-search-btn">비밀번호 <br>찾기</button>
+                                    <button id="k-pw-search-btn">비밀번호 <br>발급</button>
                                 </td>
                             </tr>
                             <tr>
                                 <td>주민등록번호</td>
-                                <td><input type="password" name="k-inputPno-id" placeholder="주민번호를 입력하세요"></td>
+                                <td><input type="password" name="k-inputPno-pw" placeholder="주민번호를 입력하세요"></td>
                             </tr>
                             <tr>
                                 <td>아이디</td>
-                                <td><input type="text" name="k-inputId-id" placeholder="아이디를 입력하세요"></td>
+                                <td><input type="text" name="k-inputId-pw" placeholder="아이디를 입력하세요"></td>
                             </tr>
                         </table>
                     </form>
                 </div>
                 <div>
                     <div id="k-pw-result">
-                        <div>
-                            <span>비밀번호 : </span>
+                        <div id="k-pw">
+                            <span></span>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
         <div></div>
 

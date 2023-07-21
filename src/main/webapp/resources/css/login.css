@@ -411,8 +411,13 @@ input[name="k-inputId-id"]{
     align-items: center;
 }
 
-#k-id-result>div{
+/* #k-id-result>div{
     display: none;
+} */
+
+#k-id-result span{
+    font-weight: bold;
+    font-size: 20px;
 }
 
 #k-popup>div:nth-child(2){
