@@ -94,6 +94,7 @@
     border: 0;
     margin-right: 80px;
     width: 65px;
+    font-size: 0.8em;
 }
 
 .K-agree-btn:hover{
@@ -112,6 +113,7 @@
     cursor: pointer;
     border: 0;
     width: 65px;
+    font-size: 0.8em;
 }
 
 .K-agree-confirm{ /* 라디오 버튼들 div */
@@ -232,7 +234,7 @@
 
 /* input 태그 스타일 */
 .L-input{
-    width: 300px;
+    width: 220px;
     font-size: 16px;
     outline: 0;
     border: 0;
@@ -240,8 +242,9 @@
 
 /* 우편번호 검색 버튼 */
 .L-searchBtn{
-    width: 50px;
+    width: 130px;
     height: auto;
+    font-size: 0.8em;
 }
 
 /* 주소 밑줄 삭제 */

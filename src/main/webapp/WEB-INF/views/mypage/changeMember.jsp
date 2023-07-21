@@ -57,7 +57,7 @@
                             <tr>
                                 <td><label for="L-address">주소</label></td>
                                 <td><input type="text" placeholder="수정할 우편번호" class="L-input" name="L-address" id="L-address1"></td>
-                                <td><button class="L-searchBtn">검색</button></td> <!-- 우편번호 -->
+                                <td><button class="L-searchBtn" onclick="L_addBtn()">우편번호 찾기</button></td> <!-- 우편번호 -->
                             </tr>
                             <tr>
                                 <td name="L-addressTd"></td>
@@ -178,7 +178,9 @@
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script src="${contextPath}/resources/js/confirmMember.js"></script>
+    <script src="${contextPath}/resources/js/changeMember.js"></script>
 
 </body>
 
