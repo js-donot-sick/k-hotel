@@ -69,9 +69,12 @@
 
 }
 
+#P-id >span{
+    padding: 0 4px;
+}
+
 .P-profile_area>div:nth-child(1) {
     display: flex;
-    justify-content: space-between;
     padding: 5px 10px;
 }
 
@@ -171,6 +174,8 @@
     -webkit-text-fill-color: #fff58c;
   }
 
+
+  /* 태그 */
 .P-tag-top{
     border-radius: 4px;
     display:inline-block;
@@ -286,4 +291,71 @@
 
 #search{
     display: none;
+}
+
+/* 신고하기 팝업창 */
+#P-popup-Declar{
+    width: 500px;
+    height: 500px;
+    border: 3px solid rgb(173,158,135);
+}
+
+#P-popup-area{
+    display: flex;
+    justify-content: center;
+}
+
+#P-popup-title{
+    margin: 0 80px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#P-popup-outbtn{
+    justify-content: flex-end;
+    display: flex;
+    background-color: rgb(173,158,135);
+}
+
+#P-popup-out{
+
+    justify-content: flex-end;
+    margin: 10px 5px;
+    cursor: pointer;
+    background-color: rgb(173,158,135);
+    color: white;
+    border-radius: 15px;
+    border:0;
+    font-size: 15px;
+ 
+    
+}
+.P-popup-writer-area{
+    display: flex;
+    justify-content: center;
+}
+
+#P-declar-btn{
+    margin: 10px 5px;
+    cursor: pointer;
+    background-color: rgb(173,158,135);
+    color: white;
+    border-radius: 15px;
+    border:0;
+    font-size: 15px;
+    
+}
+
+/* 신고하기 입력 창 */
+#P-popup-content{
+    resize:none;
+    width: 400px;
+    height: 350px;
+}
+
+.P-declar-btnarea{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 10px;
 }
