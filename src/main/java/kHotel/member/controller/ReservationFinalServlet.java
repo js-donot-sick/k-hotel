@@ -57,7 +57,7 @@ public class ReservationFinalServlet extends HttpServlet{
 			
 			HotelRoom room = service.selectRoom(book);
 			
-			System.out.println(room);
+			
 			
 			if(result > 0) { // 성공
 				
