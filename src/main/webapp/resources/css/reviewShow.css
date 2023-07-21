@@ -171,6 +171,8 @@
     -webkit-text-fill-color: #fff58c;
   }
 
+
+  /* 태그 */
 .P-tag-top{
     border-radius: 4px;
     display:inline-block;
@@ -287,3 +289,5 @@
 #search{
     display: none;
 }
+
+/* 신고하기 팝업창 */
