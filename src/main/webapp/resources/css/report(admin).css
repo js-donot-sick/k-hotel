@@ -38,12 +38,16 @@
 
 /* 메인(테이블) 내용 */
 table{
-    border: 1px solid gray;
+    border-collapse: collapse;
+    border-top: 3px solid black ;
 }
 
 td{
-    border: 1px solid gray;
-    height: 30px;
+    height: 50px;
+}
+
+tr{
+    border-bottom: 1px solid gray;
 }
 
 /* 게시글 번호 */

@@ -127,6 +127,7 @@
 
 .L-roomimg{
     width: 250px;
+    height: 142px;
 }
 
 .L-roomA{
@@ -155,7 +156,8 @@
 }
 
 .L-roomimg1{
-    width: 210px;
+    width: 250px;
+    height: 142px;
 }
 
 /* 사진에 찜 추가 */
@@ -176,7 +178,7 @@
 }
 
 /* 찜1 */
-#L-star-1{
+#L-star3-1{
     position: absolute;
     top: -10px;
     right: 10px;
@@ -184,7 +186,7 @@
     display: none;
 }
 
-#L-star-1-1{
+#L-star3-1-1{
     position: absolute;
     top: 100px;
     right: 0px;
@@ -197,7 +199,7 @@
     color: lightgray;
 }
 
-#L-star-1-2{
+#L-star3-1-2{
     position: absolute;
     top: 100px;
     right: 0px;
@@ -210,17 +212,17 @@
     color: lightgray;
 }
 
-#L-star-1-1 > img{
+#L-star3-1-1 > img{
     width: 30px;
 }
 
-#L-star-1-2 > img{
+#L-star3-1-2 > img{
     width: 30px;
     
 }
 
 /* 찜2 */
-#L-star-2{
+#L-star3-2{
     position: absolute;
     top: -10px;
     right: 10px;
@@ -228,10 +230,10 @@
     display: none;
 }
 
-#L-star-2-1{
+#L-star3-2-1{
     position: absolute;
     top: 100px;
-    right: 20px;
+    right: 0px;
     width: 40px;
     height: 40px;
     font-size: 30px;
@@ -241,10 +243,10 @@
     color: lightgray;
 }
 
-#L-star-2-2{
+#L-star3-2-2{
     position: absolute;
     top: 100px;
-    right: 20px;
+    right: 0px;
     width: 40px;
     height: 40px;
     font-size: 30px;
@@ -254,17 +256,17 @@
     color: lightgray;
 }
 
-#L-star-2-1 > img{
+#L-star3-2-1 > img{
     width: 30px;
 }
 
-#L-star-2-2 > img{
+#L-star3-2-2 > img{
     width: 30px;
 }
 
 
 /* 찜3 */
-#L-star-3{
+#L-star3-3{
     position: absolute;
     top: -10px;
     right: 10px;
@@ -272,7 +274,7 @@
     display: none;
 }
 
-#L-star-3-1{
+#L-star3-3-1{
     position: absolute;
     top: 100px;
     right: 0px;
@@ -285,7 +287,7 @@
     color: lightgray;
 }
 
-#L-star-3-2{
+#L-star3-3-2{
     position: absolute;
     top: 100px;
     right: 0px;
@@ -298,11 +300,11 @@
     color: lightgray;
 }
 
-#L-star-3-1 > img{
+#L-star3-3-1 > img{
     width: 30px;
 }
 
-#L-star-3-2 > img{
+#L-star3-3-2 > img{
     width: 30px;
 }
 
