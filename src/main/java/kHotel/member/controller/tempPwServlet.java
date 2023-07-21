@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kHotel.member.model.service.KMemberService;
 
-@WebServlet("tempPw")
+@WebServlet("/tempPw")
 public class tempPwServlet extends HttpServlet {
 	
 	@Override
