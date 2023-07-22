@@ -75,6 +75,7 @@
                                 
                                 <div class="J-J3">
                                     <input type="text" class="J-J1-3" id="J-B" name="memberPw2">
+                                    <div  id="J-J3-1"></div>
                                 </div >
                                 
                                 <div class="J-J4">
@@ -82,11 +83,11 @@
                                 </div >
                                 
                                 <div class="J-J5">
-                                    <input type="text"id="J-C" name="memberPno">&nbsp;-&nbsp;<input type="text"  id="J-C" name="memberPno"> 
+                                    <input type="text"id="J-C" name="memberPno" maxlength="10">&nbsp;-&nbsp;<input type="text"  id="J-C" name="memberPno" maxlength="10"> 
                                 </div>
                                 
                                 <div class="J-J6">
-                                    <input type="text" id="J-B"  placeholder=" '-' 제외하고 입력" name="memberTel">
+                                    <input type="text" id="J-B"  placeholder=" '-' 제외하고 입력" name="memberTel" maxlength="11">
                                 </div>
                                 
                                 <div class="J-J7">
@@ -99,14 +100,14 @@
                             <div class="J-H">
                                 
                                 <div class="J-H1">
-                                    <button class="J-H1-1" >아이디 중복 확인</button>&nbsp;
+                                    <button type="button" class="J-H1-1" >아이디 중복 확인</button>&nbsp;
                                 </div>
                                 
                                 <div class="J-H2">
                                 </div >
                                 
                                 <div class="J-H3">
-                                    <button id="J-H3-1" class="J-H1-1">비밀번호 중복 확인</button>
+                                    <button type="button" id="J-H3-1" class="J-H1-1" onsubmit="return JPw2()">비밀번호 중복 확인</button>
                                 </div >
                                 
                                 <div class="J-H4">
@@ -121,17 +122,9 @@
                                 </div>
                                 
                                 <div class="J-H7">
-                                    <select class="J-H7-1">
-                                        <option>-----------</option>
-                                        <option>naver.com</option>
-                                        <option>hanmail.com</option>
-                                        <option>gmail.com</option>
-                                        <option>nate.com</option>
-                                        <option>yahoo.co.kr</option>
                                         
                                         
                                         
-                                    </select>
                                 </div>
                             </div>
                             
@@ -204,8 +197,15 @@
                     </div>
                     
                     <div class="J2-5-3">
-                        <input type="radio" name="J-check" class="J-check2"> 동의함
+
+                        <label>
+                            <input type="radio" name="J-check" class="J-check2" > 동의함
+                        </label>
+
+                    <label>
                         <input type="radio" name="J-check" class="J-check2"> 동의하지 않음
+
+                    </label>
                     </div>
                     
                     <div class="J2-5-4">
@@ -250,8 +250,13 @@
                     
                     <div class="J2-5-6">
                         
-                        <input type="radio" name="J-check2" id="J-check" class="J-check2" > 동의함
-                        <input type="radio" name="J-check2" id="J-check" class="J-check2" > 동의하지 않음
+                        <label>
+                            <input type="radio" name="J-check2" id="J-check" class="J-check2" > 동의함
+                        </label>
+
+                        <label>
+                            <input type="radio" name="J-check2" id="J-check" class="J-check2" > 동의하지 않음
+                        </label>
                         
                     </div>
                 </div>

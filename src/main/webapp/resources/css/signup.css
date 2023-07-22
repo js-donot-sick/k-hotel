@@ -1,6 +1,6 @@
 *{box-sizing: border-box;
  
-       /*  border: 1px solid black;   */ 
+         /* border: 1px solid black;  */ 
  
 }
 
@@ -170,13 +170,26 @@ button:hover{
     text-align: center;
     
 }
+.J-J3 {
+    flex-direction: column;
+}
+.J-J3 > div{
+    width: 240px;
+    height: 25px;
+    text-align: center;
+    
+}
 
 .J-J1 > input{
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 .J-J2 > input{
-    margin-top: 20px;
+    margin-top: 25px;
+}
+
+.J-J3 > input{
+    margin-top: 25px;
 }
 
 .J-J1 {
@@ -294,7 +307,7 @@ button:hover{
 }
 
 .J-check2{
-    margin: 20px;
+    margin: 15px;
 }
 
 .J2-5-1 > pre{ 
@@ -302,8 +315,6 @@ button:hover{
     margin-top: 30px;
 }
 
-.J2-5-4 > pre{ 
-}
 
 .J2-5-0{ height: 5%;}
 
@@ -371,6 +382,7 @@ textarea{ color: gray;}
 .J-H7-1 > option:nth-child(1){
     color: gray;
 }
+
 
 
 
