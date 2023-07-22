@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kHotel.member.model.service.CBookService;
+import kHotel.member.model.vo.Book;
+import kHotel.member.model.vo.HotelRoom;
+
 @WebServlet("/book/*")
 public class reservationController extends HttpServlet{
 
@@ -22,6 +26,8 @@ public class reservationController extends HttpServlet{
 		String contextPath = req.getContextPath();
 		String command = uri.substring(  (contextPath + "/book/").length()  );
 		
+		CBookService service = new CBookService();
+		
 		if(command.equals("roomChoice")) {
 			
 			String path = "/WEB-INF/views/book/RoomChoice.jsp";
@@ -32,13 +38,26 @@ public class reservationController extends HttpServlet{
 			
 		}
 		
-		if(command.equals("reservationFinal")) {
+		if(command.equals("searchRoom")) {
+			try {
+				
+				String hotel = req.getParameter("hotel_choice");
+				String room = req.getParameter("room_choice");
+				
+				HotelRoom hotelRoom = service.searchRoom(room,hotel);
+				
+				resp.getWriter().print(hotelRoom);
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			
 			
-			
-		}
+		} 
 		
 		
+		
+
 		
 	}
 	

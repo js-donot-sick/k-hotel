@@ -34,6 +34,35 @@ public class CBookDAO {
 			}
 		}
 
+		public HotelRoom searchRoom(Connection conn, String room, String hotel) throws Exception{
+			HotelRoom hotelRoom = new HotelRoom();
+			
+			try {
+				String sql = prop.getProperty("selectRoom");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, hotel);
+				pstmt.setString(2,room);
+				
+				rs = pstmt.executeQuery();
+				
+				if( rs.next() ) {
+					hotelRoom.setRoomNo(rs.getInt(1));
+					hotelRoom.setHotelName(rs.getString(2));
+					hotelRoom.setRoomName(rs.getString(3));
+				}
+				
+			} finally {
+				close(rs);
+				close(pstmt);
+				
+			}
+			
+
+			return hotelRoom;
+		}
+
 		
 		
 		
