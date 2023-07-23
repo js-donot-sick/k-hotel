@@ -69,7 +69,7 @@ document.getElementById("C-Cminusbutton").addEventListener("click",function(){
 })
 
 
-document.getElementById("C-reservationBtn").addEventListener("click", function(){
+function reservation(){
    if (hotel_choice.value == "none") {
       alert("호텔을 선택해 주시길 바랍니다.");
       return false;
@@ -94,27 +94,48 @@ document.getElementById("C-reservationBtn").addEventListener("click", function()
       return false;
    }
    else {
-      $.ajax({
-         url :"/book/searchRoom",
-         data : {"hotel_choice" : hotel_choice,
-                 "room_choice" : room_choice},
-         type : "GET",
-         success : function(hotelRoom){
-            if(hotelRoom != null){
-               console.log("해치웠나?");
-               return true;
-            }
-         },
-         error : function(){
-            console.log("날벼락이다");
-            return false;
-         }
+
+      return confirm("예약을 진행하시겠습니까?");
+   }
+
+}
+
+const one =document.getElementById("collapseOne");
+const two = document.getElementById("collapseTwo");
+const three = document.getElementById("collapseThree");
+
+document.getElementById("C-room-choice").addEventListener("click", function(){
+
+   if(this.value == "Deluxe"){
+
+      one.classList.add("show");
+      two.classList.remove("show");
+      three.classList.remove("show");
+
       
-      })
+   }else if(this.value == "Standard"){
       
+      one.classList.remove("show");
+      two.classList.add("show");
+      three.classList.remove("show");
+
+   }else if(this.value == "Suite"){
+
+      one.classList.remove("show");
+      two.classList.remove("show");
+      three.classList.add("show");
+   }else{
+      one.classList.remove("show");
+      two.classList.remove("show");
+      three.classList.remove("show");
    }
 
 })
+
+
+
+
+
 
 
 

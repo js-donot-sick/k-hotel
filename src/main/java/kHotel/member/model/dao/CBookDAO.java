@@ -9,6 +9,7 @@ import java.util.Properties;
 
 import kHotel.member.model.vo.Book;
 import kHotel.member.model.vo.HotelRoom;
+import kHotel.member.model.vo.Reservation;
 
 import static kHotel.common.JDBCTemplate.*;
 
@@ -34,34 +35,30 @@ public class CBookDAO {
 			}
 		}
 
-		public HotelRoom searchRoom(Connection conn, String room, String hotel) throws Exception{
-			HotelRoom hotelRoom = new HotelRoom();
+		/** 객실 조회 DAO
+		 * @param conn
+		 * @param reservation
+		 * @throws Exception
+		 */
+		public int searchRoom(Connection conn, Reservation reservation) throws Exception{
+			int result = 0;
 			
 			try {
-				String sql = prop.getProperty("selectRoom");
+				String sql = prop.getProperty("");
 				
 				pstmt = conn.prepareStatement(sql);
 				
-				pstmt.setString(1, hotel);
-				pstmt.setString(2,room);
-				
-				rs = pstmt.executeQuery();
-				
-				if( rs.next() ) {
-					hotelRoom.setRoomNo(rs.getInt(1));
-					hotelRoom.setHotelName(rs.getString(2));
-					hotelRoom.setRoomName(rs.getString(3));
-				}
 				
 			} finally {
-				close(rs);
-				close(pstmt);
-				
 			}
 			
-
-			return hotelRoom;
+			
+			
+			return result;
+			
 		}
+
+		
 
 		
 		
