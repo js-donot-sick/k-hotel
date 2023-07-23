@@ -118,7 +118,7 @@
                 </div>
                 <div class="k-search-letter">비밀번호 재발급</div>
                 <div>
-                    <form action="rerepw" method="POST" onsubmit="return pwValidate()">
+                    <form action="rerePw" id="K-myForm" method="POST" onsubmit="return pwValidate()">
                         <table>
                             <tr>
                                 <td class="k-inputName">이름</td>

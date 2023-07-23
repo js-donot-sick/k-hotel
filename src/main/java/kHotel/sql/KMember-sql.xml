@@ -37,5 +37,12 @@
 		AND MEMBER_ID = ?
 		AND SECESSION_FL = 'N'
 	</entry>
+	
+	<!-- 비밀번호 변경(로그인 전) -->
+	<entry key="newRePw">
+		UPDATE MEMBER 
+		SET MEMBER_PW=?
+		WHERE MEMBER_ID=?
+	</entry>
 
 </properties>

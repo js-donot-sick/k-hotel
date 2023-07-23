@@ -190,6 +190,38 @@ public class KMemberDAO {
 		return result;
 	}
 
+	/** 비밀번호 변경(로그인 전)DAO
+	 * @param conn
+	 * @param newPw
+	 * @return result
+	 * @throws Exception
+	 */
+	public int newRePw(Connection conn, String newPw, String memberId) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			//System.out.println("디에이오에는 잘 갓나요?");
+			String sql = prop.getProperty("newRePw");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, newPw);
+			
+			pstmt.setString(2, memberId);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			
+			
+			close(pstmt);
+			
+		}
+		
+		return result;
+	}
+
 	
 
 }
