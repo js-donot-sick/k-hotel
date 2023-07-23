@@ -10,6 +10,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="${contextPath}/resources/css/boardContent.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/reply.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -53,60 +54,7 @@
             </div>
         </form>
 
-        <div>
-            <form action="#" class="L-form-reply">
-                <div class="L-reply-title">댓글</div>
-
-                <div class="L-reply">
-                    <span class="L-main-reply">댓글내용</span>
-                    <span class="L-person-reply">작성자</span>
-                    <span class="L-time-reply">작성시간</span>
-                    <a href="#">수정</a>
-                    <a href="#">삭제</a>
-                </div>
-
-                <div class="L-reply">
-                    <span class="L-main-reply">댓글내용</span>
-                    <span class="L-person-reply">작성자</span>
-                    <span class="L-time-reply">작성시간</span>
-                    <a href="#">수정</a>
-                    <a href="#">삭제</a>
-                </div>
-
-                <div class="L-reply">
-                    <span class="L-main-reply">댓글내용</span>
-                    <span class="L-person-reply">작성자</span>
-                    <span class="L-time-reply">작성시간</span>
-                    <a href="#">수정</a>
-                    <a href="#">삭제</a>
-                </div>
-
-                <div class="L-reply">
-                    <span class="L-main-reply">댓글내용</span>
-                    <span class="L-person-reply">작성자</span>
-                    <span class="L-time-reply">작성시간</span>
-                    <a href="#">수정</a>
-                    <a href="#">삭제</a>
-                </div>
-
-                <div class="L-reply">
-                    <span class="L-main-reply">댓글내용</span>
-                    <span class="L-person-reply">작성자</span>
-                    <span class="L-time-reply">작성시간</span>
-                    <a href="#">수정</a>
-                    <a href="#">삭제</a>
-                </div>
-
-                <div>페이지네이션</div>
-
-                <div class="L-inputReply">
-                    <span class="L-in-reply">댓글입력</span>
-                    <input type="text" placeholder="댓글을 입력해주세요" class="L-input-reply" maxlength="50">
-                    <button id="L-reply-btn">댓글작성</button>
-                </div>
-                
-            </form>
-        </div>
+        <jsp:include page="/WEB-INF/views/board/reply.jsp"/>
 
 
     </div>
