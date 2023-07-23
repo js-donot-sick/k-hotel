@@ -22,7 +22,8 @@ import kHotel.common.wrapper.EncryptWrapper;
 			urlPatterns = {"/member/login",
 						   "/member/signUp",
 						   "/member/myPage/changePw",
-						   "/member/myPage/secession"
+						   "/member/myPage/secession",
+						   "/member/reMain"
 						   })
 public class EncryptFilter extends HttpFilter implements Filter {
        

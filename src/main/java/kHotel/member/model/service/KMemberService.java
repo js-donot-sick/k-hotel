@@ -14,7 +14,6 @@ public class KMemberService {
 
 	/**
 	 * 로그인 service
-	 * 
 	 * @param mem
 	 * @return loginMember
 	 * @throws Exception
@@ -62,6 +61,26 @@ public class KMemberService {
 		
 		close(conn);
 		
+		return result;
+	}
+
+	/** 비밀번호 변경(로그인 전)service
+	 * @param newPw
+	 * @return result
+	 * @throws Exception
+	 */
+	public int newRePw(String newPw, String memberId) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		//System.out.println("서비스에는 잘 갓나요?");
+		
+		int result = dao.newRePw(conn, newPw, memberId);
+		
+		if(result>0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
 		return result;
 	}
 

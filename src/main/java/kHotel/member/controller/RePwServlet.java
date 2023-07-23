@@ -13,7 +13,7 @@ import kHotel.member.model.vo.Member;
 
 @WebServlet("/member/rePw")
 public class RePwServlet extends HttpServlet {
-
+	// 비밀번호 변경(로그인전)을 눌렀을 때
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		

@@ -72,13 +72,13 @@ document.getElementById("k-id-search-btn").addEventListener("click", function(){
 })
 // 비밀번호 변경......
 
+
 function pwValidate(){
-    console.log(1);
-    please();
 
-}
+   // alert("이 function은 실행은 되나요?")
 
-function please(){
+    var rtn = false;
+
     $.ajax({
         url : "rePw",
         data : {
@@ -87,14 +87,15 @@ function please(){
                     "pInputId" : pInputId.value
                 },
         type : "POST",
+        async: false,
     
         success(result){
             if(result>0){
-                alert("하.....")
-                return true;
+                //alert(1111111)
+                rtn=true;
             } else {
                 alert("일치하는 회원이 없습니다.");
-                return false;
+               rtn=false;
             }
     
         },
@@ -109,6 +110,9 @@ function please(){
             console.log(error); // 에러 객체 출력
     
         }
+        
 
-})
+    })
+    return rtn;
+
 }
