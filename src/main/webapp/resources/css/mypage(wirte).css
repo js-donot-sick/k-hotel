@@ -18,6 +18,8 @@
     display: flex;
     margin: auto;
     width: 1200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .P-maindisplay{
