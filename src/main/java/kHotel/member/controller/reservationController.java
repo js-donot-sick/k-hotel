@@ -57,12 +57,24 @@ public class reservationController extends HttpServlet{
 			reservation.setBookPerson(person);
 			
 			// 예약가능한 객실인지 확인
+			// 객실 번호 먼저 받아오기 
 			try {
-				int result = service.searchRoom(reservation);
+				int roomNo = service.searchRoom(reservation);
 				
-				if(result > 0) {
+				reservation.setRoomNo(roomNo);
+				
+				int roomPrice =  service.searchRoomPrice(reservation);
+				
+				// 선택한 날짜에 예약이 되어있는지 확인
+				if(roomNo > 0) {
+					
+				//int result = service.searchCheckInStatus(reservation); 
+				
+				}
+				
+				if(roomNo > 0) {
 							
-				// service.searchRoomPrice(reservation);
+				
 					
 				}else {
 					// session.setAttribute("message", "해당 객실은 선택하신 날짜에 예약하실수 없습니다.");
