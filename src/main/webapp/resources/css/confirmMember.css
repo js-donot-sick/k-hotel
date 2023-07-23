@@ -23,11 +23,20 @@
     display: flex;
     width: 75%;
     position: relative;
+    
+}
+.K-alll{ 
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .K-content{ /* 찐 내용 */
     background-color: #ebe7e3 ;
-    margin: auto;
+    margin-left: 10px;
     width: 700px;
     border: 1px solid rgba(178, 158, 135, 0.9);
 }
@@ -49,7 +58,7 @@
 }
 .K-content>div:nth-child(3){ /* 실제 내용 들어갈 div */
     margin: auto;
-    height: 500px;
+    height: 600px;
     width: 650px;
     background-color: white;
 }
@@ -98,6 +107,7 @@
     border: 0;
     margin-right: 80px;
     width: 65px;
+    font-size: 13px;
 }
 
 .K-agree-btn:hover{
@@ -116,6 +126,7 @@
     cursor: pointer;
     border: 0;
     width: 65px;
+    font-size: 13px;
 }
 
 .K-agree-confirm{ /* 라디오 버튼들 div */

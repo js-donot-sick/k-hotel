@@ -8,14 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원 정보 확인</title>
 
-    <link rel="stylesheet" href="resources/css/confirmMember.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/confirmMember.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/sidebar.css">
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <div class="K-all">
-        <div class="K-sidebar"></div> <!-- 사이드바 -->
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
+
+    <div class="K-alll">
+        <jsp:include page="/WEB-INF/views/common/sidebar.jsp"/> <!-- 사이드바 -->
         <div class="K-all">
             <div class="K-content"> <!-- 찐 내용 -->
                 <div>회원 정보 확인</div>
@@ -46,6 +51,14 @@
                         <tr>
                             <td>주소</td> <!-- 우편번호 -->
                             <td></td>
+                        </tr>
+                        <tr>
+                            <td class="K-td-none"></td>
+                            <td>sdfdsfsfd</td>
+                        </tr>
+                        <tr>
+                            <td class="K-td-none"></td>
+                            <td>dfsfd</td>
                         </tr>
                     </table>
 
@@ -78,7 +91,7 @@
                 </div>
         
                 <div>
-                    <button type="button" id="K-update-btn">개인 정보 수정</button>
+                    <a href="changeMember"><button type="button" id="K-update-btn">개인 정보 수정</button></a>
                 </div>
             </div>
 
@@ -150,8 +163,10 @@
             </div>
         </div>
     </div>
+
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
-    <script src="resources/js/confirmMember.js"></script>
+    <script src="${contextPath}/resources/js/confirmMember.js"></script>
 
 </body>
 </html>

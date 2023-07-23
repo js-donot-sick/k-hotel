@@ -35,7 +35,7 @@ public class RePwServlet extends HttpServlet {
 			
 			int result = service.rePw(mem);
 			
-			System.out.println(result);
+			System.out.println("rePw : " + result);
 			
 			resp.getWriter().print(result);
 			
