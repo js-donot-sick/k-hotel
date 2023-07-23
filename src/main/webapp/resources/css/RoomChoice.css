@@ -261,10 +261,6 @@ accordion-item button:focus{
     background-color: rgb(85, 77, 55);
 }
 
-.accordion-item{
-    display:none;
-}
-
 .accordion test  h3{
     width: 100%;
     height: 100%;

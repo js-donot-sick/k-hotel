@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css"> <!-- 헤더 스타일 -->
     <link rel="stylesheet" href="${contextPath}/resources/css/RoomChoice.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
-   
+    <!-- j쿼리  -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <!-- 폰트 -->
     <script src="https://kit.fontawesome.com/7bc7245179.js" crossorigin="anonymous"></script>
     <!-- 부트스트랩 -->
@@ -25,6 +26,8 @@
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
     <!-- 예약부분 바디 -->
+    <form action="reservationFinal" method="get" onsubmit="return reservation();">
+        <input type="hidden" name="loginMember" value="${loginMember}">
         <div class="C-reservation">
             <div class="C-rsv-main">
                 <div class="C-rsv-main-text">지점 / 객실 / 날짜 / 인원 선택</div>
@@ -94,27 +97,28 @@
                     </div>
                 </div>
                 <div class="C-rsv-button">
-                    <button type="button" id="C-reservationBtn">조회</button>
+                    <button id="C-reservationBtn">예약</button>
                 </div>
             </div>
+    </form>
     <form action="#">
         <div class="accordion test" id="accordionExample">
             <div class="accordion-item">
                 
                 <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        
+                        Deluxe Room
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div>
                             <img src="${contextPath}/resources/images/Deluxe-Room_1.jpg">
                         </div>
                         <div class="C-room-text">
-                            <pre>
+            <pre>
 
             <strong>객실 서비스</strong>
 
@@ -129,10 +133,10 @@
             - 초고속 인터넷 
 
             - 냉장고 겸용 미니바 
-                        </pre>
+            </pre>
 
 
-                            <pre>
+            <pre>
 
             <strong>객실 어메니티</strong>
             
@@ -144,10 +148,10 @@
 
             - 욕실 목욕가운 비데 헤어드라이어
             
-                        </pre>
-                            <div class="C-btn-area">
+            </pre>
+                            <!-- <div class="C-btn-area">
                                 <button class="C-btn-rsv">예약</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -156,7 +160,7 @@
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        예약가능한 객실 정보
+                        Standard Room
                     </button>
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
@@ -166,7 +170,7 @@
                             <img src="${contextPath}/resources/images/standard-Room_1.jpg">
                         </div>
                         <div class="C-room-text">
-                            <pre>
+            <pre>
 
             <strong>객실 서비스</strong>
 
@@ -181,10 +185,10 @@
             - 초고속 인터넷 
 
             - 냉장고 겸용 미니바 
-                        </pre>
+            </pre>
 
 
-                            <pre>
+            <pre>
 
             <strong>객실 어메니티</strong>
             
@@ -196,10 +200,10 @@
 
             - 욕실 목욕가운 비데 헤어드라이어
             
-                        </pre>
-                            <div class="C-btn-area">
+            </pre>
+                           <!--  <div class="C-btn-area">
                                 <button class="C-btn-rsv">예약</button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -208,7 +212,7 @@
                 <h2 class="accordion-header" id="headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        예약가능한 객실 정보
+                        Suite Room
                     </button>
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
@@ -218,10 +222,37 @@
                             <img src="${contextPath}/resources/images/suite-Room_1.jpg">
                         </div>
                         <div class="C-room-text">
+                <pre>
 
-                        </div>
-
-                        <div>
+                <strong>객실 서비스</strong>
+                    
+                - Auto Window 설치 
+                    
+                - 개인 욕실 및 Miracle Window 설치 
+                                
+                - 자동 냉난방 시설
+                    
+                - 해외 방송 시청 및 무료 Wi-Fi 이용가능 
+                    
+                - 초고속 인터넷 
+                    
+                - 냉장고 겸용 미니바 
+                </pre>
+                    
+                    
+                <pre>
+                    
+                <strong>객실 어메니티</strong>
+                                
+                - 49인치 UHD TV 냉장고 전자레인지 
+                    
+                - 구둣주걱 구두클리너 티포트 
+                                
+                - 금고 미니바
+                    
+                - 욕실 목욕가운 비데 헤어드라이어
+                                
+                </pre>
                         </div>
                     </div>
                 </div>
@@ -230,11 +261,12 @@
     </form>
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
     <script src="${contextPath}/resources/js/RoomChoice.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
+    <script src="${contextPath}/resources/js/header.js"></script>
 </body>
 
 </html>
