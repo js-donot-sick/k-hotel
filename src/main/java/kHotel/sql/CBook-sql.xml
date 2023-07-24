@@ -3,16 +3,16 @@
 <properties>
 	<comment>CBook-sql.xml</comment>
 	
-	<entry key="reservationFinal">
-	INSERT INTO RESERVATION 
-	VALUES(SEQ_BOOK_NO.NEXTVAL,?,?,?,?,?,?,1,1,1)
+	<entry key="selectRoomNo">
+	SELECT ROOM_NO FROM ROOM
+	WHERE ROOM_ST = 'N'
+	AND ROOM_HOTEL = ?
+	AND ROOM_NM = ?;
 	</entry>
 	
-	<entry key="selectRoom">
-	SELECT ROOM_NO,ROOM_HOTEL,ROOM_NM
-	FROM ROOM
-	WHERE ROOM_HOTEL = ?
-	AND ROOM_NM = ?
-	AND ROOM_ST ='N'
+	<entry key="selectRoomPrice">
+	SELECT ROOM_PRICE FROM ROOM
+	WHERE ROOM_NO = ?;
+	
 	</entry>
 </properties>

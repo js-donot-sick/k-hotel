@@ -2,6 +2,7 @@ package kHotel.member.controller;
 
 import java.io.IOException;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,6 +31,9 @@ public class reservationController extends HttpServlet{
 		
 		CBookService service = new CBookService();
 		
+		HttpSession session = req.getSession();
+		
+		// 메인페이지에서 예약 화면으로 넘어가는 요청
 		if(command.equals("roomChoice")) {
 			
 			String path = "/WEB-INF/views/book/RoomChoice.jsp";
@@ -40,6 +44,8 @@ public class reservationController extends HttpServlet{
 			
 		}
 		
+		
+		// 예약 화면에서 선택하고 예약 확인 화면으로 넘어가는 요청
 		if(command.equals("reservationFinal")) {
 			String hotel = req.getParameter("C-hotel-choice");
 			String room = req.getParameter("C-room-choice");
@@ -61,24 +67,35 @@ public class reservationController extends HttpServlet{
 			try {
 				int roomNo = service.searchRoom(reservation);
 				
+				// 객실 번호 받아온 후 세팅 해주고
 				reservation.setRoomNo(roomNo);
 				
+				// 객실 번호를 바탕으로 그 객실에 대한 가격 가져오기
 				int roomPrice =  service.searchRoomPrice(reservation);
 				
+				// 그 객실에 대한 가격 세팅 해주고
+				reservation.setRoomPrice(roomPrice);
+				
 				// 선택한 날짜에 예약이 되어있는지 확인
-				if(roomNo > 0) {
+				int result = service.searchCheckInStatus(reservation); 
+				
+				
+				if(result == 0) { // 선택한 날짜에 방이 있다면
 					
-				//int result = service.searchCheckInStatus(reservation); 
-				
-				}
-				
-				if(roomNo > 0) {
-							
-				
+					String path = "/WEB-INF/views/book/reservationFinal.jsp";
 					
-				}else {
-					// session.setAttribute("message", "해당 객실은 선택하신 날짜에 예약하실수 없습니다.");
-					//        resp.sendRedirect(req.getContextPath()+"/book/roomChoice");
+					RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+					
+					req.setAttribute("reservation", reservation);
+					
+					dispatcher.forward(req, resp);
+				
+				}else { // 선택한 날짜에 방이 나갔다면
+					
+					session.setAttribute("message", "해당 객실은 선택하신 날짜에 예약하실수 없습니다.");
+					
+					resp.sendRedirect(req.getContextPath()+"/book/roomChoice");
+	
 				}
 				
 			} catch (Exception e) {

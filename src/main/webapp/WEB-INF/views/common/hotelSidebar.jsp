@@ -33,7 +33,7 @@
                 <a href="#" class="H-side-item H-side-title">호텔 소개</a>
             </li>
             <li>
-                <a href="hotelroominfo" class="H-side-item">강남점</a>
+                <a href="hotel/hotelroominfo" class="H-side-item">강남점</a>
             </li>
             <li>
                 <a href="hotelroominfo2" class="H-side-item">종로점</a>
