@@ -13,6 +13,9 @@
 	<entry key="selectRoomPrice">
 	SELECT ROOM_PRICE FROM ROOM
 	WHERE ROOM_NO = ?;
+	</entry>
+	
+	<entry key="">
 	
 	</entry>
 </properties>

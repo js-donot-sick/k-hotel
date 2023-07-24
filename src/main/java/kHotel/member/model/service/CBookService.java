@@ -7,8 +7,6 @@ import static kHotel.common.JDBCTemplate.*;
 import java.sql.Connection;
 
 import kHotel.member.model.dao.CBookDAO;
-import kHotel.member.model.vo.Book;
-import kHotel.member.model.vo.HotelRoom;
 import kHotel.member.model.vo.Reservation;
 
 public class CBookService {
