@@ -178,19 +178,27 @@ memberTel.addEventListener("input", function(){
 })
 
 
-function signUp(){
 
-    const input = document.getElementById("J-A");
+    const input = document.getElementById("J-signUpBtn");
 
-    for(let item in input){
-        if(item.value.trim().length == 0){
+    input.addEventListener("click",function(){
 
-            alert("빈칸이 존재합니다. 다시 입력해주세요.")
+       const input2 = document.getElementsByClassName("J-A");
 
-            item.focus();
-
-            return false;
+        for(let item of input){
+            
+            if(item.value == ""){
+        
+                alert("빈칸이 존재합니다. 다시 입력해주세요.")
+        
+                item.focus();
+        
+                return false;
+            }
         }
-    }
+    })
+    
 
-}
+
+
+
