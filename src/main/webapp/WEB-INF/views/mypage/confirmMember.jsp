@@ -30,11 +30,11 @@
                     <table>
                         <tr>
                             <td>이름</td>
-                            <td>임시이름입니다.</td>
+                            <td>${loginMember.memberName}</td>
                         </tr>
                         <tr>
                             <td>주민등록번호</td>
-                            <td>202020-4455666</td>
+                            <td>${loginMember.memberPno}</td>
                         </tr>
                         <tr>
                             <td>아이디</td>
