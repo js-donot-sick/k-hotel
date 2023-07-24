@@ -1,5 +1,14 @@
 /* div{border: 1px solid black;} */
 
+body{
+  margin: auto;
+}
+
+section{
+  width: 75%;
+  margin: auto;
+}
+
 .list{
     justify-content: center;
     height: 100px;
@@ -210,3 +219,9 @@
  }
  .P-btn3>a:nth-child(2):hover:after{ transform: scaleX(1); }
  .P-btn3>a:nth-child(2):hover{color: black;}
+
+ .P-pg {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
