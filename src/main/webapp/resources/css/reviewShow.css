@@ -17,6 +17,8 @@
     display: flex;
     margin: auto;
     width: 1200px;
+    position: relative;
+    padding: 50px 0;
 }
 
 .P-maindisplay {
@@ -294,55 +296,69 @@
 }
 
 /* 신고하기 팝업창 */
+
+/* 신고하기 전체 창 */
 #P-popup-Declar{
     width: 500px;
     height: 500px;
     border: 3px solid rgb(173,158,135);
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    background-color: white;
+    display: none;
+
 }
 
 #P-popup-area{
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 #P-popup-title{
-    margin: 0 80px;
-    font-size: 20px;
+    margin: 15px 0px 15px 20px;
+    font-size: 25px;
     font-weight: bold;
 }
 
 #P-popup-outbtn{
-    justify-content: flex-end;
-    display: flex;
-    background-color: rgb(173,158,135);
+    margin: auto;
+    border: 0;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+#P-popup-outbtn:hover{
+    color: rgb(173,158,135);
 }
 
 #P-popup-out{
-
-    justify-content: flex-end;
-    margin: 10px 5px;
-    cursor: pointer;
-    background-color: rgb(173,158,135);
-    color: white;
-    border-radius: 15px;
-    border:0;
-    font-size: 15px;
- 
+    display: flex;
+    margin-left: 150px;
+    position: absolute;
+    right: 45px;
+    top: 15px;
     
+
 }
+
 .P-popup-writer-area{
     display: flex;
     justify-content: center;
 }
 
 #P-declar-btn{
-    margin: 10px 5px;
+    margin: auto;
     cursor: pointer;
     background-color: rgb(173,158,135);
     color: white;
     border-radius: 15px;
     border:0;
     font-size: 15px;
+    width: 150px;
+    height: 30px;
     
 }
 
@@ -350,7 +366,7 @@
 #P-popup-content{
     resize:none;
     width: 400px;
-    height: 350px;
+    height: 380px;
 }
 
 .P-declar-btnarea{

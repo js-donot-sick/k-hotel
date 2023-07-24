@@ -9,16 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/mypage/mypage(QNA)")
-public class myPageQnaServlet extends HttpServlet{
+@WebServlet("/board/ReviewShow")
+public class ReviewShowServlet extends HttpServlet{ 
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String path = "/WEB-INF/views/mypage/mypage(QNA).jsp";
+		
+		
+		String path = "/WEB-INF/views/board/reviewShow.jsp";
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-		
 		dispatcher.forward(req, resp);
+	
 	}
+
 }
