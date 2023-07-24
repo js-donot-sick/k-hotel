@@ -1,3 +1,4 @@
+
 package kHotel.member.model.vo;
 
 import lombok.AllArgsConstructor;

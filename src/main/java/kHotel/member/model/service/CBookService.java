@@ -25,12 +25,29 @@ public class CBookService {
 		
 		Connection conn = getConnection();
 		
-		int result = dao.searchRoom(conn,reservation);
+		int roomNo = dao.searchRoom(conn,reservation);
 		
 		close(conn);
 		
-		return result;
+		return roomNo;
 		
+	}
+
+
+	/** 객실 가격 정보 Service 
+	 * @param reservation
+	 * @return roomPrice
+	 * @throws Exception
+	 */
+	public int searchRoomPrice(Reservation reservation) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int roomPrice = dao.searchRoomPrice(conn,reservation);
+		
+		
+		
+		return roomPrice;
 	}
 	
 
