@@ -45,9 +45,26 @@ public class CBookService {
 		
 		int roomPrice = dao.searchRoomPrice(conn,reservation);
 		
-		
+		close(conn);
 		
 		return roomPrice;
+	}
+
+
+	/** 예약 가능한 객실인지 확인하는 Service
+	 * @param reservation
+	 * @return result
+	 * @throws Exception
+	 */
+	public int searchCheckInStatus(Reservation reservation) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.searchCheckInStatus(conn, reservation);
+		
+		close(conn);
+		
+		return result;
 	}
 	
 

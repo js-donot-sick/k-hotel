@@ -92,8 +92,10 @@ function reservation(){
    else if (adult.value == 0 && child.value == 0) {
       alert("인원을 선택해 주시길 바랍니다.");
       return false;
-   }
-   else {
+   }else if(adult.value == 0 && child.value > 0){
+	  alert("미성년자는 보호자 동반 예약 진행하셔야 합니다.");
+	  return false;	
+   }else {
 
       return confirm("예약을 진행하시겠습니까?");
    }

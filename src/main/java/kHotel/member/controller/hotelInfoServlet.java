@@ -20,5 +20,6 @@ public class hotelInfoServlet extends HttpServlet{
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		
 		dispatcher.forward(req, resp);
-	}
+		
+			}
 }
