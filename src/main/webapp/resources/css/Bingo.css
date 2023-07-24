@@ -92,7 +92,7 @@ cursor: pointer;
 
 #J-bingo{
   position: absolute;
-    top:18%;
+    top:20%;
     left: 35.7%;
     border: 1px solid black;
     width: 550px;
@@ -115,7 +115,7 @@ td{
 #J-bingo2{
   position: absolute;
   top: 75%;
-  left: 48%;
+  left: 45%;
   visibility: hidden;
 
   border-radius: 5px;
@@ -127,7 +127,7 @@ td{
 #J-main{
   position: absolute;
   top: 75%;
-  left: 57%;
+  left: 52%;
   visibility: hidden;
   width: 80px;
   height: 30px;
@@ -142,7 +142,7 @@ td{
   width: 300px;
   height: 150px;
 
-  left: 600px;
+  left: 800px;
   top: 20px;
 }
 
