@@ -8,7 +8,7 @@ public class BoardService {
 
 	public Board mypageWirte() {
 		
-		Connection conn = getco
+
 		
 		return null;
 	}
