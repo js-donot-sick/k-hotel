@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kHotel.member.model.service.CBookService;
-import kHotel.member.model.vo.Book;
-import kHotel.member.model.vo.HotelRoom;
 import kHotel.member.model.vo.Reservation;
 
 @WebServlet("/book/*")
@@ -102,23 +100,10 @@ public class reservationController extends HttpServlet{
 				e.printStackTrace();
 			}
 			
-			
-			
 			// if(){} 성공하면 set 객실에 대한 모든 정보를 세팅 
 			// 가능하면 set 객실가격 
 			
 			
-			
-			
-			
-			
-			req.setAttribute("reservation", reservation);
-			
-			String path = "/WEB-INF/views/book/reservationFinal.jsp";
-				
-			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-				
-			dispatcher.forward(req, resp);
 			
 		} 
 		

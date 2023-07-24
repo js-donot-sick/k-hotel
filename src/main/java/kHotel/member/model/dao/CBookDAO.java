@@ -7,8 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Properties;
 
-import kHotel.member.model.vo.Book;
-import kHotel.member.model.vo.HotelRoom;
+
 import kHotel.member.model.vo.Reservation;
 
 import static kHotel.common.JDBCTemplate.*;
