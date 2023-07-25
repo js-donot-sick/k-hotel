@@ -50,8 +50,8 @@
                                     <span> | </span>
                                     <a href="${contextPath}/member/mypage">마이페이지</a>
                                     <span>${loginMember.memberName} 님 환영합니다.</span> <!-- 임시 -->
-                                    
-                                    <c:if test="${loginMember.memberAdmin== 'N'}">
+                                    <p>${loginMember.memberAdmin}</p>
+                                    <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">
                                         <a href="#">
                                             <button>관리자</button>
                                         </a>

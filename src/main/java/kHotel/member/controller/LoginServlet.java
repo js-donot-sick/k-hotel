@@ -138,6 +138,8 @@ public final class LoginServlet extends HttpServlet {
 				} else { // 관리자일 때
 					String path = "/WEB-INF/views/admin/AdminMember.jsp";
 					
+					System.out.println(loginMember.getMemberAdmin());
+					
 					RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 					
 					dispatcher.forward(req, resp);
