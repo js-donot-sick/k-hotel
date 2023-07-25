@@ -21,6 +21,8 @@ body::-webkit-scrollbar {
     width: 1200px;
     margin: auto;
     display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .k-side{
@@ -58,15 +60,6 @@ body::-webkit-scrollbar {
     width: 75%
 }
 
-.k-qna>div:nth-of-type(1){  /* faq 글씨 */
-    text-align: center;
-    font-weight: bold;
-    font-size: 30px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    border-bottom: 4px solid gray;
-}
-
 .k-faq-slide{ /* 제목 부분 */
     height: 40px;
     line-height: 200%;
@@ -84,7 +77,6 @@ body::-webkit-scrollbar {
 }
 
 .k-arrow-img{ /* 이미지 클래스(직접 img 태그 주면 추가할 때 너무 귀찮을 거 같음) */
-    background-image: url("../images/arrow_down.png");
     background-repeat: no-repeat;
     background-position: 0px; /* 이미지 위치 설정 */
     background-size: 20px;
@@ -92,7 +84,7 @@ body::-webkit-scrollbar {
     padding-left: 20px;
     float: right;
     transition-duration: 0.5s;
-    margin-top: 5px;
+    margin-top: 8px;
     margin-right: 10px;
 }
 
@@ -123,6 +115,11 @@ body::-webkit-scrollbar {
 
 .k-qna>div:nth-child(1){
     font-weight: bold;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 20px;
+    border-bottom: 4px solid gray;
 }
 
 .k-qna>div:nth-child(4){
@@ -210,6 +207,7 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
     position: relative;
+    margin-top: 30px;
 }
 
 .k-search-div>div{
@@ -248,7 +246,7 @@ body::-webkit-scrollbar {
 
 .k-search-div>div:nth-child(3){
     position: absolute;
-    top: 15%;
+    top: 9%;
     left: 39%;
 }
 
