@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트</title>
     <link rel="stylesheet" href="resources/css/event.css">
-    <link rel="stylesheet" href="../webapp/resources/css/sidebar.css">
     <link rel="stylesheet" href="../webapp/resources/css/event_sidebar.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -43,12 +42,11 @@
 
     <div class="P-top">
 
-        <!-- 사이드바 -->
-        <jsp:include page="/WEB-INF/views/common/event_sidebar.jsp" />
-
+            <!-- 사이드바 -->
+            <jsp:include page="/WEB-INF/views/common/event_sidebar.jsp" />
+    
 
             <div class="P-maindisplay">
-                <!-- 이벤트 추가 -->
                 <div class="P-main">
                     <div class="P-blank1">진행 중인 이벤트</div>
 
