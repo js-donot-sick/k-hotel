@@ -70,7 +70,7 @@
             
             </li>
             <li>
-                <a href="#" class="H-side-item">내가 쓴 글</a>
+                <a href="mypageWirte" class="H-side-item">내가 쓴 글</a>
              
             </li>
             <li>

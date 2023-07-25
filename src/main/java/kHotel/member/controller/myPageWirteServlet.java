@@ -12,21 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import kHotel.member.model.service.BoardService;
 import kHotel.member.model.vo.Board;
 
-@WebServlet("/mypage/mypage(wirte)")
+@WebServlet("/member/mypage/mypageWirte")
 public class myPageWirteServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		try {
-			
-			Board board = new Board();
-			
-			BoardService service = new BoardService();
-			
-			board = service.mypageWirte();
-			
-			req.setAttribute("board", board);
 			
 			String path = "/WEB-INF/views/mypage/mypage(wirte).jsp";
 			
@@ -34,10 +25,7 @@ public class myPageWirteServlet extends HttpServlet{
 			
 			dispatcher.forward(req, resp);
 			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
+
 	
 	}
 }
