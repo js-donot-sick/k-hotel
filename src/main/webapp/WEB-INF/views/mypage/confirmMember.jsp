@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,46 +26,49 @@
             <div class="K-content"> <!-- 찐 내용 -->
                 <div>회원 정보 확인</div>
                 <div>회원님의 정보를 쉽게 확인하실 수 있습니다.</div>
+
+                <c:set var="memberPno" value="${loginMember.memberPno}"/>
+                <c:set var="addr" value="${fn:split(loginMember.memberAddress, ',,') }"></c:set>
         
                 <div>
                     <table>
                         <tr>
-                            <td>이름</td>
-                            <td>${loginMember.memberName}</td>
+                            <td class="K-bold">이름</td>
+                            <td class="K-small">${loginMember.memberName}</td>
                         </tr>
                         <tr>
-                            <td>주민등록번호</td>
-                            <td>${loginMember.memberPno}</td>
+                            <td class="K-bold">주민등록번호</td>
+                            <td class="K-small">${fn:substring(memberPno, 0,8)}******</td>
                         </tr>
                         <tr>
-                            <td>아이디</td>
-                            <td></td>
+                            <td class="K-bold">아이디</td>
+                            <td class="K-small">${loginMember.memberId}</td>
                         </tr>
                         <tr>
-                            <td>이메일</td>
-                            <td></td>
+                            <td class="K-bold">이메일</td>
+                            <td class="K-small">${loginMember.memberEmail}</td>
                         </tr>
                         <tr>
-                            <td>휴대전화</td>
-                            <td></td>
+                            <td class="K-bold">휴대전화</td>
+                            <td class="K-small">${loginMember.memberTel}</td>
                         </tr>
                         <tr>
-                            <td>주소</td> <!-- 우편번호 -->
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td class="K-td-none"></td>
-                            <td>sdfdsfsfd</td>
+                            <td class="K-bold">주소</td> <!-- 우편번호 -->
+                            <td class="K-small">${addr[0]}</td>
                         </tr>
                         <tr>
                             <td class="K-td-none"></td>
-                            <td>dfsfd</td>
+                            <td class="K-small">${addr[1]}</td>
+                        </tr>
+                        <tr>
+                            <td class="K-td-none"></td>
+                            <td class="K-small">${addr[2]}</td>
                         </tr>
                     </table>
 
                     <div class="K-agree">
                         <div>
-                            <span>개인정보 마케팅 활용 동의</span> <br>
+                            <span class="K-bold">개인정보 마케팅 활용 동의</span> <br>
                             <span>K-Hotel에서의 개인정보 마케팅 활용에 동의하시겠습니까?</span>
                         </div>
                         <div>
@@ -77,7 +81,7 @@
                     </div>
                     <div class="K-agree">
                         <div>
-                            <span>개인정보 제3자 제공 동의</span> <br>
+                            <span class="K-bold">개인정보 제3자 제공 동의</span> <br>
                             <span>K-Hotel서비스 제공을 위한 개인정보 제3자 제공에 동의하시겠습니까?</span>
                         </div>
                         <div>

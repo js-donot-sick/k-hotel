@@ -127,99 +127,11 @@
                         <button type="button" class="k-del-btn">삭제</button>
                     </div>
                 </div>
-               
-                
-                
-                
             
-
             </div>
-
-            
-            <div>질문게시판</div>
-            
-            <div>
-                <button id="q-btn">게시글 작성</button>
-            </div>
-
-            <div> <!-- 질문게시판 목록 -->
-                <a href="#" style="text-decoration: none;">
-                    <div class="k-q-list">
-                        <div>1</div>
-                        <div>제목</div>
-                        <div></div>
-                        <div>작성자</div>
-                        <div>2023-05-31</div>
-                    </div>
-                    <div class="k-q-list">
-                        <div>2</div>
-                        <div>제목</div>
-                        <div></div>
-                        <div>작성자</div>
-                        <div>2023-05-31</div>
-                    </div>
-                    <div class="k-q-list">
-                        <div>3</div>
-                        <div>제목</div>
-                        <div></div>
-                        <div>작성자</div>
-                        <div>2023-05-31</div>
-                    </div>
-                    <div class="k-q-list">
-                        <div>4</div>
-                        <div>제목</div>
-                        <div></div>
-                        <div>작성자</div>
-                        <div>2023-05-31</div>
-                    </div>
-                    <div class="k-q-list">
-                        <div>5</div>
-                        <div>제목</div>
-                        <div></div>
-                        <div>작성자</div>
-                        <div>2023-05-31</div>
-                    </div>
-                </a>
-            </div>
-
-            <nav aria-label="Page navigation example" class="k-pg">
-                <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-                </ul>
-            </nav>
-
-            <div class="k-search-div"> <!-- 하단 검색 부분 -->
-                <div>
-                    <button type="button" id="k-search-btn">검색</button>
-                </div>
-                <div>
-                    <select name="k-search" id="k-search">
-                        <option value="1">제목 + 내용</option>
-                        <option value="2">제목</option>
-                        <option value="3">내용</option>
-                    </select>
-                </div>
-                <div><input type="search" name="k-search" id="k-search"></div>
-                <div><img src="resources/images/search.png"></div>
-            </div>
-
 
         </div>
     
-
-        
     </div>
 
     

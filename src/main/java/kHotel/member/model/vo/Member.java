@@ -21,8 +21,6 @@ public class Member  {
 	private String memberEmail;
 	private String memberAddress;
 	private char secessionFlag;
-	private int coupon;
-	private int report;
 	private char memberAdmin;
 
 	
