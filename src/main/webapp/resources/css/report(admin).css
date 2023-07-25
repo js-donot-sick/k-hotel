@@ -13,11 +13,11 @@
     align-items: flex-start;
 }
 
-
 /* 메인 테이블 */
 .L-report-table{
-    width: 75%;
+    width: 95%;
     border-collapse: collapse;
+    margin: auto;
 }
 
 /* 메인테이블 제목 */
@@ -32,7 +32,9 @@
 .L-report-tr{
     border-bottom: 2px solid #ddd;
     height: 70px;
+    text-align: center;
 }
+
 
 /* 테이블 내부 크기 */
 .L-report-tr > td{
@@ -60,4 +62,37 @@
 .L-report-btn > button:hover{
     background-color: #4F3A28;
     color: white;
+}
+
+/* 신고 내용 p태그 */
+.L-report-tr textarea{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 0;
+    resize: none;
+    width: 400px;
+    height: 100px;
+}
+
+/* 버튼 */
+.L-report-tr button{
+    background-color: rgb(173,158,135);
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0px 5px;
+    color: white;
+    height: 50px;
+    width: 60px;
+}
+
+.L-report-tr button:hover{
+    background-color: #4F3A28;
+    color: white;
+}
+
+
+/* 페이지네이션을 위한 메인div한개 더 생성 */
+.L-report-main2{
+    width: 100%;
 }
