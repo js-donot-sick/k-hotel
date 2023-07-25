@@ -25,7 +25,7 @@
 
         <div class="L-main">
             <div>소개</div>
-            <img src="resources/images/hotelInfo1.jpg" alt="">
+            <img src="${contextPath}/resources/images/hotelInfo1.jpg">
             <p>
                 롯데호텔앤리조트(LOTTE HOTELS & RESORTS)는 대한민국 최대 규모 호텔그룹입니다.
                 이제 아시아를 넘어 세계로 뻗어가는 글로벌 호텔로서 전세계 어디에서나 한결같이 품격있는 서비스와 시설로 고객에게 깊은 감동을 주는 브랜드를 지향하고 있습니다.
@@ -46,6 +46,6 @@
 
 
 
-    <script src="resources/js/hotelinfo.js"></script>
+    <script src="${contextPath}/resources/js/hotelinfo.js"></script>
 </body>
 </html>

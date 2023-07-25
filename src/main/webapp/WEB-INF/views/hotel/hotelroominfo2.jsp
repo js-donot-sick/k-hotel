@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="resources/CSS/hotelroominfo.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/hotelroominfo.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <title>회원 정보 확인</title>
 </head>
@@ -29,7 +29,7 @@
             <div class="C-hotelroominfo">
                 <div class="C-info-img">
                     <div class="C-hotelroom-img">
-                        <img src="../webapp/resources/images/Deluxe-Room_JongRo_1.jpg">
+                        <img src="${contextPath}/resources/images/Deluxe-Room_JongRo_1.jpg">
                     </div>
                 </div>
                 <div class="C-info-text">
@@ -93,14 +93,14 @@ K-호텔 종로의 스탠다드 룸의 모던하고 심플한 인테리어와 �
                 </div>
                 <div class="C-info-img">
                     <div class="C-hotelroom-img">
-                        <img src="../webapp/resources/images/standard-Room_JongRo_2.jpg">
+                        <img src="${contextPath}/resources/images/standard-Room_JongRo_2.jpg">
                     </div>
                 </div>
             </div>
             <div class="C-hotelroominfo">
                 <div class="C-info-img">
                     <div class="C-hotelroom-img">
-                        <img src="../webapp/resources/images/suite-Room_1.jpg">
+                        <img src="${contextPath}/resources/images/suite-Room_1.jpg">
                     </div>
                 </div>
                 <div class="C-info-text">
@@ -138,7 +138,7 @@ K-호텔 종로의 스위트 룸은 국내외 VVIP를 위한 단 하나뿐인 �
         
         <div>풋터</div>
         
-        <script src="resources/js/hotelinfo.js"></script>
+        <script src="${contextPath}/resources/js/hotelinfo.js"></script>
         </body>
         
         </html>

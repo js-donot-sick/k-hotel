@@ -30,25 +30,25 @@
  <div class="H-snb">
         <ul class="H-side-bar">
             <li>
-                <a href="#" class="H-side-item H-side-title">호텔 소개</a>
+                <a href="main" class="H-side-item H-side-title">호텔 소개</a>
             </li>
             <li>
-                <a href="hotel/hotelroominfo" class="H-side-item">강남점</a>
+                <a href="hotel1" class="H-side-item">강남점</a>
             </li>
             <li>
-                <a href="hotel/hotelroominfo" class="H-side-item room">- 객실 정보</a>
+                <a href="gangnam" class="H-side-item room">- 객실 정보</a>
             </li>
             <li>
-                <a href="hotelroominfo2" class="H-side-item">종로점</a>
+                <a href="hotel2" class="H-side-item">종로점</a>
             </li>
             <li>
-                <a href="hotel/hotelroominfo" class="H-side-item room">- 객실 정보</a>
+                <a href="jongro" class="H-side-item room">- 객실 정보</a>
             </li>
             <li>
-                <a href="hotelroominfo3" class="H-side-item">당산점</a>
+                <a href="hotel3" class="H-side-item">당산점</a>
             </li>
             <li>
-                <a href="hotel/hotelroominfo" class="H-side-item room">- 객실 정보</a>
+                <a href="dangsan" class="H-side-item room">- 객실 정보</a>
             </li>
         </ul>
         
