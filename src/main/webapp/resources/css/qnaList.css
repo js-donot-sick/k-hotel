@@ -105,14 +105,24 @@ body::-webkit-scrollbar {
 
 .k-faq-content>div{
     height: 120px;
-    overflow: auto;
+    overflow-y: scroll;
+
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+}
+
+.k-faq-content>div::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
 }
 
 .k-qna>div:nth-child(3){ /* 질문게시판 글씨 */
     margin-top: 50px;
     text-align: center;
+    font-size: 20px;
+}
+
+.k-qna>div:nth-child(1){
     font-weight: bold;
-    font-size: 30px;
 }
 
 .k-qna>div:nth-child(4){

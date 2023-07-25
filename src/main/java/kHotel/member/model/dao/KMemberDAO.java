@@ -65,11 +65,10 @@ public class KMemberDAO {
 				loginMember.setMemberNo(rs.getInt("MEMBER_NO"));
 				loginMember.setMemberId(rs.getString("MEMBER_ID"));
 				loginMember.setMemberName(rs.getString("MEMBER_NM"));
+				loginMember.setMemberPno(rs.getString("MEMBER_PNO"));
 				loginMember.setMemberEmail(rs.getString("MEMBER_EMAIL"));
 				loginMember.setMemberTel(rs.getString("MEMBER_TEL"));
 				loginMember.setMemberAddress(rs.getString("MEMBER_ADD"));
-				loginMember.setCoupon(rs.getInt("COUPON"));
-				loginMember.setReport(rs.getInt("REPORT"));
 				loginMember.setMemberAdmin(rs.getString("MEMBER_ADMIN").charAt(0));
 				
 			}

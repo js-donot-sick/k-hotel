@@ -73,7 +73,6 @@
     border: none;
 }
 .K-content td{ /* 각 행 */
-    font-size: 20px;
     padding-top: 10px;
     border-bottom: 1px solid lightgray;
     width: 300px;
@@ -241,4 +240,12 @@
 #K-update-btn:hover{
     background-color: #4F3A28;
     color: white;
+}
+
+.K-small{
+    font-size: 13px;
+}
+
+.K-bold{
+    font-weight: bold;
 }
