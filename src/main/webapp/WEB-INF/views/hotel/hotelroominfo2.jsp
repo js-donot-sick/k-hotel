@@ -13,17 +13,10 @@
 </head>
 <body>
     
-    <div>헤더</div>
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <div class="C-maindisplay">
-        <div class="C-side">
-            <ul class="C-sidelist">
-                <li>K-호텔 소개</li>
-                <a href="#"><li>강남점</li></a>
-                <a href="#"><li>종로점</li></a>
-                <a href="#"><li>당산점</li></a>
-            </ul>
-        </div>
+        <jsp:include page="/WEB-INF/views/common/hotelSidebar.jsp"/>
         <div class="C-main">
             <div>객실 소개 - 종로</div>
             <div class="C-hotelroominfo">
@@ -65,8 +58,8 @@ K-호텔 종로의 디럭스 룸은 모던하고 세련된 인테리어와 쾌�
             <div class="C-hotelroominfo">
                 <div class="C-info-text">
                     <pre>
-K-호텔 종로의 스탠다드 룸의 모던하고 심플한 인테리어와 최신설비는 
-고객의 편안함과 비즈니스의 성공, 
+K-호텔 종로의 스탠다드 룸의 모던하고 심플한 인테리어와 
+최신설비는 고객의 편안함과 비즈니스의 성공, 
 그리고 레저의 감동을 동시에 만족시킵니다.
                     </pre>
                     <ul>
@@ -136,7 +129,7 @@ K-호텔 종로의 스위트 룸은 국내외 VVIP를 위한 단 하나뿐인 �
         </div>
         
         
-        <div>풋터</div>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
         
         <script src="${contextPath}/resources/js/hotelinfo.js"></script>
         </body>
