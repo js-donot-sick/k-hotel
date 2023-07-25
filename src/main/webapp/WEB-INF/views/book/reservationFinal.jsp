@@ -103,8 +103,6 @@
                                         <select name="C-payplan" id="C-payplan">
                                             <option value="none" selected>결제수단선택</option>
                                             <option id="C-bank" value="무통장입금">무통장입금</option>
-                                            <option id="C-kakaoPay" value="카카오페이">카카오페이</option>
-                                            <option value="none">신용카드</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -114,7 +112,7 @@
                                         <select name="C-account" id="C-account">
                                             <option value="none" selected>은행 / 계좌 선택</option>
                                             <option id="C-tossBank" value="토스뱅크">토스뱅크 1000-2161-7612</option>
-                                            <option value="C-kakaoBack">카카오뱅크 3333-05-265481</option>
+                                            <option value="C-kakaoBack" value="카카오뱅크">카카오뱅크 3333-05-265481</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -133,7 +131,7 @@
                                 </tr>
                                 <tr>
                                     <td>객실요금</td>
-                                    <td><input type="text" id="C-hotelPay" name="C-hotelPay" autocomplete="off" value="${room.roomPrice}" disabled></td>
+                                    <td><input type="text" id="C-hotelPay" name="C-hotelPay" autocomplete="off" value="${reservation.roomPrice}" disabled></td>
                                 </tr>
                                 <tr>
                                     <td>쿠폰선택</td>

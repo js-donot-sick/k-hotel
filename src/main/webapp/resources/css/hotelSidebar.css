@@ -41,3 +41,11 @@ a {text-decoration:none;}
 
 
 *{box-sizing: border-box;}
+
+.room{
+    font-size: 18px;
+}
+
+.room:hover{
+    background:rgba(255,255,255,0.1);
+}
