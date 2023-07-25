@@ -17,11 +17,14 @@ document.getElementsByClassName("J-J1-1")[0].addEventListener("keydown", functio
 
     const green = document.getElementsByClassName("J-J1-11")[0];
 
+
     if(regExp.test(this.value)) {
 
         green.innerText = "올바른 형식입니다.";
         green.style.color = "green";
         green.style.font.width = "bold"; 
+
+
     } else {
         
         green.innerText = "알맞지 않는 형식입니다.";
@@ -36,7 +39,7 @@ document.getElementsByClassName("J-J1-1")[0].addEventListener("keydown", functio
 
 document.getElementsByClassName("J-J1-2")[0].addEventListener("input", function(){
 
-    const regExp = /^([A-Z]|[a-z]|[~\!\@\$]){7,14}$/;
+    const regExp = /^([A-Z]|[a-z]|[0-9]|[~\!\@\$]){8,15}$/;
 
     const green = document.getElementById("J-H2-1");
 
@@ -99,12 +102,13 @@ document.getElementById("J-H3-1").addEventListener("click", function(){
 
     document.getElementsByClassName("J-J1-2")[0].addEventListener("input", function(){
       
+        const pw1 = document.getElementsByClassName("J-J1-3")[0];
         const pw2 = document.getElementById("J-J3-1");
     
         if(this.value.trim().length >= 8){
 
             
-            if(this.value == pw2.value){
+            if(this.value.trim() == pw1.value.trim()){
                 pw2.innerHTML = "비밀번호가 일치 합니다.";
                 pw2.style.color = "green";
             } else{
@@ -114,6 +118,8 @@ document.getElementById("J-H3-1").addEventListener("click", function(){
         }else{
             pw2.innerHTML = "";
         }
+
+
         
     })
 
@@ -167,19 +173,11 @@ function sample6_execDaumPostcode() {
 /* --------------------------------------------------------------------------- */
 const memberTel = document.getElementsByName("memberTel")[0];
 
-memberTel.addEventListener("input", function(){
-
-    const regExp= /^0(1[01679]|2|[3-6][1-5]|70)\d{3,4}\d{4}$/;
-
-    if(!regExp.test(this.value)){
-        alert("전화번호 형식이 일치하지 않습니다. 다시 입력해주세요.")
-        this.focus();
-    }
-})
 
 
 
-    const input = document.getElementById("J-signUpBtn");
+
+ const input = document.getElementById("J-signUpBtn");
 
     input.addEventListener("click",function(){
 
@@ -197,6 +195,64 @@ memberTel.addEventListener("input", function(){
             }
         }
     })
+
+function signUp(){
+
+   const input = document.getElementsByTagName("input");
+
+   const pw1 = document.getElementsByClassName("J-J1-2")[0];
+      
+    const pw2 = document.getElementsByClassName("J-J1-3")[0];
+    
+    const tel = document.getElementsByClassName("J-Tel")[0];
+
+    const check = document.getElementsByClassName("J-check2");
+
+
+    const regExp= /^0(1[01679]|2|[3-6][1-5]|70)\d{3,4}\d{4}$/;
+
+    if(!regExp.test(tel.value)){
+        alert("전화번호 형식이 일치하지 않습니다. 다시 확인해주세요!");
+
+        return false;
+    }
+
+
+    if(pw1.value != pw2.value){
+
+        alert("비밀번호와 비밀번호확인이 일치하지 않습니다. 다시 입력해주세요.");
+
+        return false;
+    }
+    for(let item of check){
+
+         if(item.checked == false){ 
+            alert("필수약관에 동의하셔야 가입이 가능합니다.");
+
+            return false;
+        }
+    }
+
+    for(let item of input){
+
+        if(item.value.trim().length == 0){
+             alert("빈칸이 존재합니다. 다시 입력해 주세요.");
+             
+             return false;
+        }else{
+            
+        }
+        
+    }
+
+    
+    
+    
+    return confirm("이대로 가입하시겠습니까?");
+    
+
+
+}
     
 
 
