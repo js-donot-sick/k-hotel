@@ -34,7 +34,7 @@
                 <button id="q-btn">게시글 작성</button>
             </div>
 
-            <div> <!-- 질문게시판 목록 -->
+            <div class="K-qnaList"> <!-- 질문게시판 목록 -->
                 <a href="#" style="text-decoration: none;">
                     <div class="k-q-list">
                         <div>1</div>
