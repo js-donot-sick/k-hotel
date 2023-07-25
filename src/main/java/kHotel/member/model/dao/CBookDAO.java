@@ -43,15 +43,24 @@ public class CBookDAO {
 			int roomNo = 0;
 			
 			try {
-				String sql = prop.getProperty("");
+				String sql = prop.getProperty("selectRoomNo");
 				
 				pstmt = conn.prepareStatement(sql);
 				
 				pstmt.setString(1, reservation.getHotelName() );
 				pstmt.setString(2, reservation.getRoomName() );
 				
-			} finally {
+				rs = pstmt.executeQuery();
 				
+				if( rs.next() ) {
+					reservation.setRoomNo( rs.getInt(1) );
+				}
+				
+				
+				
+			} finally {
+				close(rs);
+				close(pstmt);
 			}
 			
 			
@@ -64,7 +73,7 @@ public class CBookDAO {
 			int roomPrice = 0;
 			
 			try {
-				String sql = prop.getProperty("");
+				String sql = prop.getProperty("selectRoomPrice");
 				
 				pstmt = conn.prepareStatement(sql);
 				

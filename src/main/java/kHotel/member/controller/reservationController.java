@@ -68,11 +68,14 @@ public class reservationController extends HttpServlet{
 				// 객실 번호 받아온 후 세팅 해주고
 				reservation.setRoomNo(roomNo);
 				
+				System.out.println(reservation.getRoomNo());
 				// 객실 번호를 바탕으로 그 객실에 대한 가격 가져오기
 				int roomPrice =  service.searchRoomPrice(reservation);
 				
 				// 그 객실에 대한 가격 세팅 해주고
 				reservation.setRoomPrice(roomPrice);
+				
+				System.out.println(reservation.getRoomPrice());
 				
 				// 선택한 날짜에 예약이 되어있는지 확인
 				int result = service.searchCheckInStatus(reservation); 

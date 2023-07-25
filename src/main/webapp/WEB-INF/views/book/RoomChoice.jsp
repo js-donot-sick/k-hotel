@@ -40,9 +40,9 @@
                     <div>
                         <select name="C-hotel-choice" id="C-hotel-choice">
                             <option name="location" value="none" selected>호텔을 선택해주세요</option>
-                            <option name="location" id="Gangnam" value="Gangnam">K-호텔 강남점</option>
-                            <option name="location" id="jongno" value="jongno">K-호텔 종로점</option>
-                            <option name="location" id="dangsan" value="dangsan">K-호텔 당산점</option>
+                            <option name="location" id="GANGNAM" value="GANGNAM">K-호텔 강남점</option>
+                            <option name="location" id="JONGRO" value="JONGRO">K-호텔 종로점</option>
+                            <option name="location" id="DANGSAN" value="DANGSAN">K-호텔 당산점</option>
                         </select>
                     </div>
                 </div>
@@ -51,9 +51,9 @@
                     <div>
                         <select name="C-room-choice" id="C-room-choice">
                             <option name="Room" value="none" selected>객실을 선택해주세요</option>
-                            <option name="Room" id="Deluxe" value="Deluxe">Deluxe Room</option>
-                            <option name="Room" id="Standard" value="Standard">Standard Room</option>
-                            <option name="Room" id="Suite" value="Suite">suite Room</option>
+                            <option name="Room" id="Deluxe" value="DELUXE">Deluxe Room</option>
+                            <option name="Room" id="Standard" value="STANDARD">Standard Room</option>
+                            <option name="Room" id="Suite" value="SUITE">suite Room</option>
                         </select>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                         <div>성인</div>
                         <div class="C-person">
                             <button type="button" id="C-Aminusbutton">-</button>
-                            <input type="text" name="C-adult" id="C-adult" placeholder="0">
+                            <input type="text" name="C-adult" id="C-adult" value="0" placeholder="0">
                             <button type="button" id="C-Aplusbutton">+</button>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                         <div>어린이</div>
                         <div class="C-person">
                             <button type="button" id="C-Cminusbutton">-</button>
-                            <input type="text" name="C-children" id="C-children" placeholder="0">
+                            <input type="text" name="C-children" id="C-children" value="0" placeholder="0">
                             <button type="button" id="C-Cplusbutton">+</button>
                         </div>
                     </div>
