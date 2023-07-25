@@ -4,15 +4,17 @@
 	<comment>CBook-sql.xml</comment>
 	
 	<entry key="selectRoomNo">
-	SELECT ROOM_NO FROM ROOM
-	WHERE ROOM_ST = 'N'
-	AND ROOM_HOTEL = ?
-	AND ROOM_NM = ?;
+	SELECT ROOM_NO 
+	FROM ROOM
+	JOIN HOTEL USING(HOTEL_NO)
+	WHERE HOTEL_TITLE = ?
+	AND ROOM_NM = ?
 	</entry>
 	
 	<entry key="selectRoomPrice">
-	SELECT ROOM_PRICE FROM ROOM
-	WHERE ROOM_NO = ?;
+	SELECT ROOM_PRICE
+	FROM ROOM
+	WHERE ROOM_NO = ?
 	</entry>
 	
 	<entry key="">
