@@ -27,7 +27,7 @@
                     </div>
     
                     <div class="P-btn1">
-                            <a href="hotelinfo" >호텔찾기 <i class="fa-solid fa-magnifying-glass"></i></a>
+                            <a href="hotelinfo/main" >호텔찾기 <i class="fa-solid fa-magnifying-glass"></i></a>
                
                             <a href="book/roomChoice">예약 <i class="fa-solid fa-calendar-days"></i></a>
                     </div>
@@ -52,7 +52,7 @@
                                     <span>${loginMember.memberName} 님 환영합니다.</span> <!-- 임시 -->
                                     <p>${loginMember.memberAdmin}</p>
                                     <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">
-                                        <a href="#">
+                                        <a href="admin/member">
                                             <button>관리자</button>
                                         </a>
                                     </c:if>
