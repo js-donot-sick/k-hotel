@@ -1,6 +1,8 @@
 *{
     box-sizing: border-box;
-       /*  border: 1px solid black;  */ 
+          /* border: 1px solid black;  */
+
+          
 }
 
 @font-face {
@@ -32,6 +34,9 @@
 
     width: 95%;
     height: 95%;
+
+    border: 3px solid sandybrown;
+    border-radius: 20px;
 }
 
 .J-body2-1{
@@ -74,6 +79,7 @@
     color: white;
 }
 
+
 .J-body2-3 > button:nth-child(1) {
     margin-left: 510px;
     margin-right: -370px;
@@ -82,6 +88,9 @@
 table{
     width: 100%;
     height: 100%;
+
+    border-collapse: collapse;
+
 }
 
 table td:first-child {
@@ -90,9 +99,32 @@ table td:first-child {
     font-size: 18px;
 }
 
-table tr:nth-child(1),tr:nth-child(2) td:nth-child(3) {
+table tr:nth-child(1) td:nth-child(3) {
     text-align: center;
     font-weight: bold;
+    border-left: 0.5px solid grey;
+}
+
+
+table tr:nth-child(2) td:nth-child(3) {
+    text-align: center;
+    font-weight: bold;
+
+    border-left: 0.5px solid grey;
+}
+
+
+table tr:nth-child(2) td:nth-child(4) > label {
+    margin: 0;
+    
+    margin-left: 2px;
+
+    border-radius: 2px;
+    height: 35px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -157,11 +189,12 @@ table tr:nth-child(2)  select  {
 #J-text1{
     width: 100%;
     height: 100%;
+    resize: none;
 }
 
 textarea{
     font-size: 1.1em;
-    resize: none;
+    border: none;
   }
 
 
@@ -176,14 +209,14 @@ input{
     align-items: center;
 }
 
-#J-PIC > button{
+#J-PIC > input{
     margin-left: 0px;
     border-radius: 5px;
-    width: 70px;
     height: 30px;
     background-color: rgb(173,158,135);
     border: 0.5px solid gray;
     font-weight: bold;
+    display: none;
     
 }
 
@@ -193,24 +226,31 @@ input{
     cursor: pointer;
 }
 
+#J-text2{
+    border-right: 0.5px solid grey;
+}
+
+tr{
+    border: 0.5px solid grey;
+
+    border-left: none;
+    border-right: none;
+}
+
+input{
+    border :none;
+}
+
+
+#J-text3{
+    border-right: 0.5px solid grey;
+}
 
 
 
 
+/* -------------------------------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* ----------------------------별점---------------------------------------------- */
 
 #J-myform {
     margin: auto 10px;
@@ -284,7 +324,6 @@ input{
   .star-rating label:hover ~ label {
     -webkit-text-fill-color: #fff58c;
   }
-
 
 
 
