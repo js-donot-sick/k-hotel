@@ -1,6 +1,8 @@
 *{
     box-sizing: border-box;
           /* border: 1px solid black;  */
+
+          
 }
 
 @font-face {
@@ -33,7 +35,8 @@
     width: 95%;
     height: 95%;
 
-    border: 1.5px solid sandybrown;
+    border: 3px solid sandybrown;
+    border-radius: 20px;
 }
 
 .J-body2-1{
@@ -99,7 +102,7 @@ table td:first-child {
 table tr:nth-child(1) td:nth-child(3) {
     text-align: center;
     font-weight: bold;
-    border-left: 0.5px solid grey;
+    border-left: 0.2px solid grey;
 }
 
 
@@ -107,7 +110,7 @@ table tr:nth-child(2) td:nth-child(3) {
     text-align: center;
     font-weight: bold;
 
-    border-left: 0.5px solid grey;
+    border-left: 0.2px solid grey;
 }
 
 
@@ -192,12 +195,14 @@ table tr:nth-child(2)  select  {
 textarea{
     font-size: 1.1em;
     border: none;
+    outline: none;
   }
 
 
 
 input{
     font-size: 1.1em;
+    outline: none;
 }
 
 #J-PIC{
@@ -211,7 +216,7 @@ input{
     border-radius: 5px;
     height: 30px;
     background-color: rgb(173,158,135);
-    border: 0.5px solid gray;
+    border: 0.2px solid gray;
     font-weight: bold;
     display: none;
     
@@ -223,12 +228,24 @@ input{
     cursor: pointer;
 }
 
+#J-text2{
+    border-right: 0.2px solid grey;
+}
+
 tr{
-    border: 0.5px solid grey;
+    border: 0.2px solid grey;
+
+    border-left: none;
+    border-right: none;
 }
 
 input{
     border :none;
+}
+
+
+#J-text3{
+    border-right: 0.2px solid grey;
 }
 
 
