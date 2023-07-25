@@ -26,7 +26,7 @@
     <div class="L-all">
         <div class="L-sidebar">사이드바</div>
         <div class="L-main">
-            <div>게시글 신고 목록</div>
+            <div>리뷰 신고 목록</div>
 
             <table class="L-main-menu">
                 <tr>
