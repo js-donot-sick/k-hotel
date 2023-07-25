@@ -40,6 +40,7 @@ public class CBookDAO {
 		 * @throws Exception
 		 */
 		public int searchRoom(Connection conn, Reservation reservation) throws Exception{
+			
 			int roomNo = 0;
 			
 			try {
@@ -53,7 +54,7 @@ public class CBookDAO {
 				rs = pstmt.executeQuery();
 				
 				if( rs.next() ) {
-					reservation.setRoomNo( rs.getInt(1) );
+					roomNo = ( rs.getInt("ROOM_NO") );
 				}
 				
 				
@@ -77,12 +78,12 @@ public class CBookDAO {
 				
 				pstmt = conn.prepareStatement(sql);
 				
-				pstmt.setInt(1, reservation.getRoomNo() );
+				pstmt.setString(1, reservation.getRoomName() );
 				
 				rs = pstmt.executeQuery();
 				
 				if( rs.next() ) {
-					roomPrice = rs.getInt(1) ;
+					roomPrice = rs.getInt("ROOM_PRICE") ;
 				}
 				
 				
@@ -97,13 +98,13 @@ public class CBookDAO {
 			int result = 0;
 			
 			try {
-				String sql = prop.getProperty("");
+				String sql = prop.getProperty("reservationCheck");
 				
 				 pstmt = conn.prepareStatement(sql);
 				 
 				 pstmt.setString(1, reservation.getCheckInTime() );
 				 pstmt.setString(2, reservation.getCheckOutTime() );
-				 
+				 pstmt.setInt(3, reservation.getRoomNo() );
 				 rs = pstmt.executeQuery();
 				 
 				 if( rs.next() ) {

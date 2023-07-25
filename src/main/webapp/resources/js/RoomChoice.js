@@ -108,20 +108,20 @@ const three = document.getElementById("collapseThree");
 
 document.getElementById("C-room-choice").addEventListener("click", function(){
 
-   if(this.value == "Deluxe"){
+   if(this.value == "DELUXE"){
 
       one.classList.add("show");
       two.classList.remove("show");
       three.classList.remove("show");
 
       
-   }else if(this.value == "Standard"){
+   }else if(this.value == "STANDARD"){
       
       one.classList.remove("show");
       two.classList.add("show");
       three.classList.remove("show");
 
-   }else if(this.value == "Suite"){
+   }else if(this.value == "SUITE"){
 
       one.classList.remove("show");
       two.classList.remove("show");

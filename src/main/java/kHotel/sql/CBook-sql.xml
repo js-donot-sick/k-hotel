@@ -4,7 +4,7 @@
 	<comment>CBook-sql.xml</comment>
 	
 	<entry key="selectRoomNo">
-	SELECT ROOM_NO 
+	SELECT ROOM_NO
 	FROM ROOM
 	JOIN HOTEL USING(HOTEL_NO)
 	WHERE HOTEL_TITLE = ?
@@ -14,10 +14,14 @@
 	<entry key="selectRoomPrice">
 	SELECT ROOM_PRICE
 	FROM ROOM
-	WHERE ROOM_NO = ?
+	WHERE ROOM_NM = ?
 	</entry>
 	
-	<entry key="">
-	
+	<entry key="reservationCheck">
+	SELECT ROOM_NO, TO_CHAR(CHECKIN_DT,'YYYY-MM-DD'),  TO_CHAR(CHECKOUT_DT,'YYYY-MM-DD')
+	FROM RESERVATION
+	WHERE CHECKIN_DT = ?
+	AND CHECKOUT_DT = ?
+	AND ROOM_NO = ?
 	</entry>
 </properties>
