@@ -8,21 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 회원정보관리</title>
-    <link rel="stylesheet" href="resources/css/AdminHeader.css"><!-- 관리자 헤더 -->
-    <link rel="stylesheet" href="resources/css/AdminMember.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/AdminHeader.css"><!-- 관리자 헤더 -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/AdminMember.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
 
 <body>
-    <header>
-        <div class="K-header">
-            <div>관리자 페이지 / 회원정보관리</div>
-            <div>
-                <a href="#">로그아웃</a>
-            </div>
-        </div>
-    </header>
+    <jsp:include page="/WEB-INF/views/admin/AdminHeader.jsp"/>
 
     <div class="P-All">
         <div class="P-sidebar">사이드바</div>

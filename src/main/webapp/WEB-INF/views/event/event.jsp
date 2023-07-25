@@ -10,6 +10,7 @@
     <title>이벤트</title>
     <link rel="stylesheet" href="resources/css/event.css">
     <link rel="stylesheet" href="../webapp/resources/css/sidebar.css">
+    <link rel="stylesheet" href="../webapp/resources/css/event_sidebar.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -37,24 +38,13 @@
 
 <body>
 
-    <div>헤더</div>
-
+    <!-- 해더 -->
+    <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
     <div class="P-top">
 
         <!-- 사이드바 -->
-        <div class="H-div" style="display: flex;">
-            <div class="H-snb" style="width: 25%;">
-                <ul class="H-side-bar">
-                    <li class="">
-                        <a href="#" class="H-side-item">이벤트</a>
-                        <dl class="H-none">
-                            <dd class="H-active"><a href="#">- 진행 중인 이벤트</a></dd>
-                            <dd class=""><a href="#">- 종료된 이벤트</a></dd>
-                        </dl>
-                </ul>
-
-            </div>
+        <jsp:include page="/WEB-INF/views/common/event_sidebar.jsp" />
 
 
             <div class="P-maindisplay">
@@ -154,9 +144,7 @@
     </div>
 
 
-
-    <div>풋터</div>
-
+    <jsp:include page ="/WEB-INF/views/common/footer.jsp"/>        
 
 
 

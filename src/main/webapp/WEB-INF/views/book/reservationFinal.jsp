@@ -27,6 +27,7 @@
 
     <!----------------------------------------바디 --------------------------------------------->
     <form action="#" method="post" onsubmit="return reservationFinalValidate()">
+
         <div class="C-body">
             <div class="C-Final-rsv">
                 <div class="C-body-first-div">예약하기</div>
