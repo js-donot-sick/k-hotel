@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 
@@ -70,6 +72,12 @@ public class CBookDAO {
 			
 		}
 
+		/** 객실 가격 조회 DAO
+		 * @param conn
+		 * @param reservation
+		 * @return roomPrice
+		 * @throws Exception
+		 */
 		public int searchRoomPrice(Connection conn, Reservation reservation) throws Exception {
 			int roomPrice = 0;
 			
@@ -94,6 +102,12 @@ public class CBookDAO {
 			return roomPrice;
 		}
 
+		/** 예약 가능한 객실인지 확인 DAO
+		 * @param conn
+		 * @param reservation
+		 * @return result
+		 * @throws Exception
+		 */
 		public int searchCheckInStatus(Connection conn, Reservation reservation) throws Exception {
 			int result = 0;
 			
@@ -116,6 +130,45 @@ public class CBookDAO {
 				close(pstmt);
 			}
 			return result;
+		}
+
+		/** 관리자 예약 리스트 보여주는 DAO
+		 * @param conn
+		 * @return rsvList
+		 * @throws Exception
+		 */
+		public List<Reservation> selectRsvList(Connection conn) throws Exception{
+			
+			List<Reservation> rsvList = new ArrayList<Reservation>();
+			
+			try {
+				String sql = prop.getProperty("selectrsvList");
+				
+				stmt = conn.createStatement();
+				
+				rs = stmt.executeQuery(sql);
+				
+				while( rs.next() ) {
+					Reservation rsv = new Reservation();
+					
+					rsv.setBookNo( rs.getInt(1) );
+					rsv.setCheckInTime( rs.getString(2) );
+					rsv.setCheckOutTime(rs.getString(3) );
+					rsv.setRoomName( rs.getString(4) );
+					rsv.setMemberName( rs.getString(5) );
+					rsv.setHotelName( rs.getString(6));
+					
+					
+					rsvList.add(rsv);
+				}
+				
+			} finally {
+				close(rs);
+				close(stmt);
+			}
+			
+			
+			return rsvList;
 		}
 
 		
