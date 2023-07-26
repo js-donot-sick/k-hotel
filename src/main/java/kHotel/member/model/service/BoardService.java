@@ -25,8 +25,6 @@ public class BoardService {
 		
 		close(conn);
  		
-		System.out.println(boardList);
-		
 		return boardList;
 		
 	}
@@ -45,7 +43,7 @@ public class BoardService {
 		
 		close(conn);
 		
-		return null;
+		return boardList;
 	}
 
 

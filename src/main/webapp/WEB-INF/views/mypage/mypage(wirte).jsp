@@ -32,16 +32,18 @@
                 <div class="P-maindisplay">
                     <!-- QNA 메인 글자 -->
                     <div class="P-main">
-                        <div class="P-blank1">FAQ</div>
+                        <div class="P-blank1">Reivew</div>
 
                         <!-- 드롭박스 -->
-                        <div class="P-dropdown">
+                        <!-- <div class="P-dropdown">
                             <select name="" id="" onchange="location.href=this.value">
                                 <option value="">선택하세요</option>
-                                <option value="mypage(QNA).jsp">QnA</option>
-                                <option value="mypage(wirte).jsp">Reivew</option>
+                                <option value="${contextPath}/member/mypageQna">QnA</option>
+                                <option value="${contextPath}/member/mypageWirte">Reivew</option>
                             </select>
-                        </div>
+                        </div> -->
+
+                        <div class="P-dropdown"></div>
 
                         <!-- QnA 항목 이동 링크 -->
                         <div class="P-wirte-1">
@@ -49,7 +51,7 @@
                                 <div>게시글 번호</div>
                                 <div>게시글 제목</div>
                                 <div></div>
-                                <div>게시글 작성 시간</div>
+                                <div>작성시간</div>
                                 <div>상세내역</div>
                             </div>
 

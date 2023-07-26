@@ -28,18 +28,8 @@
 
             <!-- 전체 큰 페이지  -->
             <div class="P-top">
-                <!-- 사이드바 -->
-                <div class="H-div" style="display: flex; width: 25% ; margin-top: 0px;">
-                    <div class="H-snb" style="width: 100%;">
-                        <ul class="H-side-bar">
-                            <li class="">
-                                <a href="#" class="H-side-item">공지사항</a>
-                                <a href="#" class="H-side-item">QnA</a>
-                                <a href="#" class="H-side-item">별점 후기</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+   
+            <jsp:include page ="/WEB-INF/views/common/boardSidebar.jsp"/>
 
                 <!-- 리뷰/별점 전체 페이지  -->
                 <div class="P-maindisplay">

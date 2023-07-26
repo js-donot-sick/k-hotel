@@ -17,12 +17,13 @@
 .P-top {
     display: flex;
     margin: auto;
-    width: 1200px;
     padding-top: 50px;
     padding-bottom: 50px;
+    width: 1200px;
+    
 }
 
-.P-maindisplay{
+.P-maindisplay {
     display: flex;
     justify-content: center;
     white-space: nowrap;
@@ -46,6 +47,7 @@
     background-color: rgba(178, 158, 135, 0.9);
     color: white;
 }
+
 
 .P-dropdown {
     display: flex;
@@ -76,7 +78,7 @@
 }
 
 .P-wirte>div:nth-child(2) {
-    width: 400px;
+    width: 450px;
     display: flex;
     justify-content: center;
     align-items: center;

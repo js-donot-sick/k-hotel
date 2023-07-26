@@ -64,7 +64,7 @@ public class BoardDAO {
 
 				boardList.add(board);
 
-				System.out.println(boardList);
+				
 			}
 
 		} finally {
