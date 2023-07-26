@@ -37,7 +37,9 @@
                 <div>${boardName}</div>
                 
                 <div>
-                    <button id="q-btn" onclick="location.href='write?mode=insert&type=${param.type}&cp=${param.cp}'">게시글 작성</button>
+                    <form action="qna/write">
+                        <button id="q-btn">게시글 작성</button>
+                    </form>
                 </div>
             </div>
 

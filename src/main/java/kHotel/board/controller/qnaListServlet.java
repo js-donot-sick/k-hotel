@@ -46,11 +46,11 @@ public class qnaListServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		
-		
+	
 		
 		
 		
 	}
+	
 
 }

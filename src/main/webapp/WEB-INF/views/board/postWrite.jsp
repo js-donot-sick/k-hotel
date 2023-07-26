@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<c:set var="boardName" value="${map.boardName}"/>
+<c:set var="pagination" value="${map.pagination}"/>
+<c:set var="boardList" value="${map.boardList}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +25,7 @@
    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
         <div class="C-body">
-            <form action="board/write" method="get" name="C-postWrite-main" onsubmit="return inputcheck()">
+            <form action="qna?type=${param.type}&cp=${param.cp}" method="POST" name="C-postWrite-main" onsubmit="return inputcheck()">
                 <div class="C-postWrite-body">
                     <div class="C-postWrite-title">게시글 작성</div>
                 

@@ -100,15 +100,15 @@ public class CBookService {
 
 
 	/** 예약 취소 Service
-	 * @param reservation
+	 * @param bookNo
 	 * @return result
 	 * @throws Exception
 	 */
-	public int deleteReservation(Reservation reservation) throws Exception {
+	public int deleteReservation(int bookNo) throws Exception {
 		
 		Connection conn = getConnection();
 		
-		int result = dao.deleteReservation(conn, reservation);
+		int result = dao.deleteReservation(conn, bookNo);
 		
 		if(result > 0) commit(conn);
 		else		   rollback(conn);

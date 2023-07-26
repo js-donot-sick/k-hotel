@@ -210,12 +210,12 @@ public class CBookDAO {
 		}
 
 		/** 예약 취소 DAO
-		 * @param reservation
+		 * @param bookNo
 		 * @return result
 		 * @throws Exception
 		 */
 		
-		public int deleteReservation(Connection conn, Reservation reservation) throws Exception{
+		public int deleteReservation(Connection conn, int bookNo) throws Exception{
 			int result = 0;
 			
 			try {
@@ -223,7 +223,7 @@ public class CBookDAO {
 				
 				pstmt = conn.prepareStatement(sql);
 				
-				pstmt.setInt(1, reservation.getBookNo() ); 
+				pstmt.setInt(1, bookNo); 
 				
 				result = pstmt.executeUpdate();
 				

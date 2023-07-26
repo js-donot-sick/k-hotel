@@ -1,23 +1,26 @@
 
+console.log("js 문제야?")
 
-function deleteReply(bookNo){
+function deleteReservation(bookNo){
 
 
         if (confirm("정말 취소하시겠습니까?")) {
 
             $.ajax({
-                url: contextPath + "/admin/deleteReservation",
+                url: contextPath+"/admin/delete",
+                data: {"bookNo" : bookNo},
+                type: "GET",
+                success: function(result) {
 
-                data: { "bookNo": bookNo },
-
-                type: "get",
-
-                success: function (result) {
-                    alert("해당 객실의 예약이 취소되었습니다.");
-
+                    if(result > 0){
+                        alert("해당 객실의 예약이 취소되었습니다.");
+                    }else{
+                        alert("해당 객실의 예약을 취소할 수 없습니다.");
+                    }
                 },
-                error: function (result) {
-                    alert("에러 발생!!");
+                error: function (req,status,error) {
+                    console.log("예약 취소 실패");
+                    console.log(req.responseText);
                 }
             })
         }

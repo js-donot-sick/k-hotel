@@ -49,9 +49,7 @@
                                     <div>${rsv.memberName}</div>
                                     <div>${rsv.checkInTime}</div>
                                     <div>${rsv.checkOutTime}</div>
-                                    <div>
-                                        <button class="C-cancelbtn" onclick="deleteReply(${rsv.bookNo})">예약취소</button>
-                                    </div>
+                                    <div><button onclick="deleteReservation(${rsv.bookNo})">취소</button></div>
                                 </div>
                             </c:forEach>
                         </div>
@@ -61,17 +59,11 @@
             </div>
         </div>
     </div>
+
     <jsp:include page ="/WEB-INF/views/common/footer.jsp"/>
-
+    
     <script>
-
         const contextPath = "${contextPath}";
-
-        const bookNo = "${rsvList.bookNo}";
-
-        const memberNo = "${rsvList.memberNo}"; 
-
-
     </script>
 
 
