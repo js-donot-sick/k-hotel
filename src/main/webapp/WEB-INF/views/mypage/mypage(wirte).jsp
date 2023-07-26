@@ -7,7 +7,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>내가 쓴 글(게시글)</title>
+            <title>질문 게시판</title>
             <link rel="stylesheet" href="${contextPath}/resources/css/mypage(wirte).css">
             <link rel="stylesheet" href="${contextPath}/resources/css/sidebar.css">
             <link rel="stylesheet" href="${contextPath}/resources/css/footer.css"><!-- 풋터 스타일 -->
@@ -39,7 +39,7 @@
                             <select name="" id="" onchange="location.href=this.value">
                                 <option value="">선택하세요</option>
                                 <option value="mypage(QNA).jsp">QnA</option>
-                                <option value="mypage(wirte).jsp">FAQ</option>
+                                <option value="mypage(wirte).jsp">Reivew</option>
                             </select>
                         </div>
 

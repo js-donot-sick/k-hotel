@@ -30,14 +30,14 @@
             <div class="P-maindisplay">
                 <!-- QNA 메인 글자 -->
                 <div class="P-main" >
-                    <div class="P-blank1">내가 쓴 글</div>
+                    <div class="P-blank1">REVIEW</div>
 
                      <!-- 드롭박스 -->
                      <div class="P-dropdown">
                         <select name="" id="" onchange="location.href=this.value">
                             <option value="">선택하세요</option>
-                                <option value="mypage(QNA).html">QnA</option>
-                                <option value="mypage(wirte).html">내가 작성한 게시글</option>
+                                <option value="mypage(QNA).jsp">QnA</option>
+                                <option value="mypage(wirte).jsp">Reivew</option>
                         </select>
                     </div>
 
@@ -51,35 +51,12 @@
                             <a href="#"><button class="P-qna-btn">상세내역</button></a>
                         </div>
 
+                        <c:forEach var="board" items = "${boardList}">
+                            
+                        </c:forEach>
+                        
 
-                        <div class="P-qna">
-                            <div>2</div>
-                            <div>QnA 제목</div>
-                            <div></div>
-                            <div>2023-07-10 18:15</div>
-                            <a href="#"><button class="P-qna-btn">상세내역</button></a>
-                        </div>
-                        <div class="P-qna">
-                            <div>3</div>
-                            <div>QnA 제목</div>
-                            <div></div>
-                            <div>2023-07-10 18:15</div>
-                            <a href="#"><button class="P-qna-btn">상세내역</button></a>
-                        </div>
-                        <div class="P-qna">
-                            <div>4</div>
-                            <div>QnA 제목</div>
-                            <div></div>
-                            <div>2023-07-10 18:15</div>
-                            <a href="#"><button class="P-qna-btn">상세내역</button></a>
-                        </div>
-                        <div class="P-qna">
-                            <div>5</div>
-                            <div>QnA 제목</div>
-                            <div></div>
-                            <div>2023-07-10 18:15</div>
-                            <a href="#"><button class="P-qna-btn">상세내역</button></a>
-                        </div>
+
                     </div>
 
                     <nav aria-label="Page navigation example" class="P-pg">
