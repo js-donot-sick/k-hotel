@@ -375,3 +375,40 @@
     margin: auto;
     margin-top: 10px;
 }
+
+/* 페이지네이션 */
+.P-pagination-area{
+    margin-top: 20px;
+}
+.P-pagination{ /* ul태그 */
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.P-pagination>li{
+    width: 20px;
+    margin: 0 5px;
+    text-align: center;
+    
+}
+
+.P-pagination a{
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: black;
+    /* letter-spacing: -2px; */
+}
+
+/* 현재 페이지 번호 */
+.P-pagination .P-current{
+    background-color: rgba(178, 158, 135, 0.9);
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+

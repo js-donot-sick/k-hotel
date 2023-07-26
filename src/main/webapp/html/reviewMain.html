@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내가 쓴 글(게시글)</title>
+    <title>리뷰메인</title>
     <link rel="stylesheet" href="../resources/css/mypage(wirte).css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -27,16 +27,9 @@
             <div class="P-maindisplay">
                 <!-- QNA 메인 글자 -->
                 <div class="P-main" >
-                    <div class="P-blank1">내가 쓴 글</div>
+                    <div class="P-blank1">리뷰 메인</div>
 
-                    <!-- 드롭박스 -->
-                    <div class="P-dropdown">
-                        <select name="" id="" onchange="location.href=this.value">
-                            <option value="">선택하세요</option>
-                                <option value="mypage(QNA).html">QnA</option>
-                                <option value="mypage(wirte).html">내가 작성한 게시글</option>
-                        </select>
-                    </div>
+         
 
                     <!-- QnA 항목 이동 링크 -->
                     <div class="P-wirte-1">
