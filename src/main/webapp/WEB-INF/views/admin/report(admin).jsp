@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="${contextPath}/resources/css/AdminHeader.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/report(admin).css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/boardSidebar.css">
 
 </head>
 <body>
@@ -17,7 +18,7 @@
     <jsp:include page ="/WEB-INF/views/admin/AdminHeader.jsp"/>
 
     <div class="L-report-main">
-        <div style="width: 25%;">사이드바</div>
+        <jsp:include page="/WEB-INF/views/common/adminSidebar.jsp"/>
 
         <div class="L-report-main2">
             <!-- 메인 테이블 -->
