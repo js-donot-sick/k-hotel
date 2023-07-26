@@ -189,16 +189,16 @@ public class CBookDAO {
 
 				while (rs.next()) {
 					
-					Reservation rsv = new Reservation();
+					Reservation rsv2 = new Reservation();
 
-					rsv.setBookNo(rs.getInt(1));
-					rsv.setCheckInTime(rs.getString(2));
-					rsv.setCheckOutTime(rs.getString(3));
-					rsv.setRoomName(rs.getString(4));
-					rsv.setMemberName(rs.getString(5));
-					rsv.setHotelName(rs.getString(6));
+					rsv2.setBookNo(rs.getInt(1));
+					rsv2.setCheckInTime(rs.getString(2));
+					rsv2.setCheckOutTime(rs.getString(3));
+					rsv2.setRoomName(rs.getString(4));
+					rsv2.setMemberName(rs.getString(5));
+					rsv2.setHotelName(rs.getString(6));
 
-					rsvList2.add(rsv);
+					rsvList2.add(rsv2);
 				}
 
 			} finally {

@@ -19,7 +19,6 @@ public class AdminBookServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		
 		CBookService service = new CBookService();
 		
 		try {
