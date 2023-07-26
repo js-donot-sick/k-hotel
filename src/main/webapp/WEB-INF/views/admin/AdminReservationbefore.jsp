@@ -26,10 +26,10 @@
                 <div class="C-adminreservation">
                     <div class="C-adminreservation-title1">예약관리</div>
                     <div class="C-adminRsv-div">
-                        <select name="C-adminreservation-menu" id="C-adminreservation-menu" onchange="location.href=this.value">
-                            <option value="${contextPath}/admin/bookList">현재예약내역</option>
-                            <option value="${contextPath}/admin/bookListbefore" selected>이전예약내역</option>
-                        </select>
+                            <select name="C-adminreservation-menu" id="C-adminreservation-menu" onchange="location.href=this.value">
+                                <option value="${contextPath}/admin/bookList" >현재예약내역</option>
+                                <option value="${contextPath}/admin/bookListbefore" selected>이전예약내역</option>
+                            </select>
                     </div>
                     <div class="C-adminrsvlist">
                         <div class="C-adminrsv-main">
