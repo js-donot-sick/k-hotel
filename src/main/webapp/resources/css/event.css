@@ -18,6 +18,7 @@
     display: flex;
     margin: auto;
     width: 1200px;
+    padding: 50px;
 
 }
 
@@ -29,7 +30,7 @@
     text-align: center;
     border: 1px solid #eee;
     width: 75%;
-    padding: 50px 50px;
+
 }
 
 .P-main {

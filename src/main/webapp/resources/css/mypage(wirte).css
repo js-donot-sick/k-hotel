@@ -101,6 +101,16 @@
     white-space: nowrap;
 }
 
+.P-wirte>div:nth-child(5) {
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
 .P-wirte-btn {
     width: 70px;
     height: 70%;

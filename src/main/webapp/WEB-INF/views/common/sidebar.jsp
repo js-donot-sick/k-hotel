@@ -14,7 +14,6 @@
   <script>
     $(document).ready(function() {
       $(".H-side-bar .H-side-item").click(function(e) {
-        e.preventDefault();
         var $this = $(this);
         var $parent = $this.closest('li');
         var $siblings = $this.siblings('dl');

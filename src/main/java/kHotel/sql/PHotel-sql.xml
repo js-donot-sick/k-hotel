@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>PHotel-sql.xml</comment>
+
+	<entry key="searchBoardList">
+		SELECT BOARD_NO, BOARD_TITLE, TO_CHAR(BOARD_DT,'YYYY-MM-DD')BOARD_DT 
+		FROM BOARD
+		WHERE MEMBER_NO = ?
+		AND BOARD_CD = 2
+	</entry>
+
+
+
+</properties>
+
+
