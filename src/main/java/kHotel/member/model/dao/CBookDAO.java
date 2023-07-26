@@ -171,6 +171,43 @@ public class CBookDAO {
 			return rsvList;
 		}
 
+		/** 관리자 이전 예약 리스트 보여주는 DAO
+		 * @param conn
+		 * @return rsvList
+		 * @throws Exception
+		 */
+		public List<Reservation> selectRsvList2(Connection conn) throws Exception {
+			
+			List<Reservation> rsvList2 = new ArrayList<Reservation>();
+
+			try {
+				String sql = prop.getProperty("selectrsvList2");
+
+				stmt = conn.createStatement();
+
+				rs = stmt.executeQuery(sql);
+
+				while (rs.next()) {
+					
+					Reservation rsv = new Reservation();
+
+					rsv.setBookNo(rs.getInt(1));
+					rsv.setCheckInTime(rs.getString(2));
+					rsv.setCheckOutTime(rs.getString(3));
+					rsv.setRoomName(rs.getString(4));
+					rsv.setMemberName(rs.getString(5));
+					rsv.setHotelName(rs.getString(6));
+
+					rsvList2.add(rsv);
+				}
+
+			} finally {
+				close(rs);
+				close(stmt);
+			}
+
+			return null;
+		}
 		
 
 		

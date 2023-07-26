@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import kHotel.member.model.service.CBookService;
 import kHotel.member.model.vo.Reservation;
 
+@WebServlet("/admin/bookListbefore")
 public class AdminBook2Servlert extends HttpServlet {
 
 	@Override
@@ -21,15 +23,13 @@ public class AdminBook2Servlert extends HttpServlet {
 		
 		try {
 			
-			List<Reservation> rsvList = service.selectRsvList();
+			List<Reservation> rsvList2 = service.selectRsvList2();
 			
-			System.out.println(rsvList);
-			
-			String path = "/WEB-INF/views/admin/AdminReservation.jsp";
-			
+			String path = "/WEB-INF/views/admin/AdminReservationbefore.jsp";
+
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 			
-			req.setAttribute("rsvList", rsvList);
+			req.setAttribute("rsvList2", rsvList2);
 			
 			dispatcher.forward(req, resp);
 

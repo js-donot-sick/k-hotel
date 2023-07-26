@@ -26,8 +26,6 @@ public class AdminBookServlet extends HttpServlet{
 			
 			List<Reservation> rsvList = service.selectRsvList();
 			
-			System.out.println(rsvList);
-			
 			String path = "/WEB-INF/views/admin/AdminReservation.jsp";
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);

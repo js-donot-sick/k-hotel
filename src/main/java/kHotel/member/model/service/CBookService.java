@@ -81,6 +81,22 @@ public class CBookService {
 		
 		return rsvList;
 	}
+
+
+	/** 관리자 이전 예약 리스트 보여주는 Service
+	 * @return rsvList2
+	 * @throws Exception
+	 */
+	public List<Reservation> selectRsvList2() throws Exception{
+		
+		Connection conn = getConnection();
+		
+		List<Reservation> rsvList2 = dao.selectRsvList2(conn);
+		
+		close(conn);
+		
+		return rsvList2;
+	}
 	
 
 	
