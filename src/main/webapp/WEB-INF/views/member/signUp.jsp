@@ -87,7 +87,7 @@
                                 </div>
                                 
                                 <div class="J-J6">
-                                    <input type="text" id="J-B" class="J-A" placeholder=" '-' 제외하고 입력" name="memberTel" maxlength="11">
+                                    <input type="text" id="J-B" class="J-A J-Tel" placeholder=" '-' 제외하고 입력" name="memberTel" maxlength="11">
                                 </div>
                                 
                                 <div class="J-J7">
@@ -251,18 +251,18 @@
                     <div class="J2-5-6">
                         
                         <label>
-                            <input type="radio" name="J-check2" id="J-check" class="J-check2" > 동의함
+                            <input type="radio" name="J-check2" id="J-check" class="J-check2" value="true"> 동의함
                         </label>
 
                         <label>
-                            <input type="radio" name="J-check2" id="J-check" class="J-check2" > 동의하지 않음
+                            <input type="radio" name="J-check2" id="J-check" class="J-check2" value="false"> 동의하지 않음
                         </label>
                         
                     </div>
                 </div>
                 
                 <div class="J2-6">
-                    <button id="J-signUpBtn" onsubmit="return signUp()">회원가입</button>
+                    <button id="J-signUpBtn" onclick="return signUp()">회원가입</button>
                     <button>취소</button>
                 </div>
                 
