@@ -132,7 +132,7 @@ body::-webkit-scrollbar {
     height: 30px;
     border: 0;
     background-color: rgb(173,158,135);
-    color: black;
+    color: white;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
@@ -143,6 +143,11 @@ body::-webkit-scrollbar {
 #q-btn:hover{
     background-color: #4F3A28;
     color: white;
+}
+
+#q-btn > a{
+    color: white;
+    text-decoration: none;
 }
 
 #K-none{

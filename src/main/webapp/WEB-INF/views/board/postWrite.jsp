@@ -28,12 +28,12 @@
                         <div class="C-input-table">
                             <div class="L-title L-detail">
                                 <div>제목</div>
-                                <div><input type="text" name="L-input-title" id="C-postWrite-title" value="" placeholder="제목"></div>
+                                <div><input type="text" name="L-input-title" id="C-postWrite-title" placeholder="제목을 입력해주세요" autocomplete="off"></div>
                             </div>
                 
                             <div class="L-person L-detail">
                                 <div>작성자</div>
-                                <div><input type="text" name="L-input-person" value="${loginMember.memberName }" placeholder="작성자" disabled></div>
+                                <div><input type="text" name="L-input-person" value="${loginMember.memberName}" placeholder="작성자" disabled></div>
                                 <div></div>
                                 <div>작성일</div>
                                 <div><input type="text" name="L-date" value="" placeholder="작성일" disabled></div>
