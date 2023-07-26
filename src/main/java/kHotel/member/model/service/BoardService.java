@@ -12,7 +12,7 @@ public class BoardService {
 	private BoardDAO dao = new BoardDAO();
 
 
-	/** 내가 조회한 글 작성 
+	/**내가 작성한 FAQ 조회
 	 * @param memberNo
 	 * @return boardList
 	 * @throws Exception
@@ -29,6 +29,23 @@ public class BoardService {
 		
 		return boardList;
 		
+	}
+
+
+	/**내가 작성한 QNA 조회
+	 * @param memberNo
+	 * @return boardList
+	 * @throws Exception
+	 */
+	public List<Board> searchQnaList(int memberNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		List<Board> boardList = dao.searhQnaList(conn,memberNo);
+		
+		close(conn);
+		
+		return null;
 	}
 
 
