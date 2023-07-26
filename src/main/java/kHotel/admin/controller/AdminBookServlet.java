@@ -25,16 +25,14 @@ public class AdminBookServlet extends HttpServlet{
 
 
 		CBookService service = new CBookService();
-
-		if(command.equals("bookList")) {
+		
+		try {
 			
-			try {
-
+			if(command.equals("bookList")) {
 
 
 				List<Reservation> rsvList = service.selectRsvList();
-				
-				
+
 				String path = "/WEB-INF/views/admin/AdminReservation.jsp";
 
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
@@ -42,63 +40,43 @@ public class AdminBookServlet extends HttpServlet{
 				req.setAttribute("rsvList", rsvList);
 
 				dispatcher.forward(req, resp);
-
-
-			} catch (Exception e) {
-
-				e.printStackTrace();
-
 			}
-		}
-		
-		if(command.equals("bookListbefore")) {
-			
-			try {
-				
+
+			if(command.equals("bookListbefore")) {
+
+
+
 				List<Reservation> rsvList2 = service.selectRsvList2();
-				
+
 				String path = "/WEB-INF/views/admin/AdminReservationbefore.jsp";
 
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-				
-				req.setAttribute("rsvList2", rsvList2);
-							
-				dispatcher.forward(req, resp);
-				
 
-			} catch (Exception e) {
-				
-				e.printStackTrace();
-				
+				req.setAttribute("rsvList2", rsvList2);
+
+				dispatcher.forward(req, resp);
+
 			}
-			
-		}
-		
-		if(command.equals("deleteReservation")) {
-			
-			try {
+
+			if(command.equals("delete")) {
 				
-				int bookNo = Integer.parseInt(req.getParameter("bookNo"));
+				int bookNo = Integer.parseInt( req.getParameter("bookNo") );
 				
-				Reservation reservation = new Reservation();
-				
-				reservation.setBookNo(bookNo);
-				
-				int result = service.deleteReservation(reservation);
-				
+				int result = service.deleteReservation(bookNo);
+
 				resp.getWriter().print(result);
-				
-				System.out.println(result);
-			} catch (Exception e) {
-				
-				e.printStackTrace();
-				
-			}
-			
-			
+
+			} 
+
+		}catch (Exception e) {
+
+			e.printStackTrace();
+
 		}
+
 
 	}
+
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
