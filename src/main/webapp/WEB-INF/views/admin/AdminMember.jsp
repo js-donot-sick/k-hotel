@@ -18,7 +18,7 @@
     <jsp:include page="/WEB-INF/views/admin/AdminHeader.jsp"/>
 
     <div class="P-All">
-        <div class="P-sidebar">사이드바</div>
+        <jsp:include page="/WEB-INF/views/common/adminSidebar.jsp"/>
 
         <div class="P-main">
             <!-- 검색 div -->
