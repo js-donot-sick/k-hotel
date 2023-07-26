@@ -25,17 +25,17 @@
     
  <div class="H-snb">
         <ul class="H-side-bar">
-            <li>
-                <a href="#" class="H-side-item H-side-title">공지사항</a>
+            <li>            <!-- 요청 주소는 본인이 알아서 바꿔 쓰세요 -->
+                <a href="${contextPath}/admin/memberAdmin" class="H-side-item H-side-title">회원정보 관리</a> 
             </li>
             <li>
-                <a href="${contextPath}/board/qna?type=2" class="H-side-item">QNA</a>
+                <a href="${contextPath}/admin/boardAdmin" class="H-side-item">게시글 관리</a>
             </li>
             <li>
-                <a href="#" class="H-side-item">리뷰</a>
+                <a href="${contextPath}/admin/eventAdmin" class="H-side-item">이벤트</a>
             </li>
             <li>
-                <a href="${contextPath}/board/faq?type=4" class="H-side-item">FAQ</a>
+                <a href="${contextPath}/admin/bookAdmin" class="H-side-item">예약관리</a>
             </li>
         </ul>
         
