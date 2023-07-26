@@ -38,10 +38,10 @@
                 <a href="${contextPath}/admin/bookAdmin" class="H-side-item">예약관리</a>
             </li>
             <li>
-                <a href="${contextPath}/admin/pay" class="H-side-item">신고관리</a>
+                <a href="${contextPath}/admin/report" class="H-side-item">신고관리</a>
             </li>
             <li>
-                <a href="${contextPath}/admin/report" class="H-side-item">결제관리</a>
+                <a href="${contextPath}/admin/pay" class="H-side-item">결제관리</a>
             </li>
         </ul>
         
