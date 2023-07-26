@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 	<comment>CBook-sql.xml</comment>
-	
+	<!-- 회원 번호 조회 -->
 	<entry key="selectRoomNo">
 	SELECT ROOM_NO
 	FROM ROOM
@@ -11,12 +11,14 @@
 	AND ROOM_NM = ?
 	</entry>
 	
+	<!-- 객실 가격 조회  -->
 	<entry key="selectRoomPrice">
 	SELECT ROOM_PRICE
 	FROM ROOM
 	WHERE ROOM_NM = ?
 	</entry>
 	
+	<!-- 예약 가능 객실인지 조회  -->
 	<entry key="reservationCheck">
 	SELECT ROOM_NO, TO_CHAR(CHECKIN_DT,'YYYY-MM-DD'),  TO_CHAR(CHECKOUT_DT,'YYYY-MM-DD')
 	FROM RESERVATION
@@ -24,4 +26,28 @@
 	AND CHECKOUT_DT = ?
 	AND ROOM_NO = ?
 	</entry>
+	<!-- 관리자 예약 리스트 조회 -->
+	<entry key="selectrsvList">
+	SELECT BOOK_NO, TO_CHAR(CHECKIN_DT,'YYYY-MM-DD') CHECKIN_DT, TO_CHAR(CHECKOUT_DT,'YYYY-MM-DD') CHECKOUT_DT ,ROOM_NM, MEMBER_NM, HOTEL_TITLE
+	FROM RESERVATION
+	JOIN MEMBER USING(MEMBER_NO)
+	JOIN ROOM USING(ROOM_NO)
+	JOIN HOTEL USING(HOTEL_NO)
+	WHERE CHECK_FL != 'N'
+    AND <![CDATA[CHECKOUT_DT >= SYSDATE]]>
+	ORDER BY BOOK_NO
+	</entry>
+	
+	<!-- 관리자 이전 예약 리스트 조회 -->
+	<entry key="selectrsvList2">
+	SELECT BOOK_NO, TO_CHAR(CHECKIN_DT,'YYYY-MM-DD') CHECKIN_DT, TO_CHAR(CHECKOUT_DT,'YYYY-MM-DD') CHECKOUT_DT ,ROOM_NM, MEMBER_NM, HOTEL_TITLE
+	FROM RESERVATION
+	JOIN MEMBER USING(MEMBER_NO)
+	JOIN ROOM USING(ROOM_NO)
+	JOIN HOTEL USING(HOTEL_NO)
+	WHERE CHECK_FL != 'N'
+    AND <![CDATA[CHECKOUT_DT < SYSDATE]]>
+	ORDER BY BOOK_NO
+	</entry>
+	
 </properties>

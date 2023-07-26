@@ -41,14 +41,14 @@
                                 <div>체크인날짜</div>
                                 <div>체크아웃날짜</div>
                             </div>
-                            <c:forEach var="rsv" items="${rsvList}">
+                            <c:forEach var="rsv2" items="${rsvList2}">
                                 <div class="C-rsvlist-container">
-                                    <div>${rsv.bookNo}</div>
-                                    <div>${rsv.hotelName}</div>
-                                    <div>${rsv.roomName}</div>
-                                    <div>${rsv.memberName}</div>
-                                    <div>${rsv.checkInTime}</div>
-                                    <div>${rsv.checkOutTime}</div>
+                                    <div>${rsv2.bookNo}</div>
+                                    <div>${rsv2.hotelName}</div>
+                                    <div>${rsv2.roomName}</div>
+                                    <div>${rsv2.memberName}</div>
+                                    <div>${rsv2.checkInTime}</div>
+                                    <div>${rsv2.checkOutTime}</div>
                                     <div>
                                         <button class="C-cancelbtn">예약취소</button>
                                     </div>
