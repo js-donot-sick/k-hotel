@@ -57,8 +57,15 @@
 	
 	<!-- FAQ 목록, 상세 조회 -->
 	<entry key="faqList">
-		SELECT BOARD_TITLE, BOARD_DT, BOARD_CONTENT FROM BOARD
+		SELECT BOARD_TITLE, BOARD_DT, BOARD_CONTENT, BOARD_NO FROM BOARD
 		WHERE BOARD_CD=?
 		AND BOARD_ST='N'
+	</entry>
+	
+	<!-- FAQ 삭제 -->
+	<entry key="deleteFaq">
+		UPDATE BOARD SET
+		BOARD_ST = 'Y'
+		WHERE BOARD_NO=?
 	</entry>
 </properties>

@@ -395,6 +395,7 @@ public class KBoardDAO {
 				board.setBoardTitle(rs.getString(1));
 				board.setBoardDate(rs.getString(2));
 				board.setBoardContent(rs.getString(3));
+				board.setBoardNo(rs.getInt(4));
 				
 				boardList.add(board);
 			}
@@ -405,6 +406,31 @@ public class KBoardDAO {
 		}
 		
 		return boardList;
+	}
+
+	/** faq 삭제 DAO
+	 * @param conn
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteFaq(Connection conn, int boardNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("deleteFaq");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		return result;
 	}
 
 	

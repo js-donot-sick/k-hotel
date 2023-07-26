@@ -1,3 +1,20 @@
+function selectFaqList(){
+
+    $.ajax({
+
+        url : contextPath + "/admin/selectFaqList",
+
+        
+
+
+
+    })
+
+
+
+}
+
+
 $(".k-faq-slide").on("click", function(){
 
     /* element.style.transform = "rotate(180deg)"; */
@@ -33,16 +50,42 @@ $(".k-faq-slide").on("click", function(){
         $(this).next().slideUp(); */
 })
 
-$(".k-del-btn").on("click", function(){
+function deleteFaq(boardNo , btn){
+
+    var p1 = btn.parentNode.parentNode.parentNode;
 
     if(confirm("정말 삭제하시겠습니까?")){
+        $.ajax({
 
-        
+            url : contextPath + "/admin/faqDelete",
 
-        $(".k-faq-slide").remove();
-        $(".k-faq-content").remove();
+            data : {"boardNo" : boardNo},
 
-        //$(this).parent().parent().prev().remove();
-        //$(this).parent().parent().remove();
-    }
-})
+            success : function(result){
+
+                if(result>0){
+                    alert("삭제되었습니다.");
+                } else {
+                    alert("삭제 실패")
+                }
+
+            } , 
+
+            error : function(req, status, error){
+                console.log("faq 삭제 실패");
+                console.log(req.responseText);
+            }
+
+        })
+    } 
+
+}
+
+
+
+/* $(".k-del-btn").on("click", function(){
+
+
+}) */
+
+

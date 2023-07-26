@@ -53,14 +53,17 @@
                             <div>
                                 ${board.boardContent}
                             </div>
-                            <input type="hidden" name="beforeContent" value="${board.boardContent}">
+                            <form action="${contextPath}/#" method="post">
+                                <input type="hidden" name="beforeContent" value="${board.boardContent}">
+                                <input type="hidden" name="boardNo" value="${board.boardNo}">
 
-                            <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">
-                                <div class="k-btns">
-                                    <a href="#"><button type="button" class="k-mod-btn">수정</button></a>
-                                    <a href="#"><button type="button" class="k-del-btn">삭제</button></a>
-                                </div>
-                            </c:if>
+                                <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">
+                                    <div class="k-btns">
+                                        <button type="submit" class="k-mod-btn">수정</button></a>
+                                        <button type="button" onclick="deleteFaq(${board.boardNo}, this)" class="k-del-btn">삭제</button>
+                                    </div>
+                                </c:if>
+                            </form>
                         </div>
                     </c:forEach>
                     
@@ -75,11 +78,11 @@
     
     </div>
 
-    
-
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
       
-    
+    <script>
+        const contextPath = "${contextPath}";
+    </script>
 
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
