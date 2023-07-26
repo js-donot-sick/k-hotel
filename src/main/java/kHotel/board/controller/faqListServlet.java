@@ -9,13 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/faq")
+@WebServlet("/board/faq")
 public class faqListServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String path = "/WEB-INF/views/board/faqList.jsp";		
+		try {
+			
+			int type = Integer.parseInt(req.getParameter("type"));
+			
+		} catch (Exception e) {
+			
+			
+		}
+		
+		String path = "/WEB-INF/views/admin/AdminFaqList.jsp";		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		dispatcher.forward(req, resp);
