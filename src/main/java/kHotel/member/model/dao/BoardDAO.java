@@ -35,7 +35,7 @@ public class BoardDAO {
 				}
 			}
 
-	/**
+	/** FAQ 보기 
 	 * @param conn
 	 * @param memberNo
 	 * @return 
@@ -71,6 +71,18 @@ public class BoardDAO {
 			
 		}
 		return boardList;
+	}
+
+
+	/** QNA 보기 
+	 * @param conn
+	 * @param memberNo
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Board> searhQnaList(Connection conn, int memberNo) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
