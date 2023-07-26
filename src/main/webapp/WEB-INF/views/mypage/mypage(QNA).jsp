@@ -10,8 +10,8 @@
     <title>내가 쓴 글(QnA)</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css"> <!-- 헤더 스타일 -->
     <link rel="stylesheet" href="${contextPath}/resources/css/sidebar.css"> <!-- 사이드바 스타일 -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/mypage(QNA).css"> <!-- 마이페이지(QNA)스타일 -->
     <link rel="stylesheet" href="${contextPath}/resources/css/footer.css"><!-- 풋터 스타일 -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/mypage(QNA).css"><!-- 풋터 스타일 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
@@ -30,16 +30,18 @@
             <div class="P-maindisplay">
                 <!-- QNA 메인 글자 -->
                 <div class="P-main" >
-                    <div class="P-blank1">REVIEW</div>
+                    <div class="P-blank1">QnA</div>
 
                      <!-- 드롭박스 -->
-                     <div class="P-dropdown">
+                     <!-- <div class="P-dropdown">
                         <select name="" id="" onchange="location.href=this.value">
                             <option value="">선택하세요</option>
                                 <option value="mypage(QNA).jsp">QnA</option>
                                 <option value="mypage(wirte).jsp">Reivew</option>
                         </select>
-                    </div>
+                    </div> -->
+
+                    <div class="P-dropdown"></div>
 
                     <!-- QnA 항목 이동 링크 -->
                     <div class="P-qna-1">
@@ -47,12 +49,18 @@
                             <div>번호</div>
                             <div>QnA 제목</div>
                             <div></div>
-                            <div>QnA 작성시간</div>
-                            <a href="#"><button class="P-qna-btn">상세내역</button></a>
+                            <div>작성시간</div>
+                            <div>상세내역</div>
                         </div>
 
                         <c:forEach var="board" items = "${boardList}">
-                            
+                            <div class="P-qna">
+                                <div>${board.boardNo}</div>
+                                <div>${board.boardTitle}</div>
+                                <div></div>
+                                <div>${board.boardDt}</div>
+                                <a href="#"><button class="P-qna-btn">상세내역</button></a>
+                            </div>
                         </c:forEach>
                         
 

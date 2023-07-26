@@ -31,8 +31,6 @@
     width: 75%;
 }
 
-
-
 /* 메인화면 */
 
 .P-blank1 {
@@ -91,6 +89,16 @@
 /* 시간 */
 .P-qna>div:nth-child(4) {
     width: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.P-qna>div:nth-child(5) {
+    width: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
