@@ -5,13 +5,14 @@ a {text-decoration:none;}
 .H-snb { width: 25%; }
 
 .H-side-bar{ 
-    width: 80%;
+    
+    width: 70%;
     background:rgb(207, 191, 167);
     height:auto; 
     box-sizing:border-box;
     color:#fff; 
     box-shadow:1px 0px 20px rgba(0,0,0,0.2);
-    margin-top: 50px;
+    margin:auto
 }
 
 .H-side-bar li {border-bottom:1px solid rgba(255,255,255,0.2);}
@@ -40,3 +41,11 @@ a {text-decoration:none;}
 
 
 *{box-sizing: border-box;}
+
+.room{
+    font-size: 18px;
+}
+
+.room:hover{
+    background:rgba(255,255,255,0.1);
+}

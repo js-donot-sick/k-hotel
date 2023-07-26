@@ -9,26 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트</title>
     <link rel="stylesheet" href="resources/css/event.css">
-    <link rel="stylesheet" href="../webapp/resources/css/event_sidebar.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $(".H-side-bar .H-side-item").click(function (e) {
-                e.preventDefault();
-                var $this = $(this);
-                var $parent = $this.closest('li');
-                var $siblings = $this.siblings('dl');
+    <link rel="stylesheet" href="resources/css/eventSidebar.css">
 
-                if ($siblings.length && !$siblings.is(':visible')) {
-                    $parent.addClass('H-active').siblings('li').removeClass('H-active').find('dl').removeClass('H-block').addClass('none');
-                    $siblings.removeClass('H-none').addClass('H-block');
-                } else {
-                    $parent.removeClass('H-active');
-                    $siblings.removeClass('H-block').addClass('H-none');
-                }
-            });
-        });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -43,8 +27,7 @@
     <div class="P-top">
 
             <!-- 사이드바 -->
-            <jsp:include page="/WEB-INF/views/common/event_sidebar.jsp" />
-    
+            <jsp:include page="/WEB-INF/views/common/eventSidebar.jsp" />
 
             <div class="P-maindisplay">
                 <div class="P-main">
