@@ -63,8 +63,8 @@
           <li>
             <a href="#" class="H-side-item">예약</a>
             <dl class="H-none">
-              <dd class=""><a href="#">- 현재 예약 확인</a></dd>
-              <dd class=""><a href="#">- 이전 예약 확인</a></dd>
+              <dd class=""><a href="reservations1">- 현재 예약 확인</a></dd>
+              <dd class=""><a href="reservations2">- 이전 예약 확인</a></dd>
             </dl>
           </li>
           <li>

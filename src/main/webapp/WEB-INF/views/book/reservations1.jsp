@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="resources/css/reservations1.css">
+    <link rel="stylesheet" href="../resources/css/reservations1.css">
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -26,14 +26,13 @@
 
     <main>
 
-        <header class="J-header">
-
-        </header>
+        <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
         <div class="J-BODY">
 
-            <div class="J-BODY2"></div>
+                <jsp:include page="/WEB-INF/views/common/sidebar.jsp"/>
 
+            <form action="member/reservations1" method="GET"></form>
             <div class="J-BODY3">
 
                 <div class="J-J">
@@ -56,7 +55,7 @@
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="J-PIC">
-                                            <img src="resources/images/Deluxe-Room_1.jpg">
+                                            <img src="../resources/images/Deluxe-Room_1.jpg">
                                         </div>
                                         <div class="J-text">
                                             <input type="" placeholder="">
@@ -83,7 +82,7 @@
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div  class="J-PIC">
-                                            <img src="resources/images/standard-Room_1.jpg" >
+                                            <img src="../resources/images/standard-Room_1.jpg" >
                                         </div>
                                         <div class="J-text">
                                             <input type="">
@@ -108,7 +107,7 @@
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div  class="J-PIC">
-                                            <img src="resources/images/suite-Room_1.jpg">
+                                            <img src="../resources/images/suite-Room_1.jpg">
                                         </div>
                                         <div class="J-text">
                                             <input type="">
@@ -149,69 +148,7 @@
 
 
 
-
-        <div class="k-first-div">
-            <div class="k-f-container">
-                <div>
-                    <img src="resources/images/logo_w_2.png" style="width: 180px;">
-                </div>
-                <div>
-                    <span>호텔소식</span>
-                    <span> | </span>
-                    <span>갤러리</span>
-                    <span> | </span>
-                    <span>고객문의</span>
-                </div>
-                <div id="k-sns">
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-blog.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-instagram.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-youtube.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-facebook.png">
-                        </a>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="k-second-div">
-            <div>
-                <span>케이호텔 소개</span>
-                <span> | </span>
-                <span>사이트맵</span>
-                <span> | </span>
-                <span>개인정보처리방침</span>
-                <span> | </span>
-                <span>이메일무단수집금지</span>
-                <span> | </span>
-                <span>윤리경영(부정제보)</span>
-            </div>
-        </div>
-        
-        <div class="k-third-div">
-            <div>
-                <div>케이호텔(주) 서울특별시 강남구 테헤란로 14길 6</div>
-                <div>TEL 1544-9970</div>
-                <div>Copyright © 2023 khotel.co.,Ltd. All rights reserved.</div>
-            </div>
-            <div>
-                <img src="resources/images/copyright.png">
-            </div>
-        </div>
+        <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
 
 
@@ -230,6 +167,6 @@
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
 
-    <script src="resources/js/reservations1.js"></script>
+    <script src="../resources/js/reservations1.js"></script>
 </body>
 </html>
