@@ -14,11 +14,10 @@
     
     <main>
 
-        <header class="J-header">
-        </header>
+        <jsp:include page="${contextPath}/common/header.jsp" />
 
         <div class="J-body">
-            
+
             <div class="J-body2">
 
                 <div class="J-body2-1">
@@ -29,8 +28,8 @@
 
                     <table>
 
-                        <tr>
-                            <td>
+                        <tr >
+                            <td id="J-text3">
                                 작성자
                             </td>
 
@@ -38,7 +37,7 @@
                                 <input type="text" placeholder="작성자명" id="J-text">
                             </td>
 
-                            <td>
+                            <td id="J-text3">
                                 작성일
                             </td>
 
@@ -48,25 +47,22 @@
                         </tr>
 
                         <tr>
-                            <td>
+                            <td id="J-text3">
                                 객실명
                             </td>
 
-                            <td >
-                                <select >
-                                    <option>-----------</option>
-                                    <option>객실명1</option>
-                                    <option>객실명2</option>
-                                    <option>객실명3</option>
-                                </select>
+                            <td>
+                               <div id="J-room"></div>
                             </td>
 
-                            <td>
+                            <td id="J-text3">
                                 사진
                             </td>
 
                             <td id="J-PIC">
-                                <button>사진추가</button><div></div>
+                                <label for="J-reviewImage2">사진 선택</label>
+                                <input type="file" name="J-reviewImage" id="J-reviewImage2" accept="image/*">
+                                <!-- accept="image/* : 이미지 파일 확장자만 선택 허용" -->
                             </td>
                         </tr>
 
@@ -74,7 +70,7 @@
                         <tr>
                             <td></td>
                             <td colspan="3">
-                               <!--  <img src="resources/images/리뷰1.png"> -->
+                                <!--  <img src="resources/images/리뷰1.png"> -->
                             </td>
                         </tr>
 
@@ -86,11 +82,21 @@
                             <td colspan="3">
                                 <form name="J-myform" id="J-myform" method="post" action="./save">
                                     <fieldset>
-                                        <label for="rate1">⭐</label><input type="radio" name="rating" value="5" id="rate1">
-                                        <label for="rate2">⭐</label><input type="radio" name="rating" value="4" id="rate2">
-                                        <label for="rate3">⭐</label><input type="radio" name="rating" value="3" id="rate3">
-                                        <label for="rate4">⭐</label><input type="radio" name="rating" value="2" id="rate4">
-                                        <label for="rate5">⭐</label><input type="radio" name="rating" value="1" id="rate5">
+                                        <input type="radio" id="5-stars" name="rating" value="5"
+                                            v-model="ratings" />
+                                        <label for="5-stars" class="star pr-4">⭐</label>
+                                        <input type="radio" id="4-stars" name="rating" value="4"
+                                            v-model="ratings" />
+                                        <label for="4-stars" class="star">⭐</label>
+                                        <input type="radio" id="3-stars" name="rating" value="3"
+                                            v-model="ratings" />
+                                        <label for="3-stars" class="star">⭐</label>
+                                        <input type="radio" id="2-stars" name="rating" value="2"
+                                            v-model="ratings" />
+                                        <label for="2-stars" class="star">⭐</label>
+                                        <input type="radio" id="1-star" name="rating" value="1"
+                                            v-model="ratings" />
+                                        <label for="1-star" class="star">⭐</label>
                                     </fieldset>
                                 </form>
                             </td>
@@ -98,8 +104,8 @@
 
                         <tr>
 
-                            <td >
-                               
+                            <td>
+                                태그
                             </td>
 
                             <td>
@@ -112,7 +118,7 @@
                             </td>
 
                             <td>
-                                
+
                             </td>
 
                             <td>
@@ -120,13 +126,13 @@
                                 <pre>침구가 고급스러워요</pre>
                                 <input type="checkbox">
                                 <pre>애인과 가기 좋아요</pre>
-                                <input type="checkbox"> 
+                                <input type="checkbox">
                                 <pre>파티하기 좋아요</pre>
                             </td>
                         </tr>
 
                         <tr>
-                            <td>
+                            <td id="J-text2">
                                 내용
                             </td>
 
@@ -139,7 +145,8 @@
                 </div>
 
                 <div class="J-body2-3">
-                    <button>리뷰 작성 취소</button><button>리뷰 작성</button>
+                    <button id="J-cancle">리뷰 작성 취소</button><button id="J-update">리뷰 작성</button>
+                    <!-- 리뷰 작성 취소 누를 시 이전 페이지로 돌아갈건지 알림창 띄우고 확인 누르면 이동. -->
                 </div>
 
             </div>
@@ -148,69 +155,7 @@
         </div>
         
             <!-- ------------------------------------------------------------------------- -->
-        <div class="k-first-div">
-            <div class="k-f-container">
-                <div>
-                    <img src="resources/images/logo_w_2.png" style="width: 180px;">
-                </div>
-                <div>
-                    <span>호텔소식</span>
-                    <span> | </span>
-                    <span>갤러리</span>
-                    <span> | </span>
-                    <span>고객문의</span>
-                </div>
-                <div id="k-sns">
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-blog.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-instagram.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-youtube.png">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="#">
-                            <img src="https://www.lottehotel.com/content/dam/lotte-hotel/common/footer/footer-sns-facebook.png">
-                        </a>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        
-        <div class="k-second-div">
-            <div>
-                <span>케이호텔 소개</span>
-                <span> | </span>
-                <span>사이트맵</span>
-                <span> | </span>
-                <span>개인정보처리방침</span>
-                <span> | </span>
-                <span>이메일무단수집금지</span>
-                <span> | </span>
-                <span>윤리경영(부정제보)</span>
-            </div>
-        </div>
-        
-        <div class="k-third-div">
-            <div>
-                <div>케이호텔(주) 서울특별시 강남구 테헤란로 14길 6</div>
-                <div>TEL 1544-9970</div>
-                <div>Copyright © 2023 khotel.co.,Ltd. All rights reserved.</div>
-            </div>
-            <div>
-                <img src="resources/images/copyright.png">
-            </div>
-        </div>
-
+            <jsp:include page="${contextPath}/common/footer.jsp" />
 
 
 
