@@ -35,7 +35,8 @@ public class MypageQnaServelt extends HttpServlet{
 			String path = "/WEB-INF/views/mypage/mypage(QNA).jsp";
 			
 			req.getRequestDispatcher(path).forward(req, resp);
-					
+			
+			req.setAttribute("boardList", boardList);			
 			
 			
 		} catch (Exception e) {
