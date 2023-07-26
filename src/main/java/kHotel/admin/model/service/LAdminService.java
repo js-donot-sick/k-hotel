@@ -42,7 +42,7 @@ public class LAdminService {
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("boardName", boardName);
-		map.put("listCount", listCount);
+		map.put("LAdminPagination", LAdminPagination);
 		map.put("boardList", boardList);
 		
 		close(conn);

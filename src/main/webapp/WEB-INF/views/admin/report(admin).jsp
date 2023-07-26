@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<!-- map에 저장된 값을 각각 변수에 저장 -->
+<c:set var="boardName" value="${map.boardName}" />
+<c:set var="LAdminPagination" value="${map.LAdminPagination}" />
+<c:set var="boardList" value="${map.boardList}" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,70 +42,22 @@
                     <th>버튼</th>
                 </tr>
 
-                <tr class="L-report-tr">
-                    <td>1</td>
-                    <td>
-                        <textarea>신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다</textarea>
-                    </td>
-                    <td>user01</td>
-                    <td>2023-07-13</td>
-                    <td>익명</td>
-                    <td>
-                        <button>리뷰확인</button>
-                    </td>
-                </tr>
+                <c:forEach var="board" items="${boardList}">
+                    <tr class="L-report-tr">
+                        <td>${board.boardNo}</td>
+                        <td>
+                            <textarea>${board.reportContent}</textarea>
+                        </td>
+                        <td>${board.reportPerson}</td>
+                        <td>${board.reportDt}</td>
+                        <td>익명</td>
+                        <td>
+                            <button>리뷰확인</button>
+                        </td>
+                    </tr>
+                </c:forEach>
 
-                <tr class="L-report-tr">
-                    <td>2</td>
-                    <td>
-                        <textarea>신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다</textarea>
-                    </td>
-                    <td>user02</td>
-                    <td>2023-07-13</td>
-                    <td>익명</td>
-                    <td>
-                        <button>리뷰확인</button>
-                    </td>
-                </tr>
-
-                <tr class="L-report-tr">
-                    <td>2</td>
-                    <td>
-                        <textarea>신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다</textarea>
-                    </td>
-                    <td>user02</td>
-                    <td>2023-07-13</td>
-                    <td>익명</td>
-                    <td>
-                        <button>리뷰확인</button>
-                    </td>
-                </tr>
-
-                <tr class="L-report-tr">
-                    <td>2</td>
-                    <td>
-                        <textarea>신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다</textarea>
-                    </td>
-                    <td>user01</td>
-                    <td>2023-07-13</td>
-                    <td>익명</td>
-                    <td>
-                        <button>리뷰확인</button>
-                    </td>
-                </tr>
-
-                <tr class="L-report-tr">
-                    <td>2</td>
-                    <td>
-                        <textarea>신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다신고합니다</textarea>
-                    </td>
-                    <td>user01</td>
-                    <td>2023-07-13</td>
-                    <td>익명</td>
-                    <td>
-                        <button>리뷰확인</button>
-                    </td>
-                </tr>
+                
             </table>
 
 
