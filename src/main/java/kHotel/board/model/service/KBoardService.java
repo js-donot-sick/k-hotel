@@ -63,8 +63,14 @@ public class KBoardService {
 		
 		Connection conn = getConnection();
 		
+		int listCount = 0;
+		
 		// 1. 검색 조건에 맞는 전체 글 수 조회
-		int listCount = dao.getListCount(select, content, conn, type);
+		if(select.equals("1")) {
+			listCount = dao.AgetgetListCount(content, conn, type);
+		} else {
+			listCount = dao.getListCount(select, content, conn, type);
+		}
 		
 		System.out.println("글 수 제발 제발 : " + listCount);
 		
@@ -72,7 +78,12 @@ public class KBoardService {
 		LPagination pagination = new LPagination(cp, listCount); // 오류나면 여기부터 확인해바..
 		
 		// 3. 게시글 목록 조회
-		List<Board> boardList = dao.selectBoardList(select, content, conn, pagination, type);
+		List<Board> boardList = null;
+		if(select.equals("1")) {
+			boardList = dao.selectBoardList(content, conn, pagination, type);
+		} else {
+			boardList = dao.selectBoardList(select, content, conn, pagination, type);
+		}
 		
 		// 4. map에 모든 결과 저장
 		Map<String, Object> searchMap = new HashMap<String, Object>();

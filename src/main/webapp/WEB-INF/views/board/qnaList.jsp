@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 
 <c:set var="boardName" value="${map.boardName}"/>
 <c:set var="pagination" value="${map.pagination}"/>
@@ -49,7 +50,7 @@
                 
                 <c:if test="${!empty boardList}">
                     <div class="k-q-list k-title">
-                        <div>글 번호</div>
+                        <div>No</div>
                         <div>글 제목</div>
                         <div></div>
                         <div>작성자</div>
@@ -60,54 +61,57 @@
 
                     <c:forEach var="board" items = "${boardList}">
 
-                        <a href="#" style="text-decoration: none;">
+                    <c:set var="memberId" value="${board.memberId}"/>
+                    <c:set var="detailUrl" value="${contextPath}/board/qna?type=2&boardNo="/>
+
+                        <a href="${detailUrl}" style="text-decoration: none;">
                             <div class="k-q-list">
                                 <div>${board.boardNo}</div>
                                 <div>${board.boardTitle}</div>
                                 <div></div>
-                                <div>${board.memberName}</div>
+                                <div>${fn:substring(memberId, 0, fn:length(memberId) - 3)}***</div>
                                 <div>${board.boardDate}</div>
                             </div>
                         </a>
 
                     </c:forEach>
 
+                     <!-- 페이지네이션 -->
+                    <div class="K-qna-page">
+                        <c:set var="url" value="qna?type=2&cp="/>
+
+                        <ul class="K-pagination">
+                            <!-- 첫 페이지로 이동 -->
+                            <li><a href="${url}1">&lt;&lt;</a></li>
+                            <!-- 이전 목록 마지막 번호로 이동 -->
+                            <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
+
+                            <!-- 범위가 정해진 일반 for문 사용 -->
+                            <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}">
+                                <c:choose>
+                                    <c:when test="${i==pagination.currentPage}">
+                                        <li><a class="K-current">${i}</a></li>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <li><a href="${url}${i}">${i}</a></li>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+
+                            <!-- 다음 목록 시작 번호로 이동 -->
+                            <li><a href="${url}${pagination.nextPage}">&gt;</a></li>
+                            <!-- 끝 페이지로 이동 -->
+                            <li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li>
+                        </ul>
+
+                    </div>
 
                 </c:if>
 
             </div>
 
-            <!-- 페이지네이션 -->
-            <div class="K-qna-page">
-                <c:set var="url" value="qna?type=2&cp="/>
-
-                <ul class="K-pagination">
-                    <!-- 첫 페이지로 이동 -->
-                    <li><a href="${url}1">&lt;&lt;</a></li>
-                    <!-- 이전 목록 마지막 번호로 이동 -->
-                    <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
-
-                    <!-- 범위가 정해진 일반 for문 사용 -->
-                    <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}">
-                        <c:choose>
-                            <c:when test="${i==pagination.currentPage}">
-                                <li><a class="K-current">${i}</a></li>
-                            </c:when>
-                            <c:otherwise>
-                                <li><a href="${url}${i}">${i}</a></li>
-                            </c:otherwise>
-                        </c:choose>
-                    </c:forEach>
-
-                    <!-- 다음 목록 시작 번호로 이동 -->
-                    <li><a href="${url}${pagination.nextPage}">&gt;</a></li>
-                    <!-- 끝 페이지로 이동 -->
-                    <li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li>
-                </ul>
-
-            </div>
-
-            <form action="qna/search?type=2">
+           
+            <form action="${contextPath}/board/qna/search?type=2" id="K-searcj-form">
                 <div class="k-search-div"> <!-- 하단 검색 부분 -->
                     <div>
                         <select name="k-search-s" id="k-search">

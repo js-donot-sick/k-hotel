@@ -29,7 +29,7 @@
                 <a href="#" class="H-side-item H-side-title">공지사항</a>
             </li>
             <li>
-                <a href="qna?type=2" class="H-side-item">QNA</a>
+                <a href="${contextPath}/board/qna?type=2" class="H-side-item">QNA</a>
             </li>
             <li>
                 <a href="#" class="H-side-item">리뷰</a>

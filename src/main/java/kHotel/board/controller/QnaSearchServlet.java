@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import kHotel.board.model.service.KBoardService;
 
 
-@WebServlet("/qna/search")
+@WebServlet("/board/qna/search")
 public class QnaSearchServlet extends HttpServlet {
 	
 	@Override
@@ -24,10 +24,6 @@ public class QnaSearchServlet extends HttpServlet {
 			
 			String select = req.getParameter("k-search-s");
 			String content = req.getParameter("k-search-c");
-			
-			System.out.println("select" + select);
-			System.out.println("content" + content);
-			
 			
 			//int type = Integer.parseInt(req.getParameter("type"));
 			

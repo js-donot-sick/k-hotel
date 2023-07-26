@@ -57,7 +57,8 @@ body::-webkit-scrollbar {
 
 .k-qna{ /* faq+질문게시판 전체 div */
     margin: auto;
-    width: 75%
+    width: 75%;
+    height: 750px;
 }
 
 .k-faq-slide{ /* 제목 부분 */
@@ -218,6 +219,7 @@ body::-webkit-scrollbar {
 
 
 /* 하단 검색 부분 */
+
 .k-search-div{ /* 전체 */
     display: flex;
     justify-content: center;

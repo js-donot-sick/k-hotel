@@ -135,7 +135,7 @@ public class KBoardDAO {
 				
 				board.setBoardNo(rs.getInt("BOARD_NO"));
 				board.setBoardTitle(rs.getString("BOARD_TITLE"));
-				board.setMemberName(rs.getString("MEMBER_NM"));
+				board.setMemberId(rs.getString("MEMBER_ID"));
 				board.setBoardDate(rs.getString("BOARD_DT"));
 				
 				boardList.add(board);
@@ -166,7 +166,7 @@ public class KBoardDAO {
 		try {
 			
 			// String sql = prop.getProperty("qnaListCount");
-			String sql = "SELECT COUNT(*) FROM BOARD "+ "WHERE "+ select +  " LIKE '%" + content + "%'";
+			String sql = "SELECT COUNT(*) FROM BOARD "+ "WHERE "+ select +  " LIKE '%" + content + "%' AND BOARD_CD = " + type;
 			
 			//pstmt = conn.prepareStatement(sql);
 			
@@ -217,7 +217,7 @@ public class KBoardDAO {
 			// na ul go si peo . . . . . . . . . . 
 			String sql = "SELECT * FROM("
 					+ "		    SELECT ROWNUM RNUM, A.* FROM( "
-					+ "		        SELECT BOARD_NO, BOARD_TITLE, MEMBER_NM, "
+					+ "		        SELECT BOARD_NO, BOARD_TITLE, MEMBER_ID, "
 					+ "		                TO_CHAR(BOARD_DT,'YYYY-MM-DD') AS BOARD_DT "
 					+ "		        FROM BOARD "
 					+ "		        JOIN MEMBER USING (MEMBER_NO) "
@@ -245,7 +245,7 @@ public class KBoardDAO {
 				
 				board.setBoardNo(rs.getInt("BOARD_NO"));
 				board.setBoardTitle(rs.getString("BOARD_TITLE"));
-				board.setMemberName(rs.getString("MEMBER_NM"));
+				board.setMemberId(rs.getString("MEMBER_ID"));
 				board.setBoardDate(rs.getString("BOARD_DT"));
 				
 				searchBoardList.add(board);
@@ -260,6 +260,112 @@ public class KBoardDAO {
 		
 		return searchBoardList;
 		
+	}
+
+	/** qna 검색 게시글 수(내용 + 제목) DAO
+	 * @param content
+	 * @param conn
+	 * @param type
+	 * @return listCount
+	 * @throws Exception
+	 */
+	public int AgetgetListCount(String content, Connection conn, int type) throws Exception {
+		
+		int listCount = 0;
+		
+		try {
+			
+			// String sql = prop.getProperty("qnaListCount");
+			String sql = "SELECT COUNT(*) FROM BOARD "+ "WHERE (BOARD_TITLE LIKE '%" + content + "%' OR BOARD_CONTENT LIKE '%"
+							+ content + "%') AND BOARD_CD = " + type;
+			
+			//pstmt = conn.prepareStatement(sql);
+			
+			//pstmt.setString(1, select);
+			//pstmt.setString(2, content);
+			
+			//rs = pstmt.executeQuery();
+			
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				listCount = rs.getInt(1);
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return listCount;
+		
+	}
+
+	/** qna 검색 게시글 목록(내용 + 제목) DAO
+	 * @param content
+	 * @param conn
+	 * @param pagination
+	 * @param type
+	 * @return searchBoardList
+	 */
+	public List<Board> selectBoardList(String content, Connection conn, LPagination pagination, int type) throws Exception {
+		List<Board> searchBoardList = new ArrayList<Board>();
+		
+		try {
+			
+			
+			// sql between에 넣을 숫자
+			int start = (pagination.getCurrentPage()-1) * pagination.getLimit() +1;
+			
+			int end = start + pagination.getLimit() -1;
+			
+			String sql = "SELECT * FROM("
+					+ "		    SELECT ROWNUM RNUM, A.* FROM( "
+					+ "		        SELECT BOARD_NO, BOARD_TITLE, MEMBER_ID, "
+					+ "		                TO_CHAR(BOARD_DT,'YYYY-MM-DD') AS BOARD_DT "
+					+ "		        FROM BOARD "
+					+ "		        JOIN MEMBER USING (MEMBER_NO) "
+					+ "		        WHERE BOARD_CD = " + type
+					+ "		        AND BOARD_ST = 'N' "
+					+ "                AND (BOARD_TITLE LIKE '%" + content + "%' OR BOARD_CONTENT LIKE '%"
+					+ 						 content + "%') "
+					+ "		        ORDER BY BOARD_NO DESC "
+					+ "		    ) A "
+					+ "		) "
+					+ "		WHERE RNUM BETWEEN " +  start +  " AND  " +  end;
+			
+			
+			/*
+			 * pstmt = conn.prepareStatement(sql);
+			 * 
+			 * pstmt.setInt(1, type); pstmt.setString(2, select); pstmt.setString(3,
+			 * content); pstmt.setInt(4, start); pstmt.setInt(5, end);
+			 * 
+			 * rs = pstmt.executeQuery();
+			 */
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				Board board = new Board();
+				
+				board.setBoardNo(rs.getInt("BOARD_NO"));
+				board.setBoardTitle(rs.getString("BOARD_TITLE"));
+				board.setMemberId(rs.getString("MEMBER_ID"));
+				board.setBoardDate(rs.getString("BOARD_DT"));
+				
+				searchBoardList.add(board);
+			}
+			
+		} finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		return searchBoardList;
 	}
 
 	

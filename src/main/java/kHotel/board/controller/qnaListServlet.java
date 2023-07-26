@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import kHotel.board.model.service.KBoardService;
 
-@WebServlet("/qna")
+@WebServlet("/board/qna")
 public class qnaListServlet extends HttpServlet {
 	
 	@Override
