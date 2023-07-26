@@ -62,9 +62,8 @@
                     <c:forEach var="board" items = "${boardList}">
 
                     <c:set var="memberId" value="${board.memberId}"/>
-                    <c:set var="detailUrl" value="${contextPath}/board/qna?type=2&boardNo="/>
 
-                        <a href="${detailUrl}" style="text-decoration: none;">
+                        <a href="${contextPath}/board/qna?type=2&cp=${pagination.currentPage}&no=${board.boardNo}" style="text-decoration: none;">
                             <div class="k-q-list">
                                 <div>${board.boardNo}</div>
                                 <div>${board.boardTitle}</div>
