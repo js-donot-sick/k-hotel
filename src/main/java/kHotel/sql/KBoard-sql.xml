@@ -54,4 +54,11 @@
 		)
 		WHERE RNUM BETWEEN ? AND ?;
 	</entry>
+	
+	<!-- FAQ 목록, 상세 조회 -->
+	<entry key="faqList">
+		SELECT BOARD_TITLE, BOARD_DT, BOARD_CONTENT FROM BOARD
+		WHERE BOARD_CD=?
+		AND BOARD_ST='N'
+	</entry>
 </properties>

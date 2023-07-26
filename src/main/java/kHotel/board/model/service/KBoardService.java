@@ -97,4 +97,20 @@ public class KBoardService {
 		return searchMap;
 	}
 
+	/** faq 목록, 상세 조회 service
+	 * @param type
+	 * @return boardList
+	 * @throws Exception
+	 */
+	public List<Board> faqList(int type) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Board> boardList = dao.faqList(conn, type);
+		
+		close(conn);
+		
+		return boardList;
+	}
+
 }

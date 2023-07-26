@@ -36,7 +36,13 @@ $(".k-faq-slide").on("click", function(){
 $(".k-del-btn").on("click", function(){
 
     if(confirm("정말 삭제하시겠습니까?")){
-        $(this).parent().parent().prev().remove();
-        $(this).parent().parent().remove();
+
+        
+
+        $(".k-faq-slide").remove();
+        $(".k-faq-content").remove();
+
+        //$(this).parent().parent().prev().remove();
+        //$(this).parent().parent().remove();
     }
 })

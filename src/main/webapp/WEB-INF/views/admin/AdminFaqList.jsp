@@ -33,95 +33,41 @@
             <div>FAQ</div>
 
             <div class="k-faq"> <!-- faq -->
+
+                <c:if test="${empty boardList}">
+                    <div id="K-none">게시글이 존재하지 않습니다.</div>
+                </c:if>
+
+                <c:if test="${!empty boardList}">
+
                 
-                <div class="k-faq-slide">
-                    <span>첫 번째</span>
-                    <div class="k-arrow-img"></div>
-                    <!-- <img src="../images/arrow_down.png" class="k-arrow"> -->
-                </div>
-                <div  class="k-faq-content">
-                    <div>
-                        안녕하세오 <br>
-                        overflow가 안 먹어요
-                        <br>
-                        그리고 음..pre를 안 넣어도 잘 넘어갈지 모르겠어요
-                        <br>
-                        관리자 증말 zzㅏ증나 <br><br>sdfkl
-                        ssafd
-                        <br>
-                        dfsa
-                    </div>
-                    <div class="k-btns">
-                        <button type="button" class="k-mod-btn">수정</button>
-                        <button type="button" class="k-del-btn">삭제</button>
-                    </div>
-                </div>
-                <div class="k-faq-slide">
-                    <span>두 번째</span>
-                    <div class="k-arrow-img"></div>
-                    <!-- <img src="../images/arrow_down.png" class="k-arrow"> -->
-                </div>
-                <div  class="k-faq-content">
-                    <div>
-                        안녕하세오 <br>
-                        overflow가 안 먹어요
-                        <br>
-                        그리고 음..pre를 안 넣어도 잘 넘어갈지 모르겠어요
-                        <br>
-                        관리자 증말 zzㅏ증나 <br><br>sdfkl
-                        ssafd
-                        <br>
-                        dfsa
-                    </div>
-                    <div class="k-btns">
-                        <button type="button" class="k-mod-btn">수정</button>
-                        <button type="button" class="k-del-btn">삭제</button>
-                    </div>
-                </div>
-                <div class="k-faq-slide">
-                    <span>세 번째</span>
-                    <div class="k-arrow-img"></div>
-                    <!-- <img src="../images/arrow_down.png" class="k-arrow"> -->
-                </div>
-                <div  class="k-faq-content">
-                    <div>
-                        안녕하세오 <br>
-                        overflow가 안 먹어요
-                        <br>
-                        그리고 음..pre를 안 넣어도 잘 넘어갈지 모르겠어요
-                        <br>
-                        관리자 증말 zzㅏ증나 <br><br>sdfkl
-                        ssafd
-                        <br>
-                        dfsa
-                    </div>
-                    <div class="k-btns">
-                        <button type="button" class="k-mod-btn">수정</button>
-                        <button type="button" class="k-del-btn">삭제</button>
-                    </div>
-                </div>
-                <div class="k-faq-slide">
-                    <span>네 번째</span>
-                    <div class="k-arrow-img"></div>
-                    <!-- <img src="../images/arrow_down.png" class="k-arrow"> -->
-                </div>
-                <div  class="k-faq-content">
-                    <div>
-                        안녕하세오 <br>
-                        overflow가 안 먹어요
-                        <br>
-                        그리고 음..pre를 안 넣어도 잘 넘어갈지 모르겠어요
-                        <br>
-                        관리자 증말 zzㅏ증나 <br><br>sdfkl
-                        ssafd
-                        <br>
-                        dfsa
-                    </div>
-                    <div class="k-btns">
-                        <button type="button" class="k-mod-btn">수정</button>
-                        <button type="button" class="k-del-btn">삭제</button>
-                    </div>
-                </div>
+
+                    <c:forEach var="board" items = "${boardList}">
+                        <div class="k-faq-slide">
+                            <span>${board.boardTitle}</span>
+                            <span>${board.boardDate}</span>
+                            <div class="k-arrow-img"></div>
+                            <!-- <img src="../images/arrow_down.png" class="k-arrow"> -->
+                        </div>
+                        <div  class="k-faq-content">
+                            <div>
+                                ${board.boardContent}
+                            </div>
+                            <input type="hidden" name="beforeContent" value="${board.boardContent}">
+
+                            <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">
+                                <div class="k-btns">
+                                    <a href="#"><button type="button" class="k-mod-btn">수정</button></a>
+                                    <a href="#"><button type="button" class="k-del-btn">삭제</button></a>
+                                </div>
+                            </c:if>
+                        </div>
+                    </c:forEach>
+                    
+                </c:if>
+                        
+            </div>
+                
             
             </div>
 

@@ -368,5 +368,44 @@ public class KBoardDAO {
 		return searchBoardList;
 	}
 
+	/** faq 목록, 상세 조회 DAO
+	 * @param conn
+	 * @param type
+	 * @return boardList
+	 * @throws Exception
+	 */
+	public List<Board> faqList(Connection conn, int type) throws Exception {
+		
+		List<Board> boardList = new ArrayList<Board>();
+		
+		try {
+			
+			String sql = prop.getProperty("faqList");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, type);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				Board board = new Board();
+				
+				board.setBoardTitle(rs.getString(1));
+				board.setBoardDate(rs.getString(2));
+				board.setBoardContent(rs.getString(3));
+				
+				boardList.add(board);
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return boardList;
+	}
+
 	
 }
