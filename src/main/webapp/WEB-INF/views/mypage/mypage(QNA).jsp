@@ -44,12 +44,13 @@
                     <!-- QnA 항목 이동 링크 -->
                     <div class="P-qna-1">
                         <div class="P-qna">
-                            <div>1</div>
+                            <div>번호</div>
                             <div>QnA 제목</div>
                             <div></div>
-                            <div>2023-07-10 18:15</div>
+                            <div>QnA 작성시간</div>
                             <a href="#"><button class="P-qna-btn">상세내역</button></a>
                         </div>
+
 
                         <div class="P-qna">
                             <div>2</div>
