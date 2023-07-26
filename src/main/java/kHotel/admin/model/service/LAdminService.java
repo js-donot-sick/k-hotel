@@ -9,7 +9,9 @@ import java.util.Map;
 
 import kHotel.admin.model.dao.LAdminDAO;
 import kHotel.admin.model.vo.LAdminPagination;
+import kHotel.admin.model.vo.LAdminPay;
 import kHotel.admin.model.vo.LAdminReport;
+import kHotel.member.model.vo.LPagination;
 
 public class LAdminService {
 	
@@ -43,6 +45,38 @@ public class LAdminService {
 		
 		map.put("boardName", boardName);
 		map.put("LAdminPagination", LAdminPagination);
+		map.put("boardList", boardList);
+		
+		close(conn);
+		
+		
+		return map;
+	}
+
+
+	/** 결제 
+	 * @param type
+	 * @param cp
+	 * @return
+	 * @throws Exception
+	 */
+	public Map<String, Object> selectAdminPayList(int type, int cp) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		// 관리자 결제게시판 전체 게시글 수 조회
+		int listCount = dao.getPayListCount(conn);
+		
+		// 전체 게시글 수 + 현재 페이지를 이용해 페이지네이션 객체 생성
+		LPagination LPagination = new LPagination(cp, listCount);
+		
+		// 게시글 목록 조회
+		List<LAdminPay> boardList = dao.selectPayList(conn, LPagination, type);
+		
+		// map객체에 담아주기
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("LPagination", LPagination);
 		map.put("boardList", boardList);
 		
 		close(conn);

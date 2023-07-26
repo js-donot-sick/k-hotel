@@ -23,7 +23,6 @@ public class AdminReportServlet extends HttpServlet{
 		
 		try {
 			
-			// 관리자 사이드바 만들어야 타입을 알 수 있는데 아직 못만들음
 			int type = Integer.parseInt(req.getParameter("type"));
 			
 			

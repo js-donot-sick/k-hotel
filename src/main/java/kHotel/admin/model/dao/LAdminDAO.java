@@ -14,7 +14,9 @@ import java.util.Properties;
 
 import kHotel.admin.model.dao.LAdminDAO;
 import kHotel.admin.model.vo.LAdminPagination;
+import kHotel.admin.model.vo.LAdminPay;
 import kHotel.admin.model.vo.LAdminReport;
+import kHotel.member.model.vo.LPagination;
 
 public class LAdminDAO {
 	
@@ -158,6 +160,88 @@ public class LAdminDAO {
 		
 		return boardList;
 	}
+	
+	
+	
+	/** 결제 목록 수 DAO
+	 * @param conn
+	 * @return listCount
+	 * @throws Exception
+	 */
+	public int getPayListCount(Connection conn) throws Exception{
+		
+		int listCount = 0;
+		
+		try {
+			String sql = prop.getProperty("getPayListCount");
+			
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				listCount = rs.getInt(1);
+			}
+			
+			
+		}finally {
+			close(rs);
+			close(stmt);
+			
+		}
+		
+		return listCount;
+	}
+	
+
+	/** 결제 목록 조회 DAO
+	 * @param conn
+	 * @param lPagination
+	 * @param type
+	 * @return boardList
+	 * @throws Exception
+	 */
+	public List<LAdminPay> selectPayList(Connection conn, LPagination LPagination, int type) throws Exception {
+		
+		List<LAdminPay> boardList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("selectPayList");
+			
+			int start = (LPagination.getCurrentPage() - 1) * LPagination.getLimit() + 1;
+			
+			int end = start + LPagination.getLimit() - 1;
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				LAdminPay lp = new LAdminPay();
+				
+				lp.setCalculateNo( rs.getInt("CALCULATE_NO"));
+				lp.setCalculateWay( rs.getString("CALCULATE_WAY") );
+				lp.setCalculatePrice( rs.getInt("CALCULATE_PRICE"));
+				lp.setMemberId(rs.getString("MEMBER_ID"));
+				lp.setCalculateSt(rs.getString("CALCULATE_ST"));
+				
+				boardList.add(lp);
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return boardList;
+	}
+
+
 
 	
 
