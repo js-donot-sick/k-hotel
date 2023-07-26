@@ -42,40 +42,82 @@
                     <th>버튼</th>
                 </tr>
 
-                <c:forEach var="board" items="${boardList}">
-                    <tr class="L-report-tr">
-                        <td>${board.boardNo}</td>
-                        <td>
-                            <textarea>${board.reportContent}</textarea>
-                        </td>
-                        <td>${board.reportPerson}</td>
-                        <td>${board.reportDt}</td>
-                        <td>익명</td>
-                        <td>
-                            <button>리뷰확인</button>
-                        </td>
-                    </tr>
-                </c:forEach>
+
+                <c:choose>
+                    <c:when test="${empty boardList}">
+                        <!-- 게시글 목록 조회 결과가 비어있다면 -->
+                        <tr>
+                            <th colspan="6">게시글이 존재하지 않습니다.</th>
+                        </tr>
+                    </c:when>
+
+
+                    <c:otherwise>
+                        <!-- 게시글이 있는 경우 -->
+                        <!-- 게시글 리스트 -->
+                        <c:forEach var="board" items="${boardList}">
+                            <tr class="L-report-tr">
+                                <td>${board.boardNo}</td>
+                                <td>
+                                    <textarea>${board.reportContent}</textarea>
+                                </td>
+                                <td>${board.reportPerson}</td>
+                                <td>${board.reportDt}</td>
+                                <td>익명</td>
+                                <td>
+                                    <button>
+                                        리뷰<br>
+                                        확인
+                                    </button>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                    
+                    </c:otherwise>
+                </c:choose>
+
+                
 
                 
             </table>
 
 
             <div class="L-pagination-area">
+
+                <c:set var="url" value="report?type=6&cp="/>
+                <!-- 나중에 링크에 type 설정해주고 el태그로 변경해줘야함  -->
+
                 
                 <ul class="L-pagination">
-                    <li><a href="#">&lt;&lt;</a></li>
-                    <li><a href="#">&lt;</a></li>
+                    <!-- 맨앞페이지 -->
+                    <li><a href="${url}1">&lt;&lt;</a></li>
 
-                    <li><a class="L-current">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
+                    <!-- 앞페이지 - 1-->
+                    <li><a href="${url}${LAdminPagination.prevPage}">&lt;</a></li>
 
-                    <li><a href="#">&gt;</a></li>
-                    <li><a href="#">&gt;&gt;</a></li>
 
+                    <!-- for문으로 페이지네이션 만들기 -->
+                    <!-- 현재 페이지에 있을때 -->
+                    <c:forEach var="i" begin="${LAdminPagination.startPage}" end="${LAdminPagination.endPage}" step="1">
+
+                        <c:choose>
+                            <c:when test="${i == LAdminPagination.currentPage}">
+                                <li><a class="L-current">${i}</a></li>
+                            </c:when>
+                            <c:otherwise>
+                                <li><a href="${url}${i}">${i}</a></li>
+                            </c:otherwise>
+                            
+                        </c:choose>
+                        
+                    </c:forEach>
+                        
+                        <!-- 뒷페이지 + 1 -->
+                        <li><a href="${url}${LAdminPagination.nextPage}">&gt;</a></li>
+                        
+                        <!-- 맨뒤페이지 -->
+                        <li><a href="${url}${LAdminPagination.maxPage}">&gt;&gt;</a></li>
+                        
                 </ul>
 
 
