@@ -136,10 +136,10 @@ public class LAdminDAO {
 				
 				LAdminReport ar = new LAdminReport();
 				
-				ar.setBoardNo( rs.getInt(1));
-				ar.setReportContent(rs.getString(2));
-				ar.setReportPerson(rs.getString(3));
-				ar.setReportDt(rs.getString(4));
+				ar.setBoardNo( rs.getInt("BOARD_NO"));
+				ar.setReportContent(rs.getString("REPORT_CONTENT"));
+				ar.setReportPerson(rs.getString("MEMBER_ID"));
+				ar.setReportDt(rs.getString("BOARD_DT"));
 				
 				
 				boardList.add(ar);
