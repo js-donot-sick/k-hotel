@@ -1,4 +1,4 @@
-package kHotel.member.controller;
+package kHotel.admin.controller;
 
 import java.io.IOException;
 
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/admin/pay")
-public class AdminPay extends HttpServlet{
+public class AdminPayServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
