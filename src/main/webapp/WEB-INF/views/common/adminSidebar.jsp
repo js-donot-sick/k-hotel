@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 
-  <link rel="stylesheet" href="${contextPath}/resources/css/boardSidebar.css">
+  <link rel="stylesheet" href="${contextPath}/resources/css/adminSidebar.css">
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   
@@ -35,13 +35,13 @@
                 <a href="${contextPath}/admin/eventAdmin" class="H-side-item">이벤트</a>
             </li>
             <li>
-                <a href="${contextPath}/admin/bookAdmin" class="H-side-item">예약관리</a>
+                <a href="${contextPath}/admin/bookList" class="H-side-item">예약관리</a>
             </li>
             <li>
-                <a href="${contextPath}/admin/report" class="H-side-item">신고관리</a>
+                <a href="${contextPath}/admin/report?type=6" class="H-side-item">신고관리</a>
             </li>
             <li>
-                <a href="${contextPath}/admin/pay" class="H-side-item">결제관리</a>
+                <a href="${contextPath}/admin/pay?type=8" class="H-side-item">결제관리</a>
             </li>
         </ul>
         

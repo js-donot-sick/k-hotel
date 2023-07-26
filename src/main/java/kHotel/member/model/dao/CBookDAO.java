@@ -206,7 +206,32 @@ public class CBookDAO {
 				close(stmt);
 			}
 
-			return null;
+			return rsvList2;
+		}
+
+		/** 예약 취소 DAO
+		 * @param reservation
+		 * @return result
+		 * @throws Exception
+		 */
+		
+		public int deleteReservation(Connection conn, Reservation reservation) throws Exception{
+			int result = 0;
+			
+			try {
+				String sql = prop.getProperty("deleteReservation");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, reservation.getBookNo() ); 
+				
+				result = pstmt.executeUpdate();
+				
+			} finally {
+				close(pstmt);
+			}
+			
+			return result;
 		}
 		
 

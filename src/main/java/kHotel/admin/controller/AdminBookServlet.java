@@ -33,7 +33,8 @@ public class AdminBookServlet extends HttpServlet{
 
 
 				List<Reservation> rsvList = service.selectRsvList();
-
+				
+				
 				String path = "/WEB-INF/views/admin/AdminReservation.jsp";
 
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
@@ -61,14 +62,39 @@ public class AdminBookServlet extends HttpServlet{
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 				
 				req.setAttribute("rsvList2", rsvList2);
-				
+							
 				dispatcher.forward(req, resp);
+				
 
 			} catch (Exception e) {
 				
 				e.printStackTrace();
 				
 			}
+			
+		}
+		
+		if(command.equals("deleteReservation")) {
+			
+			try {
+				
+				int bookNo = Integer.parseInt(req.getParameter("bookNo"));
+				
+				Reservation reservation = new Reservation();
+				
+				reservation.setBookNo(bookNo);
+				
+				int result = service.deleteReservation(reservation);
+				
+				resp.getWriter().print(result);
+				
+				System.out.println(result);
+			} catch (Exception e) {
+				
+				e.printStackTrace();
+				
+			}
+			
 			
 		}
 
