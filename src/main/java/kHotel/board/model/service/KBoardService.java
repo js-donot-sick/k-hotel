@@ -113,4 +113,23 @@ public class KBoardService {
 		return boardList;
 	}
 
+	/** faq 삭제 service
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteFaq(int boardNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteFaq(conn, boardNo);
+		
+		if(result>0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
 }
