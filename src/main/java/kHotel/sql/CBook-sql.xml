@@ -50,4 +50,11 @@
 	ORDER BY BOOK_NO
 	</entry>
 	
+	<!-- 예약 취소  -->
+	<entry key="deleteReservation">
+	DELETE FROM RESERVATION
+    WHERE BOOK_NO = ?
+	</entry>
+	
+	
 </properties>

@@ -97,6 +97,27 @@ public class CBookService {
 		
 		return rsvList2;
 	}
+
+
+	/** 예약 취소 Service
+	 * @param reservation
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteReservation(Reservation reservation) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteReservation(conn, reservation);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		close(conn);
+		
+		
+		return result;
+	}
 	
 
 	

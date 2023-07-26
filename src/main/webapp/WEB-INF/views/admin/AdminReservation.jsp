@@ -19,7 +19,7 @@
 
     <div class="C-adminrsv-container">
         <div class="C-adminrsv-body">
-            <div class="C-adminrsv-sidebar">사이드바</div>
+            <jsp:include page="/WEB-INF/views/common/adminSidebar.jsp"/>
 
             <div class="C-adminrsv-main">
                 <!-- <form action=""> -->
@@ -50,7 +50,7 @@
                                     <div>${rsv.checkInTime}</div>
                                     <div>${rsv.checkOutTime}</div>
                                     <div>
-                                        <button class="C-cancelbtn">예약취소</button>
+                                        <button class="C-cancelbtn" onclick="deleteReply(${rsv.bookNo})">예약취소</button>
                                     </div>
                                 </div>
                             </c:forEach>
@@ -61,6 +61,20 @@
             </div>
         </div>
     </div>
+    <jsp:include page ="/WEB-INF/views/common/footer.jsp"/>
+
+    <script>
+
+        const contextPath = "${contextPath}";
+
+        const bookNo = "${rsvList.bookNo}";
+
+        const memberNo = "${rsvList.memberNo}"; 
+
+
+    </script>
+
+
     <script src="${contextPath}/resources/js/AdminReservation.js"></script>
 </body>
 
