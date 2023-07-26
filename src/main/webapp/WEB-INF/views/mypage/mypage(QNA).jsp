@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css"> <!-- 헤더 스타일 -->
     <link rel="stylesheet" href="${contextPath}/resources/css/sidebar.css"> <!-- 사이드바 스타일 -->
     <link rel="stylesheet" href="${contextPath}/resources/css/footer.css"><!-- 풋터 스타일 -->
-    <link rel="stylesheet" href="${contextPath}/resources/css/mypage(QNA).css"><!-- 풋터 스타일 -->
+    <link rel="stylesheet" href="${contextPath}/resources/css/mypage(QNA).css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/qnaList.css"><!-- 풋터 스타일 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
@@ -66,24 +67,37 @@
 
 
                     </div>
+                    
+                    <!-- 페이지네이션 -->
+                 
+                    <div class="K-qna-page">
+                        <c:set var="url" value="qna?type=2&cp="/>
 
-                    <nav aria-label="Page navigation example" class="P-pg">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Previous" style="color: black;">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#" style="color: black;">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#" style="color: black;">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#" style="color: black;">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#" aria-label="Next" style="color: black;">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
+                        <ul class="K-pagination">
+                            <!-- 첫 페이지로 이동 -->
+                            <li><a href="${url}1">&lt;&lt;</a></li>
+                            <!-- 이전 목록 마지막 번호로 이동 -->
+                            <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
+
+                            <!-- 범위가 정해진 일반 for문 사용 -->
+                            <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}">
+                                <c:choose>
+                                    <c:when test="${i==pagination.currentPage}">
+                                        <li><a class="K-current">${i}</a></li>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <li><a href="${url}${i}">${i}</a></li>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+
+                            <!-- 다음 목록 시작 번호로 이동 -->
+                            <li><a href="${url}${pagination.nextPage}">&gt;</a></li>
+                            <!-- 끝 페이지로 이동 -->
+                            <li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li>
                         </ul>
-                    </nav>
+
+                    </div>
 
                 </div>
             </div>

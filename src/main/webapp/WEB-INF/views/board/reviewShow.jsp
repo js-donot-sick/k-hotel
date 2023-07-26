@@ -124,6 +124,25 @@
 
                         <div class="P-blank"></div>
 
+                        <div class="P-pagination-area">
+                            <ul class="P-pagination">
+                                <li><a href="#">&lt;&lt;</a></li>
+                                <li><a href="#">&lt;</a></li>
+                                <li><a class="P-current">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li><a href="#">6</a></li>
+                                <li><a href="#">7</a></li>
+                                <li><a href="#">8</a></li>
+                                <li><a href="#">9</a></li>
+                                <li><a href="#">10</a></li>
+                                <li><a href="#">&gt;</a></li>
+                                <li><a href="#">&gt;&gt;</a></li>
+                            </ul>
+                        </div>
+
                         <!-- 신고하기 창 -->
                         <form action="#">
                             <div id="P-popup-Declar">
