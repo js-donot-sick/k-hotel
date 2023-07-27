@@ -18,7 +18,7 @@
 
     <div class="K-first">
         <div>
-            <jsp:include page="/WEB-INF/views/common/adminSidebar.jsp"/>
+            <jsp:include page="/WEB-INF/views/admin/adminSidebar.jsp"/>
             <div class="K-all">
                 <div>
                     <div>이벤트 작성</div>
