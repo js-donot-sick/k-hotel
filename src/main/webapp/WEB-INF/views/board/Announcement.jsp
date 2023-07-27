@@ -46,7 +46,7 @@
 <section class="notice">
     <div class="page-title">
           <div class="container">
-              <h3>공지사항</h3>
+x`              <h3>공지사항</h3>
           </div>
       </div>
   
