@@ -20,7 +20,7 @@
                     <c:if test="${loginMember.memberId == reply.memberId}">
 
                         <div class="L-reply-btn">
-                            <button>수정</button>
+                            <button onclick="updateReply(${reply.replyNo}), this">수정</button>
                             <button>삭제</button>
                         </div>
                         
