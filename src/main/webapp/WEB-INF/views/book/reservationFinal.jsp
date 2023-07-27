@@ -26,7 +26,7 @@
     <!----------------------------------------헤더 --------------------------------------------->
 
     <!----------------------------------------바디 --------------------------------------------->
-    <form action="#" method="post" onsubmit="return reservationFinalValidate()">
+    <form action="reservationEnd" method="post" onsubmit="return reservationFinalValidate()">
 
         <div class="C-body">
             <div class="C-Final-rsv">

@@ -62,6 +62,7 @@ public class KAdminDAO {
 				board.setBoardTitle(rs.getString(1));
 				board.setBoardDate(rs.getString(2));
 				board.setBoardContent(rs.getString(3));
+				board.setBoardNo(rs.getInt(4));
 				
 				fList.add(board);
 			}

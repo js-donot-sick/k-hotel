@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdminQnaList</title>
+    <title>AdminFaqList</title>
 
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -35,7 +35,7 @@
             <div class="k-faq"> <!-- faq -->
 
                 <c:if test="${empty boardList}">
-                    <div id="K-none">게시글이 존재하지 않습니다.</div>
+                    <div class="K-none">게시글이 존재하지 않습니다.</div>
                 </c:if>
 
                 <c:if test="${!empty boardList}">
@@ -54,7 +54,6 @@
                                 ${board.boardContent}
                             </div>
                             <form action="${contextPath}/#" method="post">
-                                <input type="hidden" name="beforeContent" value="${board.boardContent}">
                                 <input type="hidden" name="boardNo" value="${board.boardNo}">
 
                                 <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">

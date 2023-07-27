@@ -288,3 +288,13 @@ body::-webkit-scrollbar {
 .k-faq-content>div::-webkit-scrollbar {
     display: none; /* 크롬, 사파리, 오페라, 엣지 */
 }
+
+.K-none{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    font-weight: bold;
+
+}
