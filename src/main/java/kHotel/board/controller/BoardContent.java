@@ -1,4 +1,4 @@
-package kHotel.member.controller;
+package kHotel.board.controller;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/boardContent")
+@WebServlet("/board/qna/boardContent")
 public class BoardContent extends HttpServlet{
 
 	@Override
