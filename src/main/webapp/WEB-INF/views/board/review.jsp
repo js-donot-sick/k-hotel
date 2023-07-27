@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
         <!DOCTYPE html>
         <html lang="en">
@@ -13,11 +13,10 @@
         </head>
 
         <body>
+
             <main>
 
-                <form action="review3" method="POST">
-
-                
+                <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
                 <div class="J-body">
 
@@ -64,17 +63,22 @@
 
                                     <td id="J-PIC">
                                         <label for="J-reviewImage2">사진 선택</label>
-                                        <input type="file" name="J-reviewImage" id="J-reviewImage2" accept="image/*">
+                                        <input type="file" name="JreviewImage" id="J-reviewImage2" accept="image/*">
                                         <!-- accept="image/* : 이미지 파일 확장자만 선택 허용" -->
                                     </td>
                                 </tr>
 
 
                                 <tr>
-                                    <td></td>
-                                    <td colspan="3">
-                                        <!--  <img src="resources/images/리뷰1.png"> -->
+
+                                    <td>
+                                        <button type="button" id="J-delete">사진 지우기</button>
                                     </td>
+                                    <td colspan="3" id="J-reviewImg">
+                                        <img src="">
+                                    </td>
+                                    
+                                   
                                 </tr>
 
                                 <tr>
@@ -156,12 +160,11 @@
 
 
                 </div>
+
                 <!-- ------------------------------------------------------------------------- -->
+               
+                <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
-            </form>
-
-
-                <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
             </main>
             <script src="../resources/js/review.js"></script>
