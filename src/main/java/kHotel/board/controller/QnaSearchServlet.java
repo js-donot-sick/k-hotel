@@ -49,6 +49,7 @@ public class QnaSearchServlet extends HttpServlet {
 			String path = "/WEB-INF/views/board/qnaList.jsp";		
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+			
 			dispatcher.forward(req, resp);
 			
 		} catch (Exception e) {
