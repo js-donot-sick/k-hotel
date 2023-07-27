@@ -8,15 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 이벤트 작성</title>
     
-    <link rel="stylesheet" href="resources/css/AdminEventWrite.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/AdminEventWrite.css">
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
 
+    <jsp:include page="/WEB-INF/views/common/AdminHeader.jsp"/>
+
     <div class="K-first">
         <div>
-            <div class="K-side"></div>
+            <jsp:include page="/WEB-INF/views/common/adminSidebar.jsp"/>
             <div class="K-all">
                 <div>
                     <div>이벤트 작성</div>
@@ -50,6 +52,8 @@
 
     <div id="sample"></div>
 
-    <script src="resources/js/AdminEventWrite.js"></script>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script src="${contextPath}/resources/js/AdminEventWrite.js"></script>
 </body>
 </html>
