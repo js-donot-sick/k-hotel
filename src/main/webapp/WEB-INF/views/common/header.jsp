@@ -82,7 +82,6 @@
     
 
 
-    <script src="resources/js/header.js"></script>
-</body>
+    </body>
 
 </html>
