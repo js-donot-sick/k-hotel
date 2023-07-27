@@ -145,6 +145,25 @@ public class CBookService {
 		
 		return result;
 	}
+
+
+	/** 게시글 수정 Service
+	 * @param board
+	 * @param type 
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateBoard(Board board, int type) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.updateBoard(conn,board,type);
+		
+		if(result > 0)	commit(conn);
+		else			rollback(conn);
+		
+		return result;
+	}
 	
 
 	
