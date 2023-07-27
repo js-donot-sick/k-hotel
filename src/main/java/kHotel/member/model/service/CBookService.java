@@ -157,6 +157,10 @@ public class CBookService {
 		
 		Connection conn = getConnection();
 		
+		board.setBoardTitle(Util.XSSHanding(board.getBoardTitle()));
+		board.setBoardContent(Util.XSSHanding(board.getBoardContent()));
+		board.setBoardContent(Util.newLineHandling(board.getBoardContent()));
+		
 		int result = dao.updateBoard(conn,board,type);
 		
 		if(result > 0)	commit(conn);
