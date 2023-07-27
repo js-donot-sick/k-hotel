@@ -224,9 +224,10 @@ function signUp(){
 
         return false;
     }
+
     for(let item of check){
 
-         if(item.checked == false){ 
+         if(item.value == false){ 
             alert("필수약관에 동의하셔야 가입이 가능합니다.");
 
             return false;
