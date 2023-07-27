@@ -63,7 +63,7 @@
 
                     <c:set var="memberId" value="${board.memberId}"/>
 
-                        <a href="${contextPath}/board/qna?type=2&cp=${pagination.currentPage}&no=${board.boardNo}" style="text-decoration: none;">
+                        <a href="${contextPath}/board/qna/boardDetail?type=2&cp=${pagination.currentPage}&no=${board.boardNo}" style="text-decoration: none;">
                             <div class="k-q-list">
                                 <div>${board.boardNo}</div>
                                 <div>${board.boardTitle}</div>
