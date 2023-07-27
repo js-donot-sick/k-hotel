@@ -25,7 +25,7 @@
    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
         <div class="C-body">
-            <form action="qna?type=${param.type}&cp=${param.cp}" method="POST" name="C-postWrite-main" onsubmit="return inputcheck()">
+            <form action="${contextPath}/board/qna?type=2&cp=1" method="post" name="C-postWrite-main" onsubmit="return inputcheck()">
                 <div class="C-postWrite-body">
                     <div class="C-postWrite-title">게시글 작성</div>
                 
@@ -38,9 +38,8 @@
                             <div class="L-person L-detail">
                                 <div>작성자</div>
                                 <div><input type="text" name="L-input-person" value="${loginMember.memberName}" placeholder="작성자" disabled></div>
-                                <div></div>
-                                <div>작성일</div>
-                                <div><input type="text" name="L-date" value="" placeholder="작성일" disabled></div>
+                                <input type="hidden" name="memberNo" value="${loginMember.memberNo}">
+                              
                             </div>
                             
                             <div class="L-text L-detail">
@@ -53,7 +52,7 @@
                     <div class="C-btn-container">
                         <div class="C-btn-cancel">
                             <button type="button" id="C-postWritebtn-cancel">
-                                <a href="#" id="C-post-cancel">게시글 작성 취소</a>
+                                <a href="${contextPath}/board/qna?type=2&cp=1" id="C-post-cancel">게시글 작성 취소</a>
                             </button>
                         </div>
                         <div class="C-btn-clear">

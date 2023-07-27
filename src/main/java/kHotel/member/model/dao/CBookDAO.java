@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-
+import kHotel.board.model.vo.Board;
 import kHotel.member.model.vo.Reservation;
 
 import static kHotel.common.JDBCTemplate.*;
@@ -230,6 +230,36 @@ public class CBookDAO {
 			} finally {
 				close(pstmt);
 			}
+			
+			return result;
+		}
+
+		/** 게시글 작성 DAO
+		 * @param conn
+		 * @param insert
+		 * @return result
+		 * @throws Exception
+		 */
+		public int insertBoard(Connection conn, Board insert) throws Exception {
+			
+			int result = 0;
+			
+			try {
+				
+				String sql = prop.getProperty("insertBoard");
+				
+				pstmt= conn.prepareStatement(sql);
+				
+				pstmt.setString(1, insert.getBoardTitle());
+				pstmt.setString(2, insert.getBoardContent());
+				pstmt.setInt(3, insert.getMemberNo());
+				
+				result = pstmt.executeUpdate();
+
+			} finally {
+				close(pstmt);
+			}
+			
 			
 			return result;
 		}
