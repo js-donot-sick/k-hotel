@@ -263,6 +263,40 @@ public class CBookDAO {
 			
 			return result;
 		}
+
+		/** 게시글 수정 DAO
+		 * @param conn
+		 * @param board
+		 * @param type 
+		 * @return result
+		 * @throws Exception
+		 */
+		public int updateBoard(Connection conn, Board board, int type) throws Exception{
+			int result = 0;
+			
+			try {
+				String sql = prop.getProperty("updateBoard");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setString(1, board.getBoardTitle() );
+				pstmt.setString(2, board.getBoardContent() );
+				pstmt.setInt(3, board.getBoardNo() );
+				pstmt.setInt(4, type);
+				
+				result = pstmt.executeUpdate();
+				
+				/*SET BOARD_TITLE = ?, BOARD_CONTENT = ?
+				WHERE BOARD_NO = ?
+				AND BOARD_CD = ?*/
+				
+			} finally {
+				close(pstmt);
+			}
+			
+			
+			return result;
+		}
 		
 
 		
