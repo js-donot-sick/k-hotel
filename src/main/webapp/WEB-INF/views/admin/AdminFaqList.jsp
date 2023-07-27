@@ -59,7 +59,7 @@
 
                                 <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">
                                     <div class="k-btns">
-                                        <button type="submit" class="k-mod-btn">수정</button></a>
+                                        <button type="submit" class="k-mod-btn">수정</button>
                                         <button type="button" onclick="deleteFaq(${board.boardNo}, this)" class="k-del-btn">삭제</button>
                                     </div>
                                 </c:if>
@@ -82,6 +82,7 @@
       
     <script>
         const contextPath = "${contextPath}";
+        const type = "${param.type}"
     </script>
 
       
