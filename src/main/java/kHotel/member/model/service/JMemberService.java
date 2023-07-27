@@ -32,6 +32,16 @@ public class JMemberService {
 		return result;
 	}
 
+	/** 리뷰 등록 Service
+	 * @param reviewImg
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int reviewUpdate(String reviewImg, int memberNo) throws Exception {
+		return 0;
+	}
+
 
 
 }

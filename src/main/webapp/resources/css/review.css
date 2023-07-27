@@ -252,10 +252,14 @@ input{
     border-right: 0.2px solid grey;
 }
 
-#J-reviewImg{
+#J-reviewImg1{
     height: 400px;
 }
 
+#J-reviewImage3{
+    width: 500px;
+    height: 300px;
+}
 
 
 

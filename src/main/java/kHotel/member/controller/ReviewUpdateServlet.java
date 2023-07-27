@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.oreilly.servlet.MultipartRequest;
 
 import kHotel.common.MyRenamePolicy;
+import kHotel.member.model.service.JMemberService;
 import kHotel.member.model.vo.Member;
 
 @WebServlet("/member/review3")
@@ -58,6 +59,17 @@ public class ReviewUpdateServlet extends HttpServlet{
 			int memberNo = loginMember.getMemberNo();
 			
 			String reviewImg = folderPath + mpReq.getFilesystemName("JreviewImage");
+			
+			int delete = Integer.parseInt(mpReq.getParameter("Jdelete"));
+			
+			if(delete == 0) {
+				
+				reviewImg = null;
+			}
+			
+			JMemberService service = new JMemberService();
+			
+			int result = service.reviewUpdate(reviewImg,memberNo);
 			
 			
 		}catch(Exception e) {
