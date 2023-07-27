@@ -23,7 +23,6 @@ public class BoardDetailServlet extends HttpServlet{
 			// 게시판 번호(no쿼리스트링으로 받아와서 사용)로 게시판 정보 조회
 			int boardNo = Integer.parseInt(req.getParameter("no"));
 			
-			System.out.println(boardNo);
 			
 			LBoardService service = new LBoardService();
 			
@@ -42,9 +41,11 @@ public class BoardDetailServlet extends HttpServlet{
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
+
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 	}
 }

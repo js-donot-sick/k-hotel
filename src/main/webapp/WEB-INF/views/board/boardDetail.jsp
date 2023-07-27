@@ -24,7 +24,7 @@
 
         <div class="L-title1">질문 게시판 상세페이지</div>
         
-        <form class="L-form-main" method="POST" action="${contextPath}/board/qna/update?type=2&cp=${pagination.currentPage}&no=${board.boardNo}">
+        <form class="L-form-main" method="POST" action="${contextPath}/board/qna/update?type=2&cp=${param.cp}&no=${param.no}">
 
             <div class="L-title L-detail">
                 <div>제목</div>
@@ -57,6 +57,7 @@
             <input type="hidden" name="boardTitle" value="${board.boardTitle}">
             <input type="hidden" name="boardContent" value="${board.boardContent}">
             <input type="hidden" name="boardDate" value="${board.boardDate}">
+            <input type="hidden" name="memberId" value="${board.memberId}">
         </form>
 
         <jsp:include page="/WEB-INF/views/board/reply.jsp"/>
@@ -74,5 +75,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/boardDetail.js"></script>
+    <script src="${contextPath}/resources/js/reply.js"></script>
 </body>
 </html>
