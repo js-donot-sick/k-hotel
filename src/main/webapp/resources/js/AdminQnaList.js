@@ -4,11 +4,62 @@ function selectFaqList(){
 
         url : contextPath + "/admin/selectFaqList",
 
-        
+        data : { "type" : type },
+
+        dataType : "JSON",
+
+        success : function(fList){
+
+            console.log(fList);
+
+            const slide = document.getElementsByClassName("k-faq-slide")[0]; // slide(제목_+ 작성일)
+            const content = document.getElementsByClassName("k-faq-content")[0]; // content(내용)
+
+            slide.innerHTML="";
+            content.innerHTML="";
+
+            for(let f of fList){
+
+                // slide div *큰 거
+                const sDiv = document.createElement("div");
+
+                // 제목, 작성자, 화살표
+                const tSpan = document.createElement("span");
+                const dSpan = document.createElement("span");
+                const aDiv  = document.createElement("div");
+                aDiv.classList.add("k-arrow-img");
+
+
+                
+                // content div *큰 거
+                const fcDiv = document.createElement("div");
+
+                // 내용
+                const cDiv = document.createElement("div");
+
+                // form 태그
+                const form = document.createElement("form");
+
+                // input 태그
+                const chInpue = document.createElement("input");
+                const nhInpue = document.createElement("input");
 
 
 
-    })
+            }
+
+
+
+        },
+
+        error : function(req, status, error){
+            console.log("faq 삭제 실패");
+            console.log(req.responseText);
+        }
+
+
+
+    });
 
 
 
@@ -65,6 +116,7 @@ function deleteFaq(boardNo , btn){
 
                 if(result>0){
                     alert("삭제되었습니다.");
+                    selectFaqList();
                 } else {
                     alert("삭제 실패")
                 }

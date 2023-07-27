@@ -1,13 +1,13 @@
 package kHotel.board.model.service;
 
 import java.sql.Connection;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import kHotel.board.model.dao.KBoardDAO;
 import kHotel.board.model.vo.Board;
-import kHotel.member.model.dao.KMemberDAO;
 import kHotel.member.model.vo.LPagination;
 import kHotel.member.model.vo.Member;
 
