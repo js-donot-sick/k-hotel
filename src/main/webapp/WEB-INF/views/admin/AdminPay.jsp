@@ -39,9 +39,7 @@
                     <th>결제금액</th>
                     <th>결제자</th>
                     <th>결제여부</th>
-                    <th>
-                        승인 / 취소
-                    </th>
+                    <th>승인</th>
                 </tr>
             
 
@@ -66,7 +64,6 @@
                                 <td>${board.calculateSt}</td>
                                 <td class="L-pay-btn"> 
                                         <button>승인</button>
-                                        <button>취소</button>
                                 </td>
                             </tr>
                         </c:forEach>
