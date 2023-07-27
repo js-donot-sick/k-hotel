@@ -16,6 +16,5 @@ public class Board {
 	private String boardContent;
 	private String boardDt;
 	private String boardDd;
-	
 
 }

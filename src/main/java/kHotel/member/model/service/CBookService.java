@@ -7,6 +7,8 @@ import static kHotel.common.JDBCTemplate.*;
 import java.sql.Connection;
 import java.util.List;
 
+import kHotel.board.model.vo.Board;
+import kHotel.common.Util;
 import kHotel.member.model.dao.CBookDAO;
 import kHotel.member.model.vo.Reservation;
 
@@ -115,6 +117,31 @@ public class CBookService {
 		
 		close(conn);
 		
+		
+		return result;
+	}
+
+
+	/** 게시글 작성 Service
+	 * @param insert
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertBoard(Board insert) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		insert.setBoardTitle( Util.XSSHanding( insert.getBoardTitle() ));
+		insert.setBoardContent( Util.XSSHanding( insert.getBoardContent() ));
+		insert.setBoardContent(Util.newLineHandling(insert.getBoardContent()));
+		
+		int result = dao.insertBoard(conn,insert);
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
 		
 		return result;
 	}

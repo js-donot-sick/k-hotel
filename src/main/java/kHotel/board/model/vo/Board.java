@@ -19,6 +19,7 @@ public class Board {
 	private int boardCode;
 	private String memberName;
 	private String memberId;
+	private int memberNo;
 	
 
 }
