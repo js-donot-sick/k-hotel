@@ -17,7 +17,6 @@
             <main>
 
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
-
                 <div class="J-body">
 
                     <div class="J-body2">
@@ -70,15 +69,12 @@
 
 
                                 <tr>
-
                                     <td>
-                                        <button type="button" id="J-delete">사진 지우기</button>
+                                        <button type="button" id="J-delBtn">사진 지우기</button>
                                     </td>
-                                    <td colspan="3" id="J-reviewImg">
-                                        <img src="">
+                                    <td colspan="3" id="J-reviewImg1">
+                                        <img src="" id="J-reviewImage3">
                                     </td>
-                                    
-                                   
                                 </tr>
 
                                 <tr>
@@ -155,7 +151,7 @@
                             <button id="J-cancle">리뷰 작성 취소</button><button id="J-update">리뷰 작성</button>
                             <!-- 리뷰 작성 취소 누를 시 이전 페이지로 돌아갈건지 알림창 띄우고 확인 누르면 이동. -->
                         </div>
-
+                        <input type="hidden" name="Jdelete" id="J-delete" value="0">
                     </div>
 
 
@@ -167,6 +163,10 @@
 
 
             </main>
+
+            <script>
+                const contextPath = "${contextPath}"; // 최상위 경로를 JS 전역변수로 선언
+            </script>
             <script src="../resources/js/review.js"></script>
         </body>
 
