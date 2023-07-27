@@ -30,7 +30,7 @@ function selectFaqList(){
                 aDiv.classList.add("k-arrow-img");
 
 
-                
+
                 // content div *큰 거
                 const fcDiv = document.createElement("div");
 
@@ -81,6 +81,14 @@ $(".k-faq-slide").on("click", function(){
 
     var arrowImg = $(this).find(".k-arrow-img");
     var rotation = arrowImg.data("rotation") || 0;
+    
+    if($(this).next().css("display")=="none"){
+        $(this).siblings(".k-faq-content").slideUp();
+        $(this).next().slideDown();
+        
+    } else{
+        $(this).next().slideUp();
+    }
 
     if (rotation === 0) {
         arrowImg.css("transform", "rotate(180deg)");
@@ -92,13 +100,7 @@ $(".k-faq-slide").on("click", function(){
 
     arrowImg.data("rotation", rotation);
     
-    $(this).next().slideToggle(); 
-    /* if($(this).next().css("display")=="none"){
-        $(this).siblings(".k-faq-content").slideUp();
-        $(this).next().slideDown();
-        
-    } else{
-        $(this).next().slideUp(); */
+    //$(this).next().slideToggle(); 
 })
 
 function deleteFaq(boardNo , btn){
