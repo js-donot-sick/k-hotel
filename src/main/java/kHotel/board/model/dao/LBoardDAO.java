@@ -56,6 +56,7 @@ public class LBoardDAO {
 			
 			if(rs.next()) {
 				
+				board.setBoardNo(rs.getInt("BOARD_NO"));
 				board.setBoardTitle(rs.getString("BOARD_TITLE"));
 				board.setMemberId(rs.getString("MEMBER_ID"));
 				board.setBoardDate(rs.getString("BOARD_DT"));

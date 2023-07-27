@@ -7,60 +7,31 @@
     <div id="reply-area">
 
         <ul id="L-reply-list">
-            <li class="L-reply-row">
-                <span class="L-reply-person">작성자</span>
-                <span class="L-reply-date">작성일</span>
-                <p class="L-reply-content">댓글내용</p>
 
-                <div class="L-reply-btn">
-                    <button>수정</button>
-                    <button>삭제</button>
-                </div>
+            <c:forEach var="reply" items="${rList}">
 
-            </li>
+
+                <li class="L-reply-row">
+                    <span class="L-reply-person">${reply.memberId}</span>
+                    <span class="L-reply-date">${reply.createDt}</span>
+                    <p class="L-reply-content">${reply.replyContent}</p>
+    
+
+                    <c:if test="${loginMember.memberId == reply.memberId}">
+
+                        <div class="L-reply-btn">
+                            <button>수정</button>
+                            <button>삭제</button>
+                        </div>
+                        
+                    </c:if>
+                </li>
+
+            </c:forEach>
+
         </ul>
 
-        <ul id="L-reply-list">
-            <li class="L-reply-row">
-                <span class="L-reply-person">작성자</span>
-                <span class="L-reply-date">작성일</span>
-                <p class="L-reply-content">댓글내용</p>
-
-                <div class="L-reply-btn">
-                    <button>수정</button>
-                    <button>삭제</button>
-                </div>
-
-            </li>
-        </ul>
-
-        <ul id="L-reply-list">
-            <li class="L-reply-row">
-                <span class="L-reply-person">작성자</span>
-                <span class="L-reply-date">작성일</span>
-                <p class="L-reply-content">댓글내용</p>
-
-                <div class="L-reply-btn">
-                    <button>수정</button>
-                    <button>삭제</button>
-                </div>
-
-            </li>
-        </ul>
-
-        <ul id="L-reply-list">
-            <li class="L-reply-row">
-                <span class="L-reply-person">작성자</span>
-                <span class="L-reply-date">작성일</span>
-                <p class="L-reply-content">댓글내용</p>
-
-                <div class="L-reply-btn">
-                    <button>수정</button>
-                    <button>삭제</button>
-                </div>
-
-            </li>
-        </ul>
+        
 
         <!-- 댓글 입력 -->
         <div class="L-reply-input">

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>LReply-sql.xml</comment>
+
+	<!-- 댓글 목록 조회 -->
+	<entry key="selectReplyList">
+		SELECT REPLY_NO, MEMBER_ID, 
+	        TO_CHAR(CREATE_DT, 'YYYY-MM-DD') CREATE_DT, 
+	        REPLY_CONTENT
+		FROM REPLY
+		JOIN MEMBER USING(MEMBER_NO)
+		WHERE BOARD_NO = ?
+		ORDER BY REPLY_NO DESC
+	
+	</entry>
+
+
+
+</properties>

@@ -5,7 +5,7 @@
 
 	<!-- 게시글 상세페이지 -->
 	<entry key="selectBoardDetail">
-		SELECT BOARD_TITLE, MEMBER_ID, 
+		SELECT BOARD_NO, BOARD_TITLE, MEMBER_ID, 
         	TO_CHAR(BOARD_DT, 'YYYY-MM-DD') BOARD_DT,
         	BOARD_CONTENT
 		FROM BOARD

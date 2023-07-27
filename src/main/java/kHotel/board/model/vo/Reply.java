@@ -15,7 +15,7 @@ public class Reply {
 	private String replyContent;
 	private String createDt;
 	private String replySt;
-	private int memberNo;
+	private String memberId;
 	private int boardNo;
 
 }

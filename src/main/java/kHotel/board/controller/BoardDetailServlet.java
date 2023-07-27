@@ -1,7 +1,7 @@
 package kHotel.board.controller;
 
 import java.io.IOException;
-
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kHotel.board.model.service.LBoardService;
+import kHotel.board.model.service.LReplyService;
 import kHotel.board.model.vo.Board;
+import kHotel.board.model.vo.Reply;
 
 @WebServlet("/board/qna/boardDetail")
 public class BoardDetailServlet extends HttpServlet{
@@ -27,6 +29,19 @@ public class BoardDetailServlet extends HttpServlet{
 			LBoardService service = new LBoardService();
 			
 			Board board = service.selectBoardDetail(boardNo);
+			
+			
+			if(board != null) {
+				LReplyService rService = new LReplyService();
+				
+				List<Reply> rList = rService.selectReplyList(boardNo);
+				
+				req.setAttribute("rList", rList);
+				
+			}
+			
+			
+			
 			
 			req.setAttribute("board", board);
 			
