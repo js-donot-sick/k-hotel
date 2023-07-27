@@ -11,7 +11,7 @@
     font-family: 'Pretendard-Regular';
 }
 
-/* div{border: 1px solid black;} */
+div{border: 1px solid black;}
 
 .K-first{width: 100%;}
 .K-first>div{
@@ -27,7 +27,11 @@
 }
 
 /* 찐 내용 */
-.K-all{width: 75%;}
+.K-all{
+    width: 75%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 .K-all>div{ /* 내용 넓이 지정 */
     width: 850px;
@@ -112,7 +116,6 @@ textarea[name="K-content"]{
     margin-right: 150px;
     width: 80px;
     height: 30px;
-    letter-spacing: 3px;
     border-radius: 5px;
     border: 0;
     cursor: pointer;
@@ -131,4 +134,13 @@ textarea[name="K-content"]{
 
 .K-img{
     height: auto;
+}
+
+
+
+/* 이미지 새로 수정한 부분.... */
+.k-img-box{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
 }

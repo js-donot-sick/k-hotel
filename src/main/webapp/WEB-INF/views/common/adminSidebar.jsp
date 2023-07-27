@@ -32,7 +32,7 @@
                 <a href="${contextPath}/admin/boardAdmin" class="H-side-item">게시글 관리</a>
             </li>
             <li>
-                <a href="${contextPath}/admin/eventAdmin" class="H-side-item">이벤트</a>
+                <a href="${contextPath}/admin/eventWrite?mode=insert" class="H-side-item">이벤트</a>
             </li>
             <li>
                 <a href="${contextPath}/admin/bookList" class="H-side-item">예약관리</a>
