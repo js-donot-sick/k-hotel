@@ -1,64 +1,67 @@
-$("#K-photo").on("change", function(){
+// 미리보기 관련 요소
+const preview = document.getElementsByClassName("k-preview");
+const inputImg = document.getElementsByClassName("k-inputImg");
+const deleteImg = document.getElementsByClassName("k-deleteImg");
 
-  var result;
+// 파일 읽어서 미리보기 세팅
+for (let i = 0; i < inputImg.length; i++) {
 
-    $("#K-image-select").empty(); // 전에 있던 img 미리보기 파일들 삭제
+    inputImg[i].addEventListener("change", function () {
 
-    let input = $("#K-photo")[0].files; // 인덱스 안 쓰면 오류남(files가 FileList 객체 속성이라서)
-      
-    if (input.length > 5) {
-        alert("파일 첨부는 최대 5개만 가능합니다.");
-        $("#K-photo").val("");
-        $("#K-image-select").empty();
-    }
+        if (this.files[0] != undefined) {
 
-    for (var image of this.files) {
-        var reader = new FileReader();
+            const reader = new FileReader(); // 파일 읽는 객체 생성
 
-        reader.onload = function (event) {
-            var img = document.createElement("img");
-            img.setAttribute("src", event.target.result);
-            img.setAttribute("width","auto;")
-            img.setAttribute("height","50px;")
-            img.setAttribute("style","margin-right: 10px;")
-            document.querySelector("#K-image-select").appendChild(img);
+            reader.readAsDataURL(this.files[0]); // 파일 읽고 result에 저장 -> url 통해서 이미지 볼 수 있음
 
-            var binary = event.target.result.split(',')[1];
+            reader.onload = function (e) {
 
-            console.log(binary)
-            
-        };
+                preview[i].setAttribute("src", e.target.result); // 미리보기 img 태그 src 세팅
 
-        console.log(image);
-        reader.readAsDataURL(image);
-      }
-      
-      /* 
-        미래의 나를 위한 설명 
+            }
 
-        FileReader가 비동기 어쩌구 방식.... 암튼 onload를 사용해서 가 장 마 지 막 에 실행됨!!!
-        (첫 시간에 window.onload 수업했던 거 기억해바ㅑ)
-        (코드가 위에 있든 밑에 있든 위치와 상관없이 실행 순서가 가장 마지막)
 
-        그래서 우선 사진 파일의 개수를 구하는 코드를 먼저 작성 후 
-        개수가 5개 초과일 때(조건에 만족할 때)
-        input의 value값들을 비워준 다음에
-        reader.onload를 실행해야 됨...  겁나 삽질했네
-      */
-      
-})
+        } else { // 파일이 선택되지 않음 == 파일 선택했다가 확인이 아닌 취소가 눌렸을 때
+            preview[i].removeAttribute("src");
+        }
 
-/* function displayImage(binaryData) {
-  // 이미지 요소 생성
-  var img = document.createElement("img");
-  img.setAttribute("src", "data:image/jpeg;base64," + binaryData); // 이진 데이터를 Data URL로 변환하여 src 속성에 설정
 
-  // 이미지를 출력할 요소 선택 (예: <div id="image-container"></div>)
-  var imageContainer = document.querySelector("#sample");
 
-  // 이미지 요소를 선택한 요소에 추가
-  imageContainer.appendChild(img);
+    });
+
+    deleteImg[i].addEventListener("click", function(){
+
+        if(preview[i].getAttribute != null) { // 미리보기가 원래 있다가 삭제한 경우에만 실행해라
+
+            preview[i].removeAttribute("src"); // 미리보기 삭제
+
+            inputImg[i].value=""; // 파일에 있는 value값 삭제
+        }
+
+    });
 }
 
-// 이진 데이터를 화면에 출력
-displayImage(binaryImageData); */
+// 게시글 유효성 검사
+function eventValidate(){
+
+    const eventTitle = document.getElementsByClassName("K-title")[0];
+    const eventContent = document.getElementsByClassName("K-content")[0];
+
+    if(eventTitle.value.trim().length == 0) {
+        alert("제목을 입력해주세요");
+        eventTitle.value = "";
+        eventTitle.focus();
+        return false;
+    }
+    
+    if(eventContent.value.trim().length == 0) {
+        alert("내용을 입력해주세요");
+        eventContent.value = "";
+        eventContent.focus();
+        return false;
+    }
+
+
+    return true;
+
+}
