@@ -38,8 +38,8 @@
                         <a href="#" class="P-event">
                             <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg">
                             <div class="P-event1">
-                                <div class="P-event-name">이벤트이름</div>
-                                <div class="P-event-content">이벤트 상세 내용</div>
+                                <div class="P-event-name">"${eventList.eventTitle}"</div>
+                                <div class="P-event-content">"${eventList.eventContent}"</div>
                             </div>
                         </a>
 

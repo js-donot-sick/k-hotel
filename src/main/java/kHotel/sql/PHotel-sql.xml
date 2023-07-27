@@ -4,19 +4,31 @@
 	<comment>PHotel-sql.xml</comment>
 
 	<entry key="searchBoardList">
-		SELECT BOARD_NO, BOARD_TITLE, TO_CHAR(BOARD_DT,'YYYY-MM-DD')BOARD_DT 
+		SELECT BOARD_NO, BOARD_TITLE,
+		TO_CHAR(BOARD_DT,'YYYY-MM-DD')BOARD_DT
 		FROM BOARD
 		WHERE MEMBER_NO = ?
 		AND BOARD_CD = 3
 	</entry>
 
 	<entry key="searchReviewList">
-		SELECT BOARD_NO, BOARD_TITLE, TO_CHAR(BOARD_DT,'YYYY-MM-DD')BOARD_DT 
+		SELECT BOARD_NO, BOARD_TITLE,
+		TO_CHAR(BOARD_DT,'YYYY-MM-DD')BOARD_DT
 		FROM BOARD
 		WHERE MEMBER_NO = ?
 		AND BOARD_CD = 2
 		ORDER BY BOARD_CD DESC
 	</entry>
+
+
+	<entry key="eventList">
+		SELECT EVENT_NO,EVENT_TITLE,EVENT_IMG FROM EVENT
+		WHERE EVENT_ST = 'Y'
+		ORDER BY EVENT_NO DESC
+	</entry>
+
+
+
 
 
 </properties>
