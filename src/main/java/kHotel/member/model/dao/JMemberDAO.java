@@ -67,4 +67,26 @@ public class JMemberDAO {
 	}
 
 
+	/** 리뷰 등록 DAO
+	 * @param conn
+	 * @param reviewImg
+	 * @param memberNo
+	 * @return reuslt
+	 * @throws Exception
+	 */
+	public int reviewUpdate(Connection conn, String reviewImg, int memberNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("");
+			
+		}finally {
+			
+			
+		}
+		return result;
+	}
+
+
 }

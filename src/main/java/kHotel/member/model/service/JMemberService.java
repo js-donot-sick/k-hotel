@@ -39,7 +39,17 @@ public class JMemberService {
 	 * @throws Exception
 	 */
 	public int reviewUpdate(String reviewImg, int memberNo) throws Exception {
-		return 0;
+		
+		Connection conn = getConnection();
+		
+		int result = dao.reviewUpdate(conn,reviewImg,memberNo );
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		close(conn);
+		
+		return result;
 	}
 
 
