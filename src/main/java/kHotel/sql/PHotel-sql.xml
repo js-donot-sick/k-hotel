@@ -15,6 +15,7 @@
 		FROM BOARD
 		WHERE MEMBER_NO = ?
 		AND BOARD_CD = 2
+		ORDER BY BOARD_CD DESC
 	</entry>
 
 
