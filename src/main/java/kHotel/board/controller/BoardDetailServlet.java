@@ -93,6 +93,7 @@ public class BoardDetailServlet extends HttpServlet{
 				board.setBoardContent(boardContent);
 				board.setBoardDate(boardDate);
 				
+				
 				System.out.println(boardNo);
 				System.out.println(boardTitle);
 				System.out.println(boardContent);
@@ -102,10 +103,11 @@ public class BoardDetailServlet extends HttpServlet{
 					int result = service.updateBoard(board,type);
 					
 					board.setBoardContent(board.getBoardContent().replaceAll("<br>", "\n"));
+
 					
 					if(result > 0) {
 						session.setAttribute("message", "게시글이 수정되었습니다.");
-						
+							
 						path ="boardDetail?type="+ type + "&cp=" + cp + "&no=" + boardNo;
 						
 					// boardDetail?type=2&cp=1&no=26

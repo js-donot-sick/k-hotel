@@ -27,7 +27,7 @@
 
     <!-- 예약부분 바디 -->
     <form action="reservationFinal" method="POST" onsubmit="return reservation();">
-        <input type="hidden" name="loginMember" value="${loginMember}">
+        <input type="hidden" name="memberNo" value="${loginMember.memberNo}">
         <div class="C-reservation">
             <div class="C-rsv-main">
                 <div class="C-rsv-main-text">지점 / 객실 / 날짜 / 인원 선택</div>
@@ -258,6 +258,7 @@
                 </div>
             </div>
         </div>
+        
     </form>
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     </div>

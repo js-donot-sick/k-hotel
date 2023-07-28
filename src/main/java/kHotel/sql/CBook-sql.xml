@@ -78,4 +78,17 @@
 		AND COUPON_ST = 'N' 
 	</entry>
 	
+	<!-- 회원이 가지고 있는 쿠폰 있는지 확인 -->
+	<entry key="selectCouponCount">
+		SELECT COUNT(*)
+		FROM COUPON
+		JOIN MEMBER USING(MEMBER_NO)
+		WHERE MEMBER_NO = ?
+	</entry>
+	
+	<!-- 쿠폰 가격 얻어오기 -->
+	<entry key="selectMoney">
+		SELECT COUPON_SALE
+		FROM COUPON
+	</entry>
 </properties>

@@ -35,4 +35,5 @@ public class Reservation {
 	private int couponSale;
 	private String couponDate;
 	private String couponSt;
+	private int couponCount;
 }

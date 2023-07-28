@@ -13,12 +13,12 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/7bc7245179.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="resources/css/bookEnd.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/bookEnd.css">
 </head>
 <body>
 
     <header>
-       
+       <jsp:include page="/WEB-INF/views/common/header.jsp"/>
     </header>
 
     <div id="k-content"> <!-- 중간 내용 부분 전체 -->
@@ -89,7 +89,7 @@
     </div>
 
     <footer>
-
+	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </footer>
 
     <script src="resources/js/bookEnd.js"></script>

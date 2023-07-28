@@ -54,7 +54,8 @@
                     <div class="C-btn-container">
                         <div class="C-btn-cancel">
                             <button type="button" id="C-postWritebtn-cancel">
-                                <a href="#" id="C-post-cancel">게시글 수정 취소</a>
+                                <a href="${contextPath}/board/qna/boardDetail?type=2&cp=${param.cp}&no=${param.no}" id="C-post-cancel">게시글 수정 취소</a>
+              
                             </button>
                         </div>
                         <div class="C-btn-clear">

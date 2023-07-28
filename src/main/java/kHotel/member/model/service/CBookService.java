@@ -185,6 +185,40 @@ public class CBookService {
 		
 		return couponList;
 	}
+
+
+	/** 쿠폰이 있는지 확인하는 Service(쿠폰의 갯수로)
+	 * @param reservation
+	 * @return couponCount
+	 * @throws Exception
+	 */
+	public int selectCouponCount(Reservation reservation) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int couponCount = dao.selectCouponCount(conn, reservation);
+		
+		close(conn);
+		
+		return couponCount;
+	}
+
+
+	/** 쿠폰 가격 가져오는 Service
+	 * @param reservation
+	 * @return money
+	 * @throws Exception
+	 */
+	public int selectMoney(Reservation reservation) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int money = dao.selectMoney(conn, reservation);
+		
+		close(conn);
+		
+		return money;
+	}
 	
 
 	
