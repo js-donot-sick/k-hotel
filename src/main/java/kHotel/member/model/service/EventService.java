@@ -24,6 +24,7 @@ public class EventService {
 		List<Event> eventList = dao.eventList(conn);
 		
 		close(conn);
+		System.out.println(eventList);
 		
 		return eventList;
 	}

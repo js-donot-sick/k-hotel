@@ -59,6 +59,8 @@ public class EventDAO {
 				
 				eventList.add(event);
 				
+				System.out.println(eventList);
+				
 			}
 		} finally {
 			close(stmt);
