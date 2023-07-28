@@ -63,6 +63,11 @@ public class LReplyDAO {
 				reply.setMemberId( rs.getString("MEMBER_ID"));
 				reply.setCreateDt(rs.getString("CREATE_DT"));
 				reply.setReplyContent(rs.getString("REPLY_CONTENT"));
+				reply.setMemberNo(rs.getInt("MEMBER_NO"));
+				reply.setBoardNo(rs.getInt("BOARD_NO"));
+				reply.setReplyNo(rs.getInt("REPLY_NO"));
+				
+				
 				
 				rList.add(reply);
 				
@@ -78,6 +83,68 @@ public class LReplyDAO {
 		
 		
 		return rList;
+	}
+
+	
+	
+	/** 댓글 작성 DAO
+	 * @param conn
+	 * @param reply
+	 * @return
+	 * @throws Exception
+	 */
+	public int insertReply(Connection conn, Reply reply) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insertReply");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, reply.getReplyContent());
+			pstmt.setInt(2, reply.getMemberNo());
+			pstmt.setInt(3, reply.getBoardNo());
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
+	
+	/** 댓글 삭제 DAO
+	 * @param conn
+	 * @param replyNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteReply(Connection conn, int replyNo) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("deleteReply");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, replyNo);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		
+		
+		return result;
 	}
 	
 	
