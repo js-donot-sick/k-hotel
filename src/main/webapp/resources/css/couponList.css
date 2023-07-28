@@ -18,9 +18,9 @@
 .C-body-coupon{ /* 사이드바 + 쿠폰함을 감싸는 div */
     width: 1200px;
     display: flex;
-    height: auto;
+    height: 700px;
     margin: auto;
-    border: 5px solid rgba(178, 158, 135, 0.9);
+    padding : 50px 0;
 }
 
 .C-body-sidebar{ /* 사이드바 */

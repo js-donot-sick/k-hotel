@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="resources/css/header.css">
     <link rel="stylesheet" href="resources/css/index.css">
-    <link rel="stylesheet" href="resources/css/reservation.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/RoomChoice.css">
     <link rel="stylesheet" href="resources/css/banner.css">
     <link rel="stylesheet" href="resources/css/footer.css">
     <link rel="stylesheet" href="resources/css/jhj1.css">
@@ -45,80 +45,81 @@
         </div>
 
         <!-- 호텔 예약 -->
-        <form action="${contextPath}/book/reservationFinal" method="post">
-            <div class="C-reservation">
-                <div class="C-rsv-main">
-                    <div class="C-rsv-main-text">지점 / 객실 / 날짜 / 인원 선택</div>
-                </div>
-                <div class="C-rsv-head">
-                    <div class="C-choiceHotel">
-                        <div>
-                            호텔선택
-                        </div>
-                        <div>
-                            <select name="C-hotel-choice" id="C-hotel-choice">
-                                <option name="location" value="none" selected>호텔을 선택해주세요</option>
-                                <option name="location" id="Gangnam" value="GANGNAM">K-호텔 강남점</option>
-                                <option name="location" id="jongno" value="JONGNO">K-호텔 종로점</option>
-                                <option name="location" id="dangsan" value="DANGSAN">K-호텔 당산점</option>
-                            </select>
-                        </div>
+        <form action="book/reservationFinal" method="POST" onsubmit="return reservation();">
+        <input type="hidden" name="loginMember" value="${loginMember}">
+        <div class="C-reservation">
+            <div class="C-rsv-main">
+                <div class="C-rsv-main-text">지점 / 객실 / 날짜 / 인원 선택</div>
+            </div>
+            <div class="C-rsv-head">
+                <div class="C-choiceHotel">
+                    <div>
+                        호텔선택
                     </div>
-                    <div class="C-choiceRoom">
-                        <div>객실선택</div>
-                        <div>
-                            <select name="C-room-choice" id="C-room-choice">
-                                <option name="Room" value="none" selected>객실을 선택해주세요</option>
-                                <option name="Room" id="Deluxe" value="DELUXE">Deluxe Room</option>
-                                <option name="Room" id="Standard" value="STANDRAD">Standard Room</option>
-                                <option name="Room" id="Suite" value="SUITE">suite Room</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="C-checkInOut">
-                        <div>
-                            체크인
-                        </div>
-                        <div>
-                            <input type="date" name="C-checkInTime" class="C-checkIn" id="C-start">
-                        </div>
-                    </div>
-                    <div class="C-dateView">
-                        <div class="C-countdate" id="C-countdate">
-                            0박
-                        </div>
-                    </div>
-                    <div class="C-checkInOut">
-                        <div>
-                            체크아웃
-                        </div>
-                        <div>
-                            <input type="date" name="C-checkOutTime" class="C-checkOut" id="C-end">
-                        </div>
-                    </div>
-                    <div class="C-CountPerson">
-                        <div>
-                            <div>성인</div>
-                            <div class="C-person">
-                                <button type="button" id="C-Aminusbutton">-</button>
-                                <input type="text" name="C-adult" id="C-adult" placeholder="0">
-                                <button type="button" id="C-Aplusbutton">+</button>
-                            </div>
-                        </div>
-                        <div>
-                            <div>어린이</div>
-                            <div class="C-person">
-                                <button type="button" id="C-Cminusbutton">-</button>
-                                <input type="text" name="C-children" id="C-children" placeholder="0">
-                                <button type="button" id="C-Cplusbutton">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="C-rsv-button">
-                        <button id="C-reservationBtn">예약</button>
+                    <div>
+                        <select name="C-hotel-choice" id="C-hotel-choice">
+                            <option name="location" value="none" selected>호텔을 선택해주세요</option>
+                            <option name="location" id="GANGNAM" value="GANGNAM">K-호텔 강남점</option>
+                            <option name="location" id="JONGRO" value="JONGRO">K-호텔 종로점</option>
+                            <option name="location" id="DANGSAN" value="DANGSAN">K-호텔 당산점</option>
+                        </select>
                     </div>
                 </div>
-        </form>
+                <div class="C-choiceRoom">
+                    <div>객실선택</div>
+                    <div>
+                        <select name="C-room-choice" id="C-room-choice">
+                            <option name="Room" value="none" selected>객실을 선택해주세요</option>
+                            <option name="Room" id="Deluxe" value="DELUXE">Deluxe Room</option>
+                            <option name="Room" id="Standard" value="STANDARD">Standard Room</option>
+                            <option name="Room" id="Suite" value="SUITE">suite Room</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="C-checkInOut">
+                    <div>
+                        체크인
+                    </div>
+                    <div>
+                        <input type="date" name="C-checkInTime" class="C-checkIn" id="C-start">
+                    </div>
+                </div>
+                <div class="C-dateView">
+                    <div class="C-countdate" id="C-countdate">
+                        0박
+                    </div>
+                </div>
+                <div class="C-checkInOut">
+                    <div>
+                        체크아웃
+                    </div>
+                    <div>
+                        <input type="date" name="C-checkOutTime" class="C-checkOut" id="C-end">
+                    </div>
+                </div>
+                <div class="C-CountPerson">
+                    <div>
+                        <div>성인</div>
+                        <div class="C-person">
+                            <button type="button" id="C-Aminusbutton">-</button>
+                            <input type="text" name="C-adult" id="C-adult" value="0" placeholder="0">
+                            <button type="button" id="C-Aplusbutton">+</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div>어린이</div>
+                        <div class="C-person">
+                            <button type="button" id="C-Cminusbutton">-</button>
+                            <input type="text" name="C-children" id="C-children" value="0" placeholder="0">
+                            <button type="button" id="C-Cplusbutton">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="C-rsv-button">
+                    <button id="C-reservationBtn">예약</button>
+                </div>
+            </div>
+    </form>
         
         <!-- 바디 중간 -->
         <div class="J-1">
@@ -277,7 +278,7 @@
         <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     </div>
     
-
+	<script src="${contextPath}/resources/js/RoomChoice.js"></script>
     <script src="resources/js/reservation.js"></script>
     <script src="resources/js/banner.js"></script>
     <script src="resources/js/jhj2.js"></script>

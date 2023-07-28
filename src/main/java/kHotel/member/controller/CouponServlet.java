@@ -37,15 +37,15 @@ public class CouponServlet extends HttpServlet{
 			couponList = service.selectCouponList(MemberNo);
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
-		
-		
-		
+				
 		
 		String path = "/WEB-INF/views/mypage/couponList.jsp";
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+		
+		req.setAttribute("couponList", couponList);
 		
 		dispatcher.forward(req, resp);
 	}

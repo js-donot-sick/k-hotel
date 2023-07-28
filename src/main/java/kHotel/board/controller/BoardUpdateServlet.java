@@ -39,6 +39,8 @@ public class BoardUpdateServlet extends HttpServlet{
 		board.setMemberNo(boardNo);
 		board.setMemberId(memberId);
 		
+		board.setBoardContent(board.getBoardContent().replaceAll("<br>", "\n"));
+		
 		req.setAttribute("board", board);
 		
 		String path = "/WEB-INF/views/board/postEdit.jsp";

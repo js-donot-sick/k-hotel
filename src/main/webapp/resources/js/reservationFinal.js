@@ -33,9 +33,15 @@ $(function () {
 coupon.addEventListener("change", function () {
 
     if (coupon.value == "discountcoupon") {
-        discount.value = "30000";
+        discount.value = couponMoney;
 
-        finalpay.innerHTML = hotelpay.value - discount.value;
+        finalpay.value = roomMoney - couponMoney;
+
+        
+    }else{
+        discount.value = "";
+
+        finalpay.value = roomMoney;
     }
 })
 
@@ -74,3 +80,8 @@ function reservationFinalValidate() {
 
 
 }
+
+
+
+
+

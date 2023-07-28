@@ -315,13 +315,87 @@ public class CBookDAO {
 				
 				pstmt.setInt(1, memberNo);
 				
+				rs = pstmt.executeQuery();
+				
+				while( rs.next() ) {
+					Reservation coupon = new Reservation();
+					
+					coupon.setCouponName(rs.getString("COUPON_NM"));
+					coupon.setCouponDate(rs.getString("COUPON_DT"));
+					
+					couponList.add(coupon);
+					
+				}
 				
 			} finally {
+				close(rs);
 				close(pstmt);
 			}
 			
 			
 			return couponList;
+		}
+
+		/** 쿠폰이 있는지 확인하는 Service(쿠폰의 갯수로)
+		 * @param conn
+		 * @param reservation
+		 * @return couponCount
+		 * @throws Exception
+		 */
+		public int selectCouponCount(Connection conn, Reservation reservation) throws Exception {
+			int couponCount = 0;
+			
+			try {
+				String sql = prop.getProperty("selectCouponCount");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, reservation.getMemberNo() );
+				
+				rs = pstmt.executeQuery();
+				
+				if( rs.next() ) {
+					reservation.setCouponCount(rs.getInt(1));
+					
+					couponCount = reservation.getCouponCount();
+				}
+			
+			} finally {
+				close(rs);
+				close(pstmt);
+			}
+			
+			
+			return couponCount;
+		}
+
+		/** 가격 조회 DAO
+		 * @param conn
+		 * @param reservation
+		 * @return money
+		 * @throws Exception
+		 */
+		public int selectMoney(Connection conn, Reservation reservation) throws Exception {
+			int money = 0;
+			
+			try {
+				String sql = prop.getProperty("selectMoney");
+				
+				stmt = conn.createStatement();
+				
+				rs = stmt.executeQuery(sql);
+				
+				if( rs.next() ) {
+					reservation.setCouponSale(rs.getInt(1));
+					
+					money = reservation.getCouponSale();
+				}
+			} finally {
+				close(rs);
+				close(pstmt);
+			}
+			
+			return money;
 		}
 		
 

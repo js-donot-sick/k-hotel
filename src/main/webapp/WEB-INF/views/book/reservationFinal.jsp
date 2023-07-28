@@ -26,7 +26,7 @@
     <!----------------------------------------헤더 --------------------------------------------->
 
     <!----------------------------------------바디 --------------------------------------------->
-    <form action="reservationEnd" method="post" onsubmit="return reservationFinalValidate()">
+    <form action="bookEnd" method="post" onsubmit="return reservationFinalValidate()">
 
         <div class="C-body">
             <div class="C-Final-rsv">
@@ -113,7 +113,6 @@
                                         <select name="C-account" id="C-account">
                                             <option value="none" selected>은행 / 계좌 선택</option>
                                             <option id="C-tossBank" value="토스뱅크">토스뱅크 1000-2161-7612</option>
-                                            <option value="C-kakaoBack" value="카카오뱅크">카카오뱅크 3333-05-265481</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -139,13 +138,18 @@
                                     <td>
                                         <select name="C-rsv-coupon" id="C-rsv-coupon">
                                             <option value="none" selected>쿠폰선택</option>
-                                            <option name="discountCoupon" value="discountcoupon">3만원 할인 쿠폰</option>
+
+                                            <c:if test="${!empty reservation.couponCount}">
+                                                <option name="discountCoupon" id="KHotelCoupon" value="discountcoupon">3만원 할인 쿠폰</option>
+                                            </c:if>
+
                                         </select>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>할인요금</td>
-                                    <td><input type="text" name="C-couponPay" id="C-couponPay" autocomplete="off" disabled>
+                                    
+                                    <td><input type="text" name="C-couponPay" id="C-couponPay" value=""  autocomplete="off" disabled>
                                     </td>
                                 </tr>
                                 <tr>
@@ -153,7 +157,7 @@
                                     <td></td>
                                     <td></td>
                                     <td class="Iwantgohome">결제금액</td>
-                                    <td><input type="text" name="C-finalpay" id="C-finalpay" autocomplete="off" value="${room.roomPrice}" disabled></td>
+                                    <td><input type="text" name="C-finalpay" id="C-finalpay" autocomplete="off" value="${reservation.roomPrice}" disabled></td>
                                 </tr>
                             </table>
                         </div>
@@ -181,19 +185,23 @@ K-호텔 객실예약과 관련하여 귀사가 아래와 같이 본인의 개�
                     </div>
                 </div>
                 <span class="C-rsv-bottom-btn">
-                    <button type="button" id="C-rsvBeforeBtn"><a href="RoomChoice.html">이전으로</a></button>
-                    <button type="submit" id="C-rsvClearBtn">예약 완료</button>
+                    <button type="button" id="C-rsvBeforeBtn" >이전으로</button>
+                    <button type="submit" id="C-rsvClearBtn">예약 하기</button>
                 </span>
             </div>
         </div>
     </form>
 
     <!----------------------------------------바디 --------------------------------------------->
+    
 
     <!----------------------------------------풋터 --------------------------------------------->
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     <!----------------------------------------풋터 --------------------------------------------->
-
+	<script>
+        const couponMoney = "${reservation.couponSale}";
+        const roomMoney = "${reservation.roomPrice}";
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>

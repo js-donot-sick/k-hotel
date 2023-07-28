@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kHotel.member.model.service.CBookService;
+import kHotel.member.model.vo.Member;
 import kHotel.member.model.vo.Reservation;
 
 @WebServlet("/book/*")
@@ -34,6 +35,10 @@ public class reservationController extends HttpServlet{
 		// 메인페이지에서 예약 화면으로 넘어가는 요청
 		if(command.equals("roomChoice")) {
 			
+			Member loginMember = (Member)session.getAttribute("loginMember");
+			
+			req.setAttribute("loginMember", loginMember);
+			
 			String path = "/WEB-INF/views/book/RoomChoice.jsp";
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
@@ -51,6 +56,7 @@ public class reservationController extends HttpServlet{
 			String checkOut = req.getParameter("C-checkOutTime");
 			int person = Integer.parseInt( req.getParameter("C-adult") );
 			person += Integer.parseInt( req.getParameter("C-children") );
+			int MemberNo = Integer.parseInt( req.getParameter("memberNo") );
 				
 			Reservation reservation = new Reservation();
 			
@@ -59,6 +65,7 @@ public class reservationController extends HttpServlet{
 			reservation.setCheckInTime(checkIn);
 			reservation.setCheckOutTime(checkOut);
 			reservation.setBookPerson(person);
+			reservation.setMemberNo(MemberNo);
 			
 			// 예약가능한 객실인지 확인
 			// 객실 번호 먼저 받아오기 
@@ -73,20 +80,26 @@ public class reservationController extends HttpServlet{
 				
 				// 그 객실에 대한 가격 세팅 해주고
 				reservation.setRoomPrice(roomPrice);
-			
+				
+				// 로그인한 사람이 쿠폰이 있는지 확인
+				int couponCount = service.selectCouponCount(reservation);
+				
+				reservation.setCouponCount(couponCount);
+				
+				int money = service.selectMoney(reservation);
+				
+				reservation.setCouponSale(money);
+				
 				// 선택한 날짜에 예약이 되어있는지 확인
 				int result = service.searchCheckInStatus(reservation); 
 				
 				
+				System.out.println(couponCount);
+				System.out.println(money);
+				
 				if(result == 0) { // 선택한 날짜에 방이 있다면
-					
-					
-					System.out.println(reservation.getRoomNo());
-					System.out.println(reservation.getRoomPrice());
-					System.out.println(reservation.getCheckInTime());
-					System.out.println(reservation.getCheckOutTime());
-					System.out.println(reservation.getHotelName());
-					System.out.println(reservation.getRoomName());
+						
+					System.out.println(reservation);
 					
 					String path = "/WEB-INF/views/book/reservationFinal.jsp";
 					
@@ -96,6 +109,7 @@ public class reservationController extends HttpServlet{
 					
 					dispatcher.forward(req, resp);
 				
+					
 				}else { // 선택한 날짜에 방이 나갔다면
 					
 					session.setAttribute("message", "선택하신 날짜의 해당 객실은 이미 예약이 찼습니다.");
