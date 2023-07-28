@@ -29,96 +29,29 @@
 
                 <!-- 종료된 이벤트 -->
                 <div class="P-maindisplay">
+
                     <div class="P-main">
                         <div class="P-blank1">종료된 이벤트</div>
 
 
-                        <div class="P-event-list">
+                        <div class="P-eventmain">
 
-                            <a href="#" class="P-event">
-                                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg">
-                                <span class="P-end">종료</span>
-                                <div class="P-event1">
-                                    <div class="P-event-name">이벤트이름</div>
-                                    <div class="P-event-content">이벤트 상세 내용</div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="P-event">
-                                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg">
-                                <span class="P-end">종료</span>
-                                <div class="P-event1">
-                                    <div class="P-event-name">이벤트이름</div>
-                                    <div class="P-event-content">이벤트 상세 내용</div>
-                                </div>
-                            </a>
-
-                        </div>
-
-                        <div class="P-event-list">
-
-                            <a href="#" class="P-event">
-                                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg">
-                                <span class="P-end">종료</span>
-                                <div class="P-event1">
-                                    <div class="P-event-name">이벤트이름</div>
-                                    <div class="P-event-content">이벤트 상세 내용</div>
-                                </div>
-                            </a>
-
-
-                            <a href="#" class="P-event">
-                                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg">
-                                <span class="P-end">종료</span>
-                                <div class="P-event1">
-                                    <div class="P-event-name">이벤트이름</div>
-                                    <div class="P-event-content">이벤트 상세 내용</div>
-                                </div>
-                            </a>
-
-                        </div>
-
-                        <div class="P-event-list">
-
-                            <a href="#" class="P-event">
-                                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg">
-                                <span class="P-end">종료</span>
-                                <div class="P-event1">
-                                    <div class="P-event-name">이벤트이름</div>
-                                    <div class="P-event-content">이벤트 상세 내용</div>
-                                </div>
-                            </a>
-
-
-                            <a href="#" class="P-event">
-                                <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg">
-                                <span class="P-end">종료</span>
-                                <div class="P-event1">
-                                    <div class="P-event-name">이벤트이름</div>
-                                    <div class="P-event-content">이벤트 상세 내용</div>
-                                </div>
-                            </a>
-
-                        </div>
-
-                        <div class="P-blank2"></div>
-                        <nav aria-label="Page navigation example" class="P-pg">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous" style="color: black;">
-                                        <span aria-hidden="true">&laquo;</span>
+                            <c:forEach var="event" items ="${eventEndList}">
+                                <div class="P-event-list">
+                                    <a href="#" class="P-event">
+                                        <img src="${contextPath}${event.eventImg}">
+                                        <span class="P-end">종료</span>
+                                        <div class="P-event1">
+                                            <div class="P-event-name">${event.eventTitle}</div>
+                                        </div>
                                     </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#" style="color: black;">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#" style="color: black;">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#" style="color: black;">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next" style="color: black;">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                                </div>
+    
+                            </c:forEach>
+                            
+
+                        </div>
+
 
                     </div>
                 </div>
@@ -129,7 +62,7 @@
 
             </div>
 
-            <jsp:include page ="/WEB-INF/views/common/footer.jsp"/>  
+            <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 
 

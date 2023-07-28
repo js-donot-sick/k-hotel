@@ -68,8 +68,9 @@
                             <div class="P-profile_area">
                                 <div class="P-id" id="P-id">작성자 : <span>박진아</span></div>
                                 <div>
-                                    <div class="P-room" id="P-room"> 객실명 : <span>객실1</span> </div>
-                                    <div class="P-room">작성날짜 : <span>2023-07-12</span></div>
+                                    <div class="P-room1" id="P-room1"> 지점: <span>강남</span> </div>
+                                    <div class="P-room2" id="P-room2"> 객실명 : <span>객실1</span> </div>
+                                    <div class="P-room3">작성날짜 : <span>2023-07-12</span></div>
                                 </div>
                             </div>
                             <div class="P-img"><a href=""><img src="">이미지보이는 공간</a></div>

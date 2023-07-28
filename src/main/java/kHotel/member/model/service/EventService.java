@@ -24,9 +24,23 @@ public class EventService {
 		List<Event> eventList = dao.eventList(conn);
 		
 		close(conn);
-		System.out.println(eventList);
 		
 		return eventList;
+	}
+
+	/**이벤트 종료 조회
+	 * @return eventEndList
+	 * @throws Exception
+	 */
+	public List<Event> eventEndList() throws Exception{
+		
+		Connection conn = getConnection();
+		
+		List<Event> eventEndList = dao.eventEndList(conn);
+		
+		close(conn);
+		
+		return eventEndList;
 	}
 
 }

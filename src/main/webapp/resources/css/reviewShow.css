@@ -82,9 +82,23 @@
 
 .P-profile_area>div:nth-child(2) {
     display: flex;
-    justify-content: space-between;
     padding: 0 10px;
 }
+
+.P-profile_area div:nth-child(3) {
+    display: flex;
+   justify-content: flex-end;
+    width: 100%;
+}
+
+.P-room1{
+    width: 15%;
+}
+
+.P-room2{
+    width: 15%;
+}
+
 
 /* 이미지 */
 .P-img {

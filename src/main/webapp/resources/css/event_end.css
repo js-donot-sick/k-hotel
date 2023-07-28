@@ -18,7 +18,7 @@
     display: flex;
     margin: auto;
     width: 1200px;
-  
+    padding: 50px;
 }
 
 .P-maindisplay{
@@ -29,6 +29,7 @@
     text-align: center;
     border:1px solid #eee;
     width: 75%;
+    flex-wrap: wrap;
 }
 
 .P-main {
@@ -54,12 +55,10 @@
 }
 
 /* 이벤트 전체 리스트 */
-.P-event-list {
+.P-eventmain{
     width: 100%;
     display: flex;
-    padding: 15px;
-    
-
+    flex-wrap: wrap;
 }
 
 
@@ -68,11 +67,21 @@
 }
 
 
+.P-event-list>a {
+    width: 100%;
+}
+
+.P-event-list{
+    padding: 20px 10px 0;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap; /* 자식 요소들이 여러 줄에 걸쳐 나란히 배치되도록 설정 */
+}
 .P-event {
     display: block;
     color: black;
     margin: 10px;
-    width: 50%;
+    width: 100%;
     text-decoration:none;
     margin: 20px;
     position: relative;
@@ -82,7 +91,7 @@
     position: absolute;
     right: 50px;
     left: 50px;
-    bottom: 175px;
+    bottom: 150px;
     font-size: 50px;
     color: white;
     font-weight: bold;
