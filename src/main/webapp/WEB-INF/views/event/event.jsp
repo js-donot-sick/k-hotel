@@ -34,15 +34,15 @@
                     <div class="P-blank1">진행 중인 이벤트</div>
 
                     <div class="P-event-list">
+                        <c:forEach var="Img" items = "${eventList}">
 
-                        <a href="#" class="P-event">
-                            <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg">
+                         <a href="#" class="P-event">
+                            <img src="${Img.eventImg}">
                             <div class="P-event1">
-                                <div class="P-event-name">"${eventList.eventTitle}"</div>
-                                <div class="P-event-content">"${eventList.eventContent}"</div>
+                                <div class="P-event-name">${Img.eventTitle}</div>
                             </div>
                         </a>
-
+                    </c:forEach>
                         <a href="#" class="P-event">
                             <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg">
                             <div class="P-event1">

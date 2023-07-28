@@ -25,18 +25,21 @@ public class EventServlet extends HttpServlet {
 
 			List<Event> eventList = service.eventList();
 
-
-			String path = "/WEB-INF/views/event/event.jsp";
-
-			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-			dispatcher.forward(req, resp);
-
+			req.setAttribute("eventList", eventList);
+			
+			
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-
+		
+		String path = "/WEB-INF/views/event/event.jsp";
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+		dispatcher.forward(req, resp);
+		
 	}
 
+	
 }
