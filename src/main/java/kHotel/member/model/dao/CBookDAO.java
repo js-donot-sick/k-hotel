@@ -297,6 +297,32 @@ public class CBookDAO {
 			
 			return result;
 		}
+
+		/** 쿠폰 조회 DAO
+		 * @param conn
+		 * @param memberNo 
+		 * @return couponList
+		 * @throws Exception
+		 */
+		public List<Reservation> selectCouponList(Connection conn, int memberNo) throws Exception {
+			
+			List<Reservation> couponList = new ArrayList<Reservation>();
+			
+			try {
+				String sql = prop.getProperty("selectCouponList");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, memberNo);
+				
+				
+			} finally {
+				close(pstmt);
+			}
+			
+			
+			return couponList;
+		}
 		
 
 		

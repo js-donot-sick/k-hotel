@@ -69,4 +69,13 @@
 		WHERE BOARD_NO = ?
 		AND BOARD_CD = ?
 	</entry>
+	
+	<!-- 쿠폰 조회 -->
+	<entry key="selectCouponList">
+		SELECT COUPON_NM, TO_CHAR(COUPON_DT,'YYYY-MM-DD') COUPON_DT
+		FROM COUPON
+		WHERE MEMBER_NO = ?
+		AND COUPON_ST = 'N' 
+	</entry>
+	
 </properties>

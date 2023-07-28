@@ -30,4 +30,9 @@ public class Reservation {
 	private int calculateNo;
 	private int memberNo;
 	private String memberName;
+	private int couponNo;
+	private String couponName;
+	private int couponSale;
+	private String couponDate;
+	private String couponSt;
 }
