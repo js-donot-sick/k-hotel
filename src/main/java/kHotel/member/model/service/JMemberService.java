@@ -32,7 +32,7 @@ public class JMemberService {
 		return result;
 	}
 
-	/** 리뷰 등록 Service
+	/** 리뷰 사진 등록 Service
 	 * @param reviewImg
 	 * @param memberNo
 	 * @return result
