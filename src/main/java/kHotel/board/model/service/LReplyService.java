@@ -8,6 +8,7 @@ import java.util.List;
 import kHotel.board.model.dao.LBoardDAO;
 import kHotel.board.model.dao.LReplyDAO;
 import kHotel.board.model.vo.Reply;
+import kHotel.common.Util;
 
 public class LReplyService {
 
@@ -29,6 +30,49 @@ public class LReplyService {
 		
 		
 		return rList;
+	}
+
+	/** 댓글 작성 Service
+	 * @param reply
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertReply(Reply reply) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		// 유틸에 넣어둔 필터 XSS
+		reply.setReplyContent( Util.XSSHanding ( reply.getReplyContent() ) );
+		
+		// 개행문자 처리
+		reply.setReplyContent( Util.newLineHandling ( reply.getReplyContent() ) );
+		
+		
+		int result = dao.insertReply(conn, reply);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		
+		return result;
+	}
+
+	/** 댓글 삭제 Service
+	 * @param replyNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteReply(int replyNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteReply(conn, replyNo);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		
+		return result;
 	}
 
 }
