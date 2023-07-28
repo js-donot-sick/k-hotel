@@ -25,6 +25,8 @@ public class qnaListServlet extends HttpServlet {
 			
 			int type = Integer.parseInt(req.getParameter("type"));
 			
+			System.out.println("type : " + type);
+			
 			int cp = 1;
 			
 			if(req.getParameter("cp") != null) { // 쿼리스트링에 "cp"가 존재한다면
@@ -33,11 +35,26 @@ public class qnaListServlet extends HttpServlet {
 			
 			KBoardService service = new KBoardService();
 			
-			Map<String, Object> map = service.qna(type,cp);
+			Map<String, Object> map = null;
+			//Map<String, Object> map = service.qna(type,cp);
+			
+			
+			if(req.getParameter("select") == null) { // 일반 목록 조회
+				map = service.qna(type,cp);
+				
+				//System.out.println("여기는 실행됐겠지");
+			} else {
+				System.out.println("위");
+				String select = req.getParameter("select");
+				String content = req.getParameter("sContent");
+				
+				
+				map = service.qnaSearch(select, content, type, cp);
+				
+				System.out.println("아래");
+			}
 			
 			req.setAttribute("map", map);
-			
-			System.out.println(map);
 			
 			String path = "/WEB-INF/views/board/qnaList.jsp";		
 			
