@@ -26,7 +26,7 @@
     <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
     <!-- 예약부분 바디 -->
-    <form action="reservationFinal" method="get" onsubmit="return reservation();">
+    <form action="reservationFinal" method="POST" onsubmit="return reservation();">
         <input type="hidden" name="loginMember" value="${loginMember}">
         <div class="C-reservation">
             <div class="C-rsv-main">
