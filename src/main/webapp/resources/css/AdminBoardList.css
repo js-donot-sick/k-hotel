@@ -28,6 +28,8 @@
     text-align: center;
     border:1px solid #eee;
     width: 75%;
+    background-color: rgba(178, 158, 135, 0.9);
+
 }
 
 .H-list {
@@ -37,6 +39,8 @@
 .H-write {
     font-size: 24px;
     margin-bottom: 10px;
+    background-color: rgba(178, 158, 135, 0.9);
+
 }
 
 
@@ -45,8 +49,6 @@
     width: 100%;
     display: flex;
     padding: 15px;
-    background-color: rgba(178, 158, 135, 0.9);
-
 }
 
 
@@ -70,8 +72,9 @@
     right: 50px;
     left: 50px;
     font-size: 50px;
-    color: black;
+    color: white;
     background-color: rgba(178, 158, 135, 0.9);
+    text-align: center;
     border:  1px solid black;
     height: 200px;
     width: 250px;
@@ -80,11 +83,6 @@
 
 ul, li, dl, dd {list-style:none; margin:0; padding: 0;}
 a {text-decoration:none;}
-body > .H-div{
-    width: 1200px;
-    margin: auto;
-    display: flex;
-}
 .H-snb { width: 25%; }
 
 .H-side-bar{ 
@@ -95,7 +93,7 @@ body > .H-div{
     box-sizing:border-box;
     color:#fff; 
     box-shadow:1px 0px 20px rgba(0,0,0,0.2);
-    margin:auto
+    margin-left: 86px;
 }
 
 .H-side-bar li {border-bottom:1px solid rgba(255,255,255,0.2);}
@@ -106,12 +104,6 @@ body > .H-div{
 .H-side-bar dd a:hover {background:rgba(255,255,255,0.1);}
 .H-side-bar dd.active a{color:#ffff6f;}
 
-.dif{
-    width: 75%;
-}
-
-.H-block {display:block;}
-.H-none {display:none; right: 50px;}
 
 
 *{box-sizing: border-box;}
