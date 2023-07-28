@@ -1,6 +1,7 @@
 package kHotel.member.controller;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -59,6 +60,12 @@ public class ReviewUpdateServlet extends HttpServlet{
 			int memberNo = loginMember.getMemberNo();
 			
 			String reviewImg = folderPath + mpReq.getFilesystemName("JreviewImage");
+			
+			Enumeration<String> files = mpReq.getFileNames();
+			
+			String name = files.nextElement();
+			
+			String rename = mpReq.getFilesystemName(name);
 			
 			int delete = Integer.parseInt(mpReq.getParameter("Jdelete"));
 			

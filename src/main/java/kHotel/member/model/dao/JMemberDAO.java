@@ -67,7 +67,7 @@ public class JMemberDAO {
 	}
 
 
-	/** 리뷰 등록 DAO
+	/** 리뷰 이미지 등록 DAO
 	 * @param conn
 	 * @param reviewImg
 	 * @param memberNo
