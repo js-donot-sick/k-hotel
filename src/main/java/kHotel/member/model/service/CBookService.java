@@ -168,6 +168,23 @@ public class CBookService {
 		
 		return result;
 	}
+
+
+	/** 쿠폰 조회 Service
+	 * @param memberNo 
+	 * @return couponList
+	 * @throws Exception
+	 */
+	public List<Reservation> selectCouponList(int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Reservation> couponList = dao.selectCouponList(conn,memberNo);
+		
+		close(conn);
+		
+		return couponList;
+	}
 	
 
 	
