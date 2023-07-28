@@ -35,11 +35,12 @@
                                     </td>
 
                                     <td>
-                                        <input type="text" placeholder="작성자명" id="J-text">
+                                        <input type="text" placeholder="작성자명" id="J-text" value="${loginMember.memberId}">
                                     </td>
 
                                     <td id="J-text3">
-                                        작성일
+                                        지점
+                                        <input type="text" value="">
                                     </td>
 
                                     <td>
@@ -148,13 +149,14 @@
                         </div>
 
                         <div class="J-body2-3">
-                            <button id="J-cancle">리뷰 작성 취소</button><button id="J-update">리뷰 작성</button>
+                            <button id="J-cancle">리뷰 작성 취소</button>
+                            <button id="J-update" onclick="location.href=''">리뷰 작성</button>
                             <!-- 리뷰 작성 취소 누를 시 이전 페이지로 돌아갈건지 알림창 띄우고 확인 누르면 이동. -->
                         </div>
                         <input type="hidden" name="Jdelete" id="J-delete" value="0">
                     </div>
 
-
+                    <input type="hidden" name="reviewTitle" value="리뷰입니다.">
                 </div>
 
                 <!-- ------------------------------------------------------------------------- -->

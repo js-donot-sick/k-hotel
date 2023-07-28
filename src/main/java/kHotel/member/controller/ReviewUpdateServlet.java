@@ -16,6 +16,8 @@ import com.oreilly.servlet.MultipartRequest;
 import kHotel.common.MyRenamePolicy;
 import kHotel.member.model.service.JMemberService;
 import kHotel.member.model.vo.Member;
+import kHotel.member.model.vo.Reservation;
+import kHotel.member.model.vo.ReviewImg;
 
 @WebServlet("/member/review3")
 public class ReviewUpdateServlet extends HttpServlet{
@@ -35,11 +37,24 @@ public class ReviewUpdateServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		try {
+			HttpSession session = req.getSession();
+			
+			Member loginMember = (Member)session.getAttribute("loginMember");
+			
+			JMemberService service = new JMemberService();
+			
+			// 이전 예약
+			
+			
+			
+			
+			
+			
+			
 			
 			// 저장되는 이미지 크기
 			int maxSize = 1024 * 1024 * 100;
 			
-			HttpSession session = req.getSession();
 			
 			// 최상위 경로
 			String root = session.getServletContext().getRealPath("/");
@@ -56,7 +71,6 @@ public class ReviewUpdateServlet extends HttpServlet{
 			// 지정된 파일명 변경 정책에 맞게 이름이 바뀐 파일이 저장됨
 			MultipartRequest mpReq = new MultipartRequest(req,  filePath, maxSize,  encoding , new MyRenamePolicy());
 			
-			Member loginMember = (Member)session.getAttribute("loginMember");
 			int memberNo = loginMember.getMemberNo();
 			
 			String reviewImg = folderPath + mpReq.getFilesystemName("JreviewImage");
@@ -67,6 +81,19 @@ public class ReviewUpdateServlet extends HttpServlet{
 			
 			String rename = mpReq.getFilesystemName(name);
 			
+			if(rename != null) {
+				
+				ReviewImg image = new ReviewImg();
+				
+				image.setReviewReName( folderPath + rename);
+				image.setImageLevel( Integer.parseInt(name) );
+			}
+			
+			
+			// memberNo 얻어오기
+			
+			
+			
 			int delete = Integer.parseInt(mpReq.getParameter("Jdelete"));
 			
 			if(delete == 0) {
@@ -74,7 +101,6 @@ public class ReviewUpdateServlet extends HttpServlet{
 				reviewImg = null;
 			}
 			
-			JMemberService service = new JMemberService();
 			
 			int result = service.reviewUpdate(reviewImg,memberNo);
 			
