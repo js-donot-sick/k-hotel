@@ -54,7 +54,7 @@
                                     <h2 class="accordion-header" id="headingOne">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                             aria-expanded="true" aria-controls="collapseOne">
-                                            <input type="text">
+                                            <div>예약 번호 :</div><input type="text">
                                         </button>
                                     </h2>
                                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
@@ -64,10 +64,10 @@
                                                 <img src="../resources/images/Deluxe-Room_1.jpg">
                                             </div>
                                             <div class="J-text">
-                                                <input type="" placeholder="">
-                                                <input type="">
-                                                <input type="">
-                                                <input type="">
+                                                지점 : <input type="" placeholder="지점">
+                                                <input type="" placeholder="객실명">
+                                                <input type="" placeholder="체크인 날짜"> 
+                                                <input type="" placeholder="체크 아웃 날짜">
                                               <a href="review3"> <button id="J-btn">별점 / 리뷰 작성</button> </a> 
                                             </div>
     
@@ -75,57 +75,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
-                                            >
-                                            <input typr="text">
-                                        </button>
-                                    </h2>
-                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                        data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <div  class="J-PIC">
-                                                <img src="../resources/images/standard-Room_1.jpg" >
-                                            </div>
-                                            <div class="J-text">
-                                                <input type="">
-                                                <input type="">
-                                                <input type="">
-                                                <input type="">
-                                                <button id="J-btn">별점 / 리뷰 작성</button>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="headingThree">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"
-                                          >
-                                            <input typr="text">
-                                        </button>
-                                    </h2>
-                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                        data-bs-parent="#accordionExample">
-                                        <div class="accordion-body">
-                                            <div  class="J-PIC">
-                                                <img src="../resources/images/suite-Room_1.jpg">
-                                            </div>
-                                            <div class="J-text">
-                                                <input type="">
-                                                <input type="">
-                                                <input type="">
-                                                <input type="">
-                                                <button id="J-btn">별점 / 리뷰 작성</button>
-                                            </div>
-                                           
-                        
-                                        </div>
-                                    </div>
-                                </div>
+                           
+                               
                             </div>
                             
                         </div>
