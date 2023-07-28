@@ -1,34 +1,36 @@
-$(".k-faq-slide").on("click", function(){
+// 검색창에 검색 기록 남기기
+(function(){
 
-    /* element.style.transform = "rotate(180deg)"; */
+    const kSearch = document.getElementById("k-search");
+    const option = kSearch.children;
+    const kContent = document.getElementById("k-search-c");
 
-   /*  if($(".k-arrow-img").css("transform")=="rotate(180deg)"){
-        $(".k-arrow-img").css("transform", "rotate(360deg)");
-        console.log("하.....")
-    } else{
-        console.log("sfd")
-        $(".k-arrow-img").css("transform", "rotate(180deg)");
-    } */
-    /* $(".k-arrow-img").css("transform", "rotate(180deg)"); */
+    //              현재 페이지주소 + 쿼리스트링
+    const params = new URL(location.href).searchParams;
+    //                                      쿼리스트링만 반환
 
-    var arrowImg = $(this).find(".k-arrow-img");
-    var rotation = arrowImg.data("rotation") || 0;
+    const select = params.get("select");
+    const content = params.get("sContent");
 
-    if (rotation === 0) {
-        arrowImg.css("transform", "rotate(180deg)");
-        rotation = 180;
-    } else {
-        arrowImg.css("transform", "rotate(0deg)");
-        rotation = 0;
+    kContent.value = content;
+
+    for(let op of option){
+        if(op.value == select) {
+            op.selected = true;
+        }
+    }
+})();
+
+function searchValidate(){
+
+    const kContent = document.getElementById("k-search-c");
+
+    if(kContent.value.trim().length == 0){
+        alert("검색어를 입력해주세요");
+        kContent.value = "";
+        kContent.focus();
+        return false;
     }
 
-    arrowImg.data("rotation", rotation);
-    
-    $(this).next().slideToggle(); 
-    /* if($(this).next().css("display")=="none"){
-        $(this).siblings(".k-faq-content").slideUp();
-        $(this).next().slideDown();
-        
-    } else{
-        $(this).next().slideUp(); */
-})
+    return true;
+}

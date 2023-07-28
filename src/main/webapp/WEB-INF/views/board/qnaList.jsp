@@ -26,6 +26,10 @@
 
     <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
+    <c:if test="${!empty param.select}">
+        <c:set var="searchUrl" value="&select=${param.select}&sContent=${param.sContent}"/>
+    </c:if>
+
     <div id="k-qList-content">
 
         <jsp:include page="/WEB-INF/views/common/boardSidebar.jsp"/>
@@ -34,8 +38,8 @@
 
             <div>
 
-                <div>${boardName}</div>
-                
+                <div>질문게시판</div>
+
                 <div>
                         <button id="q-btn" onclick="location.href='write?type=${param.type}&cp=${param.cp}'">게시글 작성</button>
                 </div>
@@ -63,7 +67,7 @@
 
                     <c:set var="memberId" value="${board.memberId}"/>
 
-                        <a href="${contextPath}/board/qna/boardDetail?type=2&cp=${pagination.currentPage}&no=${board.boardNo}" style="text-decoration: none;">
+                        <a href="${contextPath}/board/qna/boardDetail?type=2&cp=${pagination.currentPage}&no=${board.boardNo}${searchUrl}" style="text-decoration: none;">
                             <div class="k-q-list">
                                 <div>${board.boardNo}</div>
                                 <div>${board.boardTitle}</div>
@@ -77,13 +81,13 @@
 
                      <!-- 페이지네이션 -->
                     <div class="K-qna-page">
-                        <c:set var="url" value="qna?type=2&cp="/>
+                        <c:set var="url" value="${contextPath}/board/qna?type=2&cp="/>
 
                         <ul class="K-pagination">
                             <!-- 첫 페이지로 이동 -->
-                            <li><a href="${url}1">&lt;&lt;</a></li>
+                            <li><a href="${url}1$${searchUrl}">&lt;&lt;</a></li>
                             <!-- 이전 목록 마지막 번호로 이동 -->
-                            <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
+                            <li><a href="${url}${pagination.prevPage}${searchUrl}">&lt;</a></li>
 
                             <!-- 범위가 정해진 일반 for문 사용 -->
                             <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}">
@@ -92,15 +96,15 @@
                                         <li><a class="K-current">${i}</a></li>
                                     </c:when>
                                     <c:otherwise>
-                                        <li><a href="${url}${i}">${i}</a></li>
+                                        <li><a href="${url}${i}${searchUrl}">${i}</a></li>
                                     </c:otherwise>
                                 </c:choose>
                             </c:forEach>
 
                             <!-- 다음 목록 시작 번호로 이동 -->
-                            <li><a href="${url}${pagination.nextPage}">&gt;</a></li>
+                            <li><a href="${url}${pagination.nextPage}${searchUrl}">&gt;</a></li>
                             <!-- 끝 페이지로 이동 -->
-                            <li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li>
+                            <li><a href="${url}${pagination.maxPage}${searchUrl}">&gt;&gt;</a></li>
                         </ul>
 
                     </div>
@@ -110,16 +114,17 @@
             </div>
 
            
-            <form action="${contextPath}/board/qna/search?type=2" id="K-searcj-form">
+            <form action="${contextPath}/board/qna" id="K-search-form" onsubmit="return searchValidate()">
+                <input type="hidden" name="type" value="${param.type}">
                 <div class="k-search-div"> <!-- 하단 검색 부분 -->
                     <div>
-                        <select name="k-search-s" id="k-search">
+                        <select name="select" id="k-search">
                             <option value="1">제목 + 내용</option>
                             <option value="BOARD_TITLE">제목</option>
                             <option value="BOARD_CONTENT">내용</option>
                         </select>
                     </div>
-                    <div><input type="search" name="k-search-c" id="k-search-c"></div>
+                    <div><input type="search" name="sContent" id="k-search-c"></div>
                     <div><img src="${contextPath}/resources/images/search.png"></div>
                     <div>
                         <button id="k-search-btn">검색</button>
@@ -134,6 +139,6 @@
       
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <script src="../resources/js/qnaList.js"></script>
+    <script src="${contextPath}/resources/js/qnaList.js"></script>
 </body>
 </html>
