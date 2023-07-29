@@ -92,11 +92,7 @@ public class reservationController extends HttpServlet{
 				
 				// 선택한 날짜에 예약이 되어있는지 확인
 				int result = service.searchCheckInStatus(reservation); 
-				
-				
-				System.out.println(couponCount);
-				System.out.println(money);
-				
+							
 				if(result == 0) { // 선택한 날짜에 방이 있다면
 						
 					System.out.println(reservation);

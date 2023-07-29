@@ -115,7 +115,7 @@
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div>
-                            <img src="${contextPath}/resources/images/Deluxe-Room_1.jpg">
+                            <img id="deluxeImg" src="${contextPath}/resources/images/Deluxe-Room_1.jpg">
                         </div>
                         <div class="C-room-text">
             <pre>
@@ -167,7 +167,7 @@
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div>
-                            <img src="${contextPath}/resources/images/standard-Room_1.jpg">
+                            <img id="standardImg" src="${contextPath}/resources/images/standard-Room_1.jpg">
                         </div>
                         <div class="C-room-text">
             <pre>
@@ -219,7 +219,7 @@
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <div>
-                            <img src="${contextPath}/resources/images/suite-Room_1.jpg">
+                            <img id="suiteImg" src="${contextPath}/resources/images/suite-Room_1.jpg">
                         </div>
                         <div class="C-room-text">
                 <pre>
@@ -262,6 +262,9 @@
     </form>
     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
     </div>
+    <script>
+        const contextPath = "${contextPath}";
+    </script>
 
     <script src="${contextPath}/resources/js/RoomChoice.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
