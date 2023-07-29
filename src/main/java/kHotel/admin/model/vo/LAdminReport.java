@@ -18,5 +18,6 @@ public class LAdminReport {
 	private String reportDt;		// 신고 날짜
 	private String writePerson;		// 글 작성자
 	private String reportPerson;	// 신고자
+	
 
-}
+} 
