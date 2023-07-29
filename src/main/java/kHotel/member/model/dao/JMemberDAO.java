@@ -7,9 +7,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import kHotel.member.model.vo.Member;
+import kHotel.member.model.vo.Reservation;
 
 public class JMemberDAO {
 	
@@ -86,6 +89,54 @@ public class JMemberDAO {
 			
 		}
 		return result;
+	}
+
+
+	/** 이전 예약 DAO
+	 * @param conn
+	 * @param memberNo
+	 * @return rv
+	 * @throws Exception
+	 */
+	public List<Reservation> reservation(Connection conn, int memberNo) throws Exception {
+		List<Reservation> rvList = new ArrayList<Reservation>();
+		
+		try {
+			
+			String sql = prop.getProperty("reservation");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next() ) {
+				
+				Reservation rv = new Reservation();
+				
+				rv.setBookNo( rs.getInt(1));
+				rv.setHotelName( rs.getString(2) );
+				rv.setRoomName( rs.getString(3));
+				rv.setCheckInTime(rs.getString(4));
+				rv.setCheckOutTime( rs.getString(5));
+				
+				rvList.add(rv);
+			}
+			
+			System.out.println(rvList);
+			
+			
+			
+		}finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		
+		return rvList;
 	}
 
 
