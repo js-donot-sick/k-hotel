@@ -93,7 +93,7 @@ K-호텔 종로의 스탠다드 룸의 모던하고 심플한 인테리어와
             <div class="C-hotelroominfo">
                 <div class="C-info-img">
                     <div class="C-hotelroom-img">
-                        <img src="${contextPath}/resources/images/suite-Room_1.jpg">
+                        <img src="${contextPath}/resources/images/suite-Room_JongRo_2.jpg">
                     </div>
                 </div>
                 <div class="C-info-text">

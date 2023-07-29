@@ -46,7 +46,7 @@
 
         <!-- 호텔 예약 -->
         <form action="book/reservationFinal" method="POST" onsubmit="return reservation();">
-        <input type="hidden" name="loginMember" value="${loginMember}">
+        <input type="hidden" name="memberNo" value="${loginMember.memberNo}">
         <div class="C-reservation">
             <div class="C-rsv-main">
                 <div class="C-rsv-main-text">지점 / 객실 / 날짜 / 인원 선택</div>
@@ -279,7 +279,6 @@
     </div>
     
 	<script src="${contextPath}/resources/js/RoomChoice.js"></script>
-    <script src="resources/js/reservation.js"></script>
     <script src="resources/js/banner.js"></script>
     <script src="resources/js/jhj2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

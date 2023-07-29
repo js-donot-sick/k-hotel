@@ -21,6 +21,8 @@
     height: 700px;
     margin: auto;
     padding : 50px 0;
+
+    overflow-y: scroll;
 }
 
 .C-body-sidebar{ /* 사이드바 */
@@ -37,6 +39,13 @@
     width: 75%;
     height: 100%;
 }
+
+
+.empty{ /* 쿠폰이 없을 떄 div */
+    width: 820px;
+    height: 450px;
+}
+
 .C-couponlist-title{ /* 쿠폰함 title */
     font-size: 30px;
     font-weight: bold;

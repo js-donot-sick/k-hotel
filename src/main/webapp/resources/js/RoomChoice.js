@@ -4,6 +4,11 @@ const adult = document.getElementById("C-adult");
 const child = document.getElementById("C-children");
 const checkIn = document.getElementById("C-start");
 const checkOut = document.getElementById("C-end");
+const deluxeImg = document.getElementById("deluxeImg");
+const standardImg = document.getElementById("standardImg");
+const suiteImg = document.getElementById("suiteImg");
+
+
 
 
 /* 오늘 날짜로 기본 값 세팅  */
@@ -17,6 +22,50 @@ today = yyyy + '-' + mm + '-' + dd;
 // input 요소의 값을 설정
 document.getElementById("C-start").value = today;
 document.getElementById("C-end").value = today;
+
+hotel_choice.addEventListener("change",function(){
+   
+   if(this.value == "GANGNAM"){
+      const gangnamDeluxeImg = contextPath + "/resources/images/Deluxe-Room_1.jpg";
+      const gangnamStandardImg = contextPath + "/resources/images/standard-Room_1.jpg";
+      const gangnamSuiteImg = contextPath + "/resources/images/suite-Room_1.jpg";
+     
+
+      deluxeImg.src = gangnamDeluxeImg;
+      standardImg.src = gangnamStandardImg;
+      suiteImg.src = gangnamSuiteImg;
+                              /* ${contextPath}/resources/images/suite-Room_1.jpg */
+
+   }else if(this.value == "JONGRO"){
+      const jongroDeluxeImg = contextPath + "/resources/images/Deluxe-Room_JongRo_1.jpg";
+      const jongroStandardImg = contextPath + "/resources/images/standard-Room_JongRo_2.jpg";
+      const jongroSuiteImg = contextPath + "/resources/images/suite-Room_JongRo_2.jpg";
+
+      deluxeImg.src = jongroDeluxeImg;
+      standardImg.src = jongroStandardImg;
+      suiteImg.src = jongroSuiteImg;
+
+   }else if(this.value == "DANGSAN"){
+      const dangsanDeluxeImg = contextPath + "/resources/images/Deluxe-Room_DangSan_3.jpg";
+      const dangsanStandardImg = contextPath + "/resources/images/standard-Room_DangSan_3.png";
+      const dangsanSuiteImg = contextPath + "/resources/images/suite-Room_DangSan_3.jpg";
+
+      deluxeImg.src = dangsanDeluxeImg;
+      standardImg.src = dangsanStandardImg;
+      suiteImg.src = dangsanSuiteImg;
+   }
+
+
+});
+
+/* 체크인 이벤트 발생 시 오늘 날짜보다 전 날짜를 선택한다면  */
+checkIn.addEventListener("change", function(){
+   if(this.value < today){ 
+      alert("이전 날짜로는 예약을 진행하실 수 없습니다");
+
+      this.value = today;
+   }
+});
 
 /* 체크아웃 이벤트 발생 시 몇박인지 계산 */
 document.getElementById("C-end").addEventListener("change",function(){
