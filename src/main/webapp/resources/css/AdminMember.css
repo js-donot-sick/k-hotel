@@ -32,6 +32,12 @@
     padding-top: 50px;
 }
 
+.P-Member-title{
+    font-size: 24px;
+    font-weight: bold;
+    height: 100px;
+}
+
 
 /* 정보조회 */
 .P-title1{
