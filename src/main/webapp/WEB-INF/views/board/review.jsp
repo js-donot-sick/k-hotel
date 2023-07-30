@@ -40,7 +40,6 @@
 
                                     <td id="J-text3">
                                         지점
-                                        <input type="text" value="">
                                     </td>
 
                                     <td>
