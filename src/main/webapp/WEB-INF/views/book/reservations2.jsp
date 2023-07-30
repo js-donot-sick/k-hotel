@@ -38,7 +38,9 @@
 
                         <div class="J-BODY2"></div>
 
-                        <form action="member/reservations2" method="GET"></form>
+                        <form action="/review4" method="GET">
+
+                       
 
 
                         <div class="J-BODY">
@@ -73,11 +75,11 @@
                                                         <img src="../resources/images/Deluxe-Room_1.jpg">
                                                     </div>
                                                     <div class="J-text">
-                                                                <input type="" placeholder="호텔지ㅈㅁ" value="${list.hotelName}">
-                                                                <input type="" placeholder="객실명" value="${list.roomName}">
-                                                                <input type="" placeholder="체크인 날짜" value="${list.checkInTime}">
-                                                                <input type="" placeholder="체크 아웃 날짜" value="${list.checkOutTime}">
-                                                                <a href="review3"> <button id="J-btn">별점 / 리뷰작성</button> </a>
+                                                                <input type="" placeholder="호텔지ㅈㅁ" value="${list.hotelName}" name="hotelName">
+                                                                <input type="" placeholder="객실명" value="${list.roomName}" name="roomName">
+                                                                <input type="" placeholder="체크인 날짜" value="${list.checkInTime}" name="checkIn">
+                                                                <input type="" placeholder="체크 아웃 날짜" value="${list.checkOutTime}" name="checkOut">
+                                                                 <button id="J-btn">별점 / 리뷰작성</button> 
                                                     </div>
                                                     
                                                     
@@ -116,7 +118,7 @@
 
 
                     </div>
-
+                </form>
 
                     <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 

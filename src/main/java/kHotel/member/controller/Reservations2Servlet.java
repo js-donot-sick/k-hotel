@@ -16,7 +16,7 @@ import kHotel.member.model.service.JMemberService;
 import kHotel.member.model.vo.Member;
 import kHotel.member.model.vo.Reservation;
 
-@WebServlet("/member/reservations2")
+@WebServlet("/member/mypage/reservations2")
 public class Reservations2Servlet extends HttpServlet{
 	
 	@Override
