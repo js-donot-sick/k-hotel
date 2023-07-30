@@ -26,7 +26,7 @@
  <div class="H-snb">
         <ul class="H-side-bar">
             <li>            <!-- 요청 주소는 본인이 알아서 바꿔 쓰세요 -->
-                <a href="${contextPath}/admin/memberAdmin" class="H-side-item H-side-title">회원정보 관리</a> 
+                <a href="${contextPath}/admin/memberAdmin?type=1" class="H-side-item H-side-title">회원정보 관리</a> 
             </li>
             <li>
                 <a href="${contextPath}/admin/boardAdmin" class="H-side-item">게시글 관리</a>

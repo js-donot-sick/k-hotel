@@ -185,7 +185,7 @@ K-호텔 객실예약과 관련하여 귀사가 아래와 같이 본인의 개�
                     </div>
                 </div>
                 <span class="C-rsv-bottom-btn">
-                    <button type="button" id="C-rsvBeforeBtn" >이전으로</button>
+                    <button type="button" id="C-rsvBeforeBtn" onclick="location.hret='/roomChoice'">이전으로</button>
                     <button type="submit" id="C-rsvClearBtn">예약 하기</button>
                 </span>
             </div>

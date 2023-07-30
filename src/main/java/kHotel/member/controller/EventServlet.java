@@ -1,6 +1,8 @@
 package kHotel.member.controller;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -26,8 +28,7 @@ public class EventServlet extends HttpServlet {
 			List<Event> eventList = service.eventList();
 
 			req.setAttribute("eventList", eventList);
-			
-			
+		
 			
 
 		} catch (Exception e) {

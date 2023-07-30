@@ -61,7 +61,6 @@ function eventValidate(){
         return false;
     }
 
-
     return true;
 
 }

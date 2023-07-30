@@ -11,5 +11,16 @@
 		?, ?, ?, ?, ?,
 		 DEFAULT, DEFAULT)
 	</entry>
+
+	<!-- 이전 예약 -->
+	<entry key="reservation">
+		SELECT BOOK_NO , HOTEL_TITLE, ROOM_NM,CHECKIN_DT , CHECKOUT_DT
+		FROM RESERVATION
+		JOIN ROOM USING(ROOM_NO)
+		JOIN HOTEL USING(HOTEL_NO)
+		WHERE CHECK_FL = 'Y'
+		AND MEMBER_NO = ?
+		AND <![CDATA[CHECKOUT_DT < SYSDATE]]>
+	</entry>
 	
 </properties>

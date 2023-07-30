@@ -3,9 +3,11 @@ package kHotel.member.model.service;
 import static kHotel.common.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.util.List;
 
 import kHotel.member.model.dao.JMemberDAO;
 import kHotel.member.model.vo.Member;
+import kHotel.member.model.vo.Reservation;
 
 public class JMemberService {
 
@@ -51,6 +53,24 @@ public class JMemberService {
 		
 		return result;
 	}
+
+	/** 이전 예약 Service
+	 * @param memberNo
+	 * @return rv
+	 * @throws Exception
+	 */
+	public List<Reservation> reservation(int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		 List<Reservation> rvList = dao.reservation(conn, memberNo);
+		
+		close(conn);
+				System.out.println(rvList);
+				
+		return rvList;
+	}
+
 
 
 

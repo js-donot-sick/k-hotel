@@ -12,10 +12,10 @@ import lombok.ToString;
 
 public class EventImage {
 	
-	private int bingoFl;
-	private int upDownFl;
 	private int memberNo;
 	private int eventNo;
+	private int rename;
+	private int level;
 	
 
 }

@@ -14,6 +14,7 @@
     font-family: 'Pretendard-Regular';
 }
 
+/* 전체 div */
 .P-top {
     display: flex;
     margin: auto;
@@ -22,21 +23,26 @@
 
 }
 
+/* 오른쪽 전체 div */
 .P-maindisplay {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
     text-align: center;
     border: 1px solid #eee;
     width: 75%;
+    flex-wrap: wrap;
 
 }
 
+/* 오른쪽 div */
 .P-main {
-    width: 820px;
+    width: 100%;
 }
 
+/* 타이틀 */
 .P-blank1 {
     width: 100%;
     text-align: left;
@@ -49,51 +55,46 @@
     color: white;
 }
 
-.P-blank2 {
+
+.P-eventmain{
     width: 100%;
-    margin-bottom: 30px;
-    color: white;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* 이벤트 전체 리스트 */
-.P-event-list {
-    width: 100%;
+ .P-event-list{
+    padding: 20px 10px 0;
+    width: 50%;
     display: flex;
-    padding: 15px;
-
-
+    flex-wrap: wrap; /* 자식 요소들이 여러 줄에 걸쳐 나란히 배치되도록 설정 */
 }
 
-
+/* a태그 검정색 */
 .P-event-list>a div {
     color: black;
 }
+.P-event-list>a  {
+    width: 100%;
+}
 
 
+/* 이벤트 전체 항목 */
 .P-event {
-    display: block;
     color: black;
     margin: 10px;
-    width: 50%;
+    width: 50%; /* 반씩 나누기 위해 50% 크기로 설정하고 좌우 여백을 제거 */
     text-decoration: none;
     margin: 20px;
-    position: relative;
 }
 
-.P-end {
-    position: absolute;
-    right: 50px;
-    left: 50px;
-    bottom: 175px;
-    font-size: 50px;
-    color: white;
-}
 
 .P-event>img {
+    width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    width: 100%;
-    height: 250px;
+    height : 250px;
+
 }
 
 
@@ -104,25 +105,16 @@
     border-bottom-right-radius: 20px;
 }
 
+/* 이벤트이름 */
 .P-event-name {
     width: 100%;
     margin-bottom: 4px;
     text-align: left;
-    margin-left: 10px;
+    margin-left:10px;
     font-size: 20px;
     font-weight: bold;
+
 }
 
-.P-event-content {
-    width: 50%;
-    margin-bottom: 15px;
-    text-align: left;
-    margin: 10px;
-    font-size: 13px;
-}
 
-.P-pg{
-    display: flex;
-    justify-content: center;
-    padding-top: 14px;
-}
+

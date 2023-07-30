@@ -14,20 +14,30 @@
                 <li class="L-reply-row">
                     <span class="L-reply-person">${reply.memberId}</span>
                     <span class="L-reply-date">${reply.createDt}</span>
+
                     <p class="L-reply-content">${reply.replyContent}</p>
     
 
                     <c:if test="${loginMember.memberId == reply.memberId}">
 
                         <div class="L-reply-btn">
-                            <button onclick="updateReply(${reply.replyNo}), this">수정</button>
-                            <button>삭제</button>
+                            <button onclick="showUpdateReply(${reply.replyNo}, this)">수정</button>
+                            <button onclick="deleteReply(${reply.replyNo})">삭제</button>
                         </div>
                         
                     </c:if>
                 </li>
 
             </c:forEach>
+
+            <!-- <li class="L-reply-row">
+                <textarea class="LUpdateReplyContent"></textarea>
+                <div class="LUpdateBtn">
+                    <button>수정</button>
+                    <button>취소</button>
+                </div>
+            </li> -->
+
 
         </ul>
 

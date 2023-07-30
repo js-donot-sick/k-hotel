@@ -20,14 +20,54 @@
 		ORDER BY BOARD_CD DESC
 	</entry>
 
-
+	<!-- 이벤트 리스트 조회 -->
 	<entry key="eventList">
 		SELECT EVENT_NO,EVENT_TITLE,EVENT_IMG FROM EVENT
-		WHERE EVENT_ST = 'Y'
+		WHERE
+		EVENT_ST = 'N'
 		ORDER BY EVENT_NO DESC
 	</entry>
 
+	<!-- 종료된 이벤트 조회 -->
+	<entry key="eventEndList">
+		SELECT EVENT_NO,EVENT_TITLE,EVENT_IMG FROM EVENT
+		WHERE
+		EVENT_ST = 'Y'
+		ORDER BY EVENT_NO DESC
+	</entry>
 
+	<!-- 관리자 멤버 게시글 수 조회 -->
+	<entry key="listCountMember">
+		SELECT COUNT(*)
+		FROM MEMBER
+		WHERE SECESSION_FL = 'N'
+	</entry>
+
+	<!-- 관리자 신고된 수 조회 -->
+	<entry key="listReportCount">
+		SELECT COUNT(*)
+		FROM REPORT
+		WHERE BOARD_NO IN (SELECT
+		BOARD_NO
+		FROM BOARD
+		WHERE MEMBER_NO =?
+		AND BOARD_CD = 3)
+	</entry>
+
+
+	<!-- 관리자 신고된 수 조회 -->
+	<entry key="selectBoardList">
+		SELECT * FROM(
+		SELECT ROWNUM RNUM, A.* FROM
+		(SELECT MEMBER_NO,MEMBER_ID,MEMBER_PW,MEMBER_NM,MEMBER_PNO,MEMBER_TEL,
+		MEMBER_EMAIL,MEMBER_ADD,SECESSION_FL
+		FROM MEMBER
+
+		ORDER BY MEMBER_NO DESC)A
+		)
+		WHERE RNUM BETWEEN ? AND ?
+
+	</entry>
 
 
 
