@@ -1,6 +1,7 @@
 package kHotel.admin.controller;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
@@ -14,8 +15,11 @@ import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 
+import kHotel.admin.model.service.KAdminService;
+import kHotel.board.model.vo.Event;
 import kHotel.board.model.vo.EventImage;
 import kHotel.common.MyRenamePolicy;
+import kHotel.member.model.vo.Member;
 
 @WebServlet("/admin/eventWrite")
 public class AdminEventWriteServlet extends HttpServlet {
@@ -42,7 +46,7 @@ public class AdminEventWriteServlet extends HttpServlet {
 		
 	}
 	
-	// 찐 등록
+	// 찐 글 등록
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -74,7 +78,12 @@ public class AdminEventWriteServlet extends HttpServlet {
 				String original = mpReq.getOriginalFileName(name);
 				
 				if(original != null) { // 실제로 파일이 담겨있는 경우
+					EventImage image = new EventImage();
 					
+					image.setImageRename(rename);
+					image.setImageLevel(Integer.parseInt(name));
+					
+					imageList.add(image);
 				}
 				
 				
@@ -82,14 +91,31 @@ public class AdminEventWriteServlet extends HttpServlet {
 				
 			}
 			
+			// 글 제목, 내용, 회원번호(관리자이지만 혹시 몰라서)
+			String title = mpReq.getParameter("K-title");
+			String content = mpReq.getParameter("K-content");
+			String date = mpReq.getParameter("K-date");
 			
+			Member loginMember = (Member)session.getAttribute("loginMember");
+			int memberNo = loginMember.getMemberNo();
 			
+			Event event = new Event();
 			
+			event.setEventTitle(title);
+			event.setEventContent(content);
+			event.setEventDt(date);
 			
+			KAdminService service = new KAdminService();
 			
+			String mode = mpReq.getParameter("mode");
 			
+			if(mode.equals("insert")) {
+				
+			}
 			
-			
+			if(mode.equals("update")) {
+				
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
