@@ -328,4 +328,6 @@ input[name="k-inputId-id"]{
     display: none;
 }
 
-
+#K-myForm input{
+    height: 17px;
+}

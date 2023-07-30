@@ -16,7 +16,7 @@ newPw.addEventListener("input", function(){
         return;
     }
 
-    const regExp = /^([A-Z]|[a-z]|[~\!\@\$]){7,14}$/;
+    const regExp = /^([A-Z]|[a-z]|[0-9]|[~\!\@\$]){8,15}$/;
 
     if(regExp.test(newPw.value)){ 
         
