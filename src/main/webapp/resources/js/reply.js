@@ -49,6 +49,7 @@ function selectReplyList(){
                     // 수정버튼
                     const updateBtn = document.createElement("button");
                     updateBtn.innerText = "수정";
+                    updateBtn.setAttribute("onclick", "showUpdateReply(" + rp.replyNo + ", this)")
     
                     // 삭제버튼
                     const deleteBtn = document.createElement("button");
@@ -141,31 +142,35 @@ replyAdd.addEventListener("click", function(){
 // 댓글 삭제
 function deleteReply(replyNo){
 
-    $.ajax({
+    // 바로 삭제 안되도록 추가
+    if(confirm("정말 댓글을 삭제하시겠습니까?")){
 
-        url : contextPath + "/reply/delete",
-        data : {"replyNo" : replyNo},
-        type : "GET",
-
-        success : function(result){
-
-            if(result > 0){
-                alert("댓글 삭제에 성공했습니다.")
-
-                selectReplyList();
-
-            }else{
-                alert("댓글 삭제에 실패했습니다.")
+        $.ajax({
+    
+            url : contextPath + "/reply/delete",
+            data : {"replyNo" : replyNo},
+            type : "GET",
+    
+            success : function(result){
+    
+                if(result > 0){
+                    alert("댓글 삭제에 성공했습니다.")
+    
+                    selectReplyList();
+    
+                }else{
+                    alert("댓글 삭제에 실패했습니다.")
+                }
+    
+            },
+    
+            error : function(req, status, error){
+                console.log("댓글 삭제 실패");
+                console.log(req.responseText);
             }
-
-        },
-
-        error : function(req, status, error){
-            console.log("댓글 삭제 실패");
-            console.log(req.responseText);
-        }
-
-    });
+    
+        });
+    }
 
 }
 
@@ -242,12 +247,49 @@ function showUpdateReply(replyNo, btn){
 
 
 // 댓글 수정에서 취소!
+function updateCancel(btn){
 
+    if(confirm("댓글 수정을 취소하시겠습니까?")){
+        btn.parentElement.parentElement.innerHTML = beforeRow;
+    }
+
+}
 
 
 
 // 댓글 수정에서 수정!
+function updateBtn(replyNo, btn){
 
+    const replyContent = btn.parentElement.previousElementSibling.value;
+
+    $.ajax({
+
+        url : contextPath + "/reply/update",
+        data : {"replyNo": replyNo,
+                "replyContent" : replyContent},
+        type : "POST",
+        success : function(result){
+            if(result > 0){
+                alert("댓글이 수정 되었습니다.")
+
+                selectReplyList();
+            }else{
+                alert("댓글 수정에 실패했습니다.")
+            }
+
+
+        },
+
+        error : function(req, status, error){
+            console.log("댓글 삭제 실패");
+            console.log(req.responseText);
+        }
+
+
+    });
+
+
+}
 
 
 

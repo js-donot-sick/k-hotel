@@ -29,6 +29,15 @@
 		SET REPLY_ST = 'Y'
 		WHERE REPLY_NO = ?
 	</entry>
+	
+	<!-- 댓글 수정 -->
+	<entry key="updateReply">
+		UPDATE REPLY
+		SET REPLY_CONTENT = ?
+		WHERE REPLY_NO = ?
+		AND REPLY_ST = 'N'
+	
+	</entry>
 
 
 </properties>

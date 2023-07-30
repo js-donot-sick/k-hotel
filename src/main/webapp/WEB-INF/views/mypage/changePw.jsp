@@ -8,40 +8,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>비밀번호 변경</title>
 
-    <link rel="stylesheet" href="resources/css/changePw.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/changePw.css">
 </head>
 <body>
 
-    <header>헤더</header>
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <div class="L-all">
-        <div class="L-sidebar">사이드바</div>
+        <jsp:include page="/WEB-INF/views/common/sidebar.jsp"/>
 
         <div class="L-main">
             <div class="L-title">비밀번호 변경</div>
-            <form class="L-form-pw">
+
+
+            <form action="#">
+
                 <div class="L-pw">
-                    <label>현재 비밀번호</label>
-                    <input type="password" name="currentPw" id="currentPw" maxlength="30">
+                    <label for="currentPw">현재 비밀번호</label>
+                    <input type="password" name="currentPw" id="currentPw" maxlength="30" placeholder="현재 비밀번호를 입력해주세요.">
                 </div>
+
+                <span class="LM" id="LM1"></span>
+
                 
                 <div class="L-pw">
-                    <label>새 비밀번호</label>
-                    <input type="password" name="newPw" id="newPw" maxlength="30">
+                    <label for="newPw">새 비밀번호</label>
+                    <input type="password" name="newPw" id="newPw" maxlength="30" placeholder="대소문자, 특수문자 포함 8~15글자">
                 </div>
+
+                <span class="LM" id="LM2"></span>
+
                 
                 <div class="L-pw">
-                    <label>새 비밀번호 확인</label>
-                    <input type="password" name="newPwConfirm" id="newPw" maxlength="30">
+                    <label for="newPw2">새 비밀번호 확인</label>
+                    <input type="password" name="newPwConfirm" id="newPw2" maxlength="30">
                 </div>
+
+                <span class="LM" id="LM3"></span>
+                
 
                 <button class="L-pw-btn">비밀번호 변경하기</button>
-
             </form>
+
         </div>
 
     </div>
     
-    <footer>풋터</footer>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+
+    <script src="${contextPath}/resources/js/changePw.js"></script>
 </body>
 </html>

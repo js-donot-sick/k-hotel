@@ -18,10 +18,6 @@
     margin: auto;
 }
 
-/* 사이드바 */
-.L-sidebar{
-    width: 25%;
-}
 
 
 /* 메인 */
@@ -31,6 +27,13 @@
     flex-direction: column;
     align-items: center;
     border: 1px solid #eee;
+}
+
+/* 폼태그 */
+.L-main > form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* 제목 */
@@ -51,16 +54,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
 }
 
 /* 변경 input 태그 */
 .L-pw{
     display: flex;
     width: 820px;
-    margin: auto;
     height: 50px;
     border: 2px solid #ddd;
+    margin-top: 40px;
 }
 
 .L-pw > label{
@@ -77,6 +79,7 @@
     width: 70%;
     outline: none;
     border: 0;
+    padding-left: 10px;
 }
 
 /* 버튼 */
@@ -90,8 +93,24 @@
     color: white;
     border: none;
     margin-bottom: 50px;
+    margin-top: 70px;
 }
 
 .L-pw-btn:hover{
     background-color: #4F3A28;
+}
+
+/* 정규표현식 처리 */
+.LM{
+    font-size: 18px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.green{
+    color: green;
+}
+
+.red{
+    color: red;
 }

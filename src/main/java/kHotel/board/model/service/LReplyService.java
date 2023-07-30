@@ -75,4 +75,26 @@ public class LReplyService {
 		return result;
 	}
 
+	/** 댓글 수정 Service
+	 * @param replyNo
+	 * @param replyContent
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateReply(int replyNo, String replyContent) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		replyContent = Util.XSSHanding(replyContent);
+		
+		replyContent = Util.newLineHandling(replyContent);
+		
+		int result = dao.updateReply(conn, replyNo, replyContent);
+		
+		if(result > 0) 	commit(conn);
+		else			rollback(conn);
+		
+		return result;
+	}
+
 }
