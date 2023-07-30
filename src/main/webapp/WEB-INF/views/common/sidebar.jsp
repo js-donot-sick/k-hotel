@@ -57,7 +57,7 @@
               <dd class="H-active"><a href="#">- 프로필 수정</a></dd>
               <dd class=""><a href="#">- 비밀번호 변경</a></dd>
               <dd class=""><a href="#">- 문의 내역</a></dd>
-              <dd class=""><a href="#">- 탈퇴 요청</a></dd>
+              <dd class=""><a href="${contextPath}/member/mypage/deleteMember">- 탈퇴 요청</a></dd>
             </dl>
           </li>
           <li>
