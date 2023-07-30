@@ -9,6 +9,8 @@
     <title>login</title>
 
     <link rel="stylesheet" href="${contextPath}/resources/css/login.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 
@@ -74,7 +76,7 @@
                     <span> | </span>
                     <a href="#">비밀번호 재발급 &nbsp; </a> <!-- 요청 주소 정해지면 수정 -->
                     <span> | </span>
-                    <a href="#">회원가입</a>
+                    <a href="${contextPath}/member/signUp">회원가입</a>
                 </div>
             </div>
         </div>
@@ -85,7 +87,7 @@
                 </div>
                 <div class="k-search-letter">아이디 찾기</div>
                 <div>
-                    <form action="#">
+                    <form action="#" onsubmit="return sIdValidate()">
                         <table>
                             <tr>
                                 <td class="k-inputName">이름</td>
