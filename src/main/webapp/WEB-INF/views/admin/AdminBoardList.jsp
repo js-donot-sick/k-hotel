@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 게시글 관리</title>
-    <link rel="stylesheet" href="../resources/css/AdminBoardList.css">
-    <link rel="stylesheet" href="../webapp/resources/css/sidebar.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/AdminBoardList.css">
+    <link rel="stylesheet" href="${contextPath}/webapp/resources/css/sidebar.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -16,7 +18,8 @@
 
 <body>
 
-    <div>헤더</div>
+	<jsp:include page="/WEB-INF/views/admin/AdminHeader.jsp"/>
+
     <div class="H-main">
 
         
@@ -50,7 +53,7 @@
 
                     <div class="H-div">
 
-                        <a href="#" class="H-href">
+                        <a href="${contextPath}/views/admin/AdminFaqList.jsp" class="H-href">
                             <span class="H-span">FAQ</span>
                         </a>
 
@@ -83,6 +86,8 @@
         </div>
 
     </div>
+    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
@@ -90,4 +95,3 @@
 </body>
 
 </html>
-
