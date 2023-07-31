@@ -135,7 +135,7 @@
 }
 
 /* 현재 페이지 번호 */
-.P-pagination .P-current{
+.P-pagination .current{
     background-color: rgb(173,158,135);
     color: white;
     font-weight: bold;
