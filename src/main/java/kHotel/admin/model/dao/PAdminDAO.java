@@ -76,7 +76,7 @@ public class PAdminDAO {
 	 * @return listReportCount
 	 * @throws Exception
 	 */
-	public int getListReportCount(Connection conn, int memberNo) throws Exception{
+	public int getListReportCount(Connection conn, int listCount) throws Exception{
 
 		int listReportCount = 0;
 		
@@ -85,7 +85,7 @@ public class PAdminDAO {
 			String sql = prop.getProperty("listReportCount");
 			
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, memberNo);
+			pstmt.setInt(1, listCount);
 			
 			rs=pstmt.executeQuery();
 			
@@ -135,14 +135,12 @@ public class PAdminDAO {
 				PAdminMemebr am = new PAdminMemebr();
 				am.setMemberNo(rs.getInt(1));
 				am.setMemberId(rs.getString(2));
-				am.setMemberPw(rs.getString(3));
-				am.setMemberNm(rs.getString(4));
-				am.setMemberPno(rs.getString(5));
-				am.setMemebrTel(rs.getString(6));
-				am.setMemberEmail(rs.getString(7));
-				am.setMemberAdd(rs.getString(8));
-				am.setSecessionFl(rs.getString(9));
-				am.setReportCount(rs.getInt(10));
+				am.setMemberNm(rs.getString(3));
+				am.setMemebrTel(rs.getString(4));
+				am.setMemberEmail(rs.getString(5));
+				am.setMemberAdd(rs.getString(6));
+				am.setSecessionFl(rs.getString(7));
+
 				
 				boardList.add(am);
 				

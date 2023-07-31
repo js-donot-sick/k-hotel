@@ -32,17 +32,10 @@ public class AdminMemberServlet extends HttpServlet {
 				cp = Integer.parseInt(req.getParameter("cp"));
 			}
 
-			HttpSession session = req.getSession();
-
-			
-			//memberNo받아오기 ! 
-			Member loginMember = (Member)session.getAttribute("loginMember");
-
-			int memberNo = loginMember.getMemberNo();
-
+	
 			PAdminService service = new PAdminService();
 
-			Map<String, Object> map = service.searchAdminMember(type,cp,memberNo);
+			Map<String, Object> map = service.searchAdminMember(type,cp);
 			
 			req.setAttribute("map", map);
 
