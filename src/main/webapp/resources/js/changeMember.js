@@ -1,5 +1,5 @@
 
-// 카카오 오픈 api
+// 주소 카카오 오픈 api
 function L_addBtn() {
     new daum.Postcode({
         oncomplete: function(data) {
@@ -45,3 +45,80 @@ function L_addBtn() {
         }
     }).open();
 }
+
+
+// 정규표현식 실행
+function changeMember(){
+
+    // 전화번호 정규표현식
+    const regExp=/^0(1[01679]|2|[3-6][1-5]|70)\d{3,4}\d{4}$/;
+
+    // 이메일 정규표현식
+    const regExp1=/^([a-z]|[A-Z]|[0-9]){1,10}\@([a-z]|[A-Z]|[0-9]){1,10}\.(kr|com|net)$/;
+
+    const name = document.getElementById("L-name");
+    const email = document.getElementById("L-email");
+    const tel = document.getElementById("L-tel");
+    const address1 = document.getElementById("L-address1");
+    const address2 = document.getElementById("L-address2");
+    const address3 = document.getElementById("L-address3");
+
+
+    
+    /* 이메일 정규식 */
+    if(!regExp1.test(email.value)){
+        alert("올바르지 않은 이메일 형식입니다. 다시 입력해주세요.")
+        return false;
+    }
+
+    /* 전화번호 정규식 */
+    if(!regExp.test(tel.value)){
+        alert("올바르지 않은 전화번호 형식입니다. 다시 입력해주세요.")
+        return false;
+    }
+   
+
+    /* 수정 내용 빈칸일 시 진행 불가능 하도록 설정 */
+    if(name.value.trim().length == 0){
+        alert("수정할 이름을 입력해주세요.")
+        return false;
+    }
+
+    if(email.value.trim().length == 0){
+        alert("수정할 이메일을 입력해주세요.")
+        return false;
+    }
+
+    if(tel.value.trim().length == 0){
+        alert("수정할 전화번호를 입력해주세요.")
+        return false;
+    }
+
+    if(address1.value.trim().length == 0){
+        alert("수정할 우편번호를 입력해주세요.")
+        return false;
+    }
+
+    if(address2.value.trim().length == 0){
+        alert("수정할 주소를 입력해주세요.")
+        return false;
+    }
+
+    if(address3.value.trim().length == 0){
+        alert("수정할 상세주소를 입력해주세요.")
+        return false;
+    }
+    
+    
+
+
+
+
+    
+
+    return true;
+
+
+}
+
+

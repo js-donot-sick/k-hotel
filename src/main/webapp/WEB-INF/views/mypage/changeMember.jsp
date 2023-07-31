@@ -28,13 +28,13 @@
         <jsp:include page="/WEB-INF/views/common/sidebar.jsp"/> <!-- 사이드바 -->
 
         <div class="L-main">
-            <form action="#" class="L-form">
+
+            <form action="#" class="L-form" onsubmit = "return changeMember()">
                 <div class="K-content"> <!-- 찐 내용 -->
                     <div>회원 정보 수정</div>
                     <div>회원님의 정보를 쉽게 확인하실 수 있습니다.</div>
 
                     <c:set var="memberPno" value="${loginMember.memberPno}"/>
-                    <c:set var="addr" value="${fn:split(loginMember.memberAddress, ',,') }"></c:set>
 
                     <div>
                         <table>
@@ -60,16 +60,16 @@
                             </tr>
                             <tr>
                                 <td><label for="L-address">주소</label></td>
-                                <td><input type="text" placeholder="수정할 우편번호" class="L-input" name="L-address" id="L-address1" value="${loginMember.add}" value="${addr[0]}"></td>
+                                <td><input type="text" placeholder="수정할 우편번호" class="L-input" name="L-address" id="L-address1" ></td>
                                 <td><button class="L-searchBtn" onclick="L_addBtn()">우편번호 찾기</button></td> <!-- 우편번호 -->
                             </tr>
                             <tr>
                                 <td name="L-addressTd"></td>
-                                <td colspan="2"><input type="text" placeholder="수정할 주소" class="L-input" name="L-address" id="L-address2" value="${addr[1]}" ></td>
+                                <td colspan="2"><input type="text" placeholder="수정할 주소" class="L-input" name="L-address" id="L-address2"  ></td>
                             </tr>
                             <tr>
                                 <td name="L-addressTd"></td>
-                                <td colspan="2"><input type="text" placeholder="수정할 상세주소" class="L-input" name="L-address" id="L-address3" autocomplete="off" value="${addr[2]}"></td>
+                                <td colspan="2"><input type="text" placeholder="수정할 상세주소" class="L-input" name="L-address" id="L-address3" autocomplete="off" ></td>
                             </tr>
                         </table>
 
