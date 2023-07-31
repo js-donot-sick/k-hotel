@@ -13,7 +13,7 @@
 
     <header>
         <div class="K-header">
-            <div><a href="${contextPath}/admin/memberAdmin?type=">관리자 페이지 / </div>
+            <div><a href="${contextPath}/admin/memberAdmin?type=1">관리자 페이지 / </div>
             <div><a href="${contextPath}"><img src="${contextPath}/resources/images/logo_b_2.png" style="width: 50px;"></a></div>
             <div>
                 <a href="#">로그아웃</a>

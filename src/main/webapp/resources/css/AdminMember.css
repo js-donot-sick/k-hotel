@@ -15,12 +15,10 @@
     display: flex;
     width: 1200px;
     margin: auto;
+    height: 815px;
+    align-items: flex-start;
 }
 
-/* 사이드바 */
-.P-sidebar{
-    width: 25%;
-}
 
 /* 메인 */
 .P-main{
@@ -38,6 +36,9 @@
     height: 100px;
 }
 
+#P-memberList1{
+    width: 100%;
+}
 
 /* 정보조회 */
 .P-title1{
@@ -81,24 +82,67 @@
 }
 
 .P-main-menu{
-    border: 1px solid #eee;
+    width: 95%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+}
+
+/* 메인테이블 */
+.P-report-tr{
+    height: 70px;
     text-align: center;
+    border: 1px solid #eee;
+}
+
+.P-report-tr > th{
+    height: 70px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+/* 테이블내부크기 */
+.P-report-tr > td{
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid #eee;
 
 }
 
-#P-memberList1>tr th{
-    width:70px;
-    padding:0 5px;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    border: 1px solid #eee;
-    
+
+/* 페이지네이션 */
+.P-pagination{
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
-#P-memberList2>tr td{
-    padding:0 5px;
-    overflow:hidden;
-    text-overflow:ellipsis;
-    border: 1px solid #eee;
-    
+.P-pagination > li{
+    width: 20px;
+    margin: 0px 5px;
+    text-align: center;
+}
+
+.P-pagination a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+
+/* 현재 페이지 번호 */
+.P-pagination .P-current{
+    background-color: rgb(173,158,135);
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+/* 페이지네이션 호버효과 */
+.P-pagination > li:hover{
+    text-decoration: underline;
 }

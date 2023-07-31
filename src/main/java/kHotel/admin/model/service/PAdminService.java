@@ -20,11 +20,10 @@ public class PAdminService {
 	/** 어드민 멤버조회
 	 * @param type
 	 * @param cp
-	 * @param memberNo 
 	 * @return map
 	 * @throws Exception
 	 */
-	public Map<String, Object> searchAdminMember(int type, int cp, int memberNo) throws Exception{
+	public Map<String, Object> searchAdminMember(int type, int cp) throws Exception{
 		
 		Connection conn = getConnection();
 		
@@ -32,7 +31,7 @@ public class PAdminService {
 		int listCount = dao.getListCount(conn);
 
 		// 관리자 신고된 횟수 조회 
-		int listReportCount = dao.getListReportCount(conn,memberNo);
+		int listReportCount = dao.getListReportCount(conn,listCount);
 		
 		//전체 게시글 수 + 현재 페이지를 이용해 페이지네이션 객체 생성 
 		LPagination LPagination = new LPagination(cp, listCount);
