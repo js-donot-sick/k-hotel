@@ -54,15 +54,15 @@
                         </tr>
                         <tr>
                             <td class="K-bold">주소</td> <!-- 우편번호 -->
-                            <td class="K-small">${addr[0]}</td>
+                            <td class="K-small" name="Ladd1">${addr[0]}</td>
                         </tr>
                         <tr>
                             <td class="K-td-none"></td>
-                            <td class="K-small">${addr[1]}</td>
+                            <td class="K-small" name="Ladd2">${addr[1]}</td>
                         </tr>
                         <tr>
                             <td class="K-td-none"></td>
-                            <td class="K-small">${addr[2]}</td>
+                            <td class="K-small" name="Ladd3">${addr[2]}</td>
                         </tr>
                     </table>
 
