@@ -5,15 +5,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Setter
 @Getter
+@Setter
 @ToString
 @NoArgsConstructor
-public class ReviewImg {
+
+public class LikeList {
 	
-	private int reviewNo;
-	private String rename;
-	private int imageLevel;
-	private int boardNo; 
+	private int roomNo;
+	private int memberNo;
 
 }

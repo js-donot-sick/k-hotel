@@ -8,7 +8,7 @@ inputImage.addEventListener("change", function(){
 
     if(inputImage.files != undefined){
         const reader = new FileReader(); // 선택된 파일을 읽을 객체 생성
-        reader.readAsDataURL(this.files);
+        reader.readAsDataURL(this.files[0]);
 
         reader.onload = function(e){ //reader가 파일을 다 읽어온 경우
 
@@ -45,9 +45,10 @@ document.getElementById("J-delBtn").addEventListener("click",function(){
     if(del.value == 0){ // 눌러지지 않은 상태
 
         // 1) 프로필 이미지를 지움
-        document.getElementById("J-reviewImage3").setAttribute("src", contextPath + "/resources/images/logo_g_2.png");
-
+        document.getElementById("J-reviewImage3").setAttribute("src", "" + "");
+        
         document.getElementById("J-reviewImage2").value = "";
+        document.getElementById("J-reviewImage3").style.display = "none";
     }
 })
 

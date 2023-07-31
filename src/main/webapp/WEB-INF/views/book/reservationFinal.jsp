@@ -28,11 +28,16 @@
     <!----------------------------------------바디 --------------------------------------------->
     <form action="bookEnd" method="post" onsubmit="return reservationFinalValidate()">
 
+        ${reservation.roomName}
+        ${reservation.roomNo}
         <input type="hidden" name="hotelName" value="${reservation.hotelName}">
-        <input type="hidden" name="roonName" value="${reservation.roomName}">
+        <input type="hidden" name="roomName" value="${reservation.roomName}">
+        <input type="hidden" name="roomNo" value="${reservation.roomNo}">
         <input type="hidden" name="bookPerson" value="${reservation.bookPerson}">
         <input type="hidden" name="roomPrice" value="${reservation.roomPrice}">
         <input type="hidden" name="couponSale" value="${reservation.couponSale}">
+        <input type="hidden" name="checkInDt" value="${reservation.checkInTime}">
+        <input type="hidden" name="checkOutDt" value="${reservation.checkOutTime}">
         <div class="C-body">
             <div class="C-Final-rsv">
                 <div class="C-body-first-div">예약하기</div>
