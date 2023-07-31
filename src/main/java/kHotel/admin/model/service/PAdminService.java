@@ -55,4 +55,27 @@ public class PAdminService {
 		return map;
 	}
 
+
+	/** 회원아이디 검색
+	 * @param pid
+	 * @param type
+	 * @param cp
+	 * @return map
+	 * @throws Exception
+	 */
+	public Map<String, Object> searchId(String pid, int type, int cp) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int listCount = dao.getListCount(conn,pid);
+		
+		LPagination LPagination = new LPagination(cp, listCount);
+		
+		
+		
+		return map;
+	}
+
+
+
 }
