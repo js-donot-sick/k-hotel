@@ -76,6 +76,18 @@ public class hotelInfoController extends HttpServlet{
 			dispatcher.forward(req, resp);
 		}
 		
+		
+		if(command.equals("likeplus1")) {
+			
+			int memberNo = Integer.parseInt(req.getParameter("memberNo"));
+			int roomNo = Integer.parseInt(req.getParameter("roomNo"));
+			
+			
+			
+		}
+		
+		
+		
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
