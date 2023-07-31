@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>LMember-sql.xml</comment>
+
+	<!-- 비밀번호 변경 -->
+	<entry key="changePw">
+		UPDATE MEMBER
+		SET MEMBER_PW = ?
+		WHERE MEMBER_PW = ?
+		AND MEMBER_NO = ?
+	</entry>
+
+</properties>

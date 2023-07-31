@@ -21,7 +21,7 @@
             <div class="L-title">비밀번호 변경</div>
 
 
-            <form action="#">
+            <form action="changePw" method="post" onsubmit="return changePw()">
 
                 <div class="L-pw">
                     <label for="currentPw">현재 비밀번호</label>
@@ -47,7 +47,7 @@
                 <span class="LM" id="LM3"></span>
                 
 
-                <button class="L-pw-btn">비밀번호 변경하기</button>
+                <button class="L-pw-btn" type="submit">비밀번호 변경하기</button>
             </form>
 
         </div>

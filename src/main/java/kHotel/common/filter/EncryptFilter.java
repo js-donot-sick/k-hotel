@@ -21,8 +21,8 @@ import kHotel.common.wrapper.EncryptWrapper;
 @WebFilter(filterName = "encryptFilter", 
 			urlPatterns = {"/member/login",
 						   "/member/signUp",
-						   "/member/myPage/changePw",
-						   "/member/myPage/secession",
+						   "/member/mypage/changePw",
+						   "/member/mypage/deleteMember",
 						   "/member/reMain"
 						   })
 public class EncryptFilter extends HttpFilter implements Filter {
