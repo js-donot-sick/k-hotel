@@ -45,10 +45,10 @@ public class JMemberService {
 		
 		Connection conn = getConnection();
 		
-		int result = dao.reviewUpdate(conn,rv );
+		int result = dao.reviewUpdate(conn, rv );
 		
 		System.out.println("여긴 SERVICE");
-		
+		System.out.println(result);
 		if(result > 0) commit(conn);
 		else		   rollback(conn);
 		

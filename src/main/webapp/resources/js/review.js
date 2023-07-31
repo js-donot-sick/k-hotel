@@ -53,7 +53,27 @@ document.getElementById("J-delBtn").addEventListener("click",function(){
 
 const star5 = document.getElementById("5-stars");
 
-const star = document.getElementsByClassName("rating");
+const star = document.getElementsByClassName("star2");
+const star2 = document.getElementsByClassName("star3")[0];
+
+
+for(let i = 0 ; i < star.length ; i++){
+
+
+        if(star[i].checked = true){
+
+            star[0].value = 1;
+            star[1].value = 2;
+            star[2].value = 3;
+            star[3].value = 4;
+            star[4].value = 5;
+
+
+
+                console.log(star[0].value);
+        }
+
+}
 
 
     
