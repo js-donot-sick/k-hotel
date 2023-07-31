@@ -43,11 +43,6 @@ public class ChangeMemberServlet extends HttpServlet{
 			Laddress = String.join(",,", address);
 		}
 		
-		System.out.println(name);
-		System.out.println(email);
-		System.out.println(tel);
-		System.out.println(Laddress);
-	
 		
 		HttpSession session = req.getSession();
 		
@@ -68,8 +63,6 @@ public class ChangeMemberServlet extends HttpServlet{
 			LMemberService service = new LMemberService();
 			
 			int result = service.changeMember(member);
-			
-			System.out.println(result);
 			
 			if(result > 0) {
 				

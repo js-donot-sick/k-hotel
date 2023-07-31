@@ -39,36 +39,40 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>.</td>
-                            <td><a href="#">.</a></td>
-                            <td>.</td>
-                            <td>.</td>
-                            <td>.</td>
-                        </tr>
+                       <c:choose>
+                       
+                       <c:when test="${empty boardList}">
+                       
+                       <tr>
+                            <th colspan="5">게시글이 존재하지 않습니다.</th>
+                       </tr>
+                       
+                       </c:when>
 
-                        <tr>
-                            <td>.</td>
-                            <td><a href="#">.</a></td>
-                            <td>.</td>
-                            <td>.</td>
-                            <td>.</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>.</td>
-                            <td><a href="#">.</a></td>
-                            <td>.</td>
-                            <td>.</td>
-                            <td>.</td>
-                        </tr>
-                        
+                       <c:otherwise>
 
+                       <c:forEach var="board" items = "${boardList}">
+
+                    <c:set var="memberId" value="${board.memberId}"/>
+
+                        <a href="${contextPath}/board/qna/boardDetail?type=2&cp=${pagination.currentPage}&no=${board.boardNo}${searchUrl}" style="text-decoration: none;">
+                            <div>
+                                <div>${board.boardNo}</div>
+                                <div>${board.boardTitle}</div>
+                                <div></div>
+                                <div>${board.boardDate}</div>
+                            </div>
+                        </a>
+
+                    </c:forEach>
+                       </c:otherwise>
+                       </c:choose>
                     </tbody>
                 </table>
             </div>
 
             <div class="btn-area">
+                
                 <button id="insertBtn">글쓰기</button>
             </div>
 

@@ -49,7 +49,7 @@ public class AnnouncementServlet extends HttpServlet  {
 	            String query = req.getParameter("query");
 	            
 	            map = service.searchBoardList(type, cp, key, query);
-	            
+	             
 	         }
 	         
 	         

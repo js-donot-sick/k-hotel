@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +25,13 @@
 
     <div id="k-content"> <!-- 중간 내용 부분 전체 -->
 
-        <div> <!-- 예약 확인 글씨 div -->
+		<%
+		Date today = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		String formattedDate = dateFormat.format(today);
+		%>
+
+		<div> <!-- 예약 확인 글씨 div -->
             예약확인
         </div>
         <div> <!-- 예약 정보 객실 div -->
@@ -40,8 +48,8 @@
                         <th>총 합계</th>
                     </tr>
                     <tr>
-                        <td>asdf</td>
-                        <td></td>
+                        <td><%= formattedDate %></td>
+                        <td>${hotelName}</td>
                         <td></td>
                         <td></td>
                         <td>sffsdf</td>

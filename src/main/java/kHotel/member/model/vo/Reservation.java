@@ -36,4 +36,5 @@ public class Reservation {
 	private String couponDate;
 	private String couponSt;
 	private int couponCount;
+	private int hotelPay;
 }

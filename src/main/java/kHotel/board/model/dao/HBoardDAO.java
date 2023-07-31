@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import kHotel.board.model.vo.AnnouncementDetail;
 import kHotel.board.model.vo.Board;
 import kHotel.member.model.dao.MemberDAO;
 import kHotel.member.model.vo.LPagination;
@@ -146,6 +147,47 @@ public class HBoardDAO {
 		}
 		
 		return boardList;
+	}
+
+
+	/** 게시글 조회
+	 * @param conn
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public AnnouncementDetail checkBoardDetail(Connection conn, int boardNo) throws Exception{
+		
+		AnnouncementDetail detail = null;
+		
+		try {
+			
+			String sql = prop.getProperty("selectBoardDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				detail = new AnnouncementDetail();
+				
+				detail.setBoardNo(rs.getInt(1));
+				detail.setBoardTitle(rs.getString(2));
+				detail.setBoardContent(rs.getString(3));
+				detail.setBoardDate(rs.getString(4));
+				detail.setMemberNo(rs.getInt(5));
+				detail.setMemberName(rs.getString(6));
+				
+				
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return detail;
 	}
 
 }
