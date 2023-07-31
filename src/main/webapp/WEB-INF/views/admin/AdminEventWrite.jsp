@@ -81,14 +81,14 @@
                             
                             <button id="K-write">작성</button>
                         </div>
+                        <!-- hidden으로 숨겨놓기 -->
+                        <input type="hidden" name="mode" value="${param.mode}">
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- hidden으로 숨겨놓기 -->
-    <input type="hidden" name="mode" value="${param.mode}">
 
     <div id="sample"></div>
 
