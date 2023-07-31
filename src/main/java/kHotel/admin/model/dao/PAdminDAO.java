@@ -1,6 +1,5 @@
 package kHotel.admin.model.dao;
 
-import static edu.kh.community.common.JDBCTemplate.close;
 import static kHotel.common.JDBCTemplate.*;
 
 import java.io.FileInputStream;
@@ -60,8 +59,7 @@ public class PAdminDAO {
 			if (rs.next()) {
 				listCount = rs.getInt(1);
 			}
-			
-			System.out.println(listCount);
+
 
 		} finally {
 			close(rs);
@@ -71,68 +69,71 @@ public class PAdminDAO {
 		return listCount;
 	}
 
-	/** 신고 당한 회원 수 조회 
+	/**
+	 * 신고 당한 회원 수 조회
+	 * 
 	 * @param conn
-	 * @param memberNo 
+	 * @param memberNo
 	 * @return listReportCount
 	 * @throws Exception
 	 */
-	public int getListReportCount(Connection conn, int listCount) throws Exception{
+	public int getListReportCount(Connection conn, int listCount) throws Exception {
 
 		int listReportCount = 0;
-		
+
 		try {
-			
+
 			String sql = prop.getProperty("listReportCount");
-			
+
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, listCount);
-			
-			rs=pstmt.executeQuery();
-			
-			if(rs.next()) {
-				
+
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+
 				listReportCount = rs.getInt(1);
-				
+
 			}
-			
-			System.out.println(listReportCount);
-			
+
+
 		} finally {
 			close(pstmt);
 			close(rs);
 		}
-		
+
 		return listReportCount;
 	}
 
-	/** 관리자 회원 목록 조회
+	/**
+	 * 관리자 회원 목록 조회
+	 * 
 	 * @param conn
 	 * @param lPagination
 	 * @param type
 	 * @return boardList
 	 * @throws Exception
 	 */
-	public List<PAdminMemebr> selectBoardList(Connection conn, LPagination lPagination, int type) throws Exception{
-	
+	public List<PAdminMemebr> selectBoardList(Connection conn, LPagination lPagination, int type) throws Exception {
+
 		List<PAdminMemebr> boardList = new ArrayList<PAdminMemebr>();
-		
+
 		try {
 			String sql = prop.getProperty("selectBoardList");
-			
+
 			int start = (lPagination.getCurrentPage() - 1) * lPagination.getLimit() + 1;
-			
+
 			int end = start + lPagination.getLimit() - 1;
-			
+
 			pstmt = conn.prepareStatement(sql);
-			
+
 			pstmt.setInt(1, start);
 			pstmt.setInt(2, end);
-			
+
 			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				
+
+			while (rs.next()) {
+
 				PAdminMemebr am = new PAdminMemebr();
 				am.setMemberNo(rs.getInt("RNUM"));
 				am.setMemberId(rs.getString("MEMBER_ID"));
@@ -141,112 +142,115 @@ public class PAdminDAO {
 				am.setMemberAdd(rs.getString("MEMBER_ADD"));
 				am.setSecessionFl(rs.getString("SECESSION_FL"));
 
-				
 				boardList.add(am);
-				
-				System.out.println(boardList);
-				
+
+
 			}
-			
+
 		} finally {
 			close(rs);
 			close(pstmt);
 		}
-		
+
 		return boardList;
 	}
 
-	/** 게시판 이름 조회 DAO
+	/**
+	 * 게시판 이름 조회 DAO
+	 * 
 	 * @param conn
 	 * @param type
 	 * @return boardName
 	 */
-	public String selectBoardName(Connection conn, int type) throws Exception{
-	String boardName = null;
-		
+	public String selectBoardName(Connection conn, int type) throws Exception {
+		String boardName = null;
+
 		try {
 			String sql = prop.getProperty("selectBoardName");
-			
+
 			pstmt = conn.prepareStatement(sql);
-			
+
 			pstmt.setInt(1, type);
-			
+
 			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
+
+			if (rs.next()) {
 				boardName = rs.getString(1);
 			}
-			
-			
-		}finally {
-			
+
+		} finally {
+
 			close(rs);
 			close(pstmt);
-			
+
 		}
-		
+
 		return boardName;
 	}
 
-	/** 아이디 게시글 수 조회 
+	/**
+	 * 아이디 게시글 수 조회
+	 * 
 	 * @param conn
 	 * @param pid
 	 * @return listCount
 	 * @throws Exception
 	 */
-	public int getListCount(Connection conn, String pid) throws Exception {
-		
+	public int getListCount(Connection conn, String condition) throws Exception {
+
 		int listCount = 0;
-		
+
 		try {
+
+			String sql = prop.getProperty("searchId") + condition;
+			stmt = conn.createStatement();
+			rs= stmt.executeQuery(sql);
 			
-			String sql = prop.getProperty("searchId");
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, pid);
-			rs = pstmt.executeQuery();
-			
-			if(rs.next()) {
-				listCount =rs.getInt(1);
+			if (rs.next()) {
+				listCount = rs.getInt(1);
 			}
-			
-			
+
 		} finally {
 			close(rs);
-			close(pstmt);
+			close(stmt);
 
 		}
 
 		return listCount;
+		
 	}
 
 	/**
+	 * 아이디 검색 시 조건 조회
+	 * 
 	 * @param conn
 	 * @param lPagination
-	 * @param type
-	 * @param pid
-	 * @return
+	 * @param type 
+	 * @param condition
+	 * @return boardList
 	 * @throws Exception
 	 */
-	public List<PAdminMemebr> searchBoardList(Connection conn, LPagination lPagination, int type, String pid) throws Exception{
+	public List<PAdminMemebr> searchBoardList(Connection conn, LPagination lPagination, String condition, int type) throws Exception {
 
 		List<PAdminMemebr> boardList = new ArrayList<PAdminMemebr>();
-		
+
 		try {
-			String sql = prop.getProperty("selectBoardList");
-			
+
+			String sql = prop.getProperty("searchId1")
+						+ condition
+						+ prop.getProperty("searchId2");
+
 			int start = (lPagination.getCurrentPage() - 1) * lPagination.getLimit() + 1;
-			
 			int end = start + lPagination.getLimit() - 1;
-			
+
 			pstmt = conn.prepareStatement(sql);
-			
 			pstmt.setInt(1, start);
 			pstmt.setInt(2, end);
-			
+
 			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				
+
+			while (rs.next()) {
+
 				PAdminMemebr am = new PAdminMemebr();
 				am.setMemberNo(rs.getInt("RNUM"));
 				am.setMemberId(rs.getString("MEMBER_ID"));
@@ -255,19 +259,17 @@ public class PAdminDAO {
 				am.setMemberAdd(rs.getString("MEMBER_ADD"));
 				am.setSecessionFl(rs.getString("SECESSION_FL"));
 
-				
 				boardList.add(am);
-				
-				System.out.println(boardList);
-				
+
+
 			}
-			
+
 		} finally {
 			close(rs);
 			close(pstmt);
 		}
-		
 		return boardList;
-		
+
 	}
+
 }
