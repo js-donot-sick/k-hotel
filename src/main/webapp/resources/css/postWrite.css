@@ -28,13 +28,12 @@
     margin: auto;
     display: flex;
     flex-direction: column;
-    border: 5px solid #ddd;
 }
 .C-postWrite-title{ /* 게시글 작성 글씨 */
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    padding: 10px;
+    padding: 30px;
 }
 #C-postWrite-Writer{ /* 작성자 input태그 */
     width: 170px;
@@ -78,7 +77,7 @@
 .C-btn-container{ /* 버튼 큰 틀 */
     display: flex;
     justify-content: center;
-    margin: none;
+    margin: 20px 0;
 }
 
 .C-btn-cancel{ /* 게시글 작성 취소 버튼 */

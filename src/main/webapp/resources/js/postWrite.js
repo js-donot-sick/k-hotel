@@ -5,6 +5,7 @@ var addPicture = document.getElementById("C-plus-picture");
 var picture = document.getElementById("C-picture");
 var imageCount = 1;
 
+
 addPicture.addEventListener("click", function() {
     var fileInput = document.createElement("input");
     fileInput.type = "file";
@@ -55,7 +56,7 @@ function inputcheck() {
 
 (function(){
     const cancelBtn = document.getElementById("C-postWritebtn-cancel");
-    
+
     if(cancelBtn != null){
 
         cancelBtn.addEventListener("click", function(){

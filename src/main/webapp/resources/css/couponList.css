@@ -53,6 +53,7 @@
     height: 100px;
     padding-top: 25px;
     background-color: rgba(178, 158, 135, 0.9);
+    color: white;
 }
 
 .C-couponlist-inner{ /* 이미지 + 텍스트 큰 틀 */

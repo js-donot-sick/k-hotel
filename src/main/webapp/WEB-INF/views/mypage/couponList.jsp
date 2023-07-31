@@ -22,7 +22,7 @@
             <jsp:include page="/WEB-INF/views/common/sidebar.jsp"/>
             <div class="C-body-couponlist">
                 <div class="C-couponlist-div">
-                    <div class="C-couponlist-title">쿠폰함</div>
+                    <div class="C-couponlist-title">쿠폰리스트</div>
                     <c:forEach var="coupon" items="${couponList}">
 	                    <div class="C-couponlist-inner">
 	                        <div class="C-inner-img">

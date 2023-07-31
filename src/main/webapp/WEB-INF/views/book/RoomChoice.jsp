@@ -14,7 +14,6 @@
     <!-- j쿼리  -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <!-- 폰트 -->
-    <script src="https://kit.fontawesome.com/7bc7245179.js" crossorigin="anonymous"></script>
     <!-- 부트스트랩 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
