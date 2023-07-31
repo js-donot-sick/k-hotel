@@ -20,6 +20,8 @@ public class reservationController extends HttpServlet{
 
 	// /book/roomChoice // 메인페이지에서 예약화면으로 forward 하는 요청
 	// /book/reservationFinal // 결제 페이지 에서 조회하는 구문
+	// /book/end // 결제 후 예약 내역 보여주는 페이지
+	
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
