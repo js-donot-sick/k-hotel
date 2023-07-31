@@ -27,6 +27,9 @@ public class PAdminService {
 		
 		Connection conn = getConnection();
 		
+		// 게시판 이름 조회
+		String boardName = dao.selectBoardName(conn, type);
+		
 		//  관리자 전체 게시글 수 조회 
 		int listCount = dao.getListCount(conn);
 
@@ -43,6 +46,7 @@ public class PAdminService {
 		// map객체에 담아주기
 		Map<String, Object> map = new HashMap<String, Object>();
 		
+		map.put("boardName", boardName);
 		map.put("listCount", listCount);
 		map.put("listReportCount", listReportCount);
 		map.put("LPagination", LPagination);

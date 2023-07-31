@@ -133,13 +133,12 @@ public class PAdminDAO {
 			while(rs.next()) {
 				
 				PAdminMemebr am = new PAdminMemebr();
-				am.setMemberNo(rs.getInt(1));
-				am.setMemberId(rs.getString(2));
-				am.setMemberNm(rs.getString(3));
-				am.setMemebrTel(rs.getString(4));
-				am.setMemberEmail(rs.getString(5));
-				am.setMemberAdd(rs.getString(6));
-				am.setSecessionFl(rs.getString(7));
+				am.setMemberNo(rs.getInt("RNUM"));
+				am.setMemberId(rs.getString("MEMBER_ID"));
+				am.setMemebrTel(rs.getString("MEMBER_TEL"));
+				am.setMemberEmail(rs.getString("MEMBER_EMAIL"));
+				am.setMemberAdd(rs.getString("MEMBER_ADD"));
+				am.setSecessionFl(rs.getString("SECESSION_FL"));
 
 				
 				boardList.add(am);
@@ -156,4 +155,35 @@ public class PAdminDAO {
 		return boardList;
 	}
 
+	/** 게시판 이름 조회 DAO
+	 * @param conn
+	 * @param type
+	 * @return boardName
+	 */
+	public String selectBoardName(Connection conn, int type) throws Exception{
+	String boardName = null;
+		
+		try {
+			String sql = prop.getProperty("selectBoardName");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, type);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				boardName = rs.getString(1);
+			}
+			
+			
+		}finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		return boardName;
+	}
 }

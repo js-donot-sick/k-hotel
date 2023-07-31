@@ -51,7 +51,7 @@
                                     <span>${loginMember.memberName} 님 환영합니다.</span> <!-- 임시 -->
                                     <p>${loginMember.memberAdmin}</p>
                                     <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">
-                                        <a href="admin/member">
+                                        <a href="admin/memberAdmin?type=1">
                                             <button>관리자</button>
                                         </a>
                                     </c:if>
