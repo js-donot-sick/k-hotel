@@ -36,7 +36,7 @@
                 <tr class="L-report-tr">
                     <th>게시글 번호</th>
                     <th>신고내용</th>
-                    <th>작성자아이디</th>
+                    <th>게시글작성자</th>
                     <th>게시글작성날짜</th>
                     <th>신고자</th>
                     <th>버튼</th>
