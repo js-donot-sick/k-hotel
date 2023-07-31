@@ -36,7 +36,57 @@ public class ReviewUpdateServlet extends HttpServlet{
 			JMemberService service = new JMemberService();
 			
 			String path = null;
+
+			// -------------------------------------------------------------------
 			
+			// 저장되는 이미지 크기
+			int maxSize = 1024 * 1024 * 100;
+
+			// 최상위 경로
+			String root = session.getServletContext().getRealPath("/");
+
+			// 파일이 저장되는 경로
+			String folderPath = "/resources/images/reviewImg";
+
+			// reviewImg 폴더 까지의 경로
+			String filePath = root + folderPath;
+
+			String encoding = "UTF-8";
+			MultipartRequest mpReq = new MultipartRequest(req, filePath, maxSize, encoding, new MyRenamePolicy());
+			
+			Enumeration<String> files = mpReq.getFileNames();
+
+			// 지정된 파일명 변경 정책에 맞게 이름이 바뀐 파일이 저장됨
+			String name = files.nextElement();
+			
+			
+			/* String reviewImg = folderPath + mpReq.getFilesystemName("JreviewImage"); */
+
+			
+			String rename = mpReq.getFilesystemName(name);
+
+			ReviewImg image = new ReviewImg();
+			
+			if (rename != null) {
+
+
+				image.setRename(folderPath + rename);
+				image.setImageLevel(Integer.parseInt(name));
+			}
+
+			
+			int delete = Integer.parseInt(mpReq.getParameter("Jdelete"));
+
+			if (delete == 0) {
+
+				/* reviewImg = null; */
+			}
+			
+			// 게시글 번호 얻어오기
+			
+			
+			
+		    // --------------------------------------------------------------------
 			
 			// 리뷰 등록
 			String content = req.getParameter("reviewContent");

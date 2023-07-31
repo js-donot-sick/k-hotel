@@ -19,5 +19,6 @@ public class Review {
 	private int boardNo;
 	private String[] tag;
 	private String reviewImg;
+	private int board;
 	
 }
