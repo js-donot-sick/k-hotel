@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import kHotel.member.model.vo.Member;
+import kHotel.member.model.vo.Reservation;
 
 public class KMemberDAO {
 	
@@ -215,6 +216,34 @@ public class KMemberDAO {
 			
 			
 			close(pstmt);
+			
+		}
+		
+		return result;
+	}
+
+	/** 예약 끝 -> 예약 값 inset DAO
+	 * @param conn
+	 * @param reserve
+	 * @return result
+	 * @throws Exception
+	 */
+	public int reservationEnd(Connection conn, Reservation reserve) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("reservationEnd");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, reserve.getCheckInTime());
+			pstmt.setString(2, reserve.getCheckOutTime());
+			pstmt.setInt(3, reserve.getBookPerson());
+			
+			
+		} finally {
 			
 		}
 		

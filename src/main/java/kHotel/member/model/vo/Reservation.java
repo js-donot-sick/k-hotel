@@ -37,4 +37,7 @@ public class Reservation {
 	private String couponSt;
 	private int couponCount;
 	private int hotelPay;
+	private String memberTel;
+	private String memberEmail;
+	private String bank;
 }

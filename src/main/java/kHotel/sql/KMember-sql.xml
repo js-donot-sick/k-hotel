@@ -44,5 +44,11 @@
 		SET MEMBER_PW=?
 		WHERE MEMBER_ID=?
 	</entry>
+	
+	<!-- 예약 끝 예약테이블 insert -->
+	<entry key="reservationEnd">
+		INSERT INTO RESERVATION
+		VALUES(SEQ_BOOK_NO.NEXTVAL, ?, ?, ?, DEFAULT, ?, ?)
+	</entry>
 
 </properties>
