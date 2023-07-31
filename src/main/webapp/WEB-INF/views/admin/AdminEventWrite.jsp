@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,26 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 이벤트 작성</title>
     
-    <link rel="stylesheet" href="${contextPath}/resources/css/AdminEventWrite.css">
+    <link rel="stylesheet" href="../resources/css/AdminEventWrite.css">
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <jsp:include page="/WEB-INF/views/admin/AdminHeader.jsp"/>
-
     <div class="K-first">
         <div>
-            <jsp:include page="/WEB-INF/views/common/adminSidebar.jsp"/>
+            <div class="K-side"></div>
             <div class="K-all">
                 <div>
                     <div>이벤트 작성</div>
 
-                    <form action="#" id="K-form" enctype="multipart/form-data" method="post"
-                        onsubmit="return eventValidate()">
+                    <form action="${contextPath}/admin/eventWrite" enctype="multipart/form-data" method="post" id="K-form">
                         <div>제목 입력</div>
                         <div>
                             <input type="text" placeholder="내용을 입력해주세요" name="K-title">
+                        </div>
+
+                        <div>
+                            <label for="K-date">마감일</label>
+                            <input type="date" name="K-date" id="K-date">
                         </div>
                         <div>
                             <span>내용입력</span>
@@ -36,7 +38,7 @@
                                 <div id="K-image-select"></div>
                             </div> -->
 
-                            <h6>썸네일</h6>
+                            <h5>썸네일</h5>
                             <div class="k-img-box k-thumbnail">
                                 <label for="k-img0">
                                     <img class="k-preview">
@@ -45,7 +47,7 @@
                                 <span class="k-deleteImg">&times;</span>
                             </div>
 
-                            <h6>업로드 이미지</h6>
+                            <h5>업로드 이미지</h5>
                             <div class="k-upload-img">
                                 <div class="k-img-box k-upload">
                                     <label for="k-img1">
@@ -71,7 +73,7 @@
                             </div>
                         </div>
                         <div>
-                            <textarea name="K-content" cols="95" rows="20" placeholder="내용을 입력해주세요"></textarea>
+                            <textarea name="K-content" cols="99" rows="20" placeholder="내용을 입력해주세요"></textarea>
                         </div>
                         <div>
                             
@@ -85,10 +87,11 @@
         </div>
     </div>
 
+    <!-- hidden으로 숨겨놓기 -->
+    <input type="hidden" name="mode" value="${param.mode}">
+
     <div id="sample"></div>
 
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
-
-    <script src="${contextPath}/resources/js/AdminEventWrite.js"></script>
+    <script src="../resources/js/AdminEventWrite.js"></script>
 </body>
 </html>
