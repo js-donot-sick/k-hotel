@@ -62,6 +62,7 @@
     text-align: center;
     width: 100%;
     padding-top: 50px;
+    font-weight: bold;
 }
 
 .C-delete-inputpassword-div{ /* 비밀번호 입력 큰 틀 */
@@ -107,9 +108,8 @@
 #secession-terms{ /* 약관 내용 */
     width: 500px;
     height: 150px;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: scroll;
-    
 }
 
 

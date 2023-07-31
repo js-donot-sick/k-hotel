@@ -16,7 +16,7 @@ import kHotel.member.model.service.BoardService;
 import kHotel.member.model.vo.Board;
 import kHotel.member.model.vo.Member;
 
-@WebServlet("/member/mypageWirte")
+@WebServlet("/member/mypage/mypageWirte")
 public class myPageWirteServlet extends HttpServlet {
 
 	@Override
