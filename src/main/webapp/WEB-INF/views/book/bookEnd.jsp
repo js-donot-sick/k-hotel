@@ -49,12 +49,12 @@
                     </tr>
                     <tr>
                         <td><%= formattedDate %></td>
-                        <td>${hotelName}</td>
-                        <td></td>
-                        <td></td>
-                        <td>sffsdf</td>
-                        <td></td>
-                        <td></td>
+                        <td>${reserve.hotelName}</td>
+                        <td>${reserve.roomName}</td>
+                        <td>${reserve.bookPerson}</td>
+                        <td>${reserve.roomPrice}</td>
+                        <td>${reserve.couponSale}</td>
+                        <td>${reserve.hotelPay}</td>
                     </tr>
                 </table>
             </div>
@@ -65,27 +65,23 @@
                 <table border="1">
                     <tr>
                         <th>예약자명</th>
-                        <td>fdsf</td>
+                        <td>${reserve.memberName}</td>
                     </tr>
                     <tr>
                         <th>연락처</th>
-                        <td>sdfsf</td>
+                        <td>${reserve.memberTel}</td>
                     </tr>
                     <tr>
                         <th>이메일</th>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>요청사항</th>
-                        <td></td>
+                        <td>${reserve.memberEmail}</td>
                     </tr>
                     <tr>
                         <th>결제방법</th>
-                        <td></td>
+                        <td>${reserve.bank}</td>
                     </tr>
                     <tr>
                         <th>결제상태</th>
-                        <td></td>
+                        <td>${reserve.bank}</td>
                     </tr>
                 </table>
             </div>

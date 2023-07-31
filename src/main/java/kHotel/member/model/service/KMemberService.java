@@ -6,6 +6,7 @@ import java.sql.Connection;
 import kHotel.common.wrapper.EncryptWrapper;
 import kHotel.member.model.dao.KMemberDAO;
 import kHotel.member.model.vo.Member;
+import kHotel.member.model.vo.Reservation;
 
 import static kHotel.common.JDBCTemplate.*;
 
@@ -82,6 +83,23 @@ public class KMemberService {
 		else			rollback(conn);
 		
 		close(conn);
+		return result;
+	}
+
+	/** 예약 끝 service
+	 * @param reserve
+	 * @return result
+	 * @throws Exception
+	 */
+	public int bookEnd(Reservation reserve) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.reservationEnd(conn, reserve);
+		
+		
+		
+		
 		return result;
 	}
 
