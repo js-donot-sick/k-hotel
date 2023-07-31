@@ -21,7 +21,8 @@
 
                     <div class="J-body2">
 
-                        <form action="review4" method="POST">
+                        <form action="review4" method="POST" >
+
                         <div class="J-body2-1">
                             리뷰 / 벌점 작성
                         </div>
@@ -84,28 +85,24 @@
                                     </td>
 
                                     <td colspan="3">
-                                        <form name="J-myform" id="J-myform" method="post" action="./save">
-                                            <fieldset>
-                                                <input type="radio" id="5-stars" name="rating" value="5"
+                                                <input type="radio" id="5-stars" name="rating" value="5" class="star2"
                                                     v-model="ratings" />
                                                 <label for="5-stars" class="star pr-4">⭐</label>
-                                                <input type="radio" id="4-stars" name="rating" value="4"
+                                                <input type="radio" id="4-stars" name="rating" value="4" class="star2"
                                                     v-model="ratings" />
                                                 <label for="4-stars" class="star">⭐</label>
-                                                <input type="radio" id="3-stars" name="rating" value="3"
+                                                <input type="radio" id="3-stars" name="rating" value="3" class="star2"
                                                     v-model="ratings" />
                                                 <label for="3-stars" class="star">⭐</label>
-                                                <input type="radio" id="2-stars" name="rating" value="2"
+                                                <input type="radio" id="2-stars" name="rating" value="2" class="star2"
                                                     v-model="ratings" />
                                                 <label for="2-stars" class="star">⭐</label>
-                                                <input type="radio" id="1-star" name="rating" value="1"
+                                                <input type="radio" id="1-star" name="rating" value="1" class="star2"
                                                     v-model="ratings" />
-                                                <label for="1-star" class="star">⭐</label>
-                                            </fieldset>
-                                        </form>
+                                                <label for="1-star" class="star" >⭐</label>
                                     </td>
                                 </tr>
-
+                                
                                 <tr>
 
                                     <td>
@@ -150,7 +147,7 @@
 
                         <div class="J-body2-3">
                             <button id="J-cancle">리뷰 작성 취소</button>
-                            <button id="J-update" onclick="location.href=''">리뷰 작성</button>
+                            <button id="J-update">리뷰 작성</button>
                             <!-- 리뷰 작성 취소 누를 시 이전 페이지로 돌아갈건지 알림창 띄우고 확인 누르면 이동. -->
                         </div>
                         <input type="hidden" name="Jdelete" id="J-delete" value="0">
@@ -158,7 +155,7 @@
 
                     <input type="hidden" name="reviewTitle" value="리뷰입니다.">
                 </div>
-
+                <input type="hidden" name="rating2" class="star3">
             </form>
                 <!-- ------------------------------------------------------------------------- -->
                
@@ -170,7 +167,7 @@
             <script>
                 const contextPath = "${contextPath}"; // 최상위 경로를 JS 전역변수로 선언
             </script>
-            
+
             <script src="${contextPath}/resources/js/review.js"></script>
         </body>
 

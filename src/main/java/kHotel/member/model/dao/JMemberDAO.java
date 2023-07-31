@@ -93,9 +93,8 @@ public class JMemberDAO {
 			pstmt.setInt(3, rv.getStar());
 			
 			
-			
 			result = pstmt.executeUpdate();
-			
+			System.out.println(result);
 			System.out.println("여긴 DAO");
 		}finally {
 

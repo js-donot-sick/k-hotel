@@ -35,15 +35,16 @@ public class ReviewUpdateServlet extends HttpServlet{
 			
 			JMemberService service = new JMemberService();
 			
-			String path = "/WEB-INF/views/board/reviewMain.jsp";
+			String path = null;
 			
 			
 			// 리뷰 등록
 			String content = req.getParameter("reviewContent");
-			
-			String userId = loginMember.getMemberId();
-			
 			int star = Integer.parseInt(req.getParameter("rating"));
+			
+			System.out.println(content + "작성 영역");
+			String userId = loginMember.getMemberId();
+		
 			
 			Review rv = new Review();
 			
@@ -54,71 +55,28 @@ public class ReviewUpdateServlet extends HttpServlet{
 			int memberNo = loginMember.getMemberNo();
 			
 			rv.setMemberNo(memberNo);
+			
 			System.out.println("왜그러냐?");
 			
 			int result = service.reviewUpdate(rv);
 			
-			System.out.println("여긴 servlet");
+			String message = null;
+			
 			if(result > 0) {
-				session.setAttribute("message", "리뷰가 작성되었습니다.");
-			}else {
-				session.setAttribute("message", "리뷰 작성 실패");
 				
-				path = req.getHeader("referer");
+				message = "작성 성공";
+				
+				path = "/reviewMain.jsp";
+				
+			}else {
+				message = "작성 실패";
+				
 			}
+			
+			System.out.println("안녕");
+			session.setAttribute("message", message);
 			resp.sendRedirect(path);
 			
-			// 저장되는 이미지 크기
-			int maxSize = 1024 * 1024 * 100;
-			
-			// 최상위 경로
-			String root = session.getServletContext().getRealPath("/");
-			
-			// 파일이 저장되는 경로
-			String folderPath = "/resources/images/reviewImg";
-			
-			// reviewImg 폴더 까지의 경로
-			String filePath = root + folderPath;
-			
-			
-			String encoding = "UTF-8";
-			
-			
-			// 지정된 파일명 변경 정책에 맞게 이름이 바뀐 파일이 저장됨
-			MultipartRequest mpReq = new MultipartRequest(req,  filePath, maxSize,  encoding , new MyRenamePolicy());
-			
-			
-			
-			String reviewImg = folderPath + mpReq.getFilesystemName("JreviewImage");
-			
-			Enumeration<String> files = mpReq.getFileNames();
-			
-			String name = files.nextElement();
-			
-			String rename = mpReq.getFilesystemName(name);
-			
-			
-			System.out.println("여기서 걸리나?");
-			if(rename != null) {
-				
-				ReviewImg image = new ReviewImg();
-				
-				image.setReviewReName( folderPath + rename);
-				image.setImageLevel( Integer.parseInt(name) );
-			}
-			
-			
-			
-			int delete = Integer.parseInt(mpReq.getParameter("Jdelete"));
-			
-			if(delete == 0) {
-				
-				reviewImg = null;
-			}
-			
-			// memberNo 가져오기
-			
-			System.out.println(2222);
 			
 		}catch(Exception e) {
 			e.printStackTrace();
