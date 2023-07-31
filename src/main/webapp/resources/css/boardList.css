@@ -36,8 +36,7 @@ main{
 }
 
 .list-table > thead{
-    background-color: wheat;
-    color: white;
+    color: black;
 }
 
 .list-table tr{
