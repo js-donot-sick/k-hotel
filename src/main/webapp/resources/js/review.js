@@ -56,8 +56,16 @@ const star5 = document.getElementById("5-stars");
 const star = document.getElementsByClassName("rating");
 
 
-    for(let items of star){
-        console.log(items.value);
-    }
     
+
+/* 태그가 선택 되었을때 */
+const tag = document.getElementsByClassName("tag");
+
+for(let items of tag){
+    
+    if(items.checked == true){
+
+        items.value = 'Y';
+    }
+}
 

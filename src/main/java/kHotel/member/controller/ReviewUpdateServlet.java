@@ -17,9 +17,10 @@ import kHotel.common.MyRenamePolicy;
 import kHotel.member.model.service.JMemberService;
 import kHotel.member.model.vo.Member;
 import kHotel.member.model.vo.Reservation;
+import kHotel.member.model.vo.Review;
 import kHotel.member.model.vo.ReviewImg;
 
-@WebServlet("/member/review4")
+@WebServlet("/member/mypage/review4")
 public class ReviewUpdateServlet extends HttpServlet{
 	
 
@@ -34,15 +35,41 @@ public class ReviewUpdateServlet extends HttpServlet{
 			
 			JMemberService service = new JMemberService();
 			
-		
+			String path = "/WEB-INF/views/board/reviewMain.jsp";
+			
+			
 			// 리뷰 등록
+			String content = req.getParameter("reviewContent");
 			
+			String userId = loginMember.getMemberId();
 			
-			// 이전 예약
+			int star = Integer.parseInt(req.getParameter("rating"));
+			
+			Review rv = new Review();
+			
+			rv.setContent(content);
+			rv.setUserId(userId);
+			rv.setStar(star);
+			
+			int memberNo = loginMember.getMemberNo();
+			
+			rv.setMemberNo(memberNo);
+			System.out.println("왜그러냐?");
+			
+			int result = service.reviewUpdate(rv);
+			
+			System.out.println("여긴 servlet");
+			if(result > 0) {
+				session.setAttribute("message", "리뷰가 작성되었습니다.");
+			}else {
+				session.setAttribute("message", "리뷰 작성 실패");
+				
+				path = req.getHeader("referer");
+			}
+			resp.sendRedirect(path);
 			
 			// 저장되는 이미지 크기
 			int maxSize = 1024 * 1024 * 100;
-			
 			
 			// 최상위 경로
 			String root = session.getServletContext().getRealPath("/");
@@ -56,10 +83,11 @@ public class ReviewUpdateServlet extends HttpServlet{
 			
 			String encoding = "UTF-8";
 			
+			
 			// 지정된 파일명 변경 정책에 맞게 이름이 바뀐 파일이 저장됨
 			MultipartRequest mpReq = new MultipartRequest(req,  filePath, maxSize,  encoding , new MyRenamePolicy());
 			
-			int memberNo = loginMember.getMemberNo();
+			
 			
 			String reviewImg = folderPath + mpReq.getFilesystemName("JreviewImage");
 			
@@ -69,6 +97,8 @@ public class ReviewUpdateServlet extends HttpServlet{
 			
 			String rename = mpReq.getFilesystemName(name);
 			
+			
+			System.out.println("여기서 걸리나?");
 			if(rename != null) {
 				
 				ReviewImg image = new ReviewImg();
@@ -77,7 +107,6 @@ public class ReviewUpdateServlet extends HttpServlet{
 				image.setImageLevel( Integer.parseInt(name) );
 			}
 			
-			// memberNo 얻어오기
 			
 			
 			int delete = Integer.parseInt(mpReq.getParameter("Jdelete"));
@@ -87,12 +116,12 @@ public class ReviewUpdateServlet extends HttpServlet{
 				reviewImg = null;
 			}
 			
+			// memberNo 가져오기
 			
-			int result = service.reviewUpdate(reviewImg,memberNo);
-			
+			System.out.println(2222);
 			
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}
 		
 	}

@@ -8,6 +8,7 @@ import java.util.List;
 import kHotel.member.model.dao.JMemberDAO;
 import kHotel.member.model.vo.Member;
 import kHotel.member.model.vo.Reservation;
+import kHotel.member.model.vo.Review;
 
 public class JMemberService {
 
@@ -34,17 +35,19 @@ public class JMemberService {
 		return result;
 	}
 
-	/** 리뷰 사진 등록 Service
+	/** 리뷰 등록 Service
 	 * @param reviewImg
-	 * @param memberNo
+	 * @param rv
 	 * @return result
 	 * @throws Exception
 	 */
-	public int reviewUpdate(String reviewImg, int memberNo) throws Exception {
+	public int reviewUpdate( Review rv) throws Exception {
 		
 		Connection conn = getConnection();
 		
-		int result = dao.reviewUpdate(conn,reviewImg,memberNo );
+		int result = dao.reviewUpdate(conn,rv );
+		
+		System.out.println("여긴 SERVICE");
 		
 		if(result > 0) commit(conn);
 		else		   rollback(conn);
@@ -65,6 +68,7 @@ public class JMemberService {
 		
 		 List<Reservation> rvList = dao.reservation(conn, memberNo);
 		
+		 
 		close(conn);
 				
 		return rvList;

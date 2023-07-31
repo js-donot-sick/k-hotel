@@ -23,4 +23,10 @@
 		AND <![CDATA[CHECKOUT_DT < SYSDATE]]>
 	</entry>
 	
+	<!-- 리뷰 등록 -->
+	<entry key="reviewUpdate">
+		INSERT INTO BOARD VALUES(SEQ_BOARD_NO.NEXTVAL,'리뷰',? ,DEFAULT,
+									DEFAULT , 3 , ? ,? )
+	</entry>
+	
 </properties>
