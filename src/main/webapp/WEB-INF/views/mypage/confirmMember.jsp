@@ -95,7 +95,7 @@
                 </div>
         
                 <div>
-                    <a href="changeMember"><button type="button" id="K-update-btn">개인 정보 수정</button></a>
+                    <button type="button" id="K-update-btn" onclick="location.href='${contextPath}/member/mypage/changeMember'">개인 정보 수정</button>
                 </div>
             </div>
 

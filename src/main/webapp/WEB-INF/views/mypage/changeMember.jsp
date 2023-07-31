@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,40 +33,43 @@
                     <div>회원 정보 수정</div>
                     <div>회원님의 정보를 쉽게 확인하실 수 있습니다.</div>
 
+                    <c:set var="memberPno" value="${loginMember.memberPno}"/>
+                    <c:set var="addr" value="${fn:split(loginMember.memberAddress, ',,') }"></c:set>
+
                     <div>
                         <table>
                             <tr>
                                 <td><label for="L-name">이름</label></td>
-                                <td colspan="2"><input type="text" placeholder="수정할 이름" class="L-input" id="L-name" name="L-name"></td>
+                                <td colspan="2"><input type="text" placeholder="수정할 이름" class="L-input" id="L-name" name="L-name" autocomplete="off" value="${loginMember.memberName}"></td>
                             </tr>
                             <tr>
                                 <td>주민등록번호</td>
-                                <td colspan="2">202020-4455666</td>
+                                <td colspan="2">${fn:substring(memberPno, 0,8)}******</td>
                             </tr>
                             <tr>
                                 <td><label for="L-id">아이디</label></td>
-                                <td colspan="2"><input type="text" placeholder="수정할 아이디" class="L-input" id="L-id" name="L-id"></td>
+                                <td colspan="2">${loginMember.memberId}</td>
                             </tr>
                             <tr>
                                 <td><label for="L-email">이메일</label></td>
-                                <td colspan="2"><input type="text" placeholder="수정할 이메일" class="L-input" id="L-email" name="L-email"></td>
+                                <td colspan="2"><input type="text" placeholder="수정할 이메일" class="L-input" id="L-email" name="L-email" autocomplete="off" value="${loginMember.memberEmail}"></td>
                             </tr>
                             <tr>
                                 <td><label for="L-tel">휴대전화</label></td>
-                                <td colspan="2"><input type="text" placeholder="수정할 휴대전화 번호" class="L-input" id="L-tel" name="L-tel"></td>
+                                <td colspan="2"><input type="text" placeholder="수정할 휴대전화 번호" class="L-input" id="L-tel" name="L-tel" autocomplete="off" value="${loginMember.memberTel}"></td>
                             </tr>
                             <tr>
                                 <td><label for="L-address">주소</label></td>
-                                <td><input type="text" placeholder="수정할 우편번호" class="L-input" name="L-address" id="L-address1"></td>
+                                <td><input type="text" placeholder="수정할 우편번호" class="L-input" name="L-address" id="L-address1" value="${loginMember.add}" value="${addr[0]}"></td>
                                 <td><button class="L-searchBtn" onclick="L_addBtn()">우편번호 찾기</button></td> <!-- 우편번호 -->
                             </tr>
                             <tr>
                                 <td name="L-addressTd"></td>
-                                <td colspan="2"><input type="text" placeholder="수정할 주소" class="L-input" name="L-address" id="L-address2"></td>
+                                <td colspan="2"><input type="text" placeholder="수정할 주소" class="L-input" name="L-address" id="L-address2" value="${addr[1]}" ></td>
                             </tr>
                             <tr>
                                 <td name="L-addressTd"></td>
-                                <td colspan="2"><input type="text" placeholder="수정할 상세주소" class="L-input" name="L-address" id="L-address3"></td>
+                                <td colspan="2"><input type="text" placeholder="수정할 상세주소" class="L-input" name="L-address" id="L-address3" autocomplete="off" value="${addr[2]}"></td>
                             </tr>
                         </table>
 
