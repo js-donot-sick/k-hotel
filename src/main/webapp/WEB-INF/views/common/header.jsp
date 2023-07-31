@@ -68,7 +68,7 @@
         
               
                         <div class="P-btn3">
-                                <a href="${contextPath}/board">커뮤니티</a>
+                                <a href="${contextPath}/board?type=1">커뮤니티</a>
                                <a href="${contextPath}/event" >이벤트</a>
                             
                         </div>
