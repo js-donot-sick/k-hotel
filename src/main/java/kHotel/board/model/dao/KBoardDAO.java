@@ -450,6 +450,8 @@ public class KBoardDAO {
 			
 			String sql = prop.getProperty("selectEventDetail");
 			
+			System.out.println("eventNo : " + eventNo);
+			
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setInt(1, eventNo);
@@ -463,6 +465,8 @@ public class KBoardDAO {
 				event.setEventContent(rs.getString(2));
 				event.setEventDt(rs.getString(3));
 			}
+			
+			System.out.println("dao에서 event: " + event);
 			
 		} finally {
 			close(rs);
@@ -484,7 +488,7 @@ public class KBoardDAO {
 		
 		try {
 			
-			String sql = prop.getProperty("selelctImageList");
+			String sql = prop.getProperty("selectImageList");
 			
 			pstmt = conn.prepareStatement(sql);
 			

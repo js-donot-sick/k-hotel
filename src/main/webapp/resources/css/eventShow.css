@@ -17,6 +17,8 @@
     width: 1200px;
     margin: auto;
     margin-top: 20px;
+
+    margin-bottom: 20px;
 }
 
 .K-all>div:nth-child(1){ /* 이벤트 글씨 */
@@ -67,4 +69,18 @@
 .K-all a{
     color: black;
     text-decoration: none;
+}
+
+.boardImg{
+    width: 1155px;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    background-color: pink;
+}
+
+/* 이미지 */
+.boardImg img{
+    max-width: 95%;
+    max-height: 95%;
 }

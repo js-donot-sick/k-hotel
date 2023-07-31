@@ -147,9 +147,10 @@ public class KBoardService {
 		
 		if(event!=null) {
 			List<EventImage> imageList = dao.selelctImageList(conn, eventNo);
+			event.setImageList(imageList);
 		}
 		
-		
+		close(conn);
 		
 		return event;
 	}
