@@ -31,6 +31,7 @@ public class EncryptWrapper extends HttpServletRequestWrapper{
 		String value = null;
 		
 		switch(name) {
+		case "C-deleteMember-Pw" :
 		case "inputPw" :
 		case "memberPw" :
 		case "currentPw" :
