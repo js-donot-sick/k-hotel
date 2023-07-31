@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
+
 import kHotel.member.model.service.CBookService;
 import kHotel.member.model.vo.Reservation;
 
@@ -67,6 +69,16 @@ public class AdminBookServlet extends HttpServlet{
 				resp.getWriter().print(result);
 
 			} 
+			
+			if(command.equals("selectbookList")) {
+				
+				List<Reservation> rsvList = service.selectRsvList();
+
+				
+				new Gson().toJson(rsvList, resp.getWriter());
+				
+				
+			}
 
 		}catch (Exception e) {
 
