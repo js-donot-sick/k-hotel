@@ -9,7 +9,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>review1</title>
 
-            <link rel="stylesheet" href="../resources/css/review.css">
+            <link rel="stylesheet" href="${contextPath}/resources/css/review.css">
         </head>
 
         <body>
@@ -43,7 +43,7 @@
                                     </td>
 
                                     <td>
-                                        <input type="text" placeholder="작성일" id="J-text">
+                                        <input type="text" placeholder="작성일" id="J-text" value="${rv.hotelName}">
                                     </td>
                                 </tr>
 
@@ -53,7 +53,7 @@
                                     </td>
 
                                     <td>
-                                       <div id="J-room"></div>
+                                    <!--    <input type="text" value="${rv.roomName["+ bookNo + "]}"> -->
                                     </td>
 
                                     <td id="J-text3">
