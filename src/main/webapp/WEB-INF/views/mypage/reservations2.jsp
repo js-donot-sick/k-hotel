@@ -38,7 +38,6 @@
                 <div class="J-J">
                     <div class="J-J1">
                         이전 예약 내역
-                        <form action="review" method="POST">
 
                     </div>
 
@@ -46,6 +45,7 @@
                         
                         
                         <c:forEach var="list" items="${rvList}">
+                        <form action="review" method="POST">
                         <div class="accordion test" id="accordionExample" >
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
@@ -73,13 +73,13 @@
                             </div>
                             
                         </div>
+                </form>
                     </c:forEach>
                     </div>
                     <div class="J-J3">
                         홈페이지 버튼
                         
                     </div>
-                </form>
                         
                     </div>
 

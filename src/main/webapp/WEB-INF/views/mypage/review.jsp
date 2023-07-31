@@ -53,7 +53,7 @@
                                     </td>
 
                                     <td>
-                                    <!--    <input type="text" value="${rv.roomName["+ bookNo + "]}"> -->
+                                        <input type="text" value="${rv.roomName}"> 
                                     </td>
 
                                     <td id="J-text3">
@@ -112,11 +112,11 @@
                                     </td>
 
                                     <td>
-                                        <input type="checkbox" id="in">
+                                        <input type="checkbox" id="tag1">
                                         <pre>깨끗해요</pre>
-                                        <input type="checkbox">
+                                        <input type="checkbox" id="tag2">
                                         <pre>아이와 가기 좋아요</pre>
-                                        <input type="checkbox">
+                                        <input type="checkbox" id="tag3">
                                         <pre>조용해서 쉬기 좋아요</pre>
                                     </td>
 
@@ -168,7 +168,7 @@
             <script>
                 const contextPath = "${contextPath}"; // 최상위 경로를 JS 전역변수로 선언
             </script>
-            <script src="../resources/js/review.js"></script>
+            <script src="${contextPath}/resources/js/review.js"></script>
         </body>
 
         </html>

@@ -34,14 +34,11 @@ public class ReviewUpdateServlet extends HttpServlet{
 			
 			JMemberService service = new JMemberService();
 			
+		
+			// 리뷰 등록
+			
+			
 			// 이전 예약
-			
-			
-			
-			
-			
-			
-			
 			
 			// 저장되는 이미지 크기
 			int maxSize = 1024 * 1024 * 100;
@@ -80,9 +77,7 @@ public class ReviewUpdateServlet extends HttpServlet{
 				image.setImageLevel( Integer.parseInt(name) );
 			}
 			
-			
 			// memberNo 얻어오기
-			
 			
 			
 			int delete = Integer.parseInt(mpReq.getParameter("Jdelete"));
