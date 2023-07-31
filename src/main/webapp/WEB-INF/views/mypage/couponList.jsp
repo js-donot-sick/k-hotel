@@ -12,24 +12,7 @@
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>   
 
-    <script>
-        $(document).ready(function() {
-          $(".H-side-bar .H-side-item").click(function(e) {
-            e.preventDefault();
-            var $this = $(this);
-            var $parent = $this.closest('li');
-            var $siblings = $this.siblings('dl');
-    
-            if ($siblings.length && !$siblings.is(':visible')) {
-              $parent.addClass('H-active').siblings('li').removeClass('H-active').find('dl').removeClass('H-block').addClass('none');
-              $siblings.removeClass('H-none').addClass('H-block');
-            } else {
-              $parent.removeClass('H-active');
-              $siblings.removeClass('H-block').addClass('H-none');
-            }
-          });
-        });
-      </script>
+   
 </head>
 
 <body>

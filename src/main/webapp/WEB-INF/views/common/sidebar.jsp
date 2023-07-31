@@ -75,8 +75,8 @@
 
             <a href="#" class="H-side-item">내가 쓴 글</a>
             <dl class="H-none">
-              <dd class=""><a href="mypageWirte">- REVIEW</a></dd>
-              <dd class=""><a href="mypageQna">- QnA</a></dd>
+              <dd class=""><a href="${contextPath}/member/mypage/mypageWirte">- REVIEW</a></dd>
+              <dd class=""><a href="${contextPath}/member/mypage/mypageQna">- QnA</a></dd>
             </dl>
           </li>
           <li>

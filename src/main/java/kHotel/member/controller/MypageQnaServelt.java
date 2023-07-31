@@ -15,7 +15,7 @@ import kHotel.member.model.service.BoardService;
 import kHotel.member.model.vo.Board;
 import kHotel.member.model.vo.Member;
 
-@WebServlet("/member/mypageQna")
+@WebServlet("/member/mypage/mypageQna")
 public class MypageQnaServelt extends HttpServlet{
 
 	@Override
