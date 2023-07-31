@@ -8,6 +8,8 @@ import java.util.Map;
 
 import kHotel.board.model.dao.KBoardDAO;
 import kHotel.board.model.vo.Board;
+import kHotel.board.model.vo.Event;
+import kHotel.board.model.vo.EventImage;
 import kHotel.member.model.vo.LPagination;
 import kHotel.member.model.vo.Member;
 
@@ -130,6 +132,26 @@ public class KBoardService {
 		close(conn);
 		
 		return result;
+	}
+
+	/** 이벤트 상세조회 service
+	 * @param eventNo
+	 * @return event
+	 * @throws Exception
+	 */
+	public Event selectEventDetail(int eventNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		Event event = dao.selectEventDetail(conn, eventNo);
+		
+		if(event!=null) {
+			List<EventImage> imageList = dao.selelctImageList(conn, eventNo);
+		}
+		
+		
+		
+		return event;
 	}
 
 }

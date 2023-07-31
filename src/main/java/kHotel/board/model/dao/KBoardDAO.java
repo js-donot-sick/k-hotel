@@ -13,6 +13,8 @@ import java.util.Properties;
 import static kHotel.common.JDBCTemplate.*;
 
 import kHotel.board.model.vo.Board;
+import kHotel.board.model.vo.Event;
+import kHotel.board.model.vo.EventImage;
 import kHotel.member.model.dao.MemberDAO;
 import kHotel.member.model.vo.LPagination;
 
@@ -432,6 +434,81 @@ public class KBoardDAO {
 			close(pstmt);
 		}
 		return result;
+	}
+
+	/** 이벤트 상세조회 DAO
+	 * @param conn
+	 * @param eventNo
+	 * @return event
+	 * @throws Exception
+	 */
+	public Event selectEventDetail(Connection conn, int eventNo) throws Exception {
+		
+		Event event = null;
+		
+		try {
+			
+			String sql = prop.getProperty("selectEventDetail");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, eventNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				event = new Event();
+				
+				event.setEventTitle(rs.getString(1));
+				event.setEventContent(rs.getString(2));
+				event.setEventDt(rs.getString(3));
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return event;
+	}
+
+	/** 이벤트 상세조회 이미지 DAO
+	 * @param conn
+	 * @param eventNo
+	 * @return imageList
+	 * @throws Exception
+	 */
+	public List<EventImage> selelctImageList(Connection conn, int eventNo) throws Exception {
+		
+		List<EventImage> imageList = new ArrayList<>();
+		
+		try {
+			
+			String sql = prop.getProperty("selelctImageList");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, eventNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				EventImage image = new EventImage();
+				
+				image.setImageNo(rs.getInt(1));
+				image.setImageRename(rs.getString(2));
+				image.setImageLevel(rs.getInt(3));
+				image.setEventNo(rs.getInt(4));
+				
+				imageList.add(image);
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return imageList;
 	}
 
 	

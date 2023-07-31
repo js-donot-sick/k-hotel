@@ -26,5 +26,22 @@
 		INSERT INTO EVENT_IMG
 		VALUES (SEQ_IMG_EVENT_NO.NEXTVAL, ?, ?, ?)
 	</entry>
+	
+	<!-- 이벤트 글 상세조회 -->
+	<entry key="selectEventDetail">
+		SELECT EVENT_TITLE, EVENT_CONTENT, EVENT_DT FROM EVENT
+		WHERE EVENT_DT>=SYSDATE
+		AND EVENT_NO=?
+	</entry>
+	
+	<!-- 이벤트 이미지 상세조회 -->
+	<entry key="selelctImageList">
+		SELECT IMG_EVENT_NO, IMG_EVENT_RENAME, IMG_EVENT_LEVEL, EVENT_NO 
+		FROM EVENT_IMG
+		JOIN EVENT USING (EVENT_NO)
+		WHERE EVENT_NO = 18
+		AND EVENT_DT >=SYSDATE
+		<![CDATA[ AND IMG_EVENT_LEVEL <> 0 ]]>
+	</entry>
 
 </properties>
