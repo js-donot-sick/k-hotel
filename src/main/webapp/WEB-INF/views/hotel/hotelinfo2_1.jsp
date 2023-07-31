@@ -67,21 +67,27 @@
             <div class="L-roompoint-main">
                 <div class="L-roompoint">객실 소개</div>
                 <div class="L-roompoint-1">
+                    
+                    <form action="hotel1/hotelinfo1" onclick="return hotelInfo1()">
                     <!-- 객실1 -->
-                    <div class="L-roompoint-border L-roomA">
-                        <img src="${contextPath}/resources/images/deluxroompoint1.jpg" class="L-roomimg" id="L-room1">
-                        <input type="checkbox" id="L-star-1">
-                        <label for="L-star-1" id="L-star-1-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
-                        <label for="L-star-1" id="L-star-1-2"><img src="${contextPath}/resources/images/redheart.png"></label>
-                        <pre>
+                        <div class="L-roompoint-border L-roomA">
+                            <img src="${contextPath}/resources/images/deluxroompoint1.jpg" class="L-roomimg" id="L-room1">
+                            <input type="checkbox" id="L-star-1" name="L-star1">
+                            <label for="L-star-1" id="L-star-1-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
+                            <label for="L-star-1" id="L-star-1-2"><img src="${contextPath}/resources/images/redheart.png"></label>
+                            <button type="button" id="L-hbtn"></button>
+                            <pre>
  <p>디럭스 룸</p> 침대타입 <span>|</span> 더블/트윈/트리플 전망 시티뷰 
  투숙인원 <span>|</span> 2 명 
  객실면적 <span>|</span> 40~46 m²
-                        </pre>
-                    </div>
+                            </pre>
+                        </div>
+                    </form>
+
+                    <!-- 객실2 -->
                     <div class="L-roompoint-border L-roomA1">
                         <img src="${contextPath}/resources/images/standard-Room_1.jpg" class="L-roomimg1" id="L-room2">
-                        <input type="checkbox" id="L-star-2">
+                        <input type="checkbox" id="L-star-2" name="L-star2">
                         <label for="L-star-2" id="L-star-2-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
                         <label for="L-star-2" id="L-star-2-2"><img src="${contextPath}/resources/images/redheart.png"></label>
                         <pre>
@@ -90,9 +96,11 @@
  객실면적 <span>|</span> 26.7 ㎡ ~ 30.7㎡
                         </pre>
                     </div>
+
+                    <!-- 객실3 -->
                     <div class="L-roompoint-border L-roomA">
                         <img src="${contextPath}/resources/images/suiteroompoint3.jpg" class="L-roomimg" id="L-room3">
-                        <input type="checkbox" id="L-star-3">
+                        <input type="checkbox" id="L-star-3" name="L-star3">
                         <label for="L-star-3" id="L-star-3-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
                         <label for="L-star-3" id="L-star-3-2"><img src="${contextPath}/resources/images/redheart.png"></label>
                         <pre>
