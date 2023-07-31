@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import kHotel.member.model.vo.Member;
 import kHotel.member.model.vo.Reservation;
+import kHotel.member.model.vo.Review;
 
 public class JMemberDAO {
 	
@@ -70,22 +71,35 @@ public class JMemberDAO {
 	}
 
 
-	/** 리뷰 이미지 등록 DAO
+	/** 리뷰 등록 DAO
 	 * @param conn
 	 * @param reviewImg
-	 * @param memberNo
+	 * @param rv
 	 * @return reuslt
 	 * @throws Exception
 	 */
-	public int reviewUpdate(Connection conn, String reviewImg, int memberNo) throws Exception {
+	public int reviewUpdate(Connection conn, Review rv) throws Exception {
 		
 		int result = 0;
 		
 		try {
-			String sql = prop.getProperty("");
+			String sql = prop.getProperty("reviewUpdate");
 			
+			pstmt = conn.prepareStatement(sql);
+			
+			
+			pstmt.setString(1, rv.getContent());
+			pstmt.setInt(2, rv.getMemberNo());
+			pstmt.setInt(3, rv.getStar());
+			
+			
+			
+			result = pstmt.executeUpdate();
+			
+			System.out.println("여긴 DAO");
 		}finally {
-			
+
+			close(pstmt);
 			
 		}
 		return result;

@@ -21,6 +21,7 @@
 
                     <div class="J-body2">
 
+                        <form action="review4" method="POST">
                         <div class="J-body2-1">
                             리뷰 / 벌점 작성
                         </div>
@@ -29,7 +30,7 @@
 
                             <table>
 
-                                <tr >
+                                <tr>
                                     <td id="J-text3">
                                         작성자
                                     </td>
@@ -112,11 +113,11 @@
                                     </td>
 
                                     <td>
-                                        <input type="checkbox" id="tag1">
+                                        <input type="checkbox" class="tag" name="tag">
                                         <pre>깨끗해요</pre>
-                                        <input type="checkbox" id="tag2">
+                                        <input type="checkbox" class="tag" name="tag">
                                         <pre>아이와 가기 좋아요</pre>
-                                        <input type="checkbox" id="tag3">
+                                        <input type="checkbox" class="tag" name="tag">
                                         <pre>조용해서 쉬기 좋아요</pre>
                                     </td>
 
@@ -124,12 +125,12 @@
 
                                     </td>
 
-                                    <td>
-                                        <input type="checkbox">
+                                    <td> 
+                                        <input type="checkbox" class="tag" name="tag">
                                         <pre>침구가 고급스러워요</pre>
-                                        <input type="checkbox">
+                                        <input type="checkbox" class="tag" name="tag">
                                         <pre>애인과 가기 좋아요</pre>
-                                        <input type="checkbox">
+                                        <input type="checkbox" class="tag" name="tag">
                                         <pre>파티하기 좋아요</pre>
                                     </td>
                                 </tr>
@@ -140,7 +141,7 @@
                                     </td>
 
                                     <td colspan="3">
-                                        <textarea id="J-text1" placeholder="내용을 입력해주세요"></textarea>
+                                        <textarea id="J-text1" placeholder="내용을 입력해주세요" name="reviewContent"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -158,6 +159,7 @@
                     <input type="hidden" name="reviewTitle" value="리뷰입니다.">
                 </div>
 
+            </form>
                 <!-- ------------------------------------------------------------------------- -->
                
                 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
@@ -168,6 +170,7 @@
             <script>
                 const contextPath = "${contextPath}"; // 최상위 경로를 JS 전역변수로 선언
             </script>
+            
             <script src="${contextPath}/resources/js/review.js"></script>
         </body>
 
