@@ -19,22 +19,10 @@ import kHotel.member.model.vo.Member;
 import kHotel.member.model.vo.Reservation;
 import kHotel.member.model.vo.ReviewImg;
 
-@WebServlet("/member/review3")
+@WebServlet("/member/review4")
 public class ReviewUpdateServlet extends HttpServlet{
 	
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		
-		
-		
-		String path = "/WEB-INF/views/board/review.jsp";
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-		
-		dispatcher.forward(req, resp);
-		
-	}
+
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
