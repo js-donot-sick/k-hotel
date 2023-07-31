@@ -37,6 +37,7 @@
     width: 850px;
     margin: auto;
     border: 5px solid rgba(178, 158, 135, 0.9) ;
+    margin-top: 30px;
 }
 
 .K-all>div>div:nth-of-type(1){ /* 이벤트 작성 글씨 */
@@ -109,6 +110,7 @@ input[name="K-title"]{ /* 제목 input태그 */
 textarea[name="K-content"]{
     resize: none;
     font-size: 15px;
+    margin-left: 10px;
 }
 #K-form>div:nth-child(6){ /* 버튼들 div */
     display: flex;

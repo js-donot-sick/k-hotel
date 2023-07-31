@@ -25,6 +25,10 @@ public class EventDetailServlet extends HttpServlet {
 			
 			Event event = service.selectEventDetail(eventNo);
 			
+			System.out.println(event);
+			
+			req.setAttribute("event", event);
+			
 			String path = "/WEB-INF/views/event/eventShow.jsp";
 			
 			req.getRequestDispatcher(path).forward(req, resp);

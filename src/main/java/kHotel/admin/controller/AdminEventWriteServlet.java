@@ -79,7 +79,7 @@ public class AdminEventWriteServlet extends HttpServlet {
 				
 				System.out.println("name : " + name);
 
-				String rename = mpReq.getFilesystemName(name);
+				String rename = mpReq.getFilesystemName(folderPath + name);
 				String original = mpReq.getOriginalFileName(name);
 
 				if (original != null) { // 실제로 파일이 담겨있는 경우
@@ -123,7 +123,7 @@ public class AdminEventWriteServlet extends HttpServlet {
 					session.setAttribute("message", "게시글이 등록되었습니다.");
 					path = "eventWrite?no=" + eventNo;
 					
-					System.out.println("가라 제발!!!");
+					// System.out.println("가라 제발!!!");
 				} else {
 					session.setAttribute("message", "게시글 등록 실패");
 					path = "eventWrite?mode=insert";

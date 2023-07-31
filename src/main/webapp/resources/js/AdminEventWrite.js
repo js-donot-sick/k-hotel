@@ -64,3 +64,14 @@ function eventValidate(){
     return true;
 
 }
+
+document.getElementById("K-cancel").addEventListener("click", function(){
+    if(confirm("작성을 취소하시겠습니까?")){
+        const pathname = location.pathname; // /kHotel/admin/eventWrite
+        let url = pathname.substring(0,pathname.indexOf("/", 1)); // /kHotel // 최상위주소
+
+        url += "/admin/memberAdmin?type=1";
+
+        location.href = url;
+    }
+})

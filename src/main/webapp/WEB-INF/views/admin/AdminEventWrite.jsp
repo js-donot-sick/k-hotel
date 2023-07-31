@@ -14,9 +14,12 @@
 </head>
 <body>
 
+    <jsp:include page="/WEB-INF/views/admin/AdminHeader.jsp"/>
+    
     <div class="K-first">
         <div>
-            <div class="K-side"></div>
+            <jsp:include page="/WEB-INF/views/common/adminSidebar.jsp"/>
+            
             <div class="K-all">
                 <div>
                     <div>이벤트 작성</div>
@@ -73,7 +76,7 @@
                             </div>
                         </div>
                         <div>
-                            <textarea name="K-content" cols="99" rows="20" placeholder="내용을 입력해주세요"></textarea>
+                            <textarea name="K-content" cols="103" rows="20" placeholder="내용을 입력해주세요"></textarea>
                         </div>
                         <div>
                             
@@ -92,6 +95,8 @@
 
     <div id="sample"></div>
 
-    <script src="../resources/js/AdminEventWrite.js"></script>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+
+    <script src="${contextPath}/resources/js/AdminEventWrite.js"></script>
 </body>
 </html>
