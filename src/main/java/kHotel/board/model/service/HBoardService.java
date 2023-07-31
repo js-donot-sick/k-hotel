@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import kHotel.board.model.dao.HBoardDAO;
+import kHotel.board.model.vo.AnnouncementDetail;
 import kHotel.board.model.vo.Board;
 import kHotel.member.model.vo.LPagination;
 
@@ -45,9 +46,33 @@ public class HBoardService {
 		return map;
 	}
 
+	/** 게시글 검색
+	 * @param type
+	 * @param cp
+	 * @param key
+	 * @param query
+	 * @return
+	 */
 	public Map<String, Object> searchBoardList(int type, int cp, String key, String query) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	/** 게시글 조회
+	 * @param boardNo
+	 * @return detail
+	 * @throws Exception
+	 */
+	public AnnouncementDetail checkBoardDetail(int boardNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		AnnouncementDetail detail = dao.checkBoardDetail(conn, boardNo);
+		
+	
+		return detail;
+		
+	}
+
 
 }
