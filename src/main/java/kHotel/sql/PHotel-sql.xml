@@ -64,7 +64,8 @@
 		MEMBER_EMAIL,MEMBER_ADD,SECESSION_FL
 		FROM MEMBER
 
-		ORDER BY MEMBER_NO DESC)A
+		ORDER BY MEMBER_NO
+		DESC)A
 		)
 		WHERE RNUM BETWEEN ? AND ?
 
@@ -78,15 +79,33 @@
 		WHERE BOARD_CD = ?
 	</entry>
 
-	<!-- 회원 이름 조회  -->
+	<!-- 검색 시 조건에 만족하는 회원 수 조회 -->
 	<entry key="searchId">
-		SELECT MEMBER_NO,MEMBER_ID,MEMBER_PW,MEMBER_NM,MEMBER_TEL,
+		SELECT COUNT(*) FROM MEMBER
+		WHERE SECESSION_FL = 'N'
+
+	</entry>
+
+
+	<!-- 검색 시 조건에 만족하는 회원 수 조회 -->
+	<entry key="searchId1">
+		SELECT * FROM(
+		SELECT ROWNUM RNUM, A.* FROM
+		(SELECT
+		MEMBER_NO,MEMBER_ID,MEMBER_PW,MEMBER_NM,MEMBER_TEL,
 		MEMBER_EMAIL,MEMBER_ADD,SECESSION_FL
 		FROM MEMBER
 
-		WHERE MEMBER_ID = ?
-		ORDER BY MEMBER_NO DESC
+		WHERE SECESSION_FL ='N'
 	</entry>
+
+	<!-- 회원 이름 조회 -->
+	<entry key="searchId2">
+		ORDER BY MEMBER_NO DESC)A
+		)
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+
 
 
 </properties>

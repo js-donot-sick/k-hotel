@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import kHotel.admin.model.service.PAdminService;
 import kHotel.member.model.vo.Member;
@@ -24,8 +25,7 @@ public class AdminMemberServlet extends HttpServlet {
 		try {
 
 			int type = Integer.parseInt(req.getParameter("type"));
-
-
+			
 			int cp = 1;
 
 			if(req.getParameter("cp")!=null) {
@@ -33,21 +33,21 @@ public class AdminMemberServlet extends HttpServlet {
 			}
 			
 		
-	
 			PAdminService service = new PAdminService();
-
+			
 			Map<String, Object> map = null;
 			
-			req.setAttribute("map", map);
-			
-			
-			if(req.getParameter("Pid") !=null) {
+			if(req.getParameter("Pid") ==null) {
+				map = service.searchAdminMember(type,cp);
+			}else {
 				String Pid = req.getParameter("Pid");
 				map = service.searchId(Pid,type,cp);
-			}else {
-				map = service.searchAdminMember(type,cp);
 			}
+			
+//			HttpSession session = req.getSession();
+//			session.setAttribute("listReportCount", map.get("listReportCount"));
 
+			req.setAttribute("map", map);
 
 			String path = "/WEB-INF/views/admin/AdminMember.jsp";
 

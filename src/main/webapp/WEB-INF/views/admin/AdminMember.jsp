@@ -31,13 +31,23 @@
                 <div class="P-All">
                     <jsp:include page="/WEB-INF/views/common/adminSidebar.jsp" />
 
+                    
+                    <%-- 검색을 진행한 경우 key, query를 쿼리스트링 형태로 저장한 변수 생성 --%>
+                    <c:if test="${!empty param.Pid}">
+                        <c:set var="sURL" value="&Pid=${param.Pid}" />
+                    </c:if> 
+
+
                     <div class="P-main">
                         <!-- 검색 div -->
 
-                        <form action="${contextPath}/admin/memberAdmin?type=1" method="get">
+                        <form action="memberAdmin" method="get">
+
+                            <input type="hidden" name="type" value="${param.type}" >
+
                             <div class="P-title1">
                                 <input type="text" class="P-adm-search" placeholder="정보조회" name="Pid">
-                                <button type="button" class="P-adm-btn">검색</button>
+                                <button type="submit" class="P-adm-btn">검색</button>
                             </div>
                         </form>
                         <!-- 전체 회원 조회 -->
@@ -97,10 +107,10 @@
 
                             <ul class="P-pagination">
                                 <!-- 첫페이지로 이동 -->
-                                <li><a href="${url}1">&lt;&lt;</a></li>
+                                <li><a href="${url}1${sURL}">&lt;&lt;</a></li>
 
                                 <!-- 이전 목록 마지막 번호로 이동 -->
-                                <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
+                                <li><a href="${url}${pagination.prevPage}${sURL}">&lt;</a></li>
 
                                 <!-- 범위가 정해진 일반 for문 사용 -->
                                 <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}" step="1">
@@ -114,16 +124,16 @@
                                         <c:otherwise>
                                             <!-- 만약 내가 4페이지에 있을때 다시 4페이지를 눌렀다면 이동하지 않고 클래스만부여(동그라미만!) -->
                                             <!-- type=1 공지사항 cp=2 2page -->
-                                            <li><a href="${url}${i}">${i}</a></li>
+                                            <li><a href="${url}${i}${sURL}">${i}</a></li>
                                         </c:otherwise>
                                     </c:choose>
                                 </c:forEach>
 
                                 <!-- 다음 목록 시작 번호로 이동 -->
-                                <li><a href="${url}${pagination.nextPage}">&gt;</a></li>
+                                <li><a href="${url}${pagination.nextPage}${sURL}">&gt;</a></li>
 
                                 <!-- 끝 페이지로 이동 -->
-                                <li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li>
+                                <li><a href="${url}${pagination.maxPage}${sURL}">&gt;&gt;</a></li>
                             </ul>
                         </div>
 
