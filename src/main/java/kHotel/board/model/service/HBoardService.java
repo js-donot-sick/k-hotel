@@ -3,11 +3,13 @@ package kHotel.board.model.service;
 import static kHotel.common.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import kHotel.board.model.dao.HBoardDAO;
 import kHotel.board.model.vo.Board;
+import kHotel.member.model.vo.LPagination;
 
 public class HBoardService {
 	
@@ -19,7 +21,7 @@ public class HBoardService {
 	 * @return map
 	 * @throws Exception
 	 */
-	public Map<String, Object> selectBoardList(int type, int cp) throws Exception{
+	public Map<String, Object> checkBoardList(int type, int cp) throws Exception{
 		
 		Connection conn = getConnection();
 		
@@ -27,11 +29,24 @@ public class HBoardService {
 		
 		int listCount = dao.getListCount(conn, type);
 		
-		Pagination pagination = new Pagination(cp, listCount);
+		LPagination pagination = new LPagination(cp, listCount);
 		
-		List<Board>boardList = dao.selectBoardList(conn, pagination, type);
+		List<Board> boardList = dao.checkBoardList(conn, pagination, type);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("boardName", boardName);
+		map.put("pagination", pagination);
+		map.put("boardList", boardList);
+		
+		close(conn);
 		
 		
+		return map;
+	}
+
+	public Map<String, Object> searchBoardList(int type, int cp, String key, String query) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

@@ -95,12 +95,6 @@
             </div>
 
             <form action="#" method="get" id="boardSearch">
-                <select name="key">
-                    <option value="t">제목</option>
-                    <option value="c">내용</option>
-                    <option value="tc">제목+내용</option>
-                    <option value="w">작성자</option>
-                </select>
                 <input type="text" name="query" placeholder="검색어를 입력해주세요">
                 <button>검색</button>
             </form>

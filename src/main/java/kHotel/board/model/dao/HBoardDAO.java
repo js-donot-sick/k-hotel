@@ -11,6 +11,7 @@ import java.util.Properties;
 
 import kHotel.board.model.vo.Board;
 import kHotel.member.model.dao.MemberDAO;
+import kHotel.member.model.vo.LPagination;
 
 import static kHotel.common.JDBCTemplate.*;
 
@@ -25,7 +26,7 @@ public class HBoardDAO {
 		try {
 			prop = new Properties();
 			
-			String filePath =   MemberDAO.class.getResource("/kHotel/sql/KBoard-sql.xml").getPath(); 
+			String filePath =   MemberDAO.class.getResource("/kHotel/sql/HBoard-sql.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			
@@ -109,13 +110,13 @@ public class HBoardDAO {
 	 * @return boardList
 	 * @throws Exception
 	 */
-	public List<Board> selectBoardList(Connection conn, Pagination pagination, int type) throws Exception{
+	public List<Board> checkBoardList(Connection conn, LPagination pagination, int type) throws Exception{
 		
 		List<Board> boardList = new ArrayList<Board>();
 		
 		try {
 			
-			String sql = prop.getProperty("selectBoardList");
+			String sql = prop.getProperty("checkBoardList");
 			
 			int start = (pagination.getCurrentPage()-1) * pagination.getLimit() +1;
 			
@@ -125,12 +126,26 @@ public class HBoardDAO {
 			
 			pstmt.setInt(1, type);
 			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				Board board = new Board();
+				
+				board.setBoardNo(rs.getInt("BOARD_NO"));
+				board.setBoardTitle(rs.getString("BOARD_TITLE"));
+				board.setBoardDate(rs.getString("BOARD_DT"));
+				
+				boardList.add(board);
+			}
 			
 		}finally {
-			
+			close(rs);
+			close(pstmt);
 		}
 		
-		return null;
+		return boardList;
 	}
 
 }
