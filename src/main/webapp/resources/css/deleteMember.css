@@ -10,110 +10,10 @@
 }
 /*----------------------------------------헤더 부분 시작 ------------------------------------------*/
 /* 전체 */
-*{box-sizing: border-box;}
-body{margin: 0; padding: 0;}
-div a{
-    text-decoration: none;
-}
-.P-container{
-    background-color: #F1E3C4;
-    width: 100%; 
-}
-.P-header_middle > img{
-    width: 200px;
-    margin-top: 10px;
-}
-/* 가운데header */
-.P-header{
-    display: flex;
-    height: 120px;
-    width: 1200px;
-    margin: auto;
-    justify-content: space-between;
-    background-color: #F1E3C4;
-}
-/* 왼쪽 상단 빈칸 */
-.P-blank{
-    padding: 5px 150px;
-    height: 50%;
-    width: 30%;
-}
-/* 호텔찾기/예약 */
-.P-btn1{
-    height: 50%;
-    display : flex;
-    justify-content : center;
-    align-items : center;
-    justify-content: space-around;
-    font-size: 15px;
-    font-weight: bold;
-}
-.P-btn1>a:nth-child(1):after{
-    display:block;
-    content: '';
-    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-}
-.P-btn1>a:nth-child(1):hover:after{ transform: scaleX(1); }
-.P-btn1>a:nth-child(1):hover{color: black;}   
-.P-btn1>a:nth-child(2):after{
-    display:block;
-    content: '';
-    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-}
-.P-btn1>a:nth-child(2):hover:after{ transform: scaleX(1); }
-.P-btn1>a:nth-child(2):hover  {color: black;}
-.P-btn1>a{color: black;}
-/* 로그인 nav */
-.P-btn2{
-    font-size: 13px;
-    padding: 25px;
-    height: 50%;
-    display: block;
-    justify-content: right;
-    padding-left: 0;
-}
-.P-btn2>ul a{color: black;} 
-/* 커뮤니티 / 이벤트 */
-.P-btn3{
-    height: 50%;
-    display : flex;
-    justify-content : center;
-    align-items : center;
-    justify-content: space-around;
-    font-size: 15px;
-    font-weight: bold;
-    text-transform:uppercase;
-}
-.P-btn3>a{color: black;}
-
-.P-btn3>a:nth-child(1):after {
-    display:block;
-    content: '';
-    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-}
-.P-btn3>a:nth-child(1):hover:after{ transform: scaleX(1); }
-.P-btn3>a:nth-child(1):hover {color: black;}
-.P-btn3>a:nth-child(2):after{
-    display:block;
-    content: '';
-    border-bottom: solid 3px rgba(131, 105, 75, 0.72);  
-    transform: scaleX(0);  
-    transition: transform 250ms ease-in-out;
-}
-.P-btn3>a:nth-child(2):hover:after{ transform: scaleX(1); }
-.P-btn3>a:nth-child(2):hover{color: black;}
-
 /*----------------------------------------헤더 부분 끝 ------------------------------------------*/
 
 /*----------------------------------------바디 부분------------------------------------------*/
 .C-deleteMember-container *{
-    border: 1px solid black;
 }
 
 
@@ -126,6 +26,7 @@ div a{
     height: 100%;
     margin: auto;
     display: flex;
+    padding:  50px 0;
 }
 
 .C-deleteMember-sidebar{ /* 사이드바 큰 틀 */
@@ -134,10 +35,11 @@ div a{
 
 .C-delete-main{ /* 삭제 큰 틀 */
     width: 75%;
+    border: 1px solid rgb(173,158,135);
 }
 
 .C-delete-main-div{ /* 삭제 내부 틀 */
-    width: 820px;
+    width: 100%;
     height: 100%;
     margin: auto;
     display: flex;
@@ -148,15 +50,23 @@ div a{
     text-align: center;
     font-weight: bold;
     font-size: 24px;
+    background-color: rgba(178, 158, 135, 0.9);
+    color: white;
+    width: 100%;
+    height: 100px;
+    padding: 35px;
+    
 }
 
 .C-delete-title2{ /* 회원님의 정보를... 글씨 부분 */
     text-align: center;
+    width: 100%;
+    padding-top: 50px;
 }
 
 .C-delete-inputpassword-div{ /* 비밀번호 입력 큰 틀 */
     width: 100%;
-    height: 200px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,31 +85,34 @@ div a{
     display: flex;
 }
 
-.C-deleteMember-secession{ /* 회원탈퇴 약관 */
-    
-}
-
 .C-secession-div{ /* 회원탈퇴 큰 틀 */
     
     display: flex;
     justify-content: center;
-    
+    padding: 0;
 }
 
 .C-secession-div > div:nth-child(1){ /* 회원 탈퇴 약관 글씨 */
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 200px;
 }
 .C-deleteMember-checkbox{ /* 회원 탈퇴 약관 체크박스 */
+    height: 50px;
     text-align: center;
 
 }
 
 #secession-terms{ /* 약관 내용 */
-    width: 410px;
+    width: 500px;
     height: 150px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    
 }
+
+
 .C-delete-btn{ /* 탈퇴 버튼 큰 틀 */
     text-align: center;
 }

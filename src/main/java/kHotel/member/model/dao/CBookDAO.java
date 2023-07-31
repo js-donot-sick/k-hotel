@@ -397,6 +397,34 @@ public class CBookDAO {
 			
 			return money;
 		}
+
+		/** 회원 탈퇴 DAO
+		 * @param conn
+		 * @param memberPw
+		 * @param memberNo
+		 * @return result
+		 * @throws Exception
+		 */
+		public int deleteMember(Connection conn, String memberPw, int memberNo) throws Exception {
+			
+			int result = 0;
+			
+			try {
+				String sql = prop.getProperty("deleteMember");
+
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, memberNo);
+				pstmt.setString(2, memberPw);
+				
+				result = pstmt.executeUpdate();
+				
+			} finally {
+				close(pstmt);
+			}
+			
+			return result;
+		}
 		
 
 		

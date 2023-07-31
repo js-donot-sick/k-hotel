@@ -91,4 +91,13 @@
 		SELECT COUPON_SALE
 		FROM COUPON
 	</entry>
+	
+	<!-- 회원 탈퇴 -->
+	<entry key="deleteMember">
+		UPDATE MEMBER SET
+		SECESSION_FL = 'Y'
+		WHERE MEMBER_NO = ?
+		AND MEMBER_PW = ?
+	</entry>
+	
 </properties>

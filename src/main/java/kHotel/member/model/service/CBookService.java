@@ -219,6 +219,28 @@ public class CBookService {
 		
 		return money;
 	}
+
+
+	/** 회원 탈퇴 Service
+	 * @param memberNo
+	 * @param memberPw
+	 * @return result
+	 */
+	public int deleteMember(int memberNo, String memberPw) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteMember(conn, memberPw, memberNo);
+		
+		if(result > 0) 	commit(conn);
+		else 			rollback(conn);
+		
+		
+		close(conn);
+		
+		return result;
+		
+	}
 	
 
 	
