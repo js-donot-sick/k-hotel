@@ -22,7 +22,7 @@ public class Reservations2Servlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String path = "/WEB-INF/views/mypage/reservations2.jsp";
+		JMemberService service = new JMemberService();
 		
 		HttpSession session = req.getSession();
 		
@@ -30,16 +30,13 @@ public class Reservations2Servlet extends HttpServlet{
 		
 		int memberNo = loginMember.getMemberNo();
 		
-		JMemberService service = new JMemberService();
-		
-		Reservation rv = new Reservation();
-		
 		List<Reservation> rvList = new ArrayList<Reservation>();
 		
 		
 		try {
 			rvList = service.reservation(memberNo);
 			
+			String path = "/WEB-INF/views/mypage/reservations2.jsp";
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 			

@@ -99,6 +99,7 @@ public class JMemberDAO {
 	 * @throws Exception
 	 */
 	public List<Reservation> reservation(Connection conn, int memberNo) throws Exception {
+		
 		List<Reservation> rvList = new ArrayList<Reservation>();
 		
 		try {
@@ -123,8 +124,6 @@ public class JMemberDAO {
 				
 				rvList.add(rv);
 			}
-			
-			System.out.println(rvList);
 			
 			
 			

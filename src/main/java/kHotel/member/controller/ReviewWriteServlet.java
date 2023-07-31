@@ -20,12 +20,15 @@ public class ReviewWriteServlet extends HttpServlet {
 		String path = "/WEB-INF/views/mypage/review.jsp";
 		
 		
-		String[] hotelName = req.getParameterValues("hotelName");
-		String[] roomName = req.getParameterValues("roomName");
+		String hotelName = req.getParameter("hotelName");
+		String roomName = req.getParameter("roomName");
 		
 		Reservation rv = new Reservation();
 		
-		System.out.println(hotelName[1]);
+		rv.setHotelName(hotelName);
+		rv.setRoomName(roomName);
+		
+		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		
 		req.setAttribute("rv", rv);

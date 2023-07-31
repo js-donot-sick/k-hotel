@@ -66,7 +66,6 @@ public class JMemberService {
 		 List<Reservation> rvList = dao.reservation(conn, memberNo);
 		
 		close(conn);
-				System.out.println(rvList);
 				
 		return rvList;
 	}

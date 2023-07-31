@@ -50,3 +50,14 @@ document.getElementById("J-delBtn").addEventListener("click",function(){
         document.getElementById("J-reviewImage2").value = "";
     }
 })
+
+const star5 = document.getElementById("5-stars");
+
+const star = document.getElementsByClassName("rating");
+
+
+    for(let items of star){
+        console.log(items.value);
+    }
+    
+
