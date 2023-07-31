@@ -9,5 +9,22 @@
 		WHERE BOARD_CD=?
 		AND BOARD_ST='N'
 	</entry>
+	
+	<!-- 이벤트 글 번호 조회 -->
+	<entry key="setEventNo">
+		SELECT SEQ_EVENT_NO.NEXTVAL FROM DUAL
+	</entry>
+	
+	<!-- 이벤트 게시글 삽입 -->
+	<entry key="insertEvent">
+		INSERT INTO EVENT
+		VALUES (?,?,?,?)
+	</entry>
+	
+	<!-- 이벤트 이미지 삽입 -->
+	<entry key="insertEventImage">
+		INSERT INTO EVENT_IMG
+		VALUES (SEQ_IMG_EVENT_NO.NEXTVAL, ?, ?, ?)
+	</entry>
 
 </properties>

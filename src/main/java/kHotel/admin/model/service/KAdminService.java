@@ -7,6 +7,9 @@ import java.util.List;
 
 import kHotel.admin.model.dao.KAdminDAO;
 import kHotel.board.model.vo.Board;
+import kHotel.board.model.vo.Event;
+import kHotel.board.model.vo.EventImage;
+import kHotel.common.Util;
 
 public class KAdminService {
 	
@@ -26,6 +29,52 @@ public class KAdminService {
 		close(conn);
 		
 		return fList;
+	}
+
+	/** 이벤트 작성 service
+	 * @param event
+	 * @param imageList
+	 * @return eventNo
+	 * @throws Exception
+	 */
+	public int insertEvent(Event event, List<EventImage> imageList) throws Exception {
+		
+		Connection conn= getConnection();
+		
+		// 1. 게시글 번호 얻어오기
+		int eventNo = dao.setEventNo(conn);
+		
+		event.setEventNo(eventNo);
+		
+		// 2. XSS
+		event.setEventTitle(Util.XSSHanding(event.getEventTitle()));
+		event.setEventContent(Util.XSSHanding(event.getEventContent()));
+		
+		event.setEventContent(Util.newLineHandling(event.getEventContent()));
+		
+		
+		
+		// 3. 게시글 삽입
+		int result = dao.insertEvent(conn, event);
+		
+		if(result > 0) {
+			// 4. 이미지 삽입
+			for(EventImage image : imageList) {
+				image.setEventNo(eventNo);
+				
+				result = dao.insertEventImage(conn, image);
+				
+				if(result == 0) break;
+			}
+			
+			if(result >0) commit(conn);
+			else		  rollback(conn);
+			
+			close(conn);
+			
+		}
+		
+		return eventNo;
 	}
 
 }

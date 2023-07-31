@@ -23,109 +23,120 @@ import kHotel.member.model.vo.Member;
 
 @WebServlet("/admin/eventWrite")
 public class AdminEventWriteServlet extends HttpServlet {
-	
+
 	// 사이드바에서 이벤트 선택할 시
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		try {
+
 			
-			String mode = req.getParameter("mode");
-			
-			if(mode.equals("update")) {
-				
-			}
-			
+			 String mode = req.getParameter("mode");
+			 
+			 System.out.println(mode); 
+			 
+			 if(mode.equals("update")) {
+			 
+			 
+			 }
+
 			String path = "/WEB-INF/views/admin/AdminEventWrite.jsp";
-			
+
 			req.getRequestDispatcher(path).forward(req, resp);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	// 찐 글 등록
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		try {
-			
+
 			// multiPartRequest
 			// 최대 용량, 이미지 저장 경로, 파일명, 인코딩 설정
-			int maxSize = 1024*1024*80;
-			
+			int maxSize = 1024 * 1024 * 80;
+
 			HttpSession session = req.getSession();
 			String root = session.getServletContext().getRealPath("/");
 			String folderPath = "/resources/images/event/";
 			String filePath = root + folderPath;
-			
+
 			String encoding = "UTF-8";
-			
+
 			MultipartRequest mpReq = new MultipartRequest(req, filePath, maxSize, encoding, new MyRenamePolicy());
-			// 드디어 객체 생성했다.......
-			
+
 			Enumeration<String> files = mpReq.getFileNames();
-			
+
 			List<EventImage> imageList = new ArrayList<>();
-			
-			while(files.hasMoreElements()) { // 다음 요소가 있을 때
-				
+
+			while (files.hasMoreElements()) { // 다음 요소가 있을 때
+
 				String name = files.nextElement();
-				
+
 				String rename = mpReq.getFilesystemName(name);
 				String original = mpReq.getOriginalFileName(name);
-				
-				if(original != null) { // 실제로 파일이 담겨있는 경우
+
+				if (original != null) { // 실제로 파일이 담겨있는 경우
 					EventImage image = new EventImage();
-					
+
 					image.setImageRename(rename);
 					image.setImageLevel(Integer.parseInt(name));
-					
+
 					imageList.add(image);
 				}
-				
-				
-				
-				
+
 			}
-			
+
 			// 글 제목, 내용, 회원번호(관리자이지만 혹시 몰라서)
 			String title = mpReq.getParameter("K-title");
 			String content = mpReq.getParameter("K-content");
 			String date = mpReq.getParameter("K-date");
-			
-			Member loginMember = (Member)session.getAttribute("loginMember");
+
+			Member loginMember = (Member) session.getAttribute("loginMember");
 			int memberNo = loginMember.getMemberNo();
-			
+
 			Event event = new Event();
-			
+
 			event.setEventTitle(title);
 			event.setEventContent(content);
 			event.setEventDt(date);
-			
+
 			KAdminService service = new KAdminService();
-			
+
 			String mode = mpReq.getParameter("mode");
-			
-			if(mode.equals("insert")) {
-				
+
+			if (mode.equals("insert")) {
+
+				int eventNo = service.insertEvent(event, imageList);
+
+				System.out.println(eventNo);
+
+				String path = null;
+
+				if (eventNo > 0) {
+					session.setAttribute("message", "게시글이 등록되었습니다.");
+					path = "event?no=" + eventNo;
+				} else {
+					session.setAttribute("message", "게시글 등록 실패");
+					path = "event?mode=insert";
+				}
+
+				resp.sendRedirect(path);
+
 			}
-			
-			if(mode.equals("update")) {
-				
+
+			if (mode.equals("update")) {
+
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
-		
-		
-		
+
 	}
 
 }
