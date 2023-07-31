@@ -33,7 +33,7 @@ public class AdminEventWriteServlet extends HttpServlet {
 			
 			 String mode = req.getParameter("mode");
 			 
-			 System.out.println(mode); 
+			 System.out.println("사이드바에서 눌렀을 때: " + mode); 
 			 
 			 if(mode.equals("update")) {
 			 
@@ -76,6 +76,8 @@ public class AdminEventWriteServlet extends HttpServlet {
 			while (files.hasMoreElements()) { // 다음 요소가 있을 때
 
 				String name = files.nextElement();
+				
+				System.out.println("name : " + name);
 
 				String rename = mpReq.getFilesystemName(name);
 				String original = mpReq.getOriginalFileName(name);
@@ -108,21 +110,23 @@ public class AdminEventWriteServlet extends HttpServlet {
 			KAdminService service = new KAdminService();
 
 			String mode = mpReq.getParameter("mode");
+			
+			System.out.println("등록하기 눌렀을 때 mode : " + mode);
 
 			if (mode.equals("insert")) {
 
 				int eventNo = service.insertEvent(event, imageList);
 
-				System.out.println(eventNo);
-
 				String path = null;
 
 				if (eventNo > 0) {
 					session.setAttribute("message", "게시글이 등록되었습니다.");
-					path = "event?no=" + eventNo;
+					path = "eventWrite?no=" + eventNo;
+					
+					System.out.println("가라 제발!!!");
 				} else {
 					session.setAttribute("message", "게시글 등록 실패");
-					path = "event?mode=insert";
+					path = "eventWrite?mode=insert";
 				}
 
 				resp.sendRedirect(path);

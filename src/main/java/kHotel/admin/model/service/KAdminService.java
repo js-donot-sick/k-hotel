@@ -41,6 +41,8 @@ public class KAdminService {
 		
 		Connection conn= getConnection();
 		
+		// System.out.println(imageList);
+		
 		// 1. 게시글 번호 얻어오기
 		int eventNo = dao.setEventNo(conn);
 		
@@ -67,12 +69,15 @@ public class KAdminService {
 				if(result == 0) break;
 			}
 			
-			if(result >0) commit(conn);
-			else		  rollback(conn);
-			
-			close(conn);
 			
 		}
+		
+		
+		if(result >0) commit(conn);
+		else		  rollback(conn);
+		
+		close(conn);
+		
 		
 		return eventNo;
 	}

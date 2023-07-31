@@ -46,6 +46,9 @@
         </ul>
         
     </div>
+
+    <!-- hidden으로 숨겨놓기 -->
+    <input type="hidden" name="mode" value="${param.mode}">
     
 
 

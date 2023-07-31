@@ -97,6 +97,12 @@ public class KAdminDAO {
 			rs = stmt.executeQuery(sql);
 			
 			
+			if(rs.next()) {
+				eventNo = rs.getInt(1);
+				
+			}
+			
+			
 		} finally {
 			close(rs);
 			close(stmt);
@@ -149,7 +155,11 @@ public class KAdminDAO {
 		
 		try {
 			
+			System.out.println(image);
+			
 			String sql = prop.getProperty("insertEventImage");
+			
+			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, image.getImageRename());
 			pstmt.setInt(2, image.getImageLevel());
