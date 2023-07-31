@@ -9,6 +9,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Properties;
 
+import kHotel.member.model.vo.Member;
+
 public class LMemberDAO {
 	
 	private Statement stmt;
@@ -62,6 +64,38 @@ public class LMemberDAO {
 			
 		}
 		
+		
+		return result;
+	}
+
+	/** 회원 정보 수정 DAO
+	 * @param conn
+	 * @param member
+	 * @return result
+	 * @throws Exception
+	 */
+	public int changeMember(Connection conn, Member member) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("changeMember");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, member.getMemberName());
+			pstmt.setString(2, member.getMemberTel());
+			pstmt.setString(3, member.getMemberEmail());
+			pstmt.setString(4, member.getMemberAddress());
+			pstmt.setInt(5, member.getMemberNo());
+			
+			result  = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+			
+		}
 		
 		return result;
 	}

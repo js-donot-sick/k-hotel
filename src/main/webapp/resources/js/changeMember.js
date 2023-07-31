@@ -1,6 +1,15 @@
 
+
 // 주소 카카오 오픈 api
 function L_addBtn() {
+    const Ladd1 = document.getElementById('L-address1');
+    const Ladd2 = document.getElementById('L-address2');
+    const Ladd3 = document.getElementById('L-address3');
+    
+    Ladd1.value = "";
+    Ladd2.value = ""; 
+    Ladd3.value = "";
+
     new daum.Postcode({
         oncomplete: function(data) {
             // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
@@ -38,10 +47,12 @@ function L_addBtn() {
             }
 
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
-            document.getElementById('L-address1').value = data.zonecode;
-            document.getElementById("L-address2").value = addr;
+            
+            
+            Ladd1.value = data.zonecode;
+            Ladd2.value = addr;
             // 커서를 상세주소 필드로 이동한다.
-            document.getElementById("L-address3").focus();
+            Ladd3.focus();
         }
     }).open();
 }
@@ -71,11 +82,7 @@ function changeMember(){
         return false;
     }
 
-    /* 전화번호 정규식 */
-    if(!regExp.test(tel.value)){
-        alert("올바르지 않은 전화번호 형식입니다. 다시 입력해주세요.")
-        return false;
-    }
+    
    
 
     /* 수정 내용 빈칸일 시 진행 불가능 하도록 설정 */
@@ -94,29 +101,40 @@ function changeMember(){
         return false;
     }
 
+    // if(address1.value.trim().length == 0){
+    //     alert("수정할 우편번호를 입력해주세요.")
+    //     return false;
+    // }
+
+    // if(address2.value.trim().length == 0){
+    //     alert("수정할 주소를 입력해주세요.")
+    //     return false;
+    // }
+
+    // if(address3.value.trim().length == 0){
+    //     alert("수정할 상세주소를 입력해주세요.")
+    //     return false;
+    // }
+
     if(address1.value.trim().length == 0){
-        alert("수정할 우편번호를 입력해주세요.")
+        address1.focus();
         return false;
     }
 
     if(address2.value.trim().length == 0){
-        alert("수정할 주소를 입력해주세요.")
+        address2.focus();
         return false;
     }
 
     if(address3.value.trim().length == 0){
-        alert("수정할 상세주소를 입력해주세요.")
+        address3.focus();
         return false;
     }
     
-    
-
-
-
 
     
 
-    return true;
+    return confirm("회원정보를 수정 하시겠습니까?");
 
 
 }
