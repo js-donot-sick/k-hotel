@@ -33,11 +33,13 @@
 
                     <div class="P-main">
                         <!-- 검색 div -->
-                        <div class="P-title1">
-                            <input type="text" class="P-adm-search" placeholder="정보조회" name="Pid">
-                            <button type="button" class="P-adm-btn">검색</button>
-                        </div>
 
+                        <form action="${contextPath}/admin/memberAdmin?type=1" method="get">
+                            <div class="P-title1">
+                                <input type="text" class="P-adm-search" placeholder="정보조회" name="Pid">
+                                <button type="button" class="P-adm-btn">검색</button>
+                            </div>
+                        </form>
                         <!-- 전체 회원 조회 -->
                         <table class="P-main-menu">
 

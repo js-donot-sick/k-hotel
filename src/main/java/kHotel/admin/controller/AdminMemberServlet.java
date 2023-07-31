@@ -31,13 +31,23 @@ public class AdminMemberServlet extends HttpServlet {
 			if(req.getParameter("cp")!=null) {
 				cp = Integer.parseInt(req.getParameter("cp"));
 			}
-
+			
+		
 	
 			PAdminService service = new PAdminService();
 
-			Map<String, Object> map = service.searchAdminMember(type,cp);
+			Map<String, Object> map = null;
 			
 			req.setAttribute("map", map);
+			
+			
+			if(req.getParameter("Pid") !=null) {
+				String Pid = req.getParameter("Pid");
+				map = service.searchId(Pid,type,cp);
+			}else {
+				map = service.searchAdminMember(type,cp);
+			}
+
 
 			String path = "/WEB-INF/views/admin/AdminMember.jsp";
 

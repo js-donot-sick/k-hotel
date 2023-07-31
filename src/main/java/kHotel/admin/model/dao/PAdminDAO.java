@@ -1,5 +1,6 @@
 package kHotel.admin.model.dao;
 
+import static edu.kh.community.common.JDBCTemplate.close;
 import static kHotel.common.JDBCTemplate.*;
 
 import java.io.FileInputStream;
@@ -185,5 +186,88 @@ public class PAdminDAO {
 		}
 		
 		return boardName;
+	}
+
+	/** 아이디 게시글 수 조회 
+	 * @param conn
+	 * @param pid
+	 * @return listCount
+	 * @throws Exception
+	 */
+	public int getListCount(Connection conn, String pid) throws Exception {
+		
+		int listCount = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("searchId");
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, pid);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				listCount =rs.getInt(1);
+			}
+			
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+
+		}
+
+		return listCount;
+	}
+
+	/**
+	 * @param conn
+	 * @param lPagination
+	 * @param type
+	 * @param pid
+	 * @return
+	 * @throws Exception
+	 */
+	public List<PAdminMemebr> searchBoardList(Connection conn, LPagination lPagination, int type, String pid) throws Exception{
+
+		List<PAdminMemebr> boardList = new ArrayList<PAdminMemebr>();
+		
+		try {
+			String sql = prop.getProperty("selectBoardList");
+			
+			int start = (lPagination.getCurrentPage() - 1) * lPagination.getLimit() + 1;
+			
+			int end = start + lPagination.getLimit() - 1;
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				PAdminMemebr am = new PAdminMemebr();
+				am.setMemberNo(rs.getInt("RNUM"));
+				am.setMemberId(rs.getString("MEMBER_ID"));
+				am.setMemebrTel(rs.getString("MEMBER_TEL"));
+				am.setMemberEmail(rs.getString("MEMBER_EMAIL"));
+				am.setMemberAdd(rs.getString("MEMBER_ADD"));
+				am.setSecessionFl(rs.getString("SECESSION_FL"));
+
+				
+				boardList.add(am);
+				
+				System.out.println(boardList);
+				
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return boardList;
+		
 	}
 }
