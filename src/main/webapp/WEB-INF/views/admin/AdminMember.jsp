@@ -4,11 +4,11 @@
 
 
             <!-- map에 저장된 값을 각각 변수에 저장 -->
-            <c:set var="boardName" value="${map.boardName}" />
             <c:set var="listCount" value="${map.listCount}" />
-            <c:set var="listReportCount" value="${map.listReportCount}" />
+            <c:set var="AdminlistCount" value="${map.AdminlistCount}" />
             <c:set var="pagination" value="${map.LPagination}" />
             <c:set var="boardList" value="${map.boardList}" />
+            <c:set var="listReportCount" value="${map.listReportCount}" />
 
             <!DOCTYPE html>
             <html lang="en">
@@ -49,6 +49,7 @@
                                 <input type="text" class="P-adm-search" placeholder="정보조회" name="Pid">
                                 <button type="submit" class="P-adm-btn">검색</button>
                             </div>
+
                         </form>
                         <!-- 전체 회원 조회 -->
                         <table class="P-main-menu">
@@ -76,7 +77,6 @@
 
 
                                 <c:otherwise>
-                                    <!-- 게시글이 있는 경우 -->
                                     <!-- 게시글 리스트 -->
                                     <c:forEach var="board" items="${boardList}">
 
@@ -87,13 +87,13 @@
                                             <td>${board.memebrTel}</td>
                                             <td>${board.memberEmail}</td>
                                             <td>${fn:substring(memberAdd, 0, fn:length(memberAdd) - 15)}*****</td>
-                                            <td>${listReportCount}</td>
+                                            <td>${board.reportCount}</td>
                                             <td>${board.secessionFl}</td>
-                                            <td><button id="P-adm-btn">탈퇴</button></td>
+                                            <td><button id="P-adm-btn ->class 바꾸기 ">탈퇴</button></td>
                                         </tr>
                                     </c:forEach>
 
-                                </c:otherwise>
+                                </c:otherwise>      
                             </c:choose>
 
 
