@@ -95,8 +95,6 @@ public class JMemberDAO {
 			
 			
 			result = pstmt.executeUpdate();
-			System.out.println(result);
-			System.out.println("여긴 DAO");
 		}finally {
 
 			close(pstmt);
@@ -105,6 +103,50 @@ public class JMemberDAO {
 		return result;
 	}
 
+	/** 현재 예약 내역
+	 * @param conn
+	 * @param memberNo
+	 * @return rv
+	 * @throws Exception
+	 */
+	public List<Reservation> reservationUp(Connection conn, int memberNo) throws Exception {
+List<Reservation> rvList = new ArrayList<Reservation>();
+		
+		try {
+			
+			String sql = prop.getProperty("reservationUp");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next() ) {
+				
+				Reservation rv = new Reservation();
+				
+				rv.setBookNo( rs.getInt(1));
+				rv.setHotelName( rs.getString(2) );
+				rv.setRoomName( rs.getString(3));
+				rv.setCheckInTime(rs.getString(4));
+				rv.setCheckOutTime( rs.getString(5));
+				
+				rvList.add(rv);
+			}
+			
+			
+			
+		}finally {
+			
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		
+		return rvList;
+	}
 
 	/** 이전 예약 DAO
 	 * @param conn
@@ -167,7 +209,6 @@ public class JMemberDAO {
 
 			pstmt = conn.prepareStatement(sql);
 
-			System.out.println(rv.getContent());
 			pstmt.setString(1, rv.getContent());
 			
 			rs = pstmt.executeQuery();
@@ -176,7 +217,6 @@ public class JMemberDAO {
 				
 				boardNo = rs.getInt(1);
 				
-				System.out.println(boardNo);
 			}
 			
 			
@@ -217,6 +257,137 @@ public class JMemberDAO {
 		
 		return result;
 	}
+
+ 
+	
+
+	public int tagUpdate1(Connection conn, Review rv, String tag1) throws Exception {
+
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("tagUpdate1");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, rv.getBoardNo());
+			pstmt.setString(2, tag1);
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		return result;
+	}
+	
+	public int tagUpdate2(Connection conn, Review rv, String tag2) throws Exception {
+
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("tagUpdate2");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, rv.getBoardNo());
+			pstmt.setString(2, tag2);
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		return result;
+	}
+	
+	public int tagUpdate3(Connection conn, Review rv, String tag3) throws Exception {
+
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("tagUpdate3");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, rv.getBoardNo());
+			pstmt.setString(2, tag3);
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		return result;
+	}
+	
+	public int tagUpdate4(Connection conn, Review rv, String tag4) throws Exception {
+
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("tagUpdate4");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, rv.getBoardNo());
+			pstmt.setString(2, tag4);
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		return result;
+	}
+	
+	public int tagUpdate5(Connection conn, Review rv, String tag5) throws Exception {
+
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("tagUpdate5");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, rv.getBoardNo());
+			pstmt.setString(2, tag5);
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		return result;
+	}
+	
+	public int tagUpdate6(Connection conn, Review rv, String tag6) throws Exception {
+
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("tagUpdate6");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, rv.getBoardNo());
+			pstmt.setString(2, tag6);
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		return result;
+	}
+
+
 
 
 }

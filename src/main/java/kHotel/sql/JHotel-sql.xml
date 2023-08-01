@@ -12,6 +12,17 @@
 		 DEFAULT, DEFAULT)
 	</entry>
 
+	<!-- 현재 예약 -->
+	<entry key="reservationUp">
+		SELECT BOOK_NO , HOTEL_TITLE, ROOM_NM,CHECKIN_DT , CHECKOUT_DT
+		FROM RESERVATION
+		JOIN ROOM USING(ROOM_NO)
+		JOIN HOTEL USING(HOTEL_NO)
+		WHERE CHECK_FL = 'N'
+		AND MEMBER_NO = ?
+		AND <![CDATA[CHECKOUT_DT > SYSDATE]]>
+	</entry>
+
 	<!-- 이전 예약 -->
 	<entry key="reservation">
 		SELECT BOOK_NO , HOTEL_TITLE, ROOM_NM,CHECKIN_DT , CHECKOUT_DT
@@ -41,5 +52,41 @@
 	<entry key="reviewImg">
 		INSERT INTO REVIEW_IMG VALUES(SEQ_IMG_REVIEW_NO.NEXTVAL, ?, 0 , ?) 
 	</entry>
+
+
+	<!-- 태그 삽입 -->
+
+    <entry key="tagUpdate1">
+            INSERT INTO TAG VALUES('깨끗해요',?,?)
+           
+    </entry>
+    
+    <entry key="tagUpdate2">
+            INSERT INTO TAG VALUES('아이와 가기 좋아요',?,?)
+           
+    </entry>
+    
+    <entry key="tagUpdate3">
+            INSERT INTO TAG VALUES('조용해서 쉬기 좋아요',?,?)
+           
+    </entry>
+    
+    <entry key="tagUpdate4">
+            INSERT INTO TAG VALUES('침구가 고급스러워요',?,?)
+           
+    </entry>
+    
+     <entry key="tagUpdate5">
+            INSERT INTO TAG VALUES('애인과 가기 좋아요',?,?)
+           
+    </entry>
+    
+     <entry key="tagUpdate6">
+            INSERT INTO TAG VALUES('파티하기 좋아요',?,?)
+           
+    </entry>
+
+
+	
 	
 </properties>

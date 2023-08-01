@@ -82,11 +82,12 @@ const star2 = document.getElementsByClassName("star3")[0];
 /* 태그가 선택 되었을때 */
 const tag = document.getElementsByClassName("tag");
 
-for(let items of tag){
+for(let i = 0 ;  i < tag.length ; i++){
     
-    if(items.checked == true){
+    if(tag[i].checked == true  && tag[i].value == 'N'){
 
-        items.value = 'Y';
+        tag[i].value = 'Y';
+    }else if(!tag[i].checked){
+        tag[i].value == 'N';
     }
 }
-
