@@ -232,4 +232,56 @@ public class HBoardDAO {
 		return boardList;
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	/** 공지사항 작성
+	 * @param conn 
+	 * @param boardContent 
+	 * @param boardTitle 
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertBoard(Connection conn, String boardTitle, String boardContent) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insertBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, boardTitle);
+			pstmt.setString(2, boardContent);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 }
