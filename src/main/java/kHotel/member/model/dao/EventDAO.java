@@ -54,7 +54,7 @@ public class EventDAO {
 				Event event = new Event();
 				event.setEventNo(rs.getInt(1));
 				event.setEventTitle(rs.getString(2));
-				event.setEventImg(rs.getString(3));
+				event.setImgRename(rs.getString(3));
 
 				eventList.add(event);
 
@@ -91,7 +91,7 @@ public class EventDAO {
 				Event event = new Event();
 				event.setEventNo(rs.getInt(1));
 				event.setEventTitle(rs.getNString(2));
-				event.setEventImg(rs.getString(3));
+				event.setImgRename(rs.getString(3));
 
 				eventEndList.add(event);
 				

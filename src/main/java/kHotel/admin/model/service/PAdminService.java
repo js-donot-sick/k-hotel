@@ -115,7 +115,10 @@ public class PAdminService {
 		// 전체 게시글 수 + 현재 페이지를 이용해 페이지네이션 객체 생성
 		LPagination LPagination = new LPagination(cp, listCount);
 
-		int result = dao.adminDeleteMember(conn, memberNo,type);
+		int result = dao.adminDeleteMember(conn, memberNo,type,LPagination);
+		
+		System.out.println(result);
+		
 
 		if (result > 0) {
 			commit(conn);

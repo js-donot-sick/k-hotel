@@ -39,7 +39,7 @@
                             <c:forEach var="event" items ="${eventEndList}">
                                 <div class="P-event-list">
                                     <a href="#" class="P-event">
-                                        <img src="${contextPath}${event.eventImg}">
+                                        <img src="${contextPath}${event.imgRename}">
                                         <span class="P-end">종료</span>
                                         <div class="P-event1">
                                             <div class="P-event-name">${event.eventTitle}</div>

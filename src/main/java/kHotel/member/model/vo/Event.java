@@ -20,6 +20,7 @@ public class Event {
 	private String bingoFl;
 	private String updownFl;
 	private int memberNo;
+	private String imgRename;
 	
 	private List<EventImage> imageList;
 	
