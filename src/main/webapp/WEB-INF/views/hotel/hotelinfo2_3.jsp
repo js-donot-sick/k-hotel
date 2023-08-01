@@ -48,7 +48,7 @@
             <div class="L-hotelpoint">
                 <div>지점 소개</div>
                 <div>
-                    <img src="${contextPath}/resources/images/hotelyeuksam.jpg" alt="" id="L-hotel1">
+                    <img src="${contextPath}/resources/images/hoteldangsan.png" alt="" id="L-hotel1">
                 </div>
                 <div>
                     <pre>
@@ -67,34 +67,43 @@
             <div class="L-roompoint-main">
                 <div class="L-roompoint">객실 소개</div>
                 <div class="L-roompoint-1">
+
+                    <!-- 파라미터로 넘겨줄 값 설정 -->
+                    <input type="hidden" name="memberNo" value="${loginMember.memberNo}">
+                    <!-- 객실명 -->
+                    <input type="hidden" name="roomNm1" value="DELUXE">
+                    <input type="hidden" name="roomNm2" value="STANDARD">
+                    <input type="hidden" name="roomNm3" value="SUITE">
+                    <!-- 호텔명 -->
+                    <input type="hidden" name="hotelNm3" value="DANGSAN">
+                    <!-- 찜하기 -->
+                    <input type="hidden" id="Llike1" name="Llike1" value="0">
+                    <input type="hidden" id="Llike2" name="Llike2" value="0">
+                    <input type="hidden" id="Llike3" name="Llike3" value="0">
+
+
                     <!-- 객실1 -->
-                    <div class="L-roompoint-border L-roomA">
+                    <div class="L-roompoint-border L-roomA" id="LroomG1">
                         <img src="${contextPath}/resources/images/Deluxe-Room_DangSan_3.jpg" class="L-roomimg" id="L-room1">
-                        <input type="checkbox" id="L-star3-1">
-                        <label for="L-star3-1" id="L-star3-1-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
-                        <label for="L-star3-1" id="L-star3-1-2"><img src="${contextPath}/resources/images/redheart.png"></label>
+                        <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
  <p>디럭스 룸</p> 침대타입 <span>|</span> 더블/트윈/트리플 전망 시티뷰 
  투숙인원 <span>|</span> 2 명 
  객실면적 <span>|</span> 40~46 m²
                         </pre>
                     </div>
-                    <div class="L-roompoint-border L-roomA1">
+                    <div class="L-roompoint-border L-roomA1" id="LroomG2">
                         <img src="${contextPath}/resources/images/standard-Room_DangSan_3.png" class="L-roomimg1" id="L-room2">
-                        <input type="checkbox" id="L-star3-2">
-                        <label for="L-star3-2" id="L-star3-2-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
-                        <label for="L-star3-2" id="L-star3-2-2"><img src="${contextPath}/resources/images/redheart.png"></label>
+                        <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
  <p>스탠다드 룸</p> 침대타입 <span>|</span> 더블/트윈 전망 시티뷰 
  투숙인원 <span>|</span> 2 명 
  객실면적 <span>|</span> 26.7 ㎡ ~ 30.7㎡
                         </pre>
                     </div>
-                    <div class="L-roompoint-border L-roomA">
+                    <div class="L-roompoint-border L-roomA" id="LroomG3">
                         <img src="${contextPath}/resources/images/suite-Room_DangSan_3.jpg" class="L-roomimg" id="L-room3">
-                        <input type="checkbox" id="L-star3-3">
-                        <label for="L-star3-3" id="L-star3-3-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
-                        <label for="L-star3-3" id="L-star3-3-2"><img src="${contextPath}/resources/images/redheart.png"></label>
+                        <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
  <p>스위트 룸</p> 침대타입 <span>|</span> 더블 전망 시티뷰 
  투숙인원 <span>|</span> 2명 
@@ -109,11 +118,11 @@
                 <div class="L-road">오시는 길</div>
                 <div class="L-map-main">
                     <div class="L-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50646.05406777859!2d126.99171026953124!3d37.49899300000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9ec255555555%3A0x3565475c3365c5bb!2zS0jsoJXrs7TqtZDsnKHsm5A!5e0!3m2!1sko!2skr!4v1689329654673!5m2!1sko!2skr" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.894477525304!2d126.8945139112505!3d37.533984671930405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9ec3afc88289%3A0x4b28dfe4dc325134!2z7ISc7Jq47Yq567OE7IucIOyYgeuTse2PrOq1rCDshKDsnKDrj5ky66GcIDU3!5e0!3m2!1sko!2skr!4v1690875590299!5m2!1sko!2skr" width="300" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="L-address">
                         <pre>
-주소 : 서울특별시 강남구 강남구 테헤란로14길
+주소 : 서울특별시 영등포구 선유동2로 57
 전화번호 : 1544-9970
                         </pre>
                     </div>

@@ -161,7 +161,7 @@
 }
 
 /* 사진에 찜 추가 */
-.L-roomimg:hover{
+/* .L-roomimg:hover{
     transition-duration: 0.5s;
 }
 
@@ -175,10 +175,10 @@
 
 .L-rooming1 img:hover{
     transition-duration: 0.5s;
-}
+} */
 
 /* 찜1 */
-#L-star3-1{
+/* #L-star3-1{
     position: absolute;
     top: -10px;
     right: 10px;
@@ -219,10 +219,10 @@
 #L-star3-1-2 > img{
     width: 30px;
     
-}
+} */
 
 /* 찜2 */
-#L-star3-2{
+/* #L-star3-2{
     position: absolute;
     top: -10px;
     right: 10px;
@@ -262,11 +262,11 @@
 
 #L-star3-2-2 > img{
     width: 30px;
-}
+} */
 
 
 /* 찜3 */
-#L-star3-3{
+/* #L-star3-3{
     position: absolute;
     top: -10px;
     right: 10px;
@@ -306,9 +306,21 @@
 
 #L-star3-3-2 > img{
     width: 30px;
+} */
+
+/* 찜 버튼 */
+#L-hbtn{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 80px;
+    height: 30px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(207, 191, 167);
+    border: 0;
+    border-radius: 5px;
 }
-
-
 
 
 

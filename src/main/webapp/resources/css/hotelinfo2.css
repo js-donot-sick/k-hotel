@@ -159,7 +159,7 @@
 }
 
 /* 사진에 찜 추가 */
-.L-roomimg:hover{
+/* .L-roomimg:hover{
     transition-duration: 0.5s;
 }
 
@@ -173,7 +173,7 @@
 
 .L-rooming1 img:hover{
     transition-duration: 0.5s;
-}
+} */
 
 /* 찜1
 #L-star-1{
@@ -219,7 +219,7 @@
     
 } */
 
-/* 찜1 버튼 */
+/* 찜 버튼 */
 #L-hbtn{
     position: absolute;
     bottom: 5px;
