@@ -27,9 +27,6 @@
 
     <!----------------------------------------바디 --------------------------------------------->
     <form action="bookEnd" method="post" onsubmit="return reservationFinalValidate()">
-
-        ${reservation.roomName}
-        ${reservation.roomNo}
         <input type="hidden" name="hotelName" value="${reservation.hotelName}">
         <input type="hidden" name="roomName" value="${reservation.roomName}">
         <input type="hidden" name="roomNo" value="${reservation.roomNo}">
@@ -120,7 +117,7 @@
                                 <tr id="C-display-change">
                                     <td>입금계좌</td>
                                     <td>
-                                        <select name="C-account" id="C-account">
+                                        <select name="C-account" id="C-account" value="none">
                                             <option value="none" selected>은행 / 계좌 선택</option>
                                             <option id="C-tossBank" value="토스뱅크 1000-2161-7612">토스뱅크 1000-2161-7612</option>
                                         </select>
@@ -211,6 +208,7 @@ K-호텔 객실예약과 관련하여 귀사가 아래와 같이 본인의 개�
 	<script>
         const couponMoney = "${reservation.couponSale}";
         const roomMoney = "${reservation.roomPrice}";
+        const couponList = "${reservation.couponCount}";
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

@@ -47,10 +47,10 @@
 	                    </div>
                     </c:forEach>
                 </div>
-                 <div class="K-qna-page">
+                 <div class="c-coupon-page">
                         <c:set var="url" value="${contextPath}/member/mypage/coupon?cp="/>
 
-                        <ul class="K-pagination">
+                        <ul class="c-pagination">
                             <!-- 첫 페이지로 이동 -->
                             <li><a href="${url}1$${searchUrl}">&lt;&lt;</a></li>
                             <!-- 이전 목록 마지막 번호로 이동 -->
@@ -60,7 +60,7 @@
                             <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}">
                                 <c:choose>
                                     <c:when test="${i==pagination.currentPage}">
-                                        <li><a class="K-current">${i}</a></li>
+                                        <li><a class="c-current">${i}</a></li>
                                     </c:when>
                                     <c:otherwise>
                                         <li><a href="${url}${i}${searchUrl}">${i}</a></li>
