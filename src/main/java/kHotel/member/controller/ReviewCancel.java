@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import kHotel.member.model.service.JMemberService;
 import kHotel.member.model.vo.Member;
 
 @WebServlet("/mypage/reviewCancel")
@@ -21,6 +22,9 @@ public class ReviewCancel extends HttpServlet{
 		
 		// memberNo 얻어오기
 		Member loginMember = (Member)session.getAttribute("loginMember");
+		
+		JMemberService service = new JMemberService();
+		
 		
 		
 	}
