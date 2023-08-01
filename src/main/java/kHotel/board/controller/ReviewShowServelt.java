@@ -1,6 +1,7 @@
 package kHotel.board.controller;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kHotel.board.model.service.ReviewService;
+import kHotel.board.model.vo.Board;
 
 @WebServlet("/board/review")
 public class ReviewShowServelt extends HttpServlet {
@@ -19,20 +21,16 @@ public class ReviewShowServelt extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		try {
-
-			int type = Integer.parseInt(req.getParameter("type"));
-
-			int cp = 1;
-
-			if (req.getParameter("cp") != null) { // 쿼리스트링에 "cp"가 존재한다면
-				cp = Integer.parseInt(req.getParameter("cp"));
-			}
-
+	
 			ReviewService service = new ReviewService();
-			
-			Map<String,Object> map = service.boardReview(type,cp);
+
+			List<Board> boardList = service.boardReview();
 
 			String path = "/WEB-INF/views/board/reviewShow.jsp";
+			
+			req.setAttribute("boardList", boardList);
+			
+			System.out.println(boardList);
 
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 
