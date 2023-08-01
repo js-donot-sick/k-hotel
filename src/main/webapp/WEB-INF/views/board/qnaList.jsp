@@ -41,7 +41,7 @@
                 <div>질문게시판</div>
 
                 <div>
-                        <button id="q-btn" onclick="location.href='write?type=${param.type}&cp=${param.cp}'">게시글 작성</button>
+                        <button id="q-btn"  onclick="location.href='write?mode=insert&type=${param.type}&cp=${param.cp}'"	>게시글 작성</button>
                 </div>
             </div>
 
