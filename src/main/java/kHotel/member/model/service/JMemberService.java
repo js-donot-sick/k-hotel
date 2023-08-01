@@ -122,6 +122,37 @@ public class JMemberService {
 		return rvList;
 	}
 
+	/** 현재 예약 취소 Service
+	 * @param bookNo 
+	 * @param loginMember
+	 * @return result
+	 * @throws Exception
+	 */
+	public int reviewCancel(int bookNo, Member loginMember) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		
+		
+		// memberNo 얻어오기
+		int memberNo = dao.getMemberNo(conn, loginMember);
+		System.out.println(memberNo +"얻어온 member");
+		
+		// 결제 정보 지우기
+		int result = dao.deleteCalculate(conn ,memberNo, bookNo);
+		
+		// 현재 예약 취소
+	     result = dao.reviewCancel(conn, memberNo, bookNo );
+	    System.out.println(result + "삭제 되면 1 아니면 0");
+	    
+	    if(result > 0 ) commit(conn);
+	    else            rollback(conn);
+	    
+	    close(conn);
+	    		
+		return result;
+	}
+
 
 
 

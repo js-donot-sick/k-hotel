@@ -14,8 +14,9 @@
 
 	<!-- 현재 예약 -->
 	<entry key="reservationUp">
-		SELECT BOOK_NO , HOTEL_TITLE, ROOM_NM,CHECKIN_DT , CHECKOUT_DT
+		SELECT BOOK_NO , HOTEL_TITLE, ROOM_NM,CHECKIN_DT , CHECKOUT_DT, CALCULATE_ST
 		FROM RESERVATION
+		JOIN CALCULATE USING(BOOK_NO)
 		JOIN ROOM USING(ROOM_NO)
 		JOIN HOTEL USING(HOTEL_NO)
 		WHERE CHECK_FL = 'N'
@@ -85,6 +86,27 @@
             INSERT INTO TAG VALUES('파티하기 좋아요',?,?)
            
     </entry>
+
+	<!-- memberNo 얻어오기 -->
+	<entry key="getMemberNo">
+		SELECT MEMBER_NO
+		FROM RESERVATION
+		JOIN MEMBER USING(MEMBER_NO)
+		WHERE MEMBER_ID = ?
+	</entry>
+
+	<!-- 현재 예약 취소 -->
+	<entry key="reviewCancel">
+		DELETE RESERVATION
+		WHERE BOOK_NO = ?
+		AND MEMBER_NO = ?
+	</entry>
+
+	<!-- 결제 정보 지우기 -->
+	<entry key="deleteCalculate">
+		DELETE CALCULATE
+		WHERE BOOK_NO = ?
+	</entry>
 
 
 	

@@ -9,10 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+
 import kHotel.member.model.service.JMemberService;
 import kHotel.member.model.vo.Member;
 
-@WebServlet("/mypage/reviewCancel")
+@WebServlet("/member/mypage/reviewCancel")
 public class ReviewCancel extends HttpServlet{
 	
 	@Override
@@ -20,10 +22,29 @@ public class ReviewCancel extends HttpServlet{
 		
 		HttpSession session = req.getSession();
 		
-		// memberNo 얻어오기
 		Member loginMember = (Member)session.getAttribute("loginMember");
 		
 		JMemberService service = new JMemberService();
+
+		int bookNo = Integer.parseInt(req.getParameter("bookNo"));
+		
+		try {
+			
+			int result = service.reviewCancel(bookNo, loginMember);
+			
+
+			if(result > 0) {
+				session.setAttribute("message", "예약이 취소되었습니다.");
+				resp.getWriter().print(result);
+			}
+			else {
+				session.setAttribute("message", "예약이 취소에 실패하셨습니다.");
+			}
+			
+			resp.sendRedirect( req.getContextPath());
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		
 		
