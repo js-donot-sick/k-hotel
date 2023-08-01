@@ -8,6 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import kHotel.member.model.service.LHotelService;
+import kHotel.member.model.vo.LikeList;
 
 @WebServlet("/hotelinfo/*")
 public class hotelInfoController extends HttpServlet{
@@ -77,13 +81,69 @@ public class hotelInfoController extends HttpServlet{
 		}
 		
 		
-		// 찜하기 강남1번!
+		
+		// 찜하기 강남 1번!
 		if(command.equals("likeplus1")) {
 			
 			int memberNo = Integer.parseInt(req.getParameter("memberNo"));
-			int roomNo = Integer.parseInt(req.getParameter("roomNo"));
+			String roomNm1 = req.getParameter("roomNm1");
+			String hotelNm1 = req.getParameter("hotelNm1");
 			
 			
+			LHotelService service = new LHotelService();
+			
+			LikeList lk = new LikeList();
+			lk.setMemberNo(memberNo);
+			lk.setRoomNm1(roomNm1);
+			lk.setHotelNm1(hotelNm1);
+			
+			
+			try {
+				
+				int result = service.likeplus1(lk);
+				
+				if(result > 0) {
+					
+					resp.getWriter().print(result);
+					
+				}
+				
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			
+		}
+		
+		
+		// 찜삭제 강남 1번
+		if(command.equals("likeDel1")) {
+			
+			int memberNo = Integer.parseInt(req.getParameter("memberNo"));
+			String roomNm1 = req.getParameter("roomNm1");
+			String hotelNm1 = req.getParameter("hotelNm1");
+			
+			LHotelService service = new LHotelService();
+			
+			LikeList lk = new LikeList();
+			lk.setMemberNo(memberNo);
+			lk.setRoomNm1(roomNm1);
+			lk.setHotelNm1(hotelNm1);
+			
+			try {
+				
+				int result = service.likeDel1(lk);
+				
+				if(result > 0) {
+					
+					resp.getWriter().print(result);
+					
+				}
+				
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
 			
 		}
 		

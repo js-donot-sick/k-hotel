@@ -68,14 +68,19 @@
                 <div class="L-roompoint">객실 소개</div>
                 <div class="L-roompoint-1">
                     <!-- 로그인회원 번호 -->
+
+                    <!-- 파라미터로 넘겨줄 값 설정 -->
                     <input type="hidden" name="memberNo" value="${loginMember.memberNo}">
                     <input type="hidden" name="roomNm1" value="DELUXE">
+                    <input type="hidden" name="roomNm2" value="STANDARD">
+                    <input type="hidden" name="roomNm3" value="SUITE">
                     <input type="hidden" name="hotelNm1" value="GANGNAM">
+                    <!-- 찜하기 1번 -->
+                    <input type="hidden" id="Llike1" name="Llike1" value="0">
                     
                     <!-- 객실1 -->
                     <div class="L-roompoint-border L-roomA">
                         <img src="${contextPath}/resources/images/deluxroompoint1.jpg" class="L-roomimg" id="L-room1">
-                        <input type="hidden" id="L-star1" name="L-star1" value="0">
                         <button type="button" id="L-hbtn">찜하기♡</button>
                         <pre>
  <p>디럭스 룸</p> 침대타입 <span>|</span> 더블/트윈/트리플 전망 시티뷰 
