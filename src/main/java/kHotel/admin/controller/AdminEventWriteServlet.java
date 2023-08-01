@@ -40,21 +40,23 @@ public class AdminEventWriteServlet extends HttpServlet {
 				 // 무슨 게시글 수정할지
 				 int eventNo = Integer.parseInt(req.getParameter("no"));
 				 
+				 System.out.println("get에서 no : " + eventNo);
+				 
 				 // 수정 화면에 들어갈 내용
 				 Event event = new KBoardService().selectEventDetail(eventNo);
 				 
 				 // 개행문자 처리
 				 event.setEventContent(event.getEventContent().replaceAll("<br>", "\n"));
 				 
-				 System.out.println("for update : " + event);
+				 // System.out.println("for update : " + event);
 				 
 				 req.setAttribute("event", event);
 			 
 			 }
+			 String path = "/WEB-INF/views/admin/AdminEventWrite.jsp";
+			 
+			 req.getRequestDispatcher(path).forward(req, resp);
 
-			String path = "/WEB-INF/views/admin/AdminEventWrite.jsp";
-
-			req.getRequestDispatcher(path).forward(req, resp);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -124,6 +126,8 @@ public class AdminEventWriteServlet extends HttpServlet {
 
 			String mode = mpReq.getParameter("mode");
 			
+			
+			
 			// System.out.println("등록하기 눌렀을 때 mode : " + mode);
 
 			if (mode.equals("insert")) {
@@ -147,7 +151,33 @@ public class AdminEventWriteServlet extends HttpServlet {
 			}
 
 			if (mode.equals("update")) {
+				
+				System.out.println("post에서 no : " + mpReq.getParameter("no"));
 
+				int eventNo = Integer.parseInt(mpReq.getParameter("no")); // 어떤 게시글 수정할 건지
+				
+				String deleteList = mpReq.getParameter("deleteList"); // 이미지 변경사항(삭제) 목록
+				
+				System.out.println("deleteList : "+deleteList);
+				
+				event.setEventNo(eventNo);
+				
+				int result = service.updateEvent(event, deleteList, imageList);
+				
+				String path = null;
+				String message = null;
+				
+				if(result>0) {
+					message = "수정 성공";
+					path = req.getContextPath() + "/event/detail?no=" + eventNo;
+				} else {
+					message = "수정 실패";
+					path = req.getHeader("referer");
+				}
+				
+				session.setAttribute("message", message);
+				resp.sendRedirect(path);
+				
 			}
 
 		} catch (Exception e) {

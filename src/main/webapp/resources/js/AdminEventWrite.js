@@ -3,6 +3,13 @@ const preview = document.getElementsByClassName("k-preview");
 const inputImg = document.getElementsByClassName("k-inputImg");
 const deleteImg = document.getElementsByClassName("k-deleteImg");
 
+console.log(111111111)
+
+// 수정 시 삭제된 이미지 레벨 저장할 input 요소
+const deleteList = document.getElementById("deleteList");
+
+const deleteSet = new Set(); // 순서 상관없, 중복 X
+
 // 파일 읽어서 미리보기 세팅
 for (let i = 0; i < inputImg.length; i++) {
 
@@ -18,6 +25,7 @@ for (let i = 0; i < inputImg.length; i++) {
 
                 preview[i].setAttribute("src", e.target.result); // 미리보기 img 태그 src 세팅
 
+                deleteSet.delete(i);
             }
 
 
@@ -36,6 +44,8 @@ for (let i = 0; i < inputImg.length; i++) {
             preview[i].removeAttribute("src"); // 미리보기 삭제
 
             inputImg[i].value=""; // 파일에 있는 value값 삭제
+
+            deleteSet.add(i); // 삭제된 이미지레벨 추가
         }
 
     });
@@ -44,8 +54,10 @@ for (let i = 0; i < inputImg.length; i++) {
 // 게시글 유효성 검사
 function eventValidate(){
 
-    const eventTitle = document.getElementsByClassName("K-title")[0];
-    const eventContent = document.getElementsByClassName("K-content")[0];
+    const eventTitle = document.getElementsByName("K-title")[0];
+    const eventContent = document.getElementsByName("K-content")[0];
+    const first = document.getElementsByClassName("K-first")[0];
+    const date = document.getElementById("K-date");
 
     if(eventTitle.value.trim().length == 0) {
         alert("제목을 입력해주세요");
@@ -54,12 +66,21 @@ function eventValidate(){
         return false;
     }
     
+    if(date.value.length == 0){
+        alert("마감일을 설정해주세요");
+        return false;
+    }
+
     if(eventContent.value.trim().length == 0) {
         alert("내용을 입력해주세요");
         eventContent.value = "";
         eventContent.focus();
         return false;
     }
+
+    deleteList.value = Array.from(deleteSet);
+
+    console.log(deleteList)
 
     return true;
 

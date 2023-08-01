@@ -83,6 +83,5 @@
 		JOIN EVENT USING (EVENT_NO)
 		WHERE EVENT_NO = ?
 		AND EVENT_DT &gt;=SYSDATE
-		AND IMG_EVENT_LEVEL &lt;&gt;  0
 	</entry>
 </properties>

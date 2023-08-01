@@ -167,11 +167,110 @@ public class KAdminDAO {
 			
 			result = pstmt.executeUpdate();
 			
+			System.out.println("insert : " + result);
+			
 		} finally {
 			close(pstmt);
 		}
 		
 		return result;
 	}
+
+	/** 이벤트 수정(내용, 제목) DAO
+	 * @param conn
+	 * @param event
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateContent(Connection conn, Event event) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateContent");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, event.getEventTitle());
+			pstmt.setString(2, event.getEventContent());
+			pstmt.setString(3, event.getEventDt());
+			pstmt.setInt(4, event.getEventNo());
+			
+			result = pstmt.executeUpdate();
+			
+			System.out.println("글 : " + result);
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 이벤트 이미지 수정(update) DAO
+	 * @param conn
+	 * @param image
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateImage(Connection conn, EventImage image) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updateImage");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, image.getImageRename());
+			pstmt.setInt(2, image.getEventNo());
+			pstmt.setInt(3, image.getImageLevel());
+			
+			result = pstmt.executeUpdate();
+			
+			System.out.println("update : " + result);
+			
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 이벤트 수정 이미지 삭제 DAO
+	 * @param conn
+	 * @param deleteList
+	 * @param eventNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteImage(Connection conn, String deleteList, int eventNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("deleteImage") + deleteList + ")";
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, eventNo);
+			
+			result = pstmt.executeUpdate();
+			
+			System.out.println("delete : " + result);
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
+	
 
 }
