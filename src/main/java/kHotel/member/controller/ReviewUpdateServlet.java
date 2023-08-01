@@ -57,22 +57,32 @@ public class ReviewUpdateServlet extends HttpServlet{
 			Enumeration<String> files = mpReq.getFileNames();
 
 			// 지정된 파일명 변경 정책에 맞게 이름이 바뀐 파일이 저장됨
-			String name = files.nextElement();
+			String reviewImg = null;
+			ReviewImg image = new ReviewImg();
+			while(files.hasMoreElements()) {
+				
+				String name = files.nextElement();
+				String rename = mpReq.getFilesystemName(name);
+				
+				reviewImg = req.getParameter("reviewImg");
+				System.out.println(reviewImg + "zzz");
+			
+				
+				
+				if (rename != null) {
+					
+					
+					image.setRename(folderPath + rename);
+					/* image.setImageLevel(Integer.parseInt(name)); */
+					
+				}
+			}
 			
 			
 			/* String reviewImg = folderPath + mpReq.getFilesystemName("JreviewImage"); */
-
 			
-			String rename = mpReq.getFilesystemName(name);
-
-			ReviewImg image = new ReviewImg();
 			
-			if (rename != null) {
 
-
-				image.setRename(folderPath + rename);
-				image.setImageLevel(Integer.parseInt(name));
-			}
 
 			
 			int delete = Integer.parseInt(mpReq.getParameter("Jdelete"));
@@ -82,15 +92,18 @@ public class ReviewUpdateServlet extends HttpServlet{
 				/* reviewImg = null; */
 			}
 			
-			// 게시글 번호 얻어오기
-			String reviewImg = req.getParameter("reviewImg");
+			// 이미지 정보
+			
 			
 			
 		    // --------------------------------------------------------------------
 			
 			// 리뷰 등록
-			String content = req.getParameter("reviewContent");
-			int star = Integer.parseInt(req.getParameter("rating"));
+			String content = mpReq.getParameter("reviewContent");
+			
+			int star = Integer.parseInt(mpReq.getParameter("rating")); 
+			
+			
 			
 			System.out.println(content + "작성 영역");
 			String userId = loginMember.getMemberId();
@@ -102,13 +115,13 @@ public class ReviewUpdateServlet extends HttpServlet{
 			rv.setUserId(userId);
 			rv.setStar(star);
 			
+			
 			int memberNo = loginMember.getMemberNo();
 			
 			rv.setMemberNo(memberNo);
 			
-			System.out.println("왜그러냐?");
 			
-			int result = service.reviewUpdate(rv);
+			int result = service.reviewUpdate(rv, image);
 			
 			String message = null;
 			

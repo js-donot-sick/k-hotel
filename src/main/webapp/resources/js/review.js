@@ -58,7 +58,7 @@ const star = document.getElementsByClassName("star2");
 const star2 = document.getElementsByClassName("star3")[0];
 
 
-for(let i = 0 ; i < star.length ; i++){
+/* for(let i = 0 ; i < star.length ; i++){
 
 
         if(star[i].checked = true){
@@ -71,11 +71,11 @@ for(let i = 0 ; i < star.length ; i++){
 
 
 
-                console.log(star[0].value);
+                
         }
 
 }
-
+ */
 
     
 
