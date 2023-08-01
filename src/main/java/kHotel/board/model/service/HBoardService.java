@@ -105,4 +105,23 @@ public class HBoardService {
 	}
 
 
+	/** 공지사항 상세페이지
+	 * @param boardNo
+	 * @return board
+	 * @throws Exception
+	 */
+	public Board BoardDetail(int boardNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		Board board = dao.BoardDetail(conn, boardNo);
+		
+		close(conn);
+		
+		return board;
+	}
+
+
+
+
 }

@@ -284,4 +284,20 @@ public class HBoardDAO {
 		return result;
 	}
 
+
+	/** 공지사항 상세페이지
+	 * @param conn
+	 * @param boardNo
+	 * @return board
+	 * @throws Exception
+	 */
+	public Board BoardDetail(Connection conn, int boardNo) throws Exception{
+		
+		
+		
+		return null;
+	}
+
+
+
 }
