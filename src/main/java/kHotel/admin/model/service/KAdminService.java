@@ -82,4 +82,48 @@ public class KAdminService {
 		return eventNo;
 	}
 
+	/** 게시글 수정 service
+	 * @param event
+	 * @param deleteList
+	 * @param imageList
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateEvent(Event event, String deleteList, List<EventImage> imageList) throws Exception {
+		
+		
+		Connection conn = getConnection();
+		
+		// 1. XSS
+		event.setEventTitle(Util.XSSHanding(event.getEventTitle()));
+		event.setEventContent(Util.XSSHanding(event.getEventContent()));
+		
+		event.setEventContent(Util.newLineHandling(event.getEventContent()));
+		
+		// 2. 게시글 수정(내용, 제목)
+		int result = dao.updateContent(conn, event);
+		
+		if(result>0) { // 게시글 내용 수정이 성공했을 경우
+			
+			for(EventImage image : imageList) {
+				image.setEventNo(event.getEventNo());
+				
+				result = dao.updateImage(conn, image);
+				
+				if(result == 0) { // update가 아니면 insert해라
+					result = dao.insertEventImage(conn, image);
+				}
+			}
+			
+			if(!deleteList.equals("")) { // 삭제할 이미지가 있다면
+				result = dao.deleteImage(conn, deleteList, event.getEventNo());
+			}
+		}
+		
+		if(result>0)	commit(conn);
+		else			rollback(conn);
+		
+		return result;
+	}
+
 }

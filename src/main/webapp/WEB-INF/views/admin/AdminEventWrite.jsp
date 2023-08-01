@@ -24,7 +24,7 @@
                 <div>
                     <div>이벤트 작성</div>
 
-                    <form action="${contextPath}/admin/eventWrite" enctype="multipart/form-data" method="post" id="K-form">
+                    <form action="${contextPath}/admin/eventWrite" enctype="multipart/form-data" method="post" id="K-form" onsubmit="return eventValidate()">
                         <div>제목 입력</div>
                         <div>
                             <input type="text" placeholder="내용을 입력해주세요" name="K-title" value="${event.eventTitle}">
@@ -41,20 +41,31 @@
                                 <div id="K-image-select"></div>
                             </div> -->
 
-                            <c:choose>
-                                <c:when  test="${eventImage.imageLevel == 0}">
+                            <c:forEach items="${event.imageList}" var="Eimage">
+                                <c:choose>
+                                    <c:when  test="${Eimage.imageLevel == 0}">
+                                        <c:set var="img0" value="${contextPath}${Eimage.imageRename}"/>
+                                    </c:when>
                                     
-                                </c:when>
+                                    <c:when  test="${Eimage.imageLevel == 1}">
+                                        <c:set var="img1" value="${contextPath}${Eimage.imageRename}"/>
+                                    </c:when>
+                                    
+                                    <c:when  test="${Eimage.imageLevel == 2}">
+                                        <c:set var="img2" value="${contextPath}${Eimage.imageRename}"/>
+                                    </c:when>
 
+                                    <c:when  test="${Eimage.imageLevel == 3}">
+                                        <c:set var="img3" value="${contextPath}${Eimage.imageRename}"/>
+                                    </c:when>
 
-
-
-                            </c:choose>
+                                </c:choose>
+                            </c:forEach>
 
                             <h5>썸네일</h5>
                             <div class="k-img-box k-thumbnail">
                                 <label for="k-img0">
-                                    <img class="k-preview">
+                                    <img class="k-preview" src="${img0}">
                                 </label>
                                 <input type="file" class="k-inputImg" name="0" id="k-img0" accept="image/*">
                                 <span class="k-deleteImg">&times;</span>
@@ -64,21 +75,21 @@
                             <div class="k-upload-img">
                                 <div class="k-img-box k-upload">
                                     <label for="k-img1">
-                                        <img class="k-preview">
+                                        <img class="k-preview" src="${img1}">
                                     </label>
                                     <input type="file" class="k-inputImg" name="1" id="k-img1" accept="image/*">
                                     <span class="k-deleteImg">&times;</span>
                                 </div>
                                 <div class="k-img-box k-upload">
                                     <label for="k-img2">
-                                        <img class="k-preview">
+                                        <img class="k-preview" src="${img2}">
                                     </label>
                                     <input type="file" class="k-inputImg" name="2" id="k-img2" accept="image/*">
                                     <span class="k-deleteImg">&times;</span>
                                 </div>
                                 <div class="k-img-box k-upload">
                                     <label for="k-img3">
-                                        <img class="k-preview">
+                                        <img class="k-preview" src="${img3}">
                                     </label>
                                     <input type="file" class="k-inputImg" name="3" id="k-img3" accept="image/*">
                                     <span class="k-deleteImg">&times;</span>
@@ -86,7 +97,7 @@
                             </div>
                         </div>
                         <div>
-                            <textarea name="K-content" cols="103" rows="20" placeholder="내용을 입력해주세요" value="${event.eventContent}"></textarea>
+                            <textarea name="K-content" cols="103" rows="20" placeholder="내용을 입력해주세요">${event.eventContent}</textarea>
                         </div>
                         <div>
                             
@@ -94,8 +105,12 @@
                             
                             <button id="K-write">작성</button>
                         </div>
+
+                        
                         <!-- hidden으로 숨겨놓기 -->
                         <input type="hidden" name="mode" value="${param.mode}">
+                        <input type="hidden" name="deleteList" id="deleteList" value="">
+                        <input type="hidden" name="no" value="${param.no}">
                     </form>
                 </div>
             </div>

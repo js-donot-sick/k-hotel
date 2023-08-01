@@ -466,8 +466,6 @@ public class KBoardDAO {
 				event.setEventDt(rs.getString(3));
 			}
 			
-			System.out.println("dao에서 event: " + event);
-			
 		} finally {
 			close(rs);
 			close(pstmt);

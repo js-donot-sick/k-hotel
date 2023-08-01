@@ -26,12 +26,14 @@
             </div>
 
             <!-- <img src="${contextPath}${event.imageList[0].imageRename}" alt="사진"> -->
-            <c:set var="start" value="0"/>
+            <c:set var="start" value="1"/>
 
             <div>
-                <c:forEach var="i" begin="${start}" end="${fn:length(event.imageList)-1}">
+                <c:forEach var="i" begin="0" end="${fn:length(event.imageList)-1}">
                     <div class="boardImg">
-                        <img src="${contextPath}${event.imageList[i].imageRename}" alt="사진">
+                        <c:if test="${event.imageList[i].imageLevel != 0}">
+                            <img src="${contextPath}${event.imageList[i].imageRename}" alt="사진">
+                        </c:if>
                     </div>
                 </c:forEach>
             </div>
