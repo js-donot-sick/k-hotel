@@ -71,6 +71,7 @@ public class KMemberDAO {
 				loginMember.setMemberTel(rs.getString("MEMBER_TEL"));
 				loginMember.setMemberAddress(rs.getString("MEMBER_ADD"));
 				loginMember.setMemberAdmin(rs.getString("MEMBER_ADMIN").charAt(0));
+				loginMember.setSecessionFlag(rs.getString("SECESSION_FL").charAt(0));
 				
 			}
 			

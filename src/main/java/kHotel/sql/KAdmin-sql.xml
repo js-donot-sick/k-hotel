@@ -49,4 +49,11 @@
 		AND IMG_EVENT_LEVEL IN (
 	</entry>
 	
+	<!-- 이벤트 게시글 삭제  -->
+	<entry key="deleteEvent">
+		UPDATE EVENT SET
+		EVENT_ST = 'Y'
+		WHERE EVENT_NO = ?
+	</entry>
+	
 </properties>
