@@ -21,16 +21,24 @@ public class ReviewShowServelt extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		try {
-	
+			
+			int cp = 1;
+			
+			if(req.getParameter("cp") != null) { 
+				cp = Integer.parseInt(req.getParameter("cp"));
+			}
+			
+			System.out.println(cp);
+			
 			ReviewService service = new ReviewService();
 
-			List<Board> boardList = service.boardReview();
+			Map<String, Object> map = service.boardReview(cp);
 
 			String path = "/WEB-INF/views/board/reviewShow.jsp";
 			
-			req.setAttribute("boardList", boardList);
+			req.setAttribute("map", map);
 			
-			System.out.println(boardList);
+			System.out.println(map);
 
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 
