@@ -27,7 +27,6 @@
 
                 <jsp:include page="/WEB-INF/views/common/sidebar.jsp"/>
 
-            <form action="/review" method="POST">
             <div class="J-BODY3">
 
                 <div class="J-J">
