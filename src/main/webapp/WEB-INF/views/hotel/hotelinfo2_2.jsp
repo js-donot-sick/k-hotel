@@ -83,7 +83,7 @@
 
 
                     <!-- 객실1 -->
-                    <div class="L-roompoint-border L-roomA">
+                    <div class="L-roompoint-border L-roomA" id="LroomG1">
                         <img src="${contextPath}/resources/images/Deluxe-Room_JongRo_1.jpg" class="L-roomimg" id="L-room1">
                         <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
@@ -92,7 +92,7 @@
  객실면적 <span>|</span> 40~46 m²
                         </pre>
                     </div>
-                    <div class="L-roompoint-border L-roomA1">
+                    <div class="L-roompoint-border L-roomA1" id="LroomG2" >
                         <img src="${contextPath}/resources/images/standard-Room_JongRo_2.jpg" class="L-roomimg1" id="L-room2">
                         <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
@@ -101,7 +101,7 @@
  객실면적 <span>|</span> 26.7 ㎡ ~ 30.7㎡
                         </pre>
                     </div>
-                    <div class="L-roompoint-border L-roomA">
+                    <div class="L-roompoint-border L-roomA" id="LroomG3">
                         <img src="${contextPath}/resources/images/suite-Room_1.jpg" class="L-roomimg" id="L-room3">
                         <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
