@@ -56,8 +56,8 @@
 								<tbody>
 
 									<td>${board.boardNo}</td>
-									<td><a
-										href="${contextPath}/board/qna/boardDetail?type=2&cp=${pagination.currentPage}&no=${board.boardNo}${searchUrl}">${board.boardTitle}</a></td>
+									<td>
+									<a href="${contextPath}/admin/AdminBoardList/detail">${board.boardTitle}</a></td>
 									<td></td>
 									<td>${board.boardDate}</td>
 									<td>${member.memberId}</td>
