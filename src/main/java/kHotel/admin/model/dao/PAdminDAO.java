@@ -39,7 +39,7 @@ public class PAdminDAO {
 	}
 
 	/**
-	 * 관리자 회원 목록 수 DAO
+	 * 관리자 회원 목록 수 DAO (쓰는것)
 	 * 
 	 * @param conn
 	 * @return listCount
@@ -150,41 +150,10 @@ public class PAdminDAO {
 		return boardList;
 	}
 
-	/**
-	 * 게시판 이름 조회 DAO
-	 * 
-	 * @param conn
-	 * @param type
-	 * @return boardName
-	 */
-	public String selectBoardName(Connection conn, int type) throws Exception {
-		String boardName = null;
 
-		try {
-			String sql = prop.getProperty("selectBoardName");
-
-			pstmt = conn.prepareStatement(sql);
-
-			pstmt.setInt(1, type);
-
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				boardName = rs.getString(1);
-			}
-
-		} finally {
-
-			close(rs);
-			close(pstmt);
-
-		}
-
-		return boardName;
-	}
 
 	/**
-	 * 아이디 게시글 수 조회
+	 * 아이디 검색 시 아이디 검색 결과 수 출력
 	 * 
 	 * @param conn
 	 * @param pid
@@ -197,7 +166,7 @@ public class PAdminDAO {
 
 		try {
 
-			String sql = prop.getProperty("searchId") + condition;
+			String sql = prop.getProperty("searchIdCount") + condition;
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(sql);
 
@@ -246,7 +215,7 @@ public class PAdminDAO {
 			while (rs.next()) {
 
 				PAdminMemebr am = new PAdminMemebr();
-				am.setMemberNo(rs.getInt("RNUM"));
+				am.setMemberNo(rs.getInt("MEMBER_NO"));
 				am.setMemberId(rs.getString("MEMBER_ID"));
 				am.setMemebrTel(rs.getString("MEMBER_TEL"));
 				am.setMemberEmail(rs.getString("MEMBER_EMAIL"));
@@ -264,6 +233,31 @@ public class PAdminDAO {
 		
 		return boardList;
 
+	}
+
+	public int adminDeleteMember(Connection conn, int memberNo, int type) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			
+			String sql = prop.getProperty("adminDeleteMember");
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, memberNo);
+			
+			result = pstmt.executeUpdate();
+			
+			System.out.println(result);
+			
+			
+		} finally {
+			close(pstmt);
+			
+		}
+		
+		return result;
 	}
 
 	
