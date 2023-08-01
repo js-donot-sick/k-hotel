@@ -14,6 +14,7 @@ import java.util.Properties;
 
 import kHotel.board.model.vo.Board;
 import kHotel.member.model.dao.MemberDAO;
+import kHotel.member.model.vo.PPagination;
 
 public class ReviewDAO {
 	
@@ -38,30 +39,39 @@ public class ReviewDAO {
 
 	/**
 	 * @param conn
+	 * @param pagination 
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Board> boardCount(Connection conn) throws Exception{
+	public List<Board> boardCount(Connection conn, PPagination pagination) throws Exception{
 		
 		List<Board> boardList = new ArrayList<Board>();
 		
 		try {
-
+			int start = (pagination.getCurrentPage()-1) * pagination.getLimit() +1;
 			
-			String sql = prop.getProperty("selectReview");
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(sql);
+			int end = start + pagination.getLimit() -1;
+			
+			String sql = prop.getProperty("selectReview1");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, start);
+			pstmt.setInt(2, end);
+			
+			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
 				
 				Board board = new Board();
-				board.setMemberId(rs.getString(1));
-				board.setRoomName(rs.getString(2));
-				board.setHotelTitle(rs.getString(3));
-				board.setBoardDate(rs.getString(4));
-				board.setImageRename(rs.getNString(5));
-				board.setBoardContent(rs.getString(6));
-				board.setReviewStar(rs.getInt(7));
+				
+				board.setMemberId(rs.getString("MEMBER_ID"));
+				board.setRoomName(rs.getString("ROOM_NM"));
+				board.setHotelTitle(rs.getString("HOTEL_TITLE"));
+				board.setBoardDate(rs.getString("BOARD_DT"));
+				board.setImageRename(rs.getNString("IMG_REVIEW_RENAME"));
+				board.setBoardContent(rs.getString("BOARD_CONTENT"));
+				board.setReviewStar(rs.getInt("REVIEW_STAR"));
 				
 				boardList.add(board);
 				
@@ -76,5 +86,34 @@ public class ReviewDAO {
 		
 		return boardList;
 	}
-
+	
+	/** 페이지네이션 하기 위해서 쿠폰리스트 얻어오기
+	 * @param conn
+	 * @return listCount
+	 * @throws Exception
+	 */
+	public int selectReview(Connection conn) throws Exception {
+		
+		int listCount = 0;
+		
+		try {
+			String sql = prop.getProperty("selectReview");
+			
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			if( rs.next() ) {
+				listCount = rs.getInt(1);
+			}
+			
+			
+		} finally {
+			close(rs);
+			close(stmt);
+		}
+		
+		return listCount;
+	}
+	
 }
