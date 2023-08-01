@@ -56,7 +56,7 @@ public class ReviewDAO {
 				
 				Board board = new Board();
 				board.setMemberId(rs.getString(1));
-				board.setRoomNo(rs.getInt(2));
+				board.setRoomName(rs.getString(2));
 				board.setHotelTitle(rs.getString(3));
 				board.setBoardDate(rs.getString(4));
 				board.setImageRename(rs.getNString(5));
