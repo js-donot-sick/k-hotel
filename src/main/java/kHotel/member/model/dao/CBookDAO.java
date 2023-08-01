@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Properties;
 
 import kHotel.board.model.vo.Board;
+import kHotel.member.model.vo.CPagination;
 import kHotel.member.model.vo.Reservation;
 
 import static kHotel.common.JDBCTemplate.*;
@@ -301,23 +302,31 @@ public class CBookDAO {
 		/** 쿠폰 조회 DAO
 		 * @param conn
 		 * @param memberNo 
+		 * @param pagination 
 		 * @return couponList
 		 * @throws Exception
 		 */
-		public List<Reservation> selectCouponList(Connection conn, int memberNo) throws Exception {
+		public List<Reservation> selectCouponList(Connection conn, int memberNo, CPagination pagination) throws Exception {
 			
 			List<Reservation> couponList = new ArrayList<Reservation>();
 			
 			try {
+				int start = (pagination.getCurrentPage()-1) * pagination.getLimit() +1;
+				
+				int end = start + pagination.getLimit() -1;
+				
 				String sql = prop.getProperty("selectCouponList");
 				
 				pstmt = conn.prepareStatement(sql);
 				
 				pstmt.setInt(1, memberNo);
+				pstmt.setInt(2, start);
+				pstmt.setInt(3, end);
 				
 				rs = pstmt.executeQuery();
 				
 				while( rs.next() ) {
+					
 					Reservation coupon = new Reservation();
 					
 					coupon.setCouponName(rs.getString("COUPON_NM"));
@@ -424,6 +433,34 @@ public class CBookDAO {
 			}
 			
 			return result;
+		}
+
+		/** 페이지네이션 하기 위해서 쿠폰리스트 얻어오기
+		 * @param conn
+		 * @return listCount
+		 * @throws Exception
+		 */
+		public int selectCoupon(Connection conn) throws Exception {
+			int listCount = 0;
+			
+			try {
+				String sql = prop.getProperty("selectCoupon");
+				
+				stmt = conn.createStatement();
+				
+				rs = stmt.executeQuery(sql);
+				
+				if( rs.next() ) {
+					listCount = rs.getInt(1);
+				}
+				
+				
+			} finally {
+				close(rs);
+				close(stmt);
+			}
+			
+			return listCount;
 		}
 		
 

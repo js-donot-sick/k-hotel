@@ -3,6 +3,7 @@ package kHotel.member.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,8 +24,15 @@ public class CouponServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		// 여기다가 db가서 쿠폰 리스트 가져와서 배열에 담고 req.set해서 넘겨주깅		
+		
+		int cp = 1;
+		
+		if(req.getParameter("cp") != null) { 
+			cp = Integer.parseInt(req.getParameter("cp"));
+		}
+		// 페이지네이션이랑 쿠폰함리스트 같이 가져오게 하는 객체
+		
 		CBookService service = new CBookService();
-		List<Reservation> couponList = new ArrayList<Reservation>();
 		
 		HttpSession session = req.getSession();
 		
@@ -32,20 +40,22 @@ public class CouponServlet extends HttpServlet{
 		
 		int MemberNo = loginMember.getMemberNo();
 		
+		Map<String, Object> map = null;
+		
 		try {
 			
-			couponList = service.selectCouponList(MemberNo);
+			map = service.selectCouponList(MemberNo,cp);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 				
+		req.setAttribute("map", map);
 		
 		String path = "/WEB-INF/views/mypage/couponList.jsp";
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		
-		req.setAttribute("couponList", couponList);
 		
 		dispatcher.forward(req, resp);
 	}

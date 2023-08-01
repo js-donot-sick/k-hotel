@@ -67,7 +67,7 @@
             </dl>
           </li>
           <li>
-            <a href="${contextPath}/member/mypage/coupon" class="H-side-item">쿠폰</a>
+            <a href="${contextPath}/member/mypage/coupon?cp=1" class="H-side-item">쿠폰</a>
 
           </li>
           <li>
