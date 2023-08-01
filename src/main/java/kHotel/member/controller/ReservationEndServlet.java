@@ -77,8 +77,6 @@ public class ReservationEndServlet extends HttpServlet {
 			
 			String path = null;
 			
-			result = 0;
-			
 			if(result>0) {
 				req.setAttribute("reserve", reserve);
 				path = "/WEB-INF/views/book/bookEnd.jsp";
