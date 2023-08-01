@@ -14,5 +14,11 @@ public class LikeList {
 	
 	private int roomNo;
 	private int memberNo;
+	private String hotelNm1;
+	private String hotelNm2;
+	private String hotelNm3;
+	private String roomNm1;
+	private String roomNm2;
+	private String roomNm3;
 
 }
