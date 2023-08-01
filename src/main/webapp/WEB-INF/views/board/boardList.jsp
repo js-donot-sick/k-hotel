@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>qnaList</title>
+    <title>공지사항</title>
 
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -42,13 +42,7 @@
 
         <div class="main">
 
-            <div>
-
-
-
-            <div class="K-qnaList"> <!-- 질문게시판 목록 -->
-
-                
+               
                 <c:if test="${empty boardList}">
                     <div id="">게시글이 존재하지 않습니다.</div>
                 </c:if>
@@ -76,10 +70,10 @@
                                 <td>${member.memberId}</td>
                             </tbody>
 
-                    </section>
 
                     </c:forEach>
 
+                    </section>
                     </table>
                     
                     <div class="btn-area">
@@ -89,8 +83,7 @@
                     
                      <!-- 페이지네이션 -->
                     <div class="K-qna-page">
-                        <c:set var="url" value="#"/>
-
+   							<c:set var="url" value="${contextPath}/board?type=1&cp="/>
                         <ul class="K-pagination">
                             <!-- 첫 페이지로 이동 -->
                             <li><a href="${url}1$${searchUrl}">&lt;&lt;</a></li>
@@ -126,10 +119,10 @@
 
     </div>
 
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
  
         </div>
     </main>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
