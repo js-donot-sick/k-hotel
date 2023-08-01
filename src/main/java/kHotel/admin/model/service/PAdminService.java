@@ -38,6 +38,7 @@ public class PAdminService {
 		// 관리자 회원 목록 조회
 		List<PAdminMemebr> boardList = dao.selectBoardList(conn, LPagination, type);
 		for (int i = 0; i < boardList.size(); i++) {
+			// 신고당한 수 조회
 			int cnt = dao.getListReportCount(conn, listCount, boardList.get(i).getMemberNo());
 			boardList.get(i).setReportCount(cnt);
 		}
@@ -63,33 +64,68 @@ public class PAdminService {
 	 * @throws Exception
 	 */
 	public Map<String, Object> searchId(String Pid, int type, int cp) throws Exception {
-		
-		System.out.println("Pid0:  "+Pid);
 
-		 Connection conn = getConnection();
+		System.out.println("Pid0:  " + Pid);
 
-	      // 게시판 이름 조회
-	      String boardName = dao.selectBoardName(conn, type);
+		Connection conn = getConnection();
 
-	      String condition = " AND MEMBER_ID LIKE '%" +Pid +"%' ";
-	      
-	      // 게시글 수 조회
-	      int listCount = dao.getListCount(conn, condition);
-	      
-	      int listReportCount = dao.getListReportCount(conn, listCount);
+		// 게시판 이름 조회
+		String condition = " AND MEMBER_ID LIKE '%" + Pid + "%' ";
 
-	      LPagination LPagination = new LPagination(cp, listCount);
+		// 아이디 검색 시 아이디 검색 결과 수 출력
+		int listCount = dao.getListCount(conn, condition);
 
-	      List<PAdminMemebr> boardList = dao.searchBoardList(conn, LPagination, condition,type);
+		// 페이지네이션
+		LPagination LPagination = new LPagination(cp, listCount);
 
-	      Map<String, Object> map = new HashMap<String, Object>();
-	      map.put("boardName", boardName);
-	      map.put("LPagination", LPagination);
-	      map.put("boardList", boardList);
-	      map.put("listReportCount", listReportCount);
+		// 전체 회원수 조회
+		List<PAdminMemebr> boardList = dao.searchBoardList(conn, LPagination, condition, type);
+		for (int i = 0; i < boardList.size(); i++) {
+			// 신고당한 수 조회
+			int cnt = dao.getListReportCount(conn, listCount, boardList.get(i).getMemberNo());
+			boardList.get(i).setReportCount(cnt);
+		}
 
-	      return map;
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("listCount", listCount);
+		map.put("listReportCount", 0);
+		map.put("LPagination", LPagination);
+		map.put("boardList", boardList);
 
+		return map;
+
+	}
+
+	/**
+	 * 탈퇴
+	 * 
+	 * @param memberNo
+	 * @param cp
+	 * @param type
+	 * @return result
+	 * @throws Exception
+	 */
+	public int adminDeleteMember(int memberNo, int type, int cp) throws Exception {
+
+		Connection conn = getConnection();
+
+		// 관리자 전체 게시글 수 조회
+		int listCount = dao.getListCount(conn);
+
+		// 전체 게시글 수 + 현재 페이지를 이용해 페이지네이션 객체 생성
+		LPagination LPagination = new LPagination(cp, listCount);
+
+		int result = dao.adminDeleteMember(conn, memberNo,type);
+
+		if (result > 0) {
+			commit(conn);
+		} else {
+			rollback(conn);
+		}
+
+		System.out.println(result);
+
+		return result;
 	}
 
 }

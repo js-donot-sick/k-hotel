@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
 import kHotel.admin.model.service.PAdminService;
+import kHotel.admin.model.vo.PAdminMemebr;
 import kHotel.member.model.vo.Member;
 
 @WebServlet("/admin/memberAdmin")
@@ -61,5 +62,40 @@ public class AdminMemberServlet extends HttpServlet {
 
 
    }
+   
+   @Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	   try {
+		   
+		   int type = Integer.parseInt(req.getParameter("type"));
+	         
+	         int cp = 1;
+
+	         if(req.getParameter("cp")!=null) {
+	            cp = Integer.parseInt(req.getParameter("cp"));
+	         }
+		   
+		   PAdminService service = new PAdminService();
+		   
+		   int memberNo = Integer.parseInt(req.getParameter("memberNo"));
+		   
+		   int result = service.adminDeleteMember(memberNo,type,cp);	
+		   
+		   if(result > 0) {
+			   
+			   resp.sendRedirect(req.getContextPath() + "/admin/memberAdmin");
+			   
+		   }else {
+			   System.out.println("성공했나?");
+			   
+		   }
+		   
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	   
+	   
+	}
 
 }
