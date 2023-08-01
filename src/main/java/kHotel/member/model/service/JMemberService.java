@@ -40,10 +40,16 @@ public class JMemberService {
 	/** 리뷰 등록 Service
 	 * @param image
 	 * @param rv
+	 * @param tag6 
+	 * @param tag5 
+	 * @param tag4 
+	 * @param tag3 
+	 * @param tag2 
+	 * @param tag1 
 	 * @return result
 	 * @throws Exception
 	 */
-	public int reviewUpdate( Review rv , ReviewImg image) throws Exception {
+	public int reviewUpdate( Review rv , ReviewImg image, String tag1, String tag2, String tag3, String tag4, String tag5, String tag6) throws Exception {
 		
 		Connection conn = getConnection();
 		
@@ -52,17 +58,26 @@ public class JMemberService {
 		
 		rv.setContent( Util.XSSHanding(rv.getContent()));
 		
+		// 리뷰 게시글 등록
 		int result = dao.reviewUpdate(conn, rv );
 		
+		// 작성된 리뷰 게시글 번호 얻어오기
 		int boardNo = dao.nextBoardNo(conn, rv);
 		
 		rv.setBoardNo(boardNo);
 		
 		if(result > 0) {
 			
+			// 리뷰 이미지 삽입
 			result = dao.reviewImg( conn, image, rv);
 			
-			/* result = dao.tagUpdate(conn, ) */
+			// 태그 삽입
+			result = dao.tagUpdate1(conn, rv , tag1 ) ;
+			result = dao.tagUpdate2(conn, rv , tag2  ) ;
+			result = dao.tagUpdate3(conn, rv , tag3 ) ;
+			result = dao.tagUpdate4(conn, rv , tag4  ) ;
+			result = dao.tagUpdate5(conn, rv , tag5  ) ;
+			result = dao.tagUpdate6(conn, rv , tag6  ) ;
 		}
 		
 		
@@ -84,6 +99,22 @@ public class JMemberService {
 		Connection conn = getConnection();
 		
 		 List<Reservation> rvList = dao.reservation(conn, memberNo);
+		
+		 
+		close(conn);
+				
+		return rvList;
+	}
+
+	/** 현재 예약 Service
+	 * @param memberNo
+	 * @return rv
+	 * @throws Exception
+	 */
+	public List<Reservation> reservationUp(int memberNo) throws Exception {
+		Connection conn = getConnection();
+		
+		 List<Reservation> rvList = dao.reservationUp(conn, memberNo);
 		
 		 
 		close(conn);

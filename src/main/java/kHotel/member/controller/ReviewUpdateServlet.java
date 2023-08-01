@@ -65,7 +65,6 @@ public class ReviewUpdateServlet extends HttpServlet{
 				String rename = mpReq.getFilesystemName(name);
 				
 				reviewImg = req.getParameter("reviewImg");
-				System.out.println(reviewImg + "zzz");
 			
 				
 				
@@ -104,8 +103,27 @@ public class ReviewUpdateServlet extends HttpServlet{
 			int star = Integer.parseInt(mpReq.getParameter("rating")); 
 			
 			
+			// -----------------------------------------------------------------
 			
-			System.out.println(content + "작성 영역");
+			// 태그 등록
+			String tag1 = mpReq.getParameter("tag1");
+			String tag2 = mpReq.getParameter("tag2");
+			String tag3 = mpReq.getParameter("tag3");
+			String tag4 = mpReq.getParameter("tag4");
+			String tag5 = mpReq.getParameter("tag5");
+			String tag6 = mpReq.getParameter("tag6");
+			
+			
+			
+			if(tag1 == null) tag1 = "N";
+			if(tag2 == null) tag2 = "N";
+			if(tag3 == null) tag3 = "N";
+			if(tag4 == null) tag4 = "N";
+			if(tag5 == null) tag5 = "N";
+			if(tag6 == null) tag6 = "N";
+			
+			// -----------------------------------------------------------------
+			
 			String userId = loginMember.getMemberId();
 		
 			
@@ -121,7 +139,7 @@ public class ReviewUpdateServlet extends HttpServlet{
 			rv.setMemberNo(memberNo);
 			
 			
-			int result = service.reviewUpdate(rv, image);
+			int result = service.reviewUpdate(rv, image ,tag1, tag2, tag3, tag4, tag5, tag6);
 			
 			String message = null;
 			
@@ -136,7 +154,6 @@ public class ReviewUpdateServlet extends HttpServlet{
 				
 			}
 			
-			System.out.println("안녕");
 			session.setAttribute("message", message);
 			resp.sendRedirect(path);
 			
