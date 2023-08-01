@@ -43,39 +43,41 @@ coupon.addEventListener("change", function () {
 
         finalpay.value = roomMoney;
     }
-})
+});
 
 payplan.addEventListener("change", function () {
 
     if (payplan.value == "무통장입금") {
         displaychanger.style.display = "contents";
     }
-})
+});
 
 account.addEventListener("change", function () {
 
-    if (account.value == "토스뱅크") {
+    if (account.value != "none") {
         displaychanger2.style.display = "revert";
     }
-    if (account.value == "카카오뱅크"){
-        displaychanger2.style.display = "revert";
-    }
-})
+});
 
 function reservationFinalValidate() {
 
     if (payplan.value == "none") {
-        alert("결제 수단을 선택해주시길 바랍니다.")
+        alert("결제 수단을 선택해주시길 바랍니다.");
         return false;
-    }
-
-    else if (!agree.checked) {
+    }else if(account.value == "none"){
+        alert("결제 은행을 선택해주시길 바랍니다.");
+        return false;
+    }else if (!agree.checked) {
         alert("약관 동의 후 예약을 진행해주시기 바랍니다.");
         return false;
         
-    } else{
+    }else if(couponList != null && coupon.value != "discountcoupon"){
 
-        return confirm("결제를 진행하시겠습니까?");
+        return confirm("보유하신 쿠폰이 있습니다. 쿠폰 사용을 안하시고 결제를 진행하시겠습니까?");
+
+    }else{
+            
+        return confirm("결제를 진행하시겠습니까?"); 
     }
 
 
