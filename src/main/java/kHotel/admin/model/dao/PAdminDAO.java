@@ -235,19 +235,24 @@ public class PAdminDAO {
 
 	}
 
-	public int adminDeleteMember(Connection conn, int memberNo, int type) throws Exception{
+	public int adminDeleteMember(Connection conn, int memberNo, int type, LPagination lPagination) throws Exception{
 		
 		int result = 0;
 		
 		try {
 			
-			
 			String sql = prop.getProperty("adminDeleteMember");
 			
+			int start = (lPagination.getCurrentPage() - 1) * lPagination.getLimit() + 1;
+			int end = start + lPagination.getLimit() - 1;
+
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, memberNo);
+			pstmt.setInt(2, start);
+			pstmt.setInt(3, end);
 			
 			result = pstmt.executeUpdate();
+			
 			
 			System.out.println(result);
 			

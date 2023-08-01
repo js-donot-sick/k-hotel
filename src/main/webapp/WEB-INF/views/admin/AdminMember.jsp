@@ -14,6 +14,9 @@
             <html lang="en">
 
             <head>
+
+                <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+                integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>관리자 회원정보관리</title>
@@ -90,10 +93,21 @@
                                                 <td>${board.reportCount}</td>
                                                 <td>${board.secessionFl}</td>
 
-                                                <form action="memberAdmin?type=1" method="POST" name="P-adm-info" onsubmit="return secessionValidate()">
+                                                <form action="${contextPath}/admin/memberAdmin?type=1" method="POST"
+                                                    name="P-adm-info" onsubmit="return secessionValidate()">
                                                     <input type="hidden" value="${board.memberNo}" name="memberNo">
-                                                    <td><button class="P-adm-btn ">탈퇴</button></td>
+                                                    <input type="hidden" value="${board.secessionFl}" id="secessionFl">
+                                                     
+                                                    <!-- adminMember(); -->
+
+                                                    <td>
+                                                        <c:if test="${board.secessionFl.toString() eq 'N'}" >
+                                                            <button class="P-adm-btn" >탈퇴</button>
+                                                        </c:if>
+                                                    </td>
                                                 </form>
+
+
                                             </tr>
                                         </c:forEach>
 

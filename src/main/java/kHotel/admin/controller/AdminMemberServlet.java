@@ -80,11 +80,14 @@ public class AdminMemberServlet extends HttpServlet {
 		   
 		   int memberNo = Integer.parseInt(req.getParameter("memberNo"));
 		   
-		   int result = service.adminDeleteMember(memberNo,type,cp);	
+		   int result = service.adminDeleteMember(memberNo,type,cp);
+		   
+		   System.out.println(result);
+	   
 		   
 		   if(result > 0) {
 			   
-			   resp.sendRedirect(req.getContextPath() + "/admin/memberAdmin");
+			   resp.sendRedirect(req.getContextPath() + "/admin/memberAdmin?type=1");
 			   
 		   }else {
 			   System.out.println("성공했나?");

@@ -40,8 +40,8 @@
        
                             <c:forEach var="Img" items="${eventList}">
                                 <div class="P-event-list">
-                                    <a href="${contextPath}/event/detail?no=${eventList.eventNo}" class="P-event">
-                                        <img src="${contextPath}${Img.eventImg}">
+                                    <a href="${contextPath}/event/detail?no=${Img.eventNo}" class="P-event">
+                                        <img src="${contextPath}${Img.imgRename}">
                                         <div class="P-event1">
                                             <div class="P-event-name">${Img.eventTitle}</div>
                                         </div>

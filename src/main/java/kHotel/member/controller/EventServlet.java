@@ -28,6 +28,8 @@ public class EventServlet extends HttpServlet {
 			List<Event> eventList = service.eventList();
 
 			req.setAttribute("eventList", eventList);
+			
+			System.out.println(eventList);
 		
 			
 
