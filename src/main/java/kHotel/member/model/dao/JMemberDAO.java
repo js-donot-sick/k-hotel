@@ -131,6 +131,7 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 				rv.setRoomName( rs.getString(3));
 				rv.setCheckInTime(rs.getString(4));
 				rv.setCheckOutTime( rs.getString(5));
+				rv.setCalSt(rs.getString(6));
 				
 				rvList.add(rv);
 			}
@@ -381,6 +382,95 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			result = pstmt.executeUpdate();
 		}finally {
 			
+			close(pstmt);
+			
+		}
+		return result;
+	}
+
+
+	/** MemberNo 가져오기
+	 * @param conn
+	 * @param loginMember
+	 * @return memberNo
+	 * @throws Exception
+	 */
+	public int getMemberNo(Connection conn, Member loginMember) throws Exception {
+		int memberNo = 0;
+		
+		try {
+			String sql = prop.getProperty("getMemberNo");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, loginMember.getMemberId());
+			
+			rs = pstmt.executeQuery();
+			
+			if( rs.next() ) {
+				
+				memberNo = rs.getInt(1);
+				
+			}
+			
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		
+		return memberNo;
+	}
+
+
+	/** 현재 예약 취소 DAO
+	 * @param conn
+	 * @param memberNo
+	 * @param bookNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int reviewCancel(Connection conn, int memberNo, int bookNo) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("reviewCancel");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, bookNo);
+			pstmt.setInt(2, memberNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+
+	/** 결제 정보 지우기 DAO
+	 * @param conn
+	 * @param memberNo
+	 * @param bookNo
+	 * @return result
+	 * @throws Exceptione
+	 */
+	public int deleteCalculate(Connection conn, int memberNo, int bookNo)throws Exception {
+		int result = 0;
+		try {
+			String sql = prop.getProperty("deleteCalculate");
+			
+			pstmt  = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, bookNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
 			close(pstmt);
 			
 		}

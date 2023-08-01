@@ -46,7 +46,7 @@ public class ReviewUpdateServlet extends HttpServlet{
 			String root = session.getServletContext().getRealPath("/");
 
 			// 파일이 저장되는 경로
-			String folderPath = "/resources/images/reviewImg";
+			String folderPath = "/resources/images/reviewImg/";
 
 			// reviewImg 폴더 까지의 경로
 			String filePath = root + folderPath;
