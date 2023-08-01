@@ -14,6 +14,7 @@ import java.util.Properties;
 import kHotel.member.model.vo.Member;
 import kHotel.member.model.vo.Reservation;
 import kHotel.member.model.vo.Review;
+import kHotel.member.model.vo.ReviewImg;
 
 public class JMemberDAO {
 	
@@ -88,9 +89,9 @@ public class JMemberDAO {
 			pstmt = conn.prepareStatement(sql);
 			
 			
-			pstmt.setString(1, rv.getContent());
+			 pstmt.setString(1, rv.getContent()); 
 			pstmt.setInt(2, rv.getMemberNo());
-			pstmt.setInt(3, rv.getStar());
+			 pstmt.setInt(3, rv.getStar()); 
 			
 			
 			result = pstmt.executeUpdate();
@@ -149,6 +150,72 @@ public class JMemberDAO {
 		
 		
 		return rvList;
+	}
+
+
+	/** 다음 게시글 번호 얻어오는 DAO
+	 * @param conn
+	 * @param rv 
+	 * @return boardNO
+	 * @throws Exception
+	 */
+	public int nextBoardNo(Connection conn, Review rv) throws Exception {
+		int boardNo = 0;
+		
+		try {
+			String sql = prop.getProperty("nextBoardNo");
+
+			pstmt = conn.prepareStatement(sql);
+
+			System.out.println(rv.getContent());
+			pstmt.setString(1, rv.getContent());
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next() ) {
+				
+				boardNo = rs.getInt(1);
+				
+				System.out.println(boardNo);
+			}
+			
+			
+			
+		}finally {
+			close(pstmt);
+			
+		}
+		return boardNo;
+	}
+
+
+	/** 이미지 등록 DAO
+	 * @param conn 
+	 * @param image
+	 * @param rv
+	 * @return result
+	 * @throws Exception
+	 */
+	public int reviewImg(Connection conn, ReviewImg image, Review rv) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("reviewImg");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, image.getRename());
+			pstmt.setInt(2, rv.getBoardNo());
+			
+			result = pstmt.executeUpdate();
+			
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 

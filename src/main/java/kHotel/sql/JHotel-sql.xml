@@ -29,4 +29,17 @@
 									DEFAULT , 3 , ? , ? )
 	</entry>
 	
+	<!-- 다음 게시글 번호 얻어옴 -->
+	<entry key="nextBoardNo">
+		SELECT BOARD_NO FROM BOARD
+		WHERE BOARD_CONTENT = ?
+		AND BOARD_ST = 'N'
+		AND BOARD_CD = 3
+	</entry>
+	
+	<!-- 이미지 삽입 -->
+	<entry key="reviewImg">
+		INSERT INTO REVIEW_IMG VALUES(SEQ_IMG_REVIEW_NO.NEXTVAL, ?, 0 , ?) 
+	</entry>
+	
 </properties>

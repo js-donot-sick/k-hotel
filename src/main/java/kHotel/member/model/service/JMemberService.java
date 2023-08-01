@@ -5,10 +5,12 @@ import static kHotel.common.JDBCTemplate.*;
 import java.sql.Connection;
 import java.util.List;
 
+import kHotel.common.Util;
 import kHotel.member.model.dao.JMemberDAO;
 import kHotel.member.model.vo.Member;
 import kHotel.member.model.vo.Reservation;
 import kHotel.member.model.vo.Review;
+import kHotel.member.model.vo.ReviewImg;
 
 public class JMemberService {
 
@@ -36,19 +38,34 @@ public class JMemberService {
 	}
 
 	/** 리뷰 등록 Service
-	 * @param reviewImg
+	 * @param image
 	 * @param rv
 	 * @return result
 	 * @throws Exception
 	 */
-	public int reviewUpdate( Review rv) throws Exception {
+	public int reviewUpdate( Review rv , ReviewImg image) throws Exception {
 		
 		Connection conn = getConnection();
 		
+		
+		
+		
+		rv.setContent( Util.XSSHanding(rv.getContent()));
+		
 		int result = dao.reviewUpdate(conn, rv );
 		
-		System.out.println("여긴 SERVICE");
-		System.out.println(result);
+		int boardNo = dao.nextBoardNo(conn, rv);
+		
+		rv.setBoardNo(boardNo);
+		
+		if(result > 0) {
+			
+			result = dao.reviewImg( conn, image, rv);
+			
+			/* result = dao.tagUpdate(conn, ) */
+		}
+		
+		
 		if(result > 0) commit(conn);
 		else		   rollback(conn);
 		
