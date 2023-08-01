@@ -17,6 +17,7 @@ public class Event {
 	private String eventTitle;
 	private String eventContent;
 	private String eventDt;
+	private String eventFL;
 	private String bingoFl;
 	private String updownFl;
 	private int memberNo;

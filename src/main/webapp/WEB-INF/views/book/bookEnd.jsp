@@ -77,7 +77,7 @@
                     </tr>
                     <tr>
                         <th>결제방법</th>
-                        <td>${reserve.bank}</td>
+                        <td>${reserve.payPlan}</td>
                     </tr>
                     <tr>
                         <th>결제상태</th>

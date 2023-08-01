@@ -155,7 +155,7 @@ public class KAdminDAO {
 		
 		try {
 			
-			System.out.println(image);
+			//System.out.println(image);
 			
 			String sql = prop.getProperty("insertEventImage");
 			

@@ -77,18 +77,19 @@ public class ReservationEndServlet extends HttpServlet {
 			
 			String path = null;
 			
+			result = 0;
+			
 			if(result>0) {
-				
 				req.setAttribute("reserve", reserve);
 				path = "/WEB-INF/views/book/bookEnd.jsp";
+				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+				
+				dispatcher.forward(req, resp);
 			} else {
 				session.setAttribute("message", "예약 실패");
-				path = req.getContextPath();
+				resp.sendRedirect(req.getContextPath());
 			}
 			
-			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-			
-			dispatcher.forward(req, resp);
 			
 		} catch (Exception e) {
 			

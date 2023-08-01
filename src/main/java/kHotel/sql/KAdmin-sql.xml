@@ -18,7 +18,7 @@
 	<!-- 이벤트 게시글 삽입 -->
 	<entry key="insertEvent">
 		INSERT INTO EVENT
-		VALUES (?,?,?,?)
+		VALUES (?,?,?,?, DEFAULT)
 	</entry>
 	
 	<!-- 이벤트 이미지 삽입 -->
