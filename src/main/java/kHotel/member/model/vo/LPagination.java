@@ -26,6 +26,10 @@ public class LPagination {
 	}
 
 
+	public LPagination() {
+	}
+
+
 	public int getCurrentPage() {
 		return currentPage;
 	}

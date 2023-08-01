@@ -2,6 +2,7 @@ package kHotel.member.model.vo;
 
 import java.util.List;
 
+import kHotel.board.model.vo.EventImage;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,8 +16,10 @@ public class Event {
 	private int eventNo;
 	private String eventTitle;
 	private String eventContent;
-	private String eventSt;
-	private String eventImg;
+	private String eventDt;
+	private String bingoFl;
+	private String updownFl;
+	private int memberNo;
 	
 	private List<EventImage> imageList;
 	

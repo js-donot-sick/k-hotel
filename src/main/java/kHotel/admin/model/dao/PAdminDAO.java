@@ -60,7 +60,6 @@ public class PAdminDAO {
 				listCount = rs.getInt(1);
 			}
 
-
 		} finally {
 			close(rs);
 			close(stmt);
@@ -77,7 +76,7 @@ public class PAdminDAO {
 	 * @return listReportCount
 	 * @throws Exception
 	 */
-	public int getListReportCount(Connection conn, int listCount) throws Exception {
+	public int getListReportCount(Connection conn, int listCount, int member_no) throws Exception {
 
 		int listReportCount = 0;
 
@@ -86,16 +85,13 @@ public class PAdminDAO {
 			String sql = prop.getProperty("listReportCount");
 
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, listCount);
+			pstmt.setInt(1, member_no);
 
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-
 				listReportCount = rs.getInt(1);
-
 			}
-
 
 		} finally {
 			close(pstmt);
@@ -135,7 +131,7 @@ public class PAdminDAO {
 			while (rs.next()) {
 
 				PAdminMemebr am = new PAdminMemebr();
-				am.setMemberNo(rs.getInt("RNUM"));
+				am.setMemberNo(rs.getInt("MEMBER_NO"));
 				am.setMemberId(rs.getString("MEMBER_ID"));
 				am.setMemebrTel(rs.getString("MEMBER_TEL"));
 				am.setMemberEmail(rs.getString("MEMBER_EMAIL"));
@@ -143,7 +139,6 @@ public class PAdminDAO {
 				am.setSecessionFl(rs.getString("SECESSION_FL"));
 
 				boardList.add(am);
-
 
 			}
 
@@ -204,8 +199,8 @@ public class PAdminDAO {
 
 			String sql = prop.getProperty("searchId") + condition;
 			stmt = conn.createStatement();
-			rs= stmt.executeQuery(sql);
-			
+			rs = stmt.executeQuery(sql);
+
 			if (rs.next()) {
 				listCount = rs.getInt(1);
 			}
@@ -217,7 +212,7 @@ public class PAdminDAO {
 		}
 
 		return listCount;
-		
+
 	}
 
 	/**
@@ -225,20 +220,19 @@ public class PAdminDAO {
 	 * 
 	 * @param conn
 	 * @param lPagination
-	 * @param type 
+	 * @param type
 	 * @param condition
 	 * @return boardList
 	 * @throws Exception
 	 */
-	public List<PAdminMemebr> searchBoardList(Connection conn, LPagination lPagination, String condition, int type) throws Exception {
+	public List<PAdminMemebr> searchBoardList(Connection conn, LPagination lPagination, String condition, int type)
+			throws Exception {
 
 		List<PAdminMemebr> boardList = new ArrayList<PAdminMemebr>();
 
 		try {
 
-			String sql = prop.getProperty("searchId1")
-						+ condition
-						+ prop.getProperty("searchId2");
+			String sql = prop.getProperty("searchId1") + condition + prop.getProperty("searchId2");
 
 			int start = (lPagination.getCurrentPage() - 1) * lPagination.getLimit() + 1;
 			int end = start + lPagination.getLimit() - 1;
@@ -261,15 +255,17 @@ public class PAdminDAO {
 
 				boardList.add(am);
 
-
 			}
 
 		} finally {
 			close(rs);
 			close(pstmt);
 		}
+		
 		return boardList;
 
 	}
+
+	
 
 }

@@ -18,48 +18,48 @@ import kHotel.member.model.vo.Member;
 @WebServlet("/admin/memberAdmin")
 public class AdminMemberServlet extends HttpServlet {
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+   @Override
+   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 
-		try {
+      try {
 
-			int type = Integer.parseInt(req.getParameter("type"));
-			
-			int cp = 1;
+         int type = Integer.parseInt(req.getParameter("type"));
+         
+         int cp = 1;
 
-			if(req.getParameter("cp")!=null) {
-				cp = Integer.parseInt(req.getParameter("cp"));
-			}
-			
-		
-			PAdminService service = new PAdminService();
-			
-			Map<String, Object> map = null;
-			
-			if(req.getParameter("Pid") ==null) {
-				map = service.searchAdminMember(type,cp);
-			}else {
-				String Pid = req.getParameter("Pid");
-				map = service.searchId(Pid,type,cp);
-			}
-			
-//			HttpSession session = req.getSession();
-//			session.setAttribute("listReportCount", map.get("listReportCount"));
+         if(req.getParameter("cp")!=null) {
+            cp = Integer.parseInt(req.getParameter("cp"));
+         }
+         
+      
+         PAdminService service = new PAdminService();
+         
+         Map<String, Object> map = null;
+         
+         if(req.getParameter("Pid") ==null) {
+            map = service.searchAdminMember(type,cp);
+         }else {
+            String Pid = req.getParameter("Pid");
+           map = service.searchId(Pid,type,cp);
+         }
+         
+//         HttpSession session = req.getSession();
+//         session.setAttribute("listReportCount", map.get("listReportCount"));
 
-			req.setAttribute("map", map);
+         req.setAttribute("map", map);
 
-			String path = "/WEB-INF/views/admin/AdminMember.jsp";
+         String path = "/WEB-INF/views/admin/AdminMember.jsp";
 
-			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-			dispatcher.forward(req, resp);
+         RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+         dispatcher.forward(req, resp);
 
-		} catch (Exception e) {
-			e.printStackTrace();
+      } catch (Exception e) {
+         e.printStackTrace();
 
-		}
+      }
 
 
-	}
+   }
 
 }
