@@ -77,6 +77,7 @@ public class hotelInfoController extends HttpServlet{
 		}
 		
 		
+		// 찜하기 강남1번!
 		if(command.equals("likeplus1")) {
 			
 			int memberNo = Integer.parseInt(req.getParameter("memberNo"));

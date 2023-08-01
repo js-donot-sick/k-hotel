@@ -19,7 +19,8 @@ btn.addEventListener("click", function(){
 
             url : "hotelinfo/likeplus1",
             data : {"memberNo" : memberNo,
-                    "roomNo" : 1},
+                    "roomNm1" : roomNm1,
+                    "hotelNm1" : hotelNm1},
             type : "get",
 
             success : function(result){
