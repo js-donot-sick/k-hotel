@@ -22,6 +22,7 @@ public class Board {
 	private int memberNo;
 	
 	private int roomNo;
+	private String roomName;
 	private String hotelTitle;
 	private String imageRename;
 	

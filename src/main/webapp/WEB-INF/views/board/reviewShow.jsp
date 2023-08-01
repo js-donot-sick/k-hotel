@@ -72,7 +72,7 @@
                                     <div class="P-id" id="P-id">작성자 : <span>${board.memberId}</span></div>
                                     <div>
                                         <div class="P-room1" id="P-room1"> 지점: <span>${board.hotelTitle}</span> </div>
-                                        <div class="P-room2" id="P-room2"> 객실명 : <span>${board.roomNo}</span> </div>
+                                        <div class="P-room2" id="P-room2"> 객실명 : <span>${board.roomName}</span> </div>
                                         <div class="P-room3">작성날짜 : <span>${board.boardDate}</span></div>
                                     </div>
                                 </div>
