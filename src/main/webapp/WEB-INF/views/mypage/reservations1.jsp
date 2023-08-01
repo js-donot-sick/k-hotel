@@ -42,7 +42,7 @@
 
                                 
                                 <c:forEach var="list" items="${rvList}">
-                                    <form action="reviewCancel" method="get">
+                                    <form action="reviewCancel" method="get" onsubmit="return reservationcheck()">
                                     <div class="accordion test" id="accordionExample">
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="headingOne">
@@ -75,7 +75,7 @@
                                                             <input type="" placeholder="체크 아웃 날짜" value="결제 상태 : 대기 중"
                                                                 name="checkOut">
                                                         </c:if>
-                                                        <button type="button" id="J-btn">예약 취소</button>
+                                                        <button type="submit" id="J-btn">예약 취소</button>
                                                     </div>
 
                                                 </div>

@@ -7,7 +7,7 @@
     confirm("예약을 취소 하시겠습니까?");
 }) */
 
-/* document.getElementById("J-btn").addEventListener("click", function(){
+/* c
  
 
     const bookNo = document.getElementsByName("bookNo")[0];
@@ -33,5 +33,10 @@
     });
 }) */
 
+function reservationcheck(){
+
+    return confirm("예약을 취소하시겠습니까?");
+}
+    
 
 
