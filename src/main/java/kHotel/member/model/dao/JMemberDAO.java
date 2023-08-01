@@ -470,6 +470,8 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			result = pstmt.executeUpdate();
 			
+			System.out.println(result +"zz 됐나?");
+			
 		}finally {
 			close(pstmt);
 			

@@ -141,6 +141,8 @@ public class JMemberService {
 		// 결제 정보 지우기
 		int result = dao.deleteCalculate(conn ,memberNo, bookNo);
 		
+		System.out.println("됐으면 1이여");
+		
 		// 현재 예약 취소
 	     result = dao.reviewCancel(conn, memberNo, bookNo );
 	    System.out.println(result + "삭제 되면 1 아니면 0");

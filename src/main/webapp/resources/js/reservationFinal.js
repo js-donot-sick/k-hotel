@@ -39,7 +39,7 @@ coupon.addEventListener("change", function () {
 
         
     }else{
-        discount.value = "";
+        discount.value = 0;
 
         finalpay.value = roomMoney;
     }
