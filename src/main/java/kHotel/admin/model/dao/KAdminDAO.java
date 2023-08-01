@@ -271,6 +271,34 @@ public class KAdminDAO {
 		return result;
 	}
 
+	/** 이벤트 삭제 DAO
+	 * @param conn
+	 * @param eventNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteEvent(Connection conn, int eventNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("deleteEvent");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, eventNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
 	
 
 }

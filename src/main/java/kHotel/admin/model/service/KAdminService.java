@@ -129,10 +129,20 @@ public class KAdminService {
 	/** 이벤트 삭제 service
 	 * @param eventNo
 	 * @return result
+	 * @throws Exception
 	 */
-	public int deleteEvent(int eventNo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteEvent(int eventNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteEvent(conn, eventNo);
+		
+		if(result>0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
 	}
 
 }
