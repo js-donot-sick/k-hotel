@@ -75,7 +75,7 @@
                                         <button type="button" id="J-delBtn">사진 지우기</button>
                                     </td>
                                     <td colspan="3" id="J-reviewImg1">
-                                        <img type="file" src="${contextPath}${image.rename}" id="J-reviewImage3">
+                                        <img type="file" src="${contextPath}${image.rename}" id="J-reviewImage3" name="reviewImg">
                                     </td>
                                 </tr>
 

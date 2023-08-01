@@ -83,7 +83,7 @@ public class ReviewUpdateServlet extends HttpServlet{
 			}
 			
 			// 게시글 번호 얻어오기
-			
+			String reviewImg = req.getParameter("reviewImg");
 			
 			
 		    // --------------------------------------------------------------------
