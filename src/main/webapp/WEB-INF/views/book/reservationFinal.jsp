@@ -32,7 +32,7 @@
         <input type="hidden" name="roomNo" value="${reservation.roomNo}">
         <input type="hidden" name="bookPerson" value="${reservation.bookPerson}">
         <input type="hidden" name="roomPrice" value="${reservation.roomPrice}">
-        <input type="hidden" name="couponSale" value="${reservation.couponSale}">
+        <!-- <input type="hidden" name="couponSale" value="${reservation.couponSale}"> -->
         <input type="hidden" name="checkInDt" value="${reservation.checkInTime}">
         <input type="hidden" name="checkOutDt" value="${reservation.checkOutTime}">
         <div class="C-body">
@@ -144,10 +144,10 @@
                                     <td>쿠폰선택</td>
                                     <td>
                                         <select name="C-rsv-coupon" id="C-rsv-coupon">
-                                            <option value="none" selected>쿠폰선택</option>
+                                            <option value="0" selected>쿠폰선택</option>
 
-                                            <c:if test="${!empty reservation.couponCount}">
-                                                <option name="discountCoupon" id="KHotelCoupon" value="discountcoupon">3만원 할인 쿠폰</option>
+                                            <c:if test="${reservation.couponCount!=0}">
+                                                <option name="discountCoupon" id="KHotelCoupon" value="30000">3만원 할인 쿠폰</option>
                                             </c:if>
 
                                         </select>

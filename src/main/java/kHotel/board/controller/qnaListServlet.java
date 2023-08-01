@@ -44,7 +44,7 @@ public class qnaListServlet extends HttpServlet {
 				
 				//System.out.println("여기는 실행됐겠지");
 			} else {
-				System.out.println("위");
+				//System.out.println("위");
 				String select = req.getParameter("select");
 				String content = req.getParameter("sContent");
 				

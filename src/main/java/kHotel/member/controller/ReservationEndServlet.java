@@ -28,11 +28,15 @@ public class ReservationEndServlet extends HttpServlet {
 			int roomNo = Integer.parseInt(req.getParameter("roomNo"));
 			int bookPerson = Integer.parseInt(req.getParameter("bookPerson"));
 			int roomPrice = Integer.parseInt(req.getParameter("roomPrice")); // 할인 전 금액
-			int couponSale = Integer.parseInt(req.getParameter("couponSale")); // 쿠폰 할인 금액
-			int hotelPay = roomPrice - couponSale; // 총 금액
+			System.out.println(req.getParameter("C-rsv-coupon"));
+			int couponSale = Integer.parseInt(req.getParameter("C-rsv-coupon")); // 쿠폰 할인 금액
+			int hotelPay = roomPrice-couponSale; // 총 금액
 			String checkInDt = req.getParameter("checkInDt"); // 체크인 날
 			String checkOutDt = req.getParameter("checkOutDt"); // 체크아웃 날
 			String bank = req.getParameter("C-account"); // 결제 은행
+			
+			
+			
 			
 			/*
 			 * System.out.println(hotelName); System.out.println(roomName);

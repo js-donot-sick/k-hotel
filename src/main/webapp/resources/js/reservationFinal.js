@@ -32,7 +32,7 @@ $(function () {
 
 coupon.addEventListener("change", function () {
 
-    if (coupon.value == "discountcoupon") {
+    if (coupon.value == "30000") {
         discount.value = couponMoney;
 
         finalpay.value = roomMoney - couponMoney;
@@ -71,7 +71,7 @@ function reservationFinalValidate() {
         alert("약관 동의 후 예약을 진행해주시기 바랍니다.");
         return false;
         
-    }else if(couponList != null && coupon.value != "discountcoupon"){
+    }else if(couponList != 0 && coupon.value != "30000"){
 
         return confirm("보유하신 쿠폰이 있습니다. 쿠폰 사용을 안하시고 결제를 진행하시겠습니까?");
 
