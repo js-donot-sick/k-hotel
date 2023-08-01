@@ -70,7 +70,7 @@
                     <!-- 로그인회원 번호 -->
                     <input type="hidden" name="memberNo" value="${loginMember.memberNo}">
                     <input type="hidden" name="roomNm1" value="DELUXE">
-                    <input type="hidden" name="hotelNo1" value="1">
+                    <input type="hidden" name="hotelNm1" value="GANGNAM">
                     
                     <!-- 객실1 -->
                     <div class="L-roompoint-border L-roomA">
