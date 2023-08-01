@@ -52,17 +52,13 @@
                        <c:otherwise>
 
                        <c:forEach var="board" items = "${boardList}">
-
-                    <c:set var="memberId" value="${board.memberId}"/>
-
-                        <a href="${contextPath}/board/qna/boardDetail?type=2&cp=${pagination.currentPage}&no=${board.boardNo}${searchUrl}" style="text-decoration: none;">
-                            <div>
-                                <div>${board.boardNo}</div>
-                                <div>${board.boardTitle}</div>
-                                <div></div>
-                                <div>${board.boardDate}</div>
-                            </div>
-                        </a>
+                        <tr>
+                            <td>${board.boardNo}</td>
+                            <td>
+                                <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}">${board.boardTitle}</a>
+                            </td>
+                            <td>${board.boardDate}</td>
+                    </tr>
 
                     </c:forEach>
                        </c:otherwise>
