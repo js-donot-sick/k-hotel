@@ -80,4 +80,29 @@ public class HBoardService {
 	}
 
 
+	/** 공지사항 작성
+	 * @param boardContent 
+	 * @param boardTitle 
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertBoard(String boardTitle, String boardContent) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.insertBoard(conn , boardTitle , boardContent);
+				
+		
+		if(result > 0) {
+			commit(conn);
+		} else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
+
+
 }
