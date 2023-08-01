@@ -71,17 +71,21 @@
 
                     <!-- 파라미터로 넘겨줄 값 설정 -->
                     <input type="hidden" name="memberNo" value="${loginMember.memberNo}">
+                    <!-- 객실명 -->
                     <input type="hidden" name="roomNm1" value="DELUXE">
                     <input type="hidden" name="roomNm2" value="STANDARD">
                     <input type="hidden" name="roomNm3" value="SUITE">
+                    <!-- 호텔명 -->
                     <input type="hidden" name="hotelNm1" value="GANGNAM">
-                    <!-- 찜하기 1번 -->
+                    <!-- 찜하기 -->
                     <input type="hidden" id="Llike1" name="Llike1" value="0">
+                    <input type="hidden" id="Llike2" name="Llike2" value="0">
+                    <input type="hidden" id="Llike3" name="Llike3" value="0">
                     
                     <!-- 객실1 -->
-                    <div class="L-roompoint-border L-roomA">
+                    <div class="L-roompoint-border L-roomA" id="LroomG1">
                         <img src="${contextPath}/resources/images/deluxroompoint1.jpg" class="L-roomimg" id="L-room1">
-                        <button type="button" id="L-hbtn">찜하기♡</button>
+                        <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
  <p>디럭스 룸</p> 침대타입 <span>|</span> 더블/트윈/트리플 전망 시티뷰 
  투숙인원 <span>|</span> 2 명 
@@ -90,11 +94,9 @@
                     </div>
 
                     <!-- 객실2 -->
-                    <div class="L-roompoint-border L-roomA1">
+                    <div class="L-roompoint-border L-roomA1" id="LroomG2">
                         <img src="${contextPath}/resources/images/standard-Room_1.jpg" class="L-roomimg1" id="L-room2">
-                        <input type="checkbox" id="L-star2" name="L-star2">
-                        <label for="L-star-2" id="L-star-2-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
-                        <label for="L-star-2" id="L-star-2-2"><img src="${contextPath}/resources/images/redheart.png"></label>
+                        <!-- <button type="button" id="L-hbtn2">찜하기♡</button> -->
                         <pre>
  <p>스탠다드 룸</p> 침대타입 <span>|</span> 더블/트윈 전망 시티뷰 
  투숙인원 <span>|</span> 2 명 
@@ -103,11 +105,9 @@
                     </div>
 
                     <!-- 객실3 -->
-                    <div class="L-roompoint-border L-roomA">
+                    <div class="L-roompoint-border L-roomA" id="LroomG3">
                         <img src="${contextPath}/resources/images/suiteroompoint3.jpg" class="L-roomimg" id="L-room3">
-                        <input type="checkbox" id="L-star3" name="L-star3">
-                        <label for="L-star-3" id="L-star-3-1"><img src="${contextPath}/resources/images/whiteheart.png"></label>
-                        <label for="L-star-3" id="L-star-3-2"><img src="${contextPath}/resources/images/redheart.png"></label>
+                        <!-- <button type="button" id="L-hbtn3">찜하기♡</button> -->
                         <pre>
  <p>스위트 룸</p> 침대타입 <span>|</span> 더블 전망 시티뷰 
  투숙인원 <span>|</span> 2명 
