@@ -23,5 +23,13 @@
 		WHERE ROOM_NO = ?
 		AND MEMBER_NO = ?
 	</entry>
+	
+	<!-- 찜 여부 확인 -->
+	<entry key="likeCount">
+		SELECT COUNT(*)
+		FROM LIKELIST
+		WHERE MEMBER_NO = ?
+		AND ROOM_NO = ?
+	</entry>
 
 </properties>
