@@ -1,4 +1,4 @@
-package kHotel.board.model.service;
+package kHotel.admin.model.service;
 
 import static kHotel.common.JDBCTemplate.*;
 
@@ -7,15 +7,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import kHotel.admin.model.vo.HAdminBoard;
+import kHotel.admin.model.dao.HAdminDAO;
 import kHotel.board.model.dao.HBoardDAO;
 import kHotel.board.model.vo.AnnouncementDetail;
 import kHotel.board.model.vo.Board;
 import kHotel.member.model.vo.LPagination;
 
-public class HBoardService {
+public class HAdminService {
 	
-	private HBoardDAO dao = new HBoardDAO();
+	private HAdminDAO dao = new HAdminDAO();
 
 	/** 게시글 이름 조회
 	 * @param type
@@ -27,13 +27,13 @@ public class HBoardService {
 		
 		Connection conn = getConnection();
 		
-		String boardName = dao.selectBoardName(conn, type); //
+		String boardName = dao.selectBoardName(conn, type);
 		
-		int listCount = dao.getListCount(conn, type); //
+		int listCount = dao.getListCount(conn, type);
 		
-		LPagination pagination = new LPagination(cp, listCount); //listCount
+		LPagination pagination = new LPagination(cp, listCount);
 		
-		List<Board> boardList = dao.checkBoardList(conn, pagination, type); // type
+		List<Board> boardList = dao.checkBoardList(conn, pagination, type);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
@@ -47,6 +47,17 @@ public class HBoardService {
 		return map;
 	}
 
+	/** 게시글 검색
+	 * @param type
+	 * @param cp
+	 * @param key
+	 * @param query
+	 * @return
+	 */
+	public Map<String, Object> searchBoardList(int type, int cp, String key, String query) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	/** 게시글 조회
 	 * @param boardNo
@@ -62,21 +73,6 @@ public class HBoardService {
 	
 		return detail;
 		
-	}
-
-	/** 공지사항 목록 조회
-	 * @return boardList
-	 * @throws Exception
-	 */
-	public List<HAdminBoard> selectBoardList() throws Exception {
-		
-		Connection conn = getConnection();
-		
-		List<HAdminBoard> boardList = dao. selectBoardList(conn);
-		
-		close(conn);
-		
-		return boardList;
 	}
 
 

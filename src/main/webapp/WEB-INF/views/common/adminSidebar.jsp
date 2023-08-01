@@ -29,7 +29,7 @@
                 <a href="${contextPath}/admin/memberAdmin?type=1" class="H-side-item H-side-title">회원정보 관리</a> 
             </li>
             <li>
-                <a href="${contextPath}/admin/boardAdmin" class="H-side-item">게시글 관리</a>
+                <a href="${contextPath}/admin/AdminBoardManage" class="H-side-item">게시글 관리</a>
             </li>
             <li>
                 <a href="${contextPath}/admin/eventWrite?mode=insert" class="H-side-item">이벤트</a>

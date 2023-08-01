@@ -1,4 +1,4 @@
-package kHotel.board.model.dao;
+package kHotel.admin.model.dao;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import kHotel.admin.model.vo.HAdminBoard;
 import kHotel.board.model.vo.AnnouncementDetail;
 import kHotel.board.model.vo.Board;
 import kHotel.member.model.dao.MemberDAO;
@@ -17,14 +16,14 @@ import kHotel.member.model.vo.LPagination;
 
 import static kHotel.common.JDBCTemplate.*;
 
-public class HBoardDAO {
+public class HAdminDAO {
 	
 	private Statement stmt;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 	private Properties prop;
 	
-	public HBoardDAO() {
+	public HAdminDAO() {
 		try {
 			prop = new Properties();
 			
@@ -189,47 +188,6 @@ public class HBoardDAO {
 		}
 		
 		return detail;
-	}
-
-
-	/** 공지사항 목록 조회
-	 * @param conn
-	 * @return boardList
-	 * @throws Exception
-	 */
-	public List<HAdminBoard> selectBoardList(Connection conn) throws Exception{
-		
-		List<HAdminBoard> boardList = new ArrayList<HAdminBoard>();
-		
-		try {
-			String sql = prop.getProperty("selectBoardList");
-			
-			stmt = conn.createStatement();
-			
-			rs = stmt.executeQuery(sql);
-			
-			while( rs.next() ) {
-				
-				HAdminBoard board = new HAdminBoard();
-				
-				board.setBoardNo(rs.getInt(1));
-				board.setBoardTitle(rs.getString(2));
-				board.setMemberName(rs.getString(3));
-				board.setBoardDate(rs.getString(4));
-				
-				
-				boardList.add(board);
-								
-			}
-			
-			
-		} finally {
-			
-			close(rs);
-			close(stmt);
-		}
-		
-		return boardList;
 	}
 
 }
