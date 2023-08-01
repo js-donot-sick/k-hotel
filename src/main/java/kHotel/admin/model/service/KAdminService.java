@@ -126,4 +126,13 @@ public class KAdminService {
 		return result;
 	}
 
+	/** 이벤트 삭제 service
+	 * @param eventNo
+	 * @return result
+	 */
+	public int deleteEvent(int eventNo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }
