@@ -39,9 +39,10 @@
         
         <a href="${contextPath}/event"><button id="K-list-btn" type="button">목록으로</button></a>
         <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">
-            <a href="#">
-                <button>수정</button>
-            </a>
+            <div>
+                <button type="button" id="K-updateBtn">수정</button>
+                <button id="K-deleteBtn">삭제</button>
+            </div>
         </c:if>
         
     </div>
@@ -49,6 +50,6 @@
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
 
-    <script src="resources/js/eventShow.js"></script>
+    <script src="${contextPath}/resources/js/eventShow.js"></script>
 </body>
 </html>

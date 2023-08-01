@@ -27,7 +27,7 @@
                     <form action="${contextPath}/admin/eventWrite" enctype="multipart/form-data" method="post" id="K-form">
                         <div>제목 입력</div>
                         <div>
-                            <input type="text" placeholder="내용을 입력해주세요" name="K-title">
+                            <input type="text" placeholder="내용을 입력해주세요" name="K-title" value="${event.eventTitle}">
                         </div>
 
                         <div>
@@ -40,6 +40,16 @@
                                 <input type="file" name="K-photo" id="K-photo" multiple/>
                                 <div id="K-image-select"></div>
                             </div> -->
+
+                            <c:choose>
+                                <c:when  test="${eventImage.imageLevel == 0}">
+                                    
+                                </c:when>
+
+
+
+
+                            </c:choose>
 
                             <h5>썸네일</h5>
                             <div class="k-img-box k-thumbnail">
@@ -76,7 +86,7 @@
                             </div>
                         </div>
                         <div>
-                            <textarea name="K-content" cols="103" rows="20" placeholder="내용을 입력해주세요"></textarea>
+                            <textarea name="K-content" cols="103" rows="20" placeholder="내용을 입력해주세요" value="${event.eventContent}"></textarea>
                         </div>
                         <div>
                             
