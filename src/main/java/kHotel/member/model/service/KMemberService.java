@@ -95,10 +95,27 @@ public class KMemberService {
 		
 		Connection conn = getConnection();
 		
-		int result = dao.reservationEnd(conn, reserve);
+		// 1. 예약 번호 구하기
+		int bookNo = dao.bookNo(conn);
+		reserve.setBookNo(bookNo);
 		
+		// 2. 구한 예약번호로 예약 테이블에 데이터 insert
+		int result = dao.reservation(conn, reserve);
 		
+		if(result>0) {
+			
+			// 3. 예약번호 바탕으로 결제 테이블에 데이터 insert
+			result = dao.calculate(conn, reserve);
+			
+			// 4. 쿠폰 테이블 update
+			
+			if(reserve.getCouponSale() == 30000) { // 쿠폰을 쓴 경우에
+				result = dao.coupon(conn, reserve);
+			}
+		}
 		
+		if(result>0)	commit(conn);
+		else			rollback(conn);
 		
 		return result;
 	}
