@@ -122,7 +122,7 @@
                                     <td>
                                         <select name="C-account" id="C-account">
                                             <option value="none" selected>은행 / 계좌 선택</option>
-                                            <option id="C-tossBank" value="토스뱅크">토스뱅크 1000-2161-7612</option>
+                                            <option id="C-tossBank" value="토스뱅크 1000-2161-7612">토스뱅크 1000-2161-7612</option>
                                         </select>
                                     </td>
                                 </tr>

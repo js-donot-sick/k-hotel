@@ -55,6 +55,8 @@ public class ReservationEndServlet extends HttpServlet {
 			
 			reserve.setHotelName(hotelName);
 			reserve.setRoomName(roomName);
+			reserve.setCheckInTime(checkInDt);
+			reserve.setCheckOutTime(checkOutDt);
 			reserve.setRoomNo(roomNo);
 			reserve.setBookPerson(bookPerson);
 			reserve.setRoomPrice(roomPrice);
@@ -65,16 +67,24 @@ public class ReservationEndServlet extends HttpServlet {
 			reserve.setMemberEmail(memberEmail);
 			reserve.setMemberNo(memberNo);
 			reserve.setBank(bank);
+			reserve.setPayPlan(payPlan);
 			
 			KMemberService service = new KMemberService();
 			
 			int result = service.bookEnd(reserve);
 			
-			// System.out.println(reserve);
+			System.out.println(reserve);
 			
-			req.setAttribute("reserve", reserve);
+			String path = null;
 			
-			String path = "/WEB-INF/views/book/bookEnd.jsp";
+			if(result>0) {
+				
+				req.setAttribute("reserve", reserve);
+				path = "/WEB-INF/views/book/bookEnd.jsp";
+			} else {
+				session.setAttribute("message", "예약 실패");
+				path = req.getContextPath();
+			}
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 			

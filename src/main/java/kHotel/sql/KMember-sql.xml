@@ -45,10 +45,34 @@
 		WHERE MEMBER_ID=?
 	</entry>
 	
-	<!-- 예약 끝 예약테이블 insert -->
-	<entry key="reservationEnd">
+	<!-- 예약 번호 구하기 -->
+	<entry key="bookNo">
+		SELECT SEQ_BOOK_NO.NEXTVAL FROM DUAL
+	</entry>
+	
+	<!-- 예약테이블 insert -->
+	<entry key="reservation">
 		INSERT INTO RESERVATION
-		VALUES(SEQ_BOOK_NO.NEXTVAL, ?, ?, ?, DEFAULT, ?, ?)
+		VALUES(?, ?, ?, ?, DEFAULT, ?, ?)
+	</entry>
+	
+	<!-- 결제테이블 insert -->
+	<entry key="calculate">
+		INSERT INTO CALCULATE
+		VALUES(SEQ_CALCULATE_NO.NEXTVAL, ?, DEFAULT, ?, ?, ?)
+	</entry>
+	
+	<!-- 쿠폰 테이블 update -->
+	<entry key="coupon">
+		UPDATE COUPON
+		SET COUPON_ST = 'Y'
+		WHERE COUPON_NO = (
+		    SELECT MIN(COUPON_NO) FROM COUPON
+		    WHERE MEMBER_NO = ?
+		)
+		AND MEMBER_NO = ?
+		AND COUPON_DT &gt;= SYSDATE
+		AND COUPON_ST = 'N'
 	</entry>
 
 </properties>

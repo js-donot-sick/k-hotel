@@ -222,33 +222,138 @@ public class KMemberDAO {
 		return result;
 	}
 
-	/** 예약 끝 -> 예약 값 inset DAO
+	/** 예약 번호 구하기 DAO
 	 * @param conn
-	 * @param reserve
-	 * @return result
+	 * @return bookNo
 	 * @throws Exception
 	 */
-	public int reservationEnd(Connection conn, Reservation reserve) throws Exception {
+	public int bookNo(Connection conn) throws Exception  {
+		
+		int bookNo = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("bookNo");
+			
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			if(rs.next()) {
+				bookNo = rs.getInt(1);
+			}
+			
+			System.out.println("예약번호 : " + bookNo);
+			
+		} finally {
+			close(rs);
+			close(stmt);
+		}
+		
+		
+		return bookNo;
+	}
+
+	/** 예약 테이블에 데이터 insert DAO
+	 * @param conn
+	 * @param reserve
+	 * @return result 
+	 * @throws Exception
+	 */
+	public int reservation(Connection conn, Reservation reserve) throws Exception {
 		
 		int result = 0;
 		
 		try {
 			
-			String sql = prop.getProperty("reservationEnd");
+			String sql = prop.getProperty("reservation");
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, reserve.getCheckInTime());
-			pstmt.setString(2, reserve.getCheckOutTime());
-			pstmt.setInt(3, reserve.getBookPerson());
+			pstmt.setInt(1, reserve.getBookNo());
+			pstmt.setString(2, reserve.getCheckInTime());
+			pstmt.setString(3, reserve.getCheckOutTime());
+			pstmt.setInt(4, reserve.getBookPerson());
+			pstmt.setInt(5, reserve.getMemberNo());
+			pstmt.setInt(6, reserve.getRoomNo());
 			
+			System.out.println(reserve.getCheckInTime());
+			System.out.println(reserve.getCheckOutTime());
+			
+			result = pstmt.executeUpdate();
+			
+			System.out.println("예약 : " + result);
 			
 		} finally {
-			
+			close(pstmt);
 		}
 		
 		return result;
 	}
+
+	/** 결제 테이블 insert
+	 * @param conn
+	 * @param reserve
+	 * @return result
+	 * @throws Exception
+	 */
+	public int calculate(Connection conn, Reservation reserve) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("calculate");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, reserve.getPayPlan());
+			pstmt.setInt(2, reserve.getHotelPay());
+			pstmt.setString(3, reserve.getBank());
+			pstmt.setInt(4, reserve.getBookNo());
+			
+			result = pstmt.executeUpdate();
+			
+			System.out.println("결제 : " + result);
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/** 쿠폰 사용한 경우 상태 변경 DAO
+	 * @param conn
+	 * @param reserve
+	 * @return result
+	 * @throws Exception
+	 */
+	public int coupon(Connection conn, Reservation reserve) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("coupon");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, reserve.getMemberNo());
+			pstmt.setInt(2, reserve.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+			System.out.println("쿠폰 : " + result);
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	
 
 	
 

@@ -40,4 +40,5 @@ public class Reservation {
 	private String memberTel;
 	private String memberEmail;
 	private String bank;
+	private String payPlan;
 }
