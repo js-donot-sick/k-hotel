@@ -5,11 +5,15 @@ import static kHotel.common.JDBCTemplate.rollback;
 import static kHotel.common.JDBCTemplate.*;
 
 import java.sql.Connection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import kHotel.board.model.vo.Board;
 import kHotel.common.Util;
 import kHotel.member.model.dao.CBookDAO;
+import kHotel.member.model.vo.CPagination;
+import kHotel.member.model.vo.LPagination;
 import kHotel.member.model.vo.Reservation;
 
 public class CBookService {
@@ -172,18 +176,29 @@ public class CBookService {
 
 	/** 쿠폰 조회 Service
 	 * @param memberNo 
+	 * @param cp 
 	 * @return couponList
 	 * @throws Exception
 	 */
-	public List<Reservation> selectCouponList(int memberNo) throws Exception {
+	public Map<String, Object> selectCouponList(int memberNo, int cp) throws Exception {
 		
 		Connection conn = getConnection();
 		
-		List<Reservation> couponList = dao.selectCouponList(conn,memberNo);
+		int listCount = dao.selectCoupon(conn);
+		
+		CPagination pagination = new CPagination(cp,listCount);
+		
+		List<Reservation> couponList = dao.selectCouponList(conn,memberNo,pagination);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("pagination", pagination);
+		map.put("couponList", couponList);
+		
 		
 		close(conn);
 		
-		return couponList;
+		return	map;
 	}
 
 

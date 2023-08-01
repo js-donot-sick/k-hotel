@@ -119,33 +119,33 @@
                         <div class="C-room-text">
             <pre>
 
-            <strong>객실 서비스</strong>
+    <strong>객실 서비스</strong>
 
-            - Auto Window 설치 
+    - Auto Window 설치 
 
-            - 개인 욕실 및 Miracle Window 설치 
-            
-            - 자동 냉난방 시설
+    - 개인 욕실 및 Miracle Window 설치 
+    
+    - 자동 냉난방 시설
 
-            - 해외 방송 시청 및 무료 Wi-Fi 이용가능 
+    - 해외 방송 시청 및 무료 Wi-Fi 이용가능 
 
-            - 초고속 인터넷 
+    - 초고속 인터넷 
 
-            - 냉장고 겸용 미니바 
+    - 냉장고 겸용 미니바 
             </pre>
 
 
             <pre>
 
-            <strong>객실 어메니티</strong>
-            
-            - 49인치 UHD TV 냉장고 전자레인지 
+    <strong>객실 어메니티</strong>
+    
+    - 49인치 UHD TV 냉장고 전자레인지 
 
-            - 구둣주걱 구두클리너 티포트 
-            
-            - 금고 미니바
+    - 구둣주걱 구두클리너 티포트 
+    
+    - 금고 미니바
 
-            - 욕실 목욕가운 비데 헤어드라이어
+    - 욕실 목욕가운 비데 헤어드라이어
             
             </pre>
                             <!-- <div class="C-btn-area">
@@ -171,33 +171,33 @@
                         <div class="C-room-text">
             <pre>
 
-            <strong>객실 서비스</strong>
+     <strong>객실 서비스</strong>
 
-            - Auto Window 설치 
+     - Auto Window 설치 
 
-            - 개인 욕실 및 Miracle Window 설치 
-            
-            - 자동 냉난방 시설
+     - 개인 욕실 및 Miracle Window 설치 
+     
+     - 자동 냉난방 시설
 
-            - 해외 방송 시청 및 무료 Wi-Fi 이용가능 
+     - 해외 방송 시청 및 무료 Wi-Fi 이용가능 
 
-            - 초고속 인터넷 
+     - 초고속 인터넷 
 
-            - 냉장고 겸용 미니바 
+     - 냉장고 겸용 미니바 
             </pre>
 
 
             <pre>
 
-            <strong>객실 어메니티</strong>
-            
-            - 49인치 UHD TV 냉장고 전자레인지 
+      <strong>객실 어메니티</strong>
+      
+      - 49인치 UHD TV 냉장고 전자레인지 
 
-            - 구둣주걱 구두클리너 티포트 
-            
-            - 금고 미니바
+      - 구둣주걱 구두클리너 티포트 
+      
+      - 금고 미니바
 
-            - 욕실 목욕가운 비데 헤어드라이어
+      - 욕실 목욕가운 비데 헤어드라이어
             
             </pre>
                            <!--  <div class="C-btn-area">
@@ -223,33 +223,33 @@
                         <div class="C-room-text">
                 <pre>
 
-                <strong>객실 서비스</strong>
-                    
-                - Auto Window 설치 
-                    
-                - 개인 욕실 및 Miracle Window 설치 
-                                
-                - 자동 냉난방 시설
-                    
-                - 해외 방송 시청 및 무료 Wi-Fi 이용가능 
-                    
-                - 초고속 인터넷 
-                    
-                - 냉장고 겸용 미니바 
+       <strong>객실 서비스</strong>
+           
+       - Auto Window 설치 
+           
+       - 개인 욕실 및 Miracle Window 설치 
+                       
+       - 자동 냉난방 시설
+           
+       - 해외 방송 시청 및 무료 Wi-Fi 이용가능 
+           
+       - 초고속 인터넷 
+           
+       - 냉장고 겸용 미니바 
                 </pre>
                     
                     
                 <pre>
                     
-                <strong>객실 어메니티</strong>
-                                
-                - 49인치 UHD TV 냉장고 전자레인지 
-                    
-                - 구둣주걱 구두클리너 티포트 
-                                
-                - 금고 미니바
-                    
-                - 욕실 목욕가운 비데 헤어드라이어
+       <strong>객실 어메니티</strong>
+                       
+       - 49인치 UHD TV 냉장고 전자레인지 
+           
+       - 구둣주걱 구두클리너 티포트 
+                       
+       - 금고 미니바
+           
+       - 욕실 목욕가운 비데 헤어드라이어
                                 
                 </pre>
                         </div>

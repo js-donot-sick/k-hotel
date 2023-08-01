@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+
+
+<c:set var="pagination" value="${map.pagination}"/>
+<c:set var="couponList" value="${map.couponList}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,6 +47,34 @@
 	                    </div>
                     </c:forEach>
                 </div>
+                 <div class="K-qna-page">
+                        <c:set var="url" value="${contextPath}/member/mypage/coupon?cp="/>
+
+                        <ul class="K-pagination">
+                            <!-- 첫 페이지로 이동 -->
+                            <li><a href="${url}1$${searchUrl}">&lt;&lt;</a></li>
+                            <!-- 이전 목록 마지막 번호로 이동 -->
+                            <li><a href="${url}${pagination.prevPage}${searchUrl}">&lt;</a></li>
+
+                            <!-- 범위가 정해진 일반 for문 사용 -->
+                            <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}">
+                                <c:choose>
+                                    <c:when test="${i==pagination.currentPage}">
+                                        <li><a class="K-current">${i}</a></li>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <li><a href="${url}${i}${searchUrl}">${i}</a></li>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+
+                            <!-- 다음 목록 시작 번호로 이동 -->
+                            <li><a href="${url}${pagination.nextPage}${searchUrl}">&gt;</a></li>
+                            <!-- 끝 페이지로 이동 -->
+                            <li><a href="${url}${pagination.maxPage}${searchUrl}">&gt;&gt;</a></li>
+                        </ul>
+
+                    </div>
             </div>
         </div>
     </div>
