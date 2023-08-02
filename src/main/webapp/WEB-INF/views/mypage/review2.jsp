@@ -17,14 +17,13 @@
             <main>
 
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
-                <form action="review4" enctype="multipart/form-data" method="POST" >
+                <form action="reviewAlter"  method="POST" > 
                 <div class="J-body">
 
                     <div class="J-body2">
 
-
                         <div class="J-body2-1">
-                            리뷰 / 벌점 작성
+                            리뷰 / 벌점 수정
                         </div>
 
                         <div class="J-body2-2">
@@ -37,7 +36,7 @@
                                     </td>
 
                                     <td>
-                                        <input type="text" placeholder="작성자명" id="J-text" value="${rvUpdate.userId}">
+                                        <input type="text" placeholder="작성자명" id="J-text" name="updateId" value="${rvUpdate.userId}">
                                     </td>
 
                                     <td id="J-text3">
@@ -45,7 +44,7 @@
                                     </td>
 
                                     <td>
-                                        <input type="text" placeholder="작성일" id="J-text" value="${rvUpdate.hotelName}">
+                                        <input type="text" placeholder="작성일" id="J-text" name="updateHotel" value="${rvUpdate.hotelName}">
                                     </td>
                                 </tr>
 
@@ -55,7 +54,7 @@
                                     </td>
 
                                     <td>
-                                        <input type="text" value="${rvUpdate.roomName}"> 
+                                        <input type="text" name="updateRoom" value="${rvUpdate.roomName}"> 
                                     </td>
 
                                     <td id="J-text3">
@@ -75,10 +74,10 @@
                                         <button type="button" id="J-delBtn">사진 지우기</button>
                                     </td>
                                     <td colspan="3" id="J-reviewImg1">
-                                        <img type="file" src="${contextPath}${rvUpdate.reviewImg}" id="J-reviewImage3" name="reviewImg">
+                                        <img type="file" src="" id="J-reviewImage3" name="updateImg">
                                     </td>
                                 </tr>
-
+                                
                                 <tr>
                                     <td>
                                         별점
@@ -86,19 +85,19 @@
 
                                     <td colspan="3">
                                         <div name="J-myform" id="J-myform" >
-                                                <input type="radio" id="5-stars" name="rating" value="1" class="star2"
+                                                <input type="radio" id="5-stars" name="updateStar" value="1" class="star2"
                                                     v-model="ratings" />
                                                 <label for="5-stars" class="star pr-4">⭐</label>
-                                                <input type="radio" id="4-stars" name="rating" value="2" class="star2"
+                                                <input type="radio" id="4-stars" name="updateStar" value="2" class="star2"
                                                     v-model="ratings" />
                                                 <label for="4-stars" class="star">⭐</label>
-                                                <input type="radio" id="3-stars" name="rating" value="3" class="star2"
+                                                <input type="radio" id="3-stars" name="updateStar" value="3" class="star2"
                                                     v-model="ratings" />
                                                 <label for="3-stars" class="star">⭐</label>
-                                                <input type="radio" id="2-stars" name="rating" value="4" class="star2"
+                                                <input type="radio" id="2-stars" name="updateStar" value="4" class="star2"
                                                     v-model="ratings" />
                                                 <label for="2-stars" class="star">⭐</label>
-                                                <input type="radio" id="1-star" name="rating" value="5" class="star2"
+                                                <input type="radio" id="1-star" name="updateStar" value="5" class="star2"
                                                     v-model="ratings" />
                                                 <label for="1-star" class="star" >⭐</label>
                                         </div>
@@ -112,11 +111,11 @@
                                     </td>
 
                                     <td>
-                                        <input type="checkbox" class="tag" name="tag" value="깨끗해요">
+                                        <input type="checkbox" class="tag" name="updateTag" value="깨끗해요">
                                         <pre>깨끗해요</pre>
-                                        <input type="checkbox" class="tag" name="tag" value="아이와 가기 좋아요">
+                                        <input type="checkbox" class="tag" name="updateTag" value="아이와 가기 좋아요">
                                         <pre>아이와 가기 좋아요</pre>
-                                        <input type="checkbox" class="tag" name="tag" value="조용해서 쉬기 좋아요">
+                                        <input type="checkbox" class="tag" name="updateTag" value="조용해서 쉬기 좋아요">
                                         <pre>조용해서 쉬기 좋아요</pre>
                                     </td>
 
@@ -125,11 +124,11 @@
                                     </td>
 
                                     <td> 
-                                        <input type="checkbox" class="tag" name="tag" value="침구가 고급스러워요">
+                                        <input type="checkbox" class="tag" name="updateTag" value="침구가 고급스러워요">
                                         <pre>침구가 고급스러워요</pre>
-                                        <input type="checkbox" class="tag" name="tag" value="애인과 가기 좋아요">
+                                        <input type="checkbox" class="tag" name="updateTag" value="애인과 가기 좋아요">
                                         <pre>애인과 가기 좋아요</pre>
-                                        <input type="checkbox" class="tag" name="tag" value="파티하기 좋아요">
+                                        <input type="checkbox" class="tag" name="updateTag" value="파티하기 좋아요">
                                         <pre>파티하기 좋아요</pre>
                                     </td>
                                 </tr>
@@ -140,7 +139,7 @@
                                     </td>
 
                                     <td colspan="3">
-                                        <textarea id="J-text1" placeholder="내용을 입력해주세요" name="reviewContent"></textarea>
+                                        <textarea id="J-text1"  name="updateContent" value="${rvUpdate.boardContent}"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -148,8 +147,8 @@
                         </div>
 
                         <div class="J-body2-3">
-                            <button id="J-cancle">리뷰 작성 취소</button>
-                            <button id="J-update">리뷰 작성</button>
+                            <button id="J-cancle">리뷰 수정 취소</button>
+                            <button id="J-alter">리뷰 수정</button>
                             <!-- 리뷰 작성 취소 누를 시 이전 페이지로 돌아갈건지 알림창 띄우고 확인 누르면 이동. -->
                         </div>
                         <input type="hidden" name="Jdelete" id="J-delete" value="0">
@@ -158,6 +157,15 @@
                     <input type="hidden" name="reviewTitle" value="리뷰입니다.">
                 </div>
                 <input type="hidden" name="rating2" class="star3">
+            aaaaaaaaaaa   ${rvUpdate.memberId}
+                <input type="hidden" name="memberId" value="${rvUpdate.memberId}">
+                <input type="hidden" name="hotelName" value="${rvUpdate.hotelTitle}">
+                <input type="hidden" name="roomName" value="${rvUpdate.roomName}">
+                <input type="hidden" name="pic" value="${rvUpdate.imageRename}">
+                <input type="hidden" name="content" value="${rvUpdate.boardContent}">
+                <input type="hidden" name="tag" value="${rvUpdate.tagContent}">
+                <input type="hidden" name="star" value="${rvUpdate.reviewStar}">
+                
             </form>
                 <!-- ------------------------------------------------------------------------- -->
                

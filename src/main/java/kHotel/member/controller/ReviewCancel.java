@@ -32,7 +32,6 @@ public class ReviewCancel extends HttpServlet{
 			
 			int result = service.reviewCancel(bookNo, loginMember);
 			
-			System.out.println(result +"삭제가 된거야 1이면 아니면 0이지");
 			if(result > 0) {
 				session.setAttribute("message", "예약이 취소되었습니다.");
 				
