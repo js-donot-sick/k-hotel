@@ -393,15 +393,58 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			pstmt = conn.prepareStatement(sql);
 			
+			pstmt.setString(1, rvUpdate.getContent());
+			pstmt.setString(2, loginMember.getMemberId());
 			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				boardNo = rs.getInt(1);
+			}
 			
 			
 			
 		}finally {
-			
+			close(rs);
+			close(pstmt);
 		}
 		
-		return 0;
+		return boardNo;
+	}
+
+
+	/** 리뷰 수정 DAO
+	 * @param conn
+	 * @param rvUpdate
+	 * @param loginMember
+	 * @param boardNo
+	 * @param updateReview 
+	 * @return result
+	 * @throws Exception
+	 */
+	public int reviewAlter(Connection conn, Review rvUpdate, Member loginMember, int boardNo, Review updateReview) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("reviewAlter");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, updateReview.getContent());
+			pstmt.setString(2, rvUpdate.getContent());
+			pstmt.setInt(3, loginMember.getMemberNo());
+			pstmt.setInt(4, rvUpdate.getStar());
+			
+			result = pstmt.executeUpdate();
+			System.out.println(result + "디에오");
+			
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		return result;
 	}
 
 

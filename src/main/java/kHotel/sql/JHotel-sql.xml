@@ -107,6 +107,16 @@
 		AND MEMBER_ID = ?
 	</entry>
 
+	<!-- 리뷰 수정 -->
+	<entry key="reviewAlter">
+		UPDATE BOARD
+		SET BOARD_CONTENT = ?
+		WHERE BOARD_CONTENT = ?
+		AND BOARD_CD = 3
+		AND MEMBER_NO = ?
+		AND REVIEW_STAR = ?
+	</entry>
+
 
 	
 	

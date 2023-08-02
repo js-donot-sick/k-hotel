@@ -43,7 +43,7 @@ public class ReviewAlterServlet extends HttpServlet{
 		rvUpdate.setTag(tag);
 		rvUpdate.setStar(star);
 		
-		HttpSession session = req.getSession();
+		
 		
 		String path = "/WEB-INF/views/mypage/review2.jsp";
 		
@@ -54,16 +54,7 @@ public class ReviewAlterServlet extends HttpServlet{
 		
 		dispatcher.forward(req, resp);
 		
-		JMemberService service = new JMemberService();
 		
-		Member loginMember = (Member)session.getAttribute("loginMember");
-		
-		try {
-			
-			int result = service.reviewAlter(rvUpdate, loginMember);
-		}catch(Exception e) {
-			
-		}
 		
 	}
 

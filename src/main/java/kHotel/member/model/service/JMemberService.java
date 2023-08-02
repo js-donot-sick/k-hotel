@@ -147,17 +147,27 @@ public class JMemberService {
 	/** 리뷰 수정 Service
 	 * @param rvUpdate
 	 * @param loginMember 
+	 * @param updateReview 
 	 * @return result
 	 * @throws Exception
 	 */
-	public int reviewAlter(Review rvUpdate, Member loginMember) throws Exception {
+	public int reviewAlter(Review rvUpdate, Member loginMember, Review updateReview) throws Exception {
 		
 		Connection conn = getConnection();
 		
 		// boardNo 얻어오기
 		int boardNo = dao.getBoardNo(conn, rvUpdate , loginMember);
 		
-		return 0;
+		// 게시글 수정
+		int result = dao.reviewAlter(conn, rvUpdate, loginMember, boardNo, updateReview);
+		
+		System.out.println(result + "서빗");
+		if(result > 0 ) commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
 	}
 
 
