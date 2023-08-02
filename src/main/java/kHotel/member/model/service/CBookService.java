@@ -256,6 +256,24 @@ public class CBookService {
 		return result;
 		
 	}
+
+
+	/** 공지사항 삭제 Service
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteAdminBoard(int boardNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteAdminBoard(conn, boardNo);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
+		
+		return result;
+	}
 	
 
 	
