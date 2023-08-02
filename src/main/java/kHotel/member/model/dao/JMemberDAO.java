@@ -378,6 +378,33 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 	}
 
 
+	/** 리뷰 수정을 위한 boardNo 가져오기
+	 * @param conn
+	 * @param rvUpdate
+	 * @param loginMember
+	 * @return result
+	 * @throws Exception
+	 */
+	public int getBoardNo(Connection conn, Review rvUpdate, Member loginMember) throws Exception {
+		int boardNo = 0;
+		
+		try {
+			String sql = prop.getProperty("getBoardNo");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			
+			
+			
+			
+		}finally {
+			
+		}
+		
+		return 0;
+	}
+
+
 
 
 }

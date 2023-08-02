@@ -144,6 +144,22 @@ public class JMemberService {
 		return result;
 	}
 
+	/** 리뷰 수정 Service
+	 * @param rvUpdate
+	 * @param loginMember 
+	 * @return result
+	 * @throws Exception
+	 */
+	public int reviewAlter(Review rvUpdate, Member loginMember) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		// boardNo 얻어오기
+		int boardNo = dao.getBoardNo(conn, rvUpdate , loginMember);
+		
+		return 0;
+	}
+
 
 
 

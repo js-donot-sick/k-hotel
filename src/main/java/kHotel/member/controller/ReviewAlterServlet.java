@@ -8,7 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import kHotel.member.model.service.JMemberService;
+import kHotel.member.model.vo.Member;
 import kHotel.member.model.vo.Review;
 
 @WebServlet("/board/review/update")
@@ -28,22 +31,39 @@ public class ReviewAlterServlet extends HttpServlet{
 		String hotelName = req.getParameter("hotelName");
 		String roomName = req.getParameter("roomName");
 		String pic = req.getParameter("pic");
-		/* String tag = req.getParameter(); */
-		
+		String tag = req.getParameter("tag"); 
+		int star = Integer.parseInt(req.getParameter("star"));
+
 		Review rvUpdate = new Review();
 		
 		rvUpdate.setUserId(memberId);
 		rvUpdate.setHotelName(hotelName);
 		rvUpdate.setRoomName(roomName);
 		rvUpdate.setReviewImg(pic);
+		rvUpdate.setTag(tag);
+		rvUpdate.setStar(star);
+		
+		HttpSession session = req.getSession();
 		
 		String path = "/WEB-INF/views/mypage/review2.jsp";
+		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		
 		req.setAttribute("rvUpdate", rvUpdate);
 		
 		dispatcher.forward(req, resp);
+		
+		JMemberService service = new JMemberService();
+		
+		Member loginMember = (Member)session.getAttribute("loginMember");
+		
+		try {
+			
+			int result = service.reviewAlter(rvUpdate, loginMember);
+		}catch(Exception e) {
+			
+		}
 		
 	}
 
