@@ -85,4 +85,40 @@ public class LAdminService {
 		return map;
 	}
 
+
+	/** 결제 관리 Service
+	 * @param calculateNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int agreePay(int calculateNo) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.agreePay(conn, calculateNo);
+		
+		if(result > 0) commit(conn);
+		else			rollback(conn);
+		
+		return result;
+	}
+
+
+	/** 결제 목록 조회 ajax Service
+	 * @return adminPayList
+	 * @throws Exception
+	 */
+	public List<LAdminPay> adminPayList() throws Exception{
+		
+		Connection conn = getConnection();
+		
+		
+		List<LAdminPay> LadpList = dao.adminPayList(conn);
+		
+		close(conn);
+		
+		
+		return LadpList;
+	}
+
 }
