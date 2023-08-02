@@ -9,7 +9,6 @@
     width: 1200px;
     display: flex;
     margin: auto;
-    height: auto;
     align-items: flex-start;
 }
 
@@ -65,7 +64,7 @@
     color: white;
 }
 
-/* 신고 내용 p태그 */
+/* 신고 내용 textarea태그 */
 .L-report-tr textarea{
     overflow: hidden;
     text-overflow: ellipsis;
@@ -73,7 +72,10 @@
     resize: none;
     width: 400px;
     height: 100px;
+    outline: none;
 }
+
+
 
 /* 버튼 */
 .L-report-tr button{
