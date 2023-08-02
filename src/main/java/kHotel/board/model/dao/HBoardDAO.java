@@ -1,6 +1,7 @@
 package kHotel.board.model.dao;
 
 import java.io.FileInputStream;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -285,6 +286,24 @@ public class HBoardDAO {
 	}
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/** 공지사항 상세페이지
 	 * @param conn
 	 * @param boardNo
@@ -293,11 +312,38 @@ public class HBoardDAO {
 	 */
 	public Board BoardDetail(Connection conn, int boardNo) throws Exception{
 		
+		Board board = new Board();
 		
-		
-		return null;
-	}
+		try {
+			
+			String sql = prop.getProperty("BoardDetail");
 
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, boardNo);
+			
+			rs = pstmt.executeQuery();
+
+			
+			if(rs.next()) {
+				
+				
+			board.setBoardNo(rs.getInt(1));
+			board.setBoardTitle(rs.getString(2));	
+			board.setMemberId(rs.getString(3));
+			board.setBoardDate(rs.getString(4));
+			board.setBoardContent(rs.getString(5));
+			
+			}
+			
+			
+		}finally {
+			
+			close(rs);
+			close(pstmt);
+		}
+		
+		return board;
+	}
 
 
 }

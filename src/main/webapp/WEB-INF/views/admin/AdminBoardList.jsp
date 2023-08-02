@@ -54,20 +54,18 @@
 							<c:forEach var="board" items="${boardList}">
 
 								<tbody>
-
 									<td>${board.boardNo}</td>
-									<td>
-									<a href="${contextPath}/admin/AdminBoardList/detail">${board.boardTitle}</a></td>
+									<td><a href="${contextPath}/admin/AdminBoardList/detail?no=${board.boardNo}">${board.boardTitle}</a></td>
 									<td></td>
 									<td>${board.boardDate}</td>
 									<td>${member.memberId}</td>
 								</tbody>
-
-
+								
+	
 							</c:forEach>
 							<div class="btn-area">
 								<button id="insertBtn"
-									onclick="location.href='AdminBoardList/write'">글쓰기</button>
+									onclick="location.href='/write'">글쓰기</button>
 							</div>
 						</c:if>
 					</div>
