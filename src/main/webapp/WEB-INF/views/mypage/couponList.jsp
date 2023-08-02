@@ -29,16 +29,13 @@
                 <div class="C-couponlist-div">
                     <div class="C-couponlist-title">쿠폰리스트</div>
 
-                    <c:if test="${emtpy couponList}">
-                    <div class="C-coupon-null">
-                        
-                    </div>
+                    <c:if test="${empty couponList}">
+	                    <div class="C-coupon-null">
+	                       회원님이 가지고 계신 쿠폰이 없습니다. 
+	                    </div>
                     </c:if>
 
-
-
-
-                    <c:if test="${!emtpy couponList}">
+                    <c:if test="${!empty couponList}">
                         <c:forEach var="coupon" items="${couponList}">
                             <div class="C-couponlist-inner">
                                 <div class="C-inner-img">
