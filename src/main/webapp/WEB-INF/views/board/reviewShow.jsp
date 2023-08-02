@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 
         <c:set var="pagination" value="${map.pagination}" />
@@ -83,7 +84,6 @@
                                 <div id="P-rs-content">${board.boardContent}</div>
                                 <div>
                                     <div class="P-star">
-
                                         <c:if test="${board.reviewStar == 1}">
 
                                             <form name="P-myform" id="P-myform" method="post" action="./save">
@@ -225,42 +225,17 @@
 
                                         </c:if>
 
-                                        <c:if test="${board.reviewStar == 5}">
+                                        <c:set var="tag" value="${fn:split(board.tagContent,',,')}"/>
 
-                                            <form name="P-myform" id="P-myform" method="post" action="./save">
-                                                <fieldset>
-                                                    <input type="radio" id="5-stars" name="rating" value="5"
-                                                        class="P-myformYellow" v-model="ratings" />
-                                                    <label for="5-stars" class="star pyellow">⭐</label>
-
-                                                    <input type="radio" id="4-stars" name="rating" value="4"
-                                                        v-model="ratings" />
-                                                    <label for="4-stars" class="star pyellow">⭐</label>
-
-                                                    <input type="radio" id="3-stars" name="rating" value="3"
-                                                        v-model="ratings" />
-                                                    <label for="3-stars" class="star pyellow">⭐</label>
-
-                                                    <input type="radio" id="2-stars" name="rating" value="2"
-                                                        v-model="ratings" />
-                                                    <label for="2-stars" class="star pyellow">⭐</label>
-
-                                                    <input type="radio" id="1-star" name="rating" value="1"
-                                                        v-model="ratings" />
-                                                    <label for="1-star" class="star pyellow">⭐</label>
-                                                </fieldset>
-                                            </form>
-
-                                        </c:if>
-
-                                        ${board.tagContent}
-                                        ${board.tagContent}
-                                        <div class="P-tag-area">
-                                            <span class="P-tag-top">
-                                                <img src="https://em-content.zobj.net/thumbs/120/apple/354/red-heart_2764-fe0f.png"
-                                                    alt=""> 커플이랑 가기 좋아요
-                                            </span>
-                                        </div>
+                                        <c:forEach var = "i" begin = "0" end = "${fn:length(tag) - 1}" step="1"> 
+                                            <div class="P-tag-area">
+                                                <span class="P-tag-top">
+                                                        <input type="text" value="${tag[i]}" >
+                                                       
+                                                </span>
+                                            </div>
+                                        </c:forEach>
+                                        
                                         <!-- +클릭 시 span 표출 -->
 
                                         <div onclick="fn_find()" class="P-tag-con">+</div>
