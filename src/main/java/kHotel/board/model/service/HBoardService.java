@@ -105,20 +105,14 @@ public class HBoardService {
 	 * @throws Exception
 	 */
 	public int updateBoard(Board board) throws Exception {
+		
 	    Connection conn = getConnection();
 	    
-	    if (board.getBoardTitle() != null) {
-	        board.setBoardTitle(Util.XSSHanding(board.getBoardTitle()));
-	    }
-	    if (board.getBoardContent() != null) {
-	        board.setBoardContent(Util.XSSHanding(board.getBoardContent()));
-	        board.setBoardContent(Util.newLineHandling(board.getBoardContent()));
-	    }
-
 	    int result = dao.updateBoard(conn, board);
-
+	
 	    if (result > 0) {
 	        commit(conn);
+	        
 	    } else {
 	        rollback(conn);
 	    }

@@ -73,16 +73,25 @@ public class AdminBoardDetailServlet extends HttpServlet{
 		board.setBoardDate(boardDate);
 		board.setMemberId(memberId);
 		
+		System.out.println(boardNo);
+		System.out.println(boardTitle);
+		System.out.println(boardDate);
+		System.out.println(boardContent);
+		System.out.println(memberId);
 		
+			
 		try {
 			
 			int result = service.updateBoard(board);
 			
+			board.setBoardContent(board.getBoardContent().replaceAll("<br>", "\n"));
 			
 			if(result > 0) {
 				session.setAttribute("message", "공지사항이 수정되었습니다.");
+				
 			}else {
 				session.setAttribute("message", "공지사항 수정 실패");
+				
 			}
 		
 		
@@ -90,7 +99,11 @@ public class AdminBoardDetailServlet extends HttpServlet{
 			e.printStackTrace();
 		}
 	
-		doGet(req, resp);
+		String path = "/admin/AdminBoardList/detail?no="+boardNo;
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+		
+		dispatcher.forward(req, resp);
 		
 	}
 

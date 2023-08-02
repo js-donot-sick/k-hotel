@@ -287,14 +287,13 @@ public class HBoardDAO {
 		int result = 0;
 		
 		try {
-			String sql = prop.getProperty("updateBoard");
+			String sql = prop.getProperty("updateBoardtest");
 			
 			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, Util.XSSHanding(board.getBoardTitle()));
-			pstmt.setString(2, Util.XSSHanding(board.getBoardContent()));
+					
+			pstmt.setString(1,board.getBoardTitle());
+			pstmt.setString(2,board.getBoardContent());
 			pstmt.setInt(3, board.getBoardNo());
-			pstmt.setInt(4, board.getBoardCode());
 			
 			result = pstmt.executeUpdate();
 			
