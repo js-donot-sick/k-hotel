@@ -120,4 +120,12 @@
 		AND BOARD_CD = 1
 	</entry>
 	
+	<!-- 공지사항 수정 -->
+	<entry key="updateAdminboard">
+		UPDATE BOARD
+		SET BOARD_TITLE = ?, BOARD_CONTENT = ?
+		WHERE BOARD_NO = ?
+		AND BOARD_CD = 1
+	</entry>
+	
 </properties>

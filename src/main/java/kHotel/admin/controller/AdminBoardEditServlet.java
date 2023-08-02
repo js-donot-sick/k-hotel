@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import kHotel.board.model.service.HBoardService;
 import kHotel.board.model.vo.Board;
+import kHotel.common.Util;
 
 @WebServlet("/admin/AdminBoardList/Edit")
 public class AdminBoardEditServlet extends HttpServlet{
@@ -25,9 +26,7 @@ public class AdminBoardEditServlet extends HttpServlet{
 		String boardDate = req.getParameter("boardDate");
 		String boardContent = req.getParameter("boardContent");
 		String memberId = req.getParameter("memberId");
-		
-	
-		
+
 		HBoardService service = new HBoardService();
 		
 		Board board = new Board();
@@ -40,7 +39,7 @@ public class AdminBoardEditServlet extends HttpServlet{
 		board.setBoardDate(boardDate);
 		board.setMemberId(memberId);
 		
-		
+		board.setBoardContent(board.getBoardContent().replaceAll("<br>", "\n"));
 		
 		String path = "/WEB-INF/views/admin/AdminBoardEdit.jsp";
 		

@@ -65,10 +65,6 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" name="boardTitle" value="${board.boardTitle}">
-            	<input type="hidden" name="boardContent" value="${board.boardContent}">
-            	<input type="hidden" name="boardDate" value="${board.boardDate}">
-            	<input type="hidden" name="memberId" value="${board.memberId}">
             </form>
         </div>
       

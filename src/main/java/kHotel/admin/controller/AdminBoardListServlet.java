@@ -63,7 +63,7 @@ public class AdminBoardListServlet extends HttpServlet{
 		
 		board.setBoardTitle(boardTitle);
 		board.setBoardContent(boardContent);
-		
+			
 		HBoardService service = new HBoardService();
 		
 		HttpSession session = req.getSession();
