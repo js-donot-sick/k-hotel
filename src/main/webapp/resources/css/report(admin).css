@@ -9,7 +9,7 @@
     width: 1200px;
     display: flex;
     margin: auto;
-    height: 815px;
+    height: auto;
     align-items: flex-start;
 }
 

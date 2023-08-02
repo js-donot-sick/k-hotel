@@ -43,12 +43,38 @@ public class AdminPayServlet extends HttpServlet{
 			dispatcher.forward(req, resp);
 			
 			
-			
-			
-			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		try {
+			
+			int calculateNo = Integer.parseInt( req.getParameter("calculateNo"));
+			
+			LAdminService service = new LAdminService();
+			
+			int result = service.agreePay(calculateNo);
+			
+			
+			if(result > 0) {
+				resp.getWriter().print(result);
+			}
+			
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
+		
 		
 	}
 }

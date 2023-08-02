@@ -242,6 +242,82 @@ public class LAdminDAO {
 		return boardList;
 	}
 
+	/** 결제 관리 DAO
+	 * @param conn
+	 * @param calculateNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int agreePay(Connection conn, int calculateNo) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("agreePay");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, calculateNo);
+			
+			result = pstmt.executeUpdate();
+		
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		
+		
+		return result;
+	}
+
+	/** 결제 목록 조회 ajax DAO
+	 * @param conn
+	 * @return LadpList
+	 * @throws Exception
+	 */
+	public List<LAdminPay> adminPayList(Connection conn) throws Exception{
+
+		List<LAdminPay> LadpList = new ArrayList<LAdminPay>();
+		
+		try {
+			
+			String sql = prop.getProperty("adminPayList");
+			
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			while(rs.next()) {
+				
+				LAdminPay lp = new LAdminPay();
+				
+				lp.setCalculateNo(rs.getInt("CALCULATE_NO"));
+				lp.setCalculateWay( rs.getString("CALCULATE_WAY") );
+				lp.setCalculatePrice( rs.getInt("CALCULATE_PRICE"));
+				lp.setMemberId(rs.getString("MEMBER_ID"));
+				lp.setCalculateSt(rs.getString("CALCULATE_ST"));
+				lp.setCheckInDt(rs.getString("CHECKIN_DT"));
+				
+				
+				LadpList.add(lp);
+				
+			}
+			
+			
+			
+		}finally {
+			close(rs);
+			close(stmt);
+		}
+		
+		
+		
+		
+		return LadpList;
+	}
+
 
 
 	

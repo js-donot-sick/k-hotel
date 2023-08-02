@@ -59,7 +59,7 @@
                             <tr class="L-report-tr">
                                 <td>${board.boardNo}</td>
                                 <td>
-                                    <textarea>${board.reportContent}</textarea>
+                                    <textarea readonly>${board.reportContent}</textarea>
                                 </td>
                                 <td>${board.reportPerson}</td>
                                 <td>${board.reportDt}</td>

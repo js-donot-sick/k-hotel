@@ -30,10 +30,10 @@
             <table class="L-pay-table">
                 
                 <tr class="L-pay-title">
-                    <td colspan="6">결제확인</td>
+                    <td colspan="6">결제관리</td>
                 </tr>
                 
-                <tr class="L-pay-tr">
+                <tr class="L-pay-tr1">
                     <th>결제번호</th>
                     <th>결제수단</th>
                     <th>결제금액</th>
@@ -68,10 +68,15 @@
                                     <button onclick="AgreePay(${board.calculateNo})">승인</button>
                                 </td>
                             </tr>
+
+                            <input type="hidden" name="calNo" value="${board.calculateNo}">
+                            <input type="hidden" name="type" value="8">
                         </c:forEach>
                     
                     </c:otherwise>
                 </c:choose>
+                
+                
                 
                 
             </table>

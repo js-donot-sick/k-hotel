@@ -57,11 +57,33 @@
             JOIN MEMBER USING(MEMBER_NO)
             WHERE CALCULATE_ST = 'N'
             AND CHECKIN_DT > SYSDATE
+            AND CALCULATE_WAY = '무통장입금'
             ORDER BY CALCULATE_NO) A
     )WHERE RNUM BETWEEN ? AND ?
 	
-	
-	
 	</entry>
+	
+	<!-- 결제 관리 -->
+	<entry key="agreePay">
+		UPDATE CALCULATE
+		SET CALCULATE_ST = 'Y'
+		WHERE CALCULATE_NO = ?
+	</entry>
+	
+	
+	
+	<!-- 결제 목록 조회2 -->
+	<entry key="adminPayList">
+		SELECT CALCULATE_NO, CALCULATE_WAY, CALCULATE_PRICE, MEMBER_ID, CALCULATE_ST, 
+	    TO_CHAR(CHECKIN_DT,'YYYY-MM-DD HH24"시"') CHECKIN_DT
+	    FROM CALCULATE
+	    JOIN RESERVATION USING(BOOK_NO)
+	    JOIN MEMBER USING(MEMBER_NO)
+	    WHERE CALCULATE_ST = 'N'
+	    AND CHECKIN_DT > SYSDATE
+	    AND CALCULATE_WAY = '무통장입금'
+    	ORDER BY CALCULATE_NO
+    </entry>
+	
 
 </properties>
