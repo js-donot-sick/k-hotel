@@ -17,7 +17,7 @@ public class ReviewService {
 	ReviewDAO dao = new ReviewDAO(); 
 
 
-	/**
+	/** 리뷰 내용 전체 조회 
 	 * @param cp 
 	 * @return map
 	 * @throws Exception
@@ -27,11 +27,12 @@ public class ReviewService {
 		Connection conn = getConnection();
 		
 		// 리뷰 내용 
-		
 		int listCount = dao.selectReview(conn);
 		
+		// 페이지네이션
 		PPagination pagination = new PPagination(cp,listCount);
 		
+		//리뷰 내용 전체 조회 
 		List<Board> boardList = dao.boardCount(conn,pagination);
 		
 		Map<String, Object> map = new HashMap<String, Object>();

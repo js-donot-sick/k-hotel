@@ -37,10 +37,10 @@ public class ReviewDAO {
 	}
 	
 
-	/**
+	/** 리뷰 내용 
 	 * @param conn
 	 * @param pagination 
-	 * @return
+	 * @return boardList
 	 * @throws Exception
 	 */
 	public List<Board> boardCount(Connection conn, PPagination pagination) throws Exception{
@@ -72,6 +72,8 @@ public class ReviewDAO {
 				board.setImageRename(rs.getNString("IMG_REVIEW_RENAME"));
 				board.setBoardContent(rs.getString("BOARD_CONTENT"));
 				board.setReviewStar(rs.getInt("REVIEW_STAR"));
+				board.setTagContent(rs.getString("TAG_CONTENT"));
+				board.setBoardNo(rs.getInt("BOARD_NO"));
 				
 				boardList.add(board);
 				
@@ -84,7 +86,9 @@ public class ReviewDAO {
 		}
 		
 		
+		System.out.println(boardList);
 		return boardList;
+		
 	}
 	
 	/** 페이지네이션 하기 위해서 쿠폰리스트 얻어오기
