@@ -112,11 +112,11 @@
                                     </td>
 
                                     <td>
-                                        <input type="checkbox" class="tag" name="tag1" value="Y">
+                                        <input type="checkbox" class="tag" name="tag" value="깨끗해요">
                                         <pre>깨끗해요</pre>
-                                        <input type="checkbox" class="tag" name="tag2" value="Y">
+                                        <input type="checkbox" class="tag" name="tag" value="아이와 가기 좋아요">
                                         <pre>아이와 가기 좋아요</pre>
-                                        <input type="checkbox" class="tag" name="tag3" value="Y">
+                                        <input type="checkbox" class="tag" name="tag" value="조용해서 쉬기 좋아요">
                                         <pre>조용해서 쉬기 좋아요</pre>
                                     </td>
 
@@ -125,11 +125,11 @@
                                     </td>
 
                                     <td> 
-                                        <input type="checkbox" class="tag" name="tag4" value="Y">
+                                        <input type="checkbox" class="tag" name="tag" value="침구가 고급스러워요">
                                         <pre>침구가 고급스러워요</pre>
-                                        <input type="checkbox" class="tag" name="tag5" value="Y">
+                                        <input type="checkbox" class="tag" name="tag" value="애인과 가기 좋아요">
                                         <pre>애인과 가기 좋아요</pre>
-                                        <input type="checkbox" class="tag" name="tag6" value="Y">
+                                        <input type="checkbox" class="tag" name="tag" value="파티하기 좋아요">
                                         <pre>파티하기 좋아요</pre>
                                     </td>
                                 </tr>

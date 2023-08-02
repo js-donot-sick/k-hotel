@@ -106,21 +106,15 @@ public class ReviewUpdateServlet extends HttpServlet{
 			// -----------------------------------------------------------------
 			
 			// 태그 등록
-			String tag1 = mpReq.getParameter("tag1");
-			String tag2 = mpReq.getParameter("tag2");
-			String tag3 = mpReq.getParameter("tag3");
-			String tag4 = mpReq.getParameter("tag4");
-			String tag5 = mpReq.getParameter("tag5");
-			String tag6 = mpReq.getParameter("tag6");
+			String[] tag = mpReq.getParameterValues("tag");
+			String realTag = null;
 			
+				
+				if(!tag[0].equals("")) {
+						
+					realTag = String.join(",,", tag);
+				}
 			
-			
-			if(tag1 == null) tag1 = "N";
-			if(tag2 == null) tag2 = "N";
-			if(tag3 == null) tag3 = "N";
-			if(tag4 == null) tag4 = "N";
-			if(tag5 == null) tag5 = "N";
-			if(tag6 == null) tag6 = "N";
 			
 			// -----------------------------------------------------------------
 			
@@ -132,6 +126,7 @@ public class ReviewUpdateServlet extends HttpServlet{
 			rv.setContent(content);
 			rv.setUserId(userId);
 			rv.setStar(star);
+			rv.setTag(realTag);
 			
 			
 			int memberNo = loginMember.getMemberNo();
@@ -139,7 +134,7 @@ public class ReviewUpdateServlet extends HttpServlet{
 			rv.setMemberNo(memberNo);
 			
 			
-			int result = service.reviewUpdate(rv, image ,tag1, tag2, tag3, tag4, tag5, tag6);
+			int result = service.reviewUpdate(rv, image);
 			
 			String message = null;
 			
