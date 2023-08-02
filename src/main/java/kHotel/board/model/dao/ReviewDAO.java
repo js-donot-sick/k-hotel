@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import kHotel.admin.model.vo.LAdminReport;
 import kHotel.board.model.vo.Board;
 import kHotel.member.model.dao.MemberDAO;
 import kHotel.member.model.vo.PPagination;
@@ -65,6 +66,7 @@ public class ReviewDAO {
 				
 				Board board = new Board();
 				
+				board.setMemberNo(rs.getInt("MEMBER_NO"));
 				board.setMemberId(rs.getString("MEMBER_ID"));
 				board.setRoomName(rs.getString("ROOM_NM"));
 				board.setHotelTitle(rs.getString("HOTEL_TITLE"));
@@ -118,6 +120,35 @@ public class ReviewDAO {
 		}
 		
 		return listCount;
+	}
+
+
+	/** 리뷰 내용 등록하기 
+	 * @param conn
+	 * @param report
+	 * @return
+	 * @throws Exception
+	 */
+	public int declar(Connection conn, LAdminReport report) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("declar");
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, report.getMemberNo());
+			pstmt.setInt(2, report.getBoardNo());
+			pstmt.setString(3, report.getReportContent());
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 	
 }

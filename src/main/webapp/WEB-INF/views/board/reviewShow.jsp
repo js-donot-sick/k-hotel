@@ -70,9 +70,11 @@
                             </div>
 
                             <c:forEach var="board" items="${boardList}">
+
                                 <div class="P-reviewBox">
                                     <div class="P-profile_area">
                                         <div class="P-id" id="P-id">작성자 : <span>${board.memberId}</span></div>
+                                   
                                         <div>
                                             <div class="P-room1" id="P-room1"> 지점: <span>${board.hotelTitle}</span>
                                             </div>
@@ -255,9 +257,14 @@
                                         <button id="P-rs-Declar-btn">신고</button>
                                     </div>
 
-
+                                    ${board.boardNo}
+                                 
+                                    <input type="hidden" value="${board.boardNo}" name="boardNo">
+                                    <input type="hidden" value="${board.memberNo}" name="memberNo">
+                                    
                                     <!-- 신고하기 창 -->
                                     <form action="#">
+
                                         <div id="P-popup-Declar">
 
                                             <div id="P-popup-area">
@@ -279,15 +286,15 @@
                                         </div>
                                     </form>
                                 </div>
-                                
+
                             </c:forEach>
 
-
+                       
 
                             <div class="P-blank"></div>
 
                             <div class="c-coupon-page">
-                                <c:set var="url" value="${contextPath}/board/review?cp=" />
+                                <c:set var="url" value="${contextPath}/board/review/show?cp=" />
 
                                 <ul class="c-pagination">
                                     <!-- 첫 페이지로 이동 -->
@@ -326,6 +333,13 @@
                     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
                     crossorigin="anonymous">
                     </script>
+
+              <!--   <script>
+                    const contextPath = "${contextPath}"
+                    const memberNo = "${board.memberNo}"
+                    const boardNo = "${board.boardNo}"
+                </script> -->
+
                 <script src="${contextPath}/resources/js/reviewShow.js"></script>
 
             </body>

@@ -32,7 +32,7 @@
                 <a href="${contextPath}/board/qna?type=2&cp=1" class="H-side-item">QNA</a>
             </li>
             <li>
-                <a href=" ${contextPath}/board/review" class="H-side-item">리뷰</a>
+                <a href="${contextPath}/board/review/show" class="H-side-item">리뷰</a>
             </li>
             <li>
                 <a href="${contextPath}/board/faq?type=4" class="H-side-item">FAQ</a>
