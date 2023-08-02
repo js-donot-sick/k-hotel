@@ -27,9 +27,10 @@
     <!----------------------------------------헤더 --------------------------------------------->
 
         <div class="C-body">
-            <form action="boardDetail?type=${param.type}&cp=${param.cp}&no=${param.no}" method="post" name="C-postWrite-main" onsubmit="return inputcheck()">
+            <form action="${contextPath}/admin/AdminBoardList/detail?no=${board.boardNo}" method="post" name="C-postWrite-main" onsubmit="return inputcheck()">
                 <div class="C-postWrite-body">
                     <div class="C-postWrite-title">공지사항 수정</div>
+                    
                 
                         <div class="C-input-table">
                             <div class="L-title L-detail">

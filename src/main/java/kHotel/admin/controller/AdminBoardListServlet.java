@@ -59,18 +59,19 @@ public class AdminBoardListServlet extends HttpServlet{
 		String boardTitle = req.getParameter("L-input-title");
 		String boardContent = req.getParameter("L-textarea-text");
 		
-		Util.XSSHanding(boardTitle);
-		Util.XSSHanding(boardContent);
+		Board board = new Board();
 		
-		Util.newLineHandling(boardContent);
-
+		board.setBoardTitle(boardTitle);
+		board.setBoardContent(boardContent);
+		
 		HBoardService service = new HBoardService();
 		
 		HttpSession session = req.getSession();
 		
 		try {
-			
-		int result = service.insertBoard(boardTitle,boardContent);			
+
+		int result = service.insertBoard(board);			
+		
 			
 			if(result > 0) {
 				session.setAttribute("message", "게시글이 작성되었습니다.");

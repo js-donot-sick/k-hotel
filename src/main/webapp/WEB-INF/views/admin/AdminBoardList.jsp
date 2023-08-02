@@ -65,7 +65,7 @@
 							</c:forEach>
 							<div class="btn-area">
 								<button id="insertBtn"
-									onclick="location.href='/write'">글쓰기</button>
+									onclick="location.href='${contextPath}/admin/AdminBoardList/write'">글쓰기</button>
 							</div>
 						</c:if>
 					</div>

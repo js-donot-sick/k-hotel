@@ -24,7 +24,7 @@
 
         <div class="L-title1">공지사항 상세페이지</div>
         
-        <form action="${contextPath}/admin/AdminBoardList/detail" class="L-form-main" method="POST" >
+        <form action="${contextPath}/admin/AdminBoardList/Edit?no=${board.boardNo}" class="L-form-main" method="POST" >
 
             <div class="L-title L-detail">
                 <div>제목</div>
