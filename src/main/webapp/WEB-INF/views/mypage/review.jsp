@@ -17,11 +17,11 @@
             <main>
 
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
+                <form action="review4" enctype="multipart/form-data" method="POST" >
                 <div class="J-body">
 
                     <div class="J-body2">
 
-                        <form action="review4" enctype="multipart/form-data" method="POST" >
 
                         <div class="J-body2-1">
                             리뷰 / 벌점 작성
@@ -85,6 +85,7 @@
                                     </td>
 
                                     <td colspan="3">
+                                        <div name="J-myform" id="J-myform" >
                                                 <input type="radio" id="5-stars" name="rating" value="1" class="star2"
                                                     v-model="ratings" />
                                                 <label for="5-stars" class="star pr-4">⭐</label>
@@ -100,6 +101,7 @@
                                                 <input type="radio" id="1-star" name="rating" value="5" class="star2"
                                                     v-model="ratings" />
                                                 <label for="1-star" class="star" >⭐</label>
+                                        </div>
                                     </td>
                                 </tr>
                                 
