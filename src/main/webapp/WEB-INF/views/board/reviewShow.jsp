@@ -71,234 +71,237 @@
 
                             <c:forEach var="board" items="${boardList}">
 
-                                <div class="P-reviewBox">
-                                    <div class="P-profile_area">
-                                        <div class="P-id" id="P-id">작성자 : <span>${board.memberId}</span></div>
-                                   
+                                <c:if test="${!empty board.reviewStar}">
+
+
+                                    <div class="P-reviewBox">
+                                        <div class="P-profile_area">
+                                            <div class="P-id" id="P-id">작성자 : <span>${board.memberId}</span></div>
+
+                                            <div>
+                                                <div class="P-room1" id="P-room1"> 지점: <span>${board.hotelTitle}</span>
+                                                </div>
+                                                <div class="P-room2" id="P-room2"> 객실명 : <span>${board.roomName}</span>
+                                                </div>
+                                                <div class="P-room3">작성날짜 : <span>${board.boardDate}</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="P-img"><a href="#"><img src="${contextPath}${board.imageRename}"
+                                                    class="PreviewImg"></a></div>
+                                        <div id="P-rs-content">${board.boardContent}</div>
                                         <div>
-                                            <div class="P-room1" id="P-room1"> 지점: <span>${board.hotelTitle}</span>
+                                            <div class="P-star">
+                                                <c:if test="${board.reviewStar == 1}">
+
+                                                    <form name="P-myform" id="P-myform" method="post" action="./save">
+                                                        <fieldset>
+                                                            <input type="radio" id="5-stars" name="rating" value="5"
+                                                                class="P-myformYellow" v-model="ratings" />
+                                                            <label for="5-stars" class="star P-myformYellow">⭐</label>
+
+                                                            <input type="radio" id="4-stars" name="rating" value="4"
+                                                                v-model="ratings" />
+                                                            <label for="4-stars" class="star P-myformYellow">⭐</label>
+
+                                                            <input type="radio" id="3-stars" name="rating" value="3"
+                                                                v-model="ratings" />
+                                                            <label for="3-stars" class="star P-myformYellow">⭐</label>
+
+                                                            <input type="radio" id="2-stars" name="rating" value="2"
+                                                                v-model="ratings" />
+                                                            <label for="2-stars" class="star P-myformYellow">⭐</label>
+
+                                                            <input type="radio" id="1-star" name="rating" value="1"
+                                                                v-model="ratings" />
+                                                            <label for="1-star" class="star pyellow">⭐</label>
+                                                        </fieldset>
+                                                    </form>
+
+                                                </c:if>
+
+
+                                                <c:if test="${board.reviewStar == 2}">
+
+                                                    <form name="P-myform" id="P-myform" method="post" action="./save">
+                                                        <fieldset>
+                                                            <input type="radio" id="5-stars" name="rating" value="5"
+                                                                class="P-myformYellow" v-model="ratings" />
+                                                            <label for="5-stars" class="star P-myformYellow">⭐</label>
+
+                                                            <input type="radio" id="4-stars" name="rating" value="4"
+                                                                v-model="ratings" />
+                                                            <label for="4-stars" class="star P-myformYellow">⭐</label>
+
+                                                            <input type="radio" id="3-stars" name="rating" value="3"
+                                                                v-model="ratings" />
+                                                            <label for="3-stars" class="star P-myformYellow">⭐</label>
+
+                                                            <input type="radio" id="2-stars" name="rating" value="2"
+                                                                v-model="ratings" />
+                                                            <label for="2-stars" class="star pyellow">⭐</label>
+
+                                                            <input type="radio" id="1-star" name="rating" value="1"
+                                                                v-model="ratings" />
+                                                            <label for="1-star" class="star pyellow">⭐</label>
+                                                        </fieldset>
+                                                    </form>
+
+                                                </c:if>
+
+                                                <c:if test="${board.reviewStar == 3}">
+
+                                                    <form name="P-myform" id="P-myform" method="post" action="./save">
+                                                        <fieldset>
+                                                            <input type="radio" id="5-stars" name="rating" value="5"
+                                                                class="P-myformYellow" v-model="ratings" />
+                                                            <label for="5-stars" class="star P-myformYellow">⭐</label>
+
+                                                            <input type="radio" id="4-stars" name="rating" value="4"
+                                                                v-model="ratings" />
+                                                            <label for="4-stars" class="star P-myformYellow">⭐</label>
+
+                                                            <input type="radio" id="3-stars" name="rating" value="3"
+                                                                v-model="ratings" />
+                                                            <label for="3-stars" class="star pyellow">⭐</label>
+
+                                                            <input type="radio" id="2-stars" name="rating" value="2"
+                                                                v-model="ratings" />
+                                                            <label for="2-stars" class="star pyellow">⭐</label>
+
+                                                            <input type="radio" id="1-star" name="rating" value="1"
+                                                                v-model="ratings" />
+                                                            <label for="1-star" class="star pyellow">⭐</label>
+                                                        </fieldset>
+                                                    </form>
+
+                                                </c:if>
+
+                                                <c:if test="${board.reviewStar == 4}">
+
+                                                    <form name="P-myform" id="P-myform" method="post" action="./save">
+                                                        <fieldset>
+                                                            <input type="radio" id="5-stars" name="rating" value="5"
+                                                                class="P-myformYellow" v-model="ratings" />
+                                                            <label for="5-stars" class="star P-myformYellow">⭐</label>
+
+                                                            <input type="radio" id="4-stars" name="rating" value="4"
+                                                                v-model="ratings" />
+                                                            <label for="4-stars" class="star pyellow">⭐</label>
+
+                                                            <input type="radio" id="3-stars" name="rating" value="3"
+                                                                v-model="ratings" />
+                                                            <label for="3-stars" class="star pyellow">⭐</label>
+
+                                                            <input type="radio" id="2-stars" name="rating" value="2"
+                                                                v-model="ratings" />
+                                                            <label for="2-stars" class="star pyellow">⭐</label>
+
+                                                            <input type="radio" id="1-star" name="rating" value="1"
+                                                                v-model="ratings" />
+                                                            <label for="1-star" class="star pyellow">⭐</label>
+                                                        </fieldset>
+                                                    </form>
+
+                                                </c:if>
+
+                                                <c:if test="${board.reviewStar == 5}">
+
+                                                    <form name="P-myform" id="P-myform" method="post" action="./save">
+                                                        <fieldset>
+                                                            <input type="radio" id="5-stars" name="rating" value="5"
+                                                                class="P-myformYellow" v-model="ratings" />
+                                                            <label for="5-stars" class="star pyellow">⭐</label>
+
+                                                            <input type="radio" id="4-stars" name="rating" value="4"
+                                                                v-model="ratings" />
+                                                            <label for="4-stars" class="star pyellow">⭐</label>
+
+                                                            <input type="radio" id="3-stars" name="rating" value="3"
+                                                                v-model="ratings" />
+                                                            <label for="3-stars" class="star pyellow">⭐</label>
+
+                                                            <input type="radio" id="2-stars" name="rating" value="2"
+                                                                v-model="ratings" />
+                                                            <label for="2-stars" class="star pyellow">⭐</label>
+
+                                                            <input type="radio" id="1-star" name="rating" value="1"
+                                                                v-model="ratings" />
+                                                            <label for="1-star" class="star pyellow">⭐</label>
+                                                        </fieldset>
+                                                    </form>
+
+                                                </c:if>
+
+                                                <c:set var="tag" value="${fn:split(board.tagContent,',,')}" />
+
+                                                <c:forEach var="i" begin="0" end="${fn:length(tag) - 1}" step="1">
+                                                    <div class="P-tag-area">
+                                                        <span class="P-tag-top">
+                                                            <input type="text" value="${tag[i]}">
+
+                                                        </span>
+                                                    </div>
+                                                </c:forEach>
+
+                                                <!-- +클릭 시 span 표출 -->
+
+                                                <div onclick="fn_find()" class="P-tag-con">+</div>
+                                                <div id="search"><span class="P-tag-top">
+                                                        <img src="https://em-content.zobj.net/thumbs/120/apple/354/red-heart_2764-fe0f.png"
+                                                            alt=""> 커플이랑 가기 좋아요
+
+                                                    </span></div>
+
                                             </div>
-                                            <div class="P-room2" id="P-room2"> 객실명 : <span>${board.roomName}</span>
-                                            </div>
-                                            <div class="P-room3">작성날짜 : <span>${board.boardDate}</span></div>
                                         </div>
-                                    </div>
-                                    <div class="P-img"><a href="#"><img src="${contextPath}${board.imageRename}"
-                                                class="PreviewImg"></a></div>
-                                    <div id="P-rs-content" >${board.boardContent}</div>
-                                    <div>
-                                        <div class="P-star">
-                                            <c:if test="${board.reviewStar == 1}">
+                                        <div class="P-rs-btn">
 
-                                                <form name="P-myform" id="P-myform" method="post" action="./save">
-                                                    <fieldset>
-                                                        <input type="radio" id="5-stars" name="rating" value="5"
-                                                            class="P-myformYellow" v-model="ratings" />
-                                                        <label for="5-stars" class="star P-myformYellow">⭐</label>
+                                            <form action="review/update" method="POST">
+                                                <button id="P-rs-update-btn">수정</button>
+                                                <input type="hidden" name="memberId" value="${board.memberId}">
+                                                <input type="hidden" name="hotelName" value="${board.hotelTitle}">
+                                                <input type="hidden" name="roomName" value="${board.roomName}">
+                                                <input type="hidden" name="pic" value="${board.imageRename}">
+                                                <input type="hidden" name="content" value="${board.boardContent}">
+                                            </form>
 
-                                                        <input type="radio" id="4-stars" name="rating" value="4"
-                                                            v-model="ratings" />
-                                                        <label for="4-stars" class="star P-myformYellow">⭐</label>
-
-                                                        <input type="radio" id="3-stars" name="rating" value="3"
-                                                            v-model="ratings" />
-                                                        <label for="3-stars" class="star P-myformYellow">⭐</label>
-
-                                                        <input type="radio" id="2-stars" name="rating" value="2"
-                                                            v-model="ratings" />
-                                                        <label for="2-stars" class="star P-myformYellow">⭐</label>
-
-                                                        <input type="radio" id="1-star" name="rating" value="1"
-                                                            v-model="ratings" />
-                                                        <label for="1-star" class="star pyellow">⭐</label>
-                                                    </fieldset>
-                                                </form>
-
-                                            </c:if>
-
-
-                                            <c:if test="${board.reviewStar == 2}">
-
-                                                <form name="P-myform" id="P-myform" method="post" action="./save">
-                                                    <fieldset>
-                                                        <input type="radio" id="5-stars" name="rating" value="5"
-                                                            class="P-myformYellow" v-model="ratings" />
-                                                        <label for="5-stars" class="star P-myformYellow">⭐</label>
-
-                                                        <input type="radio" id="4-stars" name="rating" value="4"
-                                                            v-model="ratings" />
-                                                        <label for="4-stars" class="star P-myformYellow">⭐</label>
-
-                                                        <input type="radio" id="3-stars" name="rating" value="3"
-                                                            v-model="ratings" />
-                                                        <label for="3-stars" class="star P-myformYellow">⭐</label>
-
-                                                        <input type="radio" id="2-stars" name="rating" value="2"
-                                                            v-model="ratings" />
-                                                        <label for="2-stars" class="star pyellow">⭐</label>
-
-                                                        <input type="radio" id="1-star" name="rating" value="1"
-                                                            v-model="ratings" />
-                                                        <label for="1-star" class="star pyellow">⭐</label>
-                                                    </fieldset>
-                                                </form>
-
-                                            </c:if>
-
-                                            <c:if test="${board.reviewStar == 3}">
-
-                                                <form name="P-myform" id="P-myform" method="post" action="./save">
-                                                    <fieldset>
-                                                        <input type="radio" id="5-stars" name="rating" value="5"
-                                                            class="P-myformYellow" v-model="ratings" />
-                                                        <label for="5-stars" class="star P-myformYellow">⭐</label>
-
-                                                        <input type="radio" id="4-stars" name="rating" value="4"
-                                                            v-model="ratings" />
-                                                        <label for="4-stars" class="star P-myformYellow">⭐</label>
-
-                                                        <input type="radio" id="3-stars" name="rating" value="3"
-                                                            v-model="ratings" />
-                                                        <label for="3-stars" class="star pyellow">⭐</label>
-
-                                                        <input type="radio" id="2-stars" name="rating" value="2"
-                                                            v-model="ratings" />
-                                                        <label for="2-stars" class="star pyellow">⭐</label>
-
-                                                        <input type="radio" id="1-star" name="rating" value="1"
-                                                            v-model="ratings" />
-                                                        <label for="1-star" class="star pyellow">⭐</label>
-                                                    </fieldset>
-                                                </form>
-
-                                            </c:if>
-
-                                            <c:if test="${board.reviewStar == 4}">
-
-                                                <form name="P-myform" id="P-myform" method="post" action="./save">
-                                                    <fieldset>
-                                                        <input type="radio" id="5-stars" name="rating" value="5"
-                                                            class="P-myformYellow" v-model="ratings" />
-                                                        <label for="5-stars" class="star P-myformYellow">⭐</label>
-
-                                                        <input type="radio" id="4-stars" name="rating" value="4"
-                                                            v-model="ratings" />
-                                                        <label for="4-stars" class="star pyellow">⭐</label>
-
-                                                        <input type="radio" id="3-stars" name="rating" value="3"
-                                                            v-model="ratings" />
-                                                        <label for="3-stars" class="star pyellow">⭐</label>
-
-                                                        <input type="radio" id="2-stars" name="rating" value="2"
-                                                            v-model="ratings" />
-                                                        <label for="2-stars" class="star pyellow">⭐</label>
-
-                                                        <input type="radio" id="1-star" name="rating" value="1"
-                                                            v-model="ratings" />
-                                                        <label for="1-star" class="star pyellow">⭐</label>
-                                                    </fieldset>
-                                                </form>
-
-                                            </c:if>
-
-                                            <c:if test="${board.reviewStar == 5}">
-
-                                                <form name="P-myform" id="P-myform" method="post" action="./save">
-                                                    <fieldset>
-                                                        <input type="radio" id="5-stars" name="rating" value="5"
-                                                            class="P-myformYellow" v-model="ratings" />
-                                                        <label for="5-stars" class="star pyellow">⭐</label>
-
-                                                        <input type="radio" id="4-stars" name="rating" value="4"
-                                                            v-model="ratings" />
-                                                        <label for="4-stars" class="star pyellow">⭐</label>
-
-                                                        <input type="radio" id="3-stars" name="rating" value="3"
-                                                            v-model="ratings" />
-                                                        <label for="3-stars" class="star pyellow">⭐</label>
-
-                                                        <input type="radio" id="2-stars" name="rating" value="2"
-                                                            v-model="ratings" />
-                                                        <label for="2-stars" class="star pyellow">⭐</label>
-
-                                                        <input type="radio" id="1-star" name="rating" value="1"
-                                                            v-model="ratings" />
-                                                        <label for="1-star" class="star pyellow">⭐</label>
-                                                    </fieldset>
-                                                </form>
-
-                                            </c:if>
-
-                                            <c:set var="tag" value="${fn:split(board.tagContent,',,')}" />
-
-                                            <c:forEach var="i" begin="0" end="${fn:length(tag) - 1}" step="1">
-                                                <div class="P-tag-area">
-                                                    <span class="P-tag-top">
-                                                        <input type="text" value="${tag[i]}">
-
-                                                    </span>
-                                                </div>
-                                            </c:forEach>
-
-                                            <!-- +클릭 시 span 표출 -->
-
-                                            <div onclick="fn_find()" class="P-tag-con">+</div>
-                                            <div id="search"><span class="P-tag-top">
-                                                    <img src="https://em-content.zobj.net/thumbs/120/apple/354/red-heart_2764-fe0f.png"
-                                                        alt=""> 커플이랑 가기 좋아요
-
-                                                </span></div>
-
+                                            <button id="P-rs-delete-btn">삭제</button>
+                                            <button id="P-rs-Declar-btn">신고</button>
                                         </div>
-                                    </div>
-                                    <div class="P-rs-btn">
 
-                                    <form action="review/update" method="POST"> 
-                                        <button id="P-rs-update-btn">수정</button>
-                                        <input type="hidden" name="memberId" value="${board.memberId}">
-                                        <input type="hidden" name="hotelName" value="${board.hotelTitle}">
-                                        <input type="hidden" name="roomName" value="${board.roomName}">
-                                        <input type="hidden" name="pic" value="${board.imageRename}">
-                                        <input type="hidden" name="content" value="${board.boardContent}">
-                                    </form> 
+                                        ${board.boardNo}
 
-                                        <button id="P-rs-delete-btn">삭제</button>
-                                        <button id="P-rs-Declar-btn">신고</button>
-                                    </div>
+                                        <input type="hidden" value="${board.boardNo}" name="boardNo">
+                                        <input type="hidden" value="${board.memberNo}" name="memberNo">
 
-                                    ${board.boardNo}
-                                 
-                                    <input type="hidden" value="${board.boardNo}" name="boardNo">
-                                    <input type="hidden" value="${board.memberNo}" name="memberNo">
-                                    
-                                    <!-- 신고하기 창 -->
-                                    <form action="#">
+                                        <!-- 신고하기 창 -->
+                                        <form action="#">
 
-                                        <div id="P-popup-Declar">
+                                            <div id="P-popup-Declar">
 
-                                            <div id="P-popup-area">
-                                                <div id="P-popup-title">신고하기</div>
+                                                <div id="P-popup-area">
+                                                    <div id="P-popup-title">신고하기</div>
 
-                                                <div id="P-popup-out">
-                                                    <button id="P-popup-outbtn">X</button>
+                                                    <div id="P-popup-out">
+                                                        <button id="P-popup-outbtn">X</button>
+                                                    </div>
+
                                                 </div>
 
-                                            </div>
 
-
-                                            <div class="P-popup-writer-area">
-                                                <textarea name="" id="P-popup-content"></textarea>
+                                                <div class="P-popup-writer-area">
+                                                    <textarea name="" id="P-popup-content"></textarea>
+                                                </div>
+                                                <div class="P-declar-btnarea">
+                                                    <button id="P-declar-btn">신고하기</button>
+                                                </div>
                                             </div>
-                                            <div class="P-declar-btnarea">
-                                                <button id="P-declar-btn">신고하기</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-
+                                        </form>
+                                    </div>
+                                </c:if>
                             </c:forEach>
 
-                       
+
 
                             <div class="P-blank"></div>
 
@@ -307,9 +310,9 @@
 
                                 <ul class="c-pagination">
                                     <!-- 첫 페이지로 이동 -->
-                                    <li><a href="${url}1${searchUrl}">&lt;&lt;</a></li>
+                                    <li><a href="${url}1">&lt;&lt;</a></li>
                                     <!-- 이전 목록 마지막 번호로 이동 -->
-                                    <li><a href="${url}${pagination.prevPage}${searchUrl}">&lt;</a></li>
+                                    <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
 
                                     <!-- 범위가 정해진 일반 for문 사용 -->
                                     <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}">
@@ -318,15 +321,15 @@
                                                 <li><a class="c-current">${i}</a></li>
                                             </c:when>
                                             <c:otherwise>
-                                                <li><a href="${url}${i}${searchUrl}">${i}</a></li>
+                                                <li><a href="${url}${i}">${i}</a></li>
                                             </c:otherwise>
                                         </c:choose>
                                     </c:forEach>
 
                                     <!-- 다음 목록 시작 번호로 이동 -->
-                                    <li><a href="${url}${pagination.nextPage}${searchUrl}">&gt;</a></li>
+                                    <li><a href="${url}${pagination.nextPage}">&gt;</a></li>
                                     <!-- 끝 페이지로 이동 -->
-                                    <li><a href="${url}${pagination.maxPage}${searchUrl}">&gt;&gt;</a></li>
+                                    <li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li>
                                 </ul>
 
                             </div>
@@ -343,7 +346,7 @@
                     crossorigin="anonymous">
                     </script>
 
-              <!--   <script>
+                <!--   <script>
                     const contextPath = "${contextPath}"
                     const memberNo = "${board.memberNo}"
                     const boardNo = "${board.boardNo}"
