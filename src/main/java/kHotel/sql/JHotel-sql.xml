@@ -97,6 +97,16 @@
 		INSERT INTO BOARD VALUES(SEQ_BOARD_NO.NEXTVAL ,? ,? ,DEFAULT ,DEFAULT ,4 ,? ,NULL)
 	</entry>
 
+	<!-- 리뷰 수정을 위한 boardNo 가져오기 -->
+	<entry key="getBoardNo">
+		SELECT BOARD_NO
+		FROM BOARD
+		JOIN MEMBER USING(MEMBER_NO)
+		WHERE BOARD_CONTENT = ?
+		AND BOARD_CD = 3
+		AND MEMBER_ID = ?
+	</entry>
+
 
 	
 	

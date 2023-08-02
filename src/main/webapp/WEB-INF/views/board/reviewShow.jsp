@@ -253,13 +253,15 @@
                                     </div>
                                     <div class="P-rs-btn">
 
-                                    <form action="review/update" method="POST"> 
+                                    <form action="update" method="POST"> 
                                         <button id="P-rs-update-btn">수정</button>
                                         <input type="hidden" name="memberId" value="${board.memberId}">
                                         <input type="hidden" name="hotelName" value="${board.hotelTitle}">
                                         <input type="hidden" name="roomName" value="${board.roomName}">
                                         <input type="hidden" name="pic" value="${board.imageRename}">
                                         <input type="hidden" name="content" value="${board.boardContent}">
+                                        <input type="hidden" name="tag" value="${board.tagContent}">
+                                        <input type="hidden" name="star" value="${board.reviewStar}">
                                     </form> 
 
                                         <button id="P-rs-delete-btn">삭제</button>
