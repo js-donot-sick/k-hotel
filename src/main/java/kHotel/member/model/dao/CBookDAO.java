@@ -462,6 +462,39 @@ public class CBookDAO {
 			
 			return listCount;
 		}
+
+		
+		
+		
+		
+		
+		/** 공지사항 삭제 DAO
+		 * @param conn
+		 * @param boardNo
+		 * @return result
+		 * @throws Exception
+		 */
+		public int deleteAdminBoard(Connection conn, int boardNo) throws Exception {
+			
+			int result = 0;
+			
+			try {
+				
+				String sql = prop.getProperty("deleteadminBoard");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, boardNo);
+				
+				result = pstmt.executeUpdate();
+				
+				
+			} finally {
+				close(pstmt);
+			}
+			
+			return result;
+		}
 		
 
 		
