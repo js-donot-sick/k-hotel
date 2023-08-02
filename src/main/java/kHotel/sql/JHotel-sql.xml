@@ -87,7 +87,7 @@
            
     </entry>
 
-	<!-- memberNo 얻어오기 -->
+	<!-- 예약을 위한 memberNo 얻어오기 -->
 	<entry key="getMemberNo">
 		SELECT MEMBER_NO
 		FROM RESERVATION
@@ -106,6 +106,18 @@
 	<entry key="deleteCalculate">
 		DELETE CALCULATE
 		WHERE BOOK_NO = ?
+	</entry>
+	
+	<!-- FAQ 작성을 위한 memberNo 얻어오기 -->
+	<entry key="getMemberNo2">
+		SELECT MEMBER_NO
+		FROM MEMBER
+		WHERE MEMBER_ID = ?
+	</entry>
+	
+	<!-- FAQ 작성 -->
+	<entry key="FAQUpdate">
+		INSERT INTO BOARD VALUES(SEQ_BOARD_NO.NEXTVAL ,? ,? ,DEFAULT ,DEFAULT ,2 ,? ,NULL)
 	</entry>
 
 
