@@ -19,5 +19,6 @@ public class LAdminPay {
 	private String accountNumber;	// 결제계좌
 	private int bookNo;				// 예약번호
 	private String memberId;		// 예약자 아이디
+	private String checkInDt;		// 체크인 날짜
 
 }

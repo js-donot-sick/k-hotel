@@ -39,6 +39,7 @@
                     <th>결제금액</th>
                     <th>결제자</th>
                     <th>결제여부</th>
+                    <th>체크인 날짜</th>
                     <th>승인</th>
                 </tr>
             
@@ -47,7 +48,7 @@
                     <c:when test="${empty boardList}">
                         <!-- 게시글 목록 조회 결과가 비어있다면 -->
                         <tr>
-                            <th colspan="6">게시글이 존재하지 않습니다.</th>
+                            <th colspan="7">게시글이 존재하지 않습니다.</th>
                         </tr>
                     </c:when>
 
@@ -62,8 +63,9 @@
                                 <td>${board.calculatePrice}</td>
                                 <td>${board.memberId}</td>
                                 <td>${board.calculateSt}</td>
+                                <td>${board.checkInDt}</td>
                                 <td class="L-pay-btn"> 
-                                        <button>승인</button>
+                                    <button onclick="AgreePay(${board.calculateNo})">승인</button>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -117,5 +119,6 @@
     
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
+    <script src="${contextPath}/resources/js/AdminPay.js"></script>
 </body>
 </html>
