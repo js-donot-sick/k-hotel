@@ -58,10 +58,7 @@ public class ReviewShowServelt extends HttpServlet {
 				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
 				int memberNo = Integer.parseInt(req.getParameter("memberNo"));
 				
-				
-				System.out.println("멤바 : " + boardNo);
-				System.out.println("넘바 : " + memberNo);
-				
+
 				LAdminReport report = new LAdminReport();
 				report.setBoardNo(boardNo);
 				report.setMemberNo(memberNo);
