@@ -11,6 +11,7 @@ import kHotel.admin.model.vo.HAdminBoard;
 import kHotel.board.model.dao.HBoardDAO;
 import kHotel.board.model.vo.AnnouncementDetail;
 import kHotel.board.model.vo.Board;
+import kHotel.common.Util;
 import kHotel.member.model.vo.LPagination;
 
 public class HBoardService {
@@ -80,30 +81,6 @@ public class HBoardService {
 	}
 
 
-	/** 공지사항 작성
-	 * @param boardContent 
-	 * @param boardTitle 
-	 * @return result
-	 * @throws Exception
-	 */
-	public int insertBoard(String boardTitle, String boardContent) throws Exception{
-		
-		Connection conn = getConnection();
-		
-		int result = dao.insertBoard(conn , boardTitle , boardContent);
-				
-		
-		if(result > 0) {
-			commit(conn);
-		} else {
-			rollback(conn);
-		}
-		
-		close(conn);
-		
-		return result;
-	}
-
 
 	/** 공지사항 상세페이지
 	 * @param boardNo
@@ -120,6 +97,66 @@ public class HBoardService {
 		
 		return board;
 	}
+
+
+	/** 공지사항 수정
+	 * @param board
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateBoard(Board board) throws Exception {
+	    Connection conn = getConnection();
+	    
+	    if (board.getBoardTitle() != null) {
+	        board.setBoardTitle(Util.XSSHanding(board.getBoardTitle()));
+	    }
+	    if (board.getBoardContent() != null) {
+	        board.setBoardContent(Util.XSSHanding(board.getBoardContent()));
+	        board.setBoardContent(Util.newLineHandling(board.getBoardContent()));
+	    }
+
+	    int result = dao.updateBoard(conn, board);
+
+	    if (result > 0) {
+	        commit(conn);
+	    } else {
+	        rollback(conn);
+	    }
+
+	    return result;
+	}
+
+	/** 공지사항 작성
+	 * @param boardContent 
+	 * @param boardTitle 
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertBoard(Board board) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		board.setBoardTitle(Util.XSSHanding(board.getBoardTitle()));
+		board.setBoardContent(Util.XSSHanding(board.getBoardContent()));
+		
+		board.setBoardContent(Util.newLineHandling(board.getBoardContent()));
+		
+		int result = dao.insertBoard(conn , board);
+				
+		
+		if(result > 0) {
+			commit(conn);
+		} else {
+			rollback(conn);
+		}
+		
+		close(conn);
+		
+		return result;
+	}
+
+
+
 
 
 

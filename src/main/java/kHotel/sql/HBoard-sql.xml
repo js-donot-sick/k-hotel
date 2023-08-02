@@ -66,5 +66,12 @@
 	JOIN MEMBER USING(MEMBER_NO)
 	WHERE BOARD_NO = ?
 	</entry>
+	
+	<entry key="updateBoard">
+	UPDATE BOARD
+	SET BOARD_TITLE = ?, BOARD_CONTENT = ?
+	WHERE BOARD_NO = ?
+	AND BOARD_CD = ?
+	</entry>
 
 </properties>

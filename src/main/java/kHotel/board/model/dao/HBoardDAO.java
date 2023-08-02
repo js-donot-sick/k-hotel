@@ -13,6 +13,7 @@ import java.util.Properties;
 import kHotel.admin.model.vo.HAdminBoard;
 import kHotel.board.model.vo.AnnouncementDetail;
 import kHotel.board.model.vo.Board;
+import kHotel.common.Util;
 import kHotel.member.model.dao.MemberDAO;
 import kHotel.member.model.vo.LPagination;
 
@@ -233,77 +234,6 @@ public class HBoardDAO {
 		return boardList;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	/** 공지사항 작성
-	 * @param conn 
-	 * @param boardContent 
-	 * @param boardTitle 
-	 * @return result
-	 * @throws Exception
-	 */
-	public int insertBoard(Connection conn, String boardTitle, String boardContent) throws Exception{
-		
-		int result = 0;
-		
-		try {
-			
-			String sql = prop.getProperty("insertBoard");
-			
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, boardTitle);
-			pstmt.setString(2, boardContent);
-			
-			result = pstmt.executeUpdate();
-			
-		}finally {
-			close(pstmt);
-		}
-		
-		return result;
-	}
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	/** 공지사항 상세페이지
 	 * @param conn
 	 * @param boardNo
@@ -344,6 +274,68 @@ public class HBoardDAO {
 		
 		return board;
 	}
+
+
+	/** 공지사항 수정
+	 * @param conn
+	 * @param board
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateBoard(Connection conn, Board board) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("updateBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, Util.XSSHanding(board.getBoardTitle()));
+			pstmt.setString(2, Util.XSSHanding(board.getBoardContent()));
+			pstmt.setInt(3, board.getBoardNo());
+			pstmt.setInt(4, board.getBoardCode());
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+			
+		}
+		
+		return result;	
+	}
+
+	/** 공지사항 작성
+	 * @param conn 
+	 * @param boardContent 
+	 * @param boardTitle 
+	 * @return result
+	 * @throws Exception
+	 */
+	public int insertBoard(Connection conn, Board board) throws Exception{
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("insertBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, board.getBoardTitle() );
+			pstmt.setString(2, board.getBoardContent() );
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+
 
 
 }
