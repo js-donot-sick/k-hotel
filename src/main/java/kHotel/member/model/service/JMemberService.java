@@ -40,16 +40,10 @@ public class JMemberService {
 	/** 리뷰 등록 Service
 	 * @param image
 	 * @param rv
-	 * @param tag6 
-	 * @param tag5 
-	 * @param tag4 
-	 * @param tag3 
-	 * @param tag2 
-	 * @param tag1 
 	 * @return result
 	 * @throws Exception
 	 */
-	public int reviewUpdate( Review rv , ReviewImg image, String tag1, String tag2, String tag3, String tag4, String tag5, String tag6) throws Exception {
+	public int reviewUpdate( Review rv , ReviewImg image) throws Exception {
 		
 		Connection conn = getConnection();
 		
@@ -72,12 +66,7 @@ public class JMemberService {
 			result = dao.reviewImg( conn, image, rv);
 			
 			// 태그 삽입
-			result = dao.tagUpdate1(conn, rv , tag1 ) ;
-			result = dao.tagUpdate2(conn, rv , tag2  ) ;
-			result = dao.tagUpdate3(conn, rv , tag3 ) ;
-			result = dao.tagUpdate4(conn, rv , tag4  ) ;
-			result = dao.tagUpdate5(conn, rv , tag5  ) ;
-			result = dao.tagUpdate6(conn, rv , tag6  ) ;
+			result = dao.tagUpdate1(conn, rv ) ;
 		}
 		
 		

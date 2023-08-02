@@ -46,9 +46,8 @@ public class AdminFAQUpdateServlet extends HttpServlet{
 			if(result > 0) {
 				session.setAttribute("message", "작성을 완료하셨습니다.");
 				
-				path = "/WEB-INF/views/admin/AdminFaqList.jsp";
 				
-				req.getRequestDispatcher(path).forward(req, resp);
+				resp.sendRedirect(req.getContextPath() + "/board/faq?type=4");
 				
 				
 			}else {

@@ -17,8 +17,10 @@ public class Review {
 	private int star;
 	private String rename;
 	private int boardNo;
-	private String[] tag;
+	private String tag;
 	private String reviewImg;
 	private int board;
+	private String hotelName;
+	private String roomName;
 	
 }

@@ -58,34 +58,11 @@
 	<!-- 태그 삽입 -->
 
     <entry key="tagUpdate1">
-            INSERT INTO TAG VALUES('깨끗해요',?,?)
+            INSERT INTO TAG VALUES(?,?,'Y')
            
     </entry>
     
-    <entry key="tagUpdate2">
-            INSERT INTO TAG VALUES('아이와 가기 좋아요',?,?)
-           
-    </entry>
-    
-    <entry key="tagUpdate3">
-            INSERT INTO TAG VALUES('조용해서 쉬기 좋아요',?,?)
-           
-    </entry>
-    
-    <entry key="tagUpdate4">
-            INSERT INTO TAG VALUES('침구가 고급스러워요',?,?)
-           
-    </entry>
-    
-     <entry key="tagUpdate5">
-            INSERT INTO TAG VALUES('애인과 가기 좋아요',?,?)
-           
-    </entry>
-    
-     <entry key="tagUpdate6">
-            INSERT INTO TAG VALUES('파티하기 좋아요',?,?)
-           
-    </entry>
+  
 
 	<!-- 예약을 위한 memberNo 얻어오기 -->
 	<entry key="getMemberNo">
@@ -117,7 +94,7 @@
 	
 	<!-- FAQ 작성 -->
 	<entry key="FAQUpdate">
-		INSERT INTO BOARD VALUES(SEQ_BOARD_NO.NEXTVAL ,? ,? ,DEFAULT ,DEFAULT ,2 ,? ,NULL)
+		INSERT INTO BOARD VALUES(SEQ_BOARD_NO.NEXTVAL ,? ,? ,DEFAULT ,DEFAULT ,4 ,? ,NULL)
 	</entry>
 
 

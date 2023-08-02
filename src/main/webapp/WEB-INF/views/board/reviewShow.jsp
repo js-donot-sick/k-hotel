@@ -83,7 +83,7 @@
                                     </div>
                                     <div class="P-img"><a href="#"><img src="${contextPath}${board.imageRename}"
                                                 class="PreviewImg"></a></div>
-                                    <div id="P-rs-content">${board.boardContent}</div>
+                                    <div id="P-rs-content" >${board.boardContent}</div>
                                     <div>
                                         <div class="P-star">
                                             <c:if test="${board.reviewStar == 1}">
@@ -250,7 +250,16 @@
                                         </div>
                                     </div>
                                     <div class="P-rs-btn">
+
+                                    <form action="review/update" method="POST"> 
                                         <button id="P-rs-update-btn">수정</button>
+                                        <input type="hidden" name="memberId" value="${board.memberId}">
+                                        <input type="hidden" name="hotelName" value="${board.hotelTitle}">
+                                        <input type="hidden" name="roomName" value="${board.roomName}">
+                                        <input type="hidden" name="pic" value="${board.imageRename}">
+                                        <input type="hidden" name="content" value="${board.boardContent}">
+                                    </form> 
+
                                         <button id="P-rs-delete-btn">삭제</button>
                                         <button id="P-rs-Declar-btn">신고</button>
                                     </div>
