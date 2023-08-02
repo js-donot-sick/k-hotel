@@ -28,24 +28,39 @@
             <div class="C-body-couponlist">
                 <div class="C-couponlist-div">
                     <div class="C-couponlist-title">쿠폰리스트</div>
-                    <c:forEach var="coupon" items="${couponList}">
-	                    <div class="C-couponlist-inner">
-	                        <div class="C-inner-img">
-	                            <img src="${contextPath}/resources/images/30000만원 할인 쿠폰.png" class="C-coupon-img">
-	                        </div>
-	                        <div class="C-inner-text">
-	                            <ul>
-	                            	<li> 쿠폰명 : ${coupon.couponName} </li>
-	                                <li> 이벤트 성공 축하 3만원 할인 쿠폰</li>
-	                                <li> 사용기한 : ~ ${coupon.couponDate} </li>
-	                                <li> 게임 성공 시 3만원 할인쿠폰 자동 지급됩니다.
-	                                    <br>
-	                                    구매 페이지에서 쿠폰 적용 가능합니다.
-	                                </li>
-	                            </ul>
-	                        </div>
-	                    </div>
-                    </c:forEach>
+
+                    <c:if test="${emtpy couponList}">
+                    <div class="C-coupon-null">
+                        
+                    </div>
+                    </c:if>
+
+
+
+
+                    <c:if test="${!emtpy couponList}">
+                        <c:forEach var="coupon" items="${couponList}">
+                            <div class="C-couponlist-inner">
+                                <div class="C-inner-img">
+                                    <img src="${contextPath}/resources/images/30000만원 할인 쿠폰.png" class="C-coupon-img">
+                                </div>
+                                <div class="C-inner-text">
+                                    <ul>
+                                        <li> 쿠폰명 : ${coupon.couponName} </li>
+                                        <li> 이벤트 성공 축하 3만원 할인 쿠폰</li>
+                                        <li> 사용기한 : ~ ${coupon.couponDate} </li>
+                                        <li> 게임 성공 시 3만원 할인쿠폰 자동 지급됩니다.
+                                            <br>
+                                            구매 페이지에서 쿠폰 적용 가능합니다.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </c:if>
+
+
+
                 </div>
                  <div class="c-coupon-page">
                         <c:set var="url" value="${contextPath}/member/mypage/coupon?cp="/>

@@ -463,11 +463,6 @@ public class CBookDAO {
 			return listCount;
 		}
 
-		
-		
-		
-		
-		
 		/** 공지사항 삭제 DAO
 		 * @param conn
 		 * @param boardNo
