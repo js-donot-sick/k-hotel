@@ -63,7 +63,14 @@
 }
 
 .C-coupon-null{
-    
+    width: 820px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: bold;
+    font-size: 24px;
+    color: #ccc;
 }
 
 .C-inner-img{ /* 이미지 틀 */
