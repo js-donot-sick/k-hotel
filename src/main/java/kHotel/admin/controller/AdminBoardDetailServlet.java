@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import kHotel.board.model.service.HBoardService;
 import kHotel.board.model.vo.Board;
+import kHotel.common.Util;
+import kHotel.member.model.service.CBookService;
 
 @WebServlet("/admin/AdminBoardList/detail")
 public class AdminBoardDetailServlet extends HttpServlet{
@@ -55,56 +57,54 @@ public class AdminBoardDetailServlet extends HttpServlet{
 		
 		int boardNo = Integer.parseInt(req.getParameter("no"));
 		
-		String boardTitle = req.getParameter("boardTitle");
-		String boardDate = req.getParameter("boardDate");
-		String boardContent = req.getParameter("boardContent");
+		String boardTitle = req.getParameter("L-input-title");
+		String boardContent = req.getParameter("L-textarea-text");
 		String memberId = req.getParameter("memberId");
 		
 		
-		HBoardService service = new HBoardService();
 		
+		
+		// 리다이렉트 주소 
+		String path = null;
+		
+		// service 호출
+		CBookService service = new CBookService();
+		
+		// 객체 생성
 		Board board = new Board();
 		
+		// 세션 얻어오기
 		HttpSession session = req.getSession();
 		
 		board.setBoardNo(boardNo);
 		board.setBoardTitle(boardTitle);
 		board.setBoardContent(boardContent);
-		board.setBoardDate(boardDate);
 		board.setMemberId(memberId);
 		
-		System.out.println(boardNo);
-		System.out.println(boardTitle);
-		System.out.println(boardDate);
-		System.out.println(boardContent);
-		System.out.println(memberId);
-		
-			
 		try {
+
 			
-			int result = service.updateBoard(board);
+			int result = service.updateAdminboard(board);
 			
-			board.setBoardContent(board.getBoardContent().replaceAll("<br>", "\n"));
 			
 			if(result > 0) {
+
 				session.setAttribute("message", "공지사항이 수정되었습니다.");
+				
+				path ="detail?no=" + boardNo;
 				
 			}else {
 				session.setAttribute("message", "공지사항 수정 실패");
 				
+				path ="detail?no=" + boardNo;
 			}
 		
+			resp.sendRedirect(path);
 		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	
-		String path = "/admin/AdminBoardList/detail?no="+boardNo;
-		
-		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-		
-		dispatcher.forward(req, resp);
-		
+
 	}
 
 }

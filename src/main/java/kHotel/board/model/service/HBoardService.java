@@ -108,14 +108,14 @@ public class HBoardService {
 		
 	    Connection conn = getConnection();
 	    
+	    board.setBoardTitle(Util.XSSHanding(board.getBoardTitle()));
+		board.setBoardContent(Util.XSSHanding(board.getBoardContent()));
+		board.setBoardContent(Util.newLineHandling(board.getBoardContent()));
+	    
 	    int result = dao.updateBoard(conn, board);
 	
-	    if (result > 0) {
-	        commit(conn);
-	        
-	    } else {
-	        rollback(conn);
-	    }
+	    if (result > 0) commit(conn);   
+	    else 			rollback(conn);
 
 	    return result;
 	}

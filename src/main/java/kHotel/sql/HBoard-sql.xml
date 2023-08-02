@@ -73,6 +73,5 @@
 		WHERE BOARD_NO = ?
 		AND BOARD_CD = 1
 	</entry>
-
-
+	
 </properties>

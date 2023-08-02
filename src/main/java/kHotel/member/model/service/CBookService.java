@@ -274,7 +274,28 @@ public class CBookService {
 		
 		return result;
 	}
+
+
+	/** 공지사항 수정 service
+	 * @param board
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updateAdminboard(Board board) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		board.setBoardTitle(Util.XSSHanding(board.getBoardTitle()));
+		board.setBoardContent(Util.XSSHanding(board.getBoardContent()));
+		board.setBoardContent(Util.newLineHandling(board.getBoardContent()));
+		
+		int result = dao.updateAdminboard(conn, board);
+		
+		if(result > 0) commit(conn);
+		else		   rollback(conn);
 	
+		return result;
+	}
 
 	
 }
