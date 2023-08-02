@@ -26,6 +26,7 @@ public class AdminBoardEditServlet extends HttpServlet{
 		String boardContent = req.getParameter("boardContent");
 		String memberId = req.getParameter("memberId");
 		
+	
 		
 		HBoardService service = new HBoardService();
 		
@@ -39,7 +40,8 @@ public class AdminBoardEditServlet extends HttpServlet{
 		board.setBoardDate(boardDate);
 		board.setMemberId(memberId);
 		
-				
+		
+		
 		String path = "/WEB-INF/views/admin/AdminBoardEdit.jsp";
 		
 		req.setAttribute("board", board);

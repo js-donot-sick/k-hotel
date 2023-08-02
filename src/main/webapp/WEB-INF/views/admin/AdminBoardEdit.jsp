@@ -27,7 +27,7 @@
     <!----------------------------------------헤더 --------------------------------------------->
 
         <div class="C-body">
-            <form action="${contextPath}/admin/AdminBoardList/detail?no=${board.boardNo}" method="post" name="C-postWrite-main" onsubmit="return inputcheck()">
+            <form action="${contextPath}/admin/AdminBoardList/detail?no=${board.boardNo}" method="post" name="C-postWrite-main">
                 <div class="C-postWrite-body">
                     <div class="C-postWrite-title">공지사항 수정</div>
                     
@@ -59,12 +59,16 @@
               
                             </button>
                         </div>
-                            <button id="C-postWritebtn-clear">
+                            <button type="submit" id="C-postWritebtn-clear">
                                 공지사항 수정
                             </button>
                         </div>
                     </div>
                 </div>
+                <input type="hidden" name="boardTitle" value="${board.boardTitle}">
+            	<input type="hidden" name="boardContent" value="${board.boardContent}">
+            	<input type="hidden" name="boardDate" value="${board.boardDate}">
+            	<input type="hidden" name="memberId" value="${board.memberId}">
             </form>
         </div>
       
