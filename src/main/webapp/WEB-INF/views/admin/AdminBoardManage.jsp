@@ -35,7 +35,7 @@
 
                     <div class="H-div">
 
-                        <a href="${contextPath}" class="H-href">
+                        <a href="${contextPath}/admin/FAQ" class="H-href">
                             <span class="H-span">FAQ</span>
                         </a>
 

@@ -48,13 +48,15 @@ public class AdminFAQUpdateServlet extends HttpServlet{
 				
 				path = "/WEB-INF/views/admin/AdminFaqList.jsp";
 				
+				req.getRequestDispatcher(path).forward(req, resp);
+				
 				
 			}else {
 				session.setAttribute("message", "작성 실패, 다시 시도 해주세요.");
 				
 				path = "/WEB-INF/views/admin/AdminBoardManage.jsp";
 				
-				resp.sendRedirect( path);
+				req.getRequestDispatcher(path).forward(req, resp);
 				
 			}
 			
