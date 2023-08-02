@@ -5,8 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import kHotel.admin.model.vo.LAdminReport;
 import kHotel.board.model.dao.ReviewDAO;
 import kHotel.board.model.vo.Board;
+import kHotel.common.Util;
 import kHotel.member.model.vo.PPagination;
 
 import static kHotel.common.JDBCTemplate.*;
@@ -44,6 +46,31 @@ public class ReviewService {
 	
 		
 		return map;
+	}
+
+
+	/** 리뷰 내용 등록하기 
+	 * @param report
+	 * @return result 
+	 * @throws Exception
+	 */
+	public int declar(LAdminReport report) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		report.setReportContent(Util.XSSHanding(report.getReportContent()));
+		report.setReportContent(Util.newLineHandling(report.getReportContent()));
+		
+		int result = dao.declar(conn,report);
+		
+		if(result>0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		
+		
+		return result;
 	}
 
 }
