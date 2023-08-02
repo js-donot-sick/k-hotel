@@ -24,13 +24,12 @@
 
         <div class="L-title1">공지사항 상세페이지</div>
         
-        <form class="L-form-main" method="POST" action="${contextPath}/admin/AdminBoardList/detail">
+        <form action="${contextPath}/admin/AdminBoardList/detail" class="L-form-main" method="POST" >
 
             <div class="L-title L-detail">
                 <div>제목</div>
                 <div>${board.boardTitle}</div>
             </div>
-
             <div class="L-person L-detail">
                 <div>작성자</div>
                 <div><input type="text" name="L-input-person" value="${board.memberId}" disabled></div>
@@ -49,7 +48,7 @@
 
                 <c:if test="${loginMember.memberId == board.memberId}">
                     <div><button type="submit">공지사항 수정</button></div>
-                    <div><button type="button">공지사항 삭제</button></div>
+                    <div><button type="button" onclick="location.href='delete?no=${board.boardNo}'">공지사항 삭제</button></div>
                 </c:if>
 
             </div>
@@ -59,8 +58,6 @@
             <input type="hidden" name="boardDate" value="${board.boardDate}">
             <input type="hidden" name="memberId" value="${board.memberId}">
         </form>
-
-        <jsp:include page="/WEB-INF/views/board/reply.jsp"/>
 
 
     </div>

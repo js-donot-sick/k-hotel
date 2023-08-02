@@ -69,7 +69,7 @@
                                 <td>${board.boardDate}</td>
                                 <td>${member.memberId}</td>
                             </tbody>
-
+							
 
                     </c:forEach>
 
