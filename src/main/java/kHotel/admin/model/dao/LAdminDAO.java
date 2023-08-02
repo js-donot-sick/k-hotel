@@ -229,6 +229,7 @@ public class LAdminDAO {
 				lp.setCalculatePrice( rs.getInt("CALCULATE_PRICE"));
 				lp.setMemberId(rs.getString("MEMBER_ID"));
 				lp.setCalculateSt(rs.getString("CALCULATE_ST"));
+				lp.setCheckInDt(rs.getString("CHECKIN_DT"));
 				
 				boardList.add(lp);
 			}
