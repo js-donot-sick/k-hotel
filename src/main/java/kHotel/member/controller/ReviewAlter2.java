@@ -83,15 +83,15 @@ public class ReviewAlter2 extends HttpServlet{
 		
 		
 		
-		Review rvUpdate = new Review();
+		Review rvUpdate2 = new Review();
 		
-		rvUpdate.setUserId(memberId);
-		rvUpdate.setHotelName(hotelName);
-		rvUpdate.setRoomName(roomName);
-		rvUpdate.setReviewImg(pic);
-		rvUpdate.setTag(tag);
-		rvUpdate.setStar(star);
-		rvUpdate.setContent(content);
+		rvUpdate2.setUserId(memberId);
+		rvUpdate2.setHotelName(hotelName);
+		rvUpdate2.setRoomName(roomName);
+		rvUpdate2.setReviewImg(pic);
+		rvUpdate2.setTag(tag);
+		rvUpdate2.setStar(star);
+		rvUpdate2.setContent(content);
 		// ----------------------------------------------
 		
 		
@@ -133,7 +133,7 @@ public class ReviewAlter2 extends HttpServlet{
 		
 		try {
 			
-			int result = service.reviewAlter(rvUpdate, loginMember ,updateReview);
+			int result = service.reviewAlter(rvUpdate2, loginMember ,updateReview);
 			
 			System.out.println(result +"섭릿");
 			if(result > 0) {
