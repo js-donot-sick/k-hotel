@@ -65,6 +65,8 @@ public class LBoardDAO {
 			
 			
 			
+			
+			
 		}finally {
 			
 			close(rs);
@@ -76,10 +78,26 @@ public class LBoardDAO {
 		return board;
 	}
 
-	public int deleteBoard(Connection conn, int type) throws Exception{
+	public int deleteBoard(Connection conn, int no) throws Exception{
 		
+		int result = 0;
 		
-		return 0;
+		try {
+			
+			String sql = prop.getProperty("deleteBoard");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, no);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 }

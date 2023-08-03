@@ -12,6 +12,13 @@
 		JOIN MEMBER USING(MEMBER_NO)
 		WHERE BOARD_NO = ?
 	</entry>
+	
+	<!-- 게시글 삭제 -->
+	<entry key="deleteBoard">
+		UPDATE BOARD
+		SET BOARD_ST = 'Y'
+		WHERE BOARD_NO = ?
+	</entry>
 
 
 </properties>

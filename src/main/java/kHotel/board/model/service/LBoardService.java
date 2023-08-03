@@ -34,16 +34,16 @@ public class LBoardService {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int deleteBoard(int type) throws Exception{
+	public int deleteBoard(int no) throws Exception{
 		
 		Connection conn = getConnection();
 		
-		int result = dao.deleteBoard(conn, type);
+		int result = dao.deleteBoard(conn, no);
 		
+		if(result > 0) commit(conn);
+		else			rollback(conn);
 		
-		
-		
-		return 0;
+		return result;
 	}
 
 }
