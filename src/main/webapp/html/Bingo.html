@@ -34,102 +34,51 @@
 
                     <div class="J-game">New Game</div>
 
-                        <table id="J-bingo">
-                            <tr>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                                <td>
-                                    <img src="../resources/images/노빙고 ㅠ.png">
-                                </td>
-                            </tr>
-
-                        </table>
-
-                    <input type="text" id="J-bingo2">랜덤뽑기</input>
-                    <button id="J-main">랜덤뽑기</button>
-                </div>
+                    <table id="J-bingo" style="border: 1px">
+                        <tr id="tr1">
+                            <td><img src="../resources/images/노빙고 ㅠ.png"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="tr2">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="tr3">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="tr4">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr id="tr5">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                
+                    </table>
+                
+                    <form action="https://www.naver.com/" onsubmit="return bingo()">
+                        <input type="text" name="input" id="input">
+                        <button id="btn">제출</button>
+                    </form>
+                
+                    <span>빙고 : </span><span id="J-main"></span>
 
 
             </main>

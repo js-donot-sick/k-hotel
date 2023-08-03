@@ -1,23 +1,3 @@
-document.getElementsByClassName("J-game")[0].addEventListener("click", function(){
-
-    const bingo =  document.getElementById("J-bingo");
-
-    const btn1 = document.getElementById("J-bingo2");
-    const btn2 = document.getElementById("J-main");
-    
-    this.style.display = "none";
-
-    bingo.style.visibility = "visible"; 
-    btn1.style.visibility = "visible"; 
-    btn2.style.visibility = "visible"; 
-
-
-    
-})
-
-
-/* --------------------------------------------------------------------------- */
-
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // 수정할 사항
 // "25   "이런 식으로 뛰어쓰기 포함되어 입력되었을 때도 25라고 인식할 수 있게

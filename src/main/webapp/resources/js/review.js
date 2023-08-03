@@ -1,6 +1,6 @@
 
 const inputImage = document.getElementsByName("JreviewImage")[0];
-const preview = document.getElementById("J-reviewImage3");
+c
 const deleteBtn = document.getElementById("J-delBtn");
 
 
