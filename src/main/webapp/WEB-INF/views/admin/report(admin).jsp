@@ -65,7 +65,7 @@
                                 <td>${board.reportDt}</td>
                                 <td>익명</td>
                                 <td>
-                                    <button>
+                                    <button onclick="location.href='${contextPath}/board/review/show?no=${board.boardNo}'">
                                         리뷰<br>
                                         확인
                                     </button>
