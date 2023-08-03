@@ -87,7 +87,7 @@
             </div>
         </div>
         <div> <!-- 버튼 div -->
-            <button id="k-book-to-main"><a href="#">메인으로</a></button>
+            <button id="k-book-to-main"><a href="${contextPath}">메인으로</a></button>
         </div>
 
     </div>
