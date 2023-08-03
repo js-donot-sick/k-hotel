@@ -60,7 +60,7 @@
                                 <div>${board.boardTitle}</div>
                                 <div></div>
                                 <div>${board.boardDt}</div>
-                                <a href="#"><button class="P-qna-btn">상세내역</button></a>
+                                <button class="P-qna-btn" onclick="location.href='${contextPath}/board/qna/boardDetail?type=2&no=${board.boardNo}'">상세내역</button>
                             </div>
                         </c:forEach>
                         
