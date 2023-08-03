@@ -33,9 +33,8 @@
             <div class="L-banner">
                 <ul class="L-slide">
                     <li><img src="resources/images/main사진 4.jpg" class="L-slideImg" alt=""></li>
-                    <li><img src="resources/images/main1.jpg" class="L-slideImg" alt=""></li>
-                    <li><img src="resources/images/main2.jpg" class="L-slideImg" alt=""></li>
-                    <li><img src="resources/images/main3.jpg" class="L-slideImg" alt=""></li>
+                    <li><img src="resources/images/메인1.png" class="L-slideImg" alt=""></li>
+                    <li><img src="resources/images/메인2.png" class="L-slideImg" alt=""></li>
                 </ul>
                 <div class="L-controller">
                     <span class="L-prev">&lang;</span>
