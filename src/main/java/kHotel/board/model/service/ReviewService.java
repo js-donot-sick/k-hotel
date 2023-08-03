@@ -9,6 +9,7 @@ import kHotel.admin.model.vo.LAdminReport;
 import kHotel.board.model.dao.ReviewDAO;
 import kHotel.board.model.vo.Board;
 import kHotel.common.Util;
+import kHotel.member.model.vo.Member;
 import kHotel.member.model.vo.PPagination;
 
 import static kHotel.common.JDBCTemplate.*;
@@ -70,6 +71,28 @@ public class ReviewService {
 		}
 		
 		
+		return result;
+	}
+
+
+	/** 리뷰 삭제 
+	 * @param loginMember
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteReview(Member loginMember, int boardNo) throws Exception{
+
+		Connection conn = getConnection();
+		
+		int result = dao.deleteReview(conn,loginMember,boardNo);
+		
+		if(result > 0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+				
 		return result;
 	}
 

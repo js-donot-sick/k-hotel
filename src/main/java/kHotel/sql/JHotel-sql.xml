@@ -38,7 +38,7 @@
 	<!-- 리뷰 등록 -->
 	<entry key="reviewUpdate">
 		INSERT INTO BOARD VALUES(SEQ_BOARD_NO.NEXTVAL,'리뷰', ? ,DEFAULT,
-									DEFAULT , 3 , ? , ? ,NULL)
+									DEFAULT , 3 , ? , ? ,?)
 	</entry>
 	
 	<!-- 다음 게시글 번호 얻어옴 -->

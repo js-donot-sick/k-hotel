@@ -23,6 +23,7 @@
 
                     <div class="J-body2">
 
+                        <input type="hidden" value="${rv.bookNo}" name="bookNo">
 
                         <div class="J-body2-1">
                             리뷰 / 벌점 작성
