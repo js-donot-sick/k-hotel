@@ -22,7 +22,7 @@
 
     <div class="L-main">
 
-        <div class="L-title1">질문 게시판 상세페이지</div>
+        <div class="L-title1">질문게시판 상세페이지</div>
         
         <form class="L-form-main" method="POST" action="${contextPath}/board/qna/update?type=2&cp=${param.cp}&no=${param.no}">
 
@@ -45,7 +45,7 @@
             </div>
 
             <div class="L-btn">
-                <div><button type="button">목록으로</button></div>
+                <div><button type="button" onclick="location.href='${contextPath}/board/qna?type=2&cp=1'">목록으로</button></div>
 
                 <c:if test="${loginMember.memberId == board.memberId}">
                     <div><button type="submit">게시글 수정</button></div>
