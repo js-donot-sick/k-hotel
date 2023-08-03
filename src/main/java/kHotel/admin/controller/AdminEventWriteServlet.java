@@ -40,7 +40,7 @@ public class AdminEventWriteServlet extends HttpServlet {
 				 // 무슨 게시글 수정할지
 				 int eventNo = Integer.parseInt(req.getParameter("no"));
 				 
-				 System.out.println("get에서 no : " + eventNo);
+				 //System.out.println("get에서 no : " + eventNo);
 				 
 				 // 수정 화면에 들어갈 내용
 				 Event event = new KBoardService().selectEventDetail(eventNo);
@@ -152,13 +152,13 @@ public class AdminEventWriteServlet extends HttpServlet {
 
 			if (mode.equals("update")) {
 				
-				System.out.println("post에서 no : " + mpReq.getParameter("no"));
+				//System.out.println("post에서 no : " + mpReq.getParameter("no"));
 
 				int eventNo = Integer.parseInt(mpReq.getParameter("no")); // 어떤 게시글 수정할 건지
 				
 				String deleteList = mpReq.getParameter("deleteList"); // 이미지 변경사항(삭제) 목록
 				
-				System.out.println("deleteList : "+deleteList);
+				//System.out.println("deleteList : "+deleteList);
 				
 				event.setEventNo(eventNo);
 				
