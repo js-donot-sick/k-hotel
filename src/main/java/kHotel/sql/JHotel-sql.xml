@@ -110,7 +110,7 @@
 	<!-- 리뷰 수정 -->
 	<entry key="reviewAlter">
 		UPDATE BOARD
-		SET BOARD_CONTENT = ?
+		SET BOARD_CONTENT = ?, REVIEW_STAR = ?
 		WHERE BOARD_CONTENT = ?
 		AND BOARD_CD = 3
 		AND MEMBER_NO = ?
@@ -134,6 +134,15 @@
 		SET IMG_REVIEW_RENAME = ? 
 		WHERE BOARD_NO = ?
 		AND IMG_REVIEW_RENAME = ?
+	</entry>
+
+	<!-- 태그 수정 -->
+	<entry key="tagUpdate">
+		UPDATE TAG
+		SET TAG_CONTENT = ?
+		WHERE BOARD_NO = ?
+		AND TAG_CONTENT = ?
+		AND TAG_ST = 'Y'
 	</entry>
 	
 </properties>
