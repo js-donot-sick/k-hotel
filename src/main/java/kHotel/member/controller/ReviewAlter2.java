@@ -51,7 +51,7 @@ public class ReviewAlter2 extends HttpServlet{
 			String name = files.nextElement();
 			String rename = mpReq.getFilesystemName(name);
 			
-			reviewImg = req.getParameter("reviewImg");
+			reviewImg = req.getParameter("updateImg2");
 		
 			
 			
@@ -59,7 +59,6 @@ public class ReviewAlter2 extends HttpServlet{
 				
 				
 				image.setRename(folderPath + rename);
-				/* image.setImageLevel(Integer.parseInt(name)); */
 				
 			}
 		}
@@ -79,6 +78,7 @@ public class ReviewAlter2 extends HttpServlet{
 		System.out.println(roomName + "t1q");
 		System.out.println(pic + "t1q");
 		System.out.println(tag );
+		
 		int star = Integer.parseInt(mpReq.getParameter("star"));
 		
 		
@@ -96,7 +96,8 @@ public class ReviewAlter2 extends HttpServlet{
 		
 		
 		// ------------수정 할 게시글 정보------------------------
-		String updateImg = mpReq.getParameter("updateImg2");
+	
+		String updateImg = image.getRename();
 		String updateContent = mpReq.getParameter("updateContent");
 		int updateStar = Integer.parseInt(mpReq.getParameter("updateStar"));
 		String[] tag2 = mpReq.getParameterValues("updateTag");
@@ -107,11 +108,10 @@ public class ReviewAlter2 extends HttpServlet{
 			updateTag = String.join(",,", tag2);
 		}
 		
-		System.out.println(mpReq.getParameter("updateImg2"));
-		System.out.println("1 : " + updateImg);
+		System.out.println("1 : " + image.getRename());
 		System.out.println("2 : " + updateContent);
 		System.out.println("3 : " + updateStar);
-		System.out.println("4 : " + tag2);
+		System.out.println("4 : " + updateTag);
 		
 		
 		Review updateReview = new Review();

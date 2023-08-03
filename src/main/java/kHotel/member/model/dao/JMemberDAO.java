@@ -541,4 +541,37 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 	}
 
 
+	/** 태그 수정
+	 * @param conn
+	 * @param boardNo
+	 * @param updateReview
+	 * @param rvUpdate2
+	 * @return result
+	 * @throws Exception
+	 */
+	public int tagUpdate(Connection conn, int boardNo, Review updateReview, Review rvUpdate2) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("tagUpdate");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			
+			
+			pstmt.setString( 1, updateReview.getTag());
+			pstmt.setInt(2, boardNo);
+			pstmt.setString(3, rvUpdate2.getTag());
+			
+			
+		}finally {
+			
+			
+		}
+		
+		
+		return 0;
+	}
+
+
 }
