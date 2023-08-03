@@ -87,27 +87,27 @@
                         <img src="${contextPath}/resources/images/Deluxe-Room_JongRo_1.jpg" class="L-roomimg" id="L-room1">
                         <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
- <p>디럭스 룸</p> 침대타입 <span>|</span> 더블/트윈/트리플 전망 시티뷰 
- 투숙인원 <span>|</span> 2 명 
- 객실면적 <span>|</span> 40~46 m²
+ <p>디럭스 룸</p> 침대타입 <span>|</span> 더블/트윈 사이즈 
+ 투숙인원 <span>|</span> 성인 2인 기준, 최대 3인 
+ 객실면적 <span>|</span> 46.3㎡
                         </pre>
                     </div>
                     <div class="L-roompoint-border L-roomA1" id="LroomG2" >
                         <img src="${contextPath}/resources/images/standard-Room_JongRo_2.jpg" class="L-roomimg1" id="L-room2">
                         <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
- <p>스탠다드 룸</p> 침대타입 <span>|</span> 더블/트윈 전망 시티뷰 
- 투숙인원 <span>|</span> 2 명 
- 객실면적 <span>|</span> 26.7 ㎡ ~ 30.7㎡
+ <p>스탠다드 룸</p> 침대타입 <span>|</span> 더블 사이즈
+ 투숙인원 <span>|</span> 성인 2인 기준, 최대 3인 
+ 객실면적 <span>|</span> 57.0㎡
                         </pre>
                     </div>
                     <div class="L-roompoint-border L-roomA" id="LroomG3">
                         <img src="${contextPath}/resources/images/suite-Room_JongRo_2.jpg" class="L-roomimg" id="L-room3">
                         <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
- <p>스위트 룸</p> 침대타입 <span>|</span> 더블 전망 시티뷰 
- 투숙인원 <span>|</span> 2명 
- 객실면적 <span>|</span> 460.8 m²
+ <p>스위트 룸</p> 침대타입 <span>|</span> 킹 사이즈 
+ 투숙인원 <span>|</span> 성인 2인 기준, 최대 3인 
+ 객실면적 <span>|</span> 124.4㎡
                         </pre>
                     </div>
                 </div>

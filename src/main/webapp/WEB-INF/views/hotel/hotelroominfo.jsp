@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="${contextPath}/resources/css/hotelroominfo.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-    <title>회원 정보 확인</title>
+    <title>객실 소개 - 강남</title>
 </head>
 <body>
     
@@ -75,7 +75,7 @@
                         </li>
                         <br>
                         <li>
-                            객실 면적: 97.4㎡ (1침실, 1거실, 1욕실, 1화장실, 1다이닝)
+                            객실 면적: 57.4㎡ (1침실, 1거실, 1욕실, 1화장실, 1다이닝)
                         </li>
                         <br>
                         <li>
