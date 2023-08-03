@@ -140,13 +140,12 @@ public final class LoginServlet extends HttpServlet {
 					if(loginMember.getMemberAdmin() == 'N'){ // 일반 회원일 때
 						resp.sendRedirect(req.getContextPath());
 					} else { // 관리자일 때
-						String path = "/WEB-INF/views/admin/AdminMember.jsp";
+						String path = req.getContextPath() + "/admin/memberAdmin?type=1";
 						
-						System.out.println(loginMember.getMemberAdmin());
+						//System.out.println(loginMember.getMemberAdmin());
 						
-						RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+						resp.sendRedirect(path);
 						
-						dispatcher.forward(req, resp);
 					}
 					
 				}

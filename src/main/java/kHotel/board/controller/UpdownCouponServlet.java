@@ -30,7 +30,7 @@ public class UpdownCouponServlet extends HttpServlet {
 			int result = new KBoardService().gameCoupon(memberNo);
 			
 			if(result>0) {
-				session.setAttribute("message", "성공! 쿠폰 지급 이거 이클립스다");
+				//session.setAttribute("message", "성공! 쿠폰 지급 이거 이클립스다");
 			} else {
 				session.setAttribute("message", "게임 성공은 했는데 쿠폰 insert과정에 문제 발생..");
 			}

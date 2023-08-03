@@ -8,7 +8,7 @@ const ta = document.getElementById('emailMessage');
 
 let count = 0; // 입력한 횟수 저장 변수
 
-ta.innerHTML=random;
+//ta.innerHTML=random;
 
 /* btn.addEventListener("click", function () {
     inputcheck();
@@ -97,7 +97,7 @@ function inputcheck() {
                     url : contextPath + "/event/updown/coupon",
                     
                     success : function(result){
-                        //alert("정답입니다. 쿠폰");
+                        alert("정답입니다. 쿠폰");
                     },
 
                     error : function(){
