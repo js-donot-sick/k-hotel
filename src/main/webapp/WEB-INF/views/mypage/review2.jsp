@@ -17,7 +17,7 @@
             <main>
 
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
-                <form action="reviewAlter"  method="POST" > 
+                <form action="${contextPath}/board/review/reviewAlter" enctype="multipart/form-data"  method="POST" > 
                 <div class="J-body">
 
                     <div class="J-body2">
@@ -74,7 +74,7 @@
                                         <button type="button" id="J-delBtn">사진 지우기</button>
                                     </td>
                                     <td colspan="3" id="J-reviewImg1">
-                                        <img type="file" src="" id="J-reviewImage3" name="updateImg">
+                                        <img type="file" src="${contextPath}${image.rename}" id="J-reviewImage3" name="updateImg">
                                     </td>
                                 </tr>
                                 
@@ -139,7 +139,7 @@
                                     </td>
 
                                     <td colspan="3">
-                                        <textarea id="J-text1"  name="updateContent" value="${rvUpdate.boardContent}"></textarea>
+                                        <textarea id="J-text1"  name="updateContent" value="${rvUpdate.content}"></textarea>
                                     </td>
                                 </tr>
                             </table>
@@ -157,14 +157,14 @@
                     <input type="hidden" name="reviewTitle" value="리뷰입니다.">
                 </div>
                 <input type="hidden" name="rating2" class="star3">
-            aaaaaaaaaaa   ${rvUpdate.memberId}
-                <input type="hidden" name="memberId" value="${rvUpdate.memberId}">
-                <input type="hidden" name="hotelName" value="${rvUpdate.hotelTitle}">
+           
+                <input type="hidden" name="memberId" value="${rvUpdate.userId}">
+                <input type="hidden" name="hotelName" value="${rvUpdate.hotelName}">
                 <input type="hidden" name="roomName" value="${rvUpdate.roomName}">
-                <input type="hidden" name="pic" value="${rvUpdate.imageRename}">
-                <input type="hidden" name="content" value="${rvUpdate.boardContent}">
-                <input type="hidden" name="tag" value="${rvUpdate.tagContent}">
-                <input type="hidden" name="star" value="${rvUpdate.reviewStar}">
+                <input type="hidden" name="pic" value="${rvUpdate.reviewImg}">
+                <input type="hidden" name="content" value="${rvUpdate.content}">
+                <input type="hidden" name="tag" value="${rvUpdate.tag}">
+                <input type="hidden" name="star" value="${rvUpdate.star}">
                 
             </form>
                 <!-- ------------------------------------------------------------------------- -->
