@@ -17,7 +17,8 @@
             <main>
 
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
-                <form action="review4" enctype="multipart/form-data" method="POST" >
+                <form action="${contextPath}/board/review/show" enctype="multipart/form-data" method="POST" >
+                    
                 <div class="J-body">
 
                     <div class="J-body2">
@@ -37,7 +38,7 @@
                                     </td>
 
                                     <td>
-                                        <input type="text" placeholder="작성자명" id="J-text" value="${loginMember.memberId}">
+                                        <input type="text" placeholder="작성자명" id="J-text" value="${loginMember.memberId}" name="Pname"> 
                                     </td>
 
                                     <td id="J-text3">
@@ -45,7 +46,7 @@
                                     </td>
 
                                     <td>
-                                        <input type="text" placeholder="작성일" id="J-text" value="${rv.hotelName}">
+                                        <input type="text" placeholder="작성일" id="J-text" value="${rv.hotelName}" name="Photel">
                                     </td>
                                 </tr>
 
@@ -55,7 +56,7 @@
                                     </td>
 
                                     <td>
-                                        <input type="text" value="${rv.roomName}"> 
+                                        <input type="text" value="${rv.roomName}" name="Proom"> 
                                     </td>
 
                                     <td id="J-text3">
@@ -140,7 +141,7 @@
                                     </td>
 
                                     <td colspan="3">
-                                        <textarea id="J-text1" placeholder="내용을 입력해주세요" name="reviewContent"></textarea>
+                                        <textarea id="J-text1" placeholder="내용을 입력해주세요" name="reviewContent" name="Pcontent"></textarea>
                                     </td>
                                 </tr>
                             </table>
