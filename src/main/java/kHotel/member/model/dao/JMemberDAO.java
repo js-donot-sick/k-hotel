@@ -396,6 +396,8 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			pstmt.setString(1, rvUpdate.getContent());
 			pstmt.setString(2, loginMember.getMemberId());
 			
+			System.out.println(rvUpdate.getContent()+" 아직도?");
+			
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {

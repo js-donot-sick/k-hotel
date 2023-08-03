@@ -157,6 +157,7 @@ public class JMemberService {
 		
 		// boardNo 얻어오기
 		int boardNo = dao.getBoardNo(conn, rvUpdate , loginMember);
+		System.out.println(boardNo + "서빗 보드넘버");
 		
 		// 게시글 수정
 		int result = dao.reviewAlter(conn, rvUpdate, loginMember, boardNo, updateReview);

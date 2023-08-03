@@ -32,6 +32,7 @@ public class ReviewAlterServlet extends HttpServlet{
 		String roomName = req.getParameter("roomName");
 		String pic = req.getParameter("pic");
 		String tag = req.getParameter("tag"); 
+		String content = req.getParameter("content");
 		int star = Integer.parseInt(req.getParameter("star"));
 
 		Review rvUpdate = new Review();
@@ -42,6 +43,7 @@ public class ReviewAlterServlet extends HttpServlet{
 		rvUpdate.setReviewImg(pic);
 		rvUpdate.setTag(tag);
 		rvUpdate.setStar(star);
+		rvUpdate.setContent(content);
 		
 		
 		
