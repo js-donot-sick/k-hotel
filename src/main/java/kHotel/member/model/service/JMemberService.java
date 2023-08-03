@@ -151,16 +151,16 @@ public class JMemberService {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int reviewAlter(Review rvUpdate, Member loginMember, Review updateReview) throws Exception {
+	public int reviewAlter(Review rvUpdate2, Member loginMember, Review updateReview) throws Exception {
 		
 		Connection conn = getConnection();
 		
 		// boardNo 얻어오기
-		int boardNo = dao.getBoardNo(conn, rvUpdate , loginMember);
+		int boardNo = dao.getBoardNo(conn, rvUpdate2 , loginMember);
 		System.out.println(boardNo + "서빗 보드넘버");
 		
 		// 게시글 수정
-		int result = dao.reviewAlter(conn, rvUpdate, loginMember, boardNo, updateReview);
+		int result = dao.reviewAlter(conn, rvUpdate2, loginMember, boardNo, updateReview);
 		
 		System.out.println( result + "리뷰 내용 수정");
 		
@@ -168,7 +168,7 @@ public class JMemberService {
 			System.out.println( result + "이미지 수정을 위한 조건문");
 			
 			// 이미지 수정
-			result = dao.imgUpdate(conn, boardNo , updateReview, rvUpdate );
+			result = dao.imgUpdate(conn, boardNo , updateReview, rvUpdate2 );
 		}
 		
 		System.out.println(result + "서빗");
