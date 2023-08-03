@@ -90,8 +90,8 @@ public class ReviewAlter2 extends HttpServlet{
 		rvUpdate2.setRoomName(roomName);
 		rvUpdate2.setReviewImg(pic);
 		rvUpdate2.setTag(tag);
-		rvUpdate2.setStar(star);
 		rvUpdate2.setContent(content);
+		rvUpdate2.setStar(star);
 		// ----------------------------------------------
 		
 		

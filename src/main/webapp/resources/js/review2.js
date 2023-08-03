@@ -9,12 +9,12 @@ document.getElementById("J-alter").addEventListener("click", function(){
 })
 
 const inputImage = document.getElementsByName("JreviewImage")[0];
-const preview = document.getElementById("J-reviewImage3");
-const preview2 = document.getElementById("J-reviewImage4");
+const preview = document.getElementById("J-reviewImage3"); // 수정될 이미지
+const preview2 = document.getElementById("J-reviewImage4"); // 수정 전 리뷰 이미지
 
 
 
-inputImage.addEventListener("change", function(){
+inputImage.addEventListener("change", function(){ // 수정될 이미지
 
     if(inputImage.files != undefined){
         const reader = new FileReader(); // 선택된 파일을 읽을 객체 생성
@@ -31,7 +31,7 @@ inputImage.addEventListener("change", function(){
     }
 })
 
-inputImage.addEventListener("change", function(){
+inputImage.addEventListener("change", function(){ // 수정 전 리뷰 이미지
 
     if(inputImage.files != undefined){
         const reader = new FileReader(); // 선택된 파일을 읽을 객체 생성
