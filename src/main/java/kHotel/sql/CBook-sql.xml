@@ -59,7 +59,7 @@
 	<!-- 게시글 작성 -->
 	<entry key="insertBoard">
 		INSERT INTO BOARD 
-		VALUES(SEQ_BOARD_NO.NEXTVAL,?,?,DEFAULT,DEFAULT,2,?,NULL)
+		VALUES(SEQ_BOARD_NO.NEXTVAL,?,?,DEFAULT,DEFAULT,2,?,NULL,NULL)
 	</entry>
 	
 	<!-- 게시글 수정 -->

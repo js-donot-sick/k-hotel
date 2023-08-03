@@ -27,6 +27,7 @@ public class ReviewShowServelt extends HttpServlet {
 		String contextPath = req.getContextPath();
 		String command = uri.substring((contextPath + "/board/review/").length());
 		ReviewService service = new ReviewService();
+		
 
 		try {
 
