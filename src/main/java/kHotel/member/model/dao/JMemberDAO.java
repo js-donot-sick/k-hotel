@@ -435,9 +435,10 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, updateReview.getContent());
-			pstmt.setString(2, rvUpdate2.getContent());
-			pstmt.setInt(3, loginMember.getMemberNo());
-			pstmt.setInt(4, rvUpdate2.getStar());
+			pstmt.setInt(2, updateReview.getStar());
+			pstmt.setString(3, rvUpdate2.getContent());
+			pstmt.setInt(4, loginMember.getMemberNo());
+			pstmt.setInt(5, rvUpdate2.getStar());
 			
 			
 			System.out.println(updateReview.getContent() +"리뷰 수정 DAO");
@@ -563,14 +564,17 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			pstmt.setInt(2, boardNo);
 			pstmt.setString(3, rvUpdate2.getTag());
 			
+			result = pstmt.executeUpdate();
+			
+			System.out.println(result + " 태그 수정");
 			
 		}finally {
 			
-			
+			close(pstmt);
 		}
 		
 		
-		return 0;
+		return result;
 	}
 
 
