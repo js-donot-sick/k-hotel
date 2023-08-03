@@ -28,4 +28,22 @@ public class LBoardService {
 		return board;
 	}
 
+
+	/** 게시글 삭제 Service
+	 * @param type
+	 * @return result
+	 * @throws Exception
+	 */
+	public int deleteBoard(int type) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int result = dao.deleteBoard(conn, type);
+		
+		
+		
+		
+		return 0;
+	}
+
 }
