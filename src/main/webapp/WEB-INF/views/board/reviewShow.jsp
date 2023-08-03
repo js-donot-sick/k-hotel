@@ -256,7 +256,7 @@
                                     </div>
                                     <div class="P-rs-btn">
 
-                                        <c:if test="${loginMember.memberNo == board.boardNo}">
+                                        <c:if test="${loginMember.memberNo == board.memberNo}">
 
                                             <form action="update" method="POST">
                                                 <button id="P-rs-update-btn">수정</button>
@@ -324,7 +324,7 @@
                                                 <li><a class="c-current">${i}</a></li>
                                             </c:when>
                                             <c:otherwise>
-                                                <li><a href="${url}${i}${searchUrl}">${i}</a></li>
+                                                <li><a href="${url}${i}">${i}</a></li>
                                             </c:otherwise>
                                         </c:choose>
                                     </c:forEach>

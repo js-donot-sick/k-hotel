@@ -61,7 +61,7 @@
                                     <div>${board.boardTitle}</div>
                                     <div></div>
                                     <div>${board.boardDt}</div>
-                                    <a href="#"><button class="P-wirte-btn">상세내역</button></a>
+                                    <button class="P-wirte-btn" onclick="location.href='${contextPath}/board/review/show?cp=1&no=${board.boardNo}'">상세내역</button>
                                 </div>
                             </c:forEach>
 
@@ -70,23 +70,7 @@
                         
                         </div>
 
-                        <nav aria-label="Page navigation example" class="P-pg">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous" style="color: black;">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#" style="color: black;">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#" style="color: black;">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#" style="color: black;">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next" style="color: black;">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                        
 
                     </div>
                 </div>
