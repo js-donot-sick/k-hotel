@@ -171,6 +171,23 @@ public class JMemberService {
 		return result;
 	}
 
+	/** 회원 가입을 했을 떄 이벤트 참여 여부를 N으로 넣는 Service
+	 * @param member
+	 * @return event
+	 * @throws Exception
+	 */
+	public int insertEventCheck(Member member) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int event = dao.insertEventCheck(conn, member);
+		
+		if(event > 0) commit(conn);
+		else		  rollback(conn);
+		
+		return event;
+	}
+
 
 
 

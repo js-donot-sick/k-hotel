@@ -63,35 +63,35 @@
                             <div class="J-J">
                                 
                                 <div class="J-J1">
-                                    <input type="text" class="J-J1-1 J-A" id="J-B" placeholder="* 특수문자 제외 6~12글자" name="memberId"> 
+                                    <input type="text" class="J-J1-1 J-A" id="J-B" placeholder="* 특수문자 제외 6~12글자" name="memberId" autocomplete="off"> 
                                     <div class="J-J1-11"></div>
                                 </div>
                                 
                                 <div class="J-J2">
-                                    <input type="text" class="J-J1-2 J-A" id="J-B" placeholder="* 대소문자, 특수문자 포함 8~15글자" name="memberPw">
+                                    <input type="text" class="J-J1-2 J-A" id="J-B" placeholder="* 대소문자, 특수문자 포함 8~15글자" name="memberPw" autocomplete="off">
                                     <div id="J-H2-1"></div>
                                     
                                 </div >
                                 
                                 <div class="J-J3">
-                                    <input type="text" class="J-J1-3 J-A" id="J-B" name="memberPw2">
+                                    <input type="text" class="J-J1-3 J-A" id="J-B" name="memberPw2" autocomplete="off">
                                     <div  id="J-J3-1"></div>
                                 </div >
                                 
                                 <div class="J-J4">
-                                    <input type="text" id="J-B" class="J-A" name="memberName">
+                                    <input type="text" id="J-B" class="J-A" name="memberName" autocomplete="off">
                                 </div >
                                 
                                 <div class="J-J5">
-                                    <input type="text"id="J-C" class="J-A" name="memberPno" maxlength="10">&nbsp;-&nbsp;<input type="text"  id="J-C" name="memberPno" maxlength="10"> 
+                                    <input type="text"id="J-C" class="J-A" name="memberPno" maxlength="10">&nbsp;-&nbsp;<input type="text"  id="J-C" name="memberPno" maxlength="10" autocomplete="off"> 
                                 </div>
                                 
                                 <div class="J-J6">
-                                    <input type="text" id="J-B" class="J-A J-Tel" placeholder=" '-' 제외하고 입력" name="memberTel" maxlength="11">
+                                    <input type="text" id="J-B" class="J-A J-Tel" placeholder=" '-' 제외하고 입력" name="memberTel" maxlength="11" autocomplete="off">
                                 </div>
                                 
                                 <div class="J-J7">
-                                    <input type="text" id="J-B" class="J-A" name="memberEmail">
+                                    <input type="text" id="J-B" class="J-A" name="memberEmail" autocomplete="off">
                                 </div>
                                 
                                 
