@@ -49,7 +49,7 @@
 
                 <c:if test="${loginMember.memberId == board.memberId}">
                     <div><button type="submit">게시글 수정</button></div>
-                    <div><button type="button">게시글 삭제</button></div>
+                    <div><button type="button" id="LdeleteBtn">게시글 삭제</button></div>
                 </c:if>
 
             </div>

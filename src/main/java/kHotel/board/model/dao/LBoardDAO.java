@@ -76,4 +76,10 @@ public class LBoardDAO {
 		return board;
 	}
 
+	public int deleteBoard(Connection conn, int type) throws Exception{
+		
+		
+		return 0;
+	}
+
 }
