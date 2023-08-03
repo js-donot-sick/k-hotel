@@ -28,7 +28,7 @@ public class EventEndServlet extends HttpServlet{
 			
 			req.setAttribute("eventEndList", eventEndList);
 			
-			System.out.println(eventEndList);
+			System.out.println("종료된 이벤트들 : " + eventEndList);
 					
 			
 		} catch (Exception e) {

@@ -12,7 +12,7 @@
 
 
             <link rel="stylesheet" href="${contextPath}/resources/css/FAQ.css">
-            <link rel="stylesheet" href="resources/css/AdminHeader.css">
+            <link rel="stylesheet" href="${contextPath}/resources/css/AdminHeader.css">
         </head>
 
         <body>
