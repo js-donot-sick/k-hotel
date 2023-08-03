@@ -18,8 +18,10 @@
 
             url += type + no;
 
+            console.log(url);
+
             if(confirm("정말로 삭제 하시겠습니까?")){
-                location.herf = url; // get방식
+                location.href = url; // get방식
             }
 
         });
