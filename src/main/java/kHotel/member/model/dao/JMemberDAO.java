@@ -438,6 +438,12 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			pstmt.setInt(3, loginMember.getMemberNo());
 			pstmt.setInt(4, rvUpdate.getStar());
 			
+			
+			System.out.println(updateReview.getContent() +"리뷰 수정 DAO");
+			System.out.println( rvUpdate.getContent());
+			System.out.println(loginMember.getMemberNo());
+			System.out.println(rvUpdate.getStar());
+			
 			result = pstmt.executeUpdate();
 			System.out.println(result + "디에오");
 			
@@ -501,6 +507,36 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 		}
 		
 		return memberNo;
+	}
+
+
+	/** 리뷰 이미지 수정
+	 * @param conn
+	 * @param boardNo
+	 * @param updateReview
+	 * @param rvUpdate 
+	 * @return result
+	 * @throws Exception
+	 */
+	public int imgUpdate(Connection conn, int boardNo, Review updateReview, Review rvUpdate) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("imgUpdate");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, updateReview.getReviewImg());
+			pstmt.setInt(2, boardNo);
+			pstmt.setString(3, rvUpdate.getReviewImg());
+			
+			result = pstmt.executeUpdate();
+			
+			System.out.println(result + "이미지 수정 DAO 제발 1떠라");
+		}finally {
+			close(pstmt);
+		}
+		return result;
 	}
 
 

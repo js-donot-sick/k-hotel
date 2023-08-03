@@ -162,6 +162,15 @@ public class JMemberService {
 		// 게시글 수정
 		int result = dao.reviewAlter(conn, rvUpdate, loginMember, boardNo, updateReview);
 		
+		System.out.println( result + "리뷰 내용 수정");
+		
+		if(result > 0) {
+			System.out.println( result + "이미지 수정을 위한 조건문");
+			
+			// 이미지 수정
+			result = dao.imgUpdate(conn, boardNo , updateReview, rvUpdate );
+		}
+		
 		System.out.println(result + "서빗");
 		if(result > 0 ) commit(conn);
 		else			rollback(conn);
@@ -182,6 +191,7 @@ public class JMemberService {
 		int memberNo = dao.selectMemberNo(conn);
 		
 		int event = dao.insertEventCheck(conn,memberNo);
+		
 		
 		if(event > 0) commit(conn);
 		else		  rollback(conn);

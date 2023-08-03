@@ -45,6 +45,7 @@ public class ReviewAlterServlet extends HttpServlet{
 		rvUpdate.setStar(star);
 		rvUpdate.setContent(content);
 		
+		System.out.println(rvUpdate.getReviewImg() + "작성된 리뷰 이미지 경로 ~~");
 		
 		
 		String path = "/WEB-INF/views/mypage/review2.jsp";
