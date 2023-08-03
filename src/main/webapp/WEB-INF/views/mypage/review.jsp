@@ -17,7 +17,7 @@
             <main>
 
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
-                <form action="${contextPath}/board/review/show" enctype="multipart/form-data" method="POST" >
+                <form action="${contextPath}/member/mypage/review4" enctype="multipart/form-data" method="POST" >
                     
                 <div class="J-body">
 

@@ -92,6 +92,7 @@ public class JMemberDAO {
 			 pstmt.setString(1, rv.getContent()); 
 			pstmt.setInt(2, rv.getMemberNo());
 			 pstmt.setInt(3, rv.getStar()); 
+			 pstmt.setInt(4, rv.getBookNo()); 
 			
 			
 			result = pstmt.executeUpdate();
