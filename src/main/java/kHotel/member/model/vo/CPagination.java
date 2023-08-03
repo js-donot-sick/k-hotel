@@ -5,7 +5,7 @@ public class CPagination {
 	private int currentPage; // 현재 페이지 번호
 	private int listCount;	 // 전체 게시글 수
 	
-	private int limit = 3; // 한 페이지에 보여질 게시글 수
+	private int limit = 5; // 한 페이지에 보여질 게시글 수
 	private int pageSize = 5; // 목록 하단 페이지 번호 수
 	
 	private int maxPage; // 제일 큰 페이지 번호

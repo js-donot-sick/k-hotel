@@ -450,6 +450,32 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 	}
 
 
+	/** 회원 가입을 했을 떄 이벤트 참여 여부를 N으로 넣는 DAO
+	 * @param conn
+	 * @param member
+	 * @return event
+	 * @throws Exception
+	 */
+	public int insertEventCheck(Connection conn, Member member) throws Exception {
+		int event = 0;
+		
+		try {
+			String sql = prop.getProperty("insertEventCheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, member.getMemberNo());
+			
+			event = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return event;
+	}
+
+
 
 
 }

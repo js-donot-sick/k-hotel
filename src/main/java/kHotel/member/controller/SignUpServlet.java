@@ -35,6 +35,7 @@ public class SignUpServlet extends HttpServlet{
 		String memberEmail = req.getParameter("memberEmail");
 		String[] address = req.getParameterValues("memberAddress");
 		
+		HttpSession session = req.getSession();
 		
 		String memberPno = null;
 		String memberAddress = null;
@@ -64,11 +65,11 @@ public class SignUpServlet extends HttpServlet{
 			
 			int result = jservice.signUp(member);
 			
-			HttpSession session = req.getSession();
-			
-			
 			
 			if(result > 0) { // 성공
+				
+				int event = jservice.insertEventCheck(member);
+				
 				session.setAttribute("message", "KHOTEL에 회원이 되신 걸 환영합니다! 특별 혜택으로 쿠폰을 1개 증정하였습니다.");
 				
 			}else {	// 실패
