@@ -40,7 +40,7 @@
 
                             <div class="P-event-list">
                                 <a href="${contextPath}/event/bingo" class="P-event">
-                                    <img src="" alt="빙고 썸넬 사진">
+                                    <img src="${contextPath}/resources/images/빙고 게임 이미지.png" alt="빙고 썸넬 사진">
                                     <div class="P-event1">
                                         <div class="P-event-name">빙고 게임</div>
                                     </div>
@@ -50,7 +50,7 @@
 
                             <div class="P-event-list">
                                 <a href="${contextPath}/event/updown" class="P-event">
-                                    <img src="" alt="업다운 썸넬 사진">
+                                    <img src="${contextPath}/resources/images/업다운게임_이미지.jpg" alt="업다운 썸넬 사진">
                                     <div class="P-event1">
                                         <div class="P-event-name">업다운 게임</div>
                                     </div>

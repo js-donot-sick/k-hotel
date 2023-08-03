@@ -31,7 +31,7 @@
 
                     <c:if test="${empty couponList}">
 	                    <div class="C-coupon-null">
-	                       회원님이 가지고 계신 쿠폰이 없습니다. 
+	                       보유하신 쿠폰이 없습니다 
 	                    </div>
                     </c:if>
 
