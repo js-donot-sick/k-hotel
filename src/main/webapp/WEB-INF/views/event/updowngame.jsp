@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <div>헤더</div>
+    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <div class="P-top">
         <form action="${contextPath}/event" method="get" name="C-postWrite-main" onsubmit="return inputcheck()">
@@ -40,7 +40,7 @@
         </form>
     </div>
 
-    <div>풋터</div>
+    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <script>
 

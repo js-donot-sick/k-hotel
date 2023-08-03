@@ -20,6 +20,7 @@ ta.innerHTML=random;
     }
 } */
 
+console.log("정답 : " + random);
 
 function inputcheck() {
 
@@ -31,7 +32,8 @@ function inputcheck() {
 
         success : function(result){
             console.log(result);
-            alert("fdgaklfdakl;");
+
+            //alert("fdgaklfdakl;");
         },
 
         error : function(){
@@ -46,11 +48,16 @@ function inputcheck() {
 
     if (isNaN(input.value)) { // 숫자가 아닌 수를 입력할 경우
         ta.innerText = "";
-        alert("숫자를 입력해주세요.");
+        alert("숫자를 입력해주세요");
         input.value = "";
         input.focus();
         return false; // 함수 종료
-    } else {
+    } else if(1>input.value || input.value > 50){
+        alert("1~50 사이의 숫자를 입력해주세요");
+        input.value = "";
+        input.focus();
+        return false; // 함수 종료
+    } else{
         if (input.value.trim().length == 0) { // 공백 입력한 경우
 
             input.value = "";
