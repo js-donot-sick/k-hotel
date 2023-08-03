@@ -96,4 +96,22 @@ public class ReviewService {
 		return result;
 	}
 
+
+	/** 리뷰 상세보기 
+	 * @param boardNo
+	 * @return boardShow
+	 * @throws Exception
+	 */
+	public Board boardReviewShow(int boardNo) throws Exception{
+	
+		Connection conn = getConnection();
+
+		Board boardShow = dao.boardReviewShow(conn,boardNo);
+		
+		close(conn);
+		
+		return boardShow;
+
+	}
+
 }

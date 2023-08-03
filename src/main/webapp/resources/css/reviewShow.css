@@ -47,18 +47,19 @@
 }
 
 /* 드롭박스 */
-.P-dropdown {
+#P-dropdown {
     display: flex;
     justify-content: right;
     padding: 30px;
+    font-size: 16px;
 }
 
-.P-dropdown>select:nth-child(1) {
+#P-dropdown>select:nth-child(1) {
     margin: 0 30px;
     width: 120px;
 }
 
-.P-dropdown>select:nth-child(2) {
+#P-dropdown>select:nth-child(2) {
     width: 120px;
 }
 
@@ -410,3 +411,4 @@
     font-weight: bold;
     border-radius: 50%;
 }
+

@@ -3,8 +3,8 @@
         <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
-            <c:set var="pagination" value="${map.pagination}" />
-            <c:set var="boardList" value="${map.boardList}" />
+            <!-- <c:set var="pagination" value="${map.pagination}" />
+            <c:set var="boardList" value="${map.boardList}" /> -->
 
             <!DOCTYPE html>
             <html lang="en">
@@ -41,35 +41,7 @@
                         <!-- 안에 목록  -->
                         <div class="P-main">
                             <div class="P-reviewTitle">리뷰/별점</div>
-                            <div class="P-dropdown">
-
-                                <!-- 방 선택 -->
-                                <select name="P-pd-rs1" id="P-pd-rs1">
-                                    <option value="">전체보기</option>
-                                    <a href="">
-                                        <option value="">방1</option>
-                                    </a>
-                                    <a href="">
-                                        <option value="">방2</option>
-                                    </a>
-                                </select>
-
-                                <!-- 정렬 -->
-                                <select name="P-pd-rs2" id="P-pd-rs2">
-                                    <option value="">정렬</option>
-                                    <a href="">
-                                        <option value="">최신 순</option>
-                                    </a>
-                                    <a href="">
-                                        <option value="">오래된 순</option>
-                                    </a>
-                                    <a href="">
-                                        <option value="">별점 순 </option>
-                                    </a>
-                                </select>
-                            </div>
-
-                            <c:forEach var="board" items="${boardList}">
+                            
 
                                 <input type="hidden" name="boardNo" value="${board.boardNo}">
                                
@@ -302,40 +274,11 @@
                                     </form>
                                 </div>
 
-                            </c:forEach>
 
 
 
                             <div class="P-blank"></div>
 
-                            <div class="c-coupon-page">
-                                <c:set var="url" value="${contextPath}/board/review/show?cp=" />
-
-                                <ul class="c-pagination">
-                                    <!-- 첫 페이지로 이동 -->
-                                    <li><a href="${url}1${searchUrl}">&lt;&lt;</a></li>
-                                    <!-- 이전 목록 마지막 번호로 이동 -->
-                                    <li><a href="${url}${pagination.prevPage}${searchUrl}">&lt;</a></li>
-
-                                    <!-- 범위가 정해진 일반 for문 사용 -->
-                                    <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}">
-                                        <c:choose>
-                                            <c:when test="${i==pagination.currentPage}">
-                                                <li><a class="c-current">${i}</a></li>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <li><a href="${url}${i}">${i}</a></li>
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </c:forEach>
-
-                                    <!-- 다음 목록 시작 번호로 이동 -->
-                                    <li><a href="${url}${pagination.nextPage}${searchUrl}">&gt;</a></li>
-                                    <!-- 끝 페이지로 이동 -->
-                                    <li><a href="${url}${pagination.maxPage}${searchUrl}">&gt;&gt;</a></li>
-                                </ul>
-
-                            </div>
 
 
                         </div>
