@@ -79,7 +79,7 @@
             </dl>
           </li>
           <li>
-            <a href="#" class="H-side-item">찜</a>
+            <a href="${contextPath}/member/mypage/likePage" class="H-side-item">찜</a>
 
           </li>
         </ul>
