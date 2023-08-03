@@ -150,7 +150,7 @@
 		WHERE BOARD_CD = 3
 	</entry>
 
-	<!-- 리뷰 내용 등록하기 -->
+	<!-- 신고 내용 등록하기 -->
 	<entry key="declar">
 		INSERT INTO REPORT VALUES(?,?,?,DEFAULT)
 	</entry>

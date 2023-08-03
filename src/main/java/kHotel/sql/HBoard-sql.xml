@@ -55,7 +55,7 @@
 
 	<entry key="insertBoard">
 	INSERT INTO BOARD VALUES 
-	( SEQ_BOARD_NO.NEXTVAL, ?, ?, DEFAULT, DEFAULT, 1, 1, NULL)
+	( SEQ_BOARD_NO.NEXTVAL, ?, ?, DEFAULT, DEFAULT, 1, 1, NULL,NULL)
 	</entry>
 	
 	<entry key="BoardDetail">
