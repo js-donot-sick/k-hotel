@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kHotel.admin.model.vo.LAdminReport;
 import kHotel.board.model.service.ReviewService;
@@ -22,15 +23,6 @@ public class ReviewShowServelt extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		String path = "/WEB-INF/views/board/reviewShow.jsp";
-
-				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-
-				dispatcher.forward(req, resp);
-	}
-
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uri = req.getRequestURI();
 		String contextPath = req.getContextPath();
 		String command = uri.substring((contextPath + "/board/review/").length());
@@ -78,11 +70,14 @@ public class ReviewShowServelt extends HttpServlet {
 				resp.getWriter().print(result);
 
 			}
+			
+			if(command.equals("delete"));
+			
+			HttpSession session = req.getSession();
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 	}
-
 }
