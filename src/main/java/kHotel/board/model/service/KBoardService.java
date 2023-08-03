@@ -193,4 +193,24 @@ public class KBoardService {
 		return result;
 	}
 
+	/** 업다운 페이지 접속 시 FL -> Y로 업데이트 service
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updownFl(int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.updownFl(conn, memberNo);
+		
+		if(result>0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		
+		return result;
+	}
+
 }

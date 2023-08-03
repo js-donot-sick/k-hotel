@@ -25,9 +25,27 @@ function inputcheck() {
 
     const alll = document.getElementsByClassName("P-udg")[0]
 
+    $.ajax({
+
+        url : contextPath + "/event/updown/fl",
+
+        success : function(result){
+            console.log(result);
+            alert("fdgaklfdakl;");
+        },
+
+        error : function(){
+            console.log("ajax fl 오류발생");
+        }
+
+
+    });
+    
+
     
 
     if (isNaN(input.value)) { // 숫자가 아닌 수를 입력할 경우
+        ta.innerText = "";
         alert("숫자를 입력해주세요.");
         input.value = "";
         input.focus();

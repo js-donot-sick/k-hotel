@@ -571,5 +571,33 @@ public class KBoardDAO {
 		return result;
 	}
 
+	/** 업다운 페이지 접속 시 FL -> Y로 업데이트 DAO
+	 * @param conn
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int updownFl(Connection conn, int memberNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("updownFl");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 	
 }

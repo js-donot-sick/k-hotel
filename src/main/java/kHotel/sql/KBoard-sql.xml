@@ -95,4 +95,9 @@
 	<entry key="gameCoupon">
 		INSERT INTO COUPON VALUES(SEQ_COUPON_NO.NEXTVAL, ?, '30000원 할인 쿠폰', 30000, DEFAULT, DEFAULT)
 	</entry>
+	
+	<!-- 업다운 게임 진행 시 FL -> Y로 변경 -->
+	<entry key="updownFl">
+		UPDATE EVENT_FL SET  UPDOWN_FL = 'Y' WHERE MEMBER_NO=?
+	</entry>
 </properties>
