@@ -33,19 +33,16 @@ public class ReviewShowServelt extends HttpServlet {
 
 			if (command.equals("show")) {
 
-				int cp = 1;
+				int boardNo = Integer.parseInt(req.getParameter("no"));
+				
 
-				if (req.getParameter("cp") != null) {
-					cp = Integer.parseInt(req.getParameter("cp"));
-				}
-
-				Map<String, Object> map = service.boardReview(cp);
+				Board boardShow = service.boardReviewShow(boardNo);
 
 				String path = "/WEB-INF/views/board/reviewShow.jsp";
 
-				req.setAttribute("map", map);
+				req.setAttribute("board", boardShow);
 
-				System.out.println(map);
+				System.out.println(boardShow);
 
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 

@@ -118,3 +118,21 @@
     font-weight: bold;
     border-radius: 50%;
 }
+
+.Pbtn1{
+
+    margin: 5px 5px;
+    cursor: pointer;
+    background-color: rgb(173,158,135);
+    color: white;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    border:0
+}
+
+.Pbtn1:hover{
+    background-color: #4F3A28;
+    color: white;
+
+}

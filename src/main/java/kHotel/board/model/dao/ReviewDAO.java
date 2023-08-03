@@ -163,5 +163,41 @@ public class ReviewDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
+	public Board boardReviewShow(Connection conn, int boardNo) throws Exception {
+		
+		Board boardShow = new Board();
+		
+		try {
+			
+			String sql = prop.getProperty("showReview");
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, boardNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+		
+				boardShow.setMemberNo(rs.getInt("MEMBER_NO"));
+				boardShow.setMemberId(rs.getString("MEMBER_ID"));
+				boardShow.setRoomName(rs.getString("ROOM_NM"));
+				boardShow.setHotelTitle(rs.getString("HOTEL_TITLE"));
+				boardShow.setBoardDate(rs.getString("BOARD_DT"));
+				boardShow.setImageRename(rs.getNString("IMG_REVIEW_RENAME"));
+				boardShow.setBoardContent(rs.getString("BOARD_CONTENT"));
+				boardShow.setReviewStar(rs.getInt("REVIEW_STAR"));
+				boardShow.setTagContent(rs.getString("TAG_CONTENT"));
+				boardShow.setBoardNo(rs.getInt("BOARD_NO"));
+			
+			}
+			
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return boardShow;
+	}
 	
 }

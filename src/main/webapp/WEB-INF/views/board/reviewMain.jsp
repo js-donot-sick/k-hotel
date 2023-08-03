@@ -10,6 +10,7 @@
             <title>리뷰메인</title>
             <link rel="stylesheet" href="../resources/css/mypage(wirte).css">
             <link rel="stylesheet" href="${contextPath}/resources/css/reviewMain.css">
+            <link rel="stylesheet" href="${contextPath}/resources/css/reviewShow.css">
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
             <script src="https://code.jquery.com/jquery-3.7.0.min.js"
@@ -38,6 +39,8 @@
                         <tr class="P-pay-title">
                             <td colspan="6">리뷰게시판</td>
                         </tr>
+
+                        
 
                         <tr class="P-pay-tr1">
                             <th>리뷰번호</th>
@@ -69,7 +72,7 @@
                                             <td>${board.roomName}</td>
                                             <td>${board.memberId}</td>
                                             <td>${board.boardDate}</td>
-                                            <td><button class="Pbtn1" >상세보기</button></td>
+                                            <td><button class="Pbtn1" onclick="location.href='${contextPath}/board/review/show?no=${board.boardNo}'" >상세보기</button></td>
                                             
                                     </tr>
                                 </c:forEach>
