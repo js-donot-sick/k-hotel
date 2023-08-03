@@ -22,6 +22,15 @@ public class ReviewShowServelt extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		String path = "/WEB-INF/views/board/reviewShow.jsp";
+
+				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+
+				dispatcher.forward(req, resp);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uri = req.getRequestURI();
 		String contextPath = req.getContextPath();
 		String command = uri.substring((contextPath + "/board/review/").length());
@@ -48,24 +57,22 @@ public class ReviewShowServelt extends HttpServlet {
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 
 				dispatcher.forward(req, resp);
-				
 
 			}
-			
-			if(command.equals("declar")) {
-				
+
+			if (command.equals("declar")) {
+
 				String replyContent = req.getParameter("Ppcontent");
 				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
 				int memberNo = Integer.parseInt(req.getParameter("memberNo"));
-				
 
 				LAdminReport report = new LAdminReport();
 				report.setBoardNo(boardNo);
 				report.setMemberNo(memberNo);
 				report.setReportContent(replyContent);
-				
+
 				int result = service.declar(report);
-				
+
 				System.out.println(result);
 
 				resp.getWriter().print(result);

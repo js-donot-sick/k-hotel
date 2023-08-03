@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initiaP-scale=1.0">
     <title>리뷰메인</title>
     <link rel="stylesheet" href="../resources/css/mypage(wirte).css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -19,90 +19,110 @@
 
 <body>
 
-    <div>헤더</div>
-    
-    <div class="P-top" >
-      
+    <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-            <div class="P-maindisplay">
-                <!-- QNA 메인 글자 -->
-                <div class="P-main" >
-                    <div class="P-blank1">리뷰 메인</div>
+    <div class="P-pay-main">
+        <!-- 사이드바 -->
+        <jsp:include page="/WEB-INF/views/common/boardSidebar.jsp" />
 
-         
+        <div class="P-pay-main2">
 
-                    <!-- QnA 항목 이동 링크 -->
-                    <div class="P-wirte-1">
-                        <div class="P-wirte">
-                            <div>1</div>
-                            <div>게시글 제목</div>
-                            <div></div>
-                            <div>2023-07-10 18:15</div>
-                            <a href="#"><button class="P-wirte-btn">상세내역</button></a>
-                        </div>
+            <!-- 메인 테이블 -->
+            <table class="P-pay-table">
+                
+                <tr class="P-pay-title">
+                    <td colspan="6">리뷰게시판</td>
+                </tr>
+                
+                <tr class="P-pay-tr1">
+                    <th>리뷰번호</th>
+                    <th>리뷰내용</th>
+                    <th>리뷰내용</th>
+                    <th>리뷰내용</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                </tr>
+            
 
-                        <div class="P-wirte">
-                            <div>1</div>
-                            <div>게시글 제목</div>
-                            <div></div>
-                            <div>2023-07-10 18:15</div>
-                            <a href="#"><button class="P-wirte-btn">상세내역</button></a>
-                        </div>
+                <c:choose>
+                    <c:when test="${empty boardList}">
+                        <!-- 게시글 목록 조회 결과가 비어있다면 -->
+                        <tr>
+                            <th colspan="7">게시글이 존재하지 않습니다.</th>
+                        </tr>
+                    </c:when>
 
-                        <div class="P-wirte">
-                            <div>1</div>
-                            <div>게시글 제목</div>
-                            <div></div>
-                            <div>2023-07-10 18:15</div>
-                            <a href="#"><button class="P-wirte-btn">상세내역</button></a>
-                        </div>
 
-                        <div class="P-wirte">
-                            <div>1</div>
-                            <div>게시글 제목</div>
-                            <div></div>
-                            <div>2023-07-10 18:15</div>
-                            <a href="#"><button class="P-wirte-btn">상세내역</button></a>
-                        </div>
+                    <c:otherwise>
+                        <!-- 게시글이 있는 경우 -->
+                        <!-- 게시글 리스트 -->
+                        <c:forEach var="board" items="${boardList}">
+                            <tr class="P-pay-tr">
+                                <td>${board.calculateNo}</td>
+                                <td>${board.calculateWay}</td>
+                                <td>${board.calculatePrice}</td>
+                                <td>${board.memberId}</td>
+                                <td>${board.calculateSt}</td>
+                                <td>${board.checkInDt}</td>
+                                <td class="P-pay-btn"> 
+                                    <button onclick="AgreePay(${board.calculateNo})">승인</button>
+                                </td>
+                            </tr>
 
-                        <div class="P-wirte">
-                            <div>1</div>
-                            <div>게시글 제목</div>
-                            <div></div>
-                            <div>2023-07-10 18:15</div>
-                            <a href="#"><button class="P-wirte-btn">상세내역</button></a>
-                        </div>
-                    </div>
-
-                    <div class="pagination-area">
-                        <ul class="pagination">
+                            <input type="hidden" name="calNo" value="${board.calculateNo}">
+                            <input type="hidden" name="type" value="8">
+                        </c:forEach>
+                    
+                    </c:otherwise>
+                </c:choose>
+                
+                
+                
+                
+            </table>
         
-                            <li><a href="#">&lt;&lt;</a></li>
-                            <li><a href="#">&lt;</a></li>
-                            <!-- li*10>a{$}-->
-                            <li><a class="current">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">6</a></li>
-                            <li><a href="#">7</a></li>
-                            <li><a href="#">8</a></li>
-                            <li><a href="#">9</a></li>
-                            <li><a href="#">10</a></li>
-                            <li><a href="#">&gt;</a></li>
-                            <li><a href="#">&gt;&gt;</a></li>
-                        </ul>
-                    </div>
+            <div class="P-pagination-area">
+                
+                <c:set var="url" value="pay?type=8&cp="/>
+                <!-- 나중에 링크에 type 설정해주고 el태그로 변경해줘야함  -->
+                
+                
+                <ul class="P-pagination">
+                    <li><a href="${url}1">&lt;&lt;</a></li>
+                    
+                    <li><a href="${url}${LPagination.prevPage}">&lt;</a></li>
+                    
 
-                </div>
+                    <c:forEach var="i" begin="${LPagination.startPage}" end="${LPagination.endPage}" step="1">
+
+                        <c:choose>
+                            <c:when test="${i == LPagination.currentPage}">
+                                <li><a class="P-current">${i}</a></li>
+                            </c:when>
+                            <c:otherwise>
+                                <li><a href="${url}${i}">${i}</a></li>
+                            </c:otherwise>
+                            
+                        </c:choose>
+                        
+                    </c:forEach>
+
+                    
+                    <!-- 뒷페이지 + 1 -->
+                    <li><a href="${url}${LPagination.nextPage}">&gt;</a></li>
+                    
+                    <!-- 맨뒤페이지 -->
+                    <li><a href="${url}${LPagination.maxPage}">&gt;&gt;</a></li>
+                    
+                </ul>
+                
             </div>
-
+        
         </div>
-
+        
     </div>
-
-    <div>풋터</div>
+    
+    <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 
 
