@@ -127,5 +127,13 @@
 	<entry key="memberNextNo">
 		SELECT SEQ_MEMBER_NO.NEXTVAL FROM DUAL
 	</entry>
+
+	<!-- 이미지 수정 -->
+	<entry key="imgUpdate">
+		UPDATE REVIEW_IMG
+		SET IMG_REVIEW_RENAME = ? 
+		WHERE BOARD_NO = ?
+		AND IMG_REVIEW_RENAME = ?
+	</entry>
 	
 </properties>

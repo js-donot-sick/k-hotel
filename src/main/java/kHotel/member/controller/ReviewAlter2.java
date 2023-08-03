@@ -96,7 +96,7 @@ public class ReviewAlter2 extends HttpServlet{
 		
 		
 		// ------------수정 할 게시글 정보------------------------
-		String updateImg = mpReq.getParameter("updateImg");
+		String updateImg = mpReq.getParameter("updateImg2");
 		String updateContent = mpReq.getParameter("updateContent");
 		int updateStar = Integer.parseInt(mpReq.getParameter("updateStar"));
 		String[] tag2 = mpReq.getParameterValues("updateTag");
@@ -107,6 +107,7 @@ public class ReviewAlter2 extends HttpServlet{
 			updateTag = String.join(",,", tag2);
 		}
 		
+		System.out.println(mpReq.getParameter("updateImg2"));
 		System.out.println("1 : " + updateImg);
 		System.out.println("2 : " + updateContent);
 		System.out.println("3 : " + updateStar);
@@ -121,6 +122,7 @@ public class ReviewAlter2 extends HttpServlet{
 		updateReview.setTag(updateTag);
 		// --------------------------------------------
 		
+		System.out.println(updateReview.getReviewImg());
 		
 		
 		

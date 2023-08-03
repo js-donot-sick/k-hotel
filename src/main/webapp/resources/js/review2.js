@@ -10,6 +10,10 @@ document.getElementById("J-alter").addEventListener("click", function(){
 
 const inputImage = document.getElementsByName("JreviewImage")[0];
 const preview = document.getElementById("J-reviewImage3");
+const preview2 = document.getElementById("J-reviewImage4");
+
+
+
 inputImage.addEventListener("change", function(){
 
     if(inputImage.files != undefined){
@@ -26,3 +30,23 @@ inputImage.addEventListener("change", function(){
         preview.removeAttribute("src");
     }
 })
+
+inputImage.addEventListener("change", function(){
+
+    if(inputImage.files != undefined){
+        const reader = new FileReader(); // 선택된 파일을 읽을 객체 생성
+        reader.readAsDataURL(this.files[0]);
+
+        reader.onload = function(e){ //reader가 파일을 다 읽어온 경우
+
+            preview2.setAttribute("src", e.target.result);
+
+        } 
+        
+    }else{ // 파일이 선택되지 않았을 때
+        preview.removeAttribute("src");
+    }
+})
+
+
+

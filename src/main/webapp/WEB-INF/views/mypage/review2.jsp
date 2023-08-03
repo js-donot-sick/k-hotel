@@ -74,7 +74,8 @@
                                         <button type="button" id="J-delBtn">사진 지우기</button>
                                     </td>
                                     <td colspan="3" id="J-reviewImg1">
-                                        <img type="file" src="${contextPath}${image.rename}" id="J-reviewImage3" name="updateImg">
+                                        <img type="file" src="${contextPath}${image.rename}" id="J-reviewImage3" name="updateImg2">
+                                        <img type="file" src="${contextPath}${rvUpdate.reviewImg}" id="J-reviewImage4" name="updateImg">
                                     </td>
                                 </tr>
                                 
@@ -157,7 +158,7 @@
                     <input type="hidden" name="reviewTitle" value="리뷰입니다.">
                 </div>
                 <input type="hidden" name="rating2" class="star3">
-           
+                ${rvUpdate.userId}
                 <input type="hidden" name="memberId" value="${rvUpdate.userId}">
                 <input type="hidden" name="hotelName" value="${rvUpdate.hotelName}">
                 <input type="hidden" name="roomName" value="${rvUpdate.roomName}">
