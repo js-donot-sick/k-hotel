@@ -39,6 +39,11 @@
     justify-content: center;
 }
 
+#P-info{
+    margin: auto;
+    margin-bottom: 20px;
+}
+
 .P-udg-message{
     font-size: 14px;
     letter-spacing: -1px; /* 자간 */
@@ -113,8 +118,12 @@
 
 /* 숫자입력 */
 .P-udg{
-    padding: 150px;
-    font-size: 100px;
-    font-weight: bold;
+    overflow: auto;
+    width: 600px;
+    height: 500px;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 30px;
     text-align: center;
+    border: 3px solid #ddd;
 }
