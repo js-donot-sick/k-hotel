@@ -71,6 +71,9 @@
 
                             <c:forEach var="board" items="${boardList}">
 
+                                <input type="hidden" name="boardNo" value="${board.boardNo}">
+                               
+
                                 <div class="P-reviewBox">
                                     <div class="P-profile_area">
                                         <div class="P-id" id="P-id">작성자 : <span>${board.memberId}</span></div>
