@@ -169,6 +169,9 @@ public class JMemberService {
 			
 			// 이미지 수정
 			result = dao.imgUpdate(conn, boardNo , updateReview, rvUpdate2 );
+			
+			// 태그 수정
+			result = dao.tagUpdate(conn, boardNo, updateReview, rvUpdate2 );
 		}
 		
 		System.out.println(result + "서빗");
