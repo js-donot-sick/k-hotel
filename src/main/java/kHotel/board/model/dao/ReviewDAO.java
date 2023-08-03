@@ -15,6 +15,7 @@ import java.util.Properties;
 import kHotel.admin.model.vo.LAdminReport;
 import kHotel.board.model.vo.Board;
 import kHotel.member.model.dao.MemberDAO;
+import kHotel.member.model.vo.Member;
 import kHotel.member.model.vo.PPagination;
 
 public class ReviewDAO {
@@ -149,6 +150,18 @@ public class ReviewDAO {
 		}
 		
 		return result;
+	}
+
+
+	/** 리뷰 삭제
+	 * @param conn
+	 * @param loginMember
+	 * @param boardNo
+	 * @return
+	 */
+	public int deleteReview(Connection conn, Member loginMember, int boardNo) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 }

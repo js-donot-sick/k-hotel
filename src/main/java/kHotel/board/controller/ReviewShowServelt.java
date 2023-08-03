@@ -16,6 +16,7 @@ import kHotel.admin.model.vo.LAdminReport;
 import kHotel.board.model.service.ReviewService;
 import kHotel.board.model.vo.Board;
 import kHotel.board.model.vo.Reply;
+import kHotel.member.model.vo.Member;
 
 @WebServlet("/board/review/*")
 public class ReviewShowServelt extends HttpServlet {
@@ -27,12 +28,14 @@ public class ReviewShowServelt extends HttpServlet {
 		String contextPath = req.getContextPath();
 		String command = uri.substring((contextPath + "/board/review/").length());
 		ReviewService service = new ReviewService();
+		int bookNo = Integer.parseInt(req.getParameter("bookNo")); 
 		
 
 		try {
 
 			if (command.equals("show")) {
 
+				
 				int cp = 1;
 
 				if (req.getParameter("cp") != null) {
@@ -75,6 +78,12 @@ public class ReviewShowServelt extends HttpServlet {
 			if(command.equals("delete"));
 			
 			HttpSession session = req.getSession();
+			
+			Member loginMember = (Member) session.getAttribute("loginMember");
+			
+			int boardNo = Integer.parseInt(req.getParameter("boardNo"));
+			
+			int result = service.deleteReview(loginMember,boardNo);			
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -22,11 +22,13 @@ public class ReviewWriteServlet extends HttpServlet {
 		
 		String hotelName = req.getParameter("hotelName");
 		String roomName = req.getParameter("roomName");
+		int bookNo = Integer.parseInt(req.getParameter("bookNo"));
 		
 		Reservation rv = new Reservation();
 		
 		rv.setHotelName(hotelName);
 		rv.setRoomName(roomName);
+		rv.setBookNo(bookNo);
 		
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);

@@ -74,7 +74,7 @@
                                 <div class="P-reviewBox">
                                     <div class="P-profile_area">
                                         <div class="P-id" id="P-id">작성자 : <span>${board.memberId}</span></div>
-                                   
+
                                         <div>
                                             <div class="P-room1" id="P-room1"> 지점: <span>${board.hotelTitle}</span>
                                             </div>
@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="P-img"><a href="#"><img src="${contextPath}${board.imageRename}"
                                                 class="PreviewImg"></a></div>
-                                    <div id="P-rs-content" >${board.boardContent}</div>
+                                    <div id="P-rs-content">${board.boardContent}</div>
                                     <div>
                                         <div class="P-star">
                                             <c:if test="${board.reviewStar == 1}">
@@ -253,26 +253,27 @@
                                     </div>
                                     <div class="P-rs-btn">
 
-                                    <form action="update" method="POST"> 
-                                        <button id="P-rs-update-btn">수정</button>
-                                        <input type="hidden" name="memberId" value="${board.memberId}">
-                                        <input type="hidden" name="hotelName" value="${board.hotelTitle}">
-                                        <input type="hidden" name="roomName" value="${board.roomName}">
-                                        <input type="hidden" name="pic" value="${board.imageRename}">
-                                        <input type="hidden" name="content" value="${board.boardContent}">
-                                        <input type="hidden" name="tag" value="${board.tagContent}">
-                                        <input type="hidden" name="star" value="${board.reviewStar}">
-                                    </form> 
+                                        <c:if test="${loginMember.memberNo == board.boardNo}">
 
-                                        <button id="P-rs-delete-btn">삭제</button>
-                                        <button id="P-rs-Declar-btn">신고</button>
+                                            <form action="update" method="POST">
+                                                <button id="P-rs-update-btn">수정</button>
+                                                <input type="hidden" name="memberId" value="${board.memberId}">
+                                                <input type="hidden" name="hotelName" value="${board.hotelTitle}">
+                                                <input type="hidden" name="roomName" value="${board.roomName}">
+                                                <input type="hidden" name="pic" value="${board.imageRename}">
+                                                <input type="hidden" name="content" value="${board.boardContent}">
+                                                <input type="hidden" name="tag" value="${board.tagContent}">
+                                                <input type="hidden" name="star" value="${board.reviewStar}">
+                                            </form>
+                                            <button id="P-rs-delete-btn">삭제</button>
+                                        </c:if>
+                                            <button id="P-rs-Declar-btn">신고</button>
                                     </div>
 
-                                    ${board.boardNo}
-                                 
+                                
                                     <input type="hidden" value="${board.boardNo}" name="boardNo">
                                     <input type="hidden" value="${board.memberNo}" name="memberNo">
-                                    
+
                                     <!-- 신고하기 창 -->
                                     <form action="#">
 
@@ -300,7 +301,7 @@
 
                             </c:forEach>
 
-                       
+
 
                             <div class="P-blank"></div>
 
@@ -345,7 +346,7 @@
                     crossorigin="anonymous">
                     </script>
 
-              <!--   <script>
+                <!--   <script>
                     const contextPath = "${contextPath}"
                     const memberNo = "${board.memberNo}"
                     const boardNo = "${board.boardNo}"
