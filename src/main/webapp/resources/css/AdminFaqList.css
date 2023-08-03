@@ -74,6 +74,7 @@ body::-webkit-scrollbar {
     border-bottom: 1px solid gray;
 }
 
+
 .k-faq-slide:hover{ 
     cursor: pointer;
 }
@@ -81,13 +82,9 @@ body::-webkit-scrollbar {
 
 .k-faq-slide>span{ /* 제목 글씨 부분 */
     margin-left: 10px;
+    font-size: 20px;
 }
 
-.k-faq-slide>span:nth-of-type(2){ /* 작성일 */
-    background-color: #ddd;
-    margin-left: 600px;
-    font-size: 12px;
-}
 
 .k-arrow-img{ /* 이미지 클래스(직접 img 태그 주면 추가할 때 너무 귀찮을 거 같음) */
     background-image: url("../images/arrow_down.png");

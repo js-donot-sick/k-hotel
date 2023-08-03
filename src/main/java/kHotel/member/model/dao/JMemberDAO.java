@@ -452,11 +452,12 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 
 	/** 회원 가입을 했을 떄 이벤트 참여 여부를 N으로 넣는 DAO
 	 * @param conn
+	 * @param memberNo 
 	 * @param member
 	 * @return event
 	 * @throws Exception
 	 */
-	public int insertEventCheck(Connection conn, Member member) throws Exception {
+	public int insertEventCheck(Connection conn, int memberNo) throws Exception {
 		int event = 0;
 		
 		try {
@@ -464,7 +465,7 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setInt(1, member.getMemberNo());
+			pstmt.setInt(1, memberNo);
 			
 			event = pstmt.executeUpdate();
 			
@@ -476,6 +477,31 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 	}
 
 
+	/** 다음 멤버의 번호를 가져오는 DAO
+	 * @param conn
+	 * @return
+	 */
+	public int selectMemberNo(Connection conn) throws Exception {
+		int memberNo = 0;
+		
+		try {
+			String sql = prop.getProperty("memberNextNo");
+			
+			stmt = conn.createStatement();
+			
+			rs = stmt.executeQuery(sql);
+			
+			if( rs.next() ) {
+				memberNo = rs.getInt(1);
+			}
+			
+		} finally {
+			close(rs);
+			close(stmt);
+		}
+		
+		return memberNo;
+	}
 
 
 }

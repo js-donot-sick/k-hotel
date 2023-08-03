@@ -121,7 +121,11 @@
 	<entry key="insertEventCheck">
 		INSERT INTO EVENT_FL
 		VALUES(DEFAULT, DEFAULT, ?)
+	</entry>
 	
+	<!-- 다음 회원 번호 조회 -->
+	<entry key="memberNextNo">
+		SELECT SEQ_MEMBER_NO.NEXTVAL FROM DUAL
 	</entry>
 	
 </properties>
