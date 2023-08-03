@@ -28,15 +28,11 @@ public class ReviewShowServelt extends HttpServlet {
 		String contextPath = req.getContextPath();
 		String command = uri.substring((contextPath + "/board/review/").length());
 		ReviewService service = new ReviewService();
-		
-		
 
 		try {
 
 			if (command.equals("show")) {
 
-				
-				
 				int cp = 1;
 
 				if (req.getParameter("cp") != null) {
@@ -75,16 +71,39 @@ public class ReviewShowServelt extends HttpServlet {
 				resp.getWriter().print(result);
 
 			}
+
+			if (command.equals("delete")) {
+				HttpSession session = req.getSession();
+
+				Member loginMember = (Member) session.getAttribute("loginMember");
+
+				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
+
+				int result = service.deleteReview(loginMember, boardNo);
+
+			}
 			
-			if(command.equals("delete"));
-			
-			HttpSession session = req.getSession();
-			
-			Member loginMember = (Member) session.getAttribute("loginMember");
-			
-			int boardNo = Integer.parseInt(req.getParameter("boardNo"));
-			
-			int result = service.deleteReview(loginMember,boardNo);			
+			if (command.equals("list")) {
+
+				int cp = 1;
+
+				if (req.getParameter("cp") != null) {
+					cp = Integer.parseInt(req.getParameter("cp"));
+				}
+
+				Map<String, Object> map = service.boardReview(cp);
+
+				String path = "/WEB-INF/views/board/reviewMain.jsp";
+
+				req.setAttribute("map", map);
+
+				System.out.println(map);
+
+				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+
+				dispatcher.forward(req, resp);
+
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
