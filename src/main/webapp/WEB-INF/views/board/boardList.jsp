@@ -34,9 +34,12 @@
 
     <jsp:include page="/WEB-INF/views/common/boardSidebar.jsp"/>
 
-        <section class="board-list">
+    <section class="board-list">
+
     <h1 class="board-name">공지사항</h1>
+    
     <div class="list-wrapper">
+
     <table class="list-table">
 
 
@@ -57,28 +60,24 @@
                     </thead>
 
 
-                    <c:forEach var="board" items = "${boardList}">
+                <c:forEach var="board" items = "${boardList}">
 
-                    <c:set var="memberId" value="${board.memberId}"/>
+                <c:set var="memberId" value="${board.memberId}"/>
 
                     <tbody>
-                               
-                                <td>${board.boardNo}</td>
-                                <td> <a href="${contextPath}/board/qna/boardDetail?type=2&cp=${pagination.currentPage}&no=${board.boardNo}${searchUrl}">${board.boardTitle}</a></td>
-                                <td></td>
-                                <td>${board.boardDate}</td>
-                                <td>${member.memberId}</td>
-                            </tbody>
+                        
+                        <td>${board.boardNo}</td>
+                        <td> <a href="${contextPath}/board/qna/boardDetail?type=2&cp=${pagination.currentPage}&no=${board.boardNo}${searchUrl}">${board.boardTitle}</a></td>
+                        <td></td>
+                        <td>${board.boardDate}</td>
+                        <td>${member.memberId}</td>
+                    </tbody>
 							
 
-                    </c:forEach>
+                </c:forEach>
 
-                    </section>
+</section>
                     </table>
-                    
-                    <div class="btn-area">
-                <button id="insertBtn" onclick="location.href='write?type=${param.type}&cp=${param.cp}'">글쓰기</button>
-            		</div>
                     
                     
                      <!-- 페이지네이션 -->
