@@ -22,5 +22,6 @@ public class Review {
 	private int board;
 	private String hotelName;
 	private String roomName;
+	private int bookNo;
 	
 }

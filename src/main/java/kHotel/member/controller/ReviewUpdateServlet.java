@@ -29,6 +29,9 @@ public class ReviewUpdateServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		try {
+			
+			int bookNo = Integer.parseInt(req.getParameter("bookNo"));
+			
 			HttpSession session = req.getSession();
 			
 			Member loginMember = (Member)session.getAttribute("loginMember");
@@ -127,7 +130,7 @@ public class ReviewUpdateServlet extends HttpServlet{
 			rv.setUserId(userId);
 			rv.setStar(star);
 			rv.setTag(realTag);
-			
+			rv.setBookNo(bookNo);
 			
 			int memberNo = loginMember.getMemberNo();
 			
