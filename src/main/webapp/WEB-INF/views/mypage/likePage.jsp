@@ -40,6 +40,7 @@
                   <li>
                     5~9층에 위치한 스탠다드룸은 편안함과 쾌적함
                     이 인상적인 최상의 휴식 공간을 제공합니다.
+                    이 인상적인 최상의 휴식 공간을 제공합니다.
                   </li>
                   <br>
                   <li>
@@ -94,6 +95,8 @@
         </div>
       </div>
 		<jsp:include page="/WEB-INF/views/common/sidebar.jsp"/>
+		
+		
     </section>
     
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
