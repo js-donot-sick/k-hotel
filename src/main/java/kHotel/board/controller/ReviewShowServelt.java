@@ -28,13 +28,14 @@ public class ReviewShowServelt extends HttpServlet {
 		String contextPath = req.getContextPath();
 		String command = uri.substring((contextPath + "/board/review/").length());
 		ReviewService service = new ReviewService();
-		int bookNo = Integer.parseInt(req.getParameter("bookNo")); 
+		
 		
 
 		try {
 
 			if (command.equals("show")) {
 
+				
 				
 				int cp = 1;
 

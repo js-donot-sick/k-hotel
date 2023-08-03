@@ -30,7 +30,7 @@ public class ReviewUpdateServlet extends HttpServlet{
 		
 		try {
 			
-			int bookNo = Integer.parseInt(req.getParameter("bookNo"));
+			int bookNo = Integer.parseInt(req.getParameter("no"));
 			
 			HttpSession session = req.getSession();
 			
@@ -145,9 +145,12 @@ public class ReviewUpdateServlet extends HttpServlet{
 				
 				message = "작성 성공";
 				
-				path = "/reviewMain.jsp";
+				path = req.getContextPath() + "/board/review/show?no=" + bookNo;
 				
 			}else {
+				
+				path = req.getHeader("referer");
+				
 				message = "작성 실패";
 				
 			}

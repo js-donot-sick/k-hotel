@@ -6,7 +6,7 @@ public class PPagination {
 	private int listCount;	 // 전체 게시글 수
 	
 	private int limit = 1; // 한 페이지에 보여질 게시글 수
-	private int pageSize = 10; // 목록 하단 페이지 번호 수
+	private int pageSize = 5; // 목록 하단 페이지 번호 수
 	
 	private int maxPage; // 제일 큰 페이지 번호
 	private int startPage; // 목록 하단 노출 시작페이지
