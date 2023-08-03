@@ -66,16 +66,21 @@ function inputcheck() {
             alll.append(myDiv);
 
             if (input.value == random) {
-                alert("정답입니다. 쿠폰");
-
-
                 
+                $.ajax({
+                    
+                    url : contextPath + "/event/updown/coupon",
+                    
+                    success : function(result){
+                        //alert("정답입니다. 쿠폰");
+                    },
 
+                    error : function(){
+                        console.log("오류발생");
+                    }
 
-
-
-
-
+                });
+                
 
                 return true;
             }

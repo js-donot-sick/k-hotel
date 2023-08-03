@@ -23,7 +23,7 @@
     <div>헤더</div>
 
     <div class="P-top">
-        <form action="{contextPath}/event" method="get" name="C-postWrite-main" onsubmit="return inputcheck()">
+        <form action="${contextPath}/event" method="get" name="C-postWrite-main" onsubmit="return inputcheck()">
             <div class="P-udg-body">
                 <div class="P-udg-title">업다운게임</div>
                 
@@ -41,6 +41,12 @@
     </div>
 
     <div>풋터</div>
+
+    <script>
+
+        const contextPath = "${contextPath}";
+        
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootsdivap@5.2.3/dist/js/bootsdivap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

@@ -155,4 +155,42 @@ public class KBoardService {
 		return event;
 	}
 
+	/** 업다운 FL 검사 service
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public String updown(int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		String result = dao.updown(memberNo, conn);
+		
+		close(conn);
+		
+		
+		return result;
+	}
+
+	/** 게임 쿠폰 service
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int gameCoupon(int memberNo) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		// 쿠폰 넣기
+		int result = dao.gameCoupon(conn, memberNo);
+		
+		
+		if(result>0)	commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
+		
+		return result;
+	}
+
 }
