@@ -102,7 +102,7 @@
                         </pre>
                     </div>
                     <div class="L-roompoint-border L-roomA" id="LroomG3">
-                        <img src="${contextPath}/resources/images/suite-Room_1.jpg" class="L-roomimg" id="L-room3">
+                        <img src="${contextPath}/resources/images/suite-Room_JongRo_2.jpg" class="L-roomimg" id="L-room3">
                         <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
  <p>스위트 룸</p> 침대타입 <span>|</span> 더블 전망 시티뷰 

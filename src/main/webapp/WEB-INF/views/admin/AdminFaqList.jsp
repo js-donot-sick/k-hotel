@@ -47,7 +47,6 @@
                             <c:forEach var="board" items="${boardList}">
                                 <div class="k-faq-slide">
                                     <span>${board.boardTitle}</span>
-                                    <span>${board.boardDate}</span>
                                     <div class="k-arrow-img"></div>
                                     <!-- <img src="../images/arrow_down.png" class="k-arrow"> -->
                                 </div>

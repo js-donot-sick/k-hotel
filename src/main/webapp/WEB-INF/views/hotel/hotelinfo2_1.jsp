@@ -84,7 +84,7 @@
                     
                     <!-- 객실1 -->
                     <div class="L-roompoint-border L-roomA" id="LroomG1">
-                        <img src="${contextPath}/resources/images/deluxroompoint1.jpg" class="L-roomimg" id="L-room1">
+                        <img src="${contextPath}/resources/images/Deluxe-Room_1.jpg" class="L-roomimg" id="L-room1">
                         <!-- <button type="button" id="L-hbtn">찜하기♡</button> -->
                         <pre>
  <p>디럭스 룸</p> 침대타입 <span>|</span> 더블/트윈/트리플 전망 시티뷰 
@@ -106,7 +106,7 @@
 
                     <!-- 객실3 -->
                     <div class="L-roompoint-border L-roomA" id="LroomG3">
-                        <img src="${contextPath}/resources/images/suiteroompoint3.jpg" class="L-roomimg" id="L-room3">
+                        <img src="${contextPath}/resources/images/suite-Room_1.jpg" class="L-roomimg" id="L-room3">
                         <!-- <button type="button" id="L-hbtn3">찜하기♡</button> -->
                         <pre>
  <p>스위트 룸</p> 침대타입 <span>|</span> 더블 전망 시티뷰 

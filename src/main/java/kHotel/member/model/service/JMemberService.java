@@ -172,15 +172,16 @@ public class JMemberService {
 	}
 
 	/** 회원 가입을 했을 떄 이벤트 참여 여부를 N으로 넣는 Service
-	 * @param member
 	 * @return event
 	 * @throws Exception
 	 */
-	public int insertEventCheck(Member member) throws Exception {
+	public int insertEventCheck() throws Exception {
 		
 		Connection conn = getConnection();
 		
-		int event = dao.insertEventCheck(conn, member);
+		int memberNo = dao.selectMemberNo(conn);
+		
+		int event = dao.insertEventCheck(conn,memberNo);
 		
 		if(event > 0) commit(conn);
 		else		  rollback(conn);

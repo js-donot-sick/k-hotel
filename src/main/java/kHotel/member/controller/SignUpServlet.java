@@ -68,7 +68,7 @@ public class SignUpServlet extends HttpServlet{
 			
 			if(result > 0) { // 성공
 				
-				int event = jservice.insertEventCheck(member);
+				int event = jservice.insertEventCheck();
 				
 				session.setAttribute("message", "KHOTEL에 회원이 되신 걸 환영합니다! 특별 혜택으로 쿠폰을 1개 증정하였습니다.");
 				
