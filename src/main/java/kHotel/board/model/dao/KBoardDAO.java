@@ -513,5 +513,63 @@ public class KBoardDAO {
 		return imageList;
 	}
 
+	/** 업다운 FL 검사 service
+	 * @param memberNo
+	 * @param conn
+	 * @return result
+	 * @throws Exception
+	 */
+	public String updown(int memberNo, Connection conn) throws Exception {
+		
+		String result = null;
+		
+		try {
+			
+			String sql = prop.getProperty("updownFL");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getString(1);
+			}
+			
+		} finally {
+			
+		}
+		
+		return result;
+	}
+
+	/** 게임 쿠폰 DAO
+	 * @param conn
+	 * @param memberNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int gameCoupon(Connection conn, int memberNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			
+			String sql = prop.getProperty("gameCoupon");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
 	
 }

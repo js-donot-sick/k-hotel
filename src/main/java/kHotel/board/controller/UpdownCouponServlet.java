@@ -2,7 +2,6 @@ package kHotel.board.controller;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,11 +12,12 @@ import javax.servlet.http.HttpSession;
 import kHotel.board.model.service.KBoardService;
 import kHotel.member.model.vo.Member;
 
-@WebServlet("/event/updown")
-public class UpDownServlet extends HttpServlet {
+@WebServlet("/event/updown/coupon")
+public class UpdownCouponServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		
 		try {
 			
@@ -27,19 +27,22 @@ public class UpDownServlet extends HttpServlet {
 			
 			int memberNo = loginMember.getMemberNo();
 			
-			String result = new KBoardService().updown(memberNo);
+			int result = new KBoardService().gameCoupon(memberNo);
 			
-			if(result.equals("N")) {
-				RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/event/updowngame.jsp");
-				dispatcher.forward(req, resp);
+			if(result>0) {
+				session.setAttribute("message", "성공! 쿠폰 지급 이거 이클립스다");
 			} else {
-				session.setAttribute("message", "하루에 한 번만 참여할 수 있습니다.");
-				resp.sendRedirect(req.getHeader("referer"));
+				session.setAttribute("message", "게임 성공은 했는데 쿠폰 insert과정에 문제 발생..");
 			}
+			
+			resp.getWriter().print(result);
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		
 		
 		
 	}

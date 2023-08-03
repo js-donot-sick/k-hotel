@@ -84,4 +84,14 @@
 		WHERE EVENT_NO = ?
 		AND EVENT_DT &gt;=SYSDATE
 	</entry>
+	
+	<!-- 업다운 fl 검사 -->
+	<entry key="updownFL">
+		SELECT UPDOWN_FL FROM EVENT_FL WHERE MEMBER_NO=?
+	</entry>
+	
+	<!-- 게임 승리 시 쿠폰 insert -->
+	<entry key="gameCoupon">
+		INSERT INTO COUPON VALUES(SEQ_COUPON_NO.NEXTVAL, ?, '30000원 할인 쿠폰', 30000, DEFAULT, DEFAULT)
+	</entry>
 </properties>
