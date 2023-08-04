@@ -44,7 +44,7 @@
             </div>
 
             <div class="L-btn">
-                <div><button type="button">목록으로</button></div>
+                <div><button type="button" onclick="location.href='${contextPath}/board?type=1'">목록으로</button></div>
 
                 <c:if test="${loginMember.memberId == board.memberId}">
                     <div><button type="submit">공지사항 수정</button></div>
