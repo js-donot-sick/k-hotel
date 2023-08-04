@@ -83,7 +83,6 @@ public class ReviewService {
 	 */
 	public int deleteReview(Member loginMember, int no) throws Exception{
 		
-		System.out.println("왜그래어랭러");
 
 		Connection conn = getConnection();
 		

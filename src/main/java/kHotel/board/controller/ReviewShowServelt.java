@@ -76,12 +76,10 @@ public class ReviewShowServelt extends HttpServlet {
 
 				int no = Integer.parseInt(req.getParameter("no"));
 				
-				System.out.println(no);
 
 				int result = service.deleteReview(loginMember, no);
 				
 				String path = null;
-				System.out.println("result: "+ result);
 				
 				
 				if(result>0) {

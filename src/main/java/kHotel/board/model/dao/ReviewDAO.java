@@ -161,7 +161,6 @@ public class ReviewDAO {
 	 */
 	public int deleteReview(Connection conn, Member loginMember, int no) throws Exception {
 		
-		System.out.println("왜그래어랭러이건 dao");
 	
 		int result = 0; 
 		try {

@@ -12,7 +12,7 @@
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>리뷰/별점 작성</title>
+                <title>리뷰/별점 상세보기</title>
 
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
                     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
@@ -34,7 +34,6 @@
                 <!-- 전체 큰 페이지  -->
                 <div class="P-top">
 
-                    <jsp:include page="/WEB-INF/views/common/boardSidebar.jsp" />
 
                     <!-- 리뷰/별점 전체 페이지  -->
                     <div class="P-maindisplay">
