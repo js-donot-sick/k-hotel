@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>관리자 이벤트 작성</title>
     
-    <link rel="stylesheet" href="../resources/css/AdminEventWrite.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/AdminEventWrite.css">
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 </head>
@@ -97,7 +97,7 @@
                             </div>
                         </div>
                         <div>
-                            <textarea name="K-content" cols="103" rows="20" placeholder="내용을 입력해주세요">${event.eventContent}</textarea>
+                            <textarea name="K-content" cols="100" rows="20" placeholder="내용을 입력해주세요">${event.eventContent}</textarea>
                         </div>
                         <div>
                             

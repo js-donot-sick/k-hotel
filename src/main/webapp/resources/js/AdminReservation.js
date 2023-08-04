@@ -15,7 +15,7 @@ function selectReservationList(){
 
                 /* 큰 틀 */
                 const bookRow = document.createElement("div");
-                bookRow.classList.add("C-adminrsv-main");
+                bookRow.setAttribute("id", "adminRsvList");
 
                 /* 타이틀 부분 */
                 const bookTitle = document.createElement("div");

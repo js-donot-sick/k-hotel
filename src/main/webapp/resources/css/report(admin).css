@@ -10,11 +10,12 @@
     display: flex;
     margin: auto;
     align-items: flex-start;
+    padding : 20px 0;
 }
 
 /* 메인 테이블 */
 .L-report-table{
-    width: 95%;
+    width : 95%;
     border-collapse: collapse;
     margin: 0 auto;
     margin-bottom: 50px;
@@ -97,7 +98,7 @@
 
 /* 페이지네이션을 위한 메인div한개 더 생성 */
 .L-report-main2{
-    width: 100%;
+    width: 75%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -126,6 +127,11 @@
     text-decoration: none;
 }
 
+.L-pagination a:hover{
+    color:black;
+}
+
+
 /* 현재 페이지 번호 */
 .L-pagination .L-current{
     background-color: rgb(173,158,135);
@@ -134,7 +140,14 @@
     border-radius: 50%;
 }
 
+.L-pagination .L-current:hover{
+    
+    color: white;
+    
+}
+
 /* 페이지네이션 호버효과 */
 .L-pagination > li:hover{
     text-decoration: underline;
 }
+

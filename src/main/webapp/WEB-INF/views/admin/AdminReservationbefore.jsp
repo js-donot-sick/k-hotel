@@ -32,8 +32,8 @@
                             </select>
                     </div>
                     <div class="C-adminrsvlist">
-                        <div class="C-adminrsv-main">
-                            <div class="C-rsvlist-container Ctitle">
+                        <div id="adminRsvList">
+                            <div class="C-rsvlist-container" id="Ctitle">
                                 <div>예약번호</div>
                                 <div>호텔지점</div>
                                 <div>방이름</div>

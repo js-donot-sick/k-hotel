@@ -38,7 +38,7 @@
                     <th>결제수단</th>
                     <th>결제금액</th>
                     <th>결제자</th>
-                    <th>결제여부</th>
+                    <th>예약번호</th>
                     <th>체크인 날짜</th>
                     <th>승인</th>
                 </tr>
@@ -62,7 +62,7 @@
                                 <td>${board.calculateWay}</td>
                                 <td>${board.calculatePrice}</td>
                                 <td>${board.memberId}</td>
-                                <td>${board.calculateSt}</td>
+                                <td>${board.bookNo}</td>
                                 <td>${board.checkInDt}</td>
                                 <td class="L-pay-btn"> 
                                     <button onclick="AgreePay(${board.calculateNo})">승인</button>

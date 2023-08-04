@@ -32,7 +32,7 @@
                         </select>
                     </div>
                     <div class="C-adminrsvlist" id="rsvListtable">
-                        <div class="C-adminrsv-main"  id="adminRsvList">
+                        <div id="adminRsvList">
                             <div class="C-rsvlist-container" id="Ctitle">
                                 <div>예약번호</div>
                                 <div>호텔지점</div>
