@@ -22,6 +22,7 @@ let count = 0; // 입력한 횟수 저장 변수
 
 console.log("정답 : " + random);
 
+
 function inputcheck() {
 
     const alll = document.getElementsByClassName("P-udg")[0]

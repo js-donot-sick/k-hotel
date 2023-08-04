@@ -32,7 +32,7 @@
                 <div class="p-input-area">
                     <input type="text" id="p-udg-input2" name="p-udg-input2" placeholder="숫자를 입력하세요." autocomplete="off" required>
 
-                    <button type="button" id="p-udg-btn">입력</button>
+                    <button type="submit" id="p-udg-btn">입력</button>
                 </div> <span class="p-udg-message" id="emailMessage"></span>
                 
                
