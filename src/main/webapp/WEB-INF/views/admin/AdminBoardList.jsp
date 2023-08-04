@@ -58,7 +58,7 @@
 									<td><a href="${contextPath}/admin/AdminBoardList/detail?no=${board.boardNo}">${board.boardTitle}</a></td>
 									<td></td>
 									<td>${board.boardDate}</td>
-									<td>${member.memberId}</td>
+									<td>${member.memberName}</td>
 								</tbody>
 								
 	
