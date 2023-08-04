@@ -26,7 +26,6 @@
             </div>
 
             <!-- <img src="${contextPath}${event.imageList[0].imageRename}" alt="사진"> -->
-            <c:set var="start" value="1"/>
 
             <div>
                 <c:forEach var="i" begin="0" end="${fn:length(event.imageList)-1}">
