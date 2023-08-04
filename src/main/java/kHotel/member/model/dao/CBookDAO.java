@@ -600,5 +600,32 @@ public class CBookDAO {
 			return likeList;
 		}
 		
+		/** 관리자 예약 지우기 전에 자식레코드 calculate먼저 지우기
+		 * @param conn 
+		 * @param bookNo
+		 * @return result
+		 * @throws Exception
+		 */
+		public int deleteCalculate(Connection conn, int bookNo) throws Exception {
+			
+			int result = 0;
+			
+			try {
+				String sql = prop.getProperty("deleteCalculate");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, bookNo);
+				
+				result = pstmt.executeUpdate();
+				
+			} finally {
+				close(pstmt);
+			}
+			
+			
+			return result;
+		}
+		
 }
 
