@@ -175,21 +175,46 @@
 
 
 
- 
+ .tagClass{
+     flex-wrap: wrap;
+     width: 500px;
+ }
 
 
   /* 태그 */
-.P-tag-top{
-    border-radius: 4px;
-    display:inline-block;
+.P-tag-top1{
+    border-radius: 15px;
     background-color: #eee;
-    margin:20px 10px;
-    width: 150px;
+    margin:1px 5px;
+    padding: 5px;
+    border: 0;
+    
+}
 
+.P-tag-top2{
+    border-radius: 15px;
+    background-color: #eee;
+    margin:1px 5px;
+    padding: 5px;
+    visibility: hidden;
+    
+}
+
+.P-tag-area{
+    display: flex;
 }
 
 .P-tag-area>span{
     text-align: center;
+}
+
+.P-tag-top > input{
+    display: inline-block;
+    width: 170px;
+    border: 0;
+    text-align: center;
+    margin-top: 15px;
+
 }
 
 .P-tag-top>img {
