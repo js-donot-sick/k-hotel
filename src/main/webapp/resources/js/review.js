@@ -1,8 +1,18 @@
 
 const inputImage = document.getElementsByName("JreviewImage")[0];
-c
+const preview = document.getElementById("J-reviewImage3");
 const deleteBtn = document.getElementById("J-delBtn");
+const inputF = document.getElementById("J-reviewImage2");
 
+const star5 = document.getElementById("5-stars");
+const star4 = document.getElementById("4-stars");
+const star3 = document.getElementById("3-stars");
+const star2 = document.getElementById("2-stars");
+const star1 = document.getElementById("1-star");
+
+console.log("별점 : "+star1.checked);
+
+const stars = document.getElementsByName("rating");
 
 inputImage.addEventListener("change", function(){
 
@@ -33,10 +43,10 @@ document.getElementById("J-cancle").addEventListener("click", function(){
     confirm("이전페이지로 돌아가시겠습니까?");
 })
 
-document.getElementById("J-update").addEventListener("click", function(){
+/* document.getElementById("J-update").addEventListener("click", function(){
 
     confirm("작성을 완료 하시겠습니까?");
-})
+}) */
 
 document.getElementById("J-delBtn").addEventListener("click",function(){
 
@@ -52,10 +62,11 @@ document.getElementById("J-delBtn").addEventListener("click",function(){
     }
 })
 
-const star5 = document.getElementById("5-stars");
+// 밑에 세 줄 주석처리된 건 필요하면 풀어서 써
+//const star5 = document.getElementById("5-stars");
 
 const star = document.getElementsByClassName("star2");
-const star2 = document.getElementsByClassName("star3")[0];
+//const star2 = document.getElementsByClassName("star3")[0];
 
 
 /* for(let i = 0 ; i < star.length ; i++){
@@ -76,6 +87,12 @@ const star2 = document.getElementsByClassName("star3")[0];
 
 }
  */
+const checkbox1 = document.getElementsByName("tag")[0];
+const checkbox2 = document.getElementsByName("tag")[1];
+const checkbox3 = document.getElementsByName("tag")[2];
+const checkbox4 = document.getElementsByName("tag")[3];
+const checkbox5 = document.getElementsByName("tag")[4];
+const checkbox6 = document.getElementsByName("tag")[5];
 
     
 
@@ -90,4 +107,32 @@ for(let i = 0 ;  i < tag.length ; i++){
     }else if(!tag[i].checked){
         tag[i].value == 'N';
     }
+}
+
+
+// form태그 제출 방지
+function reviewVaildate(){
+    if(inputF.value==""){
+        alert("사진을 첨부해주세요.");
+        return false;
+    }
+
+    if(star1.checked == false && star2.checked == false && star3.checked == false && star4.checked == false &&star5.checked == false){
+        alert("별점을 등록해주세요.");
+        return false;
+    }
+
+    if(checkbox1.checked == false && checkbox2.checked == false &&checkbox3.checked == false &&checkbox4.checked == false &&checkbox5.checked == false){
+        alert("태그를 선택해주세요.");
+        return false;
+    }
+
+    if(document.getElementById("J-text1").value==""){
+        alert("내용을 입력해주세요.");
+        return false;
+    }
+
+
+
+    return true;
 }

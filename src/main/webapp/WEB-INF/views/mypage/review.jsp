@@ -17,7 +17,7 @@
             <main>
 
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
-                <form action="review4?no=${rv.bookNo}" enctype="multipart/form-data" method="POST" >
+                <form action="review4?no=${rv.bookNo}" enctype="multipart/form-data" method="POST" onsubmit="return reviewVaildate()">
                     
                     <div class="J-body">
 
@@ -72,13 +72,18 @@
                                         </td>
                                     </tr>
 
+                                    <c:if test="${!empty image.rename}">
+                                        <c:set var="img" value="${contextPath}${image.rename}"/>
+                                    </c:if>
 
                                     <tr>
                                         <td>
                                             <button type="button" id="J-delBtn">사진 지우기</button>
                                         </td>
                                         <td colspan="3" id="J-reviewImg1">
-                                            <img type="file" src="${contextPath}${image.rename}" id="J-reviewImage3" name="reviewImg">
+                                            <label for="" id="J-label">
+                                                <img  id="J-reviewImage3" name="reviewImg" src="${img}">
+                                            </label>
                                         </td>
                                     </tr>
 
