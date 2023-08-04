@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
+
 
 <div>
     <div class="L-reply-title">댓글</div>
@@ -9,6 +11,10 @@
         <ul id="L-reply-list">
 
             <c:forEach var="reply" items="${rList}">
+
+                <c:set var="rmi" value="${reply.memberId}"/>
+                <c:set var="length" value="${fn:length(rmi)}"/>
+                ${fn:substring(rmi,0,legnth-3)}***
 
 
                 <li class="L-reply-row">
