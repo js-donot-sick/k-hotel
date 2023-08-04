@@ -271,9 +271,9 @@
                                             <input type="hidden" name="no" value="${param.no}">
                                             <button id="P-rs-delete-btn">삭제</button>
                                         </form>
+                                        <button id="P-rs-Declar-btn">신고</button>
                                     </c:if>
 
-                                    <button id="P-rs-Declar-btn">신고</button>
                                 </div>
 
 
