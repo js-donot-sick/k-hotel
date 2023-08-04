@@ -13,13 +13,14 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        
     </head>
-
+    
     <body>
-
-
+        
+        
+        <form action="bingoIn" method="POST" onsubmit="return bingo()">
             
             <div class="J-1">
                 
@@ -72,14 +73,15 @@
                     </tr>
             
                 </table>
-                <form action="https://www.naver.com/" onsubmit="return bingo()">
                     <input type="text" name="input" id="J-input" autocomplete="off">
                     <button id="J-btn" >제출</button>
+                    
+                    <span id="J-span1">빙고 : </span><span id="J-span" name="result"></span>
+                    <span id="J-count" class="J-cc1">남은 횟수 : </span><span id="J-count2" class="J-cc2">18</span>
+                    <span id="J-count3">※ 1~50 사이의 수를 입력해주세요</span>
+                    
+                    <input type="hidden" id="J-span2" name="result2">
                 </form>
-            
-                <span id="J-span1">빙고 : </span><span id="J-span"></span>
-                <span id="J-count" class="J-cc1">남은 횟수 : </span><span id="J-count2" class="J-cc2">18</span>
-                
             </div>
 
 

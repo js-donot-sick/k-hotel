@@ -115,7 +115,6 @@ td{
   width: 60px;
   height: 60px;
   
-  color : transparent;
   user-select: none;
   
 }
@@ -129,8 +128,8 @@ td div{
 
 #J-span{
   position: absolute;
-  top: 800px;
-  left: 500px;
+  top: 750px;
+  left: 940px;
   visibility: hidden;
 
   border-radius: 5px;
@@ -219,3 +218,11 @@ td > img {
   visibility: hidden;
 }
 
+#J-count3{
+  position: absolute;
+
+  top: 820px;
+  left: 820px;
+
+  color: #ff8d00;
+}

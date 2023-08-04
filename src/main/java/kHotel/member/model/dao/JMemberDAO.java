@@ -578,4 +578,33 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 	}
 
 
+	/** 빙고게임 후 쿠폰 증정
+	 * @param conn 
+	 * @param count
+	 * @param loginMember
+	 * @return result
+	 * @throws Exception
+	 */
+	public int couponIn(Connection conn, int count, Member loginMember) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("couponIn");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, loginMember.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+					
+			System.out.println(result + "쿠폰이 증정된거여");
+			
+		}finally {
+			close(pstmt);
+			
+		}
+		return result;
+	}
+
+
 }

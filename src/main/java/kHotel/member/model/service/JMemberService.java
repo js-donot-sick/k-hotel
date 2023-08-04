@@ -211,6 +211,24 @@ public class JMemberService {
 		return event;
 	}
 
+	/** 빙고게임 후 쿠폰 증정
+	 * @param count
+	 * @param loginMember
+	 * @return result
+	 * @throws Exception
+	 */
+	public int couponIn(int count, Member loginMember) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result  = dao.couponIn( conn ,count, loginMember);
+		
+		if(result > 0)commit(conn);
+		else		  rollback(conn);
+		
+		return result;
+	}
+
 
 
 
