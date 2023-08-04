@@ -50,14 +50,36 @@ for (let i = 0; i < inputImg.length; i++) {
 
     });
 }
+/* let Tdate = new Date();
+
+let timeOff = new Date().getTimezoneOffset() * 60000;
+let today = new Date(Tdate - timeOff).toISOString().split("T")[0];
+document.getElementById("K-date").setAttribute("min", today); */
+let Tdate = new Date();
+
+let tomorrow = new Date(Tdate);
+tomorrow.setDate(Tdate.getDate()+1);
+
+console.log(tomorrow)
+
+let timeOff = new Date().getTimezoneOffset() * 60000;
+let today = new Date(tomorrow - timeOff).toISOString().split("T")[0];
+document.getElementById("K-date").setAttribute("min", today);
+
 
 // 게시글 유효성 검사
 function eventValidate(){
-
+    
     const eventTitle = document.getElementsByName("K-title")[0];
     const eventContent = document.getElementsByName("K-content")[0];
     const first = document.getElementsByClassName("K-first")[0];
     const date = document.getElementById("K-date");
+    const thumbnail = document.getElementById("k-img0");
+
+    if(thumbnail.value == ""){
+        alert("썸네일을 설정해주세요");
+        return false;
+    }
 
     if(eventTitle.value.trim().length == 0) {
         alert("제목을 입력해주세요");
@@ -65,11 +87,7 @@ function eventValidate(){
         eventTitle.focus();
         return false;
     }
-    
-    if(date.value.length == 0){
-        alert("마감일을 설정해주세요");
-        return false;
-    }
+
 
     if(eventContent.value.trim().length == 0) {
         alert("내용을 입력해주세요");
