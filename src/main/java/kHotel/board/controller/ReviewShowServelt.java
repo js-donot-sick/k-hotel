@@ -74,9 +74,27 @@ public class ReviewShowServelt extends HttpServlet {
 
 				Member loginMember = (Member) session.getAttribute("loginMember");
 
-				int boardNo = Integer.parseInt(req.getParameter("boardNo"));
+				int no = Integer.parseInt(req.getParameter("no"));
+				
+				System.out.println(no);
 
-				int result = service.deleteReview(loginMember, boardNo);
+				int result = service.deleteReview(loginMember, no);
+				
+				String path = null;
+				System.out.println("result: "+ result);
+				
+				
+				if(result>0) {
+					session.setAttribute("message","리뷰가 삭제 되었습니다.");
+					path = req.getContextPath() + "/board/review/list?";
+					
+				}else {
+					session.setAttribute("message", "리뷰 삭제가 실패되었습니다.");
+					path = req.getHeader("referer");
+					
+				}
+				
+				resp.sendRedirect(path);
 
 			}
 			

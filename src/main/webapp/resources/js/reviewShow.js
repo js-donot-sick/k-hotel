@@ -44,6 +44,8 @@ Pdeclarbtn.addEventListener("click", function () {
     Ppcontent.focus();
   }
 
+  console.log(boardNo)
+
   $.ajax({
 
       url: "declar",

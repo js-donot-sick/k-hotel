@@ -45,10 +45,12 @@
 
                                 <input type="hidden" name="boardNo" value="${board.boardNo}">
                                
+                                <c:set var="rsmi" value="${board.memberId}"/>
+                                <c:set var="length" value="${fn:length(rsmi)}"/>
 
                                 <div class="P-reviewBox">
                                     <div class="P-profile_area">
-                                        <div class="P-id" id="P-id">작성자 : <span>${board.memberId}</span></div>
+                                        <div class="P-id" id="P-id">작성자 : <span>***${fn:substring(rsmi,3,length)}</span></div>
 
                                         <div>
                                             <div class="P-room1" id="P-room1"> 지점: <span>${board.hotelTitle}</span>
@@ -240,8 +242,13 @@
                                                 <input type="hidden" name="tag" value="${board.tagContent}">
                                                 <input type="hidden" name="star" value="${board.reviewStar}">
                                             </form>
-                                            <button id="P-rs-delete-btn">삭제</button>
+                                            <form action="delete">
+                                                <input type="hidden" name="memberId" value="${board.memberId}">
+                                                <input type="hidden" name="no" value="${param.no}">
+                                                <button id="P-rs-delete-btn">삭제</button>
+                                            </form>
                                         </c:if>
+
                                             <button id="P-rs-Declar-btn">신고</button>
                                     </div>
 
@@ -250,7 +257,8 @@
                                     <input type="hidden" value="${board.memberNo}" name="memberNo">
 
                                     <!-- 신고하기 창 -->
-                                    <form action="#">
+                                    <form action="show">
+                                        <input type="hidden" name="no" value="${param.no}">
 
                                         <div id="P-popup-Declar">
 
