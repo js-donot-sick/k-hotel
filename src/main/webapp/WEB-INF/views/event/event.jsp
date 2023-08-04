@@ -38,38 +38,39 @@
 
                         <div class="P-eventmain">
 
-                            <div class="P-event-list">
-                                <a href="${contextPath}/event/bingo" class="P-event">
-                                    <img src="${contextPath}/resources/images/빙고 게임 이미지.png" alt="빙고 썸넬 사진">
-                                    <div class="P-event1">
-                                        <div class="P-event-name">빙고 게임</div>
-                                    </div>
-                                </a>
-
-                            </div>
-
-                            <div class="P-event-list">
-                                <a href="${contextPath}/event/updown" class="P-event">
-                                    <img src="${contextPath}/resources/images/업다운게임_이미지.jpg" alt="업다운 썸넬 사진">
-                                    <div class="P-event1">
-                                        <div class="P-event-name">업다운 게임</div>
-                                    </div>
-                                </a>
-
-                            </div>
-       
-                            <c:forEach var="Img" items="${eventList}">
+                            <div class="P-eventmain1">
                                 <div class="P-event-list">
-                                    <a href="${contextPath}/event/detail?no=${Img.eventNo}" class="P-event">
-                                        <img src="${contextPath}${Img.imgRename}">
+                                    <a href="${contextPath}/event/bingo" class="P-event">
+                                        <img src="${contextPath}/resources/images/빙고 게임 이미지.png" alt="빙고 썸넬 사진">
                                         <div class="P-event1">
-                                            <div class="P-event-name">${Img.eventTitle}</div>
+                                            <div class="P-event-name">빙고 게임</div>
                                         </div>
                                     </a>
 
                                 </div>
-                            </c:forEach>
-     
+
+                                <div class="P-event-list">
+                                    <a href="${contextPath}/event/updown" class="P-event">
+                                        <img src="${contextPath}/resources/images/업다운게임_이미지.jpg" alt="업다운 썸넬 사진">
+                                        <div class="P-event1">
+                                            <div class="P-event-name">업다운 게임</div>
+                                        </div>
+                                    </a>
+
+                                </div>
+
+                                <c:forEach var="Img" items="${eventList}">
+                                    <div class="P-event-list">
+                                        <a href="${contextPath}/event/detail?no=${Img.eventNo}" class="P-event">
+                                            <img src="${contextPath}${Img.imgRename}">
+                                            <div class="P-event1">
+                                                <div class="P-event-name">${Img.eventTitle}</div>
+                                            </div>
+                                        </a>
+
+                                    </div>
+                                </c:forEach>
+                            </div>
                         </div>
 
                         <div class="P-blank2"></div>

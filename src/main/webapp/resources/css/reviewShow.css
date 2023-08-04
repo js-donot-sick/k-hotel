@@ -176,9 +176,16 @@
 
 
  .tagClass{
-     flex-wrap: wrap;
      width: 500px;
+     margin: 15px 0;
+     height: 100px;
  }
+
+ .tagClass1{
+    flex-wrap: wrap;
+    width: 500px;
+}
+
 
 
   /* 태그 */
@@ -188,7 +195,6 @@
     margin:1px 5px;
     padding: 5px;
     border: 0;
-    
 }
 
 .P-tag-top2{
@@ -213,7 +219,7 @@
     border: 0;
     text-align: center;
     margin-top: 15px;
-
+    
 }
 
 
@@ -243,6 +249,7 @@
 .P-rs-btn{
     display: flex;
     justify-content: right;
+    margin: 20px;
 }
 
 #P-rs-update-btn{
