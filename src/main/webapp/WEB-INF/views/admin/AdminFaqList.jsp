@@ -54,16 +54,14 @@
                                     <div>
                                         ${board.boardContent}
                                     </div>
-                                    <form action="${contextPath}/#" method="post">
+                                    <form action="admin/FAQUpate" method="post">
                                         <input type="hidden" name="boardNo" value="${board.boardNo}">
 
                                         <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">
                                             <div class="k-btns">
-                                                <form action="FAQUpate" method="POST">
                                                     <button type="submit" class="k-mod-btn">수정</button>
                                                     <input type="hidden" name="title" value="${board.boardTitle}">
                                                     <input type="hidden" name="content" value="${board.boardContent}">
-                                                </form>
                                                 <button type="button" onclick="deleteFaq(${board.boardNo}, this)"
                                                     class="k-del-btn">삭제</button>
                                             </div>
