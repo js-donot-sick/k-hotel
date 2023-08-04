@@ -62,6 +62,14 @@
     border: 1px solid  rgba(178, 158, 135, 0.9);
 }
 
+.C-likelist-inner{/* 이미지 + 텍스트 큰 틀 */
+    width: 820px;
+    display: flex;
+    height: 200px;
+    border: 1px solid  rgba(178, 158, 135, 0.9);
+    margin: auto;
+}
+
 .C-coupon-null{
     width: 820px;
     height: 600px;
@@ -79,6 +87,21 @@
     align-items: center;
     justify-content: center;
 }
+.C-innerlike-img{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.C-like-img{ /* 찜목록 이미지 틀 */
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 .C-inner-text{ /* 텍스트 틀 */
     width: 60%;

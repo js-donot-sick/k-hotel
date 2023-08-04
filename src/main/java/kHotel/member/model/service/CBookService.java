@@ -297,5 +297,32 @@ public class CBookService {
 		return result;
 	}
 
+
+	/** 찜 목록을 가져오는 Service
+	 * @param memberNo
+	 * @param cp
+	 * @return map
+	 * @throws Exception
+	 */
+	public Map<String, Object> selectlikeList(int memberNo, int cp) throws Exception{
+		
+		Connection conn = getConnection();
+		
+		int listCount = dao.selectLikePage(conn,memberNo);
+		
+		CPagination pagination = new CPagination(cp,listCount);
+		
+		List<Reservation> likeList = dao.selectlikeList(conn,memberNo,pagination);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("pagination", pagination);
+		map.put("likeList", likeList);
+		
+		close(conn);
+		
+		return	map;
+	}
+
 	
 }
