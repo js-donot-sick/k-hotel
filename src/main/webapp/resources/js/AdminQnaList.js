@@ -86,7 +86,7 @@ function selectFaqList(){
 
                 fcDiv.append(cDiv, form);
 
-                kFaq.append(sDiv, fcDiv);
+                kFaq.prepend(sDiv, fcDiv);
 
                 }
             } else {
