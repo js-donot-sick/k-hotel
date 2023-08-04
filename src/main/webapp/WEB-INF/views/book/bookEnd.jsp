@@ -80,7 +80,7 @@
                         <td>${reserve.payPlan}</td>
                     </tr>
                     <tr>
-                        <th>결제상태</th>
+                        <th>입금계좌</th>
                         <td>${reserve.bank}</td>
                     </tr>
                 </table>

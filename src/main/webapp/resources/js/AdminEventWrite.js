@@ -76,17 +76,22 @@ function eventValidate(){
     const date = document.getElementById("K-date");
     const thumbnail = document.getElementById("k-img0");
 
-    if(thumbnail.value == ""){
-        alert("썸네일을 설정해주세요");
-        return false;
-    }
-
     if(eventTitle.value.trim().length == 0) {
         alert("제목을 입력해주세요");
         eventTitle.value = "";
         eventTitle.focus();
         return false;
     }
+    if(date.value == ""){
+        alert("마감일을 설정해주세요");
+        return false;
+    }
+
+    /* if(thumbnail.value == ""){
+        alert("썸네일을 설정해주세요");
+        return false;
+    } */
+
 
 
     if(eventContent.value.trim().length == 0) {

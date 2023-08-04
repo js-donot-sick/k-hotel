@@ -21,7 +21,6 @@
     <div class="L-all">
 
         <c:set var="memberId" value="${memberId}" />
-        <p>memberId 값: ${memberId}</p>
 
         <div class="L-main">
             <div class="L-title">비밀번호 변경</div>
