@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
 
         <!DOCTYPE html>
         <html lang="en">
@@ -65,12 +66,17 @@
                                 <!-- 게시글이 있는 경우 -->
                                 <!-- 게시글 리스트 -->
                                 <c:forEach var="board" items="${boardList}">
+
+
+                                <c:set var="revMi" value="${board.memberId}"/>
+                                <c:set var="length" value="${fn:length(revMi)}"/>
+
                                     <tr class="P-pay-tr">
                                       
                                             <td>${board.boardNo}</td>
                                             <td>${board.hotelTitle}</td>
                                             <td>${board.roomName}</td>
-                                            <td>${board.memberId}</td>
+                                            <td>***${fn:substring(revMi,3,length)}</td>
                                             <td>${board.boardDate}</td>
                                             <td><button class="Pbtn1" onclick="location.href='${contextPath}/board/review/show?no=${board.boardNo}'" >상세보기</button></td>
                                             

@@ -16,6 +16,11 @@ function selectReplyList(){
             
             for(let rp of rList){
 
+                var replyName = rp.memberId
+                var length = replyName.length
+                var replyMN = replyName.substring(3, length);
+                var star = "***"
+
                 
                 // 댓글영역
                 const replyRow = document.createElement("li");
@@ -24,7 +29,7 @@ function selectReplyList(){
                 // 댓글 작성자
                 const replyPerson = document.createElement("span");
                 replyPerson.classList.add("L-reply-person");
-                replyPerson.innerText = rp.memberId;
+                replyPerson.innerText = star + replyMN;
 
                 // 댓글 작성일
                 const replyDate = document.createElement("span");

@@ -14,11 +14,11 @@
 
                 <c:set var="rmi" value="${reply.memberId}"/>
                 <c:set var="length" value="${fn:length(rmi)}"/>
-                ${fn:substring(rmi,0,legnth-3)}***
+                
 
 
                 <li class="L-reply-row">
-                    <span class="L-reply-person">${reply.memberId}</span>
+                    <span class="L-reply-person">***${fn:substring(rmi,3,length)}</span>
                     <span class="L-reply-date">${reply.createDt}</span>
 
                     <p class="L-reply-content">${reply.replyContent}</p>

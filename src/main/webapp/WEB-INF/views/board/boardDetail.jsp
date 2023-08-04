@@ -36,7 +36,7 @@
 
             <div class="L-person L-detail">
                 <div>작성자</div>
-                <div><input type="text" name="L-input-person" value="${fn:substring(bmi,0,length-3)}***" disabled></div>
+                <div><input type="text" name="L-input-person" value="***${fn:substring(bmi,3,length)}" disabled></div>
                 
                 <div>작성일</div>
                 <div><input type="text" name="L-date" value="${board.boardDate}"disabled></div>
