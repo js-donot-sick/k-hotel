@@ -79,11 +79,11 @@
                                 </div >
                                 
                                 <div class="J-J4">
-                                    <input type="text" id="J-B" class="J-A" name="memberName" autocomplete="off">
+                                    <input type="text" id="J-B" class="J-A J-name" name="memberName" autocomplete="off">
                                 </div >
                                 
                                 <div class="J-J5">
-                                    <input type="text"id="J-C" class="J-A" name="memberPno" maxlength="10">&nbsp;-&nbsp;<input type="text"  id="J-C" name="memberPno" maxlength="10" autocomplete="off"> 
+                                    <input type="text"id="J-C" class="J-A J-pno" name="memberPno" maxlength="6">&nbsp;-&nbsp;<input type="text" class="J-pno2" id="J-C" name="memberPno" maxlength="7" autocomplete="off"> 
                                 </div>
                                 
                                 <div class="J-J6">
@@ -91,7 +91,7 @@
                                 </div>
                                 
                                 <div class="J-J7">
-                                    <input type="text" id="J-B" class="J-A" name="memberEmail" autocomplete="off">
+                                    <input type='email' id="J-B" class="J-A J-memberEmail" name="memberEmail" autocomplete="off">
                                 </div>
                                 
                                 
@@ -156,7 +156,7 @@
                 
                 <div class="J2-5">
                     <div class="J2-5-1">
-                        <pre>개인정보 마케팅 활용 동의 K-호텔 : K호텔 에서의 개인정보 마케팅 활용에 동의하시겠습니까?</pre>
+                        <pre>필수 약관 동의1 K-호텔 : K호텔 회원 가입 필수약관1에 대하여 동의하시겠습니까?</pre>
                     </div>
                     
                     <div class="J2-5-2">
@@ -202,13 +202,13 @@
                         </label>
 
                     <label>
-                        <input type="radio" name="J-check" class="J-check2"> 동의하지 않음
+                        <input type="radio" name="J-check" class="J-check2" value="ff"> 동의하지 않음
 
                     </label>
                     </div>
                     
                     <div class="J2-5-4">
-                        <pre>개인정보 제3자 제공 K-호텔: 서비스 제공을 위한 개인정보 제3자 제공에 대해 동의 하시겠습니까?</pre>
+                        <pre>필수 약관 동의2 K-호텔 : K호텔 회원 가입 필수약관2에 대하여 동의하시겠습니까?</pre>
                     </div>
                     
                     <div class="J2-5-5">
@@ -254,7 +254,7 @@
                         </label>
 
                         <label>
-                            <input type="radio" name="J-check2" id="J-check" class="J-check2" value="false"> 동의하지 않음
+                            <input type="radio" name="J-check2" id="J-check" class="J-check2" value="ff"> 동의하지 않음
                         </label>
                         
                     </div>
