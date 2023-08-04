@@ -36,7 +36,7 @@
 
     <section class="board-list">
 
-    <h1 class="board-name">공지사항</h1>
+    <h1 class="board-name-list">공지사항</h1>
     
     <div class="list-wrapper">
 
@@ -56,7 +56,6 @@
                         <th>제목</th>
                         <th></th>
                         <th>작성일</th>
-                        <th>작성자</th>
                     </thead>
 
 
@@ -67,12 +66,11 @@
                     <tbody>
                         
                         <td>${board.boardNo}</td>
-                        <td> <a href="${contextPath}/board/qna/boardDetail?type=2&cp=${pagination.currentPage}&no=${board.boardNo}${searchUrl}">${board.boardTitle}</a></td>
+                        <td> <a href="${contextPath}/admin/AdminBoardList/detail?no=${board.boardNo}">${board.boardTitle}</a></td>
                         <td></td>
                         <td>${board.boardDate}</td>
-                        <td>${member.memberId}</td>
                     </tbody>
-							
+                     
 
                 </c:forEach>
 
@@ -82,7 +80,7 @@
                     
                      <!-- 페이지네이션 -->
                     <div class="K-qna-page">
-   							<c:set var="url" value="${contextPath}/board?type=1&cp="/>
+                        <c:set var="url" value="${contextPath}/board?type=1&cp="/>
                         <ul class="K-pagination">
                             <!-- 첫 페이지로 이동 -->
                             <li><a href="${url}1$${searchUrl}">&lt;&lt;</a></li>
