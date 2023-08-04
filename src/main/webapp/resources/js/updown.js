@@ -131,3 +131,22 @@ function inputcheck() {
 
 }
 
+document.getElementsByClassName("P-game")[0].addEventListener("click",function(){
+
+    const udgbody = document.getElementById("P-udg-body");
+    const udgtitle = document.getElementById("P-udg-title");
+    const udg = document.getElementById("P-udg");
+    const inputarea = document.getElementById("p-input-area");
+    const udgbtn = document.getElementById("p-udg-btn");
+
+    this.style.display = "none";
+
+    udgbody.style.visibility = "visible"; 
+    udgtitle.style.visibility = "visible"; 
+    udg.style.visibility = "visible";
+    inputarea.style.visibility = "visible";
+    udgbtn.style.visibility = "visible";
+
+
+
+})

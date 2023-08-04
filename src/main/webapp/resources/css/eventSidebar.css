@@ -2,11 +2,13 @@
 ul, li {list-style:none; margin:0; padding: 0;}
 a {text-decoration:none;}
 
-.H-snb { width: 25%; }
+.H-snb { 
+    width: 25%; 
+}
 
 .H-side-bar{ 
     
-    width: 70%;
+    width: 80%;
     background:rgb(207, 191, 167);
     height:auto; 
     box-sizing:border-box;
@@ -27,11 +29,6 @@ a {text-decoration:none;}
     position:relative;
 }
 
-/* 호텔 소개 글씨 조정 */
-.H-side-bar > li > .H-side-title{
-    font-size:24px; 
-}
-
 .H-side-item:hover{
     background:rgba(255,255,255,0.1);
 }
@@ -41,11 +38,3 @@ a {text-decoration:none;}
 
 
 *{box-sizing: border-box;}
-
-.room{
-    font-size: 18px;
-}
-
-.room:hover{
-    background:rgba(255,255,255,0.1);
-}
