@@ -21,6 +21,7 @@ body::-webkit-scrollbar {
     width: 1200px;
     margin: auto;
     display: flex;
+    padding: 20px 0;
 }
 
 .k-slide{
