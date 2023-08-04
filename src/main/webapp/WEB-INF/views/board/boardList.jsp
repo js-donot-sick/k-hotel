@@ -36,7 +36,7 @@
 
     <section class="board-list">
 
-    <h1 class="board-name">공지사항</h1>
+    <h1 class="board-name-list">공지사항</h1>
     
     <div class="list-wrapper">
 
@@ -56,7 +56,6 @@
                         <th>제목</th>
                         <th></th>
                         <th>작성일</th>
-                        <th>작성자</th>
                     </thead>
 
 
@@ -67,10 +66,9 @@
                     <tbody>
                         
                         <td>${board.boardNo}</td>
-                        <td> <a href="${contextPath}/board/qna/boardDetail?type=2&cp=${pagination.currentPage}&no=${board.boardNo}${searchUrl}">${board.boardTitle}</a></td>
+                        <td> <a href="${contextPath}/admin/AdminBoardList/detail?no=${board.boardNo}">${board.boardTitle}</a></td>
                         <td></td>
                         <td>${board.boardDate}</td>
-                        <td>${member.memberId}</td>
                     </tbody>
 							
 

@@ -32,8 +32,9 @@
 
     <div id="k-qList-content">
 
-        <jsp:include page="/WEB-INF/views/common/boardSidebar.jsp"/>
 
+        <jsp:include page="/WEB-INF/views/common/boardSidebar.jsp"/>
+        
         <div class="k-qna">
 
             <div>

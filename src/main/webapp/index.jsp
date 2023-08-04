@@ -193,8 +193,7 @@
                     <h3>해온 프리미엄베딩</h3>
                     <p>국내최고 롯데호텔에서만 느낄 수 있는 고품격<br>
                       he:on Bedding Package를 집에서 편안하게 느껴보세요.</p>
-                    <button>자세히보기</button>
-                  </div>
+                    </div>
                 </div>
               </section>
          
@@ -207,7 +206,6 @@
                     <h3>시그니엘 드립백 커피</h3>
                     <p>시그니엘의 전문 바리스타가 직접 개발한<br>
                     프리미엄 원두 세트로 하루를 향기롭게 시작해보세요.</p>
-                  <button>자세히보기</button>
                   </div>
                 </div>
               </section>
@@ -236,7 +234,6 @@
                       <div class="txt row">
                           <span class="cell vvv">레스토랑 및 부대시설 영업시간 변경 안내</span>
                             <span class="sub cell">일부 영업장 휴장 및 단축 운영을 한시적으로 실시합니다.</span>         
-                            <p class="cell date">상시</p>      
                       </div>
                         </a>
                     </li>
@@ -247,8 +244,7 @@
                               </div>
                       <div class="txt row">
                           <span class="cell vvv">SPRING OCEAN SPA CIMER</span>
-                            <span class="sub sub-1 cell">설레는 봄, 따스한 봄 꽃 선물</span>         
-                            <p class="cell date daad">상시</p>      
+                            <span class="sub cell">설레는 봄, 따스한 봄 꽃 선물</span>         
                       </div>
                         </a>
                     </li>
@@ -260,8 +256,6 @@
                       <div class="txt row">
                           <span class="cell vvv">신나는 봄방학 프로모션</span>
                             <span class="sub cell">사랑스런 아이들과 함께 맛있는 음식을 맛보며 즐거운 추억을</span>
-                                    <span class="subb sub cell">만들어 보세요.</span>   
-                            <p class="cell date dd-1">2020.02.22~2020.03.01</p>      
                       </div>
                         </a>
                     </li>

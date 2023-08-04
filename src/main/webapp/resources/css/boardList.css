@@ -1,21 +1,23 @@
 
 .board-list a{
-    text-decoration: none;
     color: black;
 }
 
-.board-list a:hover{
-    text-decoration: underline;
-}
 
 main{
-    width: 75%;
+    width: 1200px;
     margin: auto;
     display: flex;
 }
 
+.board-name-list{
+    text-align: center;
+    font-weight: bold;
+    font-size : 30px;
+}
+
 .board-list{
-    width: 100%;
+    width: 75%;
     margin: auto;
 }
 
@@ -25,7 +27,6 @@ main{
 }
 
 .list-wrapper{
-    width: 100%;
     min-height: 670px;
 }
 
@@ -141,6 +142,9 @@ main{
     cursor: pointer;
     border: 0;
 }
+
+
+*{box-sizing: border-box;}
 
 
 *{box-sizing: border-box;}
