@@ -75,16 +75,10 @@ Pdeclarbtn.addEventListener("click", function () {
 
 })
 
-const tag = document.getElementsByClassName("P-tag-top");
+function appendText(){
+  const element = document.getElementById("P-tag-top1");
+  const eventbtn = document.getElementById("P-tag-top");
 
-let i = 1
-
-
-for(let items of tag){
-
-  items[i] = 1;
-/*   if(items[0]) */
-
+  element.appendChild(eventbtn);
 }
-
 
