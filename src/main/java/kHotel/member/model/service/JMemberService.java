@@ -200,6 +200,7 @@ public class JMemberService {
 		
 		Connection conn = getConnection();
 		
+		// 새로운 멤버의 번호를 조회(수정한거야~)
 		int memberNo = dao.selectMemberNo(conn);
 		
 		int event = dao.insertEventCheck(conn,memberNo);

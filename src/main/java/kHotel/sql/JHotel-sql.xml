@@ -135,9 +135,9 @@
 		VALUES(DEFAULT, DEFAULT, ?)
 	</entry>
 	
-	<!-- 다음 회원 번호 조회 -->
+	<!-- 새로운 회원 번호 조회 -->
 	<entry key="memberNextNo">
-		SELECT SEQ_MEMBER_NO.NEXTVAL FROM DUAL
+		SELECT MAX (MEMBER_NO) FROM MEMBER
 	</entry>
 
 	<!-- 이미지 수정 -->
@@ -160,6 +160,6 @@
 	<!-- 빙고게임 후 쿠폰 증정 -->
 	<entry key="couponIn">
 		INSERT INTO COUPON VALUES(SEQ_COUPON_NO.NEXTVAL,?,
-								  '30000만원 할인 쿠폰',30000,DEFAULT,DEFAULT)
+								  '30000원 할인 쿠폰',30000,DEFAULT,DEFAULT)
 	</entry>
 </properties>
