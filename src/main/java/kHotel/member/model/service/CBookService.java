@@ -81,6 +81,7 @@ public class CBookService {
 		
 		Connection conn = getConnection();
 		
+		
 		List<Reservation> rsvList = dao.selectRsvList(conn);
 		
 		close(conn);
@@ -114,8 +115,13 @@ public class CBookService {
 		
 		Connection conn = getConnection();
 		
-		int result = dao.deleteReservation(conn, bookNo);
+		int delete = dao.deleteCalculate(conn, bookNo);
 		
+		System.out.println(delete);
+		
+		int	result = dao.deleteReservation(conn, bookNo);
+		
+		System.out.println(result);
 		if(result > 0) commit(conn);
 		else		   rollback(conn);
 		

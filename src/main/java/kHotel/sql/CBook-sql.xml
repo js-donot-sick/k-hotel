@@ -49,6 +49,12 @@
 		ORDER BY BOOK_NO
 	</entry>
 	
+	<!-- 예약 취소 하기 전에 자식 레코드 결제 먼저 삭제  -->
+	<entry key="deleteCalculate">
+		DELETE FROM CALCULATE
+		WHERE BOOK_NO = ?
+	</entry>
+	
 	<!-- 예약 취소  -->
 	<entry key="deleteReservation">
 		DELETE FROM RESERVATION

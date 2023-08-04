@@ -37,7 +37,7 @@
                 
                             <div class="L-person L-detail">
                                 <div>작성자</div>
-                                <div><input type="text" name="L-input-person" value="${loginMember.memberName}" placeholder="작성자" disabled></div>
+                                <div><input type="text" name="L-input-person" value="${loginMember.memberId}" placeholder="작성자" disabled></div>
                                 <input type="hidden" name="memberNo" value="${loginMember.memberNo}">
                               
                             </div>
