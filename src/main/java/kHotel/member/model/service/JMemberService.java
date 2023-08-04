@@ -49,8 +49,11 @@ public class JMemberService {
 		
 		
 		
-		
+		// 1) XSS 방지 처리(내용)
 		rv.setContent( Util.XSSHanding(rv.getContent()));
+		
+		// 2) 개행 문자 처리 (내용)
+		rv.setContent(Util.newLineHandling(rv.getContent()));
 		
 		// 리뷰 게시글 등록
 		int result = dao.reviewUpdate(conn, rv );
@@ -158,6 +161,12 @@ public class JMemberService {
 		// boardNo 얻어오기
 		int boardNo = dao.getBoardNo(conn, rvUpdate2 , loginMember);
 		System.out.println(boardNo + "서빗 보드넘버");
+		
+		// 1) XSS 방지 처리(내용)
+		updateReview.setContent(Util.XSSHanding(updateReview.getContent()));
+		
+		// 2) 개행 문자 처리(내용)
+		updateReview.setContent(Util.newLineHandling(updateReview.getContent()));
 		
 		// 게시글 수정
 		int result = dao.reviewAlter(conn, rvUpdate2, loginMember, boardNo, updateReview);
