@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"  %>
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +18,11 @@
 </head>
 <body>
 
+    <c:set var="bmi" value="${board.memberId}"/>
+    <c:set var="length" value="${fn:length(bmi)}"/>
 
     <jsp:include page="/WEB-INF/views/common/header.jsp"/>
-
+    
     <div class="L-main">
 
         <div class="L-title1">질문게시판 상세페이지</div>
@@ -33,7 +36,8 @@
 
             <div class="L-person L-detail">
                 <div>작성자</div>
-                <div><input type="text" name="L-input-person" value="${board.memberId}" disabled></div>
+                <div><input type="text" name="L-input-person" value="${fn:substring(bmi,0,length-3)}***" disabled></div>
+                
                 <div>작성일</div>
                 <div><input type="text" name="L-date" value="${board.boardDate}"disabled></div>
             </div>
