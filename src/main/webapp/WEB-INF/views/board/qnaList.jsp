@@ -16,7 +16,7 @@
 
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+   integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
     crossorigin="anonymous">
     <link rel="stylesheet" href="${contextPath}/resources/css/qnaList.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
@@ -32,8 +32,9 @@
 
     <div id="k-qList-content">
 
-        <jsp:include page="/WEB-INF/views/common/boardSidebar.jsp"/>
 
+        <jsp:include page="/WEB-INF/views/common/boardSidebar.jsp"/>
+        
         <div class="k-qna">
 
             <div>
@@ -41,7 +42,7 @@
                 <div>질문게시판</div>
 
                 <div>
-                        <button id="q-btn"  onclick="location.href='write?mode=insert&type=${param.type}&cp=${param.cp}'"	>게시글 작성</button>
+                        <button id="q-btn"  onclick="location.href='write?mode=insert&type=${param.type}&cp=${param.cp}'"   >게시글 작성</button>
                 </div>
             </div>
 
@@ -72,7 +73,7 @@
                                 <div>${board.boardNo}</div>
                                 <div>${board.boardTitle}</div>
                                 <div></div>
-                                <div>***${fn:substring(memberId, 3, fn:length(memberId))}</div>
+                                <div>${fn:substring(memberId, 0, fn:length(memberId) - 3)}***</div>
                                 <div>${board.boardDate}</div>
                             </div>
                         </a>
