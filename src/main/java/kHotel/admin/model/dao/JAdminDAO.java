@@ -96,4 +96,83 @@ public class JAdminDAO {
 		return result;
 	}
 
+	/** FAQ 수정에 필요한 boardNo 가져오기
+	 * @param conn
+	 * @param before
+	 * @param loginMember
+	 * @return boardNo
+	 * @throws Exception
+	 */
+	public int getFAQBoardNo(Connection conn, HAdminBoard before, Member loginMember) throws Exception {
+		int board = 0;
+		
+		try {
+			String sql = prop.getProperty("getFAQBoardNo");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, before.getBoardTitle());
+			pstmt.setString(2, before.getBoardContent());
+			pstmt.setInt(3, loginMember.getMemberNo());
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next() ) {
+				
+				board = rs.getInt(1);
+			}
+			
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		return board;
+	}
+
+	/** FAQ 수정 DAO
+	 * @param conn
+	 * @param before
+	 * @param loginMember
+	 * @param after
+	 * @param boardNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int FAQAlter(Connection conn, HAdminBoard before, Member loginMember, HAdminBoard after, int boardNo) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("FAQAlter");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			
+			pstmt.setString(1, after.getBoardContent());
+			pstmt.setString(2, after.getBoardTitle());
+			pstmt.setInt(3, loginMember.getMemberNo());
+			pstmt.setInt(4, boardNo);
+			pstmt.setString(5, before.getBoardContent());
+			pstmt.setString(6, before.getBoardTitle());
+			
+			
+			result = pstmt.executeUpdate();
+			System.out.println(before.getBoardContent());
+			System.out.println(before.getBoardTitle());
+			System.out.println(loginMember.getMemberNo());
+			System.out.println(boardNo);
+			System.out.println(after.getBoardContent());
+			System.out.println(after.getBoardTitle());
+			
+			System.out.println(result + " 수정 DAO");
+		}finally {
+			
+			close(pstmt);
+			
+		}
+		return result;
+	}
+
 }

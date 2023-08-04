@@ -33,10 +33,16 @@ public class BingoServlet2 extends HttpServlet{
 			
 			System.out.println(result+"증정되면 1이다 ㅋ");
 			
+			String path = null;
+			
 			if(result > 0) {
 				session.setAttribute("message", "쿠폰이 증정되었습니다.");
+				
+				path = req.getContextPath() + "/event";
 			}else {
 				session.setAttribute("message", "쿠폰 증정 실패 다시 시도바람");
+				
+				path = req.getContextPath() + "/event";
 			}
 			
 			}

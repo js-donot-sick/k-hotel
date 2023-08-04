@@ -109,6 +109,16 @@
 		AND BOARD_ST = 'N'
 	</entry>
 
+	<!-- FAQ 수정을 위한 boardNo 가져오기 -->
+	<entry key="getFAQBoardNo">
+		SELECT BOARD_NO
+		FROM BOARD
+		WHERE BOARD_CD = 4
+		AND BOARD_TITLE = ?
+		AND BOARD_CONTENT = ?
+		AND MEMBER_NO = ?
+	</entry>
+
 	<!-- 리뷰 수정을 위한 boardNo 가져오기 -->
 	<entry key="getBoardNo">
 		SELECT BOARD_NO

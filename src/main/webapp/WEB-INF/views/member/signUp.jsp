@@ -100,7 +100,7 @@
                             <div class="J-H">
                                 
                                 <div class="J-H1">
-                                    <button type="button" class="J-H1-1" >아이디 중복 확인</button>&nbsp;
+                                    <button type="button" id="J-idBtn" class="J-H1-1" onclick="return duplication()" >아이디 중복 확인</button>&nbsp;
                                 </div>
                                 
                                 <div class="J-H2">

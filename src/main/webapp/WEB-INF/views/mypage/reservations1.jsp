@@ -49,7 +49,7 @@
                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseOne" aria-expanded="true"
                                                     aria-controls="collapseOne">
-                                                    예약 번호 : <input type="text" value="${list.bookNo}" name="bookNo">
+                                                    예약 번호 : <input type="text" value="${list.bookNo}" name="bookNo" readonly>
                                                 </button>
                                             </h2>
                                             <div id="collapseOne" class="accordion-collapse collapse show"
@@ -60,20 +60,20 @@
                                                     </div>
                                                     <div class="J-text">
                                                         <input type="" placeholder="호텔지점" value="${list.hotelName}"
-                                                            name="hotelName">
+                                                            name="hotelName" readonly>
                                                         <input type="" placeholder="객실명" value="${list.roomName}"
-                                                            name="roomName">
+                                                            name="roomName" readonly>
                                                         <input type="" placeholder="체크인 날짜" value="${list.checkInTime}"
-                                                            name="checkIn">
+                                                            name="checkIn" readonly>
                                                         <input type="" placeholder="체크 아웃 날짜"
-                                                            value="${list.checkOutTime}" name="checkOut">
+                                                            value="${list.checkOutTime}" name="checkOut" readonly>
                                                         <c:if test="${list.calSt == 'Y'}">
                                                             <input type="" placeholder="체크 아웃 날짜" value="결제 상태 : 결제완료"
-                                                                name="checkOut">
+                                                                name="checkOut" readonly>
                                                         </c:if>
                                                         <c:if test="${list.calSt == 'N'}">
                                                             <input type="" placeholder="체크 아웃 날짜" value="결제 상태 : 대기 중"
-                                                                name="checkOut">
+                                                                name="checkOut" readonly>
                                                         </c:if>
                                                         <button type="submit" id="J-btn">예약 취소</button>
                                                     </div>

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import kHotel.admin.model.service.JAdminService;
 import kHotel.admin.model.vo.HAdminBoard;
 import kHotel.admin.model.vo.PAdminMemebr;
+import kHotel.member.model.vo.Member;
 
 @WebServlet("/board/admin/FAQUpate2")
 public class AdminFAQAlter2 extends HttpServlet {
@@ -23,7 +24,7 @@ public class AdminFAQAlter2 extends HttpServlet {
 			
 		HttpSession session = req.getSession();
 		
-		PAdminMemebr loginMember = (PAdminMemebr)session.getAttribute("loginMember");
+		Member loginMember = (Member)session.getAttribute("loginMember");
 			
 		// 수정 전 게시글 정보
 		String title = req.getParameter("faq1");
@@ -33,6 +34,9 @@ public class AdminFAQAlter2 extends HttpServlet {
 		
 		before.setBoardTitle(title);
 		before.setBoardContent(content);
+		
+		System.out.println(before.getBoardTitle() + "tq1");
+		System.out.println(before.getBoardContent() + "tq1");
 		
 		// 수정 후 게시글 정보
 		String faqTitle = req.getParameter("faqTitle");
@@ -46,9 +50,24 @@ public class AdminFAQAlter2 extends HttpServlet {
 		
 		JAdminService service = new JAdminService();
 		
-		/* int result = service.FAQAlter(before, after , loginMember); */
+		int result = service.FAQAlter(before, after , loginMember); 
 		
+		String path = null;
+		
+		if(result > 0) {
+			session.setAttribute("message", "FAQ 수정 완료");
 			
+			path = req.getContextPath() + "/board/faq?type=4";
+			
+		}else {
+			session.setAttribute("message", "FAQ 수정 실패");
+			
+			path = req.getContextPath() + "/board/faq?type=4";
+			
+		}
+		
+		resp.sendRedirect(path);
+		
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
