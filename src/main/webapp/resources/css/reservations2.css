@@ -150,9 +150,10 @@ align-items: center;
     overflow: scroll;
 }
 
+input{
+    outline: none;
+}
 
-
-   
 
 
 

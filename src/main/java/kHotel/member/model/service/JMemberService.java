@@ -230,6 +230,25 @@ public class JMemberService {
 		return result;
 	}
 
+	/** 아이디 중복 검사
+	 * @param memberId
+	 * @return result
+	 * @throws Exception
+	 */
+	public int idDuplicheck(String memberId) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		int result = dao.idDuplicheck(conn, memberId);
+		
+		if(result > 0)commit(conn);
+		else          rollback(conn);
+				
+		close(conn);
+		
+		return result;
+	}
+
 
 
 

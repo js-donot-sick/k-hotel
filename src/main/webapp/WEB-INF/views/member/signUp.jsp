@@ -107,7 +107,6 @@
                                 </div >
                                 
                                 <div class="J-H3">
-                                    <button type="button" id="J-H3-1" class="J-H1-1 J-A" onsubmit="return JPw2()">비밀번호 중복 확인</button>
                                 </div >
                                 
                                 <div class="J-H4">
@@ -276,13 +275,16 @@
         <jsp:include page="/WEB-INF/views/common/footer.jsp" />
         
         
+        <script>
+            const contextPath = "${contextPath}";
+        </script>
         
         
         
-        
-        <script src="../resources/js/signup.js"></script>
+        <script src="${contextPath}/resources/js/signup.js"></script>
      
     </main>
+
 
 
 </body>

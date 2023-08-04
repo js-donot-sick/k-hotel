@@ -4,9 +4,7 @@ document.getElementsByClassName("J-H1-1")[0].addEventListener("click", function(
 
     if(input.value == ""){
         alert("아이디를 입력해주세요.");
-    } else {
-        alert("아직 구현되지 않은 기능입니다.");
-    }
+    } 
 })
 
 
@@ -258,25 +256,43 @@ function signUp(){
 function duplication(){
 
     const id = document.getElementsByClassName("J-J1-1")[0];
-
+    const regExp = /^\w{6,12}$/;
      $.ajax({
-        url : "/member/signUp/duplication",
-        data : {"memberId" : memberId.value},
+        url : contextPath + "/member/signUp/duplication",
+        data : {"memberId" : id.value},
         type : "GET",
 
-        sucess : function(result){
+         success: function (result) {
 
-            if(result == 1){ // 아이디가 중복임
-                alert("이미 사용중인 아이디 입니다. 다시 입력해주세요.");
+             console.log(result.value);
+             if (result == 1) { // 아이디가 중복임
 
-            }else{
-                alert("사용 가능한 아이디 입니다.");
-            }
-        }
+
+                 if (!regExp.test(id.value)) {
+
+                    alert("아이디 형식이 올바르지 않습니다.");
+
+                 }else{
+
+                     alert("이미 사용중인 아이디 입니다. 다시 입력해주세요.");
+                 }
+
+             } else {
+
+                if (!regExp.test(id.value)) {
+
+                    alert("아이디 형식이 올바르지 않습니다.");
+
+                 }else{
+
+                     alert("사용 가능한 아이디 입니다.");
+                 }
+             }
+         }
 
      })
 
-     
+
 }
 
 
