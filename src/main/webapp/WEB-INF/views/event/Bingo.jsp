@@ -20,7 +20,7 @@
     <body>
         
         
-        <form action="bingoIn" method="POST" onsubmit="return bingo()">
+        <form action="${contextPath}/event" method="get" onsubmit="return bingo()">
             
             <div class="J-1">
                 

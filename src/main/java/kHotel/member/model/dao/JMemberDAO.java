@@ -485,7 +485,7 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 	}
 
 
-	/** 다음 멤버의 번호를 가져오는 DAO
+	/** 새로운 멤버의 번호를 가져오는 DAO
 	 * @param conn
 	 * @return
 	 */

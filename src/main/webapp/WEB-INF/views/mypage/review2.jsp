@@ -140,7 +140,7 @@
                                     </td>
 
                                     <td colspan="3">
-                                        <textarea id="J-text1"  name="updateContent" value="${rvUpdate.content}"></textarea>
+                                        <textarea id="J-text1"  name="updateContent">${rvUpdate.content}</textarea>
                                     </td>
                                 </tr>
                             </table>
