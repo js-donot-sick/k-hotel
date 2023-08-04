@@ -36,24 +36,11 @@
                     <div class="H-div">
 
                         <a href="${contextPath}/admin/FAQ" class="H-href">
-                            <span class="H-span">FAQ</span>
+                            <span class="H-span">FAQ 작성</span>
                         </a>
 
                         <a href="${contextPath}/admin/AdminBoardList" class="H-href">
                             <span class="H-span">공지사항</span>
-                        </a>
-
-                    </div>
-
-                    <div class="H-div">
-
-                        <a href="#" class="H-href">
-                            <span class="H-span">리뷰관리</span>
-                        </a>
-
-
-                        <a href="#" class="H-href">
-                            <span class="H-span">신고관리</span>
                         </a>
 
                     </div>

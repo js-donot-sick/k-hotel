@@ -214,10 +214,10 @@ public class HBoardDAO {
 				
 				HAdminBoard board = new HAdminBoard();
 				
-				board.setBoardNo(rs.getInt(1));
-				board.setBoardTitle(rs.getString(2));
-				board.setMemberName(rs.getString(3));
-				board.setBoardDate(rs.getString(4));
+				board.setBoardNo(rs.getInt("BOARD_NO"));
+				board.setBoardTitle(rs.getString("BOARD_TITLE"));
+				board.setMemberName(rs.getString("MEMBER_NM"));
+				board.setBoardDate(rs.getString("BOARD_DT"));
 				
 				
 				boardList.add(board);
