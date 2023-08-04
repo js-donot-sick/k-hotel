@@ -128,4 +128,24 @@
 		AND BOARD_CD = 1
 	</entry>
 	
+	<!-- 찜목록개수 가져오기 -->
+	<entry key="selectLikeList">
+		SELECT COUNT(*)
+		FROM LIKELIST
+		WHERE MEMBER_NO = ?
+	</entry>
+	
+	<!-- 찜목록 가져오기 페이지네이션  -->
+	<entry key="selectlikeList">
+		SELECT * FROM (
+    		SELECT ROWNUM RNUM, A.* FROM(
+        		SELECT HOTEL_TITLE, ROOM_NM, ROOM_PRICE, ROOM_IMG
+        		FROM LIKELIST
+        		JOIN ROOM USING(ROOM_NO)
+        		JOIN HOTEL USING(HOTEL_NO)
+        		WHERE MEMBER_NO = ?
+    		) A 
+		)
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>	
 </properties>

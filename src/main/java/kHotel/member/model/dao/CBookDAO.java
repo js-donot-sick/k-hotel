@@ -521,18 +521,84 @@ public class CBookDAO {
 			
 			return result;
 		}
-		
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		/** 찜목록 가져오는 DAO
+		 * @param conn
+		 * @param memberNo
+		 * @return listCount
+		 * @throws Exception
+		 */
+		public int selectLikePage(Connection conn, int memberNo) throws Exception {
+			
+			int listCount = 0;
+			
+			try {
+				String sql = prop.getProperty("selectLikeList");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, memberNo);
+				
+				rs = pstmt.executeQuery();
+				
+				if( rs.next() ) {
+					listCount = rs.getInt(1);
+				}
+				
+			} finally {
+				close(rs);
+				close(pstmt);
+			}
+			
+			return listCount;
+		}
+
+		/** 찜목록
+		 * @param conn
+		 * @param memberNo
+		 * @param pagination
+		 * @throws Exception
+		 * @return likeList
+		 */
+		public List<Reservation> selectlikeList(Connection conn, int memberNo, CPagination pagination) throws Exception {
+			
+			List<Reservation> likeList = new ArrayList<Reservation>();
+			
+			try {
+				int start = (pagination.getCurrentPage()-1) * pagination.getLimit() +1;
+				
+				int end = start + pagination.getLimit() -1;
+				
+				String sql = prop.getProperty("selectlikeList");
+				
+				pstmt = conn.prepareStatement(sql);
+				
+				pstmt.setInt(1, memberNo);
+				pstmt.setInt(2, start);
+				pstmt.setInt(3, end);
+				
+				rs = pstmt.executeQuery();
+				
+				while( rs.next() ) {
+					
+					Reservation rsv = new Reservation();
+					
+					rsv.setHotelName(rs.getString("HOTEL_TITLE"));
+					rsv.setRoomName(rs.getString("ROOM_NM"));
+					rsv.setRoomPrice(rs.getInt("ROOM_PRICE"));
+					rsv.setRoomImage(rs.getString("ROOM_IMG"));
+					
+					likeList.add(rsv);
+				
+					
+				}
+			} finally {
+				close(rs);
+				close(pstmt);
+			}
+			
+			return likeList;
+		}
 		
 }
 
