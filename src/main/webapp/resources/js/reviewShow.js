@@ -75,4 +75,16 @@ Pdeclarbtn.addEventListener("click", function () {
 
 })
 
+const tag = document.getElementsByClassName("P-tag-top");
+
+let i = 1
+
+
+for(let items of tag){
+
+  items[i] = 1;
+/*   if(items[0]) */
+
+}
+
 

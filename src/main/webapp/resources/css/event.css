@@ -57,9 +57,10 @@
 
 
 .P-eventmain{
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
+     overflow: auto;
+     height: 1000px; 
 }
 
 /* 이벤트 전체 리스트 */
@@ -67,7 +68,7 @@
     padding: 20px 10px 0;
     width: 50%;
     display: flex;
-    flex-wrap: wrap; /* 자식 요소들이 여러 줄에 걸쳐 나란히 배치되도록 설정 */
+    flex-wrap: wrap;
 }
 
 /* a태그 검정색 */

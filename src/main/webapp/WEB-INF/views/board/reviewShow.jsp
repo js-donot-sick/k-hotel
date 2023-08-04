@@ -211,7 +211,6 @@
                                                 <div class="P-tag-area">
                                                     <span class="P-tag-top">
                                                         <input type="text" value="${tag[i]}">
-
                                                     </span>
                                                 </div>
                                             </c:forEach>
