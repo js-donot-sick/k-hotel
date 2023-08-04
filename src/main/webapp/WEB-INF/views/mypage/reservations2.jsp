@@ -45,7 +45,7 @@
                                 <h2 class="accordion-header" id="headingOne">
                                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                     aria-expanded="true" aria-controls="collapseOne">
-                                        예약 번호 : <input type="text" value="${list.bookNo}" name="bookNo">
+                                        예약 번호 : <input type="text" value="${list.bookNo}" name="bookNo" readonly>
                                     </button>
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
@@ -55,10 +55,10 @@
                                             <img src="${contextPath}/resources/images/Deluxe-Room_1.jpg">
                                         </div>
                                         <div class="J-text">
-                                            <input type="" placeholder="호텔지점"      value="${list.hotelName}" name="hotelName">
-                                            <input type="" placeholder="객실명"        value="${list.roomName}" name="roomName">
-                                            <input type="" placeholder="체크인 날짜"    value="${list.checkInTime}" name="checkIn">
-                                            <input type="" placeholder="체크 아웃 날짜" value="${list.checkOutTime}" name="checkOut">
+                                            <input type="" placeholder="호텔지점"      value="${list.hotelName}" name="hotelName" readonly>
+                                            <input type="" placeholder="객실명"        value="${list.roomName}" name="roomName" readonly>
+                                            <input type="" placeholder="체크인 날짜"    value="${list.checkInTime}" name="checkIn" readonly>
+                                            <input type="" placeholder="체크 아웃 날짜" value="${list.checkOutTime}" name="checkOut" readonly>
                                             <button type="submit" id="J-btn">리뷰 작성</button>
                                         </div>
                                         

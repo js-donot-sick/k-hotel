@@ -255,7 +255,29 @@ function signUp(){
 
 }
     
+function duplication(){
 
+    const id = document.getElementsByClassName("J-J1-1")[0];
+
+     $.ajax({
+        url : "/member/signUp/duplication",
+        data : {"memberId" : memberId.value},
+        type : "GET",
+
+        sucess : function(result){
+
+            if(result == 1){ // 아이디가 중복임
+                alert("이미 사용중인 아이디 입니다. 다시 입력해주세요.");
+
+            }else{
+                alert("사용 가능한 아이디 입니다.");
+            }
+        }
+
+     })
+
+     
+}
 
 
 

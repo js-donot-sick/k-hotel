@@ -7,6 +7,7 @@ import java.sql.Connection;
 import kHotel.admin.model.dao.JAdminDAO;
 import kHotel.admin.model.vo.HAdminBoard;
 import kHotel.admin.model.vo.PAdminMemebr;
+import kHotel.common.Util;
 import kHotel.member.model.vo.Member;
 
 public class JAdminService {
@@ -29,9 +30,47 @@ public class JAdminService {
 		// FAQ 작성
 		int result = dao.FAQUpdate(conn, memberNo, board);
 		
+		
+		// 1) XSS 방지 처리(내용)
+		board.setBoardTitle( Util.XSSHanding(board.getBoardTitle()));
+		
+		// 2) 개행 문자 처리 (내용)
+		board.setBoardContent(Util.newLineHandling(board.getBoardContent()));
+		
 		if(result > 0) commit(conn);
 		else		   rollback(conn);
 		
+		
+		return result;
+	}
+
+	/** FAQ 수정
+	 * @param before
+	 * @param after
+	 * @param loginMember
+	 * @return result
+	 * @throws Exception
+	 */
+	public int FAQAlter(HAdminBoard before, HAdminBoard after, Member loginMember) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		// boardNo 가져오기
+		int boardNo = dao.getFAQBoardNo(conn , before , loginMember);
+		
+		System.out.println(boardNo + " boardNo 가져온거");
+		int result = dao.FAQAlter(conn, before, loginMember, after, boardNo);
+		
+		// 1) XSS 방지 처리(내용)
+		after.setBoardTitle(Util.XSSHanding(after.getBoardTitle()));
+				
+		// 2) 개행 문자 처리(내용)
+		after.setBoardContent(Util.newLineHandling(after.getBoardContent()));
+		
+		if(result > 0)commit(conn);
+		else			rollback(conn);
+		
+		close(conn);
 		
 		return result;
 	}
