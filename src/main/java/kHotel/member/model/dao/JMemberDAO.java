@@ -607,4 +607,41 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 	}
 
 
+	/** 아이디 중복 검사
+	 * @param conn 
+	 * @param memberId
+	 * @return result
+	 * @throws Exception
+	 */
+	public int idDuplicheck(Connection conn, String memberId) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("idDuplicheck");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, memberId);
+			
+			System.out.println(memberId);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				result = rs.getInt(1);
+			}
+			
+			
+			
+			System.out.println(result + " 중복검사완료ㅁ");
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+
 }

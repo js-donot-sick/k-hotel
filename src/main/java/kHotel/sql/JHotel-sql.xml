@@ -12,6 +12,14 @@
 		 DEFAULT, DEFAULT)
 	</entry>
 
+	<!-- 아이디 중복 검사 -->
+	<entry key="idDuplicheck">
+		SELECT COUNT(*)
+		FROM MEMBER
+		WHERE MEMBER_ID = ?
+		AND SECESSION_FL = 'N'
+	</entry>
+
 	<!-- 현재 예약 -->
 	<entry key="reservationUp">
 		SELECT BOOK_NO , HOTEL_TITLE, ROOM_NM,TO_CHAR(CHECKIN_DT, 'YYYY-MM-DD') CHECKIN_DT ,TO_CHAR(CHECKOUT_DT, 'YYYY-MM-DD') CHECKOUT_DT, CALCULATE_ST

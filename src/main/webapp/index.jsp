@@ -151,7 +151,7 @@
                         </div>
     
                         <div id="J6-2">
-                            <img class="fade-in" src="https://www.ssyenc.co.kr/file/record/57/DF2A8772_6(0).png" style="height: 95%; width: 95%; ">
+                            <img class="fade-in" src="https://josunhotel.com/revolution/content/fileImage.do?fileId=426055&cntntsSn=426054" style="height: 95%; width: 95%; ">
                         </div>
                     </div>
     
