@@ -93,7 +93,20 @@
 	
 	<!-- FAQ 작성 -->
 	<entry key="FAQUpdate">
-		INSERT INTO BOARD VALUES(SEQ_BOARD_NO.NEXTVAL ,? ,? ,DEFAULT ,DEFAULT ,4 ,? ,NULL)
+		INSERT INTO BOARD VALUES(SEQ_BOARD_NO.NEXTVAL ,? ,? ,DEFAULT ,DEFAULT ,4 ,? ,NULL ,NULL)
+	</entry>
+
+	<!-- FAQ 수정 -->
+	<entry key="FAQAlter">
+		UPDATE BOARD
+		SET BOARD_CONTENT = ?,
+		BOARD_TITLE = ?
+		WHERE BOARD_CD = 4
+		AND MEMBER_NO = ?
+		AND BOARD_NO = ?
+		AND BOARD_CONTENT = ?
+		AND BOARD_TITLE = ?
+		AND BOARD_ST = 'N'
 	</entry>
 
 	<!-- 리뷰 수정을 위한 boardNo 가져오기 -->
@@ -144,4 +157,9 @@
 		AND TAG_ST = 'Y'
 	</entry>
 	
+	<!-- 빙고게임 후 쿠폰 증정 -->
+	<entry key="couponIn">
+		INSERT INTO COUPON VALUES(SEQ_COUPON_NO.NEXTVAL,?,
+								  '30000만원 할인 쿠폰',30000,DEFAULT,DEFAULT)
+	</entry>
 </properties>

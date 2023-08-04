@@ -63,6 +63,7 @@ const tds = document.querySelectorAll("td");
 const input = document.getElementById("J-input");
 const btn = document.getElementById("J-btn");
 const span = document.getElementById("J-span");
+const span2 = document.getElementById("J-span2");
 // 숫자를 맞췄을 때 이미지
 
 
@@ -102,6 +103,7 @@ for(let t = 0; t<25; t++){ // 테이블 안에 배열 넣기
 
 let Jcount = document.getElementById("J-count2");
 let bCount = 0;
+let ACount = 0;
 btn.addEventListener("click", function(){
     if(input.value.trim().length != 0){
         ++bCount;
@@ -115,6 +117,8 @@ btn.addEventListener("click", function(){
 
 function bingo(){ // 제출되면 빋고판 새로고침 되어버림.. form태그 제출 막기
                   // 입력했을 때 일치하는 칸 있을 경우 뒷배경 색깔 변경
+
+                 
     
             
                   
@@ -143,8 +147,10 @@ function bingo(){ // 제출되면 빋고판 새로고침 되어버림.. form태�
                 }
                 //console.log("bing : "+bing);
                 span.innerHTML = bing;
+                
             }
         }
+        
 
     }
 
@@ -158,8 +164,10 @@ function bingo(){ // 제출되면 빋고판 새로고침 되어버림.. form태�
                     bing++
                 }
                 span.innerHTML = bing;
+               
             }
         }
+       
     }
 
     // 대각선
@@ -172,7 +180,9 @@ function bingo(){ // 제출되면 빋고판 새로고침 되어버림.. form태�
                 bing++
             }
             span.innerHTML = bing;
+            
         }
+        
     }
 
     // 4 8 12 16 20
@@ -184,11 +194,16 @@ function bingo(){ // 제출되면 빋고판 새로고침 되어버림.. form태�
                 bing++
             }
             span.innerHTML = bing;
+            
         }
+        
     }
 
     console.log(bCount);
-
+    
+    span2.value = bing;
+    
+    console.log(span2.value);
     if(bing == 3){
         alert("축하드립니다! 쿠폰");
         // ajax 사용해서 쿠폰 insert해주고
@@ -200,34 +215,18 @@ function bingo(){ // 제출되면 빋고판 새로고침 되어버림.. form태�
         return true;
     }
 
-    if (isNaN(input.value)) { // 숫자가 아닌 수를 입력할 경우
+   /*  if (isNaN(input.value)) { // 숫자가 아닌 수를 입력할 경우
         ta.innerText = "";
         alert("숫자를 입력해주세요");
         input.value = "";
         input.focus();
         
         return false; // 함수 종료
-    } 
+    }  */
 
-    if(1>input.value || input.value < 50){
-        alert("1~50 사이의 숫자를 입력해주세요");
-        input.value = "";
-        input.focus();
-        ++Jcount.innerHTML;
+    
 
-        return false; // 함수 종료
-    } 
-
-    if (input.value.trim().length == 0) { // 공백 입력한 경우
-    
-            input.value = "";
-            input.focus();
-    
-            ta.innerText = "값을 입력해주세요";
-    
-            return false;
-        }
-    
+  
 
 
     return false;
