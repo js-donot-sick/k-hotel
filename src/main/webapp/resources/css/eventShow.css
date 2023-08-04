@@ -83,3 +83,19 @@
     max-width: 95%;
     max-height: 95%;
 }
+
+.K-btn{
+    width: 60px;
+    height: 40px;
+    font-size: 20px;
+    background-color:  rgb(173,158,135);
+    cursor: pointer;
+    border: 0;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
+.K-btn:hover{
+    background-color: #4F3A28;
+    color: white;
+}

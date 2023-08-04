@@ -50,7 +50,7 @@
                             </tr>
                             <tr>
                                 <td>비밀번호</td>
-                                <td><input type="text" name="inputPw" placeholder="비밀번호를 입력해주세요" autocomplete="off"></td>
+                                <td><input type="password" name="inputPw" placeholder="비밀번호를 입력해주세요" autocomplete="off"></td>
                             </tr>
                         </table>
                     </div>

@@ -38,11 +38,11 @@
             </div>
         </div>
         
-        <a href="${contextPath}/event"><button id="K-list-btn" type="button">목록으로</button></a>
+        <button id="K-list-btn" type="button" onclick="location.href='${contextPath}/event'">목록으로</button>
         <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">
             <div>
-                <button type="button" id="K-updateBtn">수정</button>
-                <button id="K-deleteBtn">삭제</button>
+                <button type="button" id="K-updateBtn" class="K-btn">수정</button>
+                <button id="K-deleteBtn" class="K-btn">삭제</button>
             </div>
         </c:if>
         
