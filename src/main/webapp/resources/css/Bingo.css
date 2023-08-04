@@ -23,7 +23,7 @@
 
 .J-game{
     position: absolute;
-    top:30%;
+    top:31%;
     left: 37.5%;
     font-weight: bold;
 }
@@ -114,8 +114,9 @@ td{
   text-align: center;
   width: 60px;
   height: 60px;
-  text-decoration-color: none;
   
+  color : transparent;
+  user-select: none;
   
 }
 
@@ -126,28 +127,49 @@ td div{
  line-height: 0;
 }
 
-#J-bingo2{
+#J-span{
   position: absolute;
-  top: 75%;
-  left: 45%;
+  top: 80.1%;
+  left: 49.5%;
   visibility: hidden;
 
   border-radius: 5px;
   width: 130px;
   height: 30px;
 
+  color: white;
+
 }
 
-#J-main{
+#J-span1{
+  position: absolute;
+
+  top: 760px;
+  left: 880px;
+  visibility: hidden;
+  color: white;
+}
+ 
+#J-btn{
   position: absolute;
   top: 75%;
-  left: 52%;
+  left: 53%;
   visibility: hidden;
   width: 80px;
   height: 30px;
   border-radius: 5px;
 
   cursor: pointer;
+}
+
+#J-input{
+  position: absolute;
+
+  height: 25px;
+  top:715.5px;
+  left:820px;
+  visibility: hidden;
+  
 }
 
 .J-header > img {
@@ -167,8 +189,33 @@ td > img {
 }
 
 
-#J-main:hover{
+#J-btn:hover{
   background-color: #ffa500;
   color: white;
   font-weight: bold;
 }
+
+.J-cc1{
+
+  position: absolute;
+
+  top: 780px;
+  left: 843px;
+
+  color: white;
+
+  visibility: hidden;
+}
+
+
+.J-cc2{
+
+  position: absolute;
+
+  top: 780px;
+  left: 934.4px;
+  color: white;
+
+  visibility: hidden;
+}
+
