@@ -2,14 +2,22 @@ document.getElementsByClassName("J-game")[0].addEventListener("click", function(
 
     const bingo =  document.getElementById("J-bingo");
 
-    const btn1 = document.getElementById("J-bingo2");
-    const btn2 = document.getElementById("J-main");
+    const btn1 = document.getElementById("J-btn");
+    const sp = document.getElementById("J-span");
+    const sp2 = document.getElementById("J-span1");
+    const input1 = document.getElementById("J-input");
+    const input2 = document.getElementById("J-count");
+    const input3= document.getElementById("J-count2");
     
     this.style.display = "none";
 
     bingo.style.visibility = "visible"; 
     btn1.style.visibility = "visible"; 
-    btn2.style.visibility = "visible"; 
+    sp.style.visibility = "visible";
+    sp2.style.visibility = "visible";
+    input1.style.visibility = "visible";
+    input2.style.visibility = "visible";
+    input3.style.visibility = "visible";
 
 
     
@@ -52,9 +60,9 @@ const td24 = document.querySelector("#tr5>td:nth-child(4)");
 const td25 = document.querySelector("#tr5>td:nth-child(5)"); 
 */
 const tds = document.querySelectorAll("td");
-const input = document.getElementById("input");
-const btn = document.getElementById("btn");
-const span = document.getElementById("span");
+const input = document.getElementById("J-input");
+const btn = document.getElementById("J-btn");
+const span = document.getElementById("J-span");
 // 숫자를 맞췄을 때 이미지
 
 
@@ -65,7 +73,7 @@ const set = new Set();
 
 while(true){
 
-    let random = Math.floor(Math.random()*25+1);
+    let random = Math.floor(Math.random()*50+1);
 
     set.add(random);
 
@@ -92,17 +100,24 @@ for(let t = 0; t<25; t++){ // 테이블 안에 배열 넣기
     
 }
 
+let Jcount = document.getElementById("J-count2");
 let bCount = 0;
 btn.addEventListener("click", function(){
     if(input.value.trim().length != 0){
         ++bCount;
+        --Jcount.innerHTML;
 
     }
 })
 
+
+
+
 function bingo(){ // 제출되면 빋고판 새로고침 되어버림.. form태그 제출 막기
                   // 입력했을 때 일치하는 칸 있을 경우 뒷배경 색깔 변경
     
+            
+                  
 
     for(let f = 0; f<25; f++){
         if(input.value === tds[f].innerHTML){
@@ -180,15 +195,39 @@ function bingo(){ // 제출되면 빋고판 새로고침 되어버림.. form태�
         return true;
     }
 
-    if(bCount == 20){
+    if(bCount == 18){
         alert("실패")
         return true;
+    }
+
+    if (isNaN(input.value)) { // 숫자가 아닌 수를 입력할 경우
+        ta.innerText = "";
+        alert("숫자를 입력해주세요");
+        input.value = "";
+        input.focus();
+        
+        return false; // 함수 종료
+    } else if(1>input.value || input.value > 50){
+        alert("1~50 사이의 숫자를 입력해주세요");
+        input.value = "";
+        input.focus();
+        ++Jcount.innerHTML;
+        return false; // 함수 종료
+    } else{
+        if (input.value.trim().length == 0) { // 공백 입력한 경우
+    
+            input.value = "";
+            input.focus();
+    
+            ta.innerText = "값을 입력해주세요";
+    
+            return false;
+        }
     }
 
 
     return false;
 }
-
 
 
 
