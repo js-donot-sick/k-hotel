@@ -198,7 +198,8 @@ const pw2 = document.getElementsByClassName("J-J1-3")[0];
 
 const tel = document.getElementsByClassName("J-Tel")[0];
 
-const check = document.getElementsByClassName("J-check2");
+const check = document.getElementsByClassName("J-check1");
+const check2 = document.getElementsByClassName("J-check2");
 
 const pno1 = document.getElementsByClassName("J-pno")[0];
 
@@ -260,14 +261,16 @@ function signUp() {
         return false;
     }
 
-    for (let item of check) {
+    for (let item of check2) {
 
-        if (item.value == ff) {
+        if (item.checked == true ) {
             alert("필수약관에 동의하셔야 가입이 가능합니다.");
 
             return false;
         }
     }
+
+   
 
     for (let item of input) {
 
