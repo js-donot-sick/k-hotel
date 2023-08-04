@@ -96,8 +96,8 @@ cursor: pointer;
 
 #J-bingo{
   position: absolute;
-    top:20%;
-    left: 35.45%;
+    top:180px;
+    left: 670px;
     border: 1px solid black;
     width: 550px;
     height: 500px;
@@ -129,8 +129,8 @@ td div{
 
 #J-span{
   position: absolute;
-  top: 80.1%;
-  left: 49.5%;
+  top: 800px;
+  left: 500px;
   visibility: hidden;
 
   border-radius: 5px;
@@ -144,7 +144,7 @@ td div{
 #J-span1{
   position: absolute;
 
-  top: 760px;
+  top: 750px;
   left: 880px;
   visibility: hidden;
   color: white;
@@ -152,8 +152,8 @@ td div{
  
 #J-btn{
   position: absolute;
-  top: 75%;
-  left: 53%;
+  top: 714px;
+  left: 1005px;
   visibility: hidden;
   width: 80px;
   height: 30px;
