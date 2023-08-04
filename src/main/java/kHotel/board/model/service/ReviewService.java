@@ -81,17 +81,20 @@ public class ReviewService {
 	 * @return result
 	 * @throws Exception
 	 */
-	public int deleteReview(Member loginMember, int boardNo) throws Exception{
+	public int deleteReview(Member loginMember, int no) throws Exception{
+		
+		System.out.println("왜그래어랭러");
 
 		Connection conn = getConnection();
 		
-		int result = dao.deleteReview(conn,loginMember,boardNo);
+		int result = dao.deleteReview(conn,loginMember,no);
 		
 		if(result > 0) {
 			commit(conn);
 		}else {
 			rollback(conn);
 		}
+		System.out.println("서비ㅐ스result: "+ result);
 				
 		return result;
 	}

@@ -159,10 +159,29 @@ public class ReviewDAO {
 	 * @param boardNo
 	 * @return
 	 */
-	public int deleteReview(Connection conn, Member loginMember, int boardNo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int deleteReview(Connection conn, Member loginMember, int no) throws Exception {
+		
+		System.out.println("왜그래어랭러이건 dao");
+	
+		int result = 0; 
+		try {
+			
+			String sql = prop.getProperty("deleteReview");
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, no);
+			pstmt.setInt(2, loginMember.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		System.out.println("daoresult: "+ result);
+		
+		return result;
 	}
+
+		
 
 
 	public Board boardReviewShow(Connection conn, int boardNo) throws Exception {
