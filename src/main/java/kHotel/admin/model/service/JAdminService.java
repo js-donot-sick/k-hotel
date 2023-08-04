@@ -65,6 +65,7 @@ public class JAdminService {
 		after.setBoardTitle(Util.XSSHanding(after.getBoardTitle()));
 				
 		// 2) 개행 문자 처리(내용)
+		after.setBoardTitle(Util.XSSHanding(after.getBoardContent()));
 		after.setBoardContent(Util.newLineHandling(after.getBoardContent()));
 		
 		if(result > 0)commit(conn);
