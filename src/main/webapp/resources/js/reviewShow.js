@@ -75,10 +75,11 @@ Pdeclarbtn.addEventListener("click", function () {
 
 })
 
-function appendText(){
-  const element = document.getElementById("P-tag-top1");
-  const eventbtn = document.getElementById("P-tag-top");
 
-  element.appendChild(eventbtn);
+function appendText() {
+  const tagTop2Elements = document.querySelectorAll(".P-tag-top2");
+
+  for (let i = 0; i < tagTop2Elements.length; i++) {
+      tagTop2Elements[i].style.visibility = "visible";
+  }
 }
-

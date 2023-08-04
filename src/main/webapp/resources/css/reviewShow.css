@@ -208,21 +208,30 @@
     text-align: center;
 }
 
-.P-tag-top > input{
+.P-tag-top1 > input{
     display: inline-block;
-    width: 170px;
     border: 0;
     text-align: center;
     margin-top: 15px;
 
 }
 
-.P-tag-top>img {
+
+
+.P-tag-top2 > input{
+    display: inline-block;
+    border: 0;
+    text-align: center;
+    margin-top: 15px;
+
+}
+
+.P-tag-top1>img {
     width: 18px;
     height: 18px;
 }
 
-.P-tag-con{
+.P-tag-con > input{
     margin: auto 5px; 
     padding: 0 3px;
     border-radius: 4px;
