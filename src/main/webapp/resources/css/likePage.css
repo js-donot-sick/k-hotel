@@ -4,6 +4,17 @@ body{
   margin: auto;
 }
 
+.bodyAll{ /* 바디 전체를 감싸는 div */
+  width: 1200px;
+  height: auto;
+  display: flex;
+  margin: auto;
+}
+
+.sidebar-area{
+  width: 25%;
+}
+
 section{
   width: 75%;
   margin: auto;
@@ -23,7 +34,8 @@ section{
  
  
  .body1{
-   display: flex;
+   width: 75%;
+   height: auto;
  }
  
  .body2{
@@ -61,13 +73,6 @@ section{
     height: 50px;
     background: #666;
     color: #fff;
-  }
-  .content {
-    background: #999;
-    color: #000; 
-    width: 1000px;
-    margin: auto;
-    margin-left: 285px;
   }
   .columns{
     display: flex;
