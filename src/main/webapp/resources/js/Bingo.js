@@ -207,14 +207,18 @@ function bingo(){ // 제출되면 빋고판 새로고침 되어버림.. form태�
         input.focus();
         
         return false; // 함수 종료
-    } else if(1>input.value || input.value > 50){
+    } 
+
+    if(1>input.value || input.value < 50){
         alert("1~50 사이의 숫자를 입력해주세요");
         input.value = "";
         input.focus();
         ++Jcount.innerHTML;
+
         return false; // 함수 종료
-    } else{
-        if (input.value.trim().length == 0) { // 공백 입력한 경우
+    } 
+
+    if (input.value.trim().length == 0) { // 공백 입력한 경우
     
             input.value = "";
             input.focus();
@@ -223,7 +227,7 @@ function bingo(){ // 제출되면 빋고판 새로고침 되어버림.. form태�
     
             return false;
         }
-    }
+    
 
 
     return false;

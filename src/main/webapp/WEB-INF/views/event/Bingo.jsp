@@ -79,6 +79,7 @@
             
                 <span id="J-span1">빙고 : </span><span id="J-span"></span>
                 <span id="J-count" class="J-cc1">남은 횟수 : </span><span id="J-count2" class="J-cc2">18</span>
+                
             </div>
 
 
