@@ -18,6 +18,7 @@
     display: flex;
     margin: auto;
     width: 1200px;
+    padding: 20px;
 }
 
 .H-maindisplay{
@@ -27,7 +28,7 @@
     white-space: nowrap;
     text-align: center;
     border:1px solid #eee;
-    width: 75%;
+    width: 100%;
     background-color: rgba(178, 158, 135, 0.9);
 
 }
@@ -46,9 +47,8 @@
 
 /* 이벤트 전체 리스트 */
 .H-div {
-    width: 100%;
+    width: 75%;
     display: flex;
-    padding: 15px;
 }
 
 
@@ -81,28 +81,28 @@
 }
 
 
-ul, li, dl, dd {list-style:none; margin:0; padding: 0;}
+/* ul, li, dl, dd {list-style:none; margin:0; padding: 0;}
 a {text-decoration:none;}
-.H-snb { width: 25%; }
+.H-snb { width: 25%; } */
 
-.H-side-bar{ 
+/* .H-side-bar{ 
     
-    width: 70%;
+    width: 80%;
     background:rgb(207, 191, 167);
     height:auto; 
     box-sizing:border-box;
     color:#fff; 
     box-shadow:1px 0px 20px rgba(0,0,0,0.2);
     margin-left: 86px;
-}
+} */
 
-.H-side-bar li {border-bottom:1px solid rgba(255,255,255,0.2);}
+/* .H-side-bar li {border-bottom:1px solid rgba(255,255,255,0.2);}
 .H-side-bar li.active, .side-bar li:hover {background:rgba(0,0,0,0.4);}
 .H-side-bar li a {color:#fff;line-height:55px; font-size:18px; display:block; padding:0 20px; box-sizing:border-box; position:relative;}
 .H-side-bar li a .s_icon {padding-right:7px; font-size:15px;}
 .H-side-bar li a .arrow {position:absolute; top:20px; right:20px; line-height:0px; font-size:12px;}
 .H-side-bar dd a:hover {background:rgba(255,255,255,0.1);}
-.H-side-bar dd.active a{color:#ffff6f;}
+.H-side-bar dd.active a{color:#ffff6f;} */
 
 
 

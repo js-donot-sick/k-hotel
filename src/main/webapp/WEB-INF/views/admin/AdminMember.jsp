@@ -22,7 +22,7 @@
                 <title>관리자 회원정보관리</title>
                 <link rel="stylesheet" href="${contextPath}/resources/css/AdminHeader.css"><!-- 관리자 헤더 -->
                 <link rel="stylesheet" href="${contextPath}/resources/css/AdminMember.css">
-                <link rel="stylesheet" href="${contextPath}/resources/css/reviewShow.css">
+                <link rel="stylesheet" href="${contextPath}/resources/css/adminSidebar.css">
                 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
                     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
                     crossorigin="anonymous">

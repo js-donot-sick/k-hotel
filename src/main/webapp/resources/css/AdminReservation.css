@@ -20,7 +20,7 @@
     height: 820px;
     margin: auto;
     display: flex;
-    padding-top: 50px;
+    padding: 20px 0;
 }
 
 .C-adminrsv-sidebar{ /* 사이드바 큰 틀 */
@@ -28,6 +28,10 @@
 }
 
 .C-adminrsv-main{ /* 메인 큰틀 */
+    width: 75%;
+}
+
+#adminRsvList{
     width: 100%;
 }
 
@@ -111,9 +115,10 @@
 .C-adminrsvlist{/* 예약내역 list */
     display: flex;
     width: 820px;
-    height: 1000px;
+    height: 550px;
     margin: auto;
     border: 1px sold rgba(178, 158, 135, 0.9);
+    overflow: auto;
 }
 .hide{
     display: none;
