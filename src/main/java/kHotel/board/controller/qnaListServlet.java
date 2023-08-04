@@ -98,7 +98,7 @@ public class qnaListServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		doGet(req, resp);
+		resp.sendRedirect(req.getContextPath() + "board/qna?type=2&cp=1");
 		
 	}
 
