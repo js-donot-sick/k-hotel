@@ -20,27 +20,39 @@
 </head>
 
 <body>
-    <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
     <div class="P-top">
-        <form action="${contextPath}/event" method="get" name="C-postWrite-main" onsubmit="return inputcheck()">
-            <div class="P-udg-body">
-                <div class="P-udg-title">업다운게임</div>
-                
-                <div class="P-udg"></div>
 
-                <div class="p-input-area">
+        <div>
+            <a href="../index.jsp" class="J-header">
+                <img src="../resources/images/logo_w_2.png" alt="" >
+              </a>
+        </div>
+
+         <img
+            src="https://media.istockphoto.com/id/1254770023/ko/%EB%B2%A1%ED%84%B0/%EC%95%84%EC%BC%80%EC%9D%B4%EB%93%9C-%EB%A8%B8%EC%8B%A0-%EC%8A%A4%ED%81%AC%EB%A6%B0-%EB%B3%B5%EA%B3%A0%ED%92%8D-%EB%B2%A1%ED%84%B0-%EB%B0%B0%EA%B2%BD.jpg?s=612x612&w=0&k=20&c=QtzUGG7fd4d6ciSpFfHqJogUQJBqKD_rs37QRmAtRpQ=">
+        <div class="P-game">Up Down Game</div>
+
+        
+        
+        <form action="${contextPath}/event" method="get" name="C-postWrite-main" onsubmit="return inputcheck()">
+            <div class="P-udg-body" id="P-udg-body">
+                <div class="P-udg-title" id="P-udg-title">업다운게임</div>
+                
+                <div class="P-udg" id="P-udg"></div>
+
+                <div class="p-input-area" id="p-input-area">
                     <input type="text" id="p-udg-input2" name="p-udg-input2" placeholder="숫자를 입력하세요." autocomplete="off" required>
 
                     <button type="submit" id="p-udg-btn">입력</button>
                 </div> <span class="p-udg-message" id="emailMessage"></span>
+
                 
                
             </div>
         </form>
     </div>
 
-    <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
     <script>
 
