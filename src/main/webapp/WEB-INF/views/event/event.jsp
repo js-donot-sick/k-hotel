@@ -41,7 +41,7 @@
                             <div class="P-eventmain1">
                                 <div class="P-event-list">
                                     <a href="${contextPath}/event/bingo" class="P-event">
-                                        <img src="${contextPath}/resources/images/빙고 게임 이미지.png" alt="빙고 썸넬 사진">
+                                        <img src="${contextPath}/resources/images/빙고 게임 이미지.png" alt="빙고 썸넬 사진"  onclick="return JeventFL()"> 
                                         <div class="P-event1">
                                             <div class="P-event-name">빙고 게임</div>
                                         </div>
@@ -78,7 +78,7 @@
                     </div>
 
                 </div>
-
+                
 
             </div>
             </div>
@@ -86,11 +86,15 @@
 
             <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
+        
 
+           
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
                 crossorigin="anonymous"></script>
+
+                <script src="${contextPath}/resources/js/event.js"></script>
         </body>
 
         </html>

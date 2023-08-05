@@ -177,7 +177,21 @@
 	
 	<!-- 빙고게임 후 쿠폰 증정 -->
 	<entry key="couponIn">
-		INSERT INTO COUPON VALUES(SEQ_COUPON_NO.NEXTVAL,?,
-								  '30000원 할인 쿠폰',30000,DEFAULT,DEFAULT)
+		INSERT INTO COUPON VALUES(SEQ_COUPON_NO.NEXTVAL,?,'30000원 할인 쿠폰',30000,DEFAULT,DEFAULT)
+								  
+	</entry>
+
+	<!-- 이벤트 참여 여부 -->
+	<entry key="flUpdate">
+		UPDATE EVENT_FL
+		SET BINGO_FL = 'Y'
+		WHERE MEMBER_NO = ?
+	</entry>
+
+	<!-- 이벤트 참여 여부 가져오기 -->
+	<entry key="eventFL">
+		SELECT BINGO_FL
+		FROM EVENT_FL
+		WHERE MEMBER_NO =  ?
 	</entry>
 </properties>

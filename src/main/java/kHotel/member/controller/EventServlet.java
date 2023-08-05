@@ -11,9 +11,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kHotel.member.model.service.EventService;
+import kHotel.member.model.service.JMemberService;
 import kHotel.member.model.vo.Event;
+import kHotel.member.model.vo.Member;
 
 @WebServlet("/event")
 public class EventServlet extends HttpServlet {
@@ -32,15 +35,17 @@ public class EventServlet extends HttpServlet {
 			System.out.println(eventList);
 		
 			
+			String path = "/WEB-INF/views/event/event.jsp";
+			
+			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
+			
+			dispatcher.forward(req, resp);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		String path = "/WEB-INF/views/event/event.jsp";
 		
-		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-		dispatcher.forward(req, resp);
 		
 	}
 

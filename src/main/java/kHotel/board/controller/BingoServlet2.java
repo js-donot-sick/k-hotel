@@ -21,19 +21,17 @@ public class BingoServlet2 extends HttpServlet{
 		HttpSession session = req.getSession();
 		
 		int count = Integer.parseInt(req.getParameter("result2"));
-		
 		Member loginMember = (Member)session.getAttribute("loginMember");
 		
 		JMemberService service = new JMemberService();
 		try {
+			String path = null;
 
 			if(count == 3) {
 				
 				int result = service.couponIn(count, loginMember);
 			
-			System.out.println(result+"증정되면 1이다 ㅋ");
 			
-			String path = null;
 			
 			if(result > 0) {
 				session.setAttribute("message", "쿠폰이 증정되었습니다.");
@@ -47,6 +45,7 @@ public class BingoServlet2 extends HttpServlet{
 			
 			}
 			
+			resp.sendRedirect(path);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
