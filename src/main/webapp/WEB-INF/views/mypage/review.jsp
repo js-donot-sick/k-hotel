@@ -81,9 +81,7 @@
                                             <button type="button" id="J-delBtn">사진 지우기</button>
                                         </td>
                                         <td colspan="3" id="J-reviewImg1">
-                                            <label for="" id="J-label">
-                                                <img  id="J-reviewImage3" name="reviewImg" src="${img}">
-                                            </label>
+                                            <img src="${img}" id="J-reviewImage3" name="reviewImg">
                                         </td>
                                     </tr>
 
