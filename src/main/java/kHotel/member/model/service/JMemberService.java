@@ -160,6 +160,9 @@ public class JMemberService {
 		
 		// boardNo 얻어오기
 		int boardNo = dao.getBoardNo(conn, rvUpdate2 , loginMember);
+		
+		updateReview.setBoardNo(boardNo);
+		
 		System.out.println(boardNo + "서빗 보드넘버");
 		
 		// 1) XSS 방지 처리(내용)
