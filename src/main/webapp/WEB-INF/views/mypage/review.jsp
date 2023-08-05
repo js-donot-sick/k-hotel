@@ -79,6 +79,9 @@
                                         </c:if>
                                     </tr>
 
+                                    <c:if test="${!empty image.rename}">
+                                        <c:set var="img" value="${contextPath}${image.rename}"/>
+                                    </c:if>
 
                                     <tr>
                                         <td>

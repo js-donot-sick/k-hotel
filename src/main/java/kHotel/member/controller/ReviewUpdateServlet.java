@@ -145,7 +145,7 @@ public class ReviewUpdateServlet extends HttpServlet{
 				
 				message = "작성 성공";
 				
-				path = req.getContextPath() + "/board/review/show?no=" + bookNo;
+				path = req.getContextPath() + "/board/review/show?no=" + rv.getBoardNo();
 				
 			}else {
 				
