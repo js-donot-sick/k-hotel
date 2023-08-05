@@ -17,14 +17,14 @@
             <main>
 
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
-                <form action="review4?no=${rv.bookNo}" enctype="multipart/form-data" method="POST">
-
+                <form action="review4?no=${rv.bookNo}" enctype="multipart/form-data" method="POST" onsubmit="return reviewVaildate()">
+                    
                     <div class="J-body">
 
                         <div class="J-body2">
 
                             <input type="hidden" value="${rv.bookNo}" name="bookNo">
-
+                         
 
                             <div class="J-body2-1">
                                 리뷰 / 벌점 작성
@@ -40,8 +40,7 @@
                                         </td>
 
                                         <td>
-                                            <input type="text" placeholder="작성자명" id="J-text"
-                                                value="${loginMember.memberId}" name="Pname">
+                                            <input type="text" placeholder="작성자명" id="J-text" value="${loginMember.memberId}" name="Pname"> 
                                         </td>
 
                                         <td id="J-text3">
@@ -49,8 +48,7 @@
                                         </td>
 
                                         <td>
-                                            <input type="text" placeholder="작성일" id="J-text" value="${rv.hotelName}"
-                                                name="Photel">
+                                            <input type="text" placeholder="작성일" id="J-text" value="${rv.hotelName}" name="Photel">
                                         </td>
                                     </tr>
 
@@ -60,23 +58,18 @@
                                         </td>
 
                                         <td>
-                                            <input type="text" value="${rv.roomName}" name="Proom">
+                                            <input type="text" value="${rv.roomName}" name="Proom"> 
                                         </td>
 
                                         <td id="J-text3">
                                             사진
                                         </td>
 
-                                        <c:if test="${!empty image.rename}">
-                                            <c:set var="img" value="${contextPath}${image.rename}" />
-                                            <td id="J-PIC">
-                                                <label for="J-reviewImage2">사진 선택</label>
-                                                <input type="file" name="JreviewImage" id="J-reviewImage2"
-                                                    accept="image/*">
-                                                <!-- accept="image/* : 이미지 파일 확장자만 선택 허용" -->
-                                            </td>
-
-                                        </c:if>
+                                        <td id="J-PIC">
+                                            <label for="J-reviewImage2">사진 선택</label>
+                                            <input type="file" name="JreviewImage" id="J-reviewImage2" accept="image/*">
+                                            <!-- accept="image/* : 이미지 파일 확장자만 선택 허용" -->
+                                        </td>
                                     </tr>
 
                                     <c:if test="${!empty image.rename}">
@@ -88,7 +81,9 @@
                                             <button type="button" id="J-delBtn">사진 지우기</button>
                                         </td>
                                         <td colspan="3" id="J-reviewImg1">
-                                            <img src="${img}" id="J-reviewImage3" name="reviewImg">
+                                            <label for="" id="J-label">
+                                                <img  id="J-reviewImage3" name="reviewImg" src="${img}">
+                                            </label>
                                         </td>
                                     </tr>
 
@@ -98,26 +93,26 @@
                                         </td>
 
                                         <td colspan="3">
-                                            <div name="J-myform" id="J-myform">
-                                                <input type="radio" id="5-stars" name="rating" value="1" class="star2"
-                                                    v-model="ratings" />
-                                                <label for="5-stars" class="star pr-4">⭐</label>
-                                                <input type="radio" id="4-stars" name="rating" value="2" class="star2"
-                                                    v-model="ratings" />
-                                                <label for="4-stars" class="star">⭐</label>
-                                                <input type="radio" id="3-stars" name="rating" value="3" class="star2"
-                                                    v-model="ratings" />
-                                                <label for="3-stars" class="star">⭐</label>
-                                                <input type="radio" id="2-stars" name="rating" value="4" class="star2"
-                                                    v-model="ratings" />
-                                                <label for="2-stars" class="star">⭐</label>
-                                                <input type="radio" id="1-star" name="rating" value="5" class="star2"
-                                                    v-model="ratings" />
-                                                <label for="1-star" class="star">⭐</label>
+                                            <div name="J-myform" id="J-myform" >
+                                                    <input type="radio" id="5-stars" name="rating" value="1" class="star2"
+                                                        v-model="ratings" />
+                                                    <label for="5-stars" class="star pr-4">⭐</label>
+                                                    <input type="radio" id="4-stars" name="rating" value="2" class="star2"
+                                                        v-model="ratings" />
+                                                    <label for="4-stars" class="star">⭐</label>
+                                                    <input type="radio" id="3-stars" name="rating" value="3" class="star2"
+                                                        v-model="ratings" />
+                                                    <label for="3-stars" class="star">⭐</label>
+                                                    <input type="radio" id="2-stars" name="rating" value="4" class="star2"
+                                                        v-model="ratings" />
+                                                    <label for="2-stars" class="star">⭐</label>
+                                                    <input type="radio" id="1-star" name="rating" value="5" class="star2"
+                                                        v-model="ratings" />
+                                                    <label for="1-star" class="star" >⭐</label>
                                             </div>
                                         </td>
                                     </tr>
-
+                                    
                                     <tr>
 
                                         <td>
@@ -137,7 +132,7 @@
 
                                         </td>
 
-                                        <td>
+                                        <td> 
                                             <input type="checkbox" class="tag" name="tag" value="침구가 고급스러워요">
                                             <pre>침구가 고급스러워요</pre>
                                             <input type="checkbox" class="tag" name="tag" value="애인과 가기 좋아요">
@@ -153,8 +148,7 @@
                                         </td>
 
                                         <td colspan="3">
-                                            <textarea id="J-text1" placeholder="내용을 입력해주세요" name="reviewContent"
-                                                name="Pcontent"></textarea>
+                                            <textarea id="J-text1" placeholder="내용을 입력해주세요" name="reviewContent" name="Pcontent"></textarea>
                                         </td>
                                     </tr>
                                 </table>
@@ -174,7 +168,7 @@
                     <input type="hidden" name="rating2" class="star3">
                 </form>
                 <!-- ------------------------------------------------------------------------- -->
-
+               
                 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 

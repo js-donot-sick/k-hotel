@@ -17,7 +17,7 @@
             <main>
 
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
-                <form action="${contextPath}/board/review/reviewAlter" enctype="multipart/form-data"  method="POST" > 
+                <form action="${contextPath}/board/review/reviewAlter" enctype="multipart/form-data"  method="POST" onsubmit="return reviewVaildate()"> 
                 <div class="J-body">
 
                     <div class="J-body2">
@@ -148,7 +148,7 @@
                         </div>
 
                         <div class="J-body2-3">
-                            <button id="J-cancle">리뷰 수정 취소</button>
+                            <button id="J-cancle" type="button">리뷰 수정 취소</button>
                             <button id="J-alter">리뷰 수정</button>
                             <!-- 리뷰 작성 취소 누를 시 이전 페이지로 돌아갈건지 알림창 띄우고 확인 누르면 이동. -->
                         </div>
