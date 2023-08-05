@@ -81,9 +81,9 @@
                                             <button type="button" id="J-delBtn">사진 지우기</button>
                                         </td>
                                         <td colspan="3" id="J-reviewImg1">
-                                            <label for="" id="J-label">
-                                                <img  id="J-reviewImage3" name="reviewImg" src="${img}">
-                                            </label>
+                                          
+                                                <img id="J-reviewImage3" name="reviewImg" src="${img}">
+                                            
                                         </td>
                                     </tr>
 
@@ -93,22 +93,24 @@
                                         </td>
 
                                         <td colspan="3">
-                                            <div name="J-myform" id="J-myform" >
-                                                    <input type="radio" id="5-stars" name="rating" value="1" class="star2"
+                                            <div name="J-myform" id="J-myform">
+                                                <fieldset>
+                                                    <input type="radio" id="5-stars" name="rating" value="5" class="star2"
                                                         v-model="ratings" />
                                                     <label for="5-stars" class="star pr-4">⭐</label>
-                                                    <input type="radio" id="4-stars" name="rating" value="2" class="star2"
+                                                    <input type="radio" id="4-stars" name="rating" value="4" class="star2"
                                                         v-model="ratings" />
                                                     <label for="4-stars" class="star">⭐</label>
                                                     <input type="radio" id="3-stars" name="rating" value="3" class="star2"
                                                         v-model="ratings" />
                                                     <label for="3-stars" class="star">⭐</label>
-                                                    <input type="radio" id="2-stars" name="rating" value="4" class="star2"
+                                                    <input type="radio" id="2-stars" name="rating" value="2" class="star2"
                                                         v-model="ratings" />
                                                     <label for="2-stars" class="star">⭐</label>
-                                                    <input type="radio" id="1-star" name="rating" value="5" class="star2"
+                                                    <input type="radio" id="1-star" name="rating" value="1" class="star2"
                                                         v-model="ratings" />
-                                                    <label for="1-star" class="star" >⭐</label>
+                                                    <label for="1-star" class="star">⭐</label>
+                                                </fieldset>
                                             </div>
                                         </td>
                                     </tr>

@@ -133,6 +133,7 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 				rv.setCheckInTime(rs.getString(4));
 				rv.setCheckOutTime( rs.getString(5));
 				rv.setCalSt(rs.getString(6));
+				rv.setRoomImage(rs.getString(7));
 				
 				rvList.add(rv);
 			}
@@ -179,10 +180,13 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 				rv.setRoomName( rs.getString(3));
 				rv.setCheckInTime(rs.getString(4));
 				rv.setCheckOutTime( rs.getString(5));
+				rv.setRoomImage( rs.getString(6) );
+				
+				System.out.println(rv.getRoomImage());
+				
 				
 				rvList.add(rv);
 			}
-			
 			
 			
 		}finally {
@@ -195,6 +199,10 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 		
 		return rvList;
 	}
+	
+	
+	
+	
 
 
 	/** 다음 게시글 번호 얻어오는 DAO
@@ -700,6 +708,12 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 		}
 		return eventFL;
 	}
+
+
+	
+
+
+	
 
 
 }

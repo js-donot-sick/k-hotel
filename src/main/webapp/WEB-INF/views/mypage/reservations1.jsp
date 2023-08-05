@@ -56,7 +56,7 @@
                                                 aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
                                                     <div class="J-PIC">
-                                                        <img src="${contextPath}/resources/images/Deluxe-Room_1.jpg">
+                                                        <img src="${contextPath}${list.roomImage}">
                                                     </div>
                                                     <div class="J-text">
                                                         <input type="" placeholder="호텔지점" value="${list.hotelName}"

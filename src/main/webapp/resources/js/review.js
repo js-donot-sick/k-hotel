@@ -58,7 +58,6 @@ document.getElementById("J-delBtn").addEventListener("click",function(){
         document.getElementById("J-reviewImage3").setAttribute("src", "" + "");
         
         document.getElementById("J-reviewImage2").value = "";
-        document.getElementById("J-reviewImage3").style.display = "none";
     }
 })
 
