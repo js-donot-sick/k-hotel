@@ -17,7 +17,7 @@
             <main>
 
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
-                <form action="review4?no=${rv.bookNo}" enctype="multipart/form-data" method="POST" onsubmit="return reviewVaildate()">
+                <form action="review4?no=${rv.bookNo}" enctype="multipart/form-data" method="POST">
                     
                     <div class="J-body">
 
