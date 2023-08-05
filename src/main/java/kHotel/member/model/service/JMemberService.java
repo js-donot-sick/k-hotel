@@ -224,8 +224,15 @@ public class JMemberService {
 		
 		int result  = dao.couponIn( conn ,count, loginMember);
 		
+		if(result > 0 ) {
+			
+			result = dao.flUpdate(conn, loginMember);
+		}
+		
 		if(result > 0)commit(conn);
 		else		  rollback(conn);
+		
+		close(conn);
 		
 		return result;
 	}
@@ -247,6 +254,26 @@ public class JMemberService {
 		close(conn);
 		
 		return result;
+	}
+
+	/** 게임 참여 여부
+	 * @param loginMember
+	 * @return eventFL
+	 * @throws Exception
+	 */
+	public String eventFL(Member loginMember) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		String eventFL = dao.eventFL(conn, loginMember);
+		
+		System.out.println(eventFL);
+		
+		
+		
+		close(conn);
+		
+		return eventFL;
 	}
 
 

@@ -1,5 +1,5 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> -->
+ <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 
     <!DOCTYPE html>
     <html lang="en">
@@ -20,7 +20,7 @@
     <body>
         
         
-        <form action="${contextPath}/event" method="get" onsubmit="return bingo()">
+        <form action="${contextPath}/event/bingoIn" method="post" onsubmit="return bingo()">
             
             <div class="J-1">
                 
@@ -33,7 +33,7 @@
                  <img
                     src="https://media.istockphoto.com/id/1254770023/ko/%EB%B2%A1%ED%84%B0/%EC%95%84%EC%BC%80%EC%9D%B4%EB%93%9C-%EB%A8%B8%EC%8B%A0-%EC%8A%A4%ED%81%AC%EB%A6%B0-%EB%B3%B5%EA%B3%A0%ED%92%8D-%EB%B2%A1%ED%84%B0-%EB%B0%B0%EA%B2%BD.jpg?s=612x612&w=0&k=20&c=QtzUGG7fd4d6ciSpFfHqJogUQJBqKD_rs37QRmAtRpQ=">
 
-                <div class="J-game">New Game</div>
+                <div class="J-game" >New Game</div>
 
                 <table id="J-bingo">
                     <tr id="tr1">
@@ -71,7 +71,7 @@
                         <td></td>
                         <td></td>
                     </tr>
-            
+                    
                 </table>
                     <input type="text" name="input" id="J-input" autocomplete="off">
                     <button id="J-btn" >제출</button>
@@ -83,8 +83,13 @@
                     <input type="hidden" id="J-span2" name="result2">
                 </form>
             </div>
+            <input type="hidden" value="${event.bingoFl}">
 
+      asdasdas      ${event.bingoFl}
+            <script>
 
+                const Jevent = "${event.bingoFl}";
+            </script>
 
 
         <script src="${contextPath}/resources/js/Bingo.js"></script>

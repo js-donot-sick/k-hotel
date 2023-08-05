@@ -644,4 +644,62 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 	}
 
 
+	/** 이벤트 참여여부
+	 * @param conn 
+	 * @param loginMember
+	 * @return result
+	 * @throws Exception
+	 */
+	public int flUpdate(Connection conn, Member loginMember) throws Exception {
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("flUpdate");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, loginMember.getMemberNo());
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			
+			close(pstmt);
+		}
+		return result;
+	}
+
+
+	/** 게임 참여 여부 가져오기
+	 * @param conn
+	 * @param loginMember
+	 * @return eventLF
+	 * @throws Exception
+	 */
+	public String eventFL(Connection conn, Member loginMember) throws Exception{
+		
+		String eventFL = "";
+		
+		try {
+			String sql = prop.getProperty("eventFL");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, loginMember.getMemberNo());
+			
+			rs = pstmt.executeQuery();
+			
+			
+			if( rs.next() ) {
+				
+				eventFL = rs.getString(1);
+			}
+			
+		}finally {
+			
+		}
+		return eventFL;
+	}
+
+
 }
