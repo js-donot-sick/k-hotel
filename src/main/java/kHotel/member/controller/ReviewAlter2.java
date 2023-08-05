@@ -131,15 +131,17 @@ public class ReviewAlter2 extends HttpServlet{
 		
 		JMemberService service = new JMemberService();
 		
+		
 		try {
 			
 			int result = service.reviewAlter(rvUpdate2, loginMember ,updateReview);
 			
-			System.out.println(result +"섭릿");
 			if(result > 0) {
 				session.setAttribute("message", "리뷰가 수정되었습니다.");
 				
 				
+				
+				resp.sendRedirect(req.getContextPath() + "/board/review/show?no=" + updateReview.getBoardNo() );
 				
 			}else {
 				session.setAttribute("message", "리뷰 수정이 실패되었습니다. 다시 시도해 주세요.");
