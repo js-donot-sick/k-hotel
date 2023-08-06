@@ -40,10 +40,13 @@
 
                             <div class="J-J2" id="J-body">
 
-                                
+                                <c:if test="${empty rvList}">
+                                <div>현재 예약이 없습니다.</div>
+                                 </c:if>
                                 <c:forEach var="list" items="${rvList}">
                                     <form action="reviewCancel" method="get" onsubmit="return reservationcheck()">
                                     <div class="accordion test" id="accordionExample">
+                                        
                                         <div class="accordion-item">
                                             <h2 class="accordion-header" id="headingOne">
                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -55,6 +58,7 @@
                                             <div id="collapseOne" class="accordion-collapse collapse show"
                                                 aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                                 <div class="accordion-body">
+                                                    
                                                     <div class="J-PIC">
                                                         <img src="${contextPath}${list.roomImage}">
                                                     </div>

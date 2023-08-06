@@ -37,6 +37,9 @@
 
                     <div class="J-J2"  id="J-body">
                         
+                        <c:if test="${empty rvList}">
+                            <div>현재 예약이 없습니다.</div>
+                        </c:if>
                         
                         <c:forEach var="list" items="${rvList}">
                         <form action="review" method="POST">
