@@ -91,6 +91,8 @@ public class JMemberService {
 		Connection conn = getConnection();
 		
 		 List<Reservation> rvList = dao.reservation(conn, memberNo);
+		 
+		
 		
 		 
 		close(conn);

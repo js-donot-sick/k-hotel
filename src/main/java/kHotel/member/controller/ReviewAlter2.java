@@ -142,10 +142,13 @@ public class ReviewAlter2 extends HttpServlet{
 				
 				
 				resp.sendRedirect(req.getContextPath() + "/board/review/show?no=" + updateReview.getBoardNo() );
+				System.out.println(updateReview.getBoardNo() +"오ㅑ그러는거야;;");
+				
+				
 				
 			}else {
 				session.setAttribute("message", "리뷰 수정이 실패되었습니다. 다시 시도해 주세요.");
-				
+				resp.sendRedirect(req.getContextPath() + "/board/review/show?no=" + updateReview.getBoardNo() );
 				
 			}
 			

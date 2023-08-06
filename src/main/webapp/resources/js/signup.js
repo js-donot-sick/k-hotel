@@ -200,6 +200,7 @@ const tel = document.getElementsByClassName("J-Tel")[0];
 
 const check = document.getElementsByClassName("J-check1");
 const check2 = document.getElementsByClassName("J-check2");
+const check3 = document.getElementsByClassName("J-check3");
 
 const pno1 = document.getElementsByClassName("J-pno")[0];
 
@@ -261,7 +262,7 @@ function signUp() {
         return false;
     }
 
-    for (let item of check2) {
+    for (let item of check3) {
 
         if (item.checked == true ) {
             alert("필수약관에 동의하셔야 가입이 가능합니다.");

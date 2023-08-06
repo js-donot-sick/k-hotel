@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="${contextPath}/resources/css/reservations1.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/reservations2.css">
 
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
@@ -37,29 +37,32 @@
 
                     <div class="J-J2"  id="J-body">
                         
+                        <c:if test="${empty rvList}">
+                            <div>현재 예약이 없습니다.</div>
+                        </c:if>
                         
                         <c:forEach var="list" items="${rvList}">
                         <form action="review" method="POST">
                         <div class="accordion test" id="accordionExample" >
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                    <div class="accordion-button" type="" data-bs-toggle="" data-bs-target=""
                                     aria-expanded="true" aria-controls="collapseOne">
                                         예약 번호 : <input type="text" value="${list.bookNo}" name="bookNo" readonly>
-                                    </button>
+                                    </div>
                                 </h2>
                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <div class="J-PIC">
-                                            <img src="${contextPath}/resources/images/Deluxe-Room_1.jpg">
+                                            <img src="${contextPath}${list.roomImage}">
                                         </div>
                                         <div class="J-text">
-                                            <input type="" placeholder="호텔지점"      value="${list.hotelName}" name="hotelName" readonly>
-                                            <input type="" placeholder="객실명"        value="${list.roomName}" name="roomName" readonly>
-                                            <input type="" placeholder="체크인 날짜"    value="${list.checkInTime}" name="checkIn" readonly>
-                                            <input type="" placeholder="체크 아웃 날짜" value="${list.checkOutTime}" name="checkOut" readonly>
-                                            <button type="submit" id="J-btn">리뷰 작성</button>
+                                           <input type="" placeholder="호텔지점"      value="${list.hotelName}" name="hotelName" readonly>
+                                           <input type="" placeholder="객실명"        value="${list.roomName}" name="roomName" readonly>
+                                           <input type="" placeholder="체크인 날짜"    value="${list.checkInTime}" name="checkIn" readonly>
+                                           <input type="" placeholder="체크 아웃 날짜" value="${list.checkOutTime}" name="checkOut" readonly>
+                                           <button type="submit" id="J-btn">리뷰 작성</button>
                                         </div>
                                         
                                     </div>
@@ -111,6 +114,6 @@
 
     
 
-    <script src="../resources/js/reservations1.js"></script>
+    <script src="../resources/js/reservations2.js"></script>
 </body>
 </html>

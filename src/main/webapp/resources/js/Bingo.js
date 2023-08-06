@@ -214,7 +214,7 @@ function bingo(){ // 제출되면 빋고판 새로고침 되어버림.. form태�
     
     console.log(span2.value);
     if(bing == 3){
-        alert("축하드립니다! 쿠폰");
+        alert("축하드립니다! 쿠폰이 지급 되었습니다. 쿠폰함에서 확인 가능합니다.");
         // ajax 사용해서 쿠폰 insert해주고
         return true;
     }

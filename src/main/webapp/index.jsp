@@ -132,26 +132,30 @@
     
                     <div class="J-5">
                         <div id="J5-1">
-                            <img class="fade-in" src="https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/76Cz/image/D-oNM9gJGbRPFYohIDcYPlyobzs.jpg" style="height: 95%; width: 95%;">
+                            <img class="fade-in" id="J-img1" src="https://www.lottehotel.com/content/dam/lotte-hotel/lotte/seoul/main/230119-558-mai-LTSE.jpg" >
                         </div>
     
                         <div id="J5-2">
                             
-                            뷰 봐라;
+                            K-호텔은 강남, 종로, 당산 등 서울의 중심 관광지들로의 접근성이 뛰어나 <br>
+                            서울 관광을 위한 최적의 위치를 자랑합니다. 
+                            
                             
     
                         </div>
                     </div>
     
-    
+                    
                     <div class="J-6">
-    
+                        
                         <div id="J6-1">
-                            저희 호텔에 K호수는 정말 아름답네요? 아 ㅋㅋ 수영장이었네
+                            
+                            한국 최고의 럭셔리 비즈니스호텔인 K-호텔은 1,015실 규모를 자랑하며, <br>
+                            고급진 인테리어로 격양된 분위기를 조성합니다.
                         </div>
-    
+                        
                         <div id="J6-2">
-                            <img class="fade-in" src="https://josunhotel.com/revolution/content/fileImage.do?fileId=426055&cntntsSn=426054" style="height: 95%; width: 95%; ">
+                            <img class="fade-in" id="J-img2" src="https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/76Cz/image/D-oNM9gJGbRPFYohIDcYPlyobzs.jpg" >
                         </div>
                     </div>
     
@@ -161,8 +165,8 @@
     
                     <div class="JJ-7">
     
-                         <img src="resources/images/리뷰1.png">
-                         <img src="resources/images/리뷰2.png">
+                         <img id="J-img3" src="resources/images/13.png">
+                         <img id="J-img4" src="resources/images/14.png" >
                     </div>
     
                 </div>
