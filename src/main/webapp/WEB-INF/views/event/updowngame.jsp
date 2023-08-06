@@ -38,6 +38,8 @@
         <form action="${contextPath}/event" method="get" name="C-postWrite-main" onsubmit="return inputcheck()">
             <div class="P-udg-body" id="P-udg-body">
                 <div class="P-udg-title" id="P-udg-title">업다운게임</div>
+
+                <div>1~50 사이의 숫자를 맞히세요! 기회는 5번입니다.</div>
                 
                 <div class="P-udg" id="P-udg"></div>
 

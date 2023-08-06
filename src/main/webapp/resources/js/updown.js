@@ -98,7 +98,7 @@ function inputcheck() {
                     url : contextPath + "/event/updown/coupon",
                     
                     success : function(result){
-                        alert("정답입니다. 쿠폰");
+                        alert("정답입니다! 쿠폰함을 확인해주세요.");
                     },
 
                     error : function(){
