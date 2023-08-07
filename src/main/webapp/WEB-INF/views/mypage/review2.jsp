@@ -160,7 +160,6 @@
                     <input type="hidden" name="reviewTitle" value="리뷰입니다.">
                 </div>
                 <input type="hidden" name="rating2" class="star3">
-                ${rvUpdate.userId}
                 <input type="hidden" name="memberId" value="${rvUpdate.userId}">
                 <input type="hidden" name="hotelName" value="${rvUpdate.hotelName}">
                 <input type="hidden" name="roomName" value="${rvUpdate.roomName}">

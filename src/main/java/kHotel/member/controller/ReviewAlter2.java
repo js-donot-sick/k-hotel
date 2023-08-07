@@ -101,6 +101,7 @@ public class ReviewAlter2 extends HttpServlet{
 			updateTag = String.join(",,", tag2);
 		}
 		
+		
 		Review updateReview = new Review();
 		
 		updateReview.setReviewImg(updateImg);
@@ -118,6 +119,9 @@ public class ReviewAlter2 extends HttpServlet{
 			
 			int result = service.reviewAlter(rvUpdate2, loginMember ,updateReview);
 			
+			
+			updateReview.setContent( updateReview.getContent().replaceAll("<br>", "\n") );
+
 			if(result > 0) {
 				session.setAttribute("message", "리뷰가 수정되었습니다.");
 				
