@@ -524,9 +524,7 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			pstmt.setInt(2,updateReview.getBoardNo());
 			pstmt.setString(3, rvUpdate2.getReviewImg());
 			
-			System.out.println(updateReview.getRename());
-			System.out.println(updateReview.getBoardNo());
-			System.out.println(rvUpdate2.getReviewImg());
+			
 			
 			result = pstmt.executeUpdate();
 			
