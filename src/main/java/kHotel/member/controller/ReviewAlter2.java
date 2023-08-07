@@ -142,7 +142,6 @@ public class ReviewAlter2 extends HttpServlet{
 				
 				
 				resp.sendRedirect(req.getContextPath() + "/board/review/show?no=" + updateReview.getBoardNo() );
-				System.out.println(updateReview.getBoardNo() +"오ㅑ그러는거야;;");
 				
 				
 				
