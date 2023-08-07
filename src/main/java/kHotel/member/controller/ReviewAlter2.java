@@ -91,7 +91,14 @@ public class ReviewAlter2 extends HttpServlet{
 		// ------------수정 할 게시글 정보------------------------
 	
 		int boardNo = Integer.parseInt(mpReq.getParameter("no"));
+		
+		
 		String updateImg = image.getRename();
+		
+		if(image.getRename() == null) {
+			updateImg = rvUpdate2.getReviewImg();
+		}
+		
 		String updateContent = mpReq.getParameter("updateContent");
 		int updateStar = Integer.parseInt(mpReq.getParameter("updateStar"));
 		String[] tag2 = mpReq.getParameterValues("updateTag");
