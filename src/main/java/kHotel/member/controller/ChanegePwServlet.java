@@ -46,11 +46,6 @@ public class ChanegePwServlet extends HttpServlet{
 			
 			String path = null;
 			
-			System.out.println(result);
-			System.out.println(currentPw);
-			System.out.println(newPw);
-			System.out.println(memberNo);
-			
 			if(result > 0) {
 				
 				session.setAttribute("message", "비밀번호 변경에 성공하셨습니다.");

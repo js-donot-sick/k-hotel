@@ -182,9 +182,6 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 				rv.setCheckOutTime( rs.getString(5));
 				rv.setRoomImage( rs.getString(6) );
 				
-				System.out.println(rv.getRoomImage());
-				
-				
 				rvList.add(rv);
 			}
 			
@@ -377,8 +374,6 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			result = pstmt.executeUpdate();
 			
-			System.out.println(result +"zz 됐나?");
-			
 		}finally {
 			close(pstmt);
 			
@@ -404,8 +399,6 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			pstmt.setString(1, rvUpdate2.getContent());
 			pstmt.setString(2, loginMember.getMemberId());
-			
-			System.out.println(rvUpdate2.getContent()+" 아직도?");
 			
 			rs = pstmt.executeQuery();
 			
@@ -448,14 +441,7 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			pstmt.setInt(4, loginMember.getMemberNo());
 			pstmt.setInt(5, rvUpdate2.getStar());
 			
-			
-			System.out.println(updateReview.getContent() +"리뷰 수정 DAO");
-			System.out.println( rvUpdate2.getContent());
-			System.out.println(loginMember.getMemberNo());
-			System.out.println(rvUpdate2.getStar());
-			
 			result = pstmt.executeUpdate();
-			System.out.println(result + "디에오");
 			
 		}finally {
 			
@@ -542,7 +528,6 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			result = pstmt.executeUpdate();
 			
-			System.out.println(result + "이미지 수정 DAO 제발 1떠라");
 		}finally {
 			close(pstmt);
 		}
@@ -574,8 +559,6 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			result = pstmt.executeUpdate();
 			
-			System.out.println(result + " 태그 수정");
-			
 		}finally {
 			
 			close(pstmt);
@@ -605,8 +588,6 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			result = pstmt.executeUpdate();
 					
-			System.out.println(result + "쿠폰이 증정된거여");
-			
 		}finally {
 			close(pstmt);
 			
@@ -631,18 +612,12 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			pstmt.setString(1, memberId);
 			
-			System.out.println(memberId);
-			
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
 				
 				result = rs.getInt(1);
 			}
-			
-			
-			
-			System.out.println(result + " 중복검사완료ㅁ");
 			
 		}finally {
 			close(pstmt);

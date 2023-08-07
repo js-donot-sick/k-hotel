@@ -34,21 +34,17 @@ public class AdminEventWriteServlet extends HttpServlet {
 			
 			 String mode = req.getParameter("mode");
 			 
-			 System.out.println("사이드바에서 눌렀을 때: " + mode); 
+			 
 			 
 			 if(mode.equals("update")) {
 				 // 무슨 게시글 수정할지
 				 int eventNo = Integer.parseInt(req.getParameter("no"));
-				 
-				 //System.out.println("get에서 no : " + eventNo);
 				 
 				 // 수정 화면에 들어갈 내용
 				 Event event = new KBoardService().selectEventDetail(eventNo);
 				 
 				 // 개행문자 처리
 				 event.setEventContent(event.getEventContent().replaceAll("<br>", "\n"));
-				 
-				 // System.out.println("for update : " + event);
 				 
 				 req.setAttribute("event", event);
 			 
@@ -90,11 +86,9 @@ public class AdminEventWriteServlet extends HttpServlet {
 			while (files.hasMoreElements()) { // 다음 요소가 있을 때
 
 				String name = files.nextElement();
-				
-				// System.out.println("name : " + name);
 
 				String rename = mpReq.getFilesystemName(name);
-				// System.out.println(rename); // ????????????????????????????????????????
+
 				String original = mpReq.getOriginalFileName(name);
 
 				if (original != null) { // 실제로 파일이 담겨있는 경우
@@ -126,9 +120,6 @@ public class AdminEventWriteServlet extends HttpServlet {
 
 			String mode = mpReq.getParameter("mode");
 			
-			
-			
-			// System.out.println("등록하기 눌렀을 때 mode : " + mode);
 
 			if (mode.equals("insert")) {
 				
@@ -140,7 +131,6 @@ public class AdminEventWriteServlet extends HttpServlet {
 					session.setAttribute("message", "게시글이 등록되었습니다.");
 					path = req.getContextPath() + "/event/detail?no=" + eventNo;
 					
-					// System.out.println("가라 제발!!!");
 				} else {
 					session.setAttribute("message", "게시글 등록 실패");
 					path = "eventWrite?mode=insert";
@@ -152,14 +142,10 @@ public class AdminEventWriteServlet extends HttpServlet {
 
 			if (mode.equals("update")) {
 				
-				//System.out.println("post에서 no : " + mpReq.getParameter("no"));
-
 				int eventNo = Integer.parseInt(mpReq.getParameter("no")); // 어떤 게시글 수정할 건지
 				
 				String deleteList = mpReq.getParameter("deleteList"); // 이미지 변경사항(삭제) 목록
-				
-				//System.out.println("deleteList : "+deleteList);
-				
+							
 				event.setEventNo(eventNo);
 				
 				int result = service.updateEvent(event, deleteList, imageList);

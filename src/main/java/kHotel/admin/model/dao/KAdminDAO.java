@@ -154,9 +154,7 @@ public class KAdminDAO {
 		int result = 0;
 		
 		try {
-			
-			//System.out.println(image);
-			
+					
 			String sql = prop.getProperty("insertEventImage");
 			
 			pstmt = conn.prepareStatement(sql);
@@ -166,8 +164,6 @@ public class KAdminDAO {
 			pstmt.setInt(3, image.getEventNo());
 			
 			result = pstmt.executeUpdate();
-			
-			System.out.println("insert : " + result);
 			
 		} finally {
 			close(pstmt);
@@ -198,8 +194,7 @@ public class KAdminDAO {
 			pstmt.setInt(4, event.getEventNo());
 			
 			result = pstmt.executeUpdate();
-			
-			System.out.println("글 : " + result);
+
 			
 		} finally {
 			close(pstmt);
@@ -229,9 +224,7 @@ public class KAdminDAO {
 			pstmt.setInt(3, image.getImageLevel());
 			
 			result = pstmt.executeUpdate();
-			
-			System.out.println("update : " + result);
-			
+
 			
 		} finally {
 			close(pstmt);
@@ -260,9 +253,7 @@ public class KAdminDAO {
 			pstmt.setInt(1, eventNo);
 			
 			result = pstmt.executeUpdate();
-			
-			System.out.println("delete : " + result);
-			
+
 		} finally {
 			close(pstmt);
 		}

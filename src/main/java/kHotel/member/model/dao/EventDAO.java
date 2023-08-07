@@ -95,7 +95,6 @@ public class EventDAO {
 
 				eventEndList.add(event);
 				
-				System.out.println(eventEndList);
 			}
 
 		} finally {

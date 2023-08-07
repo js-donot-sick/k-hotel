@@ -75,8 +75,6 @@ public class SignUpServlet extends HttpServlet{
 			}else {	// 실패
 				session.setAttribute("message", "회원가입을 실패하였습니다. 다시 시도해 주세요.");
 			}
-
-			System.out.println(result);
 			
 			resp.sendRedirect( req.getContextPath() );
 			

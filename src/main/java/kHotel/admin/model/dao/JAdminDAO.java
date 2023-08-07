@@ -133,7 +133,6 @@ public class JAdminDAO {
 	}
 
 	/** FAQ 수정 DAO
-	 * @param conn
 	 * @param before
 	 * @param loginMember
 	 * @param after
@@ -159,14 +158,7 @@ public class JAdminDAO {
 			
 			
 			result = pstmt.executeUpdate();
-			System.out.println(before.getBoardContent());
-			System.out.println(before.getBoardTitle());
-			System.out.println(loginMember.getMemberNo());
-			System.out.println(boardNo);
-			System.out.println(after.getBoardContent());
-			System.out.println(after.getBoardTitle());
-			
-			System.out.println(result + " 수정 DAO");
+
 		}finally {
 			
 			close(pstmt);

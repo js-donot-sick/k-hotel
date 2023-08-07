@@ -117,11 +117,8 @@ public class CBookService {
 		
 		int delete = dao.deleteCalculate(conn, bookNo);
 		
-		System.out.println(delete);
-		
 		int	result = dao.deleteReservation(conn, bookNo);
 		
-		System.out.println(result);
 		if(result > 0) commit(conn);
 		else		   rollback(conn);
 		

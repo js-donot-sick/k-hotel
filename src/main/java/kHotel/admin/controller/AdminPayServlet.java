@@ -35,7 +35,6 @@ public class AdminPayServlet extends HttpServlet{
 			
 			req.setAttribute("map", map);
 			
-			
 			String path = "/WEB-INF/views/admin/AdminPay.jsp";
 			
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);

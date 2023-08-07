@@ -30,22 +30,15 @@ public class AdminBoardDetailServlet extends HttpServlet{
 		try {
 			
 			board.setBoardNo(boardNo);
-	
-			System.out.println(boardNo);
-			
+		
 			board = service.BoardDetail(boardNo);
 			
 			req.setAttribute("board", board);
-			
-			
-			
+					
 			String path = "/WEB-INF/views/admin/AdminBoardDetail.jsp";
 			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 			dispatcher.forward(req, resp);
-			
-			
-			
-			
+						
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

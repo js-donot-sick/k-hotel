@@ -57,8 +57,7 @@ public class JAdminService {
 		
 		// boardNo 가져오기
 		int boardNo = dao.getFAQBoardNo(conn , before , loginMember);
-		
-		System.out.println(boardNo + " boardNo 가져온거");
+	
 		int result = dao.FAQAlter(conn, before, loginMember, after, boardNo);
 		
 		// 1) XSS 방지 처리(내용)

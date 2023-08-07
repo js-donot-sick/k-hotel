@@ -23,8 +23,6 @@ public class AdminFaqServlet extends HttpServlet {
 			
 			int result = service.deleteFaq(boardNo);
 			
-			System.out.println("result : " + result);
-			
 			resp.getWriter().print(result);
 			
 		} catch (Exception e) {

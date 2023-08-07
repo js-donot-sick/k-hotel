@@ -16,9 +16,6 @@ public class AdminBoardManageServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		
-		
-		
-		
 		String path = "/WEB-INF/views/admin/AdminBoardManage.jsp";
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);

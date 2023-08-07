@@ -34,10 +34,7 @@ public class AdminFAQAlter2 extends HttpServlet {
 		
 		before.setBoardTitle(title);
 		before.setBoardContent(content);
-		
-		System.out.println(before.getBoardTitle() + "tq1");
-		System.out.println(before.getBoardContent() + "tq1");
-		
+	
 		// 수정 후 게시글 정보
 		String faqTitle = req.getParameter("faqTitle");
 		String faqContent = req.getParameter("faqContent");

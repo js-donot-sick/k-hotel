@@ -254,9 +254,6 @@ public class PAdminDAO {
 			result = pstmt.executeUpdate();
 			
 			
-			System.out.println(result);
-			
-			
 		} finally {
 			close(pstmt);
 			

@@ -65,7 +65,6 @@ public class PAdminService {
 	 */
 	public Map<String, Object> searchId(String Pid, int type, int cp) throws Exception {
 
-		System.out.println("Pid0:  " + Pid);
 
 		Connection conn = getConnection();
 
@@ -117,8 +116,6 @@ public class PAdminService {
 
 		int result = dao.adminDeleteMember(conn, memberNo,type,LPagination);
 		
-		System.out.println(result);
-		
 
 		if (result > 0) {
 			commit(conn);
@@ -126,7 +123,6 @@ public class PAdminService {
 			rollback(conn);
 		}
 
-		System.out.println(result);
 
 		return result;
 	}

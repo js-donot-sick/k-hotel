@@ -75,8 +75,6 @@ public class KMemberService {
 		
 		Connection conn = getConnection();
 		
-		//System.out.println("서비스에는 잘 갓나요?");
-		
 		int result = dao.newRePw(conn, newPw, memberId);
 		
 		if(result>0)	commit(conn);
