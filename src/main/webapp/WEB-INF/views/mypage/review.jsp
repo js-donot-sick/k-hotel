@@ -158,8 +158,8 @@
                             </div>
 
                             <div class="J-body2-3">
-                                <button id="J-cancle" type="button">리뷰 작성 취소</button>
-                                <button id="J-update">리뷰 작성</button>
+                                <button id="J-cancle" type="button" onclick=" location.href='${contextPath}/member/mypage/reservations2'">리뷰 작성 취소</button>
+                                <button id="J-update" onclick="return update()" >리뷰 작성</button>
                                 <!-- 리뷰 작성 취소 누를 시 이전 페이지로 돌아갈건지 알림창 띄우고 확인 누르면 이동. -->
                             </div>
                             <input type="hidden" name="Jdelete" id="J-delete" value="0">
