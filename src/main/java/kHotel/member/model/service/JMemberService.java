@@ -164,6 +164,7 @@ public class JMemberService {
 		
 		// 2) 개행 문자 처리(내용)
 		updateReview.setContent(Util.newLineHandling(updateReview.getContent()));
+		
 		rvUpdate2.setContent(Util.newLineHandling(rvUpdate2.getContent()));
 		
 		// 게시글 수정

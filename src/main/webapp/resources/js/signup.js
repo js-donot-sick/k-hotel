@@ -238,7 +238,10 @@ function signUp() {
     if(idBtn.value == 1){
         alert("이미 사용중인 아이디 입니다. 다시 입력해주세요.");
         
+        return false;
     }
+
+
 
     if(!regExp7.test(id.value) ){
         alert("아이디 형식이 일치하지 않습니다. 다시 입력해주세요.");
@@ -246,43 +249,15 @@ function signUp() {
         return false;
 
     }
-     if(!regExp6.test(pw1.value)){
+
+    if(!regExp6.test(pw1.value)){
         alert("비밀번호 형식이 일치하지 않습니다. 다시 입력해주세요.");
 
         return false;
 
     }
-     if (!regExp5.test(memberEmail.value)) {
-        alert("이메일 형식이 올바르지 않습니다. 다시 입력주세요.");
 
-        return false;
-
-    }
-     if (!regExp4.test(memberName.value)) {
-        alert("이름 형식이 올바르지 않습니다. 다시 입력주세요.");
-
-        return false;
-
-    }
-     if (!regExp2.test(pno1.value)) {
-        alert("주민번호 앞자리를 다시 입력주세요.");
-
-        return false;
-
-    }
-     if (!regExp3.test(pno2.value)) {
-        alert("주민번호 뒷자리를 다시 입력주세요.");
-
-        return false;
-
-    }
-     if (!regExp.test(tel.value)) {
-        alert("전화번호 형식이 일치하지 않습니다. 다시 확인해주세요!");
-
-        return false;
-
-    }
-     if (pw1.value != pw2.value) {
+    if (pw1.value != pw2.value) {
 
         alert("비밀번호와 비밀번호확인이 일치하지 않습니다. 다시 입력해주세요.");
 
@@ -290,12 +265,52 @@ function signUp() {
 
     }
 
+    if (!regExp4.test(memberName.value)) {
+        alert("이름 형식이 올바르지 않습니다. 다시 입력주세요.");
+
+        return false;
+
+    }
+
+    if (!regExp2.test(pno1.value)) {
+        alert("주민번호 앞자리를 다시 입력주세요.");
+
+        return false;
+
+    }
+
+    if (!regExp3.test(pno2.value)) {
+        alert("주민번호 뒷자리를 다시 입력주세요.");
+
+        return false;
+
+    }
+
+    if (!regExp.test(tel.value)) {
+        alert("전화번호 형식이 일치하지 않습니다. 다시 확인해주세요!");
+
+        return false;
+
+    }
+     
+     if (!regExp5.test(memberEmail.value)) {
+        alert("이메일 형식이 올바르지 않습니다. 다시 입력주세요.");
+
+        return false;
+
+    }
+     
+     
     
     if(idBtn.value == 2){
         alert("아이디 중복 확인을 해주세요.");
 
         return false;
     }
+   
+
+    
+    
    
 
 
@@ -370,7 +385,7 @@ function duplication() {
 
         success: function (result) {
 
-            if (result == 1) { // 아이디가 중복임
+            if (result > 0) { // 아이디가 중복임
 
                 if (id.value == "") {
                     alert("아이디를 입력해주세요.");
@@ -387,6 +402,8 @@ function duplication() {
                     alert("이미 사용중인 아이디 입니다. 다시 입력해주세요.");
                     idBtn.value = 1;
                     console.log(idBtn.value)
+
+                    
                 }
 
             } else {
