@@ -28,7 +28,7 @@
 		        JOIN BOARD B USING (BOARD_NO)
 		        JOIN MEMBER M ON(B.MEMBER_NO = M.MEMBER_NO)
 		        WHERE REPORT_ST = 'N'
-		        
+		        AND BOARD_ST = 'N'
 		        ORDER BY BOARD_NO DESC
 		        ) A
 		    )
