@@ -89,7 +89,6 @@ public class ReviewDAO {
 		}
 		
 		
-		System.out.println(boardList);
 		return boardList;
 		
 	}
@@ -175,7 +174,6 @@ public class ReviewDAO {
 		} finally {
 			close(pstmt);
 		}
-		System.out.println("daoresult: "+ result);
 		
 		return result;
 	}

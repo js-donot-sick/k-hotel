@@ -42,7 +42,6 @@ public class ReviewShowServelt extends HttpServlet {
 
 				req.setAttribute("board", boardShow);
 
-				System.out.println(boardShow);
 
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 
@@ -63,7 +62,6 @@ public class ReviewShowServelt extends HttpServlet {
 
 				int result = service.declar(report);
 
-				System.out.println(result);
 
 				resp.getWriter().print(result);
 
@@ -110,7 +108,6 @@ public class ReviewShowServelt extends HttpServlet {
 
 				req.setAttribute("map", map);
 
-				System.out.println(map);
 
 				RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 

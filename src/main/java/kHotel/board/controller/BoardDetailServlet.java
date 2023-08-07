@@ -94,9 +94,7 @@ public class BoardDetailServlet extends HttpServlet{
 				board.setBoardDate(boardDate);
 				
 				
-				System.out.println(boardNo);
-				System.out.println(boardTitle);
-				System.out.println(boardContent);
+		
 				
 				try {
 					

@@ -74,7 +74,6 @@ public class KBoardService {
 			listCount = dao.getListCount(select, content, conn, type);
 		}
 		
-		System.out.println("글 수 제발 제발 : " + listCount);
 		
 		// 2. 전체 글 수 + 페이지네이션...?
 		LPagination pagination = new LPagination(cp, listCount); // 오류나면 여기부터 확인해바..

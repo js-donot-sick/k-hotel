@@ -450,7 +450,6 @@ public class KBoardDAO {
 			
 			String sql = prop.getProperty("selectEventDetail");
 			
-			System.out.println("eventNo : " + eventNo);
 			
 			pstmt = conn.prepareStatement(sql);
 			

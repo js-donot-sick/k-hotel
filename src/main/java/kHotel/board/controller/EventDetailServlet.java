@@ -25,7 +25,6 @@ public class EventDetailServlet extends HttpServlet {
 			
 			Event event = service.selectEventDetail(eventNo);
 			
-			System.out.println(event);
 			
 			req.setAttribute("event", event);
 			
