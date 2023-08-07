@@ -57,7 +57,7 @@
 
                 </div>
                  <div class="c-coupon-page">
-                        <c:set var="url" value="${contextPath}/member/mypage/coupon?cp="/>
+                        <c:set var="url" value="${contextPath}/member/mypage/likePage?cp="/>
 
                         <ul class="c-pagination">
                             <!-- 첫 페이지로 이동 -->
