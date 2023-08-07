@@ -24,6 +24,8 @@ public class MypageQnaServelt extends HttpServlet{
 		BoardService service = new BoardService();
 		
 		try {
+			
+
 
 			HttpSession session = req.getSession();
 			

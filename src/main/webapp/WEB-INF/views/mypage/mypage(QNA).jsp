@@ -70,35 +70,9 @@
                     
                     <!-- 페이지네이션 -->
                  
-                    <div class="K-qna-page">
-                        <c:set var="url" value="qna?type=2&cp="/>
+                   
 
-                        <ul class="K-pagination">
-                            <!-- 첫 페이지로 이동 -->
-                            <li><a href="${url}1">&lt;&lt;</a></li>
-                            <!-- 이전 목록 마지막 번호로 이동 -->
-                            <li><a href="${url}${pagination.prevPage}">&lt;</a></li>
-
-                            <!-- 범위가 정해진 일반 for문 사용 -->
-                            <c:forEach var="i" begin="${pagination.startPage}" end="${pagination.endPage}">
-                                <c:choose>
-                                    <c:when test="${i==pagination.currentPage}">
-                                        <li><a class="K-current">${i}</a></li>
-                                    </c:when>
-                                    <c:otherwise>
-                                        <li><a href="${url}${i}">${i}</a></li>
-                                    </c:otherwise>
-                                </c:choose>
-                            </c:forEach>
-
-                            <!-- 다음 목록 시작 번호로 이동 -->
-                            <li><a href="${url}${pagination.nextPage}">&gt;</a></li>
-                            <!-- 끝 페이지로 이동 -->
-                            <li><a href="${url}${pagination.maxPage}">&gt;&gt;</a></li>
-                        </ul>
-
-                    </div>
-
+                
                 </div>
             </div>
 

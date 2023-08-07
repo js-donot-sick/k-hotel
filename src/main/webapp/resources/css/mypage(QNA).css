@@ -29,6 +29,8 @@
     text-align: center;
     border: 1px solid #eee;
     width: 75%;
+    height: 1000px;
+    overflow-y: scroll;
 }
 
 /* 메인화면 */
