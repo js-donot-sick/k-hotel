@@ -69,15 +69,6 @@ function inputcheck() {
             return false;
 
         } else {
-            ta.innerText = "";
-            count++;
-
-
-            if (count == 5) { // 5번 입력했을 경우
-                // function 실행
-                alert("기회 5번 모두 소진하였습니다. 게임 실패");
-                return true;
-            }
 
             const upDiv = document.createElement("div");
             upDiv.innerText = "---- UP ----"
@@ -96,6 +87,8 @@ function inputcheck() {
                 $.ajax({
                     
                     url : contextPath + "/event/updown/coupon",
+
+                    
                     
                     success : function(result){
                         alert("정답입니다! 쿠폰함을 확인해주세요.");
@@ -121,6 +114,16 @@ function inputcheck() {
 
             input.value = "";
             input.focus();
+
+            ta.innerText = "";
+            count++;
+
+
+            if (input.value != random &&count == 5) { // 5번 입력했을 경우
+                // function 실행
+                alert("기회 5번 모두 소진하였습니다. 게임 실패");
+                return true;
+            }
 
 
             return false;
