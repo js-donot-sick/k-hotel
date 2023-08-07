@@ -163,8 +163,6 @@ public class LHotelDAO {
 				count = rs.getInt(1);
 			}
 			
-			System.out.println("countdao : " + count);
-			
 			
 		}finally {
 			

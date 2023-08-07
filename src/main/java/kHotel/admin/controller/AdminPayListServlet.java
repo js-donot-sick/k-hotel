@@ -29,13 +29,7 @@ public class AdminPayListServlet extends HttpServlet{
 			LAdminService service = new LAdminService();
 			
 			List<LAdminPay> LadpList = service.adminPayList();
-			
-//			String path = "/WEB-INF/views/admin/AdminPay.jsp";
-//			
-//			RequestDispatcher dispatcher = req.getRequestDispatcher(path);
-//			
-//			dispatcher.forward(req, resp);
-			
+						
 			new Gson().toJson(LadpList, resp.getWriter());
 			
 			

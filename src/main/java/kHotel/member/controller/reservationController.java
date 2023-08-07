@@ -96,8 +96,6 @@ public class reservationController extends HttpServlet{
 				int result = service.searchCheckInStatus(reservation); 
 							
 				if(result == 0) { // 선택한 날짜에 방이 있다면
-						
-					System.out.println(reservation);
 					
 					String path = "/WEB-INF/views/book/reservationFinal.jsp";
 					

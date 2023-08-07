@@ -72,13 +72,6 @@ public class ReviewAlter2 extends HttpServlet{
 		String tag = mpReq.getParameter("tag");
 		String content = mpReq.getParameter("content");
 		
-		
-		System.out.println(req.getParameter("memberId"));
-		System.out.println(hotelName + "t1q");
-		System.out.println(roomName + "t1q");
-		System.out.println(pic + "t1q");
-		System.out.println(tag );
-		
 		int star = Integer.parseInt(mpReq.getParameter("star"));
 		
 		
@@ -108,23 +101,12 @@ public class ReviewAlter2 extends HttpServlet{
 			updateTag = String.join(",,", tag2);
 		}
 		
-		System.out.println("1 : " + image.getRename());
-		System.out.println("2 : " + updateContent);
-		System.out.println("3 : " + updateStar);
-		System.out.println("4 : " + updateTag);
-		
-		
 		Review updateReview = new Review();
 		
 		updateReview.setReviewImg(updateImg);
 		updateReview.setContent(updateContent);
 		updateReview.setStar(updateStar);
 		updateReview.setTag(updateTag);
-		// --------------------------------------------
-		
-		System.out.println(updateReview.getReviewImg());
-		
-		
 		
 		Member loginMember = (Member)session.getAttribute("loginMember");
 		

@@ -78,24 +78,23 @@ public class AdminMemberServlet extends HttpServlet {
 		   
 		   PAdminService service = new PAdminService();
 		   
+		   HttpSession session =req.getSession();
+		   
 		   int memberNo = Integer.parseInt(req.getParameter("memberNo"));
 		   
 		   int result = service.adminDeleteMember(memberNo,type,cp);
-		   
-		   System.out.println(result);
-	   
-		   
+		   		   
 		   if(result > 0) {
-			   
+			   session.setAttribute("message", "회원이 탈퇴 되었습니다.");
 			   resp.sendRedirect(req.getContextPath() + "/admin/memberAdmin?type=1");
 			   
 		   }else {
-			   System.out.println("성공했나?");
+			   session.setAttribute("message", "회원탈퇴 실패.");
 			   
 		   }
 		   
 	} catch (Exception e) {
-		// TODO: handle exception
+		e.printStackTrace();
 	}
 	   
 	   

@@ -80,8 +80,6 @@ public class LHotelService {
 		if(count > 0) commit(conn);
 		else			rollback(conn);
 		
-		System.out.println("countservice : " + count);
-		
 		return count;
 	}
 	

@@ -65,7 +65,6 @@ public final class LoginServlet extends HttpServlet {
 					
 					Cookie c = new Cookie("saveId", inputId);
 					
-					System.out.println("아이디" +req.getParameter("K-saveId"));
 					// 아이디 저장이 체크된 경우
 					if(req.getParameter("K-saveId") != null) {
 						// 쿠키 파일을 30일 동안 유지
@@ -141,8 +140,6 @@ public final class LoginServlet extends HttpServlet {
 						resp.sendRedirect(req.getContextPath());
 					} else { // 관리자일 때
 						String path = req.getContextPath() + "/admin/memberAdmin?type=1";
-						
-						//System.out.println(loginMember.getMemberAdmin());
 						
 						resp.sendRedirect(path);
 						

@@ -503,10 +503,6 @@ public class CBookDAO {
 			 try {
 				String sql = prop.getProperty("updateAdminboard");
 				
-				System.out.println("수정할 제목" +board.getBoardTitle());
-				System.out.println("수정할 컨텐트 " + board.getBoardContent());
-				System.out.println("넘버" + board.getBoardNo());
-				
 				pstmt = conn.prepareStatement(sql);
 				
 				pstmt.setString(1, board.getBoardTitle());

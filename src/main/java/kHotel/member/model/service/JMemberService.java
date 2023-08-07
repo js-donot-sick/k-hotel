@@ -130,16 +130,11 @@ public class JMemberService {
 		
 		// memberNo 얻어오기
 		int memberNo = dao.getMemberNo(conn, loginMember);
-		System.out.println(memberNo +"얻어온 member");
-		
 		// 결제 정보 지우기
 		int result = dao.deleteCalculate(conn ,memberNo, bookNo);
 		
-		System.out.println("됐으면 1이여");
-		
 		// 현재 예약 취소
 	     result = dao.reviewCancel(conn, memberNo, bookNo );
-	    System.out.println(result + "삭제 되면 1 아니면 0");
 	    
 	    if(result > 0 ) commit(conn);
 	    else            rollback(conn);
@@ -165,8 +160,6 @@ public class JMemberService {
 		
 		updateReview.setBoardNo(boardNo);
 		
-		System.out.println(boardNo + "서빗 보드넘버");
-		
 				
 		
 		// 2) 개행 문자 처리(내용)
@@ -176,10 +169,8 @@ public class JMemberService {
 		// 게시글 수정
 		int result = dao.reviewAlter(conn, rvUpdate2, loginMember, boardNo, updateReview);
 		
-		System.out.println( result + "리뷰 내용 수정");
 		
 		if(result > 0) {
-			System.out.println( result + "이미지 수정을 위한 조건문");
 			
 			// 이미지 수정
 			result = dao.imgUpdate(conn, boardNo , updateReview, rvUpdate2 );
@@ -188,7 +179,6 @@ public class JMemberService {
 			result = dao.tagUpdate(conn, boardNo, updateReview, rvUpdate2 );
 		}
 		
-		System.out.println(result + "서빗");
 		if(result > 0 ) commit(conn);
 		else			rollback(conn);
 		
@@ -271,10 +261,6 @@ public class JMemberService {
 		Connection conn = getConnection();
 		
 		String eventFL = dao.eventFL(conn, loginMember);
-		
-		System.out.println(eventFL);
-		
-		
 		
 		close(conn);
 		

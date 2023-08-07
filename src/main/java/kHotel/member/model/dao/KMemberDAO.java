@@ -55,9 +55,6 @@ public class KMemberDAO {
 			pstmt.setString(1, mem.getMemberId());
 			pstmt.setString(2, mem.getMemberPw());
 			
-			System.out.println(mem.getMemberId());
-			System.out.println(mem.getMemberPw());
-			
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
@@ -117,8 +114,6 @@ public class KMemberDAO {
 			
 		}
 		
-		
-		System.out.println(result);
 		return result;
 	}
 
@@ -202,7 +197,6 @@ public class KMemberDAO {
 		int result = 0;
 		
 		try {
-			//System.out.println("디에이오에는 잘 갓나요?");
 			String sql = prop.getProperty("newRePw");
 			
 			pstmt = conn.prepareStatement(sql);
@@ -244,8 +238,6 @@ public class KMemberDAO {
 				bookNo = rs.getInt(1);
 			}
 			
-			System.out.println("예약번호 : " + bookNo);
-			
 		} finally {
 			close(rs);
 			close(stmt);
@@ -278,12 +270,7 @@ public class KMemberDAO {
 			pstmt.setInt(5, reserve.getMemberNo());
 			pstmt.setInt(6, reserve.getRoomNo());
 			
-			System.out.println(reserve.getCheckInTime());
-			System.out.println(reserve.getCheckOutTime());
-			
 			result = pstmt.executeUpdate();
-			
-			System.out.println("예약 : " + result);
 			
 		} finally {
 			close(pstmt);
@@ -315,8 +302,6 @@ public class KMemberDAO {
 			
 			result = pstmt.executeUpdate();
 			
-			System.out.println("결제 : " + result);
-			
 		} finally {
 			close(pstmt);
 		}
@@ -344,8 +329,6 @@ public class KMemberDAO {
 			pstmt.setInt(2, reserve.getMemberNo());
 			
 			result = pstmt.executeUpdate();
-			
-			System.out.println("쿠폰 : " + result);
 			
 		} finally {
 			close(pstmt);

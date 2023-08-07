@@ -41,8 +41,6 @@ public class KAdminService {
 		
 		Connection conn= getConnection();
 		
-		// System.out.println(imageList);
-		
 		// 1. 게시글 번호 얻어오기
 		int eventNo = dao.setEventNo(conn);
 		
