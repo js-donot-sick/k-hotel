@@ -306,6 +306,7 @@
     margin: auto;
     border: 1px solid gainsboro;
     margin: 10px;
+    overflow-y: scroll;
 }
 
 .P-blank{

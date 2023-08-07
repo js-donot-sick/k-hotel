@@ -90,6 +90,7 @@ public class ReviewAlter2 extends HttpServlet{
 		
 		// ------------수정 할 게시글 정보------------------------
 	
+		int boardNo = Integer.parseInt(mpReq.getParameter("no"));
 		String updateImg = image.getRename();
 		String updateContent = mpReq.getParameter("updateContent");
 		int updateStar = Integer.parseInt(mpReq.getParameter("updateStar"));
@@ -103,8 +104,8 @@ public class ReviewAlter2 extends HttpServlet{
 		
 		
 		Review updateReview = new Review();
-		
-		updateReview.setReviewImg(updateImg);
+		updateReview.setBoardNo(boardNo);
+		updateReview.setRename(updateImg);
 		updateReview.setContent(updateContent);
 		updateReview.setStar(updateStar);
 		updateReview.setTag(updateTag);
@@ -118,7 +119,6 @@ public class ReviewAlter2 extends HttpServlet{
 		try {
 			
 			int result = service.reviewAlter(rvUpdate2, loginMember ,updateReview);
-			
 			
 			updateReview.setContent( updateReview.getContent().replaceAll("<br>", "\n") );
 
@@ -140,7 +140,7 @@ public class ReviewAlter2 extends HttpServlet{
 			
 			
 		}catch(Exception e) {
-			
+			e.printStackTrace();
 		}
 	}
 

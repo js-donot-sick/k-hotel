@@ -29,6 +29,7 @@
 		JOIN HOTEL USING(HOTEL_NO)
 		WHERE MEMBER_NO = ?
 		AND <![CDATA[CHECKOUT_DT > SYSDATE]]>
+		ORDER BY BOOK_NO DESC
 	</entry>
 
 	<!-- 이전 예약 -->
@@ -40,6 +41,7 @@
 		WHERE CHECK_FL = 'Y'
 		AND MEMBER_NO = ?
 		AND <![CDATA[CHECKOUT_DT < SYSDATE]]>
+		ORDER BY BOOK_NO DESC
 	</entry>
 
 	<!-- 룸 사진 가져오기 -->
@@ -140,7 +142,7 @@
 		SELECT BOARD_NO
 		FROM BOARD
 		JOIN MEMBER USING(MEMBER_NO)
-		WHERE BOARD_CONTENT = ?
+		WHERE BOARD_NO = ?
 		AND BOARD_CD = 3
 		AND MEMBER_ID = ?
 	</entry>
@@ -149,7 +151,7 @@
 	<entry key="reviewAlter">
 		UPDATE BOARD
 		SET BOARD_CONTENT = ?, REVIEW_STAR = ?
-		WHERE BOARD_CONTENT = ?
+		WHERE BOARD_NO = ?
 		AND BOARD_CD = 3
 		AND MEMBER_NO = ?
 		AND REVIEW_STAR = ?

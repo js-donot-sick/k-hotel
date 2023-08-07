@@ -156,9 +156,9 @@ public class JMemberService {
 		Connection conn = getConnection();
 		
 		// boardNo 얻어오기
-		int boardNo = dao.getBoardNo(conn, rvUpdate2 , loginMember);
+		//int boardNo = dao.getBoardNo(conn, rvUpdate2 , loginMember);
 		
-		updateReview.setBoardNo(boardNo);
+		//updateReview.setBoardNo(boardNo);
 		
 				
 		
@@ -168,16 +168,16 @@ public class JMemberService {
 		rvUpdate2.setContent(Util.newLineHandling(rvUpdate2.getContent()));
 		
 		// 게시글 수정
-		int result = dao.reviewAlter(conn, rvUpdate2, loginMember, boardNo, updateReview);
+		int result = dao.reviewAlter(conn, rvUpdate2, loginMember, updateReview);
 		
 		
 		if(result > 0) {
 			
 			// 이미지 수정
-			result = dao.imgUpdate(conn, boardNo , updateReview, rvUpdate2 );
+			result = dao.imgUpdate(conn, updateReview, rvUpdate2 );
 			
 			// 태그 수정
-			result = dao.tagUpdate(conn, boardNo, updateReview, rvUpdate2 );
+			result = dao.tagUpdate(conn, updateReview, rvUpdate2 );
 		}
 		
 		if(result > 0 ) commit(conn);
