@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.Properties;
 
 import kHotel.board.model.vo.Board;
-import kHotel.member.model.dao.MemberDAO;
+
 
 public class LBoardDAO {
 	
@@ -25,7 +25,7 @@ public class LBoardDAO {
 		try {
 			prop = new Properties();
 			
-			String filePath =   MemberDAO.class.getResource("/kHotel/sql/LBoard-sql.xml").getPath(); 
+			String filePath =   LBoardDAO.class.getResource("/kHotel/sql/LBoard-sql.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			

@@ -32,8 +32,6 @@ public class EventServlet extends HttpServlet {
 
 			req.setAttribute("eventList", eventList);
 			
-			System.out.println(eventList);
-		
 			
 			String path = "/WEB-INF/views/event/event.jsp";
 			

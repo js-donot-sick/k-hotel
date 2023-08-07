@@ -82,7 +82,6 @@ function selectReservationList(){
                 bookList.append(container);
             }
             kkkkk.append(bookList);
-            console.log("왜 안되는거야 도대체?");
 
         },
         error : function(){

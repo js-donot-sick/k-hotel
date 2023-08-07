@@ -9,7 +9,6 @@ function selectReplyList(){
         type : "GET",
         dataType : "JSON",
         success : function(rList){
-            console.log(rList); // 여기 위로 올리니까 콘솔에 찍힌다..
             
             const replyUl = document.getElementById("L-reply-list");
             replyUl.innerHTML = "";

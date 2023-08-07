@@ -22,9 +22,6 @@ public class reMainServlet extends HttpServlet {
 		
 		String memberId = (String)req.getParameter("memberId");
 		
-		System.out.println("id is "+memberId);
-		System.out.println("pw is "+newPw);
-		
 		try {
 			
 			KMemberService service = new KMemberService();
@@ -33,7 +30,6 @@ public class reMainServlet extends HttpServlet {
 			
 			HttpSession session = req.getSession();
 			
-			System.out.println(result);
 			
 			if(result>0) {
 				session.setAttribute("message", "비밀번호가 올바르게 변경되었습니다.");

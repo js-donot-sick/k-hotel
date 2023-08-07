@@ -10,8 +10,6 @@ const star3 = document.getElementById("3-stars");
 const star2 = document.getElementById("2-stars");
 const star1 = document.getElementById("1-star");
 
-console.log("별점 : "+star1.checked);
-
 const stars = document.getElementsByName("rating");
 
 inputImage.addEventListener("change", function(){

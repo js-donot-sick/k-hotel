@@ -15,7 +15,6 @@ import static kHotel.common.JDBCTemplate.*;
 import kHotel.board.model.vo.Board;
 import kHotel.board.model.vo.Event;
 import kHotel.board.model.vo.EventImage;
-import kHotel.member.model.dao.MemberDAO;
 import kHotel.member.model.vo.LPagination;
 
 public class KBoardDAO {
@@ -31,7 +30,7 @@ public class KBoardDAO {
 		try {
 			prop = new Properties();
 			
-			String filePath =   MemberDAO.class.getResource("/kHotel/sql/KBoard-sql.xml").getPath(); 
+			String filePath =   KBoardDAO.class.getResource("/kHotel/sql/KBoard-sql.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			
