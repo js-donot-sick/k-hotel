@@ -16,7 +16,10 @@ import javax.servlet.http.HttpSession;
 @WebFilter(filterName ="loginFilter",
 			urlPatterns = {"/book/*", // 예약 관련 
 							"/board/write"/*게시글작성*/, "/board/qna/update"/*게시글수정*/,
-							"/member/review3"/*리뷰작성*/}  )
+							"/member/review3"/*리뷰작성*/, "/admin/*" /*관리자 전체*/,
+							"/event/bingo", "/event/updown" /*빙고, 업다운 막기*/,
+							"/board/admin/*" /*관리자 게시판*/, "/member/mypage/*" /*마이페이지*/,
+							""}  )
 public class loginFilter extends HttpFilter implements Filter {
        
 
