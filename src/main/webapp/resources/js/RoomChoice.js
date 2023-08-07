@@ -150,8 +150,11 @@ function reservation(){
    else if (checkOut.value == today) {
       alert("체크아웃 날짜를 선택해 주시길 바랍니다.");
       return false;
-   }
-   else if (adult.value == 0 && child.value == 0) {
+
+   }else if(checkIn.value == checkOut.value){
+      alert("예약 날짜가 잘못 되었습니다. 다시 선택해 주세요.");
+      return false;
+   }else if (adult.value == 0 && child.value == 0) {
       alert("인원을 선택해 주시길 바랍니다.");
       return false;
    }else if(adult.value == 0 && child.value > 0){
