@@ -9,6 +9,7 @@
 		FROM BOARD
 		WHERE MEMBER_NO = ?
 		AND BOARD_CD = 3
+		AND BOARD_ST = 'N'
 	</entry>
 
 	<entry key="searchReviewList">
