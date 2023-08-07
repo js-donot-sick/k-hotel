@@ -35,6 +35,25 @@
 
                 <div class="J-game" >New Game</div>
 
+                <div id="Jerror">
+                    <span>※ 필독! 빙고 유의사항</span>  <br>
+                    <span>1. 1~50 사이의 수를 입력해주세요</span> <br>
+                    <span>2. 숫자만 입력해주세요.</span> <br>
+                    <span>3. 빈문자를 입력하지 않게 주의하세요.</span> 
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <span>
+                        잘못 입력 하신 후 숫자 입력 횟수가 차감되어도 저희가 책임지지 않습니다. <br>
+                        <br>
+                        유의사항을 꼼꼼하게 읽어 보신 후 게임을 즐겨주세요. <br><br>
+                        감사합니다.
+                        
+                    </span>
+                </div>
+
                 <table id="J-bingo">
                     <tr id="tr1">
                         <td></td>
@@ -78,14 +97,12 @@
                     
                     <span id="J-span1">빙고 : </span><span id="J-span" name="result"></span>
                     <span id="J-count" class="J-cc1">남은 횟수 : </span><span id="J-count2" class="J-cc2">18</span>
-                    <span id="J-count3">※ 1~50 사이의 수를 입력해주세요</span>
                     
                     <input type="hidden" id="J-span2" name="result2">
                 </form>
             </div>
             <input type="hidden" value="${event.bingoFl}">
 
-      asdasdas      ${event.bingoFl}
             <script>
 
                 const Jevent = "${event.bingoFl}";

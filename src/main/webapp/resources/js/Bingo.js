@@ -8,6 +8,7 @@ document.getElementsByClassName("J-game")[0].addEventListener("click", function(
     const input1 = document.getElementById("J-input");
     const input2 = document.getElementById("J-count");
     const input3= document.getElementById("J-count2");
+    const input4= document.getElementById("Jerror");
     
     this.style.display = "none";
 
@@ -18,6 +19,7 @@ document.getElementsByClassName("J-game")[0].addEventListener("click", function(
     input1.style.visibility = "visible";
     input2.style.visibility = "visible";
     input3.style.visibility = "visible";
+    input4.style.visibility = "visible";
 
 
     
@@ -110,6 +112,33 @@ for(let t = 0; t<25; t++){ // 테이블 안에 배열 넣기
     
 }
 
+document.getElementById("J-btn").addEventListener("click", function () {
+
+    if (isNaN(input.value)) { // 숫자가 아닌 수를 입력할 경우
+
+        alert("숫자를 입력해주세요");
+        input.value = "";
+        input.focus();
+
+    }else if (1 > input.value || input.value > 50) {
+        alert("1~50 사이의 숫자를 입력해주세요");
+        input.value = "";
+        input.focus();
+
+    }else if (input.value.trim().length == 0) { // 공백 입력한 경우
+
+
+        alert("값을 입력해주세요");
+        input.value = "";
+        input.focus();
+
+
+    }
+
+
+
+})
+
 let Jcount = document.getElementById("J-count2");
 let bCount = 0;
 let ACount = 0;
@@ -120,6 +149,7 @@ btn.addEventListener("click", function(){
 
     }
 })
+
 
 
 
