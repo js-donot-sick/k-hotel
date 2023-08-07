@@ -51,7 +51,7 @@
             <div class="L-btn">
                 <div><button type="button" onclick="location.href='${contextPath}/board/qna?type=2&cp=1'">목록으로</button></div>
 
-                <c:if test="${loginMember.memberId == board.memberId}">
+                <c:if test="${loginMember.memberId == board.memberId || loginMember.memberAdmin == 'Y'.charAt(0)}">
                     <div><button type="submit">게시글 수정</button></div>
                     <div><button type="button" id="LdeleteBtn">게시글 삭제</button></div>
                 </c:if>
@@ -69,7 +69,7 @@
 
     </div>
 
-
+    ${loginMember.memberAdmin}
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
 
@@ -90,6 +90,9 @@
         
         // 로그인한 회원 번호
         const loginMemberNo = "${loginMember.memberNo}";
+
+        // 관리자 코드넘겨주기
+        const loginAdmin = "${loginMember.memberAdmin}";
         
         </script>
 

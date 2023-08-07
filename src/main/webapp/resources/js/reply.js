@@ -44,29 +44,40 @@ function selectReplyList(){
                 // 댓글내용을 li에 넣어줌
                 replyRow.append(replyPerson, replyDate, replyContent);
 
+                
                 // 버튼
+
+                // 버튼 전체 div
+                const replyBtn = document.createElement("div");
+                replyBtn.classList.add("L-reply-btn");
+
                 if(loginMemberNo == rp.memberNo){
 
-                    // 버튼 전체 div
-                    const replyBtn = document.createElement("div");
-                    replyBtn.classList.add("L-reply-btn");
-    
                     // 수정버튼
                     const updateBtn = document.createElement("button");
                     updateBtn.innerText = "수정";
                     updateBtn.setAttribute("onclick", "showUpdateReply(" + rp.replyNo + ", this)")
-    
+                    
+                    // 버튼 추가
+                    replyBtn.append(updateBtn);
+                }
+
+
+                if(loginMemberNo == rp.memberNo || loginAdmin == 'Y'){
+
                     // 삭제버튼
                     const deleteBtn = document.createElement("button");
                     deleteBtn.innerText = "삭제";
                     deleteBtn.setAttribute("onclick", "deleteReply(" + rp.replyNo + ")");
-    
+                    
                     // 버튼 추가
-                    replyBtn.append(updateBtn, deleteBtn);
-    
-                    // 행에 버튼추가
-                    replyRow.append(replyBtn);
+                    replyBtn.append(deleteBtn);
                 }
+
+    
+                // 행에 버튼추가
+                replyRow.append(replyBtn);
+
 
                 // ul에 li 추가
                 replyUl.append(replyRow);

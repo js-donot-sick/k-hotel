@@ -266,14 +266,19 @@
                                             <input type="hidden" name="tag" value="${board.tagContent}">
                                             <input type="hidden" name="star" value="${board.reviewStar}">
                                         </form>
+                                    </c:if>
+
+                                    <c:if test="${loginMember.memberNo == board.memberNo || loginMember.memberAdmin == 'Y'.charAt(0)}">
                                         <form action="delete">
                                             <input type="hidden" name="memberId" value="${board.memberId}">
                                             <input type="hidden" name="no" value="${param.no}">
                                             <button id="P-rs-delete-btn">삭제</button>
                                         </form>
-                                        <button id="P-rs-Declar-btn">신고</button>
                                     </c:if>
 
+                                    <c:if test="${loginMember.memberNo != board.memberNo}">
+                                        <button id="P-rs-Declar-btn">신고</button>
+                                    </c:if>
                                 </div>
 
 
