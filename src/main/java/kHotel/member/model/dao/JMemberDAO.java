@@ -422,12 +422,11 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 	 * @param conn
 	 * @param rvUpdate
 	 * @param loginMember
-	 * @param boardNo
 	 * @param updateReview 
 	 * @return result
 	 * @throws Exception
 	 */
-	public int reviewAlter(Connection conn, Review rvUpdate2, Member loginMember, int boardNo, Review updateReview) throws Exception {
+	public int reviewAlter(Connection conn, Review rvUpdate2, Member loginMember, Review updateReview) throws Exception {
 		int result = 0;
 		
 		try {
@@ -437,7 +436,7 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			pstmt.setString(1, updateReview.getContent());
 			pstmt.setInt(2, updateReview.getStar());
-			pstmt.setString(3, rvUpdate2.getContent());
+			pstmt.setInt(3, updateReview.getBoardNo());
 			pstmt.setInt(4, loginMember.getMemberNo());
 			pstmt.setInt(5, rvUpdate2.getStar());
 			
@@ -508,13 +507,12 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 
 	/** 리뷰 이미지 수정
 	 * @param conn
-	 * @param boardNo
 	 * @param updateReview
 	 * @param rvUpdate 
 	 * @return result
 	 * @throws Exception
 	 */
-	public int imgUpdate(Connection conn, int boardNo, Review updateReview, Review rvUpdate2) throws Exception {
+	public int imgUpdate(Connection conn, Review updateReview, Review rvUpdate2) throws Exception {
 		int result = 0;
 		
 		try {
@@ -522,9 +520,13 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, updateReview.getReviewImg());
-			pstmt.setInt(2, boardNo);
+			pstmt.setString(1, updateReview.getRename());
+			pstmt.setInt(2,updateReview.getBoardNo());
 			pstmt.setString(3, rvUpdate2.getReviewImg());
+			
+			System.out.println(updateReview.getRename());
+			System.out.println(updateReview.getBoardNo());
+			System.out.println(rvUpdate2.getReviewImg());
 			
 			result = pstmt.executeUpdate();
 			
@@ -537,13 +539,12 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 
 	/** 태그 수정
 	 * @param conn
-	 * @param boardNo
 	 * @param updateReview
 	 * @param rvUpdate2
 	 * @return result
 	 * @throws Exception
 	 */
-	public int tagUpdate(Connection conn, int boardNo, Review updateReview, Review rvUpdate2) throws Exception {
+	public int tagUpdate(Connection conn, Review updateReview, Review rvUpdate2) throws Exception {
 		int result = 0;
 		
 		try {
@@ -554,7 +555,7 @@ List<Reservation> rvList = new ArrayList<Reservation>();
 			
 			
 			pstmt.setString( 1, updateReview.getTag());
-			pstmt.setInt(2, boardNo);
+			pstmt.setInt(2, updateReview.getBoardNo());
 			pstmt.setString(3, rvUpdate2.getTag());
 			
 			result = pstmt.executeUpdate();

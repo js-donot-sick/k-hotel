@@ -36,7 +36,17 @@
 
 .P-main {
     width: 820px;
+    height: 1000px;
+    overflow-y: scroll;
+    
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
 }
+
+.P-main::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+
 
 .P-blank1 {
     width: 100%;

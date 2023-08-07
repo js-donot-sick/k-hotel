@@ -17,7 +17,7 @@
             <main>
 
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
-                <form action="${contextPath}/board/review/reviewAlter" enctype="multipart/form-data"  method="POST" onsubmit="return reviewVaildate()"> 
+                <form action="${contextPath}/board/review/reviewAlter?no=${param.no}" enctype="multipart/form-data"  method="POST" onsubmit="return reviewVaildate()"> 
                 <div class="J-body">
 
                     <div class="J-body2">

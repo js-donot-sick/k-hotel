@@ -46,7 +46,7 @@ public class ReviewAlterServlet extends HttpServlet{
 		rvUpdate.setStar(star);
 		rvUpdate.setContent(content);
 		
-		
+		rvUpdate.setContent( rvUpdate.getContent().replaceAll("<br>", "\n") );
 		
 		String path = "/WEB-INF/views/mypage/review2.jsp";
 		
