@@ -192,13 +192,14 @@ input.addEventListener("click", function () { // 빈칸 있을 시 가입 안됨
     }
 })
 
+const id = document.getElementsByClassName("J-J1-1")[0];
 const pw1 = document.getElementsByClassName("J-J1-2")[0];
 
 const pw2 = document.getElementsByClassName("J-J1-3")[0];
 
 const tel = document.getElementsByClassName("J-Tel")[0];
 
-const check = document.getElementsByClassName("J-check1");
+const check = document.getElementsByClassName("J-check0");
 const check2 = document.getElementsByClassName("J-check2");
 const check3 = document.getElementsByClassName("J-check3");
 
@@ -209,6 +210,10 @@ const pno2 = document.getElementsByClassName("J-pno2")[0];
 const memberName = document.getElementsByClassName("J-name")[0];
 
 const memberEmail = document.getElementsByClassName("J-memberEmail")[0];
+
+const idBtn = document.getElementById("J-idBtn");
+
+idBtn.value = 2;
 
 pno1.addEventListener("input", function(){
 
@@ -221,46 +226,78 @@ function signUp() {
     const input = document.getElementsByTagName("input");
 
 
-    const regExp = /^0(1[01679]|2|[3-6][1-5]|70)\d{3,4}\d{4}$/;
+    const regExp = /^0(1[01679]|2|[3-6][1-5]|70)\d{3,4}\d{4}$/; /* 전화번호 정규식 */
 
-    const regExp2 = /^[0-9]{1,6}$/;
-    const regExp3 = /^[0-9]{1,7}$/;
-    const regExp4 = /^[가-힣]{0,20}$/;
-    const regExp5 = /^[\w\-\_]{4,}@[\w\-\_]+(\.\w+){1,3}$/;
+    const regExp2 = /^[0-9]{6}$/; /* 주민번호 앞자리 */
+    const regExp3 = /^[0-9]{7}$/; /* 주민번호 뒷자리 */
+    const regExp4 = /^([가-힣]|[A-z]){0,20}$/; /* 이름 */
+    const regExp5 = /^[\w\-\_]{4,}@[\w\-\_]+(\.\w+){1,3}$/; /* 이메일 형식 */
+    const regExp6 = /^([A-Z]|[a-z]|[0-9]|[~\!\@\$]){8,15}$/; /* 비밀번호 정규식 */
+    const regExp7 = /^\w{6,12}$/; /* 아이디 */
 
-    if (!regExp5.test(memberEmail.value)) {
+    if(idBtn.value == 1){
+        alert("이미 사용중인 아이디 입니다. 다시 입력해주세요.");
+        
+    }
+
+    if(!regExp7.test(id.value) ){
+        alert("아이디 형식이 일치하지 않습니다. 다시 입력해주세요.");
+
+        return false;
+
+    }
+     if(!regExp6.test(pw1.value)){
+        alert("비밀번호 형식이 일치하지 않습니다. 다시 입력해주세요.");
+
+        return false;
+
+    }
+     if (!regExp5.test(memberEmail.value)) {
         alert("이메일 형식이 올바르지 않습니다. 다시 입력주세요.");
-        return false;
-    }
 
-    if (!regExp4.test(memberName.value)) {
+        return false;
+
+    }
+     if (!regExp4.test(memberName.value)) {
         alert("이름 형식이 올바르지 않습니다. 다시 입력주세요.");
-        return false;
-    }
 
-    if (!regExp2.test(pno1.value)) {
+        return false;
+
+    }
+     if (!regExp2.test(pno1.value)) {
         alert("주민번호 앞자리를 다시 입력주세요.");
-        return false;
-    }
 
-    if (!regExp3.test(pno2.value)) {
+        return false;
+
+    }
+     if (!regExp3.test(pno2.value)) {
         alert("주민번호 뒷자리를 다시 입력주세요.");
-        return false;
-    }
 
-    if (!regExp.test(tel.value)) {
+        return false;
+
+    }
+     if (!regExp.test(tel.value)) {
         alert("전화번호 형식이 일치하지 않습니다. 다시 확인해주세요!");
 
         return false;
+
     }
-
-
-    if (pw1.value != pw2.value) {
+     if (pw1.value != pw2.value) {
 
         alert("비밀번호와 비밀번호확인이 일치하지 않습니다. 다시 입력해주세요.");
 
         return false;
+
     }
+
+    
+    if(idBtn.value == 2){
+        alert("아이디 중복 확인을 해주세요.");
+
+        return false;
+    }
+   
+
 
     for (let item of check3) {
 
@@ -269,17 +306,35 @@ function signUp() {
 
             return false;
         }
+
     }
 
-    for (let item of check2) {
+    
 
-        if (item.checked == "" ) {
+    for (let item of check) {
+
+        if (item[0].checked != true && item[1].checked != true) {
             alert("필수약관에 동의하셔야 가입이 가능합니다.");
+
 
             return false;
         }
+        
     }
 
+    for (let item of check) {
+        
+
+    if(item.checked == false){
+        alert("필수약관에 동의하셔야 가입이 가능합니다.");
+
+
+        return false;
+    }
+
+}
+
+    
    
 
     for (let item of input) {
@@ -303,6 +358,7 @@ function signUp() {
 
 }
 
+
 function duplication() {
 
     const id = document.getElementsByClassName("J-J1-1")[0];
@@ -319,14 +375,19 @@ function duplication() {
 
                 if (id.value == "") {
                     alert("아이디를 입력해주세요.");
+                       
+
 
                 } else if (!regExp.test(id.value)) {
 
                     alert("아이디 형식이 올바르지 않습니다.");
+                    
 
                 } else {
 
                     alert("이미 사용중인 아이디 입니다. 다시 입력해주세요.");
+                    idBtn.value = 1;
+                    console.log(idBtn.value)
                 }
 
             } else {
@@ -340,6 +401,7 @@ function duplication() {
                 } else {
 
                     alert("사용 가능한 아이디 입니다.");
+                    idBtn.value = 0; 
                 }
             }
         }

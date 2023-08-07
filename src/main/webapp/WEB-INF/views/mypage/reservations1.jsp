@@ -27,8 +27,8 @@
                 <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
                 <div class="J-BODY">
-
-                    <jsp:include page="/WEB-INF/views/common/sidebar.jsp" />
+                
+                        <jsp:include page="/WEB-INF/views/common/sidebar.jsp" />
 
                     <div class="J-BODY3">
 

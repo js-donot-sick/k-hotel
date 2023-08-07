@@ -198,7 +198,7 @@
                     <div class="J2-5-3">
 
                         <label>
-                            <input type="radio" name="J-check" class="J-check2 J-check1" > 동의함
+                            <input type="radio" name="J-check" class="J-check2 J-check0" > 동의함
                         </label>
 
                     <label>
@@ -250,7 +250,7 @@
                     <div class="J2-5-6">
                         
                         <label>
-                            <input type="radio" name="J-check2" id="J-check" class="J-check2 J-check1" > 동의함
+                            <input type="radio" name="J-check2" id="J-check" class="J-check2 J-check0" > 동의함
                         </label>
 
                         <label>

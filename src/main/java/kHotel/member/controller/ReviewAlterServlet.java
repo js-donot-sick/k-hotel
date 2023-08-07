@@ -27,6 +27,7 @@ public class ReviewAlterServlet extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
+		int boardNo = Integer.parseInt(req.getParameter("no"));
 		String memberId = req.getParameter("memberId");
 		String hotelName = req.getParameter("hotelName");
 		String roomName = req.getParameter("roomName");
@@ -52,6 +53,7 @@ public class ReviewAlterServlet extends HttpServlet{
 		
 		RequestDispatcher dispatcher = req.getRequestDispatcher(path);
 		
+		req.setAttribute("boardNo", boardNo);
 		req.setAttribute("rvUpdate", rvUpdate);
 		
 		dispatcher.forward(req, resp);
