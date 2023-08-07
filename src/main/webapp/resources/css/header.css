@@ -5,6 +5,8 @@ div a{
     text-decoration: none;
 }
 
+/* div{border: 1px solid black;} */
+
 
 @font-face {
     font-family: 'Pretendard-Regular';
@@ -100,6 +102,7 @@ div a{
     display: block;
     justify-content: right;
     padding-left: 0;
+    margin-left: 50px;
 
 }
 
