@@ -10,8 +10,6 @@ function selectFaqList(){
 
         success : function(fList){
 
-            console.log(fList);
-
             const kFaq = document.getElementsByClassName("k-faq")[0]; 
 
             kFaq.innerHTML="";
@@ -116,7 +114,6 @@ function selectFaqList(){
 
 $(document).on("click", ".k-faq-slide", function(){
 
-    console.log(1)
 
     /* element.style.transform = "rotate(180deg)"; */
 

@@ -11,7 +11,6 @@ import java.util.Properties;
 
 import kHotel.board.model.vo.AnnouncementDetail;
 import kHotel.board.model.vo.Board;
-import kHotel.member.model.dao.MemberDAO;
 import kHotel.member.model.vo.LPagination;
 
 import static kHotel.common.JDBCTemplate.*;
@@ -27,7 +26,7 @@ public class HAdminDAO {
 		try {
 			prop = new Properties();
 			
-			String filePath =   MemberDAO.class.getResource("/kHotel/sql/HBoard-sql.xml").getPath(); 
+			String filePath =   HAdminDAO.class.getResource("/kHotel/sql/HBoard-sql.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			

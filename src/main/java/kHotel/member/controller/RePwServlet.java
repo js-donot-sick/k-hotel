@@ -17,8 +17,6 @@ public class RePwServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		System.out.println(111111);
-		
 		String inputName = req.getParameter("pInputNm");
 		String inputPno = req.getParameter("pInputPno");
 		String inputId = req.getParameter("pInputId");
@@ -34,8 +32,6 @@ public class RePwServlet extends HttpServlet {
 			mem.setMemberId(inputId);
 			
 			int result = service.rePw(mem);
-			
-			//System.out.println("rePw : " + result);
 			
 			resp.getWriter().print(result);
 			

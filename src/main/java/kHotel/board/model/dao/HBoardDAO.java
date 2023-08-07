@@ -14,7 +14,6 @@ import kHotel.admin.model.vo.HAdminBoard;
 import kHotel.board.model.vo.AnnouncementDetail;
 import kHotel.board.model.vo.Board;
 import kHotel.common.Util;
-import kHotel.member.model.dao.MemberDAO;
 import kHotel.member.model.vo.LPagination;
 
 import static kHotel.common.JDBCTemplate.*;
@@ -30,7 +29,7 @@ public class HBoardDAO {
 		try {
 			prop = new Properties();
 			
-			String filePath =   MemberDAO.class.getResource("/kHotel/sql/HBoard-sql.xml").getPath(); 
+			String filePath =   HBoardDAO.class.getResource("/kHotel/sql/HBoard-sql.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			

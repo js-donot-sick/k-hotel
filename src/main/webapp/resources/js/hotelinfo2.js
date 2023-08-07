@@ -40,10 +40,6 @@ const hotelNm1 = document.getElementsByName("hotelNm1")[0].value;
             dataType : "JSON",
 
             success : function(countList){
-                console.log("countList : " + countList);
-                console.log("count : " + countList.count);
-                console.log("count2 : " + countList.count2);
-                console.log("count3 : " + countList.count3);
 
                 // 1번 객실
                 if(countList.count > 0){
@@ -243,7 +239,6 @@ btn2.addEventListener("click", function(){
                 type : "get",
 
                 success : function(result){
-                    console.log(result);
 
                     if(result > 0){
                         room2.value = 1;

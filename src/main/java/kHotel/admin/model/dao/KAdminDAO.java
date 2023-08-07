@@ -14,7 +14,6 @@ import java.util.Properties;
 import kHotel.board.model.vo.Board;
 import kHotel.board.model.vo.Event;
 import kHotel.board.model.vo.EventImage;
-import kHotel.member.model.dao.MemberDAO;
 
 public class KAdminDAO {
 	
@@ -29,7 +28,7 @@ public class KAdminDAO {
 		try {
 			prop = new Properties();
 			
-			String filePath =   MemberDAO.class.getResource("/kHotel/sql/KAdmin-sql.xml").getPath(); 
+			String filePath =   KAdminDAO.class.getResource("/kHotel/sql/KAdmin-sql.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			

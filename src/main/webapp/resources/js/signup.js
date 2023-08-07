@@ -370,7 +370,6 @@ function duplication() {
 
         success: function (result) {
 
-            console.log(result.value);
             if (result == 1) { // 아이디가 중복임
 
                 if (id.value == "") {

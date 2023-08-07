@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Properties;
 
 import kHotel.board.model.vo.Reply;
-import kHotel.member.model.dao.MemberDAO;
+
 
 public class LReplyDAO {
 	
@@ -27,7 +27,7 @@ public class LReplyDAO {
 		try {
 			prop = new Properties();
 			
-			String filePath =   MemberDAO.class.getResource("/kHotel/sql/LReply-sql.xml").getPath(); 
+			String filePath =   LReplyDAO.class.getResource("/kHotel/sql/LReply-sql.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			

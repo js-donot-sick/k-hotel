@@ -11,7 +11,6 @@ import java.util.Properties;
 
 import kHotel.admin.model.vo.HAdminBoard;
 import kHotel.admin.model.vo.PAdminMemebr;
-import kHotel.member.model.dao.MemberDAO;
 import kHotel.member.model.vo.Member;
 
 public class JAdminDAO {
@@ -26,7 +25,7 @@ public class JAdminDAO {
 		try {
 			prop = new Properties();
 			
-			String filePath =   MemberDAO.class.getResource("/kHotel/sql/JHotel-sql.xml").getPath(); 
+			String filePath =   JAdminDAO.class.getResource("/kHotel/sql/JHotel-sql.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			

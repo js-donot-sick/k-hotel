@@ -3,8 +3,6 @@ const preview = document.getElementsByClassName("k-preview");
 const inputImg = document.getElementsByClassName("k-inputImg");
 const deleteImg = document.getElementsByClassName("k-deleteImg");
 
-console.log(111111111)
-
 // 수정 시 삭제된 이미지 레벨 저장할 input 요소
 const deleteList = document.getElementById("deleteList");
 
@@ -60,8 +58,6 @@ let Tdate = new Date();
 let tomorrow = new Date(Tdate);
 tomorrow.setDate(Tdate.getDate()+1);
 
-console.log(tomorrow)
-
 let timeOff = new Date().getTimezoneOffset() * 60000;
 let today = new Date(tomorrow - timeOff).toISOString().split("T")[0];
 document.getElementById("K-date").setAttribute("min", today);
@@ -102,8 +98,6 @@ function eventValidate(){
     }
 
     deleteList.value = Array.from(deleteSet);
-
-    console.log(deleteList)
 
     return true;
 
