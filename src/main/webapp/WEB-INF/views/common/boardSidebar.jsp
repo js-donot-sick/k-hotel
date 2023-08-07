@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>게시글 사이드바 메뉴</title>
 
   <link rel="stylesheet" href="${contextPath}/resources/css/boardSidebar.css">
 

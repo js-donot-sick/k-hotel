@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비밀번호 변경(로그인 전)</title>
+    <title>비밀번호 변경</title>
 
     <link rel="stylesheet" href="${contextPath}/resources/css/rerePw.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css">
