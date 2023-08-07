@@ -64,8 +64,21 @@ checkIn.addEventListener("change", function(){
       alert("이전 날짜로는 예약을 진행하실 수 없습니다");
 
       this.value = today;
-   }
+
+   } 
 });
+
+checkOut.addEventListener("change", function(){
+
+   
+   if(this.value < checkIn.value){
+      alert("체크인 날짜 이전으론 예약을 진행하실 수 없습니다");
+   
+      checkOut.value = today;
+   }
+   
+});
+
 
 /* 체크아웃 이벤트 발생 시 몇박인지 계산 */
 document.getElementById("C-end").addEventListener("change",function(){
