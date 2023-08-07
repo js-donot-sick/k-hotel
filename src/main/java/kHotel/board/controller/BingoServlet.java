@@ -47,7 +47,7 @@ public class BingoServlet extends HttpServlet{
 				dispatcher.forward(req, resp);
 				
 			}else {
-				session.setAttribute("message", "기회가 없습니다.");
+				session.setAttribute("message", "하루에 한 번만 참여할 수 있습니다.");
 				
 				resp.sendRedirect(req.getContextPath() + "/event");
 			

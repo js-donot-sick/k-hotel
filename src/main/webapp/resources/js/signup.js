@@ -225,7 +225,7 @@ function signUp() {
 
     const regExp2 = /^[0-9]{1,6}$/;
     const regExp3 = /^[0-9]{1,7}$/;
-    const regExp4 = /^[가-힣]{1,4}$/;
+    const regExp4 = /^[가-힣]{0,20}$/;
     const regExp5 = /^[\w\-\_]{4,}@[\w\-\_]+(\.\w+){1,3}$/;
 
     if (!regExp5.test(memberEmail.value)) {
@@ -265,6 +265,15 @@ function signUp() {
     for (let item of check3) {
 
         if (item.checked == true ) {
+            alert("필수약관에 동의하셔야 가입이 가능합니다.");
+
+            return false;
+        }
+    }
+
+    for (let item of check2) {
+
+        if (item.checked == "" ) {
             alert("필수약관에 동의하셔야 가입이 가능합니다.");
 
             return false;
