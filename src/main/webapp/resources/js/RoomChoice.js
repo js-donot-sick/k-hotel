@@ -135,24 +135,17 @@ function reservation(){
    if (hotel_choice.value == "none") {
       alert("호텔을 선택해 주시길 바랍니다.");
       return false;
-   }
-
-   else if (room_choice.value == "none") {
+   }else if (room_choice.value == "none") {
       alert("객실을 선택해 주시길 바랍니다.");
       return false;
-   }
-
-   else if (checkIn.value == today) {
+   }else if (checkIn.value == today) {
       alert("당일 예약은 전화 문의로만 가능합니다. 다른 날짜를 선택해 주시길 바랍니다.");
       return false;
-   }
-
-   else if (checkOut.value == today) {
+   }else if (checkOut.value == today) {
       alert("체크아웃 날짜를 선택해 주시길 바랍니다.");
       return false;
-
    }else if(checkIn.value == checkOut.value){
-      alert("예약 날짜가 잘못 되었습니다. 다시 선택해 주세요.");
+      alert("체크인날짜와 체크아웃 날짜가 같습니다. 다시 선택해 주세요.");
       return false;
    }else if (adult.value == 0 && child.value == 0) {
       alert("인원을 선택해 주시길 바랍니다.");
