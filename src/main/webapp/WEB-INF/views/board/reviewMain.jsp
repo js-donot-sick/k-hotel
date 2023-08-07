@@ -8,7 +8,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initiaP-scale=1.0">
-            <title>리뷰메인</title>
+            <title>리뷰게시판</title>
             <link rel="stylesheet" href="../resources/css/mypage(wirte).css">
             <link rel="stylesheet" href="${contextPath}/resources/css/reviewMain.css">
             <link rel="stylesheet" href="${contextPath}/resources/css/reviewShow.css">

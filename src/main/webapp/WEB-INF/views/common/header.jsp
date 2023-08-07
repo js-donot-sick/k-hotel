@@ -26,7 +26,7 @@
                     </div>
     
                     <div class="P-btn1">
-                            <a href="${contextPath}/hotelinfo/main" >호텔찾기 <i class="fa-solid fa-magnifying-glass"></i></a>
+                            <a href="${contextPath}/hotelinfo/main" >호텔소개 <i class="fa-solid fa-magnifying-glass"></i></a>
                
                             <a href="${contextPath}/book/roomChoice">예약 <i class="fa-solid fa-calendar-days"></i></a>
                     </div>

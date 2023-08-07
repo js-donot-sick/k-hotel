@@ -7,7 +7,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>review1</title>
+            <title>리뷰/별점 수정</title>
 
             <link rel="stylesheet" href="${contextPath}/resources/css/review2.css">
         </head>

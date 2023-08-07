@@ -8,7 +8,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>관리자 결제 확인페이지</title>
+    <title>관리자 결제 관리</title>
 
     <link rel="stylesheet" href="${contextPath}/resources/css/AdminPay.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/AdminHeader.css">

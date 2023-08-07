@@ -7,7 +7,7 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>질문 게시판</title>
+            <title>내가 쓴 글(리뷰)</title>
             <link rel="stylesheet" href="${contextPath}/resources/css/mypage(wirte).css">
             <link rel="stylesheet" href="${contextPath}/resources/css/sidebar.css">
             <link rel="stylesheet" href="${contextPath}/resources/css/footer.css"><!-- 풋터 스타일 -->

@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예약페이지</title>
+    <title>예약 진행</title>
     <link rel="stylesheet" href="${contextPath}/resources/css/header.css"> <!-- 헤더 스타일 -->
     <link rel="stylesheet" href="${contextPath}/resources/css/RoomChoice.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/footer.css">
