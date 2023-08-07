@@ -27,7 +27,6 @@ public class faqListServlet extends HttpServlet {
 			
 			List<Board> boardList = service.faqList(type);
 			
-			System.out.println(boardList);
 			
 			req.setAttribute("boardList", boardList);
 			

@@ -75,8 +75,8 @@ public class EncryptWrapper extends HttpServletRequestWrapper{
 			//	  Base64 : byte코드를 문자열로 변환하는 객체
 			encryptPw = Base64.getEncoder().encodeToString(md.digest());
 			
-			System.out.println("암호화 전 : " + pw);
-			System.out.println("암호화 후 : " + encryptPw);
+//			System.out.println("암호화 전 : " + pw);
+//			System.out.println("암호화 후 : " + encryptPw);
 			
 		}catch(NoSuchAlgorithmException e) {
 			// SHA-512 해시 함수가 존재하지 않을 때 예외 발생

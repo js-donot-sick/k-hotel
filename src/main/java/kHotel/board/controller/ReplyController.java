@@ -78,7 +78,6 @@ public class ReplyController extends HttpServlet{
 				
 				int replyNo = Integer.parseInt(req.getParameter("replyNo"));
 				
-				System.out.println(replyNo);
 				
 				int result = service.deleteReply(replyNo);
 				

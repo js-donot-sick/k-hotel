@@ -93,7 +93,6 @@ public class ReviewService {
 		}else {
 			rollback(conn);
 		}
-		System.out.println("서비ㅐ스result: "+ result);
 				
 		return result;
 	}
