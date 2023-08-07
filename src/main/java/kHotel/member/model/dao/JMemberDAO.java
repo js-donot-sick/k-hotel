@@ -23,7 +23,7 @@ public class JMemberDAO {
 		try {
 			prop = new Properties();
 			
-			String filePath =   MemberDAO.class.getResource("/kHotel/sql/JHotel-sql.xml").getPath(); 
+			String filePath =   JMemberDAO.class.getResource("/kHotel/sql/JHotel-sql.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			

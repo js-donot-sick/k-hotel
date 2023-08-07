@@ -27,7 +27,7 @@ public class KMemberDAO {
 		try {
 			prop = new Properties();
 			
-			String filePath =   MemberDAO.class.getResource("/kHotel/sql/KMember-sql.xml").getPath(); 
+			String filePath =   KMemberDAO.class.getResource("/kHotel/sql/KMember-sql.xml").getPath(); 
 			
 			prop.loadFromXML(new FileInputStream(filePath));
 			
