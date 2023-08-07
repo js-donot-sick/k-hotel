@@ -56,13 +56,13 @@ input{
     width: 1200px;
     height: 1000px;
     display: flex;
+    padding: 50px;
 }
 
 
 .J-BODY3{
     width: 75%;
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
@@ -75,6 +75,9 @@ input{
     
 }
 
+.J-side{
+    width: 25%;
+}
 
 .J-J1{
     height: 10%;

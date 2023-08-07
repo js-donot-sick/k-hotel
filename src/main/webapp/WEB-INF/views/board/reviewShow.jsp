@@ -256,7 +256,7 @@
 
                                     <c:if test="${loginMember.memberNo == board.memberNo}">
 
-                                        <form action="update" method="POST">
+                                        <form action="update?no=${board.boardNo}" method="POST">
                                             <button id="P-rs-update-btn">수정</button>
                                             <input type="hidden" name="memberId" value="${board.memberId}">
                                             <input type="hidden" name="hotelName" value="${board.hotelTitle}">
