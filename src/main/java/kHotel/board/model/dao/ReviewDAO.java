@@ -168,7 +168,7 @@ public class ReviewDAO {
 			String sql = prop.getProperty("deleteReview");
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, no);
-			pstmt.setInt(2, loginMember.getMemberNo());
+			//pstmt.setInt(2, loginMember.getMemberNo());
 			
 			result = pstmt.executeUpdate();
 			

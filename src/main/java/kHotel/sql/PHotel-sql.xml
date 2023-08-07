@@ -197,7 +197,7 @@
 		UPDATE BOARD SET BOARD_ST = 'Y'
 		WHERE BOARD_NO = ?
 		AND BOARD_CD=3
-		AND MEMBER_NO = ?
+		<!-- AND MEMBER_NO = ? -->
 	</entry>
 
 

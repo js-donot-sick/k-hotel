@@ -24,14 +24,18 @@
                     <p class="L-reply-content">${reply.replyContent}</p>
     
 
-                    <c:if test="${loginMember.memberId == reply.memberId}">
-
-                        <div class="L-reply-btn">
+                    
+                    <div class="L-reply-btn">
+                        <c:if test="${loginMember.memberId == reply.memberId}">
                             <button onclick="showUpdateReply(${reply.replyNo}, this)">수정</button>
+                        </c:if>
+
+                        <c:if test="${loginMember.memberId == reply.memberId || loginMember.memberAdmin == 'Y'.charAt(0)}">
                             <button onclick="deleteReply(${reply.replyNo})">삭제</button>
-                        </div>
+                        </c:if>
+
+                    </div>
                         
-                    </c:if>
                 </li>
 
             </c:forEach>
