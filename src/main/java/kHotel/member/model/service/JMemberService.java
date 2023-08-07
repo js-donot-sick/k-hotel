@@ -167,11 +167,11 @@ public class JMemberService {
 		
 		System.out.println(boardNo + "서빗 보드넘버");
 		
-		// 1) XSS 방지 처리(내용)
-		updateReview.setContent(Util.XSSHanding(updateReview.getContent()));
+				
 		
 		// 2) 개행 문자 처리(내용)
 		updateReview.setContent(Util.newLineHandling(updateReview.getContent()));
+		rvUpdate2.setContent(Util.newLineHandling(rvUpdate2.getContent()));
 		
 		// 게시글 수정
 		int result = dao.reviewAlter(conn, rvUpdate2, loginMember, boardNo, updateReview);
