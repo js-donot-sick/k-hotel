@@ -57,7 +57,7 @@
 
 
                             <div class="J-F-6">
-                                <button>작성 취소</button>
+                                <button type="button" onclick="location.href='${contextPath}/admin/AdminBoardManage'">작성 취소</button>
                                 <button>작성</button>
                             </div>
 

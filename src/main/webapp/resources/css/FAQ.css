@@ -100,12 +100,14 @@ textarea::placeholder{
 
 .J-F-5{
     height: 65%;
+    
 }
 
 .J-F-5 textarea{
     height: 100%;
     width: 100%;
     outline: none;
+    resize: none;
 }
 
 
@@ -116,9 +118,6 @@ textarea::placeholder{
 }
 
 .J-F-6 button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 5px;
     width: 80px;
     height: 30px;

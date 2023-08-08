@@ -205,6 +205,7 @@ const check2 = document.getElementsByClassName("J-check2"); // 전체
 
 const check3 = document.getElementsByClassName("J-check3"); // 동의하지 않음
 
+
 const pno1 = document.getElementsByClassName("J-pno")[0];
 
 const pno2 = document.getElementsByClassName("J-pno2")[0];
@@ -288,13 +289,14 @@ function signUp() {
         return false;
     }
    
-        if (!check[0].checked == true ) {
+
+        if (!check[0].checked == true && idBtn.value == 0) {
             alert("필수약관에 동의하셔야 가입이 가능합니다.");
 
 
             return false;
 
-        }else if(!check[1].checked == true){
+        }else if(!check[1].checked == true && idBtn.value == 0){
             alert("필수약관에 동의하셔야 가입이 가능합니다.");
 
 
@@ -311,13 +313,13 @@ function signUp() {
         } else {
 
         }
-
+        
     }
-
-
-
-
+    
     return confirm("이대로 가입하시겠습니까?");
+
+
+
 
 
 
@@ -328,6 +330,7 @@ function duplication() {
 
     const id = document.getElementsByClassName("J-J1-1")[0];
     const regExp = /^\w{6,12}$/;
+
     $.ajax({
         url: contextPath + "/member/signUp/duplication",
         data: { "memberId": id.value },
