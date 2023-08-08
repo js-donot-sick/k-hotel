@@ -29,12 +29,16 @@ public class AdminFAQAlter2 extends HttpServlet {
 		// 수정 전 게시글 정보
 		String title = req.getParameter("faq1");
 		String content = req.getParameter("faq2");
+		/* int boardNo = Integer.parseInt(req.getParameter("boardNo")); */
+				
 		
 		HAdminBoard before = new HAdminBoard();
 		
 		before.setBoardTitle(title);
 		before.setBoardContent(content);
-	
+		/*
+		 * before.setBoardNo(boardNo);
+		 */
 		// 수정 후 게시글 정보
 		String faqTitle = req.getParameter("faqTitle");
 		String faqContent = req.getParameter("faqContent");

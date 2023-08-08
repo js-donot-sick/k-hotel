@@ -111,8 +111,7 @@ public class JAdminDAO {
 			pstmt = conn.prepareStatement(sql);
 			
 			pstmt.setString(1, before.getBoardTitle());
-			pstmt.setString(2, before.getBoardContent());
-			pstmt.setInt(3, loginMember.getMemberNo());
+			pstmt.setInt(2, loginMember.getMemberNo());
 			
 			rs = pstmt.executeQuery();
 			
@@ -135,7 +134,7 @@ public class JAdminDAO {
 	 * @param before
 	 * @param loginMember
 	 * @param after
-	 * @param boardNo
+	 * @param boardNo 
 	 * @return result
 	 * @throws Exception
 	 */
@@ -152,8 +151,7 @@ public class JAdminDAO {
 			pstmt.setString(2, after.getBoardTitle());
 			pstmt.setInt(3, loginMember.getMemberNo());
 			pstmt.setInt(4, boardNo);
-			pstmt.setString(5, before.getBoardContent());
-			pstmt.setString(6, before.getBoardTitle());
+			pstmt.setString(5, before.getBoardTitle());
 			
 			
 			result = pstmt.executeUpdate();

@@ -262,7 +262,7 @@
                 
                 <div class="J2-6">
                     <button id="J-signUpBtn" onclick="return signUp()">회원가입</button>
-                    <button>취소</button>
+                    <button type="button" onclick="location.href='${contextPath}'">취소</button>
                 </div>
                 
             </form>

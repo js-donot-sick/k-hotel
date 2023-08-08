@@ -47,7 +47,7 @@
                     </div>
     
                     <div class="J-F-5">
-                        <textarea placeholder="내용을 입력해주세요." name="faqContent" value="${faq.boardContent}"></textarea>
+                        <textarea placeholder="내용을 입력해주세요." name="faqContent" >${faq.boardContent}</textarea>
                     </div>
     
     
