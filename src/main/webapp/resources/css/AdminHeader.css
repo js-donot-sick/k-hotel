@@ -24,7 +24,7 @@ header{
     width: 1200px;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -45,4 +45,9 @@ header{
     text-decoration: none;
     color: white;
     margin-bottom: 0;
+}
+
+.headerAd{
+    width: 200px;
+    margin: 0 260px 0 350px;
 }

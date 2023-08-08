@@ -44,7 +44,7 @@
                         <div class="P-main">
                             <!-- 검색 div -->
 
-                            <form action="memberAdmin" method="get">
+                            <form action="memberAdmin" method="get" class="searchP">
 
                                 <input type="hidden" name="type" value="${param.type}">
 

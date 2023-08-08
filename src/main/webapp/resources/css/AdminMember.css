@@ -29,6 +29,7 @@
     align-items: center;
     border: 1px solid #eee;
     padding-top: 50px;
+    position: relative;
 }
 
 .P-Member-title{
@@ -47,6 +48,12 @@
     display: flex;
     justify-content: right;
     padding-bottom: 30px;
+}
+
+.searchP{
+    position: absolute;
+    right: 42px;
+    top: 10px;
 }
 
 .P-adm-search{
@@ -148,3 +155,4 @@
 .P-pagination > li:hover{
     text-decoration: underline;
 }
+

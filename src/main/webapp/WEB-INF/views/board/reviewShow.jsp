@@ -238,10 +238,11 @@
                                         <span class="P-tag-top1">
                                             <input type="text" value="✅ ${tag[0]}" disabled>
                                         </span>
-                                        <span class="P-tag-con">
-                                            <input type="button" value="+" onclick="appendText()">
-                                        </span>
-
+                                   
+                                            <span class="P-tag-con">
+                                                <input type="button" value="+" onclick="appendText()">
+                                            </span>
+                  
                                         <c:forEach var="i" begin="1" end="${fn:length(tag) - 1}" step="1">
                                        
                                             <span class="P-tag-top2" id="P-tag-top2">
