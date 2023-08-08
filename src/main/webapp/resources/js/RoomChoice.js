@@ -65,26 +65,23 @@ checkIn.addEventListener("change", function(){
 
       this.value = today;
    } 
-   if(this.value > checkOut.value){
-      alert("체크인 날짜 이전으론 선택 할 수 없습니다.");
-
-      this.value = today;
-   }
 });
 
-checkOut.addEventListener("change", function(){
-
-   if(this.value < checkIn.value){
-      alert("체크인 날짜 이전으론 예약을 진행하실 수 없습니다");
-   
-      checkOut.value = today;
-   }
-   
-});
 
 
 /* 체크아웃 이벤트 발생 시 몇박인지 계산 */
 document.getElementById("C-end").addEventListener("change",function(){
+   const day = document.getElementById("C-countdate");
+   var date1 = new Date(document.getElementById("C-start").value);
+   var date2 = new Date(document.getElementById("C-end").value);
+   
+   var differenceInTime = date2.getTime() - date1.getTime();
+   var differenceInDays = differenceInTime / (1000 * 3600 * 24);
+
+   day.innerHTML = differenceInDays + "박";
+})
+
+document.getElementById("C-start").addEventListener("change",function(){
    const day = document.getElementById("C-countdate");
    var date1 = new Date(document.getElementById("C-start").value);
    var date2 = new Date(document.getElementById("C-end").value);
