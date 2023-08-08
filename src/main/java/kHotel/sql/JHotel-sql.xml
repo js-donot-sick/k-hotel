@@ -122,7 +122,6 @@
 		WHERE BOARD_CD = 4
 		AND MEMBER_NO = ?
 		AND BOARD_NO = ?
-		AND BOARD_CONTENT = ?
 		AND BOARD_TITLE = ?
 		AND BOARD_ST = 'N'
 	</entry>
@@ -133,7 +132,6 @@
 		FROM BOARD
 		WHERE BOARD_CD = 4
 		AND BOARD_TITLE = ?
-		AND BOARD_CONTENT = ?
 		AND MEMBER_NO = ?
 	</entry>
 

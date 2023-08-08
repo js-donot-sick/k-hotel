@@ -199,9 +199,11 @@ const pw2 = document.getElementsByClassName("J-J1-3")[0];
 
 const tel = document.getElementsByClassName("J-Tel")[0];
 
-const check = document.getElementsByClassName("J-check0");
-const check2 = document.getElementsByClassName("J-check2");
-const check3 = document.getElementsByClassName("J-check3");
+const check = document.getElementsByClassName("J-check0"); // 동의
+
+const check2 = document.getElementsByClassName("J-check2"); // 전체
+
+const check3 = document.getElementsByClassName("J-check3"); // 동의하지 않음
 
 const pno1 = document.getElementsByClassName("J-pno")[0];
 
@@ -239,119 +241,67 @@ function signUp() {
         alert("이미 사용중인 아이디 입니다. 다시 입력해주세요.");
         
         return false;
-    }
-
-
-
-    if(!regExp7.test(id.value) ){
+    }else if(!regExp7.test(id.value) ){
         alert("아이디 형식이 일치하지 않습니다. 다시 입력해주세요.");
 
         return false;
 
-    }
-
-    if(!regExp6.test(pw1.value)){
+    }else if(!regExp6.test(pw1.value)){
         alert("비밀번호 형식이 일치하지 않습니다. 다시 입력해주세요.");
 
         return false;
 
-    }
-
-    if (pw1.value != pw2.value) {
+    }else if (pw1.value != pw2.value) {
 
         alert("비밀번호와 비밀번호확인이 일치하지 않습니다. 다시 입력해주세요.");
 
         return false;
 
-    }
-
-    if (!regExp4.test(memberName.value)) {
+    }else if (!regExp4.test(memberName.value)) {
         alert("이름 형식이 올바르지 않습니다. 다시 입력주세요.");
 
         return false;
 
-    }
-
-    if (!regExp2.test(pno1.value)) {
+    }else if (!regExp2.test(pno1.value)) {
         alert("주민번호 앞자리를 다시 입력주세요.");
 
         return false;
 
-    }
-
-    if (!regExp3.test(pno2.value)) {
+    }else if (!regExp3.test(pno2.value)) {
         alert("주민번호 뒷자리를 다시 입력주세요.");
 
         return false;
 
-    }
-
-    if (!regExp.test(tel.value)) {
+    }else if (!regExp.test(tel.value)) {
         alert("전화번호 형식이 일치하지 않습니다. 다시 확인해주세요!");
 
         return false;
 
-    }
-     
-     if (!regExp5.test(memberEmail.value)) {
+    }else if (!regExp5.test(memberEmail.value)) {
         alert("이메일 형식이 올바르지 않습니다. 다시 입력주세요.");
 
         return false;
 
-    }
-     
-     
-    
-    if(idBtn.value == 2){
+    }else if(idBtn.value == 2){
         alert("아이디 중복 확인을 해주세요.");
 
         return false;
     }
    
-
-    
-    
-   
-
-
-    for (let item of check3) {
-
-        if (item.checked == true ) {
+        if (!check[0].checked == true ) {
             alert("필수약관에 동의하셔야 가입이 가능합니다.");
 
+
             return false;
-        }
 
-    }
-
-    
-
-    for (let item of check) {
-
-        if (item[0].checked != true && item[1].checked != true) {
+        }else if(!check[1].checked == true){
             alert("필수약관에 동의하셔야 가입이 가능합니다.");
 
 
             return false;
         }
+
         
-    }
-
-    for (let item of check) {
-        
-
-    if(item.checked == false){
-        alert("필수약관에 동의하셔야 가입이 가능합니다.");
-
-
-        return false;
-    }
-
-}
-
-    
-   
-
     for (let item of input) {
 
         if (item.value.trim().length == 0) {

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import kHotel.admin.model.vo.HAdminBoard;
+import kHotel.common.Util;
 import kHotel.member.model.vo.Member;
 
 @WebServlet("/board/admin/FAQUpate")
@@ -28,10 +29,14 @@ public class AdminFAQAlter extends HttpServlet{
 			String faqTitle = req.getParameter("title");
 			String faqContent = req.getParameter("content");
 			
+			Util.newLineHandling(faqContent);
+			
 			HAdminBoard board = new HAdminBoard();
 			
 			board.setBoardTitle(faqTitle);
 			board.setBoardContent(faqContent);
+			
+			board.setBoardContent( board.getBoardContent().replaceAll("<br>", "\n") );
 			
 			String path = "/WEB-INF/views/admin/FAQUpdate.jsp";
 			

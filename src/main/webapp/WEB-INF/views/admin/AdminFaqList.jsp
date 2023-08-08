@@ -54,7 +54,7 @@
                                     <div>
                                         ${board.boardContent}
                                     </div>
-                                    <form action="admin/FAQUpate" method="post">
+                                    <form action="admin/FAQUpate?no=${board.boardNo}" method="post">
                                         <input type="hidden" name="boardNo" value="${board.boardNo}">
 
                                         <c:if test="${loginMember.memberAdmin.toString() eq 'Y'}">
