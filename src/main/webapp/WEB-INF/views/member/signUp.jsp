@@ -27,7 +27,7 @@
 
             <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-            <form action="signUp" method="POST">
+            <form action="signUp" method="POST" onsubmit="return signUp()">
 
                 
                 <div class="J-2">
@@ -100,7 +100,7 @@
                             <div class="J-H">
                                 
                                 <div class="J-H1">
-                                    <button type="button" id="J-idBtn" class="J-H1-1" onclick="return duplication()" >아이디 중복 확인</button>&nbsp;
+                                    <button type="button" id="J-idBtn" class="J-H1-1" onclick="duplication()" >아이디 중복 확인</button>&nbsp;
                                 </div>
                                 
                                 <div class="J-H2">
@@ -261,7 +261,7 @@
                 </div>
                 
                 <div class="J2-6">
-                    <button id="J-signUpBtn" onclick="return signUp()">회원가입</button>
+                    <button id="J-signUpBtn">회원가입</button>
                     <button type="button" onclick="location.href='${contextPath}'">취소</button>
                 </div>
                 
