@@ -64,13 +64,16 @@ checkIn.addEventListener("change", function(){
       alert("이전 날짜로는 예약을 진행하실 수 없습니다");
 
       this.value = today;
-
    } 
+   if(this.value > checkOut.value){
+      alert("체크인 날짜 이전으론 선택 할 수 없습니다.");
+
+      this.value = today;
+   }
 });
 
 checkOut.addEventListener("change", function(){
 
-   
    if(this.value < checkIn.value){
       alert("체크인 날짜 이전으론 예약을 진행하실 수 없습니다");
    
