@@ -27,15 +27,17 @@ public class JAdminService {
 		// memberNo 가져오기
 		int memberNo = dao.getMemberNo(conn ,loginMember);
 		
+		// 1) XSS 방지 처리(내용)
+				board.setBoardTitle( Util.XSSHanding(board.getBoardTitle()));
+				
+				// 2) 개행 문자 처리 (내용)
+				board.setBoardContent(Util.newLineHandling(board.getBoardContent()));
+		
 		// FAQ 작성
 		int result = dao.FAQUpdate(conn, memberNo, board);
 		
 		
-		// 1) XSS 방지 처리(내용)
-		board.setBoardTitle( Util.XSSHanding(board.getBoardTitle()));
 		
-		// 2) 개행 문자 처리 (내용)
-		board.setBoardContent(Util.newLineHandling(board.getBoardContent()));
 		
 		if(result > 0) commit(conn);
 		else		   rollback(conn);
