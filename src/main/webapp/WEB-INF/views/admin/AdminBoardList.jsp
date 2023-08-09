@@ -48,7 +48,6 @@
 								<th>제목</th>
 								<th></th>
 								<th>작성일</th>
-								<th>작성자</th>
 							</thead>
 
 							<c:forEach var="board" items="${boardList}">
@@ -58,7 +57,6 @@
 									<td><a href="${contextPath}/admin/AdminBoardList/detail?no=${board.boardNo}">${board.boardTitle}</a></td>
 									<td></td>
 									<td>${board.boardDate}</td>
-									<td>${member.memberName}</td>
 								</tbody>
 								
 	
