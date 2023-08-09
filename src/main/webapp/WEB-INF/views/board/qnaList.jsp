@@ -73,7 +73,7 @@
                                 <div>${board.boardNo}</div>
                                 <div>${board.boardTitle}</div>
                                 <div></div>
-                                <div>${fn:substring(memberId, 0, fn:length(memberId) - 3)}***</div>
+                                <div>***${fn:substring(memberId, 3, fn:length(memberId))}</div>
                                 <div>${board.boardDate}</div>
                             </div>
                         </a>
