@@ -30,6 +30,10 @@
     border: 1px solid #eee;
     padding-top: 50px;
     position: relative;
+    height: 550px;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
 }
 
 .P-Member-title{
